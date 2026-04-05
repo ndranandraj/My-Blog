@@ -1,3 +1,3 @@
 ---
-display_section: posts
+title: "Anand's Blog"
 ---
