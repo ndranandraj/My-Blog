@@ -1,8 +1,9 @@
 baseURL = "https://yourdomain.com/"
 languageCode = "en-us"
 title = "Anand's Blog"
-theme = "PaperMod"
-paginate = 5
+theme = "paperesque"
+[pagination]
+  pagerSize = 5
 
 [params]
   author = "Anand"
