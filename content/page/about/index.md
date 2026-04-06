@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-![Anand](img/Anand_enhanced.jpg)
+![Anand](/images/Anand_enhanced.jpg)
 
 Hey, I'm Anand.
 
