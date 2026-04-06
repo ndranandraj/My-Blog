@@ -14,6 +14,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,10 +27,7 @@ jobs:
           submodules: recursive
 
       - name: Setup Hugo
-        run: |
-          wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.160.0/hugo_extended_0.160.0_linux-amd64.tar.gz
-          tar -xzf hugo.tar.gz
-          sudo mv hugo /usr/local/bin/hugo
+        run: sudo snap install hugo
 
       - name: Build
         run: hugo --minify
