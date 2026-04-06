@@ -7,7 +7,9 @@ paginate = 5
 [params]
   mainSections = ["posts"]
   description = "Personal blog — thoughts, experiences, and more."
-  dateFormat = "January 2, 2006"
+  [params.dateFormat]
+    published = "January 2, 2006"
+    lastUpdated = "January 2, 2006"
 
   [params.author]
     name = "Anand"
