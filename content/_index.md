@@ -1,3 +1,3 @@
 ---
-title: "Anand's Blog"
+title: "Welcome to Anandraj's Personal blog"
 ---
