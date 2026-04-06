@@ -3,7 +3,7 @@ title: "About"
 layout: "simple"
 ---
 
-Hey, I'm Anand.
+Hey, I'm Anandraj.
 
 So this is basically where I dump my thoughts. There's no real theme to this blog. I just write about whatever's on my mind. Could be something techy I've been messing around with, a random rabbit hole I fell into, a book that stuck with me, or just something I felt like saying out loud. I don't have a posting schedule or a content plan or any of that. When something feels worth writing about, I write about it. Simple as that.
 
