@@ -13,6 +13,7 @@ canonifyURLs = true
 [params]
   mainSections = ["posts"]
   description = "Personal blog by Anand — tech, photography, football and random thoughts."
+  favicon = "images/Anand_enhanced.jpg"
 
   [params.dateFormat]
     published = "January 2, 2006"
@@ -25,7 +26,7 @@ canonifyURLs = true
   [params.sidebar]
     emoji = "📝"
     subtitle = "Tech, photography, football and random thoughts."
-
+    avatar = "images/Anand_enhanced.jpg"
 
   [params.footer]
     since = 2026
@@ -45,18 +46,29 @@ canonifyURLs = true
     name = "Home"
     url = "/"
     weight = 1
+    [menu.main.params]
+      icon = "home"
+
   [[menu.main]]
     name = "Blog"
     url = "/posts/"
     weight = 2
+    [menu.main.params]
+      icon = "archives"
+
   [[menu.main]]
-    name = "About"
+    name = "About Me"
     url = "/page/about/"
     weight = 3
+    [menu.main.params]
+      icon = "user"
+
   [[menu.main]]
-    name = "Tags"
+    name = "Links"
     url = "/tags/"
     weight = 4
+    [menu.main.params]
+      icon = "link"
 
 [[menu.social]]
   identifier = "linkedin"

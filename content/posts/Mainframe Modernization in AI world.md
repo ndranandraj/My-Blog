@@ -5,6 +5,10 @@ draft: false
 tags: ["mainframe", "AI", "modernization", "COBOL", "tech", "enterprise"]
 description: "Everyone thinks AI will finally kill the mainframe. After nearly two decades working on legacy migrations, here's why I think the walls haven't changed — only the tool hitting them."
 keywords: ["mainframe modernization", "COBOL AI", "legacy system migration", "mainframe to cloud", "COBOL modernization"]
+cover:
+    image: "/My-Blog/images/mainframe-server.svg"
+    alt: "Mainframe Server"
+    caption: "Still here. Still running."
 ---
 
 {{< figure src="/My-Blog/images/mainframe-server.svg" alt="Mainframe Server" >}}
