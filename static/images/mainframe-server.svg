@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <!-- Background -->
+  <rect width="800" height="500" rx="12" fill="#0f172a"/>
+
+  <!-- Grid floor -->
+  <line x1="0" y1="420" x2="800" y2="420" stroke="#1e293b" stroke-width="1"/>
+  <line x1="100" y1="420" x2="50" y2="500" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="200" y1="420" x2="150" y2="500" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="300" y1="420" x2="250" y2="500" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="400" y1="420" x2="350" y2="500" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="500" y1="420" x2="450" y2="500" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="600" y1="420" x2="550" y2="500" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="700" y1="420" x2="650" y2="500" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="0" y1="440" x2="800" y2="440" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="0" y1="460" x2="800" y2="460" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="0" y1="480" x2="800" y2="480" stroke="#1e293b" stroke-width="0.5"/>
+
+  <!-- Main Server Cabinet - Left -->
+  <rect x="120" y="80" width="160" height="340" rx="6" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <!-- Server slots -->
+  <rect x="135" y="95" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="135" y="130" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="135" y="165" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="135" y="200" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="135" y="235" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="135" y="270" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="135" y="305" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="135" y="340" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="135" y="375" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <!-- LED indicators left cabinet -->
+  <circle cx="145" cy="109" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="155" cy="109" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="145" cy="144" r="3" fill="#22c55e"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></circle>
+  <circle cx="155" cy="144" r="3" fill="#eab308"/>
+  <circle cx="145" cy="179" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.5;1" dur="2.2s" repeatCount="indefinite"/></circle>
+  <circle cx="155" cy="179" r="3" fill="#22c55e"/>
+  <circle cx="145" cy="214" r="3" fill="#22c55e"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite"/></circle>
+  <circle cx="155" cy="214" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="145" cy="249" r="3" fill="#eab308"/>
+  <circle cx="155" cy="249" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.4;1" dur="1.3s" repeatCount="indefinite"/></circle>
+  <circle cx="145" cy="284" r="3" fill="#22c55e"><animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="155" cy="284" r="3" fill="#22c55e"/>
+  <circle cx="145" cy="319" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.6;1" dur="1.7s" repeatCount="indefinite"/></circle>
+  <circle cx="155" cy="319" r="3" fill="#22c55e"><animate attributeName="opacity" values="0.6;1;0.6" dur="2.1s" repeatCount="indefinite"/></circle>
+  <circle cx="145" cy="354" r="3" fill="#22c55e"/>
+  <circle cx="155" cy="354" r="3" fill="#eab308"><animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite"/></circle>
+  <circle cx="145" cy="389" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.3;1" dur="1.9s" repeatCount="indefinite"/></circle>
+  <circle cx="155" cy="389" r="3" fill="#22c55e"/>
+
+  <!-- Main Server Cabinet - Center (larger) -->
+  <rect x="310" y="50" width="180" height="370" rx="6" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <!-- IBM-style logo area -->
+  <rect x="340" y="60" width="120" height="30" rx="3" fill="#0f172a"/>
+  <text x="400" y="81" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="14" font-weight="bold">MAINFRAME</text>
+  <!-- Server slots center -->
+  <rect x="325" y="100" width="150" height="32" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="325" y="140" width="150" height="32" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="325" y="180" width="150" height="32" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="325" y="220" width="150" height="32" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="325" y="260" width="150" height="32" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="325" y="300" width="150" height="32" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="325" y="340" width="150" height="32" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="325" y="380" width="150" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <!-- LEDs center -->
+  <circle cx="337" cy="116" r="3" fill="#3b82f6"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="347" cy="116" r="3" fill="#3b82f6"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="357" cy="116" r="3" fill="#22c55e"/>
+  <circle cx="337" cy="156" r="3" fill="#3b82f6"><animate attributeName="opacity" values="1;0.4;1" dur="1.8s" repeatCount="indefinite"/></circle>
+  <circle cx="347" cy="156" r="3" fill="#22c55e"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.3s" repeatCount="indefinite"/></circle>
+  <circle cx="357" cy="156" r="3" fill="#3b82f6"/>
+  <circle cx="337" cy="196" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.5;1" dur="2.2s" repeatCount="indefinite"/></circle>
+  <circle cx="347" cy="196" r="3" fill="#3b82f6"><animate attributeName="opacity" values="0.5;1;0.5" dur="1.6s" repeatCount="indefinite"/></circle>
+  <circle cx="357" cy="196" r="3" fill="#22c55e"/>
+  <circle cx="337" cy="236" r="3" fill="#3b82f6"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="347" cy="236" r="3" fill="#22c55e"/>
+  <circle cx="357" cy="236" r="3" fill="#3b82f6"><animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="337" cy="276" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.4;1" dur="1.7s" repeatCount="indefinite"/></circle>
+  <circle cx="347" cy="276" r="3" fill="#3b82f6"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="357" cy="276" r="3" fill="#22c55e"/>
+  <circle cx="337" cy="316" r="3" fill="#3b82f6"><animate attributeName="opacity" values="1;0.5;1" dur="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="347" cy="316" r="3" fill="#22c55e"><animate attributeName="opacity" values="0.6;1;0.6" dur="1.9s" repeatCount="indefinite"/></circle>
+  <circle cx="357" cy="316" r="3" fill="#3b82f6"/>
+
+  <!-- Right Cabinet -->
+  <rect x="520" y="80" width="160" height="340" rx="6" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <!-- Server slots right -->
+  <rect x="535" y="95" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="535" y="130" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="535" y="165" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="535" y="200" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="535" y="235" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="535" y="270" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="535" y="305" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="535" y="340" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="535" y="375" width="130" height="28" rx="3" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <!-- LEDs right -->
+  <circle cx="545" cy="109" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
+  <circle cx="555" cy="109" r="3" fill="#22c55e"/>
+  <circle cx="545" cy="144" r="3" fill="#22c55e"><animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="555" cy="144" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.4;1" dur="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="545" cy="179" r="3" fill="#eab308"><animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite"/></circle>
+  <circle cx="555" cy="179" r="3" fill="#22c55e"/>
+  <circle cx="545" cy="214" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.3;1" dur="2.3s" repeatCount="indefinite"/></circle>
+  <circle cx="555" cy="214" r="3" fill="#22c55e"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite"/></circle>
+  <circle cx="545" cy="249" r="3" fill="#22c55e"/>
+  <circle cx="555" cy="249" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.5;1" dur="1.9s" repeatCount="indefinite"/></circle>
+
+  <!-- Connecting cables -->
+  <path d="M280 200 Q295 200 295 220 Q295 240 310 240" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M280 250 Q295 250 295 270 Q295 290 310 290" stroke="#22c55e" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M490 200 Q505 200 505 220 Q505 240 520 240" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M490 300 Q505 300 505 320 Q505 340 520 340" stroke="#22c55e" stroke-width="2" fill="none" opacity="0.6"/>
+
+  <!-- AI/Cloud element floating above -->
+  <g opacity="0.9">
+    <circle cx="400" cy="30" r="8" fill="#8b5cf6" opacity="0.3"><animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="400" cy="30" r="4" fill="#8b5cf6"><animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- "AI" text with glow -->
+  <text x="690" y="180" fill="#8b5cf6" font-family="monospace" font-size="28" font-weight="bold" opacity="0.8">AI</text>
+  <text x="665" y="210" fill="#64748b" font-family="monospace" font-size="11">modernize?</text>
+
+  <!-- Data flow particles -->
+  <circle cx="0" cy="200" r="2" fill="#3b82f6">
+    <animate attributeName="cx" values="280;310" dur="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="0" cy="250" r="2" fill="#22c55e">
+    <animate attributeName="cx" values="490;520" dur="1.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Bottom text -->
+  <text x="400" y="455" text-anchor="middle" fill="#475569" font-family="monospace" font-size="11">Processing an estimated $3 trillion in daily commerce</text>
+  <text x="400" y="475" text-anchor="middle" fill="#334155" font-family="monospace" font-size="10">Still here. Still running. Still waiting to be modernized.</text>
+</svg>
