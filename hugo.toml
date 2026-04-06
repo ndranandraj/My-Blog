@@ -10,7 +10,7 @@ theme = "blowfish"
   description = "Personal blog — thoughts, experiences, and more."
   [params.author]
     name = "Anand"
-    image = "images/Anand_enhanced.jpg"
+    image = "img/Anand_enhanced.jpg"
 
   [params.homepage]
     layout = "profile"
