@@ -41,7 +41,7 @@ paginate = 5
     weight = 2
   [[menu.main]]
     name = "About"
-    url = "/about/"
+    url = "/page/about/"
     weight = 3
   [[menu.main]]
     name = "Tags"
