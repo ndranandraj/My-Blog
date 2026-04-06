@@ -4,6 +4,7 @@ title = "Anand's Blog"
 theme = "stack"
 paginate = 5
 enableRobotsTXT = true
+canonifyURLs = true
 
 [sitemap]
   changefreq = "weekly"
