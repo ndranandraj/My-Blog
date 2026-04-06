@@ -8,7 +8,8 @@ theme = "blowfish"
   defaultAppearance = "dark"
   autoSwitchAppearance = true
   description = "Personal blog — thoughts, experiences, and more."
-  author = "Anand"
+  [params.author]
+  name = "Anand"
 
   [params.homepage]
     layout = "profile"
