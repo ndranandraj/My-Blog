@@ -3,10 +3,16 @@ languageCode = "en-us"
 title = "Anand's Blog"
 theme = "stack"
 paginate = 5
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
 
 [params]
   mainSections = ["posts"]
-  description = "Personal blog — thoughts, experiences, and more."
+  description = "Personal blog by Anand — tech, photography, football and random thoughts."
+
   [params.dateFormat]
     published = "January 2, 2006"
     lastUpdated = "January 2, 2006"
@@ -29,6 +35,8 @@ paginate = 5
   [params.comments]
     enabled = false
 
+[services.googleAnalytics]
+  ID = "G-WG6FZGEPT7"
 
 [menu]
   [[menu.main]]
