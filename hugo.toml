@@ -27,10 +27,6 @@ paginate = 5
   [params.comments]
     enabled = false
 
-[params.sidebar.avatar]
-  enabled = true
-  local = true
-  src = "img/Anand_enhanced.jpg"
 
 [menu]
   [[menu.main]]
