@@ -25,12 +25,12 @@ enableRobotsTXT = true
     emoji = "📝"
     subtitle = "Tech, photography, football and random thoughts."
 
-    [[params.sidebar.socialLinks]]
+    [[params.sidebar.links]]
       name = "LinkedIn"
       url = "https://www.linkedin.com/in/anandraj-r-78b86198"
       icon = "brand-linkedin"
 
-    [[params.sidebar.socialLinks]]
+    [[params.sidebar.links]]
       name = "Instagram"
       url = "https://www.instagram.com/ndranandraj"
       icon = "brand-instagram"
