@@ -1,35 +1,54 @@
 baseURL = "https://ndranandraj.github.io/My-Blog/"
 languageCode = "en-us"
 title = "Anand's Blog"
-theme = "blowfish"
+theme = "stack"
+paginate = 5
 
 [params]
-  colorScheme = "forest"
-  defaultAppearance = "dark"
-  autoSwitchAppearance = true
+  mainSections = ["posts"]
   description = "Personal blog — thoughts, experiences, and more."
+  dateFormat = "January 2, 2006"
+
   [params.author]
     name = "Anand"
+    bio = "Tech, photography, football and random thoughts."
 
-  [params.homepage]
-    layout = "profile"
-    showRecent = true
-    recentLimit = 5
+  [params.sidebar]
+    emoji = "📝"
+    subtitle = "Tech, photography, football and random thoughts."
 
-[params.article]
-  showDate = true
-  showReadingTime = true
-  showTaxonomies = true
+    [params.sidebar.avatar]
+      enabled = true
+      local = true
+      src = "img/Anand_enhanced.jpg"
+
+  [params.footer]
+    since = 2026
+
+  [params.article]
+    math = false
+    readingTime = true
+
+  [params.comments]
+    enabled = false
 
 [menu]
   [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
     name = "Blog"
     url = "/posts/"
-    weight = 1
+    weight = 2
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 2
+    weight = 3
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
 
 [pagination]
   pagerSize = 5
