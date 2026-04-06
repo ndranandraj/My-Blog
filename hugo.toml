@@ -4,12 +4,13 @@ title = "Anand's Blog"
 theme = "blowfish"
 
 [params]
-  colorScheme = "ocean"
+  colorScheme = "forest"
   defaultAppearance = "dark"
   autoSwitchAppearance = true
   description = "Personal blog — thoughts, experiences, and more."
   [params.author]
-  name = "Anand"
+    name = "Anand"
+    image = "images/Anand_enhanced.jpg"
 
   [params.homepage]
     layout = "profile"

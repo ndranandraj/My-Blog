@@ -2,8 +2,8 @@
 title: "Mainframe Modernization in AI world"
 date: 2026-03-28
 draft: false
-tags: ["personal", "intro"]
-description: "Starting a blog felt intimidating — until I just did it."
+tags: ["mainframe", "AI", "modernization", "COBOL", "tech", "enterprise"]
+description: "AI won't modernize your mainframe immediately. Here's why, from someone who's been in the trenches."
 ---
 
 I've been thinking about this a lot lately. Everyone's excited about AI tools like Claude being used to modernize legacy COBOL systems. And they genuinely help, don't get me wrong. But my hot take? AI won't modernize your mainframe immediately. At least not by itself.
