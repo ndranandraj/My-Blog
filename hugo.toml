@@ -1,17 +1,14 @@
 baseURL = "https://ndranandraj.github.io/My-Blog/"
 languageCode = "en-us"
 title = "Anand's Blog"
-theme = "congo"
+theme = "blowfish"
 
 [params]
-  colorScheme = "congo"
-  defaultAppearance = "auto"
+  colorScheme = "ocean"
+  defaultAppearance = "dark"
   autoSwitchAppearance = true
   description = "Personal blog — thoughts, experiences, and more."
-
-  [params.author]
-    name = "Anand"
-    headline = "Personal blog — thoughts, experiences, and more."
+  author = "Anand"
 
   [params.homepage]
     layout = "profile"
