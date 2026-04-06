@@ -25,15 +25,6 @@ enableRobotsTXT = true
     emoji = "📝"
     subtitle = "Tech, photography, football and random thoughts."
 
-    [[params.sidebar.links]]
-      name = "LinkedIn"
-      url = "https://www.linkedin.com/in/anandraj-r-78b86198"
-      icon = "brand-linkedin"
-
-    [[params.sidebar.links]]
-      name = "Instagram"
-      url = "https://www.instagram.com/ndranandraj"
-      icon = "brand-instagram"
 
   [params.footer]
     since = 2026
@@ -65,6 +56,20 @@ enableRobotsTXT = true
     name = "Tags"
     url = "/tags/"
     weight = 4
+
+[[menu.social]]
+  identifier = "linkedin"
+  name = "LinkedIn"
+  url = "https://www.linkedin.com/in/anandraj-r-78b86198"
+  [menu.social.params]
+    icon = "brand-linkedin"
+
+[[menu.social]]
+  identifier = "instagram"
+  name = "Instagram"
+  url = "https://www.instagram.com/ndranandraj"
+  [menu.social.params]
+    icon = "brand-instagram"
 
 [pagination]
   pagerSize = 5
