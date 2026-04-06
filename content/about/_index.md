@@ -1,6 +1,5 @@
 ---
 title: "About"
-layout: "simple"
 ---
 
 ![Anand](img/Anand_enhanced.jpg)
