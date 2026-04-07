@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.Thumbs.db
+
+# Hugo build output
+public/
+resources/_gen/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment and secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Node (if ever used)
+node_modules/
+
+# OS generated
+*.log
+Thumbs.db
+ehthumbs.db
+
+# Original unprocessed photos
+Anand.jpg
