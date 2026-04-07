@@ -6,12 +6,12 @@ tags: ["mainframe", "AI", "modernization", "COBOL", "tech", "enterprise"]
 description: "Everyone thinks AI will finally kill the mainframe. After nearly two decades working on legacy migrations, here's why I think the walls haven't changed — only the tool hitting them."
 keywords: ["mainframe modernization", "COBOL AI", "legacy system migration", "mainframe to cloud", "COBOL modernization"]
 cover:
-    image: "/My-Blog/images/mainframe-server.svg"
+    image: "/images/mainframe-server.svg"
     alt: "Mainframe Server"
     caption: "Still here. Still running."
 ---
 
-{{< figure src="/My-Blog/images/mainframe-server.svg" alt="Mainframe Server" >}}
+{{< figure src="/images/mainframe-server.svg" alt="Mainframe Server" >}}
 
 I've been thinking about this a lot lately. Everyone's excited about AI tools like Claude being used to modernize legacy COBOL systems. And they genuinely help, don't get me wrong. But my hot take? AI won't modernize your mainframe immediately. At least not by itself.
 

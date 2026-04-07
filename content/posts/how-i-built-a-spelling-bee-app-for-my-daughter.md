@@ -6,7 +6,7 @@ tags: ["AI", "Claude", "web development", "PWA", "parenting", "side project", "J
 description: "I'm a Mainframe developer who had never touched web apps. Then my daughter needed to practice for her school Spelling Bee. So I built her one — with Claude as my AI pair programmer."
 keywords: ["spelling bee app", "Claude AI", "AI pair programming", "progressive web app", "side project", "COBOL developer web development"]
 cover:
-    image: "/My-Blog/images/mainframe-server.svg"
+    image: "/images/mainframe-server.svg"
     alt: "Blog Header"
     caption: ""
 ---
