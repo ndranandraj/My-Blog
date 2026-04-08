@@ -14,6 +14,7 @@ canonifyURLs = true
   mainSections = ["posts"]
   description = "Personal blog by Anand — tech, photography, football and random thoughts."
   favicon = "images/Anand_enhanced.jpg"
+  defaultColorScheme = "dark"
 
   [params.dateFormat]
     published = "January 2, 2006"
