@@ -7,12 +7,14 @@ categories: ["Tech"]
 description: "I'm a Mainframe developer who had never touched web apps. Then my daughter needed to practice for her school Spelling Bee. So I built her one — with Claude as my AI pair programmer."
 keywords: ["spelling bee app", "Claude AI", "AI pair programming", "progressive web app", "side project", "COBOL developer web development"]
 cover:
-    image: "/images/mainframe-server.svg"
-    alt: "Blog Header"
-    caption: ""
+    image: "/images/spelling-bee-daughter.jpg"
+    alt: "Champion with the Spell Bee Practice App"
+    caption: "The champion herself, with the app she used to get there."
 ---
 
 Earlier this year, my daughter won her school Spelling Bee. Every single word.
+
+{{< figure src="/images/spelling-bee-daughter.jpg" alt="Champion with the Spell Bee Practice App" caption="The champion herself — medal, trophies, and the app she used to get there." >}}
 
 And honestly, this win feels a little bit mine too. Let me tell you why.
 
