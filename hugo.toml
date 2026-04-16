@@ -39,6 +39,9 @@ canonifyURLs = true
     math = false
     readingTime = true
 
+  [params.article.share]
+    enabled = true
+
   [params.comments]
     enabled = false
 

@@ -1,1 +1,32 @@
-<!-- Keeping default Stack theme fonts -->
+<!-- Google Fonts: Inter (UI) + Merriweather (reading) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- Reading progress bar -->
+<style>
+  #reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    z-index: 9999;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const bar = document.createElement('div');
+    bar.id = 'reading-progress';
+    document.body.prepend(bar);
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrolled = doc.scrollTop || document.body.scrollTop;
+      const total = doc.scrollHeight - doc.clientHeight;
+      bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+    });
+  });
+</script>

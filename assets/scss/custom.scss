@@ -1,11 +1,31 @@
 /* ==========================================
-   ANAND'S BLOG — Custom Styles
+   ANAND'S BLOG — Professional Design System
    ========================================== */
 
-/* ── Base variables ── */
+/* ── Typography ── */
 :root {
-    --card-border-radius: 14px;
-    --article-line-height: 1.85;
+    --base-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --article-font-family: "Merriweather", Georgia, serif;
+    --accent-color: #2563eb;
+    --accent-color-darker: #1d4ed8;
+    --accent-color-text: #ffffff;
+    --card-border-radius: 16px;
+    --article-line-height: 1.9;
+}
+
+[data-scheme="dark"] {
+    --accent-color: #60a5fa;
+    --accent-color-darker: #3b82f6;
+    --accent-color-text: #000;
+}
+
+/* ─────────────────────────────────────────
+   GLOBAL BODY POLISH
+───────────────────────────────────────── */
+body {
+    font-family: var(--base-font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ─────────────────────────────────────────
@@ -13,17 +33,37 @@
 ───────────────────────────────────────── */
 .home-hero {
     margin-bottom: 2.5rem;
-    padding: 2rem;
-    background: var(--card-background);
-    border-radius: 16px;
-    border: 1px solid var(--card-separator-color);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-hero::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+[data-scheme="dark"] .home-hero {
+    background: linear-gradient(135deg, rgba(37,99,235,0.12) 0%, rgba(5,150,105,0.08) 100%);
+    border-color: rgba(96, 165, 250, 0.2);
 }
 
 .home-hero-inner {
     display: flex;
     align-items: center;
     gap: 1.8rem;
+    position: relative;
 }
 
 @media (max-width: 600px) {
@@ -34,84 +74,123 @@
 }
 
 .home-hero-avatar {
-    width: 90px;
-    height: 90px;
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #3b82f6;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #2563eb, 0 8px 24px rgba(37,99,235,0.25);
     flex-shrink: 0;
 }
 
 .home-hero-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 0 0.4rem 0;
+    font-size: 1.55rem;
+    font-weight: 800;
+    margin: 0 0 0.35rem 0;
     color: var(--card-text-color-main);
     line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 .home-hero-tagline {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     color: var(--card-text-color-secondary);
-    margin: 0 0 1rem 0;
-    line-height: 1.6;
-    max-width: 480px;
+    margin: 0 0 1.1rem 0;
+    line-height: 1.65;
+    max-width: 460px;
 }
 
 .home-hero-links {
     display: flex;
-    gap: 0.7rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
 }
 
 @media (max-width: 600px) {
-    .home-hero-links {
-        justify-content: center;
-    }
+    .home-hero-links { justify-content: center; }
 }
 
 .home-hero-links a {
     display: inline-block;
-    padding: 0.4rem 1.1rem;
+    padding: 0.42rem 1.15rem;
     border-radius: 999px;
-    font-size: 0.82rem;
+    font-size: 0.81rem;
     font-weight: 600;
     text-decoration: none !important;
     transition: all 0.2s ease;
+    letter-spacing: 0.01em;
 }
 
 .home-hero-links a:first-child {
-    background: #3b82f6;
+    background: #2563eb;
     color: #fff !important;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.35);
 }
 
 .home-hero-links a:first-child:hover {
-    opacity: 0.85;
-    transform: translateY(-1px);
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37,99,235,0.4);
 }
 
 .home-hero-links a:last-child {
-    background: transparent;
-    color: #3b82f6 !important;
-    border: 1.5px solid #3b82f6;
+    background: rgba(37,99,235,0.08);
+    color: #2563eb !important;
+    border: 1.5px solid rgba(37,99,235,0.3);
 }
 
 .home-hero-links a:last-child:hover {
-    background: #3b82f6;
+    background: #2563eb;
     color: #fff !important;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 /* ─────────────────────────────────────────
-   ARTICLE CARDS
+   ARTICLE CARDS — FEATURED FIRST POST
 ───────────────────────────────────────── */
 .article-list article {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--card-separator-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .article-list article:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+/* Category accent line at top of each card */
+.article-list article::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #e2e8f0;
+}
+
+/* Tech posts — blue accent */
+.article-list article:has(a[href*="/categories/tech"])::before {
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+}
+
+/* Travel posts — green accent */
+.article-list article:has(a[href*="/categories/travel"])::before {
+    background: linear-gradient(90deg, #059669, #10b981);
+}
+
+/* Article title font */
+.article-title {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+}
+
+.article-title a:hover {
+    color: #2563eb !important;
+    opacity: 1 !important;
 }
 
 /* ─────────────────────────────────────────
@@ -120,50 +199,85 @@
 a[href*="/categories/tech"] {
     background: #dbeafe !important;
     color: #1d4ed8 !important;
-    padding: 0.18rem 0.65rem;
+    padding: 0.2rem 0.7rem;
     border-radius: 999px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     text-decoration: none !important;
 }
 
 a[href*="/categories/travel"] {
     background: #d1fae5 !important;
     color: #065f46 !important;
-    padding: 0.18rem 0.65rem;
+    padding: 0.2rem 0.7rem;
     border-radius: 999px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     text-decoration: none !important;
 }
 
 [data-scheme="dark"] a[href*="/categories/tech"] {
-    background: #1e3a5f !important;
+    background: rgba(37,99,235,0.2) !important;
     color: #93c5fd !important;
 }
 
 [data-scheme="dark"] a[href*="/categories/travel"] {
-    background: #064e3b !important;
+    background: rgba(5,150,105,0.2) !important;
     color: #6ee7b7 !important;
 }
 
 /* ─────────────────────────────────────────
    ARTICLE READING EXPERIENCE
 ───────────────────────────────────────── */
+.article-content {
+    font-size: 1.05rem;
+}
+
+.article-content p,
+.article-content li {
+    line-height: 1.9;
+}
+
+.article-content h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.65rem;
+    letter-spacing: -0.02em;
+    margin-top: 2.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--card-separator-color);
+}
+
+.article-content h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+    margin-top: 2rem;
+}
+
 .article-content a {
-    transition: color 0.2s ease;
+    color: #2563eb;
     text-decoration: underline;
     text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.article-content a:hover {
+    color: #1d4ed8;
+    text-decoration-thickness: 2px;
 }
 
 .article-content img {
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
     max-width: 100%;
+    margin: 0.5rem 0;
 }
 
 .article-content figcaption {
@@ -172,20 +286,83 @@ a[href*="/categories/travel"] {
     color: var(--card-text-color-secondary);
     font-style: italic;
     margin-top: 0.5rem;
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .article-content blockquote {
-    border-left: 4px solid #3b82f6;
-    background: var(--card-background);
-    border-radius: 0 8px 8px 0;
-    padding: 0.8rem 1.2rem;
-    margin: 1.5rem 0;
+    border-left: 4px solid #2563eb;
+    background: linear-gradient(90deg, rgba(37,99,235,0.05), transparent);
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.4rem;
+    margin: 1.8rem 0;
     font-style: italic;
+    color: var(--card-text-color-secondary);
+}
+
+[data-scheme="dark"] .article-content blockquote {
+    background: linear-gradient(90deg, rgba(96,165,250,0.1), transparent);
 }
 
 .article-content pre {
-    border-radius: 10px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+}
+
+.article-content code {
+    font-size: 0.88em;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    background: rgba(37,99,235,0.08);
+    color: #2563eb;
+}
+
+.article-content pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+/* ─────────────────────────────────────────
+   SIDEBAR POLISH
+───────────────────────────────────────── */
+.site-name {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+}
+
+.site-description {
+    font-family: "Inter", sans-serif !important;
+    font-size: 1.3rem !important;
+}
+
+.sidebar header .site-avatar .site-logo {
+    box-shadow: 0 0 0 3px #2563eb, 0 4px 16px rgba(37,99,235,0.2) !important;
+}
+
+/* ─────────────────────────────────────────
+   MENU LINK HOVER
+───────────────────────────────────────── */
+.menu-item a:hover,
+.menu-item.current a {
+    color: #2563eb !important;
+}
+
+/* ─────────────────────────────────────────
+   TAGS — PILL STYLE
+───────────────────────────────────────── */
+.article-tags a {
+    border-radius: 999px !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    padding: 0.25rem 0.75rem !important;
+    transition: all 0.2s ease;
+}
+
+.article-tags a:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+    transform: translateY(-1px);
 }
 
 /* ─────────────────────────────────────────
@@ -196,10 +373,16 @@ a[href*="/categories/travel"] {
     align-items: center;
     gap: 1.8rem;
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: var(--card-background);
-    border-radius: 16px;
-    border: 1px solid var(--card-separator-color);
+    padding: 1.8rem;
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(59,130,246,0.15);
+    box-shadow: 0 4px 20px rgba(37,99,235,0.08);
+}
+
+[data-scheme="dark"] .about-profile {
+    background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(5,150,105,0.06) 100%);
+    border-color: rgba(96,165,250,0.2);
 }
 
 @media (max-width: 600px) {
@@ -214,29 +397,54 @@ a[href*="/categories/travel"] {
     height: 110px !important;
     border-radius: 50% !important;
     object-fit: cover;
-    border: 3px solid #3b82f6;
+    border: 3px solid #fff !important;
+    box-shadow: 0 0 0 3px #2563eb, 0 8px 24px rgba(37,99,235,0.2) !important;
     flex-shrink: 0;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
 .about-name {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0 0 0.3rem 0;
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin: 0 0 0.35rem 0;
     color: var(--card-text-color-main);
+    letter-spacing: -0.02em;
 }
 
 .about-role {
     font-size: 0.88rem;
     color: var(--card-text-color-secondary);
     margin: 0 0 0.3rem 0;
+    line-height: 1.6;
 }
 
 .about-location {
-    font-size: 0.85rem;
+    font-size: 0.83rem;
     color: var(--card-text-color-secondary);
     margin: 0;
-    opacity: 0.75;
+    opacity: 0.7;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER POLISH
+───────────────────────────────────────── */
+.site-footer {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* ─────────────────────────────────────────
+   PAGINATION
+───────────────────────────────────────── */
+.pagination .page-link {
+    border-radius: 8px !important;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    background: #2563eb !important;
+    color: #fff !important;
 }
 
 /* ─────────────────────────────────────────
@@ -251,4 +459,11 @@ a[href*="/categories/travel"] {
         align-items: center;
         justify-content: center;
     }
+}
+
+/* ─────────────────────────────────────────
+   SMOOTH SCROLL
+───────────────────────────────────────── */
+html {
+    scroll-behavior: smooth;
 }
