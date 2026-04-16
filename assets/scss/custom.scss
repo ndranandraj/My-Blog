@@ -1,28 +1,254 @@
 /* ==========================================
-   CLEAN & SIMPLE THEME — Anand's Blog
+   ANAND'S BLOG — Custom Styles
    ========================================== */
 
-/* Just clean up the default Stack theme slightly */
+/* ── Base variables ── */
 :root {
     --card-border-radius: 14px;
     --article-line-height: 1.85;
 }
 
-/* Smooth transitions on cards */
-.article-list article {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ─────────────────────────────────────────
+   HERO SECTION (Homepage)
+───────────────────────────────────────── */
+.home-hero {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 16px;
+    border: 1px solid var(--card-separator-color);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
 
-    &:hover {
-        transform: translateY(-3px);
+.home-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+@media (max-width: 600px) {
+    .home-hero-inner {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
-/* Clean link hover */
-.article-content a {
-    transition: color 0.2s ease;
+.home-hero-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3b82f6;
+    flex-shrink: 0;
 }
 
-/* Rounded images */
+.home-hero-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    color: var(--card-text-color-main);
+    line-height: 1.2;
+}
+
+.home-hero-tagline {
+    font-size: 0.95rem;
+    color: var(--card-text-color-secondary);
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+    max-width: 480px;
+}
+
+.home-hero-links {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .home-hero-links {
+        justify-content: center;
+    }
+}
+
+.home-hero-links a {
+    display: inline-block;
+    padding: 0.4rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.home-hero-links a:first-child {
+    background: #3b82f6;
+    color: #fff !important;
+}
+
+.home-hero-links a:first-child:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.home-hero-links a:last-child {
+    background: transparent;
+    color: #3b82f6 !important;
+    border: 1.5px solid #3b82f6;
+}
+
+.home-hero-links a:last-child:hover {
+    background: #3b82f6;
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────
+   ARTICLE CARDS
+───────────────────────────────────────── */
+.article-list article {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.article-list article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* ─────────────────────────────────────────
+   CATEGORY COLOUR TAGS
+───────────────────────────────────────── */
+a[href*="/categories/tech"] {
+    background: #dbeafe !important;
+    color: #1d4ed8 !important;
+    padding: 0.18rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none !important;
+}
+
+a[href*="/categories/travel"] {
+    background: #d1fae5 !important;
+    color: #065f46 !important;
+    padding: 0.18rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none !important;
+}
+
+[data-scheme="dark"] a[href*="/categories/tech"] {
+    background: #1e3a5f !important;
+    color: #93c5fd !important;
+}
+
+[data-scheme="dark"] a[href*="/categories/travel"] {
+    background: #064e3b !important;
+    color: #6ee7b7 !important;
+}
+
+/* ─────────────────────────────────────────
+   ARTICLE READING EXPERIENCE
+───────────────────────────────────────── */
+.article-content a {
+    transition: color 0.2s ease;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .article-content img {
     border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    max-width: 100%;
+}
+
+.article-content figcaption {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--card-text-color-secondary);
+    font-style: italic;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.article-content blockquote {
+    border-left: 4px solid #3b82f6;
+    background: var(--card-background);
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1.2rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+}
+
+.article-content pre {
+    border-radius: 10px;
+}
+
+/* ─────────────────────────────────────────
+   ABOUT PAGE PROFILE SECTION
+───────────────────────────────────────── */
+.about-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border-radius: 16px;
+    border: 1px solid var(--card-separator-color);
+}
+
+@media (max-width: 600px) {
+    .about-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.about-avatar {
+    width: 110px !important;
+    height: 110px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    border: 3px solid #3b82f6;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.about-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem 0;
+    color: var(--card-text-color-main);
+}
+
+.about-role {
+    font-size: 0.88rem;
+    color: var(--card-text-color-secondary);
+    margin: 0 0 0.3rem 0;
+}
+
+.about-location {
+    font-size: 0.85rem;
+    color: var(--card-text-color-secondary);
+    margin: 0;
+    opacity: 0.75;
+}
+
+/* ─────────────────────────────────────────
+   MOBILE — LARGER TAP TARGETS FOR SOCIAL ICONS
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+    .social-menu a,
+    .menu-social a {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

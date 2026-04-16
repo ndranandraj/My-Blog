@@ -2,7 +2,14 @@
 title: "About"
 ---
 
-![Anand](Anand_enhanced.jpg)
+<div class="about-profile">
+  <img src="Anand_enhanced.jpg" alt="Anand" class="about-avatar" />
+  <div class="about-intro">
+    <h2 class="about-name">Anand Raj</h2>
+    <p class="about-role">🖥️ Mainframe Engineer &nbsp;·&nbsp; 📷 Wildlife Photographer &nbsp;·&nbsp; ⚽ Man United Loyalist</p>
+    <p class="about-location">📍 Orange County, California</p>
+  </div>
+</div>
 
 Hey, I'm Anand.
 

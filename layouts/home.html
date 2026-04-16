@@ -1,13 +1,21 @@
 {{ define "main" }}
     {{- $paginator := partial "helper/paginator.html" . -}}
 
-    <!-- Header Banner Image -->
-    <div class="home-header" style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden;">
-        <img
-            src="{{ .Site.BaseURL }}images/header-banner.jpg"
-            alt="Anand's Blog"
-            style="width: 100%; height: 250px; object-fit: cover; display: block; border-radius: 12px;"
-        />
+    <!-- Hero Section -->
+    <div class="home-hero">
+        <div class="home-hero-inner">
+            <img class="home-hero-avatar"
+                 src="{{ .Site.BaseURL }}images/Anand_enhanced.jpg"
+                 alt="Anand" />
+            <div class="home-hero-text">
+                <h1 class="home-hero-name">Hi, I'm Anand 👋</h1>
+                <p class="home-hero-tagline">Mainframe engineer by day. Photographer, football fan, and occasional builder of things by night. This is where I write about all of it.</p>
+                <div class="home-hero-links">
+                    <a href="/page/about/">About Me</a>
+                    <a href="/posts/">All Posts</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <section class="article-list">
