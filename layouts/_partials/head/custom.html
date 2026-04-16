@@ -7,11 +7,9 @@
 <style>
   #reading-progress {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    top: 0; left: 0;
+    width: 0%; height: 3px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
     z-index: 9999;
     transition: width 0.1s linear;
     border-radius: 0 2px 2px 0;
@@ -30,3 +28,56 @@
     });
   });
 </script>
+
+<!-- JSON-LD Structured Data — helps Google show rich results -->
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ (or .Description .Summary) | plainify | jsonify }},
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "url": "{{ .Permalink }}",
+  "author": {
+    "@type": "Person",
+    "name": "Anand Raj",
+    "url": "{{ .Site.BaseURL }}page/about/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Anand Raj",
+    "url": "{{ .Site.BaseURL }}"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+  {{- with .Params.image -}}
+  ,"image": {
+    "@type": "ImageObject",
+    "url": "{{ absURL . }}"
+  }
+  {{- end -}}
+}
+</script>
+{{ end }}
+
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Anand Raj",
+  "url": "{{ .Site.BaseURL }}",
+  "sameAs": [
+    "https://www.linkedin.com/in/anandraj-r-78b86198",
+    "https://www.instagram.com/ndranandraj",
+    "https://www.goodreads.com/user/show/16492967-anandraj-r"
+  ],
+  "jobTitle": "Mainframe Engineer",
+  "description": "Personal blog by Anand — tech, photography, football and random thoughts."
+}
+</script>
+{{ end }}

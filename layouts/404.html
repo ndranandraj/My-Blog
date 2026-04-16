@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div style="
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+">
+    <div style="font-size: 7rem; line-height: 1; margin-bottom: 1rem;">🏜️</div>
+    <h1 style="
+        font-family: 'Inter', sans-serif;
+        font-size: 3.2rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin: 0 0 1rem 0;
+        color: var(--card-text-color-main);
+    ">Lost in the desert?</h1>
+    <p style="
+        font-size: 1.7rem;
+        color: var(--card-text-color-secondary);
+        max-width: 420px;
+        line-height: 1.7;
+        margin: 0 0 2.5rem 0;
+    ">This page doesn't exist — unlike the Kelso Sand Dunes, which very much do. Let's get you back on track.</p>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <a href="/" style="
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            background: #2563eb;
+            color: #fff;
+            border-radius: 999px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+        ">🏠 Go Home</a>
+        <a href="/posts/" style="
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            background: transparent;
+            color: #2563eb;
+            border: 1.5px solid #2563eb;
+            border-radius: 999px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+        ">📖 Read the Blog</a>
+    </div>
+</div>
+{{ end }}

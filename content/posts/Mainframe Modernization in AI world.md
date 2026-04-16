@@ -1,11 +1,13 @@
 ---
-title: "Mainframe Modernization in the AI World"
+title: "Mainframe Modernization in the AI World — Why the Walls Haven't Changed"
 date: 2026-03-28
+lastmod: 2026-03-28
 draft: false
 tags: ["mainframe", "AI", "modernization", "COBOL", "tech", "enterprise"]
 categories: ["Tech"]
-description: "Everyone thinks AI will finally kill the mainframe. After nearly two decades working on legacy migrations, here's why I think the walls haven't changed — only the tool hitting them."
+description: "Everyone thinks AI will finally kill the mainframe. After nearly two decades of legacy migrations, here's why I think the walls haven't changed — only the tool hitting them."
 keywords: ["mainframe modernization", "COBOL AI", "legacy system migration", "mainframe to cloud", "COBOL modernization"]
+image: "/images/mainframe-cover.jpg"
 cover:
     image: "/images/mainframe-cover.jpg"
     alt: "Mainframe Modernization in the AI World"

@@ -1,10 +1,12 @@
 ---
-title: "A Day Trip to the Mojave"
+title: "Mojave Desert Day Trip from Orange County: Mitchell Caverns, Hole-in-the-Wall & Kelso Sand Dunes"
 date: 2026-04-08
-description: "A spring day trip from Orange County to the Mojave Desert, exploring Mitchell Caverns, Hole-in-the-Wall, and the Kelso Sand Dunes."
-tags: ["travel", "mojave", "desert", "california", "day trip", "hiking"]
+lastmod: 2026-04-08
+description: "A complete day trip guide from Orange County to Mojave National Preserve — Mitchell Caverns guided tour, Hole-in-the-Wall visitor center, and the massive Kelso Sand Dunes."
+tags: ["travel", "mojave", "desert", "california", "day trip", "hiking", "orange county"]
 categories: ["Travel"]
-keywords: ["Mojave Desert day trip", "Mitchell Caverns tour", "Kelso Sand Dunes hike", "Mojave National Preserve", "California desert trip"]
+keywords: ["Mojave Desert day trip", "Mitchell Caverns tour booking", "Kelso Sand Dunes hike", "Mojave National Preserve guide", "Orange County day trip desert", "California desert road trip"]
+image: "/images/mojave-sign.jpg"
 cover:
     image: "/images/mojave-sign.jpg"
     alt: "Mojave National Preserve"

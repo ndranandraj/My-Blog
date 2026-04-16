@@ -10,6 +10,17 @@ canonifyURLs = true
   changefreq = "weekly"
   priority = 0.5
 
+[related]
+  includeNewer = true
+  threshold = 50
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 80
+  [[related.indices]]
+    name = "categories"
+    weight = 60
+
 [params]
   mainSections = ["posts"]
   description = "Personal blog by Anand — tech, photography, football and random thoughts."
@@ -47,6 +58,10 @@ canonifyURLs = true
 
 [services.googleAnalytics]
   ID = "G-WG6FZGEPT7"
+
+[params.opengraph.twitter]
+  site = "ndranandraj"
+  card = "summary_large_image"
 
 [menu]
   [[menu.main]]

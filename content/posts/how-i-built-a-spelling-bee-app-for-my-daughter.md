@@ -1,11 +1,13 @@
 ---
 title: "How I Built a Spelling Bee App for My Daughter (and Why This Win Feels a Little Bit Mine Too)"
 date: 2026-04-06
+lastmod: 2026-04-06
 draft: false
 tags: ["AI", "Claude", "web development", "PWA", "parenting", "side project", "JavaScript"]
 categories: ["Tech"]
-description: "I'm a Mainframe developer who had never touched web apps. Then my daughter needed to practice for her school Spelling Bee. So I built her one — with Claude as my AI pair programmer."
-keywords: ["spelling bee app", "Claude AI", "AI pair programming", "progressive web app", "side project", "COBOL developer web development"]
+description: "I'm a Mainframe/COBOL developer who had never built a web app. Then my daughter needed to practice for her school Spelling Bee — so I built one with Claude as my AI pair programmer."
+keywords: ["spelling bee app", "Claude AI", "AI pair programming", "progressive web app", "COBOL developer builds web app", "side project parenting"]
+image: "/images/spelling-bee-daughter.jpg"
 cover:
     image: "/images/spelling-bee-daughter.jpg"
     alt: "Champion with the Spell Bee Practice App"
