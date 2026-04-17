@@ -1,10 +1,12 @@
 baseURL = "https://ndranandraj.com/"
 languageCode = "en-us"
 title = "Anand's Blog"
-theme = "stack"
-paginate = 5
+theme = "PaperMod"
 enableRobotsTXT = true
 canonifyURLs = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 [sitemap]
   changefreq = "weekly"
@@ -22,96 +24,91 @@ canonifyURLs = true
     weight = 60
 
 [params]
+  env = "production"
+  author = "Anand Raj"
+  description = "Personal blog by Anand — tech, travel, photography, and random thoughts."
+  DateFormat = "January 2, 2006"
+  defaultTheme = "auto"
   mainSections = ["posts"]
-  description = "Personal blog by Anand — tech, photography, football and random thoughts."
-  favicon = "images/Anand_enhanced.jpg"
 
-  [params.colorScheme]
-    toggle = true
-    default = "light"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  ShowRelatedContent = true
+  UseHugoToc = true
+  disableScrollToTop = false
+  ShowToc = true
+  TocOpen = false
 
-  [params.dateFormat]
-    published = "January 2, 2006"
-    lastUpdated = "January 2, 2006"
+  [params.assets]
+    favicon = "/images/Anand_enhanced.jpg"
+    favicon16x16 = "/images/Anand_enhanced.jpg"
+    favicon32x32 = "/images/Anand_enhanced.jpg"
+    apple_touch_icon = "/images/Anand_enhanced.jpg"
 
-  [params.author]
-    name = "Anand"
-    bio = "Tech, photography, football and random thoughts."
+  [params.label]
+    text = "Anand's Blog"
 
-  [params.sidebar]
-    emoji = "📝"
-    subtitle = "Tech, photography, football and random thoughts."
-    avatar = "img/Anand_enhanced.jpg"
-
-  [params.footer]
-    since = 2026
-
-  [params.article]
-    math = false
-    readingTime = true
-
-  [params.article.share]
+  [params.profileMode]
     enabled = true
+    title = "Hi, I'm Anand"
+    subtitle = "Mainframe engineer by day. Photographer, football fan, and occasional builder of random things. I write about tech, travel, and everything in between."
+    imageUrl = "/images/Anand_enhanced.jpg"
+    imageTitle = "Anand"
+    imageWidth = 160
+    imageHeight = 160
+    [[params.profileMode.buttons]]
+      name = "Read the Blog"
+      url = "/posts/"
+    [[params.profileMode.buttons]]
+      name = "About Me"
+      url = "/page/about/"
 
-  [params.comments]
-    enabled = false
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/anandraj-r-78b86198"
+  [[params.socialIcons]]
+    name = "instagram"
+    url = "https://www.instagram.com/ndranandraj"
+  [[params.socialIcons]]
+    name = "goodreads"
+    url = "https://www.goodreads.com/user/show/16492967-anandraj-r"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  [params.cover]
+    linkFullImages = true
+    responsiveImages = true
 
 [services.googleAnalytics]
   ID = "G-WG6FZGEPT7"
 
-[params.opengraph.twitter]
-  site = "ndranandraj"
-  card = "summary_large_image"
-
 [menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-    [menu.main.params]
-      icon = "home"
-
   [[menu.main]]
     name = "Blog"
     url = "/posts/"
-    weight = 2
-    [menu.main.params]
-      icon = "archives"
-
+    weight = 1
   [[menu.main]]
-    name = "About Me"
+    name = "About"
     url = "/page/about/"
-    weight = 3
-    [menu.main.params]
-      icon = "user"
-
+    weight = 2
   [[menu.main]]
-    name = "Links"
-    url = "/tags/"
+    name = "Archive"
+    url = "/archives/"
+    weight = 3
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
     weight = 4
-    [menu.main.params]
-      icon = "link"
-
-[[menu.social]]
-  identifier = "linkedin"
-  name = "LinkedIn"
-  url = "https://www.linkedin.com/in/anandraj-r-78b86198"
-  [menu.social.params]
-    icon = "brand-linkedin"
-
-[[menu.social]]
-  identifier = "instagram"
-  name = "Instagram"
-  url = "https://www.instagram.com/ndranandraj"
-  [menu.social.params]
-    icon = "brand-instagram"
-
-[[menu.social]]
-  identifier = "goodreads"
-  name = "Goodreads"
-  url = "https://www.goodreads.com/user/show/16492967-anandraj-r"
-  [menu.social.params]
-    icon = "brand-goodreads"
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 5
 
 [pagination]
-  pagerSize = 5
+  pagerSize = 10

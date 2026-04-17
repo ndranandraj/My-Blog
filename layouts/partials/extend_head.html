@@ -1,7 +1,7 @@
-<!-- Google Fonts: Inter (UI) + Merriweather (reading) -->
+<!-- Google Fonts: Inter for UI -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Reading progress bar -->
 <style>
@@ -11,25 +11,24 @@
     width: 0%; height: 3px;
     background: linear-gradient(90deg, #2563eb, #06b6d4);
     z-index: 9999;
-    transition: width 0.1s linear;
-    border-radius: 0 2px 2px 0;
+    transition: width 0.08s linear;
   }
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const bar = document.createElement('div');
+    var bar = document.createElement('div');
     bar.id = 'reading-progress';
     document.body.prepend(bar);
     window.addEventListener('scroll', function () {
-      const doc = document.documentElement;
-      const scrolled = doc.scrollTop || document.body.scrollTop;
-      const total = doc.scrollHeight - doc.clientHeight;
+      var doc = document.documentElement;
+      var scrolled = doc.scrollTop || document.body.scrollTop;
+      var total = doc.scrollHeight - doc.clientHeight;
       bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
     });
   });
 </script>
 
-<!-- JSON-LD Structured Data — helps Google show rich results -->
+<!-- JSON-LD Structured Data -->
 {{ if .IsPage }}
 <script type="application/ld+json">
 {
@@ -60,6 +59,14 @@
     "url": "{{ absURL . }}"
   }
   {{- end -}}
+  {{- with .Params.cover.image -}}
+  {{- if not $.Params.image -}}
+  ,"image": {
+    "@type": "ImageObject",
+    "url": "{{ absURL . }}"
+  }
+  {{- end -}}
+  {{- end -}}
 }
 </script>
 {{ end }}
@@ -77,7 +84,7 @@
     "https://www.goodreads.com/user/show/16492967-anandraj-r"
   ],
   "jobTitle": "Mainframe Engineer",
-  "description": "Personal blog by Anand — tech, photography, football and random thoughts."
+  "description": "Personal blog by Anand — tech, travel, photography, and random thoughts."
 }
 </script>
 {{ end }}

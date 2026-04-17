@@ -1,0 +1,243 @@
+/* ==========================================
+   ANAND'S BLOG — PaperMod Custom Styles
+   ========================================== */
+
+/* ── Typography ── */
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── Profile Mode (Homepage) ── */
+.profile .profile_inner h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 2.2rem;
+}
+
+.profile .profile_inner span {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 540px;
+    display: block;
+    margin: 0 auto;
+}
+
+.profile .profile_inner img {
+    border: 4px solid var(--primary);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+}
+
+.profile .profile_inner img:hover {
+    transform: scale(1.05);
+}
+
+/* Profile buttons */
+.buttons .button {
+    border-radius: 999px !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.buttons .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Social icons on profile */
+.social-icons a {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* ── Post Cards (List pages) ── */
+.post-entry {
+    border-radius: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.post-entry:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.post-entry .entry-cover img {
+    transition: transform 0.4s ease;
+}
+
+.post-entry:hover .entry-cover img {
+    transform: scale(1.03);
+}
+
+.entry-header h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+/* ── Article Content ── */
+.post-content {
+    font-size: 1.12rem;
+    line-height: 1.85;
+}
+
+.post-content h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.65rem;
+    letter-spacing: -0.02em;
+    margin-top: 2.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.post-content h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin-top: 2rem;
+}
+
+.post-content a {
+    color: var(--primary);
+    text-underline-offset: 3px;
+}
+
+.post-content img {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.post-content figcaption {
+    text-align: center;
+    font-size: 0.85rem;
+    font-style: italic;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+}
+
+.post-content blockquote {
+    border-left: 4px solid var(--primary);
+    background: rgba(0,0,0,0.03);
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.4rem;
+    font-style: italic;
+}
+
+.dark .post-content blockquote {
+    background: rgba(255,255,255,0.04);
+}
+
+.post-content pre {
+    border-radius: 10px;
+}
+
+.post-content code:not(pre code) {
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ── Category & Tag Pills ── */
+.post-tags a,
+.terms-tags a {
+    border-radius: 999px !important;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.post-tags a:hover,
+.terms-tags a:hover {
+    transform: translateY(-1px);
+}
+
+/* ── Share Buttons ── */
+.share-buttons {
+    margin-top: 2rem;
+}
+
+.share-buttons a {
+    transition: transform 0.2s ease !important;
+}
+
+.share-buttons a:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* ── Breadcrumbs ── */
+.breadcrumbs {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* ── Table of Contents ── */
+.toc {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+/* ── About page profile card ── */
+.about-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--code-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+    .about-profile { flex-direction: column; text-align: center; }
+}
+
+.about-avatar {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    flex-shrink: 0;
+}
+
+.about-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 0.3rem 0;
+    letter-spacing: -0.02em;
+}
+
+.about-role {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin: 0 0 0.3rem 0;
+    line-height: 1.6;
+}
+
+.about-location {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin: 0;
+}
+
+/* ── Smooth transitions ── */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ── Print friendly ── */
+@media print {
+    .share-buttons, .toc, .breadcrumbs, #reading-progress, .post-nav-links {
+        display: none !important;
+    }
+}
