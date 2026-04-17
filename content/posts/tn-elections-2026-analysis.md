@@ -8,6 +8,12 @@ categories: ["Data"]
 readingTime: true
 showToc: true
 TocOpen: false
+image: "/images/tn-election-cover.jpg"
+cover:
+  image: "/images/tn-election-cover.jpg"
+  alt: "Tamil Nadu Election Analysis — 3 Crore Votes That Elected Nobody"
+  caption: "Data analysis of Tamil Nadu's 2011, 2016 & 2021 assembly elections"
+  relative: false
 ---
 
 In 2021, a Tamil Nadu party put up a candidate in every single one of the 234 assembly seats. Chennai South, Coimbatore North, Madurai East, all 234. When the votes were counted, **30.4 lakh people** had voted for them. More than INC. More than PMK. More than BJP.

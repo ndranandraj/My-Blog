@@ -6,6 +6,7 @@
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── Profile Mode (Homepage) ── */
@@ -57,17 +58,21 @@ body {
     transform: translateY(-3px);
 }
 
-/* ── Post Cards (List pages) ── */
+/* ── Post Cards (List pages) — Clear Separation ── */
 .post-entry {
-    border-radius: 14px;
+    border-radius: 16px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     border: 1px solid var(--border);
     overflow: hidden;
+    margin-bottom: 1.8rem;
+    background: var(--entry);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .post-entry:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+    border-color: var(--primary);
 }
 
 .post-entry .entry-cover img {
@@ -78,44 +83,91 @@ body {
     transform: scale(1.03);
 }
 
+/* Better spacing inside post cards */
+.post-entry .entry-header {
+    padding-top: 0.25rem;
+}
+
 .entry-header h2 {
     font-family: "Inter", sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.3;
+    line-height: 1.35;
+    font-size: 1.35rem;
 }
 
-/* ── Article Content ── */
+.entry-content {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--secondary);
+    -webkit-line-clamp: 3;
+}
+
+.entry-footer {
+    font-size: 0.8rem;
+    opacity: 0.65;
+    padding-top: 0.3rem;
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+}
+
+/* ── Article Content — Justified & Readable ── */
 .post-content {
-    font-size: 1.12rem;
-    line-height: 1.85;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--content);
+}
+
+.post-content p {
+    margin-bottom: 1.4rem;
 }
 
 .post-content h2 {
     font-family: "Inter", sans-serif;
     font-weight: 700;
-    font-size: 1.65rem;
+    font-size: 1.7rem;
     letter-spacing: -0.02em;
-    margin-top: 2.5rem;
-    padding-bottom: 0.4rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--border);
+    text-align: left;
 }
 
 .post-content h3 {
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 1.35rem;
-    margin-top: 2rem;
+    margin-top: 2.2rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
 }
 
 .post-content a {
     color: var(--primary);
     text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    transition: color 0.2s ease;
+}
+
+.post-content a:hover {
+    text-decoration-thickness: 2.5px;
 }
 
 .post-content img {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 1.5rem auto;
+    display: block;
 }
 
 .post-content figcaption {
@@ -130,8 +182,10 @@ body {
     border-left: 4px solid var(--primary);
     background: rgba(0,0,0,0.03);
     border-radius: 0 10px 10px 0;
-    padding: 1rem 1.4rem;
+    padding: 1.2rem 1.6rem;
     font-style: italic;
+    margin: 1.8rem 0;
+    text-align: left;
 }
 
 .dark .post-content blockquote {
@@ -140,11 +194,60 @@ body {
 
 .post-content pre {
     border-radius: 10px;
+    text-align: left;
 }
 
 .post-content code:not(pre code) {
     padding: 2px 6px;
     border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Bold text accent — subtle weight for emphasis */
+.post-content strong {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Horizontal rules as section dividers */
+.post-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem auto;
+    width: 60%;
+}
+
+/* Lists inside articles — left align, proper spacing */
+.post-content ul,
+.post-content ol {
+    text-align: left;
+    padding-left: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.4rem;
+}
+
+/* ── Post Header (Single Post) ── */
+.post-header h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+}
+
+.post-header .post-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.75;
+    margin-top: 0.5rem;
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    opacity: 0.6;
 }
 
 /* ── Category & Tag Pills ── */
@@ -153,6 +256,7 @@ body {
     border-radius: 999px !important;
     transition: all 0.2s ease;
     font-weight: 500;
+    font-size: 0.85rem;
 }
 
 .post-tags a:hover,
@@ -181,8 +285,17 @@ body {
 
 /* ── Table of Contents ── */
 .toc {
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid var(--border);
+    background: var(--code-bg);
+    padding: 0.25rem 0;
+    margin-bottom: 2rem;
+}
+
+.toc details summary {
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 /* ── About page profile card ── */
@@ -230,14 +343,62 @@ body {
     margin: 0;
 }
 
+/* ── Post Navigation Links ── */
+.paginav {
+    margin-top: 3rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+}
+
+.paginav a {
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.paginav a:hover {
+    background: var(--code-bg);
+}
+
+/* ── Related Posts Section ── */
+.related-content h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
 /* ── Smooth transitions ── */
 html {
     scroll-behavior: smooth;
+}
+
+/* ── Mobile responsiveness polish ── */
+@media (max-width: 768px) {
+    .post-content {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        hyphens: auto;
+    }
+
+    .post-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .entry-header h2 {
+        font-size: 1.15rem;
+    }
 }
 
 /* ── Print friendly ── */
 @media print {
     .share-buttons, .toc, .breadcrumbs, #reading-progress, .post-nav-links {
         display: none !important;
+    }
+    .post-content {
+        max-width: 100%;
     }
 }
