@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamil Nadu Elections — Data Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --c-bg:        #F7F8FC;
+  --c-surface:   #FFFFFF;
+  --c-border:    #E8ECF4;
+  --c-text:      #111827;
+  --c-text-2:    #4B5563;
+  --c-text-3:    #9CA3AF;
+  --c-hero:      #0B1120;
+  --c-accent:    #F59E0B;
+  --c-accent-2:  #3B82F6;
+
+  --dmk:   #DC2626; --admk:  #16A34A; --bjp:   #EA580C;
+  --inc:   #1D4ED8; --pmk:   #7C3AED; --vck:   #0891B2;
+  --dmdk:  #92400E; --oth:   #6B7280;
+
+  --india:  #DC2626; --aiadmk-c: #16A34A;
+  --nda:    #EA580C; --tvk:      #7C3AED;
+
+  --radius-sm: 8px;
+  --radius:    14px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow:    0 4px 16px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.06);
+  --trans:     all .25s cubic-bezier(.4,0,.2,1);
+}
+
+/* ═══════════════════════════════════════════
+   BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  margin: 0; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4 { font-weight: 700; line-height: 1.25; margin: 0; }
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero {
+  background: var(--c-hero);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(59,130,246,.15) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 20% 60%, rgba(245,158,11,.08) 0%, transparent 60%);
+  padding: 3.5rem 0 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;   /* fix: stop overlay blocking button clicks */
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(245,158,11,.15); color: var(--c-accent);
+  border: 1px solid rgba(245,158,11,.3);
+  padding: .3rem .8rem; border-radius: 20px;
+  font-size: .72rem; font-weight: 600; letter-spacing: .5px;
+  text-transform: uppercase; margin-bottom: 1rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #fff; margin-bottom: .6rem;
+  letter-spacing: -.5px;
+}
+.hero h1 span { color: var(--c-accent); }
+.hero p { color: #94A3B8; font-size: .9rem; max-width: 500px; margin-bottom: 1.5rem; }
+
+/* Year pills */
+.year-pills { display: flex; gap: .5rem; flex-wrap: wrap; position: relative; z-index: 10; }
+.ypill {
+  padding: .45rem 1.3rem; border-radius: 30px;
+  font-size: .82rem; font-weight: 700; cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.6);
+  background: rgba(255,255,255,.06);
+  transition: var(--trans);
+}
+.ypill:hover { border-color: rgba(255,255,255,.4); color: #fff; }
+.ypill.active {
+  background: var(--c-accent); border-color: var(--c-accent);
+  color: #111; box-shadow: 0 4px 14px rgba(245,158,11,.4);
+}
+
+/* Hero stats bar */
+.hero-stats {
+  display: flex; flex-wrap: wrap; gap: 1.5rem 3rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 1.5rem; margin-top: 1.5rem;
+}
+.hstat-v { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1; }
+.hstat-l { font-size: .7rem; color: #64748B; text-transform: uppercase; letter-spacing: .5px; margin-top: .2rem; }
+
+/* ═══════════════════════════════════════════
+   STICKY NAV
+═══════════════════════════════════════════ */
+.sticky-nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(11,17,32,.88);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding: .5rem 0;
+}
+.snav-link {
+  display: inline-block; padding: .4rem .9rem; border-radius: 8px;
+  font-size: .78rem; font-weight: 500; color: #94A3B8;
+  text-decoration: none; transition: var(--trans); cursor: pointer;
+}
+.snav-link:hover, .snav-link.active { background: rgba(245,158,11,.12); color: var(--c-accent); }
+.nav-section-label {
+  font-size: .62rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+  color: rgba(255,255,255,.25); padding: 0 .3rem; pointer-events: none;
+}
+
+/* Nav year pills */
+.nav-ypill {
+  padding: .3rem .85rem; border-radius: 20px;
+  font-size: .75rem; font-weight: 700; cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.55);
+  background: transparent;
+  transition: var(--trans);
+  position: relative; z-index: 10;
+}
+.nav-ypill:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+.nav-ypill.active {
+  background: var(--c-accent); border-color: var(--c-accent);
+  color: #111; box-shadow: 0 2px 8px rgba(245,158,11,.5);
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════ */
+.page { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
+.section { padding: 2.5rem 0 0; scroll-margin-top: 56px; }
+.section-header { margin-bottom: 1.25rem; }
+.section-eyebrow {
+  font-size: .68rem; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--c-accent);
+  margin-bottom: .3rem;
+}
+.section-title { font-size: 1.2rem; font-weight: 800; color: var(--c-text); }
+.section-sub { font-size: .82rem; color: var(--c-text-2); margin-top: .25rem; }
+
+/* ═══════════════════════════════════════════
+   CARDS
+═══════════════════════════════════════════ */
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.4rem;
+  transition: var(--trans);
+}
+.card:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.card-label {
+  font-size: .68rem; font-weight: 700; letter-spacing: .6px;
+  text-transform: uppercase; color: var(--c-text-3);
+  margin-bottom: .75rem; padding-bottom: .6rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.card-label span { color: var(--dmk); }
+
+/* ═══════════════════════════════════════════
+   KPI CARDS
+═══════════════════════════════════════════ */
+.kpi-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+  position: relative; overflow: hidden;
+  transition: var(--trans);
+}
+.kpi-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.kpi-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--kpi-color, var(--c-accent));
+}
+.kpi-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; margin-bottom: .8rem;
+  background: var(--kpi-bg, rgba(245,158,11,.1));
+}
+.kpi-val {
+  font-size: 2rem; font-weight: 900; line-height: 1;
+  letter-spacing: -1px; color: var(--c-text);
+}
+.kpi-lbl { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--c-text-3); margin-top: .3rem; }
+.kpi-sub { font-size: .78rem; color: var(--c-text-2); margin-top: .2rem; }
+
+/* ═══════════════════════════════════════════
+   PARTY BADGES
+═══════════════════════════════════════════ */
+.pb {
+  display: inline-flex; align-items: center;
+  padding: .2rem .55rem; border-radius: 6px;
+  font-size: .67rem; font-weight: 800;
+  letter-spacing: .3px; color: #fff;
+  text-transform: uppercase;
+}
+.pb-DMK   { background: var(--dmk); }
+.pb-ADMK, .pb-AIADMK { background: var(--admk); }
+.pb-BJP   { background: var(--bjp); }
+.pb-INC   { background: var(--inc); }
+.pb-PMK   { background: var(--pmk); }
+.pb-VCK   { background: var(--vck); }
+.pb-DMDK  { background: var(--dmdk); }
+.pb-NTK   { background: #D97706; }
+.pb-MNM   { background: #0F766E; }
+.pb-AMMK  { background: #7C3AED; }
+.pb-OTH   { background: var(--oth); }
+
+/* ═══════════════════════════════════════════
+   SEAT BAR
+═══════════════════════════════════════════ */
+.seat-bar-wrap {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+}
+.seat-bar {
+  display: flex; height: 48px; border-radius: 10px; overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+  margin-bottom: .75rem;
+}
+.seat-seg {
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.95); font-size: .7rem; font-weight: 800;
+  letter-spacing: .3px; cursor: pointer;
+  transition: filter .2s, flex .5s;
+  position: relative;
+}
+.seat-seg:hover { filter: brightness(1.12); }
+.seat-seg::after {
+  content: attr(data-tip);
+  position: absolute; bottom: calc(100% + 8px);
+  left: 50%; transform: translateX(-50%);
+  background: #111; color: #fff;
+  font-size: .7rem; padding: .3rem .6rem; border-radius: 6px;
+  white-space: nowrap; pointer-events: none;
+  opacity: 0; transition: opacity .15s;
+}
+.seat-seg:hover::after { opacity: 1; }
+.seat-legend { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; }
+.sleg-item { display: flex; align-items: center; gap: .4rem; font-size: .75rem; font-weight: 500; }
+.sleg-dot { width: 10px; height: 10px; border-radius: 3px; }
+
+/* ═══════════════════════════════════════════
+   CHARTS
+═══════════════════════════════════════════ */
+.ch { position: relative; }
+.ch-260 { height: 260px; }
+.ch-320 { height: 320px; }
+.ch-400 { height: 400px; }
+
+/* ═══════════════════════════════════════════
+   TABLES
+═══════════════════════════════════════════ */
+.styled-table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  font-size: .8rem;
+}
+.styled-table thead th {
+  background: #F8FAFC; border-bottom: 2px solid var(--c-border);
+  padding: .65rem .9rem; font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px; color: var(--c-text-3);
+  white-space: nowrap;
+}
+.styled-table tbody tr { transition: background .15s; }
+.styled-table tbody tr:hover td { background: #F0F7FF; }
+.styled-table tbody td {
+  padding: .6rem .9rem; border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+}
+.styled-table tbody tr:last-child td { border-bottom: none; }
+
+/* DataTables overrides */
+.dataTables_wrapper { font-size: .8rem; }
+.dataTables_wrapper .dataTables_filter input {
+  border: 1px solid var(--c-border); border-radius: 8px;
+  padding: .35rem .7rem; font-size: .8rem; outline: none;
+  transition: var(--trans);
+}
+.dataTables_wrapper .dataTables_filter input:focus { border-color: var(--c-accent-2); box-shadow: 0 0 0 3px rgba(59,130,246,.1); }
+table.dataTable tbody tr:hover { background: #F0F7FF !important; }
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--c-accent) !important; border-color: var(--c-accent) !important;
+  color: #111 !important; border-radius: 6px;
+}
+
+/* ═══════════════════════════════════════════
+   SWING
+═══════════════════════════════════════════ */
+.sw-pos { color: #16A34A; font-weight: 700; }
+.sw-neg { color: #DC2626; font-weight: 700; }
+.sw-bar {
+  display: inline-block; height: 6px; border-radius: 3px;
+  vertical-align: middle; margin-left: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   STRONGHOLD STREAK
+═══════════════════════════════════════════ */
+.streak { display: flex; gap: 3px; align-items: center; }
+.streak-pip {
+  width: 12px; height: 12px; border-radius: 3px;
+  transition: transform .2s;
+}
+.streak-pip:hover { transform: scale(1.3); }
+
+/* ═══════════════════════════════════════════
+   FLIP CARDS
+═══════════════════════════════════════════ */
+.flip-arrow {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .72rem; font-weight: 700;
+}
+.flip-type {
+  font-size: .63rem; padding: .15rem .45rem; border-radius: 4px;
+  font-weight: 800; letter-spacing: .3px;
+}
+.flip-type.alliance { background: #FEE2E2; color: #991B1B; }
+.flip-type.party    { background: #FEF3C7; color: #92400E; }
+
+/* ═══════════════════════════════════════════
+   WATCH LIST
+═══════════════════════════════════════════ */
+.watch-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem 1rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--wc-color, var(--c-border));
+  transition: var(--trans);
+}
+.watch-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.watch-card .const-name { font-size: .9rem; font-weight: 800; color: var(--c-text); }
+.watch-card .dist-name { font-size: .72rem; color: var(--c-text-3); margin-top: .1rem; }
+.watch-card .margin-num { font-size: 1.1rem; font-weight: 900; letter-spacing: -0.5px; }
+.watch-reason {
+  font-size: .72rem; color: var(--c-text-2);
+  background: var(--c-bg); border-radius: 6px;
+  padding: .4rem .6rem; margin-top: .6rem; line-height: 1.5;
+}
+.priority-chip {
+  font-size: .6rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .5px; padding: .15rem .45rem; border-radius: 20px;
+}
+.p1 .priority-chip { background: #FEE2E2; color: #991B1B; }
+.p2 .priority-chip { background: #FFEDD5; color: #9A3412; }
+.p3 .priority-chip { background: #FEF3C7; color: #92400E; }
+.p4 .priority-chip { background: #F0FDF4; color: #166534; }
+.p1 { --wc-color: #DC2626; }
+.p2 { --wc-color: #EA580C; }
+.p3 { --wc-color: #D97706; }
+.p4 { --wc-color: #16A34A; }
+
+/* Filter chips */
+.filter-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.25rem; }
+.fchip {
+  padding: .35rem .9rem; border-radius: 20px; font-size: .75rem;
+  font-weight: 600; cursor: pointer; transition: var(--trans);
+  border: 1.5px solid var(--c-border); color: var(--c-text-2);
+  background: var(--c-surface);
+}
+.fchip:hover { border-color: var(--c-accent-2); color: var(--c-accent-2); }
+.fchip.active { background: var(--c-accent-2); border-color: var(--c-accent-2); color: #fff; }
+
+/* ═══════════════════════════════════════════
+   MAP
+═══════════════════════════════════════════ */
+#tnMap {
+  height: 540px; border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--shadow-sm);
+}
+.map-panel {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1rem; box-shadow: var(--shadow-sm);
+  font-size: .8rem; height: 100%;
+}
+.map-panel h6 { font-size: .78rem; font-weight: 800; color: var(--c-text-3); text-transform: uppercase; letter-spacing: .4px; margin-bottom: .75rem; }
+.map-legend-item { display: flex; align-items: center; gap: .5rem; margin-bottom: .35rem; font-size: .75rem; }
+.map-legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.info-box { background: var(--c-bg); border-radius: 8px; padding: .75rem; margin-top: .75rem; }
+.info-box .const-h { font-size: .92rem; font-weight: 800; }
+.info-box .info-row { display: flex; justify-content: space-between; font-size: .75rem; padding: .2rem 0; border-bottom: 1px solid var(--c-border); }
+.info-box .info-row:last-child { border-bottom: none; }
+
+/* ═══════════════════════════════════════════
+   INCUMBENT STAT CARDS
+═══════════════════════════════════════════ */
+.inc-card {
+  background: linear-gradient(135deg, var(--c-surface) 0%, #F8FAFF 100%);
+  border: 1px solid var(--c-border); border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+}
+.inc-pct { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; }
+.inc-bar-bg { background: #F1F5F9; border-radius: 4px; height: 6px; margin: .4rem 0; overflow: hidden; }
+.inc-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--c-accent-2), var(--c-accent)); }
+
+/* ═══════════════════════════════════════════
+   EXPLORER TABS
+═══════════════════════════════════════════ */
+.exp-tabs { display: flex; background: var(--c-bg); border-radius: 10px; padding: 3px; margin-bottom: 1rem; }
+.exp-tab {
+  flex: 1; text-align: center; padding: .45rem; border-radius: 8px;
+  font-size: .75rem; font-weight: 600; cursor: pointer;
+  color: var(--c-text-3); transition: var(--trans);
+}
+.exp-tab.active { background: var(--c-surface); color: var(--c-text); box-shadow: var(--shadow-sm); }
+
+/* ═══════════════════════════════════════════
+   DIVIDER
+═══════════════════════════════════════════ */
+.section-divider { height: 1px; background: var(--c-border); margin: 2.5rem 0 0; opacity: .6; }
+
+/* ═══════════════════════════════════════════
+   2026 OUTLOOK DIVIDER
+═══════════════════════════════════════════ */
+.outlook-divider {
+  background: linear-gradient(135deg, #0B1120 0%, #0F2744 60%, #1A1440 100%);
+  padding: 1.5rem 0;
+  margin: 3rem 0 0;
+}
+.outlook-badge {
+  background: var(--c-accent);
+  color: #111;
+  font-size: .68rem; font-weight: 900; letter-spacing: 1.5px;
+  padding: .35rem 1rem; border-radius: 20px; text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* District highlights */
+.dist-highlight {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+}
+.dist-highlight .dh-label {
+  font-size: .65rem; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--c-text-3); margin-bottom: .4rem;
+}
+.dist-highlight .dh-val {
+  font-size: 1.1rem; font-weight: 800; color: var(--c-text);
+}
+.dist-highlight .dh-sub {
+  font-size: .74rem; color: var(--c-text-2); margin-top: .15rem;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background: var(--c-hero); color: #475569;
+  font-size: .75rem; padding: 2rem 0; margin-top: 4rem;
+  text-align: center; border-top: 1px solid rgba(255,255,255,.06);
+}
+footer a { color: #64748B; text-decoration: none; }
+footer a:hover { color: var(--c-accent); }
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp .4s ease both; }
+.fade-up:nth-child(1) { animation-delay: .05s; }
+.fade-up:nth-child(2) { animation-delay: .10s; }
+.fade-up:nth-child(3) { animation-delay: .15s; }
+.fade-up:nth-child(4) { animation-delay: .20s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { padding: 2rem 0 1.5rem; }
+  .hero h1 { font-size: 1.6rem; }
+  .kpi-val { font-size: 1.6rem; }
+  #tnMap { height: 360px; }
+}
+
+/* Leaflet custom tooltip */
+.leaflet-tooltip-custom {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12) !important;
+  padding: 8px 10px !important;
+}
+.leaflet-tooltip-custom::before { display: none !important; }
+
+/* Leaflet popup */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-lg) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+.leaflet-popup-content { font-size: .78rem !important; margin: 8px 12px !important; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="page">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-tag">🗳️ Election Intelligence</div>
+        <h1>Tamil Nadu<br><span>Assembly Elections</span></h1>
+        <p>A data-driven analysis of 234 constituencies across 3 elections. Explore party dominance, seat flips, swing patterns, and 2026 battlegrounds.</p>
+        <div class="year-pills" id="yearPills">
+          <button class="ypill" onclick="setYear(2011)">2011</button>
+          <button class="ypill" onclick="setYear(2016)">2016</button>
+          <button class="ypill active" onclick="setYear(2021)">2021</button>
+        </div>
+      </div>
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <div class="hero-stats fade-up" id="heroStats">
+          <div><div class="hstat-v" id="hAlliance">—</div><div class="hstat-l">Winning Alliance</div></div>
+          <div><div class="hstat-v" id="hSeats">—</div><div class="hstat-l">Seats Won</div></div>
+          <div><div class="hstat-v" id="hCands">—</div><div class="hstat-l">Candidates</div></div>
+          <div><div class="hstat-v" id="hWomen">—</div><div class="hstat-l">Women Winners</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     STICKY NAV
+══════════════════════════════════════ -->
+<nav class="sticky-nav">
+  <div class="page d-flex align-items-center gap-1 flex-wrap">
+    <!-- Year switcher always visible in sticky nav -->
+    <div class="d-flex gap-1 me-2" style="border-right:1px solid rgba(255,255,255,.15);padding-right:.75rem">
+      <button class="nav-ypill" id="navY2011" onclick="setYear(2011)">2011</button>
+      <button class="nav-ypill" id="navY2016" onclick="setYear(2016)">2016</button>
+      <button class="nav-ypill active" id="navY2021" onclick="setYear(2021)">2021</button>
+    </div>
+    <span class="nav-section-label">Historical</span>
+    <a class="snav-link active" href="#overview" onclick="setActive(this)">Overview</a>
+    <a class="snav-link" href="#districts" onclick="setActive(this)">Districts</a>
+    <a class="snav-link" href="#performance" onclick="setActive(this)">Trends</a>
+    <span class="nav-section-label">Intel</span>
+    <a class="snav-link" href="#strongholds" onclick="setActive(this)">Strongholds</a>
+    <a class="snav-link" href="#flips" onclick="setActive(this)">Volatility</a>
+    <span class="nav-section-label">2026</span>
+    <a class="snav-link" href="#watch2026" onclick="setActive(this)">Battlegrounds</a>
+    <a class="snav-link" href="#map" onclick="setActive(this)">Map</a>
+    <a class="snav-link" href="#explorer" onclick="setActive(this)">Explorer</a>
+  </div>
+</nav>
+
+<div class="page pb-5">
+
+<!-- ══════════════════════════════════════
+     SECTION: OVERVIEW
+══════════════════════════════════════ -->
+<section id="overview" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Election Overview</div>
+    <div class="section-title" id="overviewTitle">2021 Tamil Nadu Assembly Election</div>
+    <div class="section-sub">Results across all 234 constituencies</div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="row g-3 mb-3">
+    <div class="col-6 col-md-3 fade-up">
+      <div class="kpi-card" style="--kpi-color:#F59E0B;--kpi-bg:rgba(245,158,11,.1)">
+        <div class="kpi-icon">🏆</div>
+        <div class="kpi-val" id="kpiAlliance">—</div>
+        <div class="kpi-lbl">Winning Alliance</div>
+        <div class="kpi-sub" id="kpiAllianceSeats">— seats</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3 fade-up">
+      <div class="kpi-card" style="--kpi-color:#DC2626;--kpi-bg:rgba(220,38,38,.08)">
+        <div class="kpi-icon">🏛️</div>
+        <div class="kpi-val" id="kpiDMK">—</div>
+        <div class="kpi-lbl">DMK Seats</div>
+        <div class="kpi-sub" id="kpiADMK">ADMK: —</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3 fade-up">
+      <div class="kpi-card" style="--kpi-color:#3B82F6;--kpi-bg:rgba(59,130,246,.08)">
+        <div class="kpi-icon">👥</div>
+        <div class="kpi-val" id="kpiCands">—</div>
+        <div class="kpi-lbl">Total Candidates</div>
+        <div class="kpi-sub" id="kpiPerSeat">— per seat avg</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3 fade-up">
+      <div class="kpi-card" style="--kpi-color:#7C3AED;--kpi-bg:rgba(124,58,237,.08)">
+        <div class="kpi-icon">⚡</div>
+        <div class="kpi-val" id="kpiWomen">—</div>
+        <div class="kpi-lbl">Women Winners</div>
+        <div class="kpi-sub" id="kpiWomenPct">— % of seats</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seat bar -->
+  <div class="seat-bar-wrap mb-3">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--c-text-3)">Seat Distribution — <span id="seatBarYear" style="color:var(--c-text)">2021</span></span>
+      <span style="font-size:.72rem;color:var(--c-text-3)">234 total seats</span>
+    </div>
+    <div class="seat-bar" id="seatBar"></div>
+    <div class="seat-legend" id="seatLegend"></div>
+  </div>
+
+  <!-- Charts row: Alliance donut + Vote Efficiency -->
+  <div class="row g-3">
+    <div class="col-md-5">
+      <div class="card h-100">
+        <div class="card-label">Alliance Share — <span id="allianceYear">2021</span></div>
+        <div class="ch ch-260"><canvas id="allianceChart"></canvas></div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card h-100">
+        <div class="card-label">Vote Share vs Seat Share — <span id="effYear">2021</span></div>
+        <div style="font-size:.71rem;color:var(--c-text-3);margin-bottom:.6rem">Top parties by votes received — <span style="color:#D97706;font-weight:600">amber = won significant votes but zero seats</span></div>
+        <div class="ch ch-260"><canvas id="effChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION: DISTRICT INTELLIGENCE
+══════════════════════════════════════ -->
+<section id="districts" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Regional Analysis</div>
+    <div class="section-title">District-by-District Breakdown — <span id="distYear">2021</span></div>
+    <div class="section-sub">All 32 districts — seats won by each alliance. Sorted by total constituency count.</div>
+  </div>
+  <div class="card mb-3">
+    <div class="ch" style="height:660px"><canvas id="districtChart"></canvas></div>
+  </div>
+  <!-- District highlights row -->
+  <div class="row g-3" id="distHighlights"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION: PARTY PERFORMANCE
+══════════════════════════════════════ -->
+<section id="performance" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Historical Trends</div>
+    <div class="section-title">Party Performance 2011–2021</div>
+    <div class="section-sub">How each party performed across three elections</div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-md-7">
+      <div class="card h-100">
+        <div class="card-label">Seats Won — All Elections</div>
+        <div class="ch ch-320"><canvas id="trendChart"></canvas></div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card h-100">
+        <div class="card-label">Top Swings — <span>2016 → 2021</span></div>
+        <div style="overflow-y:auto;max-height:320px">
+          <table class="styled-table w-100">
+            <thead><tr><th>Constituency</th><th>Party</th><th>Swing</th></tr></thead>
+            <tbody id="swingBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Incumbent retention -->
+  <div class="row g-3">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-label">Incumbent Retention — <span>How many sitting MLAs kept their seat?</span></div>
+        <div class="row g-3" id="incumbentStats"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION: STRONGHOLDS
+══════════════════════════════════════ -->
+<section id="strongholds" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Party Dominance</div>
+    <div class="section-title">Strongholds</div>
+    <div class="section-sub">Constituencies won by the same party in all three elections (2011, 2016, 2021)</div>
+  </div>
+  <div class="card">
+    <div class="row g-2 mb-3" id="strongholdSummary"></div>
+    <table class="styled-table w-100" id="strongholdTable">
+      <thead>
+        <tr>
+          <th>#</th><th>Constituency</th><th>District</th><th>Type</th>
+          <th>Party</th><th>All 3 Wins</th><th>Lowest Margin</th><th>Highest Margin</th>
+        </tr>
+      </thead>
+      <tbody id="strongholdBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION: FLIPS
+══════════════════════════════════════ -->
+<section id="flips" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Volatility Analysis</div>
+    <div class="section-title">Seats That Flipped</div>
+    <div class="section-sub">Constituencies that changed party between 2016 and 2021</div>
+  </div>
+  <div class="card">
+    <div class="row g-2 mb-3" id="flipSummary"></div>
+    <div class="table-responsive">
+      <table class="styled-table w-100" id="flipTable">
+        <thead>
+          <tr>
+            <th>Constituency</th><th>District</th><th>Type</th>
+            <th>2016 Winner</th><th>2016 Party</th><th>Margin</th>
+            <th>2021 Winner</th><th>2021 Party</th><th>Margin</th>
+            <th>Flip</th>
+          </tr>
+        </thead>
+        <tbody id="flipBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     2026 OUTLOOK DIVIDER
+══════════════════════════════════════ -->
+<div class="outlook-divider">
+  <div class="page d-flex align-items-center gap-3">
+    <span class="outlook-badge">2026 OUTLOOK</span>
+    <div>
+      <div style="color:#fff;font-weight:700;font-size:.9rem">Forward-Looking Analysis</div>
+      <div style="color:rgba(255,255,255,.5);font-size:.75rem;margin-top:.1rem">Constituencies most likely to be competitive, derived from 2011–2021 trend data</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SECTION: 2026 WATCH LIST
+══════════════════════════════════════ -->
+<section id="watch2026" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Looking Ahead</div>
+    <div class="section-title">2026 Watch List</div>
+    <div class="section-sub">Constituencies most likely to be competitive — ranked by vulnerability</div>
+  </div>
+
+  <div class="filter-chips" id="watchChips">
+    <button class="fchip active" onclick="filterWatch(0,this)">All Seats</button>
+    <button class="fchip" onclick="filterWatch(1,this)">🔴 Razor-thin &lt;3k</button>
+    <button class="fchip" onclick="filterWatch(2,this)">🟠 Slim &lt;7k</button>
+    <button class="fchip" onclick="filterWatch(3,this)">🔄 Flipped</button>
+  </div>
+
+  <div class="row g-3" id="watchCards"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION: MAP
+══════════════════════════════════════ -->
+<section id="map" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Geographic View</div>
+    <div class="section-title">Constituency Map — <span id="mapYearLabel">2021</span></div>
+    <div class="section-sub">Click any constituency to explore its electoral history</div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-lg-9">
+      <div id="tnMap"></div>
+      <div id="mapStatus" class="alert mt-2 py-2" style="font-size:.78rem;display:none;background:#FFF8E1;border:1px solid #FDD835;color:#5D4037;border-radius:8px">
+        ⚠️ GeoJSON not found. Run: <code>python3 pipelines/08_download_geojson.py</code>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="map-panel">
+        <h6>Party Legend</h6>
+        <div id="mapLegend"></div>
+        <h6 class="mt-3">Constituency Details</h6>
+        <div id="mapInfoPanel" style="color:var(--c-text-3);font-size:.78rem">
+          Click a constituency on the map to see its details here.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION: EXPLORER
+══════════════════════════════════════ -->
+<section id="explorer" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Data Explorer</div>
+    <div class="section-title">Constituency Explorer</div>
+    <div class="section-sub">Search and filter all results</div>
+  </div>
+
+  <div class="card">
+    <div class="exp-tabs" id="expTabs">
+      <div class="exp-tab active" onclick="setExplorerMode('winners',this)">Winners — <span id="explorerYear">2021</span></div>
+      <div class="exp-tab" onclick="setExplorerMode('all',this)">All Candidates</div>
+      <div class="exp-tab" onclick="setExplorerMode('history',this)">Full History</div>
+    </div>
+    <table class="styled-table w-100" id="explorerTable">
+      <thead id="explorerHead"></thead>
+      <tbody id="explorerBody"></tbody>
+    </table>
+  </div>
+</section>
+
+</div><!-- /page -->
+
+<!-- Footer -->
+<footer>
+  <div class="page">
+    <p style="margin-bottom:.4rem">Data sourced from Election Commission of India via <a href="https://data.opencity.in" target="_blank">OpenCity.in</a> · 234 constituencies · 2011 · 2016 · 2021</p>
+    <p>Built with Chart.js · Leaflet.js · Bootstrap 5 · PostgreSQL</p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+// ─── State ────────────────────────────────────
+let D = null, YEAR = 2021, MAP = null, GJ = null;
+let allianceChart=null, districtChart=null, trendChart=null, effChart=null;
+let strongholdDT=null, flipDT=null, explorerDT=null, explorerMode='winners';
+
+// ─── Chart helper: safely destroy before recreating ───
+function destroyChart(ref, canvasId) {
+  try { if(ref) ref.destroy(); } catch(e) {}
+  try {
+    const existing = Chart.getChart(canvasId);
+    if(existing) existing.destroy();
+  } catch(e) {}
+}
+
+// ─── Helpers ──────────────────────────────────
+const pc = c => ({DMK:'#DC2626',ADMK:'#16A34A',AIADMK:'#16A34A',BJP:'#EA580C',
+  INC:'#1D4ED8',PMK:'#7C3AED',VCK:'#0891B2',DMDK:'#92400E',
+  NTK:'#D97706',MNM:'#0F766E',AMMK:'#7C3AED'}[c] || '#6B7280');
+const ac = a => ({INDIA:'#DC2626',AIADMK:'#16A34A',NDA:'#EA580C',
+  TVK:'#7C3AED',Others:'#6B7280',NONE:'#CBD5E1'}[a] || '#6B7280');
+const pb = c => {
+  const k = ['DMK','ADMK','AIADMK','BJP','INC','PMK','VCK','DMDK','NTK','MNM','AMMK'].includes(c)?c:'OTH';
+  return `<span class="pb pb-${k}">${c}</span>`;
+};
+const fmt = n => n!=null ? Number(n).toLocaleString('en-IN') : '—';
+const pct = n => n!=null ? Number(n).toFixed(1)+'%' : '—';
+const norm = c => c==='AIADMK'?'ADMK':c;
+
+function setActive(el) {
+  document.querySelectorAll('.snav-link').forEach(e=>e.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Counter animation
+function animateCount(el, target, prefix='', suffix='') {
+  const num = parseInt(String(target).replace(/[^0-9]/g,''));
+  if(isNaN(num)) { el.textContent = target; return; }
+  let start = 0;
+  const step = Math.ceil(num / 30);
+  const timer = setInterval(()=>{
+    start = Math.min(start + step, num);
+    el.textContent = prefix + start.toLocaleString('en-IN') + suffix;
+    if(start >= num) clearInterval(timer);
+  }, 30);
+}
+
+// ─── Init ─────────────────────────────────────
+async function init() {
+  const paths = ['data.json', './data.json', 'dashboard/data.json'];
+  for (const path of paths) {
+    try {
+      const res  = await fetch(path);
+      const text = await res.text();
+      if (text.trim().startsWith('{')) {
+        D = JSON.parse(text);
+        break;
+      }
+    } catch(e) { /* try next path */ }
+  }
+  if (!D) {
+    document.querySelector('.page').innerHTML = `
+      <div class="py-5 text-center">
+        <h3 style="color:#DC2626">⚠️ Could not load data.json</h3>
+        <p>Make sure you ran: <code>python3 pipelines/07_export_dashboard_data.py</code></p>
+        <p>Then serve from the <strong>Election analysis</strong> folder:<br>
+        <code>cd "/Users/anandrajr/Documents/My projects/Election analysis"</code><br>
+        <code>python3 -m http.server 8080</code><br>
+        Then open <strong>http://localhost:8080/dashboard/</strong></p>
+      </div>`;
+    return;
+  }
+  setYear(2021);
+  renderTrend();
+  renderSwing();
+  renderIncumbent();
+  renderStrongholds();
+  renderFlips();
+  filterWatch(0);
+  loadMap();
+}
+
+// ─── Year ─────────────────────────────────────
+function setYear(yr) {
+  YEAR = yr;
+  // Sync hero pills
+  document.querySelectorAll('.ypill').forEach(b => {
+    b.classList.toggle('active', parseInt(b.textContent.trim()) === yr);
+  });
+  // Sync sticky-nav pills
+  [2011,2016,2021].forEach(y => {
+    const el = document.getElementById('navY'+y);
+    if(el) el.classList.toggle('active', y === yr);
+  });
+  // Update ALL year labels
+  ['seatBarYear','allianceYear','distYear','effYear','explorerYear','mapYearLabel'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.textContent=yr;
+  });
+  const ot = document.getElementById('overviewTitle');
+  if(ot) ot.textContent = `${yr} Tamil Nadu Assembly Election`;
+  // Scroll to overview so user sees the updates
+  document.getElementById('overview')?.scrollIntoView({behavior:'smooth', block:'start'});
+  // Wrap each render in try/catch so one failure doesn't block the rest
+  [renderHeroStats, renderKPIs, renderSeatBar, renderAlliance,
+   renderVoteEfficiency, renderDistrict, renderDistHighlights,
+   renderPerformance, renderExplorer].forEach(fn => {
+    try { fn(); } catch(e) { console.warn(fn.name, e); }
+  });
+  if(GJ) { try { colorMap(); } catch(e) { console.warn('colorMap',e); } }
+}
+
+// ─── Hero stats ───────────────────────────────
+function renderHeroStats() {
+  const top = D.alliance_seats.filter(r=>r.election_year==YEAR).sort((a,b)=>b.seats_won-a.seats_won)[0];
+  const s   = D.summary.find(r=>r.election_year==YEAR)||{};
+  const gF  = D.gender_stats.find(r=>r.election_year==YEAR&&r.gender==='F')||{};
+  document.getElementById('hAlliance').textContent = top?.alliance||'—';
+  animateCount(document.getElementById('hSeats'), top?.seats_won||0);
+  animateCount(document.getElementById('hCands'), s.total_candidates||0);
+  document.getElementById('hWomen').textContent = gF.winners||0;
+}
+
+// ─── KPIs ─────────────────────────────────────
+function renderKPIs() {
+  const top  = D.alliance_seats.filter(r=>r.election_year==YEAR).sort((a,b)=>b.seats_won-a.seats_won)[0];
+  const dmk  = D.party_seats.find(r=>r.election_year==YEAR&&r.party_code==='DMK')||{};
+  const admk = D.party_seats.filter(r=>r.election_year==YEAR&&['ADMK','AIADMK'].includes(r.party_code)).reduce((s,r)=>({seats_won:(s.seats_won||0)+(r.seats_won||0)}),{});
+  const s    = D.summary.find(r=>r.election_year==YEAR)||{};
+  const gF   = D.gender_stats.find(r=>r.election_year==YEAR&&r.gender==='F')||{};
+
+  document.getElementById('kpiAlliance').textContent = top?.alliance||'—';
+  document.getElementById('kpiAllianceSeats').textContent = top?`${top.seats_won} seats won`:'—';
+  animateCount(document.getElementById('kpiDMK'), dmk.seats_won||0);
+  document.getElementById('kpiADMK').textContent = `ADMK: ${admk.seats_won||0}`;
+  animateCount(document.getElementById('kpiCands'), s.total_candidates||0);
+  document.getElementById('kpiPerSeat').textContent = s.total_candidates&&s.total_seats?`${(s.total_candidates/s.total_seats).toFixed(1)} per seat avg`:'';
+  animateCount(document.getElementById('kpiWomen'), gF.winners||0);
+  document.getElementById('kpiWomenPct').textContent = gF.winners?`${((gF.winners/234)*100).toFixed(1)}% of seats`:'';
+}
+
+// ─── Seat bar ─────────────────────────────────
+function renderSeatBar() {
+  const rows = D.party_seats.filter(r=>r.election_year==YEAR&&r.seats_won>0).sort((a,b)=>b.seats_won-a.seats_won);
+  document.getElementById('seatBar').innerHTML = rows.map(r=>`
+    <div class="seat-seg" style="flex:${r.seats_won};background:${pc(r.party_code)}"
+         data-tip="${r.party_code}: ${r.seats_won} seats (${pct(r.avg_vote_share)})">
+      ${r.seats_won>=10?r.party_code+' '+r.seats_won:''}
+    </div>`).join('');
+  document.getElementById('seatLegend').innerHTML = rows.map(r=>`
+    <div class="sleg-item">
+      <span class="sleg-dot" style="background:${pc(r.party_code)}"></span>
+      ${r.party_code} <strong>${r.seats_won}</strong>
+    </div>`).join('');
+}
+
+// ─── Alliance donut ───────────────────────────
+function renderAlliance() {
+  const rows = D.alliance_seats.filter(r=>r.election_year==YEAR&&r.seats_won>0);
+  if(allianceChart) {
+    // Update in-place — no destroy needed, avoids canvas state issues
+    allianceChart.data.labels = rows.map(r=>r.alliance);
+    allianceChart.data.datasets[0].data = rows.map(r=>r.seats_won);
+    allianceChart.data.datasets[0].backgroundColor = rows.map(r=>ac(r.alliance));
+    allianceChart.update();
+  } else {
+    destroyChart(null, 'allianceChart');
+    allianceChart = new Chart(document.getElementById('allianceChart'),{
+      type:'doughnut',
+      data:{
+        labels: rows.map(r=>r.alliance),
+        datasets:[{data:rows.map(r=>r.seats_won),backgroundColor:rows.map(r=>ac(r.alliance)),borderWidth:3,borderColor:'#fff',hoverOffset:6}]
+      },
+      options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
+        plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14,font:{size:11}}},
+                 tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw} seats`}}}}
+    });
+  }
+}
+
+// ─── District chart (full 32 districts, alliance breakdown) ─────
+function renderDistrict() {
+  const rows = D.district_summary.filter(r=>r.election_year==YEAR)
+    .sort((a,b)=>b.total_seats-a.total_seats);
+
+  // Determine which alliances to show based on year's data
+  const labelsMap = { INDIA:'#DC2626', AIADMK:'#16A34A', NDA:'#EA580C', Others:'#94A3B8' };
+  const distLabels = rows.map(r=>{
+    // Abbreviate long district names for readability
+    return r.district_name.replace('TIRUCHIRAPPALLI','TRICHY')
+      .replace('TIRUVANNAMALAI','T.VANNAMALAI')
+      .replace('KANNIYAKUMARI','KANYAKUMARI')
+      .replace('RAMANATHAPURAM','RAMANATHAPURAM')
+      .replace('VIRUDHUNAGAR','VIRUDHUNAGAR');
+  });
+
+  const ds = [
+    {label:'INDIA Alliance',    key:'india_seats',  color:'#DC2626'},
+    {label:'AIADMK Alliance',   key:'aiadmk_seats', color:'#16A34A'},
+    {label:'NDA',               key:'nda_seats',    color:'#EA580C'},
+    {label:'Others / IND',      key:'others',       color:'#94A3B8'},
+  ];
+
+  const computeOthers = r => Math.max(0,
+    (r.total_seats||0) - (r.india_seats||0) - (r.aiadmk_seats||0) - (r.nda_seats||0));
+
+  const getData = (r, key) => key === 'others' ? computeOthers(r) : (r[key]||0);
+
+  if(districtChart) {
+    districtChart.data.labels = distLabels;
+    ds.forEach((d,i) => {
+      districtChart.data.datasets[i].data = rows.map(r=>getData(r,d.key));
+    });
+    districtChart.update();
+    return;
+  }
+
+  destroyChart(null, 'districtChart');
+  districtChart = new Chart(document.getElementById('districtChart'), {
+    type: 'bar',
+    data: {
+      labels: distLabels,
+      datasets: ds.map(d=>({
+        label: d.label,
+        data: rows.map(r=>getData(r,d.key)),
+        backgroundColor: d.color,
+        borderRadius: 3,
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: {
+        legend: { position:'bottom', labels:{boxWidth:11,padding:16,font:{size:11}} },
+        tooltip: {
+          callbacks: {
+            label: c => ` ${c.dataset.label}: ${c.raw} seat${c.raw!==1?'s':''}`,
+            title: t => {
+              const row = rows[t[0].dataIndex];
+              return `${row.district_name}  (${row.total_seats} seats total)`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { stacked:true, beginAtZero:true, max: 20,
+             ticks:{stepSize:2, font:{size:10}},
+             grid:{color:'#F1F5F9'} },
+        y: { stacked:true,
+             ticks:{font:{size:10.5}, color:'#374151'},
+             grid:{display:false} }
+      }
+    }
+  });
+}
+
+// ─── District highlights (3 stat cards below chart) ──────────────
+function renderDistHighlights() {
+  const rows = D.district_summary.filter(r=>r.election_year==YEAR);
+  if(!rows.length) return;
+
+  // Most dominant INDIA district
+  // Tiebreaker: when % is equal, larger district wins (16/16 > 2/2 analytically)
+  const topIndia = [...rows].sort((a,b)=>{
+    const pA=(a.india_seats||0)/a.total_seats, pB=(b.india_seats||0)/b.total_seats;
+    if(Math.abs(pB-pA) > 0.001) return pB-pA;
+    return b.total_seats - a.total_seats; // scale tiebreaker
+  })[0];
+
+  // Most dominant AIADMK district — same tiebreaker
+  const topAIADMK = [...rows].sort((a,b)=>{
+    const pA=(a.aiadmk_seats||0)/a.total_seats, pB=(b.aiadmk_seats||0)/b.total_seats;
+    if(Math.abs(pB-pA) > 0.001) return pB-pA;
+    return b.total_seats - a.total_seats;
+  })[0];
+
+  // Tightest battleground district: avg winning margin of winning-alliance seats,
+  // minimum 3 seats so a single fluky constituency doesn't distort the score
+  const winnersByDist = {};
+  D.winners.filter(r=>r.election_year==YEAR).forEach(r=>{
+    if(!winnersByDist[r.district_name]) winnersByDist[r.district_name]=[];
+    if(r.margin != null) winnersByDist[r.district_name].push(Number(r.margin));
+  });
+  const distBattleground = Object.entries(winnersByDist)
+    .filter(([,ms])=>ms.length>=3)
+    .map(([dist,ms])=>({
+      district_name: dist,
+      avg_margin: Math.round(ms.reduce((s,m)=>s+m,0)/ms.length),
+      seats: ms.length
+    }))
+    .sort((a,b)=>a.avg_margin - b.avg_margin)[0] || {district_name:'—',avg_margin:0,seats:0};
+
+  // Closest district (most balanced between top 2 alliances) — tiebreaker by total seats
+  const mostBalanced = [...rows].sort((a,b)=>{
+    const gapA = Math.abs((a.india_seats||0)-(a.aiadmk_seats||0));
+    const gapB = Math.abs((b.india_seats||0)-(b.aiadmk_seats||0));
+    const rA=gapA/a.total_seats, rB=gapB/b.total_seats;
+    if(Math.abs(rA-rB) > 0.001) return rA-rB;
+    return b.total_seats - a.total_seats; // prefer more seats when balance is equal
+  })[0];
+
+  document.getElementById('distHighlights').innerHTML = `
+    <div class="col-6 col-md-3">
+      <div class="dist-highlight">
+        <div class="dh-label" style="color:#DC2626">INDIA Alliance Stronghold</div>
+        <div class="dh-val">${topIndia.district_name}</div>
+        <div class="dh-sub">${topIndia.india_seats} of ${topIndia.total_seats} seats · ${Math.round((topIndia.india_seats||0)/topIndia.total_seats*100)}%</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="dist-highlight">
+        <div class="dh-label" style="color:#16A34A">AIADMK Alliance Stronghold</div>
+        <div class="dh-val">${topAIADMK.district_name}</div>
+        <div class="dh-sub">${topAIADMK.aiadmk_seats} of ${topAIADMK.total_seats} seats · ${Math.round((topAIADMK.aiadmk_seats||0)/topAIADMK.total_seats*100)}%</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="dist-highlight">
+        <div class="dh-label" style="color:#F59E0B">Most Balanced District</div>
+        <div class="dh-val">${mostBalanced.district_name}</div>
+        <div class="dh-sub">INDIA: ${mostBalanced.india_seats||0} · AIADMK: ${mostBalanced.aiadmk_seats||0}</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="dist-highlight">
+        <div class="dh-label" style="color:#B45309">Most Contested District</div>
+        <div class="dh-val">${distBattleground.district_name}</div>
+        <div class="dh-sub">Avg winning margin: ${distBattleground.avg_margin.toLocaleString('en-IN')} votes · ${distBattleground.seats} seats</div>
+      </div>
+    </div>`;
+}
+
+// ─── Vote Efficiency chart ────────────────────
+// Sort by VOTES (not seats) so high-vote zero-seat parties like NTK are visible
+function renderVoteEfficiency() {
+  const yearSeats = D.party_seats.filter(r=>r.election_year==YEAR);
+  const totalVotes = yearSeats.reduce((s,r)=>(r.total_votes?s+Number(r.total_votes):s), 0);
+  if(!totalVotes) { destroyChart(effChart,'effChart'); effChart=null; return; }
+
+  // Sort by total_votes desc — this ensures NTK, MNM, AMMK etc. appear
+  const eligible = yearSeats
+    .filter(r=>(r.total_votes||0)>0 && Number(r.total_votes)/totalVotes >= 0.005)
+    .sort((a,b)=>Number(b.total_votes)-Number(a.total_votes))
+    .slice(0, 10);
+
+  const labels = eligible.map(r=>norm(r.party_code));
+  const vShare = eligible.map(r=>+(Number(r.total_votes)/totalVotes*100).toFixed(1));
+  const sShare = eligible.map(r=>+(((r.seats_won||0)/234)*100).toFixed(1));
+
+  // Annotation: parties with seats_won=0 and vote_share > 2% are "wasted vote" parties
+  const barColors = eligible.map(r=>
+    (r.seats_won||0)===0 && Number(r.total_votes)/totalVotes >= 0.02
+      ? 'rgba(245,158,11,.85)'   // highlight zero-seat parties in amber
+      : 'rgba(59,130,246,.75)'
+  );
+
+  const chartData = {
+    labels,
+    datasets: [
+      { label:'Vote Share %', data:vShare, backgroundColor:barColors,      borderRadius:4 },
+      { label:'Seat Share %', data:sShare, backgroundColor:'rgba(220,38,38,.75)', borderRadius:4 },
+    ]
+  };
+
+  if(effChart) {
+    effChart.data.labels = labels;
+    effChart.data.datasets[0].data  = vShare;
+    effChart.data.datasets[0].backgroundColor = barColors;
+    effChart.data.datasets[1].data  = sShare;
+    effChart.update();
+    return;
+  }
+
+  destroyChart(null, 'effChart');
+  effChart = new Chart(document.getElementById('effChart'), {
+    type: 'bar',
+    data: chartData,
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins: {
+        legend:{ position:'bottom', labels:{boxWidth:10,padding:14,font:{size:10.5}} },
+        tooltip:{
+          callbacks:{
+            label: c => {
+              const txt = `${c.dataset.label}: ${c.raw}%`;
+              if(c.datasetIndex===0 && c.raw>2) {
+                const row = eligible[c.dataIndex];
+                if((row.seats_won||0)===0) return [txt, '⚠ 0 seats won — FPTP wasted votes'];
+              }
+              return txt;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid:{display:false}, ticks:{font:{size:9.5}} },
+        y: { beginAtZero:true, grid:{color:'#F8FAFC'},
+             ticks:{ callback: v=>v+'%', font:{size:10} } }
+      }
+    }
+  });
+}
+
+// ─── Trend chart ──────────────────────────────
+function renderTrend() {
+  const years=[2011,2016,2021];
+  const parties=['DMK','ADMK','BJP','INC','PMK','VCK'];
+  const agg={};
+  D.party_seats.forEach(r=>{ const k=`${r.election_year}||${norm(r.party_code)}`; agg[k]=(agg[k]||0)+(r.seats_won||0); });
+  destroyChart(trendChart, 'trendChart');
+  trendChart = new Chart(document.getElementById('trendChart'),{
+    type:'bar',
+    data:{
+      labels:years.map(String),
+      datasets:parties.map(p=>({label:p,data:years.map(y=>agg[`${y}||${p}`]||0),backgroundColor:pc(p),borderRadius:5}))
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}},
+      scales:{
+        x:{grid:{display:false}},
+        y:{beginAtZero:true,grid:{color:'#F8FAFC'}}
+      }
+    }
+  });
+}
+
+// ─── Swing ────────────────────────────────────
+// Fix 2: compute alliance-level swing from constituency_results
+function computeAllianceSwing() {
+  // Build party→alliance map from party_seats
+  const p2a = {};
+  D.party_seats.forEach(r => {
+    const a = r.alliance || 'Others';
+    p2a[r.party_code] = (['NONE','OTHERS',''].includes(a.toUpperCase())) ? 'Others' : a;
+  });
+  const getA = c => p2a[c] || p2a['AIADMK'===c?'ADMK':c] || 'Others';
+
+  // Sum vote share per constituency per alliance per year
+  const agg = {}; // key: constituency_no|alliance|year
+  D.constituency_results.forEach(r => {
+    if(![2016,2021].includes(r.election_year)) return;
+    const a = getA(r.party_code);
+    if(a === 'Others') return;
+    const k = `${r.constituency_no}|${a}|${r.election_year}`;
+    agg[k] = (agg[k] || 0) + (parseFloat(r.vote_share_pct) || 0);
+  });
+
+  // Get constituency meta
+  const constMeta = {};
+  D.winners.forEach(r => {
+    if(!constMeta[r.constituency_no])
+      constMeta[r.constituency_no] = { name: r.constituency_name, district: r.district_name };
+  });
+
+  // Compute swings
+  const swings = [];
+  const alliances = [...new Set(Object.keys(agg).map(k => k.split('|')[1]))];
+  const consts    = [...new Set(Object.keys(agg).map(k => k.split('|')[0]))];
+
+  consts.forEach(cno => {
+    alliances.forEach(a => {
+      const s16 = agg[`${cno}|${a}|2016`] || 0;
+      const s21 = agg[`${cno}|${a}|2021`] || 0;
+      if(s16 === 0 && s21 === 0) return;
+      swings.push({
+        constituency_no: cno,
+        constituency_name: constMeta[cno]?.name || cno,
+        district_name: constMeta[cno]?.district || '',
+        alliance: a,
+        share_2016: s16.toFixed(1),
+        share_2021: s21.toFixed(1),
+        swing: (s21 - s16).toFixed(1)
+      });
+    });
+  });
+
+  return swings.sort((a,b) => Math.abs(b.swing) - Math.abs(a.swing));
+}
+
+function renderSwing() {
+  const rows = computeAllianceSwing().slice(0, 20);
+  const allianceColor = a => ({'INDIA':'#DC2626','AIADMK':'#16A34A','NDA':'#EA580C','TVK':'#7C3AED'}[a] || '#6B7280');
+  document.getElementById('swingBody').innerHTML = rows.map(r => {
+    const s = parseFloat(r.swing), sign = s > 0 ? '+' : '';
+    const bw = Math.min(Math.abs(s) * 2, 55), bc = s > 0 ? '#16A34A' : '#DC2626';
+    return `<tr>
+      <td><strong>${r.constituency_name}</strong><br>
+          <small style="color:var(--c-text-3)">${r.district_name}</small></td>
+      <td><span style="display:inline-block;padding:.18rem .55rem;border-radius:5px;
+                       font-size:.68rem;font-weight:800;color:#fff;background:${allianceColor(r.alliance)}">${r.alliance}</span></td>
+      <td style="font-size:.73rem;color:var(--c-text-3)">${r.share_2016}% → ${r.share_2021}%</td>
+      <td class="${s>0?'sw-pos':'sw-neg'}">${sign}${Math.abs(s).toFixed(1)}%
+        <span class="sw-bar" style="width:${bw}px;background:${bc}"></span>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// ─── Incumbent ────────────────────────────────
+function renderIncumbent() {
+  document.getElementById('incumbentStats').innerHTML = D.incumbent_stats.map(r=>`
+    <div class="col-md-4">
+      <div class="inc-card">
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--c-text-3);margin-bottom:.5rem">
+          Election ${r.election_year}
+        </div>
+        <div class="inc-pct" style="color:${parseFloat(r.retention_pct)>50?'#16A34A':'#DC2626'}">${r.retention_pct}%</div>
+        <div class="inc-bar-bg"><div class="inc-bar-fill" style="width:${r.retention_pct}%"></div></div>
+        <div style="font-size:.78rem;color:var(--c-text-2)">Incumbents retained their seat</div>
+        <div style="font-size:.73rem;color:var(--c-text-3);margin-top:.2rem">${r.retained} won · ${r.lost} lost · ${r.total_incumbents} total</div>
+      </div>
+    </div>`).join('');
+}
+
+// ─── Strongholds ──────────────────────────────
+function renderStrongholds() {
+  const byParty={};
+  D.strongholds.forEach(r=>{ const p=norm(r.party_code); byParty[p]=(byParty[p]||0)+1; });
+  // Fix 3: make party chips clickable to filter the DataTable
+  document.getElementById('strongholdSummary').innerHTML =
+    `<div class="col-auto">
+      <div class="d-flex align-items-center gap-2 px-3 py-2 rounded" onclick="filterStrongholds('all',this)"
+           style="background:var(--c-bg);border:2px solid var(--c-accent);cursor:pointer">
+        <span style="font-weight:800;font-size:.82rem">All</span>
+        <span class="pb" style="background:#6B7280">${D.strongholds.length}</span>
+      </div>
+    </div>` +
+    Object.entries(byParty).sort((a,b)=>b[1]-a[1]).map(([p,n])=>`
+    <div class="col-auto">
+      <div class="d-flex align-items-center gap-2 px-3 py-2 rounded" onclick="filterStrongholds('${p}',this)"
+           style="background:var(--c-bg);border:1px solid var(--c-border);cursor:pointer;transition:all .2s"
+           onmouseover="this.style.borderColor='${pc(p)}'" onmouseout="this.style.borderColor='var(--c-border)'">
+        <span style="width:10px;height:10px;border-radius:2px;background:${pc(p)};display:inline-block"></span>
+        <span style="font-weight:700;font-size:.82rem">${p}</span>
+        <span class="pb pb-${['DMK','ADMK','BJP','INC','PMK','VCK','DMDK'].includes(p)?p:'OTH'}">${n}</span>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('strongholdBody').innerHTML = D.strongholds.map((r,i)=>`
+    <tr>
+      <td style="color:var(--c-text-3);font-size:.75rem">${i+1}</td>
+      <td><strong>${r.constituency_name}</strong></td>
+      <td style="font-size:.75rem">${r.district_name}</td>
+      <td><span style="font-size:.65rem;padding:.1rem .4rem;border-radius:4px;background:var(--c-bg);border:1px solid var(--c-border)">${r.reserved_category||'GEN'}</span></td>
+      <td>${pb(r.party_code)}</td>
+      <td>
+        <div class="streak">
+          ${[2011,2016,2021].map(y=>`<span class="streak-pip" style="background:${r.years_won.includes(String(y))?pc(r.party_code):'#E2E8F0'}" title="${y}"></span>`).join('')}
+        </div>
+      </td>
+      <td style="font-size:.78rem">${fmt(r.lowest_margin)}</td>
+      <td style="font-size:.78rem">${fmt(r.highest_margin)}</td>
+    </tr>`).join('');
+
+  if(strongholdDT) strongholdDT.destroy();
+  strongholdDT = $('#strongholdTable').DataTable({pageLength:20,language:{search:''}});
+}
+
+// Fix 3 helper: filter strongholds DataTable by party
+function filterStrongholds(party, btn) {
+  // Highlight active chip
+  document.querySelectorAll('#strongholdSummary [onclick]').forEach(b => {
+    b.style.borderWidth = '1px'; b.style.opacity = '0.65';
+  });
+  btn.style.borderWidth = '2px'; btn.style.opacity = '1';
+
+  if(strongholdDT) {
+    // Use regex exact match so 'DMK' doesn't match 'ADMK'
+    if(party === 'all') {
+      strongholdDT.column(4).search('').draw();
+    } else {
+      // regex=true, smart=false gives exact word boundary match
+      strongholdDT.column(4).search(`^${party}$`, true, false).draw();
+    }
+  }
+}
+
+// ─── Flips ────────────────────────────────────
+function renderFlips() {
+  const byType={alliance:0,party:0};
+  D.flipped_seats.forEach(r=>r.flip_type==='Alliance Flip'?byType.alliance++:byType.party++);
+  const flipBtnStyle = (bg, border) =>
+    `style="background:${bg};border:1px solid ${border};cursor:pointer;transition:all .2s"`;
+  document.getElementById('flipSummary').innerHTML = `
+    <div class="col-auto">
+      <div class="px-3 py-2 rounded d-flex gap-2 align-items-center" ${flipBtnStyle('#FFF8E1','#FDD835')}
+           onclick="filterFlips('all',this)">
+        <span style="font-size:1.4rem;font-weight:900">${D.flipped_seats.length}</span>
+        <span style="font-size:.75rem;color:var(--c-text-2)">All flips<br>2016 → 2021</span>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="px-3 py-2 rounded d-flex gap-2 align-items-center" ${flipBtnStyle('#FEE2E2','#FECACA')}
+           onclick="filterFlips('Alliance Flip',this)">
+        <span style="font-size:1.4rem;font-weight:900">${byType.alliance}</span>
+        <span style="font-size:.75rem;color:var(--c-text-2)">Alliance<br>flips</span>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="px-3 py-2 rounded d-flex gap-2 align-items-center" ${flipBtnStyle('#FEF3C7','#FDE68A')}
+           onclick="filterFlips('Party Flip',this)">
+        <span style="font-size:1.4rem;font-weight:900">${byType.party}</span>
+        <span style="font-size:.75rem;color:var(--c-text-2)">Party<br>flips</span>
+      </div>
+    </div>`;
+
+  document.getElementById('flipBody').innerHTML = D.flipped_seats.map(r=>`
+    <tr>
+      <td><strong>${r.constituency_name}</strong></td>
+      <td style="font-size:.73rem">${r.district_name}</td>
+      <td style="font-size:.65rem"><span style="padding:.1rem .35rem;border-radius:3px;background:var(--c-bg);border:1px solid var(--c-border)">${r.reserved_category||'GEN'}</span></td>
+      <td style="font-size:.75rem">${r.winner_2016||'—'}</td>
+      <td>${pb(r.party_2016||'OTH')}</td>
+      <td style="font-size:.75rem">${fmt(r.margin_2016)}</td>
+      <td style="font-size:.75rem;font-weight:600">${r.winner_2021||'—'}</td>
+      <td>${pb(r.party_2021||'OTH')}</td>
+      <td style="font-size:.75rem;font-weight:600">${fmt(r.margin_2021)}</td>
+      <td><span class="flip-type ${r.flip_type==='Alliance Flip'?'alliance':'party'}">${r.flip_type==='Alliance Flip'?'Alliance':'Party'}</span></td>
+    </tr>`).join('');
+
+  if(flipDT) flipDT.destroy();
+  flipDT = $('#flipTable').DataTable({pageLength:20,language:{search:''}});
+}
+
+// Fix 4: single filterFlips using DataTable column search
+function filterFlips(type, btn) {
+  document.querySelectorAll('#flipSummary [onclick]').forEach(b => {
+    b.style.opacity = '0.55'; b.style.transform = 'scale(1)';
+  });
+  if(btn) { btn.style.opacity = '1'; btn.style.transform = 'scale(1.04)'; }
+  if(flipDT) {
+    // Column 9 contains "Alliance" or "Party" text — search for that
+    const term = type === 'all' ? '' : type === 'Alliance Flip' ? 'Alliance' : 'Party';
+    flipDT.column(9).search(term).draw();
+  }
+}
+
+// ─── Watch List ───────────────────────────────
+function filterWatch(p, btn) {
+  document.querySelectorAll('#watchChips .fchip').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  const rows = p===0 ? D.watch_2026 : D.watch_2026.filter(r=>r.priority==p);
+  document.getElementById('watchCards').innerHTML = rows.map(r=>`
+    <div class="col-md-6 col-lg-4">
+      <div class="watch-card p${r.priority}">
+        <div class="d-flex justify-content-between align-items-start mb-1">
+          <div>
+            <div class="const-name">${r.constituency_name}</div>
+            <div class="dist-name">${r.district_name} · ${r.reserved_category||'GEN'}</div>
+          </div>
+          <span class="priority-chip">${['','🔴 Critical','🟠 Slim','🔄 Flipped','📊 Watch'][r.priority]||'Watch'}</span>
+        </div>
+        <div class="d-flex gap-3 mt-2">
+          <div>
+            <div style="font-size:.65rem;color:var(--c-text-3);text-transform:uppercase;letter-spacing:.4px">Margin 2021</div>
+            <div class="margin-num">${fmt(r.margin_2021)}</div>
+          </div>
+          <div>
+            <div style="font-size:.65rem;color:var(--c-text-3);text-transform:uppercase;letter-spacing:.4px">Vote share</div>
+            <div class="margin-num" style="font-size:.95rem">${pct(r.share_2021)}</div>
+          </div>
+        </div>
+        <div class="watch-reason">${r.party_2016&&r.party_2016!==r.party_2021?`↩ Flipped from ${r.party_2016}. `:''}${r.watch_reason}</div>
+        <div class="d-flex align-items-center gap-1 mt-2" style="font-size:.72rem">
+          ${pb(r.party_2016||'OTH')}
+          <span style="color:var(--c-text-3)">2016</span>
+          <span style="color:var(--c-text-3)">→</span>
+          ${pb(r.party_2021||'OTH')}
+          <span style="color:var(--c-text-3)">2021</span>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// ─── Map ──────────────────────────────────────
+function loadMap() {
+  MAP = L.map('tnMap', {zoomControl:true}).setView([10.8,78.5], 6);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+    attribution:'©OpenStreetMap ©CARTO', maxZoom:19
+  }).addTo(MAP);
+
+  const geoPaths = [
+    'tn_constituencies.geojson',
+    './tn_constituencies.geojson',
+    'dashboard/tn_constituencies.geojson'
+  ];
+  (async () => {
+    for (const path of geoPaths) {
+      try {
+        const res  = await fetch(path);
+        const text = await res.text();
+        if (text.trim().startsWith('{')) {
+          GJ = JSON.parse(text);
+          colorMap();
+          renderMapLegend();
+          return;
+        }
+      } catch(e) { /* try next */ }
+    }
+    document.getElementById('mapStatus').style.display = 'block';
+  })();
+}
+
+function getWinner(acNo) {
+  return D.winners.find(r=>r.election_year==YEAR&&r.constituency_no==acNo);
+}
+
+function colorMap() {
+  if(!GJ||!MAP) return;
+  if(MAP._gl) MAP.removeLayer(MAP._gl);
+  const acProp = GJ._meta?.ac_no_prop || 'AC_NO';
+  MAP._gl = L.geoJSON(GJ,{
+    style: f=>{
+      const w=getWinner(f.properties[acProp]);
+      return { fillColor:w?pc(w.party_code):'#CBD5E1', weight:.6, color:'#fff', fillOpacity:.78 };
+    },
+    onEachFeature:(f,layer)=>{
+      const acNo = f.properties[acProp];
+      const w    = getWinner(acNo);
+      const name = w?.constituency_name || f.properties['AC_NAME'] || f.properties['Constituency'] || acNo;
+
+      // Fix 5: rich tooltip on hover
+      layer.bindTooltip(`
+        <div style="font-family:Inter,sans-serif;min-width:160px">
+          <div style="font-weight:800;font-size:.82rem;margin-bottom:3px">${name}</div>
+          ${w ? `
+            <div style="font-size:.74rem;color:#555;margin-bottom:4px">${w.district_name}</div>
+            <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px">
+              <span style="background:${pc(w.party_code)};color:#fff;padding:1px 6px;border-radius:4px;font-size:.68rem;font-weight:800">${w.party_code}</span>
+              <span style="font-size:.74rem">${w.candidate_name}</span>
+            </div>
+            <div style="font-size:.72rem;color:#666">Margin: <strong>${fmt(w.margin)}</strong> · ${pct(w.vote_share_pct)}</div>
+          ` : '<div style="font-size:.74rem;color:#999">No data for selected year</div>'}
+        </div>`, {
+        sticky: true,
+        opacity: 0.97,
+        className: 'leaflet-tooltip-custom'
+      });
+
+      layer.on({
+        click: () => { showMapInfo(acNo); layer.openTooltip(); },
+        mouseover: e => { layer.setStyle({weight:2, color:'#111', fillOpacity:.9}); e.target.bringToFront(); },
+        mouseout:  () => layer.setStyle({weight:.6, color:'#fff', fillOpacity:.78})
+      });
+    }
+  }).addTo(MAP);
+  document.getElementById('mapYearLabel').textContent = YEAR;
+}
+
+function showMapInfo(acNo) {
+  const w=getWinner(acNo), h=D.winner_history.find(r=>r.constituency_no==acNo);
+  const el=document.getElementById('mapInfoPanel');
+  if(!w&&!h){el.innerHTML='<em>No data</em>';return;}
+  el.innerHTML=`
+    <div class="info-box">
+      <div class="const-h">${w?.constituency_name||h?.constituency_name}</div>
+      <div style="font-size:.7rem;color:var(--c-text-3);margin-bottom:.5rem">${w?.district_name||h?.district_name}</div>
+      <div class="info-row"><span>${YEAR} Winner</span><span style="font-weight:600;font-size:.75rem">${w?.candidate_name||'—'}</span></div>
+      <div class="info-row"><span>Party</span><span>${w?pb(w.party_code):'—'}</span></div>
+      <div class="info-row"><span>Margin</span><span style="font-weight:700">${fmt(w?.margin)}</span></div>
+      <div class="info-row"><span>Vote share</span><span>${pct(w?.vote_share_pct)}</span></div>
+    </div>
+    ${h?`<div style="margin-top:.6rem;font-size:.73rem">
+      <div style="font-weight:700;margin-bottom:.3rem;color:var(--c-text-3);text-transform:uppercase;letter-spacing:.4px;font-size:.65rem">Electoral History</div>
+      <div class="d-flex flex-column gap-1">
+        ${[[2011,h.party_2011,h.winner_2011],[2016,h.party_2016,h.winner_2016],[2021,h.party_2021,h.winner_2021]]
+          .map(([y,p,w])=>`<div class="d-flex justify-content-between align-items-center">
+            <span style="color:var(--c-text-3);width:32px">${y}</span>
+            ${p?pb(p):'—'}
+            <span style="color:var(--c-text-2);font-size:.7rem;flex:1;text-align:right;margin-left:.4rem">${w||''}</span>
+          </div>`).join('')}
+      </div>
+    </div>`:''}`;
+}
+
+function renderMapLegend() {
+  const parties=[['DMK','#DC2626'],['ADMK','#16A34A'],['BJP','#EA580C'],['INC','#1D4ED8'],['PMK','#7C3AED'],['VCK','#0891B2'],['Others','#6B7280']];
+  document.getElementById('mapLegend').innerHTML = parties.map(([p,c])=>`
+    <div class="map-legend-item">
+      <span class="map-legend-dot" style="background:${c}"></span>${p}
+    </div>`).join('');
+}
+
+// ─── Explorer ─────────────────────────────────
+function setExplorerMode(m, el) {
+  explorerMode=m;
+  document.querySelectorAll('.exp-tab').forEach(t=>t.classList.remove('active'));
+  if(el) el.classList.add('active');
+  renderExplorer();
+}
+
+function dtDestroy(selector) {
+  try {
+    if($.fn.DataTable.isDataTable(selector)) {
+      $(selector).DataTable().clear().destroy();
+      $(selector).empty();
+    }
+  } catch(e) { console.warn('dtDestroy', selector, e); }
+}
+
+function renderExplorer() {
+  dtDestroy('#explorerTable');
+  explorerDT = null;
+  // After .empty(), we need to re-inject thead/tbody since table was cleared
+  const table = document.getElementById('explorerTable');
+  if(!table.querySelector('thead')) table.insertAdjacentHTML('afterbegin','<thead id="explorerHead"></thead>');
+  if(!table.querySelector('tbody')) table.insertAdjacentHTML('beforeend','<tbody id="explorerBody"></tbody>');
+  const head = table.querySelector('thead');
+  const body = table.querySelector('tbody');
+  const yr = document.getElementById('explorerYear');
+  if(yr) yr.textContent=YEAR;
+
+  if(explorerMode==='history'){
+    head.innerHTML=`<tr><th>#</th><th>Constituency</th><th>District</th><th>Type</th><th>2011</th><th>Party</th><th>2016</th><th>Party</th><th>2021</th><th>Party</th></tr>`;
+    body.innerHTML=D.winner_history.map(r=>`<tr>
+      <td style="color:var(--c-text-3)">${r.constituency_no}</td>
+      <td><strong>${r.constituency_name}</strong></td>
+      <td style="font-size:.73rem">${r.district_name}</td>
+      <td style="font-size:.65rem">${r.reserved_category||'GEN'}</td>
+      <td style="font-size:.73rem">${r.winner_2011||'—'}</td><td>${r.party_2011?pb(r.party_2011):'—'}</td>
+      <td style="font-size:.73rem">${r.winner_2016||'—'}</td><td>${r.party_2016?pb(r.party_2016):'—'}</td>
+      <td style="font-size:.73rem;font-weight:600">${r.winner_2021||'—'}</td><td>${r.party_2021?pb(r.party_2021):'—'}</td>
+    </tr>`).join('');
+  } else {
+    const rows=explorerMode==='winners'?D.winners.filter(r=>r.election_year==YEAR):D.constituency_results.filter(r=>r.election_year==YEAR);
+    head.innerHTML=`<tr><th>#</th><th>Constituency</th><th>District</th><th>Type</th><th>Candidate</th><th>Party</th><th>Votes</th><th>Share</th><th>Margin</th></tr>`;
+    body.innerHTML=rows.map(r=>`<tr>
+      <td style="color:var(--c-text-3)">${r.constituency_no}</td>
+      <td><strong>${r.constituency_name}</strong></td>
+      <td style="font-size:.73rem">${r.district_name}</td>
+      <td style="font-size:.65rem">${r.reserved_category||'GEN'}</td>
+      <td style="font-size:.75rem">${r.candidate_name}</td>
+      <td>${pb(r.party_code)}</td>
+      <td style="font-size:.75rem">${fmt(r.votes_received)}</td>
+      <td style="font-size:.75rem">${pct(r.vote_share_pct)}</td>
+      <td style="font-size:.75rem;font-weight:${explorerMode==='winners'?'700':'400'}">${explorerMode==='winners'?fmt(r.margin):'—'}</td>
+    </tr>`).join('');
+  }
+
+  explorerDT=$('#explorerTable').DataTable({
+    pageLength:25, order:[[0,'asc']],
+    language:{search:'',searchPlaceholder:'Search constituency, candidate, party...'},
+    dom:'<"d-flex justify-content-between align-items-center mb-2"f<"d-flex gap-2"li>>rt<"d-flex justify-content-between mt-2"ip>'
+  });
+}
+
+// ─── Performance section ──────────────────────
+function renderPerformance() {
+  renderTrend(); renderSwing(); renderIncumbent();
+}
+
+// ─── Boot ─────────────────────────────────────
+init();
+</script>
+</body>
+</html>
