@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dummy Candidate Problem — TN 2026 Election Analysis</title>
+<meta name="description" content="Data analysis of namesake/dummy candidates in Tamil Nadu 2026 Assembly Election — how voter confusion is engineered through similar candidate names.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<style>
+:root {
+  --bg: #0F0F14;
+  --surface: #1A1A24;
+  --surface-2: #22222F;
+  --border: #2A2A3A;
+  --text: #E8E8EF;
+  --text-2: #9999AA;
+  --text-3: #666677;
+  --accent: #F59E0B;
+  --accent-glow: rgba(245,158,11,0.15);
+  --red: #EF4444;
+  --red-soft: rgba(239,68,68,0.12);
+  --amber: #F59E0B;
+  --amber-soft: rgba(245,158,11,0.12);
+  --blue: #3B82F6;
+  --blue-soft: rgba(59,130,246,0.12);
+  --india: #2563EB;
+  --nda: #F97316;
+  --tvk: #A855F7;
+  --ntk: #EC4899;
+  --ind: #6B7280;
+  --radius: 14px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(245,158,11,0.3); }
+
+/* ═══ HERO ═══ */
+.hero {
+  position: relative;
+  padding: 80px 24px 100px;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #12121A 0%, #0F0F14 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 30% 40%, rgba(239,68,68,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 350px at 70% 60%, rgba(245,158,11,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; max-width: 800px; margin: 0 auto; }
+.hero .kicker {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: var(--text-2);
+  max-width: 620px;
+  margin: 0 auto 32px;
+  font-weight: 400;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat .num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.hero-stat .label {
+  font-size: 0.7rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+/* ═══ LAYOUT ═══ */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.section { padding: 48px 0; }
+.section-header {
+  margin-bottom: 28px;
+}
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.section-header p {
+  color: var(--text-2);
+  font-size: 0.88rem;
+}
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ═══ METRIC STRIP ═══ */
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: -56px;
+  position: relative;
+  z-index: 10;
+}
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.metric:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.metric .icon { font-size: 1.4rem; margin-bottom: 6px; }
+.metric .value {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.metric .value.red { color: var(--red); }
+.metric .value.amber { color: var(--amber); }
+.metric .value.blue { color: var(--blue); }
+.metric .value.white { color: #fff; }
+.metric .desc {
+  font-size: 0.7rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+/* ═══ CALLOUT ═══ */
+.callout {
+  background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(239,68,68,0.06));
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 32px 0;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+.callout strong { color: var(--accent); }
+
+/* ═══ CHART CARDS ═══ */
+.chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 768px) { .chart-grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.card h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.chart-wrap {
+  position: relative;
+  height: 260px;
+}
+
+/* ═══ CASE STUDY ═══ */
+.case-studies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.case-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.case-card.hot::before { background: linear-gradient(90deg, var(--red), var(--amber)); }
+.case-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.case-card .case-meta {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  margin-bottom: 12px;
+}
+.case-pair {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--surface-2);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+}
+.case-pair .target { font-weight: 700; flex: 1; }
+.case-pair .vs-arrow { color: var(--red); font-weight: 800; font-size: 0.7rem; }
+.case-pair .suspect { flex: 1; color: var(--text-2); }
+
+/* ═══ BADGES ═══ */
+.badge {
+  display: inline-flex;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.b-exact { background: var(--red-soft); color: var(--red); }
+.b-near { background: var(--amber-soft); color: var(--amber); }
+.b-word { background: var(--blue-soft); color: var(--blue); }
+.b-india { background: rgba(37,99,235,0.15); color: #60A5FA; }
+.b-nda { background: rgba(249,115,22,0.15); color: #FB923C; }
+.b-tvk { background: rgba(168,85,247,0.15); color: #C084FC; }
+.b-ntk { background: rgba(236,72,153,0.15); color: #F472B6; }
+.b-ind { background: rgba(107,114,128,0.15); color: #9CA3AF; }
+
+/* ═══ EXPLORER ═══ */
+.explorer-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.explorer-card select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239999AA' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L2 5h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.explorer-card select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.match-list { margin-top: 16px; }
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  margin-bottom: 6px;
+  border: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+.match-row:hover { border-color: var(--border); }
+@media (max-width: 600px) {
+  .match-row { grid-template-columns: 1fr; gap: 4px; text-align: center; }
+}
+.match-row .cand-name { font-weight: 700; font-size: 0.88rem; }
+.match-row .cand-party { font-size: 0.72rem; color: var(--text-3); margin-top: 2px; }
+.match-row .vs-col {
+  text-align: center;
+  font-weight: 900;
+  font-size: 0.65rem;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+}
+.sim-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sim-bar-bg {
+  width: 60px;
+  height: 5px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.sim-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* ═══ DATA TABLE ═══ */
+.table-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pill {
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.pill:hover { border-color: var(--text-3); color: var(--text); }
+.pill.active { background: var(--accent); color: #000; border-color: var(--accent); }
+
+.search-input {
+  margin-left: auto;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-family: inherit;
+  width: 240px;
+  max-width: 100%;
+  transition: border-color 0.2s;
+}
+.search-input:focus { outline: none; border-color: var(--accent); }
+.search-input::placeholder { color: var(--text-3); }
+
+.tbl-wrap {
+  overflow-x: auto;
+  max-height: 520px;
+  overflow-y: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+table.dtable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+table.dtable thead {
+  background: var(--surface-2);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+table.dtable th {
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+table.dtable th:hover { color: var(--text); }
+table.dtable th .arr { margin-left: 3px; opacity: 0.3; font-size: 0.6rem; }
+table.dtable th.sorted .arr { opacity: 1; color: var(--accent); }
+table.dtable td {
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(42,42,58,0.5);
+  vertical-align: middle;
+}
+table.dtable tr:hover td { background: rgba(255,255,255,0.02); }
+table.dtable .name-bold { font-weight: 700; }
+.row-count {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin-top: 8px;
+}
+
+/* ═══ METHODOLOGY ═══ */
+.method-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.method-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.method-card p {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.cat-item {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border-left: 3px solid;
+  font-size: 0.82rem;
+}
+.cat-item.exact { background: var(--red-soft); border-color: var(--red); }
+.cat-item.near { background: var(--amber-soft); border-color: var(--amber); }
+.cat-item.word { background: var(--blue-soft); border-color: var(--blue); }
+.cat-item strong { display: block; margin-bottom: 2px; font-size: 0.85rem; }
+
+/* ═══ FOOTER ═══ */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-3);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+footer a { color: var(--text-2); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate { animation: fadeUp 0.5s ease-out forwards; }
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker animate">Data Investigation</div>
+    <h1 class="animate delay-1">The Dummy Candidate Problem</h1>
+    <p class="subtitle animate delay-2">
+      How namesake candidates are used to engineer voter confusion
+      in the Tamil Nadu 2026 Assembly Election
+    </p>
+    <div class="hero-stats animate delay-3">
+      <div class="hero-stat"><div class="num">4,000</div><div class="label">Candidates Analyzed</div></div>
+      <div class="hero-stat"><div class="num">234</div><div class="label">Constituencies</div></div>
+      <div class="hero-stat"><div class="num" id="heroTotal">—</div><div class="label">Suspicious Pairs</div></div>
+      <div class="hero-stat"><div class="num" id="heroConst">—</div><div class="label">Affected Seats</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Metric Strip -->
+  <div class="metric-strip" id="metricStrip"></div>
+
+  <div class="callout" style="margin-top:36px;">
+    <strong>The pattern is unmistakable:</strong> In constituency after constituency, Independent candidates
+    appear on the ballot with names nearly identical to major party nominees — differing only by a
+    single initial. In <strong>Alandur</strong>, the ADMK candidate S. Saravanan faces three namesakes:
+    A. Saravanan, D. Saravanan, and R. Saravanan — all Independents. This is not coincidence.
+    <strong id="indPct">—</strong> of suspected dummy candidates filed as Independents.
+  </div>
+
+  <hr class="divider">
+
+  <!-- Charts -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Who Gets Targeted?</h2>
+      <p>Breakdown of dummy candidate pairs by target alliance and match severity</p>
+    </div>
+    <div class="chart-grid">
+      <div class="card">
+        <h3>Target Alliance</h3>
+        <div class="chart-wrap"><canvas id="allianceChart"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Match Severity</h3>
+        <div class="chart-wrap"><canvas id="severityChart"></canvas></div>
+      </div>
+    </div>
+    <div class="chart-grid" style="margin-top:16px;">
+      <div class="card">
+        <h3>Top Targeted Parties</h3>
+        <div class="chart-wrap" style="height:300px"><canvas id="partyChart"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Who Fields the Dummies?</h3>
+        <div class="chart-wrap"><canvas id="suspectChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Case Studies -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Worst Affected Constituencies</h2>
+      <p>Constituencies with the highest concentration of suspected dummy candidates</p>
+    </div>
+    <div class="case-studies" id="caseStudies"></div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Explorer -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Constituency Explorer</h2>
+      <p>Select any affected constituency to see all suspected name-match pairs</p>
+    </div>
+    <div class="explorer-card">
+      <select id="constSelect"><option value="">Choose a constituency...</option></select>
+      <div class="match-list" id="matchList"></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Full Table -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Complete Dataset</h2>
+      <p>All suspicious name-match pairs — filter by type, search, or click headers to sort</p>
+    </div>
+    <div class="table-controls">
+      <button class="pill active" data-f="all">All</button>
+      <button class="pill" data-f="EXACT">Exact</button>
+      <button class="pill" data-f="NEAR_FULL">Near</button>
+      <button class="pill" data-f="WORD_MATCH">Word</button>
+      <input type="text" class="search-input" id="searchBox" placeholder="Search name or constituency...">
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtable">
+        <thead><tr>
+          <th data-s="c">Constituency <span class="arr">&#9650;</span></th>
+          <th data-s="mc">Target Candidate <span class="arr">&#9650;</span></th>
+          <th data-s="mp">Party <span class="arr">&#9650;</span></th>
+          <th data-s="ma">Alliance <span class="arr">&#9650;</span></th>
+          <th data-s="sc">Suspect <span class="arr">&#9650;</span></th>
+          <th data-s="sp">Suspect Party <span class="arr">&#9650;</span></th>
+          <th data-s="sim">Sim% <span class="arr">&#9650;</span></th>
+          <th data-s="cat">Type <span class="arr">&#9650;</span></th>
+        </tr></thead>
+        <tbody id="tblBody"></tbody>
+      </table>
+    </div>
+    <div class="row-count" id="rowCount"></div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Methodology -->
+  <div class="section">
+    <div class="method-card">
+      <h3>Methodology</h3>
+      <p>
+        We compared every non-major-party candidate against INDIA alliance (DMK, INC, VCK, CPM, CPI, MDMK, IUML, MMK),
+        NDA alliance (ADMK, BJP, PMK, DMDK), TVK, and NTK candidates within the same constituency.
+        Names were normalized by removing honorifics (Dr., Thiru., Smt.), single-letter initials, and punctuation.
+      </p>
+      <div class="cat-grid">
+        <div class="cat-item exact">
+          <strong>Exact Match</strong>
+          Names identical after removing initials and prefixes. Example: "V. Sampathkumar" vs "S. Sampathkumar"
+        </div>
+        <div class="cat-item near">
+          <strong>Near Match (&ge;85%)</strong>
+          Full-name similarity handles spelling variants. Example: "Nithyanandhan" vs "Nithyanandan"
+        </div>
+        <div class="cat-item word">
+          <strong>Word Match</strong>
+          A significant name-part (&ge;4 chars) appears in both names. Example: "C. Joseph Vijay" vs "Vijay. G"
+        </div>
+      </div>
+      <p style="font-size:0.8rem; color:var(--text-3); margin-top:8px;">
+        <strong>Disclaimer:</strong> Not every match is an intentional dummy candidature. Common Tamil names (Kumar, Selvam, Raja, Murugan)
+        naturally recur. However, the concentration of Independents with near-identical names to major party candidates — particularly
+        multiple namesakes per constituency — is statistically notable and warrants scrutiny.
+        Data sourced from ECI Affidavit Portal (affidavit.eci.gov.in) on April 17, 2026.
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Analysis by <a href="#">Anand Raj</a> &middot; Data from Election Commission of India Affidavit Portal</p>
+  <p style="margin-top:6px;">4,000 candidates &middot; 234 constituencies &middot; Tamil Nadu Assembly Election 2026</p>
+</footer>
+
+<script>
+// ═══════════════════════════════════════
+// DATA (deduplicated from CSV)
+// ═══════════════════════════════════════
+const RAW=[
+["ALANDUR","S.Saravanan","ADMK","NDA","A.Saravanan","IND",1,"EXACT"],
+["ALANDUR","S.Saravanan","ADMK","NDA","D.Saravanan","IND",1,"EXACT"],
+["ALANDUR","S.Saravanan","ADMK","NDA","R.Saravanan","IND",1,"EXACT"],
+["ALANDUR","T.M.Anbarasan","DMK","INDIA","V.Anbarasan","IND",1,"EXACT"],
+["AMBATTUR","Balamurugan.G","TVK","TVK","R.Balamurugan","IND",1,"EXACT"],
+["AMBATTUR","K.N. Sekar","PMK","NDA","G.P. Sekar","IND",1,"EXACT"],
+["AMBATTUR","K.N. Sekar","PMK","NDA","K. Sekar","IND",1,"EXACT"],
+["AMBUR","Venkatesan. R","ADMK","NDA","Venkatesan. M","IND",1,"EXACT"],
+["ARCOT","J.L.Eswarappan","DMK","INDIA","Eswarappan.M","IND",1,"EXACT"],
+["AVADI","Senthilkumar. S","DMK","INDIA","S. Senthilkumar","IND",1,"EXACT"],
+["AVANASHI","Dr. Gokilamani.V","DMK","INDIA","Gokilamani. M","IND",1,"EXACT"],
+["CHENGAM","S.Velu","ADMK","NDA","K.Velu","IND",1,"EXACT"],
+["CHEPAUK-THIRUVALLIKENI","Selvam. D","TVK","TVK","Selvam. K","IND",1,"EXACT"],
+["COIMBATORE NORTH","V. Sampathkumar","TVK","TVK","S. Sampathkumar","IND",1,"EXACT"],
+["DHARMAPURI","Sivan. M.","TVK","TVK","Sivan. A.","IND",1,"EXACT"],
+["GUMMIDIPUNDI","Sudhakar.V","ADMK","NDA","D.Sudhakar","IND",1,"EXACT"],
+["GUMMIDIPUNDI","Sudhakar.V","ADMK","NDA","V.Sudhakar","IND",1,"EXACT"],
+["HARBOUR","R Manohar","ADMK","NDA","K E Manohar","IND",1,"EXACT"],
+["JOLARPET","Veeramani K.C.","ADMK","NDA","Veeramani H","IND",1,"EXACT"],
+["KALASAPAKKAM","Elumalai. P","TVK","TVK","Elumalai. S","IND",1,"EXACT"],
+["KALASAPAKKAM","Elumalai. P","TVK","TVK","Elumalai. T","IND",1,"EXACT"],
+["KALASAPAKKAM","Saravanan. P.S.T","DMK","INDIA","Saravanan. K","IND",1,"EXACT"],
+["KALASAPAKKAM","Saravanan. P.S.T","DMK","INDIA","Saravanan. V","TAMIZHAGA VAAZHVURIMAI KATCHI",1,"EXACT"],
+["KANCHEEPURAM","V. Somasundaram","ADMK","NDA","M. Somasundaram","IND",1,"EXACT"],
+["KATPADI","V. Ramu","ADMK","NDA","D. Ramu","IND",1,"EXACT"],
+["KILPENNATHUR","Ramachandran.S","ADMK","NDA","Ramachandran.K","IND",1,"EXACT"],
+["MADURAI EAST","Karthikeyan S","TVK","TVK","Karthikeyan G","IND",1,"EXACT"],
+["MADURAVOYAL","Ganapathy. K","DMK","INDIA","K. Ganapathy","IND",1,"EXACT"],
+["MANAPPARAI","R. Kathiravan","TVK","TVK","Kathiravan .M","IND",1,"EXACT"],
+["METTUPALAYAM","O.K.Chinnaraj","ADMK","NDA","R.Chinnaraj","IND",1,"EXACT"],
+["MUDUKULATHUR","S.Pandi","ADMK","NDA","V.Pandi","IND",1,"EXACT"],
+["OMALUR","Mani. R","ADMK","NDA","Mani. V","IND",1,"EXACT"],
+["PALLADAM","K.Selvaraj","DMK","INDIA","G.Selvaraj","IND",1,"EXACT"],
+["PALLADAM","K.Selvaraj","DMK","INDIA","M. Selvaraj","IND",1,"EXACT"],
+["PAPPIREDDIPPATTI","Palaniappan. P","DMK","INDIA","Palaniappan. R","IND",1,"EXACT"],
+["PARAMATHI-VELUR","Sekar S","ADMK","NDA","Sekar C","IND",1,"EXACT"],
+["PARAMATHI-VELUR","Sekar S","ADMK","NDA","Sekar V","IND",1,"EXACT"],
+["PATTUKKOTTAI","Annadurai K","DMK","INDIA","Annadurai C N","IND",1,"EXACT"],
+["POLUR","Baskaran. C. R","PMK","NDA","Baskaran. C","IND",1,"EXACT"],
+["PUDUKKOTTAI","N. Ramachandran","BJP","NDA","C. Ramachandran","IND",1,"EXACT"],
+["PUDUKKOTTAI","N. Ramachandran","BJP","NDA","R. Ramachandran","IND",1,"EXACT"],
+["PUDUKKOTTAI","N. Ramachandran","BJP","NDA","Ramachandran .C","IND",1,"EXACT"],
+["RISHIVANDIAM","Karthikeyan K","DMK","INDIA","Karthikeyan A","IND",1,"EXACT"],
+["RISHIVANDIAM","Karthikeyan K","DMK","INDIA","Karthikeyan V","IND",1,"EXACT"],
+["SALEM (NORTH)","Rajendran. R","DMK","INDIA","Rajendran. A","IND",1,"EXACT"],
+["SANKARI","Manikandan. M","DMK","INDIA","Manikandan. D","IND",1,"EXACT"],
+["SANKARI","Manikandan. M","DMK","INDIA","Manikandan. P","IND",1,"EXACT"],
+["SANKARI","Senthilkumar. K","TVK","TVK","Senthilkumar. R.S.","TAMIZHAGA VAAZHVURIMAI KATCHI",1,"EXACT"],
+["SHOLINGHUR","A.M.Munirathinam","INC","INDIA","V.Munirathinam","IND",1,"EXACT"],
+["SRIRANGAM","Ramesh","TVK","TVK","Ramesh.R","IND",1,"EXACT"],
+["SULUR","V.P.Kandasamy","ADMK","NDA","Kandasamy.A.","IND",1,"EXACT"],
+["SULUR","V.P.Kandasamy","ADMK","NDA","Kandasamy.R.","IND",1,"EXACT"],
+["SULUR","V.P.Kandasamy","ADMK","NDA","Kandasamy.V.","IND",1,"EXACT"],
+["TAMBARAM","D.Sarathkumar","TVK","TVK","Sarathkumar. R","IND",1,"EXACT"],
+["THIRUVIDAMARUDUR","S.Prabakaran","TVK","TVK","L.Prabakaran","IND",1,"EXACT"],
+["THONDAMUTHUR","N.R.Karthikeyan","DMK","INDIA","Karthikeyan.M","IND",1,"EXACT"],
+["THONDAMUTHUR","N.R.Karthikeyan","DMK","INDIA","Karthikeyan.R","IND",1,"EXACT"],
+["THOUSAND LIGHTS","Valarmathi.B","ADMK","NDA","Valarmathi.E","IND",1,"EXACT"],
+["TIRUCHENGODE","Eswaran E R","DMK","INDIA","Eswaran M","IND",1,"EXACT"],
+["TIRUKKOYILUR","Palanisamy S","ADMK","NDA","Palanisamy E","IND",1,"EXACT"],
+["TIRUNELVELI","Subramanian.S","DMK","INDIA","Subramanian. E.","IND",1,"EXACT"],
+["TIRUPPATTUR","Nallathambi. A","DMK","INDIA","Nallathambi. R","IND",1,"EXACT"],
+["TIRUPPUR (SOUTH)","Dineshkumar. N","DMK","INDIA","Dineshkumar","IND",1,"EXACT"],
+["TIRUPPUR (SOUTH)","Dineshkumar. N","DMK","INDIA","Dineshkumar. V","IND",1,"EXACT"],
+["TIRUVANNAMALAI","Velu. E.V","DMK","INDIA","Velu. K","IND",1,"EXACT"],
+["TIRUVANNAMALAI","Velu. E.V","DMK","INDIA","Velu. V","ANTI CORRUPTION DYNAMIC PARTY",1,"EXACT"],
+["TIRUVANNAMALAI","Vignesh. S","NTK","NTK","Vignesh. M","IND",1,"EXACT"],
+["VANDAVASI","Rani. P","ADMK","NDA","Rani. A","IND",1,"EXACT"],
+["VANDAVASI","Udhayakumar. M","TVK","TVK","Udhayakumar. N","IND",1,"EXACT"],
+["VANUR","Suresh P","TVK","TVK","Suresh C V","IND",1,"EXACT"],
+["VELACHERY","Ashok. M.K","ADMK","NDA","Ashok. M","IND",1,"EXACT"],
+["VELLORE","S R K Appu","ADMK","NDA","S.Appu","ALL INDIA JANANAYAKA MAKKAL KAZHAGAM",1,"EXACT"],
+["VIKRAVANDI","Sivakumar C","PMK","NDA","Sivakumar S","IND",1,"EXACT"],
+["VILLIVAKKAM","Vijayakumar  S.R","ADMK","NDA","Vijayakumar  D","IND",1,"EXACT"],
+["VILLIVAKKAM","Vijayakumar  S.R","ADMK","NDA","Vijayakumar G","IND",1,"EXACT"],
+["VIRUGAMPAKKAM","Sabarinathan.R","TVK","TVK","Sabarinathan.P","IND",1,"EXACT"],
+["YERCAUD","Palanisamy. M","NTK","NTK","Palanisamy. K","BAHUJAN SAMAJ PARTY",1,"EXACT"],
+["COIMBATORE NORTH","V. Sampathkumar","TVK","TVK","K. Sampath Kumar","IND",0.96,"NEAR_FULL"],
+["COIMBATORE NORTH","V. Sampathkumar","TVK","TVK","R. Sampath Kumar","IND",0.96,"NEAR_FULL"],
+["KILPENNATHUR","Ramachandran.S","ADMK","NDA","Ramachandiran.R","IND",0.96,"NEAR_FULL"],
+["PALANI","Dr. Praveen Kumar. M","TVK","TVK","Praveenkumar. R","IND",0.96,"NEAR_FULL"],
+["POLLACHI","K. Nithyanandhan","DMK","INDIA","K. Nithyanandan","IND",0.96,"NEAR_FULL"],
+["UTHIRAMERUR","Mageshkumar.P","PMK","NDA","Magesh Kumar.T","IND",0.957,"NEAR_FULL"],
+["DINDIGUL","Sreenivasan. C","ADMK","NDA","Seenivasan. P","IND",0.952,"NEAR_FULL"],
+["MADAVARAM","S.Sudharsanam","DMK","INDIA","Sudarsanam","IND",0.952,"NEAR_FULL"],
+["ATHOOR","I. Periasamy","DMK","INDIA","M. Periyasamy","IND",0.947,"NEAR_FULL"],
+["THIRUVALLUR","V.G. Raajendran","DMK","INDIA","S. Rajendran","IND",0.947,"NEAR_FULL"],
+["DHARAPURAM","Indirani.T","DMK","INDIA","Indhirani.C","IND",0.941,"NEAR_FULL"],
+["KILPENNATHUR","Pitchandi.K","DMK","INDIA","Pichandi.D","IND",0.941,"NEAR_FULL"],
+["KILPENNATHUR","Pitchandi.K","DMK","INDIA","Pichandi.R","IND",0.941,"NEAR_FULL"],
+["KILPENNATHUR","Pitchandi.K","DMK","INDIA","Pichandi.V","IND",0.941,"NEAR_FULL"],
+["PUDUKKOTTAI","V. Muthuraja","DMK","INDIA","G. Muthuraj","IND",0.941,"NEAR_FULL"],
+["PARAMATHI-VELUR","Moorthiy K S","DMK","INDIA","Moorthi M","IND",0.933,"NEAR_FULL"],
+["TIRUNELVELI","Murughan.R.S.","TVK","TVK","Murugan. P.","THAMIZHAKA PADAIPPALAR MAKKAL KATCHI",0.933,"NEAR_FULL"],
+["TIRUNELVELI","Murughan.R.S.","TVK","TVK","Murugan.S.","IND",0.933,"NEAR_FULL"],
+["KARUR","M.R. Vijayabhaskar","ADMK","NDA","Vijaya Baskar. R.V","IND",0.923,"NEAR_FULL"],
+["KRISHNARAYAPURAM","Sathiya. V","NTK","NTK","Sathya. M","TVK",0.923,"NEAR_FULL"],
+["MYLAPORE","Venkataramanan. P","TVK","TVK","Venkataraman. B","IND",0.923,"NEAR_FULL"],
+["SENDAMANGALAM","C Chandrasekaran","ADMK","NDA","P Chandrasekar","TVK",0.923,"NEAR_FULL"],
+["SHOZHINGANALLUR","K.P.Kandan","ADMK","NDA","V. Kandhan","IND",0.923,"NEAR_FULL"],
+["BARGUR","E.C. Govindarasan","ADMK","NDA","D. Govindarajan","IND",0.917,"NEAR_FULL"],
+["RAJAPALAYAM","Thangapandian. S","DMK","INDIA","Thangapandi. B","IND",0.917,"NEAR_FULL"],
+["AMBUR","Vilwanathan. A.C.","DMK","INDIA","Viswanathan. J","IND",0.909,"NEAR_FULL"],
+["ANAIKATTU","A.P.Nandakumar","DMK","INDIA","M.Nandha Kumar","IND",0.909,"NEAR_FULL"],
+["ATHOOR","A. Viswanathan","ADMK","NDA","K. Visvanathan","IND",0.909,"NEAR_FULL"],
+["CHEPAUK-THIRUVALLIKENI","Aysha","NTK","NTK","Ayisha","IND",0.909,"NEAR_FULL"],
+["KUNNAM","Sivasankar. S.S","DMK","INDIA","Sivasankaran. P","IND",0.909,"NEAR_FULL"],
+["THIRUVALLUR","V.G. Raajendran","DMK","INDIA","G. Rajendiran","IND",0.9,"NEAR_FULL"],
+["THOUSAND LIGHTS","Prabhakar.J.C.D","TVK","TVK","Prabhakaran.B","IND",0.9,"NEAR_FULL"],
+["THOUSAND LIGHTS","Prabhakar.J.C.D","TVK","TVK","Prabhakaran.T","IND",0.9,"NEAR_FULL"],
+["THOUSAND LIGHTS","Prabhakar.J.C.D","TVK","TVK","Prabhakaran.V","IND",0.9,"NEAR_FULL"],
+["THOUSAND LIGHTS","Valarmathi.B","ADMK","NDA","Valarmathy.D","IND",0.9,"NEAR_FULL"],
+["JOLARPET","Sasirekha K","NTK","NTK","Sasi Reka Y","MAKKAL ARASIAL KATCHI",0.889,"NEAR_FULL"],
+["TIRUTTANI","D.Krishnamurthy","DMDK","NDA","Krishnamoorthy.D","IND",0.889,"NEAR_FULL"],
+["TIRUTTANI","D.Krishnamurthy","DMDK","NDA","Krishnamoorthy.K","IND",0.889,"NEAR_FULL"],
+["TIRUTTANI","D.Krishnamurthy","DMDK","NDA","Krishnamoorthy.M","IND",0.889,"NEAR_FULL"],
+["MANAPPARAI","Dr. Pl. Vijayakumar","ADMK","NDA","P. Vijayakumar","IND",0.88,"NEAR_FULL"],
+["METTUR","Venkatachalam. G","ADMK","NDA","Venkatasalam. G","IND",0.88,"NEAR_FULL"],
+["KATPADI","Dr M Sudhakar","TVK","TVK","M. Suthakar","IND",0.875,"NEAR_FULL"],
+["PARAMAKUDI","Dr. Muthiah. S","ADMK","NDA","Muththiah. M","IND",0.875,"NEAR_FULL"],
+["VIRALIMALAI","Murugesan. P","TVK","TVK","Thirumurugan. A","IND",0.875,"NEAR_FULL"],
+["VIRALIMALAI","Murugesan. P","TVK","TVK","Thirumurugan. K","IND",0.875,"NEAR_FULL"],
+["KALLAKURICHI","Rajeevgandhi S","ADMK","NDA","Rajivgandhi P","IND",0.87,"NEAR_FULL"],
+["KALLAKURICHI","Rajeevgandhi S","ADMK","NDA","Rajivgandhi S","IND",0.87,"NEAR_FULL"],
+["PALACODE","Dr. Dnv Senthilkumar. S.","DMK","INDIA","Senthilkumar. G.","IND",0.857,"NEAR_FULL"],
+["PALACODE","Dr. Dnv Senthilkumar. S.","DMK","INDIA","Senthilkumar. K","IND",0.857,"NEAR_FULL"],
+["TIRUCHENGODE","Revathi K","NTK","NTK","Revanth S N","IND",0.857,"NEAR_FULL"],
+["PERAMBUR","C. Joseph Vijay","TVK","TVK","M. Joseph","IND",0.5,"WORD_MATCH"],
+["PERAMBUR","C. Joseph Vijay","TVK","TVK","S. Joseph","IND",0.5,"WORD_MATCH"],
+["PERAMBUR","C. Joseph Vijay","TVK","TVK","Vijay","ALL INDIA JANANAYAKA MAKKAL KAZHAGAM",0.5,"WORD_MATCH"],
+["PERAMBUR","C. Joseph Vijay","TVK","TVK","Vijay. G","IND",0.5,"WORD_MATCH"],
+["TIRUVANNAMALAI","Elumalai. C","BJP","NDA","Elumalai. A S/O Arumugam","IND",1,"WORD_MATCH"],
+["TIRUVANNAMALAI","Elumalai. C","BJP","NDA","Elumalai. C  S/O Chinnakuzhanthai","IND",1,"WORD_MATCH"],
+["TIRUVANNAMALAI","Elumalai. C","BJP","NDA","Elumalai. C S/O Chinnarasu","IND",1,"WORD_MATCH"],
+["THIRUVERAMBUR","Vijayakumar (A) Navalpattu S. Viji","TVK","TVK","Vijayakumar. C","IND",0.333,"WORD_MATCH"],
+["THIRUVERAMBUR","Vijayakumar (A) Navalpattu S. Viji","TVK","TVK","Vijayakumar. N","IND",0.333,"WORD_MATCH"],
+["THONDAMUTHUR","N.R.Karthikeyan","DMK","INDIA","Karthikeyan.R-Pooluvapatti","IND",1,"WORD_MATCH"],
+["THONDAMUTHUR","N.R.Karthikeyan","DMK","INDIA","Karthikeyan.R-Thondamuthur","IND",1,"WORD_MATCH"],
+["KILPENNATHUR","Raja.D","TVK","TVK","Rajasekar.I","IND",1,"WORD_MATCH"],
+["KILPENNATHUR","Raja.D","TVK","TVK","Rajasekar.P","TAMIZHAGA VAAZHVURIMAI KATCHI",1,"WORD_MATCH"],
+["CHEPAUK-THIRUVALLIKENI","Selvam. D","TVK","TVK","Selvam ( Alias ) Harinarayanan","IND",1,"WORD_MATCH"],
+["CHEPAUK-THIRUVALLIKENI","Selvam. D","TVK","TVK","Selvam ( Alias ) Venkatesh","IND",1,"WORD_MATCH"],
+["KOLATHUR","V. S. Babu","TVK","TVK","V. Naresh Babu","IND",1,"WORD_MATCH"],
+["JAYANKONDAM","Kannan Ka.So.Ka.","DMK","INDIA","Kannan K.","IND",1,"WORD_MATCH"],
+["JOLARPET","Kavithadhandapani","DMK","INDIA","Kavitha C","IND",1,"WORD_MATCH"],
+["JOLARPET","Kavithadhandapani","DMK","INDIA","Kavitha T","IND",1,"WORD_MATCH"],
+["PAPANASAM","Anis Fathima","NTK","NTK","A. Anis Fathima Abdul Rahim","IND",1,"WORD_MATCH"],
+["MAYILADUTHURAI","Jamal Mohamed Younoos. Y.N","INC","INDIA","Jamal Mohamed","IND",0.667,"WORD_MATCH"],
+["ARANI","Mahalakshmi Govarthanan","DMK","INDIA","Mahalakshmi. G","IND",0.5,"WORD_MATCH"],
+["ARCOT","G.Vijay Mohan","TVK","TVK","A.Vijay","IND",0.5,"WORD_MATCH"],
+["BHUVANAGIRI","Arunmozhithevan . A","ADMK","NDA","Arunmozhi . V","IND",1,"WORD_MATCH"],
+["KANGAYAM","Nsn Nataraj","ADMK","NDA","T.Nataraj","IND",1,"WORD_MATCH"],
+["LALGUDI","Ku Pa Krishnan","TVK","TVK","M. Krishnan","IND",1,"WORD_MATCH"],
+["SULUR","Thalapathy Murugesan","DMK","INDIA","Murugesan.N.","IND",0.5,"WORD_MATCH"],
+["TIRUCHIRAPALLI (EAST)","C. Joseph Vijay","TVK","TVK","Vijay .K","ALL INDIA JANANAYAKA MAKKAL KAZHAGAM",0.5,"WORD_MATCH"],
+["SALEM (SOUTH)","Vijay Tamilan Parthiban. A","TVK","TVK","Parthiban. A","IND",0.333,"WORD_MATCH"],
+["SALEM (SOUTH)","Vijay Tamilan Parthiban. A","TVK","TVK","Parthiban. V","IND",0.333,"WORD_MATCH"]
+];
+
+// Convert to objects and deduplicate
+const seen=new Set();
+const D=RAW.map(r=>({c:r[0],mc:r[1],mp:r[2],ma:r[3],sc:r[4],sp:r[5],sim:r[6],cat:r[7]}))
+  .filter(d=>{const k=d.c+'|'+d.mc+'|'+d.sc+'|'+d.cat;if(seen.has(k))return false;seen.add(k);return true;});
+
+// ═══ Computed stats ═══
+const total=D.length;
+const exact=D.filter(d=>d.cat==='EXACT').length;
+const near=D.filter(d=>d.cat==='NEAR_FULL').length;
+const word=D.filter(d=>d.cat==='WORD_MATCH').length;
+const consts=new Set(D.map(d=>d.c)).size;
+const indCount=D.filter(d=>d.sp==='IND').length;
+
+document.getElementById('heroTotal').textContent=total;
+document.getElementById('heroConst').textContent=consts;
+document.getElementById('indPct').textContent=Math.round(indCount/total*100)+'%';
+
+// Metric strip
+document.getElementById('metricStrip').innerHTML=`
+<div class="metric"><div class="icon">🎯</div><div class="value red">${exact}</div><div class="desc">Exact Matches</div></div>
+<div class="metric"><div class="icon">⚠️</div><div class="value amber">${near}</div><div class="desc">Near Matches</div></div>
+<div class="metric"><div class="icon">🔤</div><div class="value blue">${word}</div><div class="desc">Word Matches</div></div>
+<div class="metric"><div class="icon">🗳️</div><div class="value white">${consts}</div><div class="desc">Seats Affected</div></div>
+<div class="metric"><div class="icon">👤</div><div class="value white">${Math.round(indCount/total*100)}%</div><div class="desc">Filed as IND</div></div>`;
+
+// ═══ Alliance & severity counts ═══
+const aCnt={};D.forEach(d=>aCnt[d.ma]=(aCnt[d.ma]||0)+1);
+const pCnt={};D.forEach(d=>pCnt[d.mp]=(pCnt[d.mp]||0)+1);
+const sCnt={};D.forEach(d=>sCnt[d.sp]=(sCnt[d.sp]||0)+1);
+
+// Chart defaults
+Chart.defaults.color='#9999AA';
+Chart.defaults.font.family='Inter';
+Chart.defaults.font.size=11;
+
+// Alliance chart
+new Chart(document.getElementById('allianceChart'),{
+  type:'doughnut',
+  data:{
+    labels:Object.keys(aCnt),
+    datasets:[{data:Object.values(aCnt),
+      backgroundColor:Object.keys(aCnt).map(a=>({INDIA:'#2563EB',NDA:'#F97316',TVK:'#A855F7',NTK:'#EC4899'}[a]||'#6B7280')),
+      borderWidth:0,hoverOffset:8}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,cutout:'58%',
+    plugins:{legend:{position:'bottom',labels:{padding:14,usePointStyle:true,pointStyle:'circle'}}}}
+});
+
+// Severity chart
+new Chart(document.getElementById('severityChart'),{
+  type:'bar',
+  data:{
+    labels:['Exact Match','Near Match','Word Match'],
+    datasets:[{data:[exact,near,word],backgroundColor:['#EF4444','#F59E0B','#3B82F6'],borderRadius:6,barThickness:40}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',
+    plugins:{legend:{display:false}},
+    scales:{x:{grid:{color:'rgba(42,42,58,0.5)'},ticks:{font:{size:11}}},y:{grid:{display:false},ticks:{font:{weight:600}}}}}
+});
+
+// Party chart
+const topP=Object.entries(pCnt).sort((a,b)=>b[1]-a[1]).slice(0,12);
+const pColors={ADMK:'#00A651',DMK:'#E4002B',TVK:'#A855F7',BJP:'#FF9933',PMK:'#FFD700',NTK:'#EC4899',INC:'#19AAED',DMDK:'#006400',VCK:'#800080',CPM:'#CC0000',CPI:'#FF0000'};
+new Chart(document.getElementById('partyChart'),{
+  type:'bar',
+  data:{
+    labels:topP.map(p=>p[0]),
+    datasets:[{data:topP.map(p=>p[1]),backgroundColor:topP.map(p=>pColors[p[0]]||'#6B7280'),borderRadius:4,barThickness:16}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',
+    plugins:{legend:{display:false}},
+    scales:{x:{grid:{color:'rgba(42,42,58,0.5)'}},y:{grid:{display:false},ticks:{font:{weight:600,size:10}}}}}
+});
+
+// Suspect chart
+const topS=Object.entries(sCnt).sort((a,b)=>b[1]-a[1]).slice(0,6);
+new Chart(document.getElementById('suspectChart'),{
+  type:'doughnut',
+  data:{
+    labels:topS.map(s=>s[0].length>25?s[0].slice(0,25)+'...':s[0]),
+    datasets:[{data:topS.map(s=>s[1]),
+      backgroundColor:['#6B7280','#9CA3AF','#D1D5DB','#FCA5A5','#FDE68A','#BFDBFE'],
+      borderWidth:0}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,cutout:'50%',
+    plugins:{legend:{position:'bottom',labels:{padding:10,usePointStyle:true,pointStyle:'circle',font:{size:10}}}}}
+});
+
+// ═══ Case studies ═══
+const cCnt={};
+D.forEach(d=>{
+  if(!cCnt[d.c])cCnt[d.c]={t:0,e:0,n:0,w:0,als:new Set()};
+  cCnt[d.c].t++;
+  if(d.cat==='EXACT')cCnt[d.c].e++;
+  else if(d.cat==='NEAR_FULL')cCnt[d.c].n++;
+  else cCnt[d.c].w++;
+  cCnt[d.c].als.add(d.ma);
+});
+
+const topC=Object.entries(cCnt).sort((a,b)=>b[1].t-a[1].t).slice(0,6);
+document.getElementById('caseStudies').innerHTML=topC.map(([name,info])=>{
+  const pairs=D.filter(d=>d.c===name).slice(0,4);
+  return `<div class="case-card hot">
+    <h3>${name}</h3>
+    <div class="case-meta">${info.t} suspicious pairs &middot; ${info.e} exact, ${info.n} near, ${info.w} word &middot; Targets: ${[...info.als].map(a=>`<span class="badge b-${a.toLowerCase()}">${a}</span>`).join(' ')}</div>
+    ${pairs.map(d=>`<div class="case-pair">
+      <span class="target">${d.mc} <span class="badge b-${d.ma.toLowerCase()}">${d.mp}</span></span>
+      <span class="vs-arrow">VS</span>
+      <span class="suspect">${d.sc} <span class="badge b-ind">${d.sp==='IND'?'IND':d.sp.slice(0,12)}</span></span>
+    </div>`).join('')}
+  </div>`;
+}).join('');
+
+// ═══ Explorer ═══
+const allC=[...new Set(D.map(d=>d.c))].sort();
+const sel=document.getElementById('constSelect');
+allC.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=`${c} (${cCnt[c].t} pairs)`;sel.appendChild(o);});
+sel.addEventListener('change',showExplorer);
+
+function showExplorer(){
+  const v=sel.value, list=document.getElementById('matchList');
+  if(!v){list.innerHTML='';return;}
+  const m=D.filter(d=>d.c===v).sort((a,b)=>b.sim-a.sim);
+  list.innerHTML=m.map(d=>{
+    const pct=Math.round(d.sim*100);
+    const col=d.cat==='EXACT'?'var(--red)':d.cat==='NEAR_FULL'?'var(--amber)':'var(--blue)';
+    const cls=d.cat==='EXACT'?'b-exact':d.cat==='NEAR_FULL'?'b-near':'b-word';
+    return `<div class="match-row">
+      <div><div class="cand-name">${d.mc}</div><div class="cand-party"><span class="badge b-${d.ma.toLowerCase()}">${d.mp} / ${d.ma}</span></div></div>
+      <div class="vs-col">VS</div>
+      <div><div class="cand-name">${d.sc}</div><div class="cand-party"><span class="badge b-ind">${d.sp}</span></div></div>
+      <div class="sim-indicator">
+        <div class="sim-bar-bg"><div class="sim-bar-fill" style="width:${pct}%;background:${col}"></div></div>
+        <span class="badge ${cls}">${pct}%</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ═══ Table ═══
+let filt='all', sort={k:'sim',d:'desc'};
+
+function renderTbl(){
+  let data=filt==='all'?[...D]:D.filter(d=>d.cat===filt);
+  const q=document.getElementById('searchBox').value.toLowerCase();
+  if(q) data=data.filter(d=>d.c.toLowerCase().includes(q)||d.mc.toLowerCase().includes(q)||d.sc.toLowerCase().includes(q)||d.mp.toLowerCase().includes(q)||d.sp.toLowerCase().includes(q));
+  data.sort((a,b)=>{let va=a[sort.k],vb=b[sort.k];if(typeof va==='string'){va=va.toLowerCase();vb=vb.toLowerCase();}return va<vb?(sort.d==='asc'?-1:1):va>vb?(sort.d==='asc'?1:-1):0;});
+  document.getElementById('tblBody').innerHTML=data.map(d=>{
+    const cls=d.cat==='EXACT'?'b-exact':d.cat==='NEAR_FULL'?'b-near':'b-word';
+    const pct=Math.round(d.sim*100);
+    return `<tr><td>${d.c}</td><td class="name-bold">${d.mc}</td><td>${d.mp}</td><td><span class="badge b-${d.ma.toLowerCase()}">${d.ma}</span></td><td class="name-bold">${d.sc}</td><td>${d.sp.length>22?d.sp.slice(0,22)+'...':d.sp}</td><td>${pct}%</td><td><span class="badge ${cls}">${d.cat.replace('_',' ')}</span></td></tr>`;
+  }).join('');
+  document.getElementById('rowCount').textContent=`Showing ${data.length} of ${D.length} pairs`;
+}
+
+document.querySelectorAll('.pill').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+    b.classList.add('active');filt=b.dataset.f;renderTbl();
+  });
+});
+document.getElementById('searchBox').addEventListener('input',renderTbl);
+document.querySelectorAll('th[data-s]').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const k=th.dataset.s;
+    if(sort.k===k)sort.d=sort.d==='asc'?'desc':'asc';
+    else sort={k,d:'asc'};
+    document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted'));
+    th.classList.add('sorted');
+    th.querySelector('.arr').textContent=sort.d==='asc'?'\u25B2':'\u25BC';
+    renderTbl();
+  });
+});
+renderTbl();
+</script>
+</body>
+</html>
