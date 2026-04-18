@@ -1,118 +1,377 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0F0F14"/>
-      <stop offset="50%" style="stop-color:#1A1A24"/>
-      <stop offset="100%" style="stop-color:#0F0F14"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#EF4444"/>
-      <stop offset="100%" style="stop-color:#F59E0B"/>
-    </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFFFFF"/>
-      <stop offset="100%" style="stop-color:#F59E0B"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <!-- Noise texture filter -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="noisy"/>
+      <feComponentTransfer in="noisy">
+        <feFuncA type="linear" slope="1"/>
+      </feComponentTransfer>
+    </filter>
+    <!-- Paper texture -->
+    <filter id="paperTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="2"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <!-- Drop shadow for clippings -->
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <!-- Pin shadow -->
+    <filter id="pinShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <!-- Glow for red strings -->
+    <filter id="stringGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <!-- Stamp filter -->
+    <filter id="stampEffect">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- Torn edge clip paths -->
+    <clipPath id="torn1">
+      <path d="M0,3 Q10,-2 20,4 Q35,0 45,5 Q60,-1 75,3 Q90,0 105,4 Q115,-2 130,3 Q145,0 160,5 Q175,-1 190,3 Q200,0 215,4 Q225,1 240,3 Q250,0 265,5 L270,0 L270,80 Q260,83 250,78 Q235,82 220,77 Q205,81 190,78 Q175,83 160,77 Q145,81 130,78 Q115,82 100,77 Q85,81 70,78 Q55,82 40,77 Q25,81 10,78 Q5,80 0,77 Z"/>
+    </clipPath>
+    <clipPath id="torn2">
+      <path d="M0,2 Q15,-1 25,4 Q40,0 55,3 Q70,-2 85,4 Q100,0 115,3 Q130,-1 145,4 Q155,0 170,3 Q185,-2 200,4 Q215,0 225,2 Q235,0 248,4 L250,0 L250,72 Q240,75 230,70 Q215,74 200,69 Q185,73 170,70 Q155,74 140,69 Q125,73 110,70 Q95,74 80,69 Q65,73 50,70 Q35,74 20,69 Q10,72 0,70 Z"/>
+    </clipPath>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#0F0F14;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1"/>
+    </radialGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- ====== DARK BACKGROUND ====== -->
+  <rect width="1200" height="630" fill="#0F0F14"/>
 
-  <!-- Subtle grid pattern -->
-  <g opacity="0.04" stroke="#fff" stroke-width="0.5">
-    <line x1="0" y1="0" x2="0" y2="630"/><line x1="60" y1="0" x2="60" y2="630"/>
-    <line x1="120" y1="0" x2="120" y2="630"/><line x1="180" y1="0" x2="180" y2="630"/>
-    <line x1="240" y1="0" x2="240" y2="630"/><line x1="300" y1="0" x2="300" y2="630"/>
-    <line x1="360" y1="0" x2="360" y2="630"/><line x1="420" y1="0" x2="420" y2="630"/>
-    <line x1="480" y1="0" x2="480" y2="630"/><line x1="540" y1="0" x2="540" y2="630"/>
-    <line x1="600" y1="0" x2="600" y2="630"/><line x1="660" y1="0" x2="660" y2="630"/>
-    <line x1="720" y1="0" x2="720" y2="630"/><line x1="780" y1="0" x2="780" y2="630"/>
-    <line x1="840" y1="0" x2="840" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/>
-    <line x1="960" y1="0" x2="960" y2="630"/><line x1="1020" y1="0" x2="1020" y2="630"/>
-    <line x1="1080" y1="0" x2="1080" y2="630"/><line x1="1140" y1="0" x2="1140" y2="630"/>
-    <line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/>
-    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/>
-    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/>
-    <line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/>
-    <line x1="0" y1="540" x2="1200" y2="540"/>
+  <!-- Subtle cork-board texture overlay -->
+  <rect width="1200" height="630" fill="#1A1A20" opacity="0.3" filter="url(#noise)"/>
+
+  <!-- Subtle dark vignette edges -->
+  <rect width="1200" height="630" fill="url(#vignette)" opacity="0.4"/>
+
+  <!-- Faint grid lines like a board -->
+  <g opacity="0.03" stroke="#888" stroke-width="0.5">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
   </g>
 
-  <!-- Decorative red glow -->
-  <circle cx="200" cy="350" r="200" fill="#EF4444" opacity="0.04"/>
-  <circle cx="1000" cy="280" r="180" fill="#F59E0B" opacity="0.03"/>
-
-  <!-- Accent bar at top -->
-  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
-
-  <!-- Kicker badge -->
-  <rect x="80" y="120" width="180" height="28" rx="14" fill="#EF4444" opacity="0.15"/>
-  <text x="170" y="139" text-anchor="middle" fill="#EF4444" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">DATA INVESTIGATION</text>
-
-  <!-- Main title -->
-  <text x="80" y="210" fill="url(#textGrad)" font-family="Georgia, 'Playfair Display', serif" font-size="46" font-weight="900" letter-spacing="-0.5">Same Name, Different Initial</text>
-  <text x="80" y="265" fill="#9CA3AF" font-family="Georgia, 'Playfair Display', serif" font-size="30" font-weight="700">The Dummy Candidate Factory in TN 2026</text>
-
-  <!-- Divider line -->
-  <rect x="80" y="290" width="80" height="3" rx="1.5" fill="url(#accent)"/>
-
-  <!-- Stat boxes -->
-  <g transform="translate(80, 320)">
-    <!-- Box 1 -->
-    <rect x="0" y="0" width="160" height="90" rx="10" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="80" y="42" text-anchor="middle" fill="#EF4444" font-family="Inter, sans-serif" font-size="32" font-weight="800">77</text>
-    <text x="80" y="68" text-anchor="middle" fill="#666677" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1">EXACT MATCHES</text>
-
-    <!-- Box 2 -->
-    <rect x="180" y="0" width="160" height="90" rx="10" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="260" y="42" text-anchor="middle" fill="#F59E0B" font-family="Inter, sans-serif" font-size="32" font-weight="800">100+</text>
-    <text x="260" y="68" text-anchor="middle" fill="#666677" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1">SEATS AFFECTED</text>
-
-    <!-- Box 3 -->
-    <rect x="360" y="0" width="160" height="90" rx="10" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="440" y="42" text-anchor="middle" fill="#3B82F6" font-family="Inter, sans-serif" font-size="32" font-weight="800">90%+</text>
-    <text x="440" y="68" text-anchor="middle" fill="#666677" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1">FILED AS IND</text>
-
-    <!-- Box 4 -->
-    <rect x="540" y="0" width="160" height="90" rx="10" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="620" y="42" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="32" font-weight="800">4,000</text>
-    <text x="620" y="68" text-anchor="middle" fill="#666677" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1">CANDIDATES</text>
+  <!-- ====== RED CONNECTING STRINGS (behind clippings) ====== -->
+  <g filter="url(#stringGlow)" opacity="0.7">
+    <!-- String from clipping 1 to clipping 2 -->
+    <path d="M370,168 C420,200 440,260 390,295" stroke="#EF4444" stroke-width="1.5" fill="none" stroke-dasharray="none"/>
+    <!-- String from clipping 2 to clipping 3 -->
+    <path d="M380,340 C350,370 320,390 290,420" stroke="#EF4444" stroke-width="1.5" fill="none"/>
+    <!-- String from clipping 1 to center title -->
+    <path d="M280,140 C350,120 450,90 520,75" stroke="#EF4444" stroke-width="1.2" fill="none"/>
+    <!-- String from clipping 4 to clipping 5 -->
+    <path d="M960,310 C980,350 1010,380 1030,410" stroke="#EF4444" stroke-width="1.5" fill="none"/>
+    <!-- Long string across board -->
+    <path d="M370,168 C500,230 700,250 840,195" stroke="#EF4444" stroke-width="1" fill="none" opacity="0.5"/>
+    <!-- String from stat note to clipping -->
+    <path d="M190,510 C250,480 300,440 290,420" stroke="#EF4444" stroke-width="1" fill="none" opacity="0.4"/>
+    <!-- Cross string -->
+    <path d="M840,195 C900,250 920,280 960,310" stroke="#EF4444" stroke-width="1.2" fill="none" opacity="0.5"/>
+    <!-- Extra atmospheric strings -->
+    <path d="M100,200 C150,250 200,280 180,340" stroke="#EF4444" stroke-width="0.8" fill="none" opacity="0.3"/>
+    <path d="M1050,150 C1030,200 1000,240 960,280" stroke="#EF4444" stroke-width="0.8" fill="none" opacity="0.3"/>
   </g>
 
-  <!-- Example name pairs on right side -->
-  <g transform="translate(800, 140)" opacity="0.7">
-    <rect x="0" y="0" width="320" height="44" rx="8" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="16" y="27" fill="#EF4444" font-family="Inter, monospace" font-size="13" font-weight="700">C. Joseph Vijay</text>
-    <text x="175" y="27" fill="#444" font-family="Inter, sans-serif" font-size="11" font-weight="800">VS</text>
-    <text x="205" y="27" fill="#9CA3AF" font-family="Inter, monospace" font-size="13">Vijay. G (IND)</text>
-
-    <rect x="0" y="52" width="320" height="44" rx="8" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="16" y="79" fill="#F97316" font-family="Inter, monospace" font-size="13" font-weight="700">S. Saravanan</text>
-    <text x="175" y="79" fill="#444" font-family="Inter, sans-serif" font-size="11" font-weight="800">VS</text>
-    <text x="205" y="79" fill="#9CA3AF" font-family="Inter, monospace" font-size="13">A. Saravanan (IND)</text>
-
-    <rect x="0" y="104" width="320" height="44" rx="8" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="16" y="131" fill="#A855F7" font-family="Inter, monospace" font-size="13" font-weight="700">V. Sampathkumar</text>
-    <text x="175" y="131" fill="#444" font-family="Inter, sans-serif" font-size="11" font-weight="800">VS</text>
-    <text x="205" y="131" fill="#9CA3AF" font-family="Inter, monospace" font-size="13">S. Sampathkumar (IND)</text>
-
-    <rect x="0" y="156" width="320" height="44" rx="8" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="16" y="183" fill="#2563EB" font-family="Inter, monospace" font-size="13" font-weight="700">Pitchandi.K</text>
-    <text x="175" y="183" fill="#444" font-family="Inter, sans-serif" font-size="11" font-weight="800">VS</text>
-    <text x="205" y="183" fill="#9CA3AF" font-family="Inter, monospace" font-size="13">Pichandi.D (IND)</text>
-
-    <rect x="0" y="208" width="320" height="44" rx="8" fill="#1A1A24" stroke="#2A2A3A" stroke-width="1"/>
-    <text x="16" y="235" fill="#F97316" font-family="Inter, monospace" font-size="13" font-weight="700">V.P. Kandasamy</text>
-    <text x="175" y="235" fill="#444" font-family="Inter, sans-serif" font-size="11" font-weight="800">VS</text>
-    <text x="205" y="235" fill="#9CA3AF" font-family="Inter, monospace" font-size="13">Kandasamy.R (IND)</text>
+  <!-- ====== TITLE AREA (central, prominent) ====== -->
+  <!-- Title background clipping - large paper -->
+  <g transform="translate(340, 22) rotate(-0.5)">
+    <rect x="0" y="0" width="530" height="115" rx="2" fill="#F5F0E8" filter="url(#shadow)" opacity="0.95"/>
+    <!-- Aged paper effect -->
+    <rect x="0" y="0" width="530" height="115" rx="2" fill="#E8E0D0" opacity="0.15"/>
+    <!-- Torn top edge illusion -->
+    <rect x="0" y="0" width="530" height="3" fill="#DDD5C5" opacity="0.5"/>
+    <!-- Title text -->
+    <text x="265" y="48" text-anchor="middle" fill="#1A1A1A" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="900" letter-spacing="-0.5">Same Name, Different Initial</text>
+    <text x="265" y="78" text-anchor="middle" fill="#555" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="400" font-style="italic">The Dummy Candidate Factory in TN 2026</text>
+    <!-- Red underline accent -->
+    <line x1="90" y1="90" x2="440" y2="90" stroke="#EF4444" stroke-width="2.5" opacity="0.7"/>
+    <!-- Coffee stain ring -->
+    <circle cx="480" cy="30" r="22" fill="none" stroke="#C4A87A" stroke-width="1.5" opacity="0.2"/>
+    <circle cx="480" cy="30" r="20" fill="none" stroke="#C4A87A" stroke-width="0.5" opacity="0.15"/>
+  </g>
+  <!-- Pin for title -->
+  <g filter="url(#pinShadow)">
+    <circle cx="605" cy="28" r="7" fill="#CC3333"/>
+    <circle cx="604" cy="26" r="2.5" fill="#FF6666" opacity="0.7"/>
   </g>
 
-  <!-- Bottom bar -->
-  <rect x="0" y="520" width="1200" height="110" fill="#0B0B10" opacity="0.7"/>
-  <text x="80" y="565" fill="#9CA3AF" font-family="Inter, sans-serif" font-size="14" font-weight="500">Tamil Nadu Assembly Election 2026</text>
-  <text x="80" y="590" fill="#666677" font-family="Inter, sans-serif" font-size="12">4,000 candidates analysed across 234 constituencies  |  Data: ECI Affidavit Portal</text>
-  <text x="1120" y="580" text-anchor="end" fill="#666677" font-family="Inter, sans-serif" font-size="12">ndranandraj.com</text>
+  <!-- ====== DATA INVESTIGATION STAMP ====== -->
+  <g transform="translate(810, 40) rotate(6)">
+    <rect x="0" y="0" width="185" height="42" rx="3" fill="none" stroke="#EF4444" stroke-width="3" opacity="0.85" filter="url(#stampEffect)"/>
+    <rect x="4" y="4" width="177" height="34" rx="1" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.5"/>
+    <text x="92" y="30" text-anchor="middle" fill="#EF4444" font-family="'Courier New', Courier, monospace" font-size="16" font-weight="900" letter-spacing="3" opacity="0.85">DATA INVESTIGATION</text>
+  </g>
+
+  <!-- ====== NAME PAIR CLIPPINGS ====== -->
+
+  <!-- Clipping 1: C. Joseph Vijay vs Vijay. G -->
+  <g transform="translate(105, 140) rotate(-3)">
+    <rect x="0" y="0" width="270" height="65" rx="1" fill="#F5F0E8" filter="url(#shadow)" opacity="0.93"/>
+    <rect x="0" y="0" width="270" height="65" rx="1" fill="#EDE5D5" opacity="0.1"/>
+    <!-- Faint ruled lines -->
+    <line x1="8" y1="20" x2="262" y2="20" stroke="#CCC5B5" stroke-width="0.3" opacity="0.5"/>
+    <line x1="8" y1="45" x2="262" y2="45" stroke="#CCC5B5" stroke-width="0.3" opacity="0.5"/>
+    <text x="14" y="17" fill="#333" font-family="'Courier New', monospace" font-size="11" font-weight="700">C. Joseph Vijay</text>
+    <text x="175" y="17" fill="#999" font-family="Arial, sans-serif" font-size="9" font-weight="700">VS</text>
+    <text x="200" y="17" fill="#555" font-family="'Courier New', monospace" font-size="11">Vijay. G (IND)</text>
+    <!-- Red circle around "Vijay" in both -->
+    <ellipse cx="95" cy="13" rx="28" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="218" cy="13" rx="22" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <!-- Handwritten annotation -->
+    <text x="20" y="40" fill="#EF4444" font-family="'Comic Sans MS', cursive, sans-serif" font-size="9" font-style="italic" opacity="0.7" transform="rotate(-2, 20, 40)">same surname!</text>
+    <!-- Ballot box icon hint -->
+    <rect x="230" y="35" width="22" height="22" rx="2" fill="none" stroke="#AAA49A" stroke-width="1" opacity="0.3"/>
+    <text x="241" y="51" text-anchor="middle" fill="#AAA49A" font-family="Arial" font-size="12" opacity="0.3">x</text>
+  </g>
+  <!-- Pin -->
+  <g filter="url(#pinShadow)">
+    <circle cx="240" cy="148" r="6" fill="#CC3333"/>
+    <circle cx="239" cy="146" r="2" fill="#FF6666" opacity="0.7"/>
+  </g>
+
+  <!-- Clipping 2: S. Saravanan vs A. Saravanan -->
+  <g transform="translate(80, 270) rotate(2)">
+    <rect x="0" y="0" width="290" height="65" rx="1" fill="#F5F0E8" filter="url(#shadow)" opacity="0.93"/>
+    <line x1="8" y1="20" x2="282" y2="20" stroke="#CCC5B5" stroke-width="0.3" opacity="0.5"/>
+    <text x="14" y="17" fill="#333" font-family="'Courier New', monospace" font-size="11" font-weight="700">S. Saravanan</text>
+    <text x="155" y="17" fill="#999" font-family="Arial, sans-serif" font-size="9" font-weight="700">VS</text>
+    <text x="180" y="17" fill="#555" font-family="'Courier New', monospace" font-size="11">A. Saravanan (IND)</text>
+    <!-- Red circles -->
+    <ellipse cx="80" cy="13" rx="42" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="230" cy="13" rx="42" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <!-- Arrow showing initial difference -->
+    <text x="14" y="42" fill="#F59E0B" font-family="'Courier New', monospace" font-size="9" font-weight="700">S.</text>
+    <text x="32" y="42" fill="#888" font-family="Arial, sans-serif" font-size="9"> =/= </text>
+    <text x="60" y="42" fill="#F59E0B" font-family="'Courier New', monospace" font-size="9" font-weight="700">A.</text>
+    <text x="80" y="42" fill="#888" font-family="'Comic Sans MS', cursive" font-size="9" font-style="italic" opacity="0.6">only initial differs</text>
+  </g>
+  <!-- Pin -->
+  <g filter="url(#pinShadow)">
+    <circle cx="220" cy="278" r="6" fill="#D4A028"/>
+    <circle cx="219" cy="276" r="2" fill="#F5D068" opacity="0.7"/>
+  </g>
+
+  <!-- Clipping 3: V. Sampathkumar vs S. Sampathkumar -->
+  <g transform="translate(50, 395) rotate(-1.5)">
+    <rect x="0" y="0" width="310" height="65" rx="1" fill="#F5F0E8" filter="url(#shadow)" opacity="0.93"/>
+    <line x1="8" y1="20" x2="302" y2="20" stroke="#CCC5B5" stroke-width="0.3" opacity="0.5"/>
+    <text x="14" y="17" fill="#333" font-family="'Courier New', monospace" font-size="11" font-weight="700">V. Sampathkumar</text>
+    <text x="165" y="17" fill="#999" font-family="Arial, sans-serif" font-size="9" font-weight="700">VS</text>
+    <text x="190" y="17" fill="#555" font-family="'Courier New', monospace" font-size="11">S. Sampathkumar (IND)</text>
+    <ellipse cx="95" cy="13" rx="52" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="255" cy="13" rx="52" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <!-- Tape effect on corner -->
+    <rect x="-5" y="-3" width="45" height="14" rx="1" fill="#F5F0E8" opacity="0.4" transform="rotate(-15, -5, -3)"/>
+    <text x="20" y="50" fill="#EF4444" font-family="'Comic Sans MS', cursive" font-size="9" font-style="italic" opacity="0.6">deliberate?</text>
+  </g>
+  <!-- Pin -->
+  <g filter="url(#pinShadow)">
+    <circle cx="200" cy="402" r="6" fill="#CC3333"/>
+    <circle cx="199" cy="400" r="2" fill="#FF6666" opacity="0.7"/>
+  </g>
+
+  <!-- Clipping 4: Pitchandi.K vs Pichandi.D -->
+  <g transform="translate(720, 160) rotate(2.5)">
+    <rect x="0" y="0" width="270" height="65" rx="1" fill="#F5F0E8" filter="url(#shadow)" opacity="0.93"/>
+    <line x1="8" y1="20" x2="262" y2="20" stroke="#CCC5B5" stroke-width="0.3" opacity="0.5"/>
+    <text x="14" y="17" fill="#333" font-family="'Courier New', monospace" font-size="11" font-weight="700">Pitchandi.K</text>
+    <text x="135" y="17" fill="#999" font-family="Arial, sans-serif" font-size="9" font-weight="700">VS</text>
+    <text x="160" y="17" fill="#555" font-family="'Courier New', monospace" font-size="11">Pichandi.D (IND)</text>
+    <!-- Highlight the spelling difference -->
+    <ellipse cx="50" cy="13" rx="38" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="198" cy="13" rx="35" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <text x="14" y="45" fill="#F59E0B" font-family="'Comic Sans MS', cursive" font-size="9" font-style="italic" opacity="0.7">Pitch vs Pich - spelling trick!</text>
+  </g>
+  <!-- Pin -->
+  <g filter="url(#pinShadow)">
+    <circle cx="850" cy="168" r="6" fill="#D4A028"/>
+    <circle cx="849" cy="166" r="2" fill="#F5D068" opacity="0.7"/>
+  </g>
+
+  <!-- Clipping 5: V.P. Kandasamy vs Kandasamy.R -->
+  <g transform="translate(750, 290) rotate(-2)">
+    <rect x="0" y="0" width="290" height="65" rx="1" fill="#F5F0E8" filter="url(#shadow)" opacity="0.93"/>
+    <line x1="8" y1="20" x2="282" y2="20" stroke="#CCC5B5" stroke-width="0.3" opacity="0.5"/>
+    <text x="14" y="17" fill="#333" font-family="'Courier New', monospace" font-size="11" font-weight="700">V.P. Kandasamy</text>
+    <text x="160" y="17" fill="#999" font-family="Arial, sans-serif" font-size="9" font-weight="700">VS</text>
+    <text x="185" y="17" fill="#555" font-family="'Courier New', monospace" font-size="11">Kandasamy.R (IND)</text>
+    <ellipse cx="90" cy="13" rx="46" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="230" cy="13" rx="46" ry="10" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+    <text x="14" y="50" fill="#EF4444" font-family="'Comic Sans MS', cursive" font-size="9" font-style="italic" opacity="0.6">name re-ordered</text>
+  </g>
+  <!-- Pin -->
+  <g filter="url(#pinShadow)">
+    <circle cx="890" cy="295" r="6" fill="#CC3333"/>
+    <circle cx="889" cy="293" r="2" fill="#FF6666" opacity="0.7"/>
+  </g>
+
+  <!-- ====== STAT STICKY NOTES ====== -->
+
+  <!-- Stat 1: 77 Exact Matches -->
+  <g transform="translate(420, 185) rotate(3)">
+    <rect x="0" y="0" width="120" height="80" rx="2" fill="#FEF3C7" filter="url(#shadow)" opacity="0.92"/>
+    <!-- Sticky note fold -->
+    <path d="M96,80 L120,80 L120,56 Z" fill="#F9E4A0" opacity="0.5"/>
+    <text x="60" y="35" text-anchor="middle" fill="#991B1B" font-family="'Courier New', monospace" font-size="28" font-weight="900">77</text>
+    <text x="60" y="55" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="9" font-weight="700">EXACT</text>
+    <text x="60" y="68" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="9" font-weight="700">MATCHES</text>
+  </g>
+  <g filter="url(#pinShadow)">
+    <circle cx="480" cy="190" r="5" fill="#CC3333"/>
+    <circle cx="479" cy="188" r="1.8" fill="#FF6666" opacity="0.7"/>
+  </g>
+
+  <!-- Stat 2: 100+ Seats -->
+  <g transform="translate(570, 195) rotate(-2)">
+    <rect x="0" y="0" width="120" height="80" rx="2" fill="#FEF3C7" filter="url(#shadow)" opacity="0.92"/>
+    <path d="M96,80 L120,80 L120,56 Z" fill="#F9E4A0" opacity="0.5"/>
+    <text x="60" y="35" text-anchor="middle" fill="#92400E" font-family="'Courier New', monospace" font-size="26" font-weight="900">100+</text>
+    <text x="60" y="55" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="9" font-weight="700">SEATS</text>
+    <text x="60" y="68" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="9" font-weight="700">AFFECTED</text>
+  </g>
+  <g filter="url(#pinShadow)">
+    <circle cx="630" cy="200" r="5" fill="#D4A028"/>
+    <circle cx="629" cy="198" r="1.8" fill="#F5D068" opacity="0.7"/>
+  </g>
+
+  <!-- Stat 3: 4,000 Candidates -->
+  <g transform="translate(435, 300) rotate(-1.5)">
+    <rect x="0" y="0" width="130" height="80" rx="2" fill="#FEF3C7" filter="url(#shadow)" opacity="0.92"/>
+    <path d="M106,80 L130,80 L130,56 Z" fill="#F9E4A0" opacity="0.5"/>
+    <text x="65" y="35" text-anchor="middle" fill="#1E3A5F" font-family="'Courier New', monospace" font-size="24" font-weight="900">4,000</text>
+    <text x="65" y="55" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="9" font-weight="700">CANDIDATES</text>
+    <text x="65" y="68" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="9" font-weight="700">ANALYSED</text>
+  </g>
+  <g filter="url(#pinShadow)">
+    <circle cx="500" cy="305" r="5" fill="#CC3333"/>
+    <circle cx="499" cy="303" r="1.8" fill="#FF6666" opacity="0.7"/>
+  </g>
+
+  <!-- Stat 4: 90%+ Independent -->
+  <g transform="translate(600, 310) rotate(2.5)">
+    <rect x="0" y="0" width="120" height="80" rx="2" fill="#FEF3C7" filter="url(#shadow)" opacity="0.92"/>
+    <path d="M96,80 L120,80 L120,56 Z" fill="#F9E4A0" opacity="0.5"/>
+    <text x="60" y="35" text-anchor="middle" fill="#991B1B" font-family="'Courier New', monospace" font-size="26" font-weight="900">90%+</text>
+    <text x="60" y="55" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="9" font-weight="700">FILED AS</text>
+    <text x="60" y="68" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="9" font-weight="700">INDEPENDENT</text>
+  </g>
+  <g filter="url(#pinShadow)">
+    <circle cx="660" cy="315" r="5" fill="#D4A028"/>
+    <circle cx="659" cy="313" r="1.8" fill="#F5D068" opacity="0.7"/>
+  </g>
+
+  <!-- ====== ADDITIONAL ATMOSPHERIC ELEMENTS ====== -->
+
+  <!-- Small torn paper fragment - decorative -->
+  <g transform="translate(1020, 400) rotate(8)">
+    <rect x="0" y="0" width="140" height="55" rx="1" fill="#F5F0E8" filter="url(#shadow)" opacity="0.7"/>
+    <text x="12" y="20" fill="#666" font-family="Georgia, serif" font-size="9" font-style="italic">Tamil Nadu 2026</text>
+    <text x="12" y="35" fill="#666" font-family="Georgia, serif" font-size="9" font-style="italic">234 Constituencies</text>
+    <text x="12" y="48" fill="#999" font-family="Georgia, serif" font-size="8">Source: ECI Affidavit Portal</text>
+  </g>
+  <g filter="url(#pinShadow)">
+    <circle cx="1090" cy="405" r="5" fill="#CC3333"/>
+    <circle cx="1089" cy="403" r="1.8" fill="#FF6666" opacity="0.7"/>
+  </g>
+
+  <!-- Question mark note -->
+  <g transform="translate(400, 430) rotate(-4)">
+    <rect x="0" y="0" width="85" height="85" rx="2" fill="#FECACA" filter="url(#shadow)" opacity="0.8"/>
+    <text x="42" y="58" text-anchor="middle" fill="#991B1B" font-family="Georgia, serif" font-size="48" font-weight="900">?</text>
+    <text x="42" y="78" text-anchor="middle" fill="#991B1B" font-family="Arial, sans-serif" font-size="8" font-weight="700">WHO BENEFITS?</text>
+  </g>
+  <g filter="url(#pinShadow)">
+    <circle cx="442" cy="435" r="5" fill="#CC3333"/>
+    <circle cx="441" cy="433" r="1.8" fill="#FF6666" opacity="0.7"/>
+  </g>
+
+  <!-- Extra clipping fragment: election commission reference -->
+  <g transform="translate(530, 440) rotate(1.5)">
+    <rect x="0" y="0" width="200" height="50" rx="1" fill="#F5F0E8" filter="url(#shadow)" opacity="0.75"/>
+    <text x="14" y="20" fill="#444" font-family="'Courier New', monospace" font-size="10" font-weight="700">ELECTION COMMISSION OF INDIA</text>
+    <text x="14" y="36" fill="#777" font-family="'Courier New', monospace" font-size="9">Candidate Affidavit Records</text>
+  </g>
+  <g filter="url(#pinShadow)">
+    <circle cx="630" cy="445" r="5" fill="#D4A028"/>
+    <circle cx="629" cy="443" r="1.8" fill="#F5D068" opacity="0.7"/>
+  </g>
+
+  <!-- Red marker X on a pattern match -->
+  <g transform="translate(780, 400) rotate(-5)">
+    <rect x="0" y="0" width="180" height="55" rx="1" fill="#F5F0E8" filter="url(#shadow)" opacity="0.8"/>
+    <text x="12" y="20" fill="#333" font-family="'Courier New', monospace" font-size="10" font-weight="700">PATTERN:</text>
+    <text x="12" y="38" fill="#555" font-family="'Courier New', monospace" font-size="9">Real Name + Different Initial</text>
+    <text x="12" y="50" fill="#555" font-family="'Courier New', monospace" font-size="9">= Dummy Candidate</text>
+    <!-- Check mark -->
+    <text x="155" y="35" fill="#EF4444" font-family="Arial" font-size="24" font-weight="900" opacity="0.6">&#x2713;</text>
+  </g>
+  <g filter="url(#pinShadow)">
+    <circle cx="870" cy="402" r="5" fill="#CC3333"/>
+    <circle cx="869" cy="400" r="1.8" fill="#FF6666" opacity="0.7"/>
+  </g>
+
+  <!-- ====== MORE RED STRINGS (foreground layer for depth) ====== -->
+  <g filter="url(#stringGlow)" opacity="0.5">
+    <path d="M480,230 C510,260 490,290 500,310" stroke="#EF4444" stroke-width="0.8" fill="none"/>
+    <path d="M630,250 C650,270 640,290 660,320" stroke="#EF4444" stroke-width="0.8" fill="none"/>
+    <path d="M442,470 C500,460 550,455 530,450" stroke="#EF4444" stroke-width="0.8" fill="none"/>
+    <path d="M730,450 C780,430 820,420 870,405" stroke="#EF4444" stroke-width="0.8" fill="none"/>
+  </g>
+
+  <!-- ====== BOTTOM BAR ====== -->
+  <rect x="0" y="540" width="1200" height="90" fill="#0A0A0E" opacity="0.85"/>
+  <line x1="0" y1="540" x2="1200" y2="540" stroke="#EF4444" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Bottom left: context -->
+  <text x="40" y="573" fill="#9CA3AF" font-family="Georgia, serif" font-size="13" font-weight="500">Tamil Nadu Assembly Election 2026</text>
+  <text x="40" y="595" fill="#555566" font-family="Georgia, serif" font-size="11">4,000 candidates analysed across 234 constituencies | Data: ECI Affidavit Portal</text>
+  <text x="40" y="615" fill="#444455" font-family="'Courier New', monospace" font-size="10">A data investigation into namesake candidates and voter confusion tactics</text>
+
+  <!-- Bottom right: branding -->
+  <text x="1160" y="585" text-anchor="end" fill="#777788" font-family="'Courier New', monospace" font-size="12" font-weight="700">ndranandraj.com</text>
+
+  <!-- Decorative red dot accent at bottom -->
+  <circle cx="1160" cy="568" r="3" fill="#EF4444" opacity="0.5"/>
+
+  <!-- ====== SCATTERED ATMOSPHERIC DETAILS ====== -->
+
+  <!-- Faint magnifying glass icon top-left -->
+  <g transform="translate(30, 30)" opacity="0.08">
+    <circle cx="25" cy="25" r="18" fill="none" stroke="#fff" stroke-width="3"/>
+    <line x1="38" y1="38" x2="55" y2="55" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Faint fingerprint-like circles background -->
+  <g opacity="0.02">
+    <circle cx="950" cy="520" r="30" fill="none" stroke="#fff" stroke-width="0.5"/>
+    <circle cx="950" cy="520" r="25" fill="none" stroke="#fff" stroke-width="0.5"/>
+    <circle cx="950" cy="520" r="20" fill="none" stroke="#fff" stroke-width="0.5"/>
+    <circle cx="950" cy="520" r="15" fill="none" stroke="#fff" stroke-width="0.5"/>
+  </g>
+
+  <!-- Red accent dots scattered -->
+  <circle cx="380" cy="160" r="2" fill="#EF4444" opacity="0.4"/>
+  <circle cx="720" cy="260" r="2" fill="#EF4444" opacity="0.4"/>
+  <circle cx="500" cy="400" r="2" fill="#EF4444" opacity="0.3"/>
+  <circle cx="1000" cy="350" r="2" fill="#EF4444" opacity="0.3"/>
+  <circle cx="150" cy="450" r="2" fill="#EF4444" opacity="0.3"/>
+
 </svg>
