@@ -11,7 +11,7 @@ TocOpen: false
 image: "/images/tn-election-cover.jpg"
 cover:
   image: "/images/tn-election-cover.jpg"
-  alt: "Tamil Nadu Election Analysis — 3 Crore Votes That Elected Nobody"
+  alt: "Editorial cover reading '3 Crore votes that elected nobody' — data-driven analysis of Tamil Nadu's 2011, 2016 and 2021 assembly elections, with a small bar-chart motif in red and teal"
   caption: "Data analysis of Tamil Nadu's 2011, 2016 & 2021 assembly elections"
   relative: false
 ---

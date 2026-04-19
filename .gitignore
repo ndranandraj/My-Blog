@@ -28,3 +28,8 @@ ehthumbs.db
 
 # Original unprocessed photos
 Anand.jpg
+
+# Locally kept full-resolution image originals (pre-compression).
+# Never commit or publish.
+static/images/_originals_backup/
+.image-originals/

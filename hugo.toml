@@ -41,14 +41,31 @@ canonifyURLs = true
   ShowRelatedContent = true
   UseHugoToc = true
   disableScrollToTop = false
-  ShowToc = true
+  # TOC is opt-in per post via `showToc: true` in front-matter.
+  # Short personal essays don't need a TOC; long data pieces do.
+  ShowToc = false
   TocOpen = false
 
+  # Default social share image used when a post has no cover.
+  # Ensures LinkedIn / X / WhatsApp previews always have a visual.
+  images = ["/images/Anand_enhanced.jpg"]
+
+  # Featured hero shown on the homepage above the latest-posts strip.
+  # Remove or change to promote a different post/project.
+  [params.featured]
+    kicker = "INVESTIGATION · FEATURED"
+    title = "Same Name, Different Initial"
+    description = "77 exact name-matches across 100+ constituencies. A data investigation into 4,000 candidates reveals how dummy nominations are being weaponised to split votes and confuse voters in Tamil Nadu 2026."
+    url = "/posts/tn-2026-dummy-candidates/"
+    image = "/images/dummy-candidates-cover.png"
+    imageAlt = "Mock EVM ballot showing C. Joseph Vijay alongside four namesake decoy candidates, illustrating Tamil Nadu's dummy-candidate problem"
+    cta = "Read the investigation →"
+
   [params.assets]
-    favicon = "/images/Anand_enhanced.jpg"
-    favicon16x16 = "/images/Anand_enhanced.jpg"
-    favicon32x32 = "/images/Anand_enhanced.jpg"
-    apple_touch_icon = "/images/Anand_enhanced.jpg"
+    favicon = "/favicon.ico"
+    favicon16x16 = "/favicon-16x16.png"
+    favicon32x32 = "/favicon-32x32.png"
+    apple_touch_icon = "/apple-touch-icon.png"
 
   [params.label]
     text = "Anand's Blog"
@@ -117,3 +134,30 @@ canonifyURLs = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+# Exclude the image originals backup folder from publishing.
+# Safe-kept locally (in case we want to re-derive higher-res copies)
+# but not shipped to the live site.
+[module]
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+    excludeFiles = "images/_originals_backup/**"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"

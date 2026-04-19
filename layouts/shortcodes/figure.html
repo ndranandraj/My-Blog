@@ -1,0 +1,58 @@
+{{- /*
+  Custom figure shortcode override.
+  Adds: loading="lazy", decoding="async", async style.
+  If the image lives in the page bundle, we also emit width/height + a responsive srcset.
+  Falls back to a plain <img> for absolute/static URLs so nothing breaks.
+*/ -}}
+
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $caption := .Get "caption" -}}
+{{- $title := .Get "title" -}}
+{{- $class := .Get "class" -}}
+{{- $link := .Get "link" -}}
+{{- $target := .Get "target" | default "_blank" -}}
+{{- $rel := .Get "rel" | default "noopener noreferrer" -}}
+
+{{- $img := "" -}}
+{{- if $src -}}
+  {{- if not (or (hasPrefix $src "http") (hasPrefix $src "/")) -}}
+    {{- $img = .Page.Resources.GetMatch $src -}}
+  {{- end -}}
+{{- end -}}
+
+<figure{{ with $class }} class="{{ . }}"{{ end }}>
+  {{- if $link }}<a href="{{ $link }}"{{ with $target }} target="{{ . }}"{{ end }}{{ with $rel }} rel="{{ . }}"{{ end }}>{{ end -}}
+
+  {{- if $img -}}
+    {{- $sizes := slice 480 720 1080 1500 -}}
+    {{- $srcset := slice -}}
+    {{- range $sizes -}}
+      {{- if ge $img.Width . -}}
+        {{- $resized := $img.Resize (printf "%dx q82" .) -}}
+        {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+    <img
+      src="{{ $img.RelPermalink }}"
+      srcset="{{ delimit $srcset ", " }}"
+      sizes="(min-width: 768px) 720px, 100vw"
+      width="{{ $img.Width }}" height="{{ $img.Height }}"
+      loading="lazy" decoding="async"
+      {{ with $alt }}alt="{{ . }}"{{ end }}
+      {{ with $title }}title="{{ . }}"{{ end }}>
+  {{- else -}}
+    <img
+      src="{{ $src | safeURL }}"
+      loading="lazy" decoding="async"
+      {{ with $alt }}alt="{{ . }}"{{ end }}
+      {{ with $title }}title="{{ . }}"{{ end }}>
+  {{- end -}}
+
+  {{- if $link }}</a>{{ end -}}
+
+  {{- with $caption -}}
+    <figcaption>{{ . | markdownify }}</figcaption>
+  {{- end -}}
+</figure>

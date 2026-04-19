@@ -1,0 +1,34 @@
+{{- /*
+  Markdown image render hook.
+  Ensures every inline ![alt](src) image in markdown gets lazy-loading + async decoding.
+  For page-bundle images it also produces responsive srcset and explicit width/height.
+*/ -}}
+{{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+{{- $img := "" -}}
+{{- if not (or (hasPrefix $src "http") (hasPrefix $src "/")) -}}
+  {{- $img = .Page.Resources.GetMatch $src -}}
+{{- end -}}
+
+{{- if $img -}}
+  {{- $sizes := slice 480 720 1080 1500 -}}
+  {{- $srcset := slice -}}
+  {{- range $sizes -}}
+    {{- if ge $img.Width . -}}
+      {{- $resized := $img.Resize (printf "%dx q82" .) -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink .) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+  <img src="{{ $img.RelPermalink }}"
+       srcset="{{ delimit $srcset ", " }}"
+       sizes="(min-width: 768px) 720px, 100vw"
+       width="{{ $img.Width }}" height="{{ $img.Height }}"
+       loading="lazy" decoding="async"
+       alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
+{{- else -}}
+  <img src="{{ $src | safeURL }}"
+       loading="lazy" decoding="async"
+       alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
+{{- end -}}

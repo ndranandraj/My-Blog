@@ -1,5 +1,17 @@
 ---
+# Duplicate of /page/about/. Kept in repo but not rendered,
+# to avoid duplicate-content SEO issues.
 title: "About"
+url: "/about-old/"
+aliases:
+  - /about/
+sitemap:
+  disable: true
+robotsNoIndex: true
+_build:
+  render: never
+  list: never
+  publishResources: false
 ---
 
 ![Anand](img/Anand_enhanced.jpg)

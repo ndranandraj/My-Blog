@@ -1,5 +1,6 @@
 /* ==========================================
    ANAND'S BLOG — PaperMod Custom Styles
+   Revised 2026-04 for better reading, brand and engagement.
    ========================================== */
 
 /* ── Typography ── */
@@ -14,15 +15,17 @@ body {
     font-family: "Inter", sans-serif;
     font-weight: 800;
     letter-spacing: -0.03em;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
+    margin-top: 1rem;
 }
 
 .profile .profile_inner span {
     font-size: 1.05rem;
     line-height: 1.7;
-    max-width: 540px;
+    max-width: 560px;
     display: block;
-    margin: 0 auto;
+    margin: 0.5rem auto 0;
+    color: var(--secondary);
 }
 
 .profile .profile_inner img {
@@ -35,18 +38,23 @@ body {
     transform: scale(1.05);
 }
 
-/* Profile buttons */
-.buttons .button {
+/* Profile buttons — more inviting primary CTA */
+.profile .buttons .button {
     border-radius: 999px !important;
-    padding: 10px 24px !important;
+    padding: 12px 28px !important;
     font-weight: 600 !important;
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
     transition: all 0.2s ease !important;
 }
 
-.buttons .button:hover {
+.profile .buttons .button:first-child {
+    background: var(--primary) !important;
+    color: var(--theme) !important;
+}
+
+.profile .buttons .button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
 
 /* Social icons on profile */
@@ -56,6 +64,191 @@ body {
 
 .social-icons a:hover {
     transform: translateY(-3px);
+}
+
+/* ── Homepage "Featured" hero ── */
+.home-featured {
+    max-width: 960px;
+    margin: 3rem auto 1rem;
+    padding: 0 1rem;
+}
+.home-featured-card {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--entry);
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.home-featured-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    border-color: var(--primary);
+}
+.home-featured-visual {
+    background: #0F1115;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.home-featured-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.home-featured-body {
+    padding: 2rem 1.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.home-featured-kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--primary);
+    margin-bottom: 0.6rem;
+}
+.home-featured-body h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin: 0 0 0.6rem 0;
+}
+.home-featured-body p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--secondary);
+    margin: 0 0 1rem 0;
+}
+.home-featured-cta {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+@media (max-width: 720px) {
+    .home-featured-card { grid-template-columns: 1fr; }
+    .home-featured-visual { min-height: 180px; }
+    .home-featured-body { padding: 1.4rem 1.3rem; }
+}
+
+/* ── Homepage "Latest writing" strip ── */
+.home-latest {
+    max-width: 900px;
+    margin: 3.5rem auto 4rem;
+    padding: 0 1rem;
+}
+
+.home-latest-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.home-latest-header h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.home-latest-all {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.home-latest-all:hover { text-decoration: underline; }
+
+.home-latest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.home-latest-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+    color: inherit !important;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.home-latest-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+    border-color: var(--primary);
+}
+
+.home-latest-cover {
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--code-bg);
+}
+
+.home-latest-cover--empty {
+    background: linear-gradient(135deg, var(--code-bg), var(--tertiary));
+}
+
+.home-latest-body {
+    padding: 0.9rem 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.home-latest-cat {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.home-latest-body h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin: 0.15rem 0 0.2rem;
+}
+
+.home-latest-body p {
+    font-size: 0.88rem;
+    color: var(--secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.home-latest-meta {
+    font-size: 0.75rem;
+    color: var(--secondary);
+    opacity: 0.8;
+    margin-top: 0.4rem;
+}
+
+@media (max-width: 640px) {
+    .home-latest-grid { grid-template-columns: 1fr; }
 }
 
 /* ── Post Cards (List pages) — Clear Separation ── */
@@ -83,10 +276,7 @@ body {
     transform: scale(1.03);
 }
 
-/* Better spacing inside post cards */
-.post-entry .entry-header {
-    padding-top: 0.25rem;
-}
+.post-entry .entry-header { padding-top: 0.25rem; }
 
 .entry-header h2 {
     font-family: "Inter", sans-serif;
@@ -105,31 +295,31 @@ body {
 
 .entry-footer {
     font-size: 0.8rem;
-    opacity: 0.65;
+    opacity: 0.7;
     padding-top: 0.3rem;
     border-top: 1px solid var(--border);
     margin-top: 0.5rem;
 }
 
-/* ── Article Content — Justified & Readable ── */
+/* ── Article Content — Readable, NOT justified ── */
 .post-content {
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
     font-size: 1.08rem;
-    line-height: 1.9;
-    text-align: justify;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    word-break: break-word;
+    line-height: 1.85;
+    /* IMPORTANT: left-align on screen. Justified text on a ~720px column
+       creates ugly whitespace rivers, especially on mobile. */
+    text-align: left;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+    word-break: normal;
+    overflow-wrap: break-word;
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
     color: var(--content);
 }
 
-.post-content p {
-    margin-bottom: 1.4rem;
-}
+.post-content p { margin-bottom: 1.4rem; }
 
 .post-content h2 {
     font-family: "Inter", sans-serif;
@@ -159,15 +349,19 @@ body {
     transition: color 0.2s ease;
 }
 
-.post-content a:hover {
-    text-decoration-thickness: 2.5px;
-}
+.post-content a:hover { text-decoration-thickness: 2.5px; }
 
 .post-content img {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     margin: 1.5rem auto;
     display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.post-content figure {
+    margin: 1.8rem auto;
 }
 
 .post-content figcaption {
@@ -203,10 +397,11 @@ body {
     font-size: 0.9em;
 }
 
-/* Bold text accent — subtle weight for emphasis */
+/* Bold stays bold — NOT brand-colored.
+   Keep emphasis visually distinct from links. */
 .post-content strong {
     font-weight: 700;
-    color: var(--primary);
+    color: inherit;
 }
 
 /* Horizontal rules as section dividers */
@@ -225,29 +420,30 @@ body {
     margin-bottom: 1.2rem;
 }
 
-.post-content li {
-    margin-bottom: 0.4rem;
-}
+.post-content li { margin-bottom: 0.4rem; }
 
 /* ── Post Header (Single Post) ── */
 .post-header h1 {
     font-family: "Inter", sans-serif;
     font-weight: 800;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     letter-spacing: -0.03em;
-    line-height: 1.25;
+    line-height: 1.22;
+    margin-top: 0.2rem;
 }
 
 .post-header .post-description {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    opacity: 0.75;
-    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--secondary);
+    opacity: 0.95;
+    margin-top: 0.7rem;
+    max-width: 640px;
 }
 
 .post-meta {
     font-size: 0.85rem;
-    opacity: 0.6;
+    opacity: 0.65;
 }
 
 /* ── Category & Tag Pills ── */
@@ -264,24 +460,81 @@ body {
     transform: translateY(-1px);
 }
 
+/* ── Post CTA card ── */
+.post-cta {
+    margin: 2.5rem 0 0.5rem;
+}
+.post-cta-inner {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.6rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--code-bg);
+}
+.post-cta-text h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.3rem 0;
+}
+.post-cta-text p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--secondary);
+    max-width: 440px;
+}
+.post-cta-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+.post-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    background: var(--entry);
+}
+.post-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    border-color: var(--primary);
+}
+.post-cta-btn--primary {
+    background: var(--primary);
+    color: var(--theme) !important;
+    border-color: var(--primary);
+}
+.post-cta-btn--primary:hover {
+    color: var(--theme) !important;
+}
+@media (max-width: 620px) {
+    .post-cta-inner { flex-direction: column; align-items: stretch; }
+    .post-cta-text p { max-width: none; }
+    .post-cta-actions { justify-content: flex-start; }
+}
+
 /* ── Share Buttons ── */
-.share-buttons {
-    margin-top: 2rem;
-}
+.share-buttons { margin-top: 2rem; }
 
-.share-buttons a {
-    transition: transform 0.2s ease !important;
-}
+.share-buttons a { transition: transform 0.2s ease !important; }
 
-.share-buttons a:hover {
-    transform: translateY(-2px) !important;
-}
+.share-buttons a:hover { transform: translateY(-2px) !important; }
 
 /* ── Breadcrumbs ── */
-.breadcrumbs {
-    font-size: 0.85rem;
-    opacity: 0.7;
-}
+.breadcrumbs { font-size: 0.85rem; opacity: 0.7; }
 
 /* ── Table of Contents ── */
 .toc {
@@ -355,9 +608,7 @@ body {
     transition: all 0.2s ease;
 }
 
-.paginav a:hover {
-    background: var(--code-bg);
-}
+.paginav a:hover { background: var(--code-bg); }
 
 /* ── Related Posts Section ── */
 .related-content h3 {
@@ -368,37 +619,43 @@ body {
 }
 
 /* ── Smooth transitions ── */
-html {
-    scroll-behavior: smooth;
+html { scroll-behavior: smooth; }
+
+/* Respect users with reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Selection color — matches brand */
+::selection {
+    background: var(--primary);
+    color: var(--theme);
 }
 
 /* ── Mobile responsiveness polish ── */
 @media (max-width: 768px) {
     .post-content {
-        font-size: 1.05rem;
-        line-height: 1.8;
-        hyphens: auto;
+        font-size: 1.02rem;
+        line-height: 1.78;
     }
 
-    .post-header h1 {
-        font-size: 1.7rem;
-    }
+    .post-header h1 { font-size: 1.8rem; }
 
-    .post-content h2 {
-        font-size: 1.4rem;
-    }
+    .post-content h2 { font-size: 1.4rem; }
 
-    .entry-header h2 {
-        font-size: 1.15rem;
-    }
+    .entry-header h2 { font-size: 1.15rem; }
+
+    .profile .profile_inner h1 { font-size: 1.9rem; }
 }
 
 /* ── Print friendly ── */
 @media print {
-    .share-buttons, .toc, .breadcrumbs, #reading-progress, .post-nav-links {
+    .share-buttons, .toc, .breadcrumbs, #reading-progress, .post-nav-links, .home-latest {
         display: none !important;
     }
-    .post-content {
-        max-width: 100%;
-    }
+    .post-content { max-width: 100%; }
 }
