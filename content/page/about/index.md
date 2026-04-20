@@ -2,23 +2,66 @@
 title: "About"
 ---
 
-<div class="about-profile">
-  <img src="Anand_enhanced.jpg" alt="Anand" class="about-avatar" />
-  <div class="about-intro">
-    <h2 class="about-name">Anand Raj</h2>
-    <p class="about-role">🖥️ Mainframe Engineer &nbsp;·&nbsp; 📷 Wildlife Photographer &nbsp;·&nbsp; ⚽ Man United Loyalist</p>
-    <p class="about-location">📍 Orange County, California</p>
+<div class="about-hero">
+  <div class="about-hero-inner">
+    <img src="Anand_enhanced.jpg" alt="Anand" class="about-avatar" />
+    <div class="about-intro">
+      <span class="about-eyebrow">Hi, I'm</span>
+      <h1 class="about-name">Anand Raj</h1>
+      <p class="about-role">Software engineer &amp; data analyst based in Orange County, California.</p>
+      <div class="about-chips">
+        <span class="about-chip">💻 Builds things</span>
+        <span class="about-chip">📷 Wildlife photographer</span>
+        <span class="about-chip">⚽ Man United (yes, still)</span>
+        <span class="about-chip">📖 Reader</span>
+      </div>
+    </div>
   </div>
 </div>
 
-Hey, I'm Anand.
+<div class="about-intro-text">
 
-So this is basically where I dump my thoughts. There's no real theme to this blog. I just write about whatever's on my mind. Could be something techy I've been messing around with, a random rabbit hole I fell into, a book that stuck with me, or just something I felt like saying out loud. I don't have a posting schedule or a content plan or any of that. When something feels worth writing about, I write about it. Simple as that.
+This blog is where I think out loud. Sometimes it's a technical rabbit hole, sometimes a data piece, sometimes a photo from a trip, sometimes a half-baked opinion I needed to get out of my head. There's no schedule, no content plan, no niche. If something feels worth writing about, I write it. If it doesn't, I go take pictures of birds instead.
 
-Outside of the internet stuff, I spend a lot of time outdoors with my camera. I'm really into wildlife and nature photography, mostly birds and butterflies. There's this weird thrill in waiting twenty minutes for a bird to turn its head the right way, and then nailing the shot. Only for it to come out slightly blurry. But when it works? Chef's kiss. I've also been dabbling in astrophotography recently. I'm still pretty terrible at it if I'm being honest, but pointing a camera at the stars and actually getting something back that isn't just a white blob is kind of addicting.
+</div>
 
-Oh, and I'm a Manchester United fan. That probably tells you everything you need to know about my tolerance for suffering. Honestly at this point supporting United is less of a hobby and more of a personality disorder. But match days are still non-negotiable. Phone goes silent, notifications off, absolutely no spoilers. Let me experience the disappointment in real time like a proper fan.
+## What I write about
 
-I started this blog mostly as a space to think out loud and keep track of things I'm learning. It's for me first, but if you stumble onto something here that's useful or even mildly entertaining, I'll take that as a massive win.
+<div class="about-topics">
+  <div class="about-topic">
+    <h3>📊 Data &amp; investigations</h3>
+    <p>Stories I find in public datasets — elections, cricket, whatever has a puzzle hiding inside a CSV.</p>
+  </div>
+  <div class="about-topic">
+    <h3>🛠️ Tech &amp; tinkering</h3>
+    <p>Stuff I'm building, breaking, or trying to understand. Usually with more curiosity than rigor.</p>
+  </div>
+  <div class="about-topic">
+    <h3>✈️ Travel &amp; photo essays</h3>
+    <p>Short notes from trips, long walks, and the occasional two-hour wait for a bird to turn its head.</p>
+  </div>
+  <div class="about-topic">
+    <h3>💭 Random thoughts</h3>
+    <p>Books that stuck with me, things I'm thinking through, and the odd unserious rant.</p>
+  </div>
+</div>
 
-Anyway, thanks for reading. Stick around if you want. Or don't. No pressure. I'll be here either way, probably arguing with a tripod at 2am trying to photograph the Milky Way.
+## When I'm not at a keyboard
+
+Most weekends you'll find me out with a camera. I'm really into wildlife photography — mostly birds and butterflies — and lately I've been dabbling in astrophotography. Both involve a lot of waiting and a lot of *almost* great shots. But when one finally works, it feels worth every minute.
+
+Also, Manchester United. Which probably tells you everything you need to know about my relationship with suffering. Match days are non-negotiable — phone silent, notifications off, absolutely no spoilers. Let me feel the disappointment in real time, like a proper fan.
+
+## Why this blog exists
+
+I started this mostly as a space to think clearly and keep track of what I'm learning. It's for me first. But if you stumbled onto something here that's useful, or even mildly entertaining, I'll take that as a massive win.
+
+<div class="about-cta">
+  <h3>Say hi 👋</h3>
+  <p>I'm easiest to reach on LinkedIn or Instagram. I reply to almost everything, even if it takes me three weeks.</p>
+  <div class="about-cta-actions">
+    <a class="about-cta-btn about-cta-btn--primary" href="https://www.linkedin.com/in/anandraj-r-78b86198" rel="noopener">LinkedIn →</a>
+    <a class="about-cta-btn" href="https://www.instagram.com/ndranandraj" rel="noopener">Instagram →</a>
+    <a class="about-cta-btn" href="/posts/">Read the blog →</a>
+  </div>
+</div>
