@@ -5,6 +5,7 @@ lastmod: 2026-03-28
 draft: false
 tags: ["mainframe", "AI", "modernization", "COBOL", "tech", "enterprise"]
 categories: ["Tech"]
+pillar: true
 description: "Everyone thinks AI will finally kill the mainframe. After nearly two decades of legacy migrations, here's why I think the walls haven't changed — only the tool hitting them."
 keywords: ["mainframe modernization", "COBOL AI", "legacy system migration", "mainframe to cloud", "COBOL modernization"]
 image: "/images/mainframe-cover.jpg"

@@ -7,6 +7,7 @@ summary: "Vijay's Perambur ballot has four namesakes. Alandur has three Saravana
 keywords: ["dummy candidates Tamil Nadu", "TN 2026 election", "namesake candidates India", "voter confusion EVM", "Tamil Nadu assembly election 2026", "Vijay Perambur", "TVK election", "ADMK DMK dummy", "election manipulation India", "ECI affidavit portal"]
 tags: ["elections", "tamil-nadu", "data", "politics", "dummy-candidates", "2026", "DMK", "ADMK", "TVK", "Vijay", "voter-fraud"]
 categories: ["Data"]
+pillar: true
 readingTime: true
 showToc: true
 TocOpen: false

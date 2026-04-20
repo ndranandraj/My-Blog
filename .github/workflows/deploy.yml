@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,22 +16,55 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  HUGO_VERSION: 0.140.2
+  HUGO_CACHEDIR: /tmp/hugo_cache
+  TZ: Asia/Kolkata
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 0
 
-      - name: Setup Hugo
-        run: sudo snap install hugo
+      - name: Setup Hugo (extended, pinned)
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
 
-      - name: Build
-        run: hugo --minify
+      - name: Setup Node (for Hugo Modules / PostCSS if needed)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Cache Hugo resources
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.HUGO_CACHEDIR }}
+            resources
+          key: ${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('**/hugo.toml','**/go.sum','**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-
+
+      - name: Build site
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --logLevel warn
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -41,9 +75,31 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  lighthouse:
+    name: Lighthouse quality gate
+    runs-on: ubuntu-24.04
+    needs: deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Wait for deployment to propagate
+        run: sleep 30
+
+      - name: Run Lighthouse CI against production
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://ndranandraj.com/
+            https://ndranandraj.com/posts/
+            https://ndranandraj.com/posts/tn-2026-dummy-candidates/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          configPath: ./.github/lighthouserc.json

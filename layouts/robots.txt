@@ -1,0 +1,25 @@
+User-agent: *
+Disallow: /search/
+Allow: /
+
+# Block common AI training scrapers that do not respect RSS and drive no traffic back.
+# Comment any of these out if you decide otherwise.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}

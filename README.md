@@ -67,7 +67,3 @@ anand-blog/
 | PaperMod theme | Free |
 | Custom domain | ~$10/year |
 | **Total** | **~$10/year** |
-# My-Blog
-# My-Blog
-# My-Blog
-# My-Blog

@@ -1,15 +1,21 @@
 baseURL = "https://ndranandraj.com/"
 languageCode = "en-us"
 title = "Anand's Blog"
+# PaperMod is pulled in via Hugo Modules (see [module.imports] below). The legacy
+# `theme = "PaperMod"` line + `themes/PaperMod` submodule are retained as a
+# fallback during the migration. Once CI is green on modules, delete the submodule
+# and this comment block.
 theme = "PaperMod"
 enableRobotsTXT = true
-canonifyURLs = true
+# canonifyURLs is legacy; relative URLs serve better and don't break preview deploys.
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+# Fallback values. Per-page overrides live in layouts/sitemap.xml and
+# `sitemap:` frontmatter keys on individual posts.
 [sitemap]
-  changefreq = "weekly"
+  changefreq = "monthly"
   priority = 0.5
 
 [related]
@@ -135,14 +141,19 @@ canonifyURLs = true
     [markup.goldmark.renderer]
       unsafe = true
 
-# Exclude the image originals backup folder from publishing.
-# Safe-kept locally (in case we want to re-derive higher-res copies)
-# but not shipped to the live site.
+# Hugo Modules configuration.
+#   - `imports` pulls PaperMod from its canonical Git URL (no submodule needed).
+#   - `mounts` re-declares every source directory because once you set any
+#     mount, Hugo stops auto-mounting the defaults.
+# High-resolution image masters live in `.image-originals/` at the repo root,
+# which Hugo never sees because it's not mounted.
 [module]
+  [[module.imports]]
+    path = "github.com/adityatelange/hugo-PaperMod"
+
   [[module.mounts]]
     source = "static"
     target = "static"
-    excludeFiles = "images/_originals_backup/**"
   [[module.mounts]]
     source = "assets"
     target = "assets"
