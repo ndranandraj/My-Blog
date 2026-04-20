@@ -8,7 +8,7 @@ aliases:
 sitemap:
   disable: true
 robotsNoIndex: true
-_build:
+build:
   render: never
   list: never
   publishResources: false
