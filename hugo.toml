@@ -73,7 +73,7 @@ canonifyURLs = true
   [params.profileMode]
     enabled = true
     title = "Hi, I'm Anand"
-    subtitle = "Mainframe engineer by day. Photographer, football fan, and occasional builder of random things. I write about tech, travel, and everything in between."
+    subtitle = "Software engineer and data analyst by day. Photographer, football fan, and occasional builder of random things. I write about tech, travel, and everything in between."
     imageUrl = "/images/Anand_enhanced.jpg"
     imageTitle = "Anand"
     imageWidth = 160
