@@ -25,7 +25,7 @@ canonifyURLs = true
 
 [params]
   env = "production"
-  author = "Anand Raj"
+  author = "Anandraj"
   description = "Personal blog by Anand — tech, travel, photography, and random thoughts."
   DateFormat = "January 2, 2006"
   defaultTheme = "auto"

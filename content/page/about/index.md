@@ -7,7 +7,7 @@ title: "About"
     <img src="Anand_enhanced.jpg" alt="Anand" class="about-avatar" />
     <div class="about-intro">
       <span class="about-eyebrow">Hi, I'm</span>
-      <h1 class="about-name">Anand Raj</h1>
+      <h1 class="about-name">Anandraj</h1>
       <p class="about-role">Software engineer &amp; data analyst based in Orange County, California.</p>
       <div class="about-chips">
         <span class="about-chip">💻 Builds things</span>
