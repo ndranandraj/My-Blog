@@ -1,0 +1,23 @@
+{{- /*
+  Google Analytics 4 partial.
+  PaperMod's head.html calls `partial "google_analytics.html"` but no longer
+  ships its own implementation (removed in recent releases). This is the
+  canonical replacement.
+
+  Reads the GA4 Measurement ID from `services.googleAnalytics.ID` in hugo.toml.
+  Only renders in production builds, so `hugo server` doesn't pollute your
+  analytics with local pageviews.
+*/ -}}
+{{- if eq hugo.Environment "production" -}}
+{{- with site.Config.Services.GoogleAnalytics.ID -}}
+{{- if hasPrefix . "G-" }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', {{ . | jsonify }}, { 'anonymize_ip': true });
+</script>
+{{- end -}}
+{{- end -}}
+{{- end -}}

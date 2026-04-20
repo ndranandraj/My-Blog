@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  HUGO_VERSION: 0.140.2
+  HUGO_VERSION: 0.153.0
   HUGO_CACHEDIR: /tmp/hugo_cache
   TZ: Asia/Kolkata
 
