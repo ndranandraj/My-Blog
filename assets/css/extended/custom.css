@@ -95,15 +95,20 @@ body {
 .profile .buttons {
     gap: 0.8rem !important;
     margin-top: 1.6rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
 }
 
 .profile .buttons .button {
     position: relative !important;
     display: inline-flex !important;
     align-items: center !important;
+    justify-content: center !important;
     gap: 0.5rem !important;
     border-radius: 12px !important;
     padding: 0.8rem 1.4rem !important;
+    min-width: 190px !important;
+    box-sizing: border-box !important;
     font-family: "Inter", sans-serif !important;
     font-weight: 600 !important;
     font-size: 0.95rem !important;
@@ -116,7 +121,9 @@ body {
 .profile .buttons .button .button-inner {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.55rem;
+    width: 100%;
 }
 
 /* Leading glyph + trailing arrow via pseudo-elements */
@@ -189,8 +196,16 @@ body {
 }
 
 @media (max-width: 480px) {
-    .profile .buttons { flex-wrap: wrap !important; justify-content: center !important; }
-    .profile .buttons .button { padding: 0.7rem 1.2rem !important; font-size: 0.9rem !important; }
+    .profile .buttons {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .profile .buttons .button {
+        width: 260px !important;
+        min-width: 260px !important;
+        padding: 0.75rem 1.2rem !important;
+        font-size: 0.92rem !important;
+    }
 }
 
 /* Social icons on profile — rounded chiclets with tinted hover */
@@ -252,26 +267,26 @@ body {
 
 .home-featured-card {
     position: relative;
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 0;
+    display: flex;
+    flex-direction: column;
     border-radius: 16px;
     overflow: hidden;
     background: var(--entry);
     text-decoration: none !important;
     color: inherit !important;
+    border: 1px solid var(--border);
     box-shadow: 0 1px 0 var(--border),
                 0 18px 40px -20px rgba(0, 0, 0, 0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Vertical accent rail on the left edge */
+/* Top accent rail across the card */
 .home-featured-card::before {
     content: "";
     position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-    background: var(--primary);
+    left: 0; right: 0; top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), color-mix(in srgb, var(--primary) 40%, transparent));
     z-index: 2;
 }
 
@@ -281,10 +296,12 @@ body {
                 0 28px 56px -20px rgba(0, 0, 0, 0.28);
 }
 
+/* Full-focus cover image: respects the 1200×630 source aspect ratio
+   so the entire composition shows without cropping. */
 .home-featured-visual {
     position: relative;
     background: #0F1115;
-    min-height: 320px;
+    aspect-ratio: 1200 / 630;
     overflow: hidden;
 }
 
@@ -292,6 +309,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform 0.55s ease;
 }
@@ -300,20 +318,19 @@ body {
     transform: scale(1.03);
 }
 
-/* Subtle gradient over the image so bright covers stay readable if
-   body content ever overlaps (it doesn't today, but it adds depth). */
+/* Very soft vignette on the image for depth — doesn't touch the subject. */
 .home-featured-visual::after {
     content: "";
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.25) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 75%, rgba(0,0,0,0.18) 100%);
     pointer-events: none;
 }
 
 .home-featured-body {
-    padding: 2.2rem 2rem 2rem;
+    padding: 2rem 2.2rem 2.1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
 }
 
 .home-featured-kicker {
@@ -373,10 +390,9 @@ body {
 }
 
 @media (max-width: 780px) {
-    .home-featured-card { grid-template-columns: 1fr; }
-    .home-featured-visual { min-height: 220px; }
     .home-featured-body { padding: 1.5rem 1.3rem 1.6rem; }
-    .home-featured-body h2 { font-size: 1.55rem; }
+    .home-featured-body h2 { font-size: 1.45rem; }
+    .home-featured-body p { font-size: 0.94rem; }
 }
 
 /* ── Homepage "Latest writing" strip ── */
