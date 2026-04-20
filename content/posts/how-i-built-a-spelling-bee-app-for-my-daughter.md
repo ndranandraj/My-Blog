@@ -16,8 +16,6 @@ cover:
 
 Earlier this year, my daughter won her school Spelling Bee. Every single word.
 
-{{< figure src="/images/spelling-bee-daughter.jpg" alt="Young girl smiling with her spelling bee medal, trophies on the desk beside her, holding up a phone showing the Spell Bee Practice App" caption="The champion herself — medal, trophies, and the app she used to get there." >}}
-
 And honestly, this win feels a little bit mine too. Let me tell you why.
 
 I am a Mainframe developer. COBOL, JCL, batch processing — that has been my world for years. Web apps, mobile apps? Completely foreign territory.

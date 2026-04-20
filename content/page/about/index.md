@@ -21,7 +21,7 @@ title: "About"
 
 <div class="about-intro-text">
 
-This blog is where I think out loud. Sometimes it's a technical rabbit hole, sometimes a data piece, sometimes a photo from a trip, sometimes a half-baked opinion I needed to get out of my head. There's no schedule, no content plan, no niche. If something feels worth writing about, I write it. If it doesn't, I go take pictures of birds instead.
+This blog is where I think out loud. Sometimes it's a technical rabbit hole, sometimes a data piece, sometimes a photo from a trip, sometimes a half-baked opinion I needed to get out of my head. There's no schedule, no content plan, no niche. If something feels worth writing about, I write it. If it doesn't, I go take pictures of birds instead, or spend half the night arguing with a tripod while trying to photograph the Milky Way at 2am.
 
 </div>
 
@@ -30,7 +30,7 @@ This blog is where I think out loud. Sometimes it's a technical rabbit hole, som
 <div class="about-topics">
   <div class="about-topic">
     <h3>📊 Data &amp; investigations</h3>
-    <p>Stories I find in public datasets — elections, cricket, whatever has a puzzle hiding inside a CSV.</p>
+    <p>Stories I find in public datasets, like elections, cricket, or anything with a puzzle hiding inside a CSV.</p>
   </div>
   <div class="about-topic">
     <h3>🛠️ Tech &amp; tinkering</h3>
@@ -48,9 +48,9 @@ This blog is where I think out loud. Sometimes it's a technical rabbit hole, som
 
 ## When I'm not at a keyboard
 
-Most weekends you'll find me out with a camera. I'm really into wildlife photography — mostly birds and butterflies — and lately I've been dabbling in astrophotography. Both involve a lot of waiting and a lot of *almost* great shots. But when one finally works, it feels worth every minute.
+Most weekends you'll find me out with a camera. I'm really into wildlife photography, mostly birds and butterflies, and lately I've been dabbling in astrophotography. Both involve a lot of waiting and a lot of *almost* great shots. But when one finally works, it feels worth every minute.
 
-Also, Manchester United. Which probably tells you everything you need to know about my relationship with suffering. Match days are non-negotiable — phone silent, notifications off, absolutely no spoilers. Let me feel the disappointment in real time, like a proper fan.
+Also, Manchester United. Which probably tells you everything you need to know about my relationship with suffering. Match days are non-negotiable. Phone silent, notifications off, absolutely no spoilers. Let me feel the disappointment in real time, like a proper fan.
 
 ## Why this blog exists
 
