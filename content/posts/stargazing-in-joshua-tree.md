@@ -1,7 +1,7 @@
 ---
 title: "Stargazing in Joshua Tree National Park: A New Moon Night at Sky's The Limit and Pinto Basin"
-date: 2026-04-18
-lastmod: 2026-04-18
+date: 2026-04-24
+lastmod: 2026-04-24
 description: "A night of stargazing in Joshua Tree: the New Moon program at Sky's The Limit Observatory and astrophotography of M13, M51 and M101 under Bortle 3 skies in the Pinto Basin."
 tags: ["stargazing", "astrophotography", "joshua tree", "california", "travel", "dark skies", "deep sky"]
 categories: ["Travel", "Photography"]
@@ -10,7 +10,7 @@ image: "/images/joshua-tree-stargazing-cover.jpg"
 cover:
     image: "/images/joshua-tree-stargazing-cover.jpg"
     alt: "The Milky Way arching over a silhouetted Joshua tree in the Pinto Basin under a deep, star-filled sky"
-    caption: "A night under Joshua Tree's Bortle 3 skies"
+    caption: "Milky Way over Joshua Tree. My own shot from a clear-sky trip a year earlier."
 readingTime: true
 ---
 
@@ -18,7 +18,9 @@ We've made stargazing trips a bit of a habit over the last two years, and if you
 
 The math is simple. From our place, I can be inside a Bortle 3 dark-sky zone in about three hours of driving. No hotels, no elaborate planning, no fighting crowds. Drive in by evening, stay up with the stars, come back in the morning. For a family with a curious kid and a dad with a telescope, that's just about the perfect setup.
 
-This time we structured the night around something new: a New Moon Night Sky Program with **Sky's The Limit Observatory & Nature Center**, right at the north entrance of the park in Twentynine Palms.
+On the new-moon Saturday of **April 18, 2026**, we structured the night around something new: a New Moon Night Sky Program with **Sky's The Limit Observatory & Nature Center**, right at the north entrance of the park in Twentynine Palms.
+
+> A quick note on the cover photo: that's my own Milky Way shot over Joshua Tree, but it's from a clear-sky trip a year earlier. The Milky Way on *this* particular night, as you'll see further down, had other plans.
 
 ## About Sky's The Limit Observatory & Nature Center
 
@@ -36,7 +38,7 @@ After the talk, she moved us outside for a constellation tour, laser pointer up 
 
 Once the formal session ended, the real treat began. Volunteers had rolled out telescopes all across the grounds and were happy to let anyone look through them. The headliner was inside the observatory dome itself, the **14-inch Celestron Schmidt-Cassegrain on a CGE Pro computerized mount**. They pointed it at Jupiter, and there it was: the disk, the cloud bands, and all four Galilean moons lined up like a little string of pearls. My daughter walked away from that eyepiece with a grin I'll remember for a while.
 
-{{< figure src="/images/joshua-tree-observatory-dome.jpg" alt="The observatory dome at Sky's The Limit Observatory & Nature Center in Twentynine Palms, California" caption="The dome at Sky's The Limit, home to the 14-inch Schmidt-Cassegrain." attr="Photo: National Park Service" attrlink="https://www.nps.gov/places/sky-s-the-limit.htm" >}}
+{{< figure src="/images/joshua-tree-observatory-dome.jpg" alt="The observatory dome at Sky's The Limit Observatory & Nature Center in Twentynine Palms, California" caption="The dome at Sky's The Limit, home to the 14-inch Schmidt-Cassegrain." attr="Photo courtesy Sky's The Limit Observatory &amp; Nature Center" attrlink="https://skysthelimit29.org/" >}}
 
 The skies were clear, which is non-negotiable for this kind of night. That part, at least, the weather got right.
 
