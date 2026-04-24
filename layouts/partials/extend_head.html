@@ -1,3 +1,6 @@
+{{- /* Cloudflare Web Analytics beacon — privacy-friendly pageview tracking */ -}}
+{{- partial "cloudflare_analytics.html" . -}}
+
 <!-- Google Fonts: Inter for UI + Merriweather for article body -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,13 +33,18 @@
 </script>
 
 <!-- JSON-LD Structured Data -->
+{{/*
+  Hugo auto-escapes values inside <script> blocks as JS strings. Since `jsonify`
+  already emits a valid JSON-quoted string, we pipe through `safeJS` to prevent
+  double-quoting (e.g. "\"Anand's Blog\"") which breaks rich-results parsing.
+*/}}
 {{ if .IsPage }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ (or .Description .Summary) | plainify | jsonify }},
+  "headline": {{ .Title | jsonify | safeJS }},
+  "description": {{ (or .Description .Summary) | plainify | jsonify | safeJS }},
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
   "url": "{{ .Permalink }}",
@@ -94,15 +102,15 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": {{ .Site.Title | jsonify }},
+  "name": {{ .Site.Title | jsonify | safeJS }},
   "alternateName": "ndranandraj.com",
-  "url": {{ .Site.BaseURL | jsonify }},
+  "url": {{ .Site.BaseURL | jsonify | safeJS }},
   "inLanguage": "en-US",
-  "description": {{ .Site.Params.description | jsonify }},
+  "description": {{ .Site.Params.description | jsonify | safeJS }},
   "publisher": {
     "@type": "Person",
     "name": "Anandraj",
-    "url": {{ .Site.BaseURL | jsonify }}
+    "url": {{ .Site.BaseURL | jsonify | safeJS }}
   },
   "potentialAction": {
     "@type": "SearchAction",
@@ -130,19 +138,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": {{ .Site.BaseURL | jsonify }}
+      "item": {{ .Site.BaseURL | jsonify | safeJS }}
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": {{ (humanize .Section) | jsonify }},
-      "item": {{ (printf "%s%s/" .Site.BaseURL .Section) | jsonify }}
+      "name": {{ (humanize .Section) | jsonify | safeJS }},
+      "item": {{ (printf "%s%s/" .Site.BaseURL .Section) | jsonify | safeJS }}
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": {{ .Title | jsonify }},
-      "item": {{ .Permalink | jsonify }}
+      "name": {{ .Title | jsonify | safeJS }},
+      "item": {{ .Permalink | jsonify | safeJS }}
     }
   ]
 }

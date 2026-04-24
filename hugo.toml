@@ -111,6 +111,12 @@ enableRobotsTXT = true
 [services.googleAnalytics]
   ID = "G-WG6FZGEPT7"
 
+# Cloudflare Web Analytics beacon. Cookieless, privacy-friendly, harder for
+# ad-blockers to kill than GA. Get the token from Cloudflare dashboard →
+# Analytics & Logs → Web Analytics → Add a site (manual).
+[params.cloudflareWebAnalytics]
+  token = "c945c24d7e5b49188ebd981ed6746ec0"
+
 [menu]
   [[menu.main]]
     name = "Blog"

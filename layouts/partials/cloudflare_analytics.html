@@ -1,0 +1,22 @@
+{{- /*
+  Cloudflare Web Analytics partial.
+  Cookieless, privacy-friendly pageview beacon. Complements GA4 by being
+  ad-blocker-resistant (many blockers leave Cloudflare Insights alone).
+
+  Reads the beacon token from `params.cloudflareWebAnalytics.token` in
+  hugo.toml. Only renders in production builds, matching the GA gating in
+  PaperMod's head.html.
+
+  To set up:
+    1. Dashboard → Analytics & Logs → Web Analytics → Add a site (manual)
+    2. Copy the token from the generated snippet
+    3. Add to hugo.toml:
+         [params.cloudflareWebAnalytics]
+           token = "YOUR_TOKEN_HERE"
+*/ -}}
+{{- if hugo.IsProduction | or (eq site.Params.env "production") -}}
+{{- with site.Params.cloudflareWebAnalytics.token -}}
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "{{ . | safeJS }}"}'></script>
+{{- end -}}
+{{- end -}}
