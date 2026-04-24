@@ -5,10 +5,12 @@
   canonical replacement.
 
   Reads the GA4 Measurement ID from `services.googleAnalytics.ID` in hugo.toml.
-  Only renders in production builds, so `hugo server` doesn't pollute your
-  analytics with local pageviews.
+  PaperMod's head.html already gates this partial on hugo.IsProduction OR
+  site.Params.env=="production", so we don't double-gate here.
+
+  Note: `anonymize_ip` is a no-op in GA4 (IP anonymization is on by default
+  and cannot be disabled), so we don't pass it.
 */ -}}
-{{- if eq hugo.Environment "production" -}}
 {{- with site.Config.Services.GoogleAnalytics.ID -}}
 {{- if hasPrefix . "G-" }}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
@@ -16,8 +18,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', {{ . | jsonify }}, { 'anonymize_ip': true });
+  gtag('config', '{{ . | safeJS }}');
 </script>
-{{- end -}}
 {{- end -}}
 {{- end -}}
