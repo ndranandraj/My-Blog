@@ -1,6 +1,19 @@
 {{- /* Cloudflare Web Analytics beacon — privacy-friendly pageview tracking */ -}}
 {{- partial "cloudflare_analytics.html" . -}}
 
+{{- /*
+  Webmaster verification meta tags.
+  Populate `params.siteVerification.google` and `params.siteVerification.bing`
+  in hugo.toml once you've added the property in Search Console and Bing
+  Webmaster Tools. Empty values render nothing, so they're safe to leave blank.
+*/ -}}
+{{- with site.Params.siteVerification.google -}}
+<meta name="google-site-verification" content="{{ . }}" />
+{{- end -}}
+{{- with site.Params.siteVerification.bing -}}
+<meta name="msvalidate.01" content="{{ . }}" />
+{{- end -}}
+
 <!-- Google Fonts: Inter for UI + Merriweather for article body -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

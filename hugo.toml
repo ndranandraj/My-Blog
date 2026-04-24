@@ -35,7 +35,7 @@ enableRobotsTXT = true
   description = "Personal blog by Anand — tech, travel, photography, and random thoughts."
   DateFormat = "January 2, 2006"
   defaultTheme = "auto"
-  mainSections = ["posts"]
+  mainSections = ["posts", "data"]
 
   ShowReadingTime = true
   ShowShareButtons = true
@@ -117,6 +117,28 @@ enableRobotsTXT = true
 [params.cloudflareWebAnalytics]
   token = "c945c24d7e5b49188ebd981ed6746ec0"
 
+# Buttondown newsletter embed. Leave `username` empty to hide the subscribe
+# form entirely; fill it in after creating the free account at
+# https://buttondown.com and the form on every post becomes active.
+[params.buttondown]
+  username = ""
+
+# Search-engine webmaster verification. Leave values empty until you verify
+# ownership in each console (they'll hand you a token string to drop in here).
+#   googleSiteVerification — Search Console > Add property > HTML tag method
+#   bingSiteVerification    — Bing Webmaster Tools > Add site > Meta tag method
+# Once populated, layouts/partials/extend_head.html emits the meta tags.
+[params.siteVerification]
+  google = ""
+  bing = ""
+
+# IndexNow push-indexing. The key below matches the file at
+# /static/{key}.txt served at https://ndranandraj.com/{key}.txt — required so
+# search engines can verify you own the key when you ping them with new URLs.
+# Regenerate the pair with `openssl rand -hex 16` if ever rotated.
+[params.indexNow]
+  key = "9c9bdc14f5d62a6f18f1c69a5ff43a6a"
+
 [menu]
   [[menu.main]]
     name = "Blog"
@@ -127,17 +149,21 @@ enableRobotsTXT = true
     url = "/page/about/"
     weight = 2
   [[menu.main]]
+    name = "Data"
+    url = "/data/"
+    weight = 3
+  [[menu.main]]
     name = "Archive"
     url = "/archives/"
-    weight = 3
+    weight = 4
   [[menu.main]]
     name = "Search"
     url = "/search/"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "Tags"
     url = "/tags/"
-    weight = 5
+    weight = 6
 
 [pagination]
   pagerSize = 10
