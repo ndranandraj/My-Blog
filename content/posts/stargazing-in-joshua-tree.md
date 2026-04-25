@@ -26,13 +26,13 @@ On the new-moon Saturday of **April 18, 2026**, we structured the night around s
 
 Sky's The Limit is a 15-acre nonprofit campus sitting just outside the north entrance of Joshua Tree. The site includes a proper observatory dome, a scale-model Solar System Orrery (20 billion to 1), a solar calendar sundial that marks the solstices and equinoxes, a meditation garden, and a short nature trail with native desert plants. They also serve as a satellite campus for Copper Mountain College's astronomy program, which is how they bring in presenters who actually know what they're talking about.
 
-Their signature offering is the **New Moon Night Sky Program**, held on the Saturday closest to each new moon, which are the darkest nights of the month. Programs begin about half an hour after sunset and run roughly two hours, followed by open telescope viewing with volunteers.
+Their signature offering is the **New Moon Night Sky Program**, held on the Saturdays nearest the new moon, which are the darkest nights of the month. Some months have two such Saturdays. Programs begin about half an hour after sunset and run roughly two hours, followed by open telescope viewing with volunteers.
 
-> Want to go? Check dates and reserve a spot on their [calendar page](https://www.skysthelimit29.org/calendar.html) at [skysthelimit29.org](https://skysthelimit29.org/). A non-refundable $25-per-vehicle donation holds your reservation, and spots fill up fast on new-moon weekends.
+> Want to go? Check dates and reserve a spot on their [Upcoming Programs page](https://skysthelimit29.org/upcoming-programs/) at [skysthelimit29.org](https://skysthelimit29.org/). A non-refundable $25-per-vehicle donation holds your reservation, and spots fill up fast on new-moon weekends.
 
-## The Program: "What If the Sun Went Out?"
+## The Program: "The Day the Sun Dies"
 
-Our presenter for the evening was Sofia, and she was excellent. The theme she'd chosen was beautifully simple and a little morbid: *what happens if the sun goes out?* She walked us through the physics with analogies a seven-year-old could follow, then zoomed out into the Greek myths about the origins of the sun and the stars. Space science, mythology, and a little bit of doomsday storytelling, and surprisingly, it all worked.
+Our presenter for the evening was **Sophia, the Scientists In Parks Astronomy Intern at Joshua Tree National Park**, and she was excellent. Her talk was titled *The Day the Sun Dies*, with the broader theme being the life and death of stars in general. She walked us through stellar evolution with analogies a seven-year-old could follow, all the way to what would happen the day our own sun runs out, and then zoomed out into the Greek myths about the origins of the sun and the stars. Space science, mythology, and a little bit of doomsday storytelling, and surprisingly, it all worked.
 
 After the talk, she moved us outside for a constellation tour, laser pointer up at the sky, tracing the major patterns and the stories behind them. Our daughter was locked in. This is the kind of kid who usually gets fidgety thirty minutes into anything, and she sat through the entire thing wide-eyed.
 
