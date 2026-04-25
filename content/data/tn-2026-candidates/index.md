@@ -12,10 +12,11 @@ TocOpen: true
 ShowReadingTime: false
 ShowBreadCrumbs: true
 disableShare: false
+image: "/images/dataset-tn-2026-cover.png"
 cover:
-  image: "/images/dummy-candidates-cover.png"
-  alt: "TN 2026 candidates dataset — 4,000 rows, CC-BY-4.0 licensed"
-  caption: "Dataset cover: 4,000 candidates, 234 constituencies, 329 name-match pairs."
+  image: "/images/dataset-tn-2026-cover.png"
+  alt: "Tamil Nadu 2026 Dummy Candidates Dataset, v1.1, CC-BY-4.0 — 4,000 candidates, 329 match pairs, 144 constituencies"
+  caption: "v1.1 · CC-BY-4.0 · Open data release."
   relative: false
 ---
 
