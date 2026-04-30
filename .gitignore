@@ -35,7 +35,11 @@ static/images/_originals_backup/
 .image-originals/
 
 # Private outreach / social campaign material (pitches, dataset working copies,
-# LinkedIn carousel sources, playbooks). Internal-only — never publish from
+# LinkedIn carousel sources, playbooks). Internal-only, never publish from
 # the blog repo.
 docs/outreach/
 outreach-assets/
+
+# Internal Claude session files (workflow notes, not for the public repo)
+CLAUDE.md
+NOTES.md
