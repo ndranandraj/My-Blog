@@ -295,6 +295,136 @@ tr:hover td { background: rgba(168,85,247,0.06); }
 
 <section class="section container">
   <div class="section-header">
+    <h2>The anatomy of TVK's results: 1st, 2nd, 3rd</h2>
+    <p>A finish-position headcount tells you how many seats. The interesting question is <em>who else was in the room</em>. Three drill-downs: the margin distribution where TVK won, who beat TVK and who got pushed to 3rd in the seats where TVK was 2nd, and the distribution of TVK's distant 3rd-place finishes.</p>
+  </div>
+
+  <!-- Three sub-cards side by side -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 24px;">
+    <div class="stat" style="padding: 22px; text-align: left;">
+      <div style="font-size: 0.72rem; color: var(--won); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">When TVK won</div>
+      <div style="font-size: 2.4rem; font-weight: 800; color: var(--won); line-height: 1;">108 <span style="font-size: 0.85rem; color: var(--text-3); font-weight: 500;">seats</span></div>
+      <div style="color: var(--text-2); font-size: 0.85rem; margin-top: 6px;">Median margin: <strong style="color: var(--text);">8.93%</strong> of polled. 78 of 108 wins by 10K+ votes.</div>
+    </div>
+    <div class="stat" style="padding: 22px; text-align: left;">
+      <div style="font-size: 0.72rem; color: var(--2nd); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">When TVK was 2nd</div>
+      <div style="font-size: 2.4rem; font-weight: 800; color: var(--2nd); line-height: 1;">72 <span style="font-size: 0.85rem; color: var(--text-3); font-weight: 500;">seats</span></div>
+      <div style="color: var(--text-2); font-size: 0.85rem; margin-top: 6px;">12 lost by under 2,000 votes. <strong style="color: var(--text);">ADMK pushed to 3rd 30 times</strong> vs DMK 18.</div>
+    </div>
+    <div class="stat" style="padding: 22px; text-align: left;">
+      <div style="font-size: 0.72rem; color: var(--3rd); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">When TVK was 3rd</div>
+      <div style="font-size: 2.4rem; font-weight: 800; color: var(--3rd); line-height: 1;">51 <span style="font-size: 0.85rem; color: var(--text-3); font-weight: 500;">seats</span></div>
+      <div style="color: var(--text-2); font-size: 0.85rem; margin-top: 6px;">Zero seats within 2,000 votes. DMK and ADMK <strong style="color: var(--text);">won 22 each</strong>.</div>
+    </div>
+  </div>
+
+  <!-- Margin / gap distributions side-by-side bar charts -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 24px;">
+    <div class="stat" style="padding: 20px;">
+      <div style="font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 12px;">Won — margin distribution</div>
+      <div id="distWon"></div>
+    </div>
+    <div class="stat" style="padding: 20px;">
+      <div style="font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 12px;">2nd place — gap to winner</div>
+      <div id="distSecond"></div>
+    </div>
+    <div class="stat" style="padding: 20px;">
+      <div style="font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 12px;">3rd place — gap to winner</div>
+      <div id="distThird"></div>
+    </div>
+  </div>
+
+  <!-- Closest TVK wins -->
+  <div class="section-header" style="margin-top: 12px;">
+    <h3 style="font-size: 1.1rem; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 4px;">Eight closest TVK wins</h3>
+    <p>Photo-finish seats. Margin shown in absolute votes and as a percent of total votes polled.</p>
+  </div>
+  <div class="table-wrap" style="margin-bottom: 22px;">
+    <table>
+      <thead><tr>
+        <th>Constituency</th><th>TVK candidate</th>
+        <th class="num-cell">Margin</th><th class="num-cell">Margin %</th>
+        <th>Beat</th>
+      </tr></thead>
+      <tbody id="closestWonBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Biggest TVK wins -->
+  <div class="section-header" style="margin-top: 12px;">
+    <h3 style="font-size: 1.1rem; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 4px;">Eight biggest TVK wins</h3>
+    <p>Chennai metro and Salem belt overwhelm everything else.</p>
+  </div>
+  <div class="table-wrap" style="margin-bottom: 22px;">
+    <table>
+      <thead><tr>
+        <th>Constituency</th><th>TVK candidate</th>
+        <th class="num-cell">Margin</th><th class="num-cell">Margin %</th>
+        <th>Beat</th>
+      </tr></thead>
+      <tbody id="biggestWonBody"></tbody>
+    </table>
+  </div>
+
+  <!-- 2nd-place breakdown -->
+  <div class="section-header" style="margin-top: 12px;">
+    <h3 style="font-size: 1.1rem; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 4px;">When TVK came 2nd: who actually won, and who got pushed to 3rd</h3>
+    <p>The 30-vs-18 ADMK-vs-DMK split in the right column is the cleanest single number for the "TVK ate AIADMK's lunch" thesis.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 22px;">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Winner</th><th class="num-cell">Seats (of 72)</th></tr></thead>
+        <tbody id="winnerWhen2Body"></tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pushed to 3rd</th><th class="num-cell">Seats (of 72)</th></tr></thead>
+        <tbody id="thirdWhen2Body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Closest 2nd-place misses -->
+  <div class="section-header" style="margin-top: 12px;">
+    <h3 style="font-size: 1.1rem; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 4px;">Eight closest 2nd-place misses</h3>
+    <p>TIRUKKOYILUR and PALANI are the same two seats flagged in the dummy-impact analysis as the only constituencies where flagged-namesake votes exceeded the margin.</p>
+  </div>
+  <div class="table-wrap" style="margin-bottom: 22px;">
+    <table>
+      <thead><tr>
+        <th>Constituency</th><th>TVK candidate</th>
+        <th class="num-cell">Gap</th><th class="num-cell">Gap %</th>
+        <th>Lost to</th><th>3rd was</th>
+      </tr></thead>
+      <tbody id="closest2ndBody"></tbody>
+    </table>
+  </div>
+
+  <!-- 3rd-place breakdown -->
+  <div class="section-header" style="margin-top: 12px;">
+    <h3 style="font-size: 1.1rem; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 4px;">When TVK came 3rd: the older order persisted</h3>
+    <p>22 DMK wins and 22 AIADMK wins out of 51. In the seats where TVK was a distant third, the conventional DMK-vs-AIADMK contest played out as if the wave never happened.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 12px;">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Winner</th><th class="num-cell">Seats (of 51)</th></tr></thead>
+        <tbody id="winnerWhen3Body"></tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Runner-up</th><th class="num-cell">Seats (of 51)</th></tr></thead>
+        <tbody id="secondWhen3Body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-header">
     <h2>Stronghold flips: the AIADMK-vs-DMK asymmetry</h2>
     <p>"Stronghold" = same camp won 2011, 2016, and 2021 consecutively. TVK ate dramatically deeper into AIADMK's fortresses than DMK's.</p>
   </div>
@@ -508,8 +638,14 @@ async function loadRegional() {
     tbody.innerHTML = reg.regions.map(r => {
       const expected = r.acs * expectedPerSeat;
       const above = r.tvk_won - expected;
-      const aboveColor = above > 0.5 ? 'color: var(--won);' : (above < -0.5 ? 'color: var(--lower);' : '');
-      const strikeColor = r.strike_rate >= 50 ? 'color: var(--won);' : (r.strike_rate < 25 ? 'color: var(--lower);' : '');
+      // Use a warm red for under-performing cells instead of the near-black
+      // var(--lower), which made "-5.0" and "10.0%" almost invisible on dark.
+      const aboveColor = above > 0.5 ? 'color: var(--won); font-weight: 700;'
+                       : above < -0.5 ? 'color: #FCA5A5; font-weight: 700;'
+                       : 'color: var(--text);';
+      const strikeColor = r.strike_rate >= 50 ? 'color: var(--won); font-weight: 700;'
+                         : r.strike_rate < 25 ? 'color: #FCA5A5; font-weight: 600;'
+                         : 'color: var(--text); font-weight: 600;';
       const mm = r.median_margin != null ? r.median_margin.toLocaleString('en-IN') : '—';
       const mmp = r.median_margin_pct != null ? r.median_margin_pct.toFixed(2) + '%' : '—';
       return `<tr>
@@ -553,6 +689,116 @@ async function loadEfficiency() {
 
 loadRegional();
 loadEfficiency();
+
+// ─── Position anatomy: 1st/2nd/3rd drill-downs ────────────────────
+const PARTY_COLORS = {
+  TVK: 'rgba(168,85,247,0.18)', DMK: 'rgba(220,38,38,0.18)',
+  ADMK: 'rgba(34,197,94,0.18)', AIADMK: 'rgba(34,197,94,0.18)',
+  BJP: 'rgba(249,115,22,0.18)', PMK: 'rgba(252,211,77,0.18)',
+  INC: 'rgba(59,130,246,0.18)', NTK: 'rgba(20,184,166,0.18)',
+  IUML: 'rgba(16,185,129,0.18)', VCK: 'rgba(139,92,246,0.18)',
+  DMDK: 'rgba(245,158,11,0.18)', AMMK: 'rgba(192,132,252,0.18)',
+  CPI: 'rgba(239,68,68,0.18)', 'CPI(M)': 'rgba(244,63,94,0.18)',
+};
+const PARTY_TEXT = {
+  TVK: '#D8B4FE', DMK: '#FCA5A5', ADMK: '#86EFAC', AIADMK: '#86EFAC',
+  BJP: '#FDBA74', PMK: '#FCD34D', INC: '#93C5FD', NTK: '#5EEAD4',
+  IUML: '#6EE7B7', VCK: '#C4B5FD', DMDK: '#FBBF24', AMMK: '#E9D5FF',
+  CPI: '#FCA5A5', 'CPI(M)': '#FDA4AF',
+};
+function partyChip(p) {
+  const bg = PARTY_COLORS[p] || 'rgba(107,114,128,0.18)';
+  const fg = PARTY_TEXT[p] || '#D1D5DB';
+  return `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:0.72rem;font-weight:700;background:${bg};color:${fg};letter-spacing:0.02em;">${p || '?'}</span>`;
+}
+const fmtNum = n => (n == null ? '—' : Number(n).toLocaleString('en-IN'));
+const fmtPctV = n => (n == null ? '—' : Number(n).toFixed(2) + '%');
+
+function renderBuckets(elId, buckets, maxValue, color) {
+  const max = maxValue || Math.max(...buckets.map(b => b.count));
+  const html = buckets.map(b => {
+    const w = max ? (100 * b.count / max) : 0;
+    return `
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;">
+        <div style="width:108px;font-size:0.78rem;color:var(--text-2);text-align:right;font-variant-numeric:tabular-nums;">${b.label}</div>
+        <div style="flex:1;background:var(--surface-2);border-radius:4px;height:18px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;bottom:0;width:${w}%;background:${color};border-radius:4px;transition:width 0.3s;"></div>
+        </div>
+        <div style="width:46px;font-size:0.82rem;color:var(--text);font-weight:700;font-variant-numeric:tabular-nums;text-align:right;">${b.count}</div>
+      </div>`;
+  }).join('');
+  document.getElementById(elId).innerHTML = html;
+}
+
+async function loadAnatomy() {
+  try {
+    const a = await fetch('data/tvk_position_anatomy_2026.json').then(r => r.ok ? r.json() : null);
+    if (!a) return;
+
+    // Bar charts: shared max across the three so they're visually comparable
+    const allCounts = [
+      ...a.won.margin_buckets.map(b => b.count),
+      ...a.second.gap_buckets.map(b => b.count),
+      ...a.third.gap_buckets.map(b => b.count),
+    ];
+    const maxVal = Math.max(...allCounts);
+    renderBuckets('distWon',    a.won.margin_buckets,   maxVal, 'var(--won)');
+    renderBuckets('distSecond', a.second.gap_buckets,   maxVal, 'var(--2nd)');
+    renderBuckets('distThird',  a.third.gap_buckets,    maxVal, 'var(--3rd)');
+
+    // Closest TVK wins
+    document.getElementById('closestWonBody').innerHTML = a.won.closest.slice(0, 8).map(r => `
+      <tr>
+        <td><strong>${r.ac}</strong></td>
+        <td>${r.candidate}</td>
+        <td class="num-cell" style="color:var(--won);font-weight:700;">${fmtNum(r.margin)}</td>
+        <td class="num-cell" style="color:var(--won);font-weight:700;">${fmtPctV(r.margin_pct)}</td>
+        <td>${partyChip(r.against)}</td>
+      </tr>`).join('');
+
+    // Biggest TVK wins
+    document.getElementById('biggestWonBody').innerHTML = a.won.biggest.slice(0, 8).map(r => `
+      <tr>
+        <td><strong>${r.ac}</strong></td>
+        <td>${r.candidate}</td>
+        <td class="num-cell" style="color:var(--won);font-weight:700;">${fmtNum(r.margin)}</td>
+        <td class="num-cell">${fmtPctV(r.margin_pct)}</td>
+        <td>${partyChip(r.against)}</td>
+      </tr>`).join('');
+
+    // When TVK was 2nd: who won
+    document.getElementById('winnerWhen2Body').innerHTML = Object.entries(a.second.winner_when_tvk_2nd).map(([p, n]) => `
+      <tr><td>${partyChip(p)}</td><td class="num-cell" style="font-weight:700;">${n}</td></tr>`).join('');
+
+    // When TVK was 2nd: who got pushed to 3rd
+    document.getElementById('thirdWhen2Body').innerHTML = Object.entries(a.second.pushed_to_3rd_when_tvk_2nd).map(([p, n]) => {
+      const highlight = (p === 'ADMK' || p === 'AIADMK') ? 'color:#FCA5A5;font-weight:800;' : (p === 'DMK' ? 'color:var(--text);font-weight:700;' : 'font-weight:600;');
+      return `<tr><td>${partyChip(p)}</td><td class="num-cell" style="${highlight}">${n}</td></tr>`;
+    }).join('');
+
+    // Closest 2nd-place misses
+    document.getElementById('closest2ndBody').innerHTML = a.second.closest_misses.slice(0, 8).map(r => `
+      <tr>
+        <td><strong>${r.ac}</strong></td>
+        <td>${r.candidate}</td>
+        <td class="num-cell" style="color:#FCD34D;font-weight:700;">${fmtNum(r.gap)}</td>
+        <td class="num-cell" style="color:#FCD34D;font-weight:700;">${fmtPctV(r.gap_pct)}</td>
+        <td>${partyChip(r.lost_to)}</td>
+        <td>${partyChip(r.third)}</td>
+      </tr>`).join('');
+
+    // When TVK was 3rd: who won
+    document.getElementById('winnerWhen3Body').innerHTML = Object.entries(a.third.winner_when_tvk_3rd).map(([p, n]) => `
+      <tr><td>${partyChip(p)}</td><td class="num-cell" style="font-weight:700;">${n}</td></tr>`).join('');
+
+    // When TVK was 3rd: runner-up
+    document.getElementById('secondWhen3Body').innerHTML = Object.entries(a.third.second_when_tvk_3rd).map(([p, n]) => `
+      <tr><td>${partyChip(p)}</td><td class="num-cell" style="font-weight:700;">${n}</td></tr>`).join('');
+  } catch (e) {
+    console.warn('Position-anatomy data not loaded:', e);
+  }
+}
+loadAnatomy();
 </script>
 
 </body>

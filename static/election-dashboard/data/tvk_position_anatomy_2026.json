@@ -1,0 +1,487 @@
+{
+  "totals": {
+    "won": 107,
+    "second": 72,
+    "third": 51
+  },
+  "won": {
+    "margin_buckets": [
+      {
+        "label": "under 500",
+        "count": 1,
+        "pct": 0.9
+      },
+      {
+        "label": "500 – 2,000",
+        "count": 7,
+        "pct": 6.5
+      },
+      {
+        "label": "2,000 – 5,000",
+        "count": 9,
+        "pct": 8.4
+      },
+      {
+        "label": "5,000 – 10,000",
+        "count": 12,
+        "pct": 11.2
+      },
+      {
+        "label": "10,000 – 25,000",
+        "count": 44,
+        "pct": 41.1
+      },
+      {
+        "label": "over 25,000",
+        "count": 34,
+        "pct": 31.8
+      }
+    ],
+    "closest": [
+      {
+        "ac": "TIRUPPATTUR",
+        "ac_no": 185,
+        "candidate": "Seenivasa Sethupathy. R",
+        "margin": 1,
+        "margin_pct": 0.0,
+        "against": "DMK"
+      },
+      {
+        "ac": "KUMBAKONAM",
+        "ac_no": 171,
+        "candidate": "Vinoth",
+        "margin": 679,
+        "margin_pct": 0.33,
+        "against": "DMK"
+      },
+      {
+        "ac": "CUMBUM",
+        "ac_no": 201,
+        "candidate": "Jeganathmishra Pla",
+        "margin": 751,
+        "margin_pct": 0.36,
+        "against": "DMK"
+      },
+      {
+        "ac": "KALLAKURICHI",
+        "ac_no": 80,
+        "candidate": "ARUL VIGNESH C",
+        "margin": 798,
+        "margin_pct": 0.32,
+        "against": "ADMK"
+      },
+      {
+        "ac": "SRIVAIKUNTAM",
+        "ac_no": 216,
+        "candidate": "Saravanan. G",
+        "margin": 1186,
+        "margin_pct": 0.67,
+        "against": "ADMK"
+      },
+      {
+        "ac": "MANAMADURAI",
+        "ac_no": 187,
+        "candidate": "Elangovan.D",
+        "margin": 1208,
+        "margin_pct": 0.58,
+        "against": "DMK"
+      },
+      {
+        "ac": "MANAPPARAI",
+        "ac_no": 138,
+        "candidate": "R. KATHIRAVAN",
+        "margin": 1426,
+        "margin_pct": 0.59,
+        "against": "ADMK"
+      },
+      {
+        "ac": "USILAMPATTI",
+        "ac_no": 197,
+        "candidate": "Vijay. M",
+        "margin": 1805,
+        "margin_pct": 0.81,
+        "against": "ADMK"
+      },
+      {
+        "ac": "MODAKURICHI",
+        "ac_no": 100,
+        "candidate": "D.Shanmugan",
+        "margin": 2430,
+        "margin_pct": 1.27,
+        "against": "BJP"
+      },
+      {
+        "ac": "TIRUVADANAI",
+        "ac_no": 210,
+        "candidate": "Rajeev",
+        "margin": 2513,
+        "margin_pct": 1.14,
+        "against": "INC"
+      }
+    ],
+    "biggest": [
+      {
+        "ac": "SHOZHINGANALLUR",
+        "ac_no": 27,
+        "candidate": "Ecr P Saravanan",
+        "margin": 96780,
+        "margin_pct": 21.64,
+        "against": "DMK"
+      },
+      {
+        "ac": "MADAVARAM",
+        "ac_no": 9,
+        "candidate": "M.L.Vijayprabhu",
+        "margin": 94985,
+        "margin_pct": 26.24,
+        "against": "DMK"
+      },
+      {
+        "ac": "AVADI",
+        "ac_no": 6,
+        "candidate": "R.Ramesh Kumar",
+        "margin": 76311,
+        "margin_pct": 22.05,
+        "against": "DMK"
+      },
+      {
+        "ac": "SALEM (WEST)",
+        "ac_no": 88,
+        "candidate": "Lakshmanan.S",
+        "margin": 74867,
+        "margin_pct": 31.94,
+        "against": "PMK"
+      },
+      {
+        "ac": "POONAMALLEE",
+        "ac_no": 5,
+        "candidate": "Prakasam.R",
+        "margin": 72740,
+        "margin_pct": 23.55,
+        "against": "DMK"
+      },
+      {
+        "ac": "ALANDUR",
+        "ac_no": 28,
+        "candidate": "T.M.Anbarasan",
+        "margin": 72191,
+        "margin_pct": 27.6,
+        "against": "NTK"
+      },
+      {
+        "ac": "TIRUPPUR (NORTH)",
+        "ac_no": 113,
+        "candidate": "V.Sathyabama",
+        "margin": 69992,
+        "margin_pct": 26.57,
+        "against": "ADMK"
+      },
+      {
+        "ac": "MADURAVOYAL",
+        "ac_no": 7,
+        "candidate": "Rhevanth Charan",
+        "margin": 61509,
+        "margin_pct": 20.94,
+        "against": "DMK"
+      },
+      {
+        "ac": "AMBATTUR",
+        "ac_no": 8,
+        "candidate": "Balamurugan.G",
+        "margin": 58781,
+        "margin_pct": 22.61,
+        "against": "DMK"
+      },
+      {
+        "ac": "PONNERI",
+        "ac_no": 2,
+        "candidate": "Dr.Ravi.M.S",
+        "margin": 55768,
+        "margin_pct": 24.59,
+        "against": "INC"
+      }
+    ]
+  },
+  "second": {
+    "gap_buckets": [
+      {
+        "label": "under 2,000",
+        "count": 12,
+        "pct": 16.7
+      },
+      {
+        "label": "2,000 – 5,000",
+        "count": 14,
+        "pct": 19.4
+      },
+      {
+        "label": "5,000 – 10,000",
+        "count": 18,
+        "pct": 25.0
+      },
+      {
+        "label": "10,000 – 25,000",
+        "count": 22,
+        "pct": 30.6
+      },
+      {
+        "label": "over 25,000",
+        "count": 6,
+        "pct": 8.3
+      }
+    ],
+    "winner_when_tvk_2nd": {
+      "DMK": 35,
+      "ADMK": 24,
+      "INC": 4,
+      "IUML": 2,
+      "PMK": 2,
+      "CPI(M)": 2,
+      "BJP": 1,
+      "DMDK": 1,
+      "CPI": 1
+    },
+    "pushed_to_3rd_when_tvk_2nd": {
+      "ADMK": 30,
+      "DMK": 18,
+      "BJP": 10,
+      "DMDK": 4,
+      "PMK": 3,
+      "INC": 3,
+      "AMMK": 2,
+      "VCK": 1,
+      "CPI(M)": 1
+    },
+    "closest_misses": [
+      {
+        "ac": "TIRUKKOYILUR",
+        "ac_no": 76,
+        "candidate": "Vijay R Baranibalaaji",
+        "gap": 285,
+        "gap_pct": 0.13,
+        "lost_to": "ADMK",
+        "third": "DMK"
+      },
+      {
+        "ac": "KULITHALAI",
+        "ac_no": 137,
+        "candidate": "G.BALASUBRAMANI",
+        "gap": 579,
+        "gap_pct": 0.28,
+        "lost_to": "DMK",
+        "third": "ADMK"
+      },
+      {
+        "ac": "PALANI",
+        "ac_no": 127,
+        "candidate": "Dr. Praveen Kumar. M",
+        "gap": 693,
+        "gap_pct": 0.33,
+        "lost_to": "ADMK",
+        "third": "CPI(M)"
+      },
+      {
+        "ac": "KOVILPATTI",
+        "ac_no": 218,
+        "candidate": "Balasubramanian.S",
+        "gap": 843,
+        "gap_pct": 0.43,
+        "lost_to": "DMK",
+        "third": "ADMK"
+      },
+      {
+        "ac": "VIKRAVANDI",
+        "ac_no": 75,
+        "candidate": "Vijai Vadivel A",
+        "gap": 910,
+        "gap_pct": 0.43,
+        "lost_to": "PMK",
+        "third": "DMK"
+      },
+      {
+        "ac": "UDHAGAMANDALAM",
+        "ac_no": 108,
+        "candidate": "Ibrahim.R",
+        "gap": 976,
+        "gap_pct": 0.66,
+        "lost_to": "BJP",
+        "third": "INC"
+      },
+      {
+        "ac": "PAPANASAM",
+        "ac_no": 172,
+        "candidate": "Azarudeen Uduman Ali",
+        "gap": 1065,
+        "gap_pct": 0.51,
+        "lost_to": "IUML",
+        "third": "ADMK"
+      },
+      {
+        "ac": "DINDIGUL",
+        "ac_no": 132,
+        "candidate": "Nazeer Raja. G",
+        "gap": 1131,
+        "gap_pct": 0.53,
+        "lost_to": "DMK",
+        "third": "ADMK"
+      },
+      {
+        "ac": "KILLIYOOR",
+        "ac_no": 234,
+        "candidate": "Sabin. S",
+        "gap": 1311,
+        "gap_pct": 0.74,
+        "lost_to": "INC",
+        "third": "BJP"
+      },
+      {
+        "ac": "THIRUMAYAM",
+        "ac_no": 181,
+        "candidate": "Chinthamani.C",
+        "gap": 1492,
+        "gap_pct": 0.82,
+        "lost_to": "DMK",
+        "third": "ADMK"
+      }
+    ]
+  },
+  "third": {
+    "gap_buckets": [
+      {
+        "label": "under 2,000",
+        "count": 0,
+        "pct": 0.0
+      },
+      {
+        "label": "2,000 – 5,000",
+        "count": 3,
+        "pct": 5.9
+      },
+      {
+        "label": "5,000 – 10,000",
+        "count": 8,
+        "pct": 15.7
+      },
+      {
+        "label": "10,000 – 25,000",
+        "count": 21,
+        "pct": 41.2
+      },
+      {
+        "label": "over 25,000",
+        "count": 19,
+        "pct": 37.3
+      }
+    ],
+    "winner_when_tvk_3rd": {
+      "ADMK": 22,
+      "DMK": 22,
+      "PMK": 2,
+      "VCK": 2,
+      "CPI": 1,
+      "INC": 1,
+      "AMMK": 1
+    },
+    "second_when_tvk_3rd": {
+      "DMK": 23,
+      "ADMK": 19,
+      "BJP": 4,
+      "PMK": 2,
+      "AMMK": 1,
+      "VCK": 1,
+      "INC": 1
+    },
+    "closest": [
+      {
+        "ac": "KANNIYAKUMARI",
+        "ac_no": 229,
+        "candidate": "Madhavan.S.R",
+        "gap": 2068,
+        "gap_pct": 0.86,
+        "lost_to": "ADMK",
+        "second": "DMK"
+      },
+      {
+        "ac": "TINDIVANAM",
+        "ac_no": 72,
+        "candidate": "Sakthivel. S",
+        "gap": 2674,
+        "gap_pct": 1.36,
+        "lost_to": "VCK",
+        "second": "ADMK"
+      },
+      {
+        "ac": "ANTHIYUR",
+        "ac_no": 105,
+        "candidate": "Vijay Venkatesh.M",
+        "gap": 3670,
+        "gap_pct": 1.98,
+        "lost_to": "ADMK",
+        "second": "DMK"
+      },
+      {
+        "ac": "PARAMATHI-VELUR",
+        "ac_no": 95,
+        "candidate": "Nandakumar A",
+        "gap": 5282,
+        "gap_pct": 2.8,
+        "lost_to": "ADMK",
+        "second": "DMK"
+      },
+      {
+        "ac": "VANDAVASI",
+        "ac_no": 69,
+        "candidate": "Udhayakumar. M",
+        "gap": 5631,
+        "gap_pct": 2.95,
+        "lost_to": "DMK",
+        "second": "ADMK"
+      },
+      {
+        "ac": "ARANI",
+        "ac_no": 67,
+        "candidate": "Venkatesh Kumar. D",
+        "gap": 5878,
+        "gap_pct": 2.55,
+        "lost_to": "ADMK",
+        "second": "DMK"
+      },
+      {
+        "ac": "POLLACHI",
+        "ac_no": 123,
+        "candidate": "G. RAMANATHAN",
+        "gap": 8194,
+        "gap_pct": 4.52,
+        "lost_to": "DMK",
+        "second": "ADMK"
+      },
+      {
+        "ac": "COONOOR",
+        "ac_no": 110,
+        "candidate": "C. THANGARAJU",
+        "gap": 8245,
+        "gap_pct": 5.83,
+        "lost_to": "DMK",
+        "second": "ADMK"
+      },
+      {
+        "ac": "ALANGULAM",
+        "ac_no": 223,
+        "candidate": "Vibin Chakkaravarthy",
+        "gap": 8486,
+        "gap_pct": 3.84,
+        "lost_to": "DMK",
+        "second": "ADMK"
+      },
+      {
+        "ac": "SATTUR",
+        "ac_no": 204,
+        "candidate": "Ajith. M",
+        "gap": 8562,
+        "gap_pct": 4.31,
+        "lost_to": "DMK",
+        "second": "BJP"
+      }
+    ]
+  }
+}
