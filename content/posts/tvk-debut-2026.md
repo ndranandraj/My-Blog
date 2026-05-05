@@ -100,6 +100,162 @@ Across the 108 wins, the **median winning margin was 8.93% of the votes polled i
 
 ---
 
+## The anatomy of TVK's results: 1st, 2nd, 3rd
+
+A finish-position headcount tells you how many seats. The interesting question is *who else was in the room*. When TVK won, who was the runner-up they beat? When TVK was the runner-up, who beat them and who got pushed to 3rd? When TVK finished third, who was actually fighting for the seat? These three drill-downs are where the regional pattern shows up most clearly.
+
+### When TVK won (108 seats)
+
+The margin distribution is heavily right-skewed. About 7% of TVK's wins were under 2,000 votes; **44% were by 10,000-25,000 votes**, and **31% were by more than 25,000**.
+
+| Winning margin (votes) | Seats | Share of TVK wins |
+| :--- | ---: | ---: |
+| under 500 | 2 | 1.9% |
+| 500 to 2,000 | 7 | 6.5% |
+| 2,000 to 5,000 | 9 | 8.3% |
+| 5,000 to 10,000 | 12 | 11.1% |
+| 10,000 to 25,000 | 44 | 40.7% |
+| over 25,000 | 34 | 31.5% |
+
+The eight closest wins (every one of them under 2,000 votes, the seats that hung on a few hundred ballots):
+
+| Constituency | TVK candidate | Margin (votes) | Margin % | Beat |
+| :--- | :--- | ---: | ---: | :--- |
+| TIRUPPATTUR | Seenivasa Sethupathy R | **1** | 0.00% | DMK |
+| KUMBAKONAM | Vinoth | 679 | 0.33% | DMK |
+| CUMBUM | Jeganathmishra Pla | 751 | 0.36% | DMK |
+| KALLAKURICHI | Arul Vignesh C | 798 | 0.32% | ADMK |
+| SRIVAIKUNTAM | Saravanan G | 1,186 | 0.67% | ADMK |
+| MANAMADURAI | Elangovan D | 1,208 | 0.58% | DMK |
+| MANAPPARAI | R Kathiravan | 1,426 | 0.59% | ADMK |
+| USILAMPATTI | Vijay M | 1,805 | 0.81% | ADMK |
+
+The biggest eight (Chennai metro and Salem belt overwhelm everything else):
+
+| Constituency | TVK candidate | Margin (votes) | Margin % | Beat |
+| :--- | :--- | ---: | ---: | :--- |
+| SHOZHINGANALLUR | Ecr P Saravanan | **96,780** | 21.64% | DMK |
+| MADAVARAM | M L Vijayprabhu | 94,985 | 26.24% | DMK |
+| AVADI | R Ramesh Kumar | 76,311 | 22.05% | DMK |
+| SALEM (WEST) | Lakshmanan S | 74,867 | 31.94% | PMK |
+| POONAMALLEE | Prakasam R | 72,740 | 23.55% | DMK |
+| ALANDUR | T M Anbarasan | 72,191 | 27.60% | NTK |
+| TIRUPPUR (NORTH) | V Sathyabama | 69,992 | 26.57% | ADMK |
+| MADURAVOYAL | Rhevanth Charan | 61,509 | 20.94% | DMK |
+
+Five of the eight biggest wins came against DMK in Chennai-metro seats DMK was supposed to defend. The Salem and Tiruppur entries are the AIADMK-belt collapses I describe in the regional section below. The 1-vote margin at TIRUPPATTUR (AC 192, the Sivaganga district one, not AC 50) is the photo-finish of the cycle and probably will be litigated.
+
+{{< pullquote >}}
+TVK won by tens of thousands where the wave concentrated and by hundreds where the field had time to tighten. Both halves of that statement matter for 2031.
+{{< /pullquote >}}
+
+### When TVK came 2nd (72 seats)
+
+This is the column to watch most carefully. It tells you where TVK is one cycle of consolidation away from a win, and it also tells you which of the two old majors absorbed the wave and which did not.
+
+The gap-to-winner distribution is much tighter than the win column:
+
+| Gap to winner (votes) | Seats | Share of TVK 2nd-place |
+| :--- | ---: | ---: |
+| under 2,000 | 12 | 16.7% |
+| 2,000 to 5,000 | 14 | 19.4% |
+| 5,000 to 10,000 | 18 | 25.0% |
+| 10,000 to 25,000 | 22 | 30.6% |
+| over 25,000 | 6 | 8.3% |
+
+Twelve seats lost by under 2,000 votes is the headline. That is a queue of "next time" candidates if either DMK or AIADMK can be split or weakened in the same constituencies in 2031.
+
+When TVK came 2nd, who actually won?
+
+| Winner party | Seats | Share |
+| :--- | ---: | ---: |
+| DMK | 35 | 48.6% |
+| ADMK | 24 | 33.3% |
+| INC | 4 | 5.6% |
+| IUML | 2 | 2.8% |
+| PMK | 2 | 2.8% |
+| CPI(M) | 2 | 2.8% |
+| BJP | 1 | 1.4% |
+| DMDK | 1 | 1.4% |
+| CPI | 1 | 1.4% |
+
+Almost half (35 of 72) were DMK wins. TVK's 2nd-place column is, more than anything else, the map of seats DMK successfully held against the wave. ADMK held 24, mostly in the Kongu pockets that did not break.
+
+When TVK came 2nd, who was pushed to 3rd?
+
+| Pushed-to-3rd party | Seats | Share |
+| :--- | ---: | ---: |
+| ADMK | 30 | 41.7% |
+| DMK | 18 | 25.0% |
+| BJP | 10 | 13.9% |
+| DMDK | 4 | 5.6% |
+| PMK | 3 | 4.2% |
+| INC | 3 | 4.2% |
+| AMMK | 2 | 2.8% |
+| VCK | 1 | 1.4% |
+| CPI(M) | 1 | 1.4% |
+
+This is the cleanest single number for the "TVK ate AIADMK's lunch" thesis. Across 72 seats where TVK came 2nd, the candidate displaced from contention was AIADMK 30 times versus DMK 18 times. Even outside their own wins, TVK was twice as likely to have crowded out an AIADMK candidate as a DMK one.
+
+The eight closest 2nd-place misses:
+
+| Constituency | TVK candidate | Gap (votes) | Gap % | Lost to | 3rd was |
+| :--- | :--- | ---: | ---: | :--- | :--- |
+| TIRUKKOYILUR | Vijay R Baranibalaaji | **285** | 0.13% | ADMK | DMK |
+| KULITHALAI | G Balasubramani | 579 | 0.28% | DMK | ADMK |
+| PALANI | Dr Praveen Kumar M | 693 | 0.33% | ADMK | CPI(M) |
+| KOVILPATTI | Balasubramanian S | 843 | 0.43% | DMK | ADMK |
+| VIKRAVANDI | Vijai Vadivel A | 910 | 0.43% | PMK | DMK |
+| UDHAGAMANDALAM | Ibrahim R | 976 | 0.66% | BJP | INC |
+| PAPANASAM | Azarudeen Uduman Ali | 1,065 | 0.51% | IUML | ADMK |
+| DINDIGUL | Nazeer Raja G | 1,131 | 0.53% | DMK | ADMK |
+
+TIRUKKOYILUR and PALANI are the same two seats my [dummy-impact analysis](/posts/tn-2026-dummy-candidates-results/) flagged as the only constituencies where flagged-namesake votes exceeded the margin. They show up here because they show up everywhere: TVK lost them by under half a percent of votes polled, and a small number of suspect names happened to be on the EVM. Causation cannot be proven, but the door was open.
+
+### When TVK came 3rd (51 seats)
+
+This is the part of the map where TVK was a third force rather than a contender. The gap-to-winner distribution shifts further right and almost no seats are within 2,000 votes:
+
+| Gap to winner (votes) | Seats | Share of TVK 3rd-place |
+| :--- | ---: | ---: |
+| under 2,000 | 0 | 0.0% |
+| 2,000 to 5,000 | 3 | 5.9% |
+| 5,000 to 10,000 | 8 | 15.7% |
+| 10,000 to 25,000 | 21 | 41.2% |
+| over 25,000 | 19 | 37.3% |
+
+Twenty-five percent of TVK's 3rd-place finishes (19 of 51) were by 25,000+ votes. These are seats where TVK was not really in the contest at all.
+
+When TVK came 3rd, the winner is split exactly evenly:
+
+| Winner | Seats |
+| :--- | ---: |
+| ADMK | 22 |
+| DMK | 22 |
+| PMK | 2 |
+| VCK | 2 |
+| CPI | 1 |
+| INC | 1 |
+| AMMK | 1 |
+
+DMK and AIADMK each held 22 of the 51 seats where TVK was a distant third. These are the parts of Tamil Nadu where the older order persisted intact: each major's traditional base voted for them and TVK got the leftover.
+
+When TVK came 3rd, the runner-up was:
+
+| Runner-up | Seats |
+| :--- | ---: |
+| DMK | 23 |
+| ADMK | 19 |
+| BJP | 4 |
+| PMK | 2 |
+| AMMK | 1 |
+| VCK | 1 |
+| INC | 1 |
+
+Read together, the 3rd-place pattern says: in seats where TVK wasn't in contention, the contest was a more conventional DMK-vs-AIADMK fight (22 + 22 winners; 23 + 19 runners-up). The wave failed to reach these constituencies in any consequential way.
+
+---
+
 ## Where the wave landed: the regional read
 
 I grouped the 234 ACs into nine standard political-geography buckets and computed TVK's strike rate, vote share, median winning margin, and "above weight" delta in each.
