@@ -49,7 +49,7 @@ Of the 329 flagged pairs, **263** had both the major and the suspect actually co
 How many of those losses were "consequential," meaning the dummy votes were at least equal to the margin of defeat?
 
 | Dummy classification | Consequential losses |
-|---|---|
+| :--- | ---: |
 | Strict (EXACT and NEAR_FULL name matches only) | **0** |
 | Inclusive (all flagged dummies, including WORD_MATCH) | **2** |
 
@@ -58,7 +58,7 @@ The strict test is the one the headline pipeline uses, and the one I think the d
 The inclusive test adds WORD_MATCH dummies: cases where one significant name fragment is shared, often a common Tamil first name like Saravanan or Murugan. That produces two cases. Both are TVK losses.
 
 | Constituency | Major (lost) | Party | Margin (votes) | Margin (% of polled) | Combined dummy votes |
-|---|---|---|---|---|---|
+| :--- | :--- | :--- | ---: | ---: | ---: |
 | TIRUKKOYILUR | Vijay R Baranibalaaji | TVK | **285** | **0.13%** | 571 |
 | PALANI | Dr. Praveen Kumar M | TVK | **693** | **0.33%** | 1,057 |
 
@@ -87,7 +87,7 @@ The dummy-candidate strategy did not "fail" in 2026. It ran into a year where ma
 ## By tier
 
 | Tier | Pairs | Median dummy votes | In lost seats | Strict-consequential |
-|---|---|---|---|---|
+| :--- | ---: | ---: | ---: | ---: |
 | EXACT | 64 | 174 | 30 | 0 |
 | NEAR_FULL | 36 | 210 | 19 | 0 |
 | WORD_MATCH | 163 | 197 | 103 | 0 (2 by inclusive test) |
@@ -99,7 +99,7 @@ EXACT-tier dummies (identical name after normalising prefixes and initials) are 
 ## By alliance
 
 | Alliance | Targeted majors | Of whom lost | Strict-consequential | Total dummy votes against |
-|---|---|---|---|---|
+| :--- | ---: | ---: | ---: | ---: |
 | INDIA (DMK-led) | 68 | 46 | 0 | 28,516 |
 | NDA (AIADMK-led) | 66 | 48 | 0 | 25,702 |
 | TVK | 61 | 32 | 0 (2 inclusive) | 19,383 |
@@ -112,7 +112,7 @@ The ruling DMK was the most-targeted alliance, the predictable pattern: spoilers
 ## The closest the math came to working
 
 | Constituency | Major (lost) | Party | Margin | Margin % | Dummy votes | Ratio |
-|---|---|---|---|---|---|---|
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: |
 | TIRUKKOYILUR | Vijay R Baranibalaaji | TVK | 285 | 0.13% | 571 | **2.00** |
 | PALANI | Dr. Praveen Kumar M | TVK | 693 | 0.33% | 1,057 | **1.53** |
 | KALLAKURICHI | Rajeevgandhi S | ADMK | 798 | 0.32% | 616 | 0.77 |

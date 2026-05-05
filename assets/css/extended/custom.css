@@ -1238,9 +1238,15 @@ html { scroll-behavior: smooth; }
    No markdown change needed.
    ──────────────────────────────────────────────────────────── */
 
-/* Frame the table itself: card with subtle shadow + rounded corners */
+/* Frame the table itself: card with subtle shadow + rounded corners.
+   width: max-content sizes the card to the actual content so narrow
+   tables (e.g. 4-column metrics) don't show empty right gutters.
+   max-width caps it at the prose column on small screens and a bit
+   beyond on desktop so wide data-tables (regional 8-col breakdown)
+   can still bleed out and stay scannable. */
 .post-content table {
-    width: 100%;
+    width: max-content;
+    max-width: 100%;
     border-collapse: separate;
     border-spacing: 0;
     margin: 2rem 0 2.4rem;
@@ -1256,16 +1262,16 @@ html { scroll-behavior: smooth; }
         0 12px 28px -20px rgba(0, 0, 0, 0.18);
     font-variant-numeric: tabular-nums;
     text-align: left;
+    table-layout: auto;
 }
 
-/* On wider screens, let tables breathe past the 720px reading column.
-   This makes wide data-tables (regional breakdown, party efficiency)
-   actually scannable instead of squashed into the prose width. */
+/* Desktop: allow wide tables to extend up to 120px past the prose
+   column. Narrow tables stay at content width and remain left-aligned
+   with the article text, so a 4-column table no longer ends up
+   stretched into a wide card with empty space. */
 @media (min-width: 900px) {
-    .post-content > table,
-    .post-content > p > table {
-        width: calc(100% + 100px);
-        margin-left: -50px;
+    .post-content table {
+        max-width: calc(100% + 120px);
     }
 }
 
@@ -1529,7 +1535,7 @@ html { scroll-behavior: smooth; }
    PULL QUOTE — for the single-sentence finding the post revolves around
    ──────────────────────────────────────────────────────────── */
 
-.pullquote {
+.post-content blockquote.pullquote {
     margin: 2.4rem auto;
     max-width: 600px;
     text-align: center;
@@ -1540,10 +1546,18 @@ html { scroll-behavior: smooth; }
     color: var(--content);
     padding: 0 1rem;
     position: relative;
+    /* Override the default .post-content blockquote frame */
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
 }
 
-.pullquote::before,
-.pullquote::after {
+.dark .post-content blockquote.pullquote {
+    background: transparent;
+}
+
+.post-content blockquote.pullquote::before,
+.post-content blockquote.pullquote::after {
     content: "";
     display: block;
     width: 56px;
@@ -1556,11 +1570,11 @@ html { scroll-behavior: smooth; }
         transparent);
 }
 
-.pullquote::before { margin-bottom: 1.2rem; }
-.pullquote::after  { margin-top: 1.2rem; }
+.post-content blockquote.pullquote::before { margin-bottom: 1.2rem; }
+.post-content blockquote.pullquote::after  { margin-top: 1.2rem; }
 
 @media (max-width: 700px) {
-    .pullquote { font-size: 1.15rem; }
+    .post-content blockquote.pullquote { font-size: 1.15rem; }
 }
 
 /* ────────────────────────────────────────────────────────────

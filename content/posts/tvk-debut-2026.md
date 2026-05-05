@@ -49,7 +49,7 @@ The interactive constituency-by-constituency map is at **[election-dashboard/tvk
 Total votes polled across all 234 ACs: **4.93 crore (4,93,24,121)**.
 
 | Party | Votes polled | Vote share | Seats | Seat share | Efficiency |
-|---|---|---|---|---|---|
+| :--- | ---: | ---: | ---: | ---: | ---: |
 | **TVK** | **1,72,26,209** | **34.92%** | **108** | **46.15%** | **1.32** |
 | DMK | 1,19,29,144 | 24.19% | 59 | 25.21% | 1.04 |
 | AIADMK | 1,04,62,146 | 21.21% | 47 | 20.09% | 0.95 |
@@ -72,7 +72,7 @@ A debut party at 1.32 efficiency is unusual. It means TVK did not win where it h
 The roster is the most revealing thing about a new party. Three rosters compared across the same [candidate dataset](/data/tn-2026-candidates/):
 
 | Metric | TVK | DMK | AIADMK |
-|---|---|---|---|
+| :--- | ---: | ---: | ---: |
 | Candidates fielded | **233** | 176 | 172 |
 | Median age | **44** | 57 | 58 |
 | Median declared assets | **₹85 lakh** | ₹2.6 crore | ₹2.2 crore |
@@ -88,7 +88,7 @@ TVK candidates are, on average, a generation younger than the people they were t
 233 of 234 contested. **They won 108 seats.**
 
 | Where TVK landed | ACs | Share of contested |
-|---|---|---|
+| :--- | ---: | ---: |
 | 1st (won) | 108 | 46.4% |
 | 2nd | 72 | 30.9% |
 | 3rd | 51 | 21.9% |
@@ -105,7 +105,7 @@ Across the 108 wins, the **median winning margin was 8.93% of the votes polled i
 I grouped the 234 ACs into nine standard political-geography buckets and computed TVK's strike rate, vote share, median winning margin, and "above weight" delta in each.
 
 | Region | ACs | TVK won | Strike rate | TVK vote share | Median win margin | Median margin % | Above weight |
-|---|---|---|---|---|---|---|---|
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | **Chennai & Suburbs** | 37 | **32** | **86.5%** | 44.7% | 34,463 | 17.08% | **+18.5** |
 | **Kongu (West)** | 46 | 24 | 52.2% | 33.8% | 14,942 | 7.13% | **+8.4** |
 | **Madurai Region** | 21 | 11 | 52.4% | 35.0% | 16,547 | 6.09% | **+3.6** |
@@ -127,7 +127,7 @@ The Kongu read is the most interesting middle case. 46 ACs, 24 TVK wins, 14 AIAD
 ## The stronghold-flip asymmetry
 
 | Stronghold type | Total | Flipped by TVK | Rate |
-|---|---|---|---|
+| :--- | ---: | ---: | ---: |
 | **NDA strongholds** (AIADMK-led, 2011+2016+2021) | 46 | **20** | **43.5%** |
 | **INDIA strongholds** (DMK-led, 2011+2016+2021) | 24 | 4 | 16.7% |
 
@@ -144,7 +144,7 @@ The wave broke AIADMK's western Tamil Nadu base while DMK's delta and southern c
 Vijay contested two seats and won both with majority vote shares.
 
 | Seat | Vote share | Margin (votes) | Margin (% of polled) | Runner-up |
-|---|---|---|---|---|
+| :--- | ---: | ---: | ---: | :--- |
 | **PERAMBUR (AC 5)** | **58.89%** | **53,715** | **26.28%** | R.D. Shekar (DMK) |
 | **TIRUCHIRAPALLI EAST (AC 141)** | **50.07%** | **27,416** | **15.02%** | S. Inigo Irudayaraj (DMK) |
 
