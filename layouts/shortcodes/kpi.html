@@ -1,0 +1,21 @@
+{{- /*
+    KPI — single statistic block. Use inside a {{< kpi-row >}} or standalone.
+    Params:
+        value  required — the big number ("108", "34.92%", "1.72 crore")
+        label  required — short uppercase descriptor ("seats won", "vote share")
+        sub    optional — secondary context line under the label
+        tone   optional — primary | accent | good | warn | muted (defaults primary)
+    Example:
+        {{< kpi value="108" label="seats won" tone="accent" sub="46.2% of the assembly" >}}
+*/ -}}
+{{- $value := .Get "value" -}}
+{{- $label := .Get "label" -}}
+{{- $sub   := .Get "sub" -}}
+{{- $tone  := .Get "tone" | default "primary" -}}
+<div class="kpi kpi--{{ $tone }}">
+    <div class="kpi__value">{{ $value | safeHTML }}</div>
+    <div class="kpi__label">{{ $label }}</div>
+    {{- with $sub -}}
+    <div class="kpi__sub">{{ . | safeHTML }}</div>
+    {{- end -}}
+</div>

@@ -1,0 +1,10 @@
+{{- /*
+    PULLQUOTE — single-sentence finding lifted out of the prose flow.
+    Usage:
+        {{< pullquote >}}
+        The wave broke AIADMK's western Tamil Nadu base while DMK's delta and southern coast held.
+        {{< /pullquote >}}
+*/ -}}
+<blockquote class="pullquote">
+    {{ .Inner | $.Page.RenderString }}
+</blockquote>

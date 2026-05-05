@@ -25,9 +25,20 @@ That is not random. AC #88 is the home constituency of **Edappadi K. Palaniswami
 
 The data tells you the rest.
 
-**TVK won 108 of 233 contested seats.** They came second in 72 more, third in 51, and fourth or lower in only 2. They polled **1.72 crore votes (1,72,26,209)**, **34.92% of the statewide vote**, and converted that into **46.15% of the Assembly**. That conversion ratio (1.32 seats per unit of vote share) is the highest of any party with more than 5 seats this cycle, and it is the single most important number for understanding what happened on May 4.
+**TVK won 108 of 233 contested seats.** They came second in 72 more, third in 51, and fourth or lower in only 2. They polled **1.72 crore votes (1,72,26,209)**, **34.92% of the statewide vote**, and converted that into **46.15% of the Assembly**.
 
-But "TVK won" hides a story that gets sharper region by region. The wave was not uniform. It was a tsunami in Chennai and a ripple in the Cauvery delta, and the gap between those two facts is what the rest of this post is about.
+{{< kpi-row >}}
+{{< kpi value="108" label="seats won" tone="accent" sub="46.15% of the 234-seat assembly" >}}
+{{< kpi value="34.92%" label="state vote share" sub="1,72,26,209 votes" >}}
+{{< kpi value="1.32" label="seat efficiency" tone="good" sub="highest of any major party" >}}
+{{< kpi value="180 / 233" label="top-2 finishes" tone="muted" sub="77.3% of contested seats" >}}
+{{< /kpi-row >}}
+
+That conversion ratio (1.32 seats per unit of vote share) is the highest of any party with more than 5 seats this cycle, and it is the single most important number for understanding what happened on May 4. But "TVK won" hides a story that gets sharper region by region. The wave was not uniform.
+
+{{< pullquote >}}
+A tsunami in Chennai, a ripple in the Cauvery delta. The gap between those two facts is what the rest of this post is about.
+{{< /pullquote >}}
 
 The interactive constituency-by-constituency map is at **[election-dashboard/tvk-debut-2026.html](/election-dashboard/tvk-debut-2026.html)**. Gold for seats won, purple for second place, teal for third.
 
@@ -122,7 +133,9 @@ The Kongu read is the most interesting middle case. 46 ACs, 24 TVK wins, 14 AIAD
 
 TVK ate dramatically more deeply into AIADMK's fortress than DMK's. Of the 20 NDA strongholds flipped, **15 are in the Kongu belt**: Salem (West and South), Tiruppur North, Kavundampalayam, Palladam, Coimbatore North, Gobichettipalayam, Avanashi, Mettupalayam, Kumarapalayam, Sulur, Modakurichi, Kinathukadavu, Madurai West, and Veerapandi.
 
-One sentence summary of 2026: *the wave broke AIADMK's western Tamil Nadu base while DMK's delta and southern coast held.*
+{{< pullquote >}}
+The wave broke AIADMK's western Tamil Nadu base while DMK's delta and southern coast held.
+{{< /pullquote >}}
 
 ---
 
@@ -136,6 +149,10 @@ Vijay contested two seats and won both with majority vote shares.
 | **TIRUCHIRAPALLI EAST (AC 141)** | **50.07%** | **27,416** | **15.02%** | S. Inigo Irudayaraj (DMK) |
 
 The Perambur result is the one to watch. It is a Chennai seat with a DMK history. Vijay won it with 58.89% of the vote and a margin of 53,715 votes (26.28% of all votes polled) in a year where his party's median candidate took 33.6%. That is a 25-point personal-vote premium above the party baseline, in a constituency where the major opposition was DMK rather than a fragmented field. On a first electoral attempt.
+
+{{< callout title="Why this matters for 2031" type="insight" >}}
+Vijay's *personal* coalition reaches further than his party's, and reaches into DMK territory rather than only AIADMK strongholds. Whether the party can transfer that to candidates without his name on the ballot is the test of the next cycle.
+{{< /callout >}}
 
 Both wins came against DMK, not AIADMK. That matters for the regional read: Vijay's personal coalition reaches into DMK territory even where his party's regional wave did not.
 
@@ -165,4 +182,6 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
 
 ---
 
-*Numbers computed by [`pipelines/23_tvk_debut_analysis.py`](https://github.com/ndranandraj/tn-2026-candidates-dataset). All vote counts use the Indian comma format. Margins include both the absolute count and the share of total votes polled in the constituency. Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+{{< callout title="Methodology" type="method" >}}
+Numbers computed by [`pipelines/23_tvk_debut_analysis.py`](https://github.com/ndranandraj/tn-2026-candidates-dataset). All vote counts use the Indian comma format (last 3 digits, then groups of 2). Margins include both the absolute count and the share of total votes polled in the constituency. Regional groupings join the per-AC results to district-level political-geography buckets. Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+{{< /callout >}}

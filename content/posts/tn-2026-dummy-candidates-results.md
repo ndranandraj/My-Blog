@@ -25,7 +25,18 @@ Today the votes are in. So: **did it work?**
 
 The honest answer is the kind that does not write its own headline. In the cleanest test, the strategy did not move a single seat. In the noisiest test, two razor-thin TVK losses had enough flagged-namesake votes to plausibly cover the margin. Both can be true at once, and which one you treat as the "real" answer depends on how generously you classify a dummy.
 
-What is unambiguous: this was a wave year, and waves drown small mechanics. That, more than anything else, is the story.
+{{< kpi-row >}}
+{{< kpi value="329" label="suspect pairs flagged" sub="three weeks before polling" >}}
+{{< kpi value="263" label="actually contested" sub="221 distinct major candidates targeted" >}}
+{{< kpi value="0" label="strict-test consequential" tone="good" sub="EXACT + NEAR_FULL dummies covered margin" >}}
+{{< kpi value="2" label="loose-test consequential" tone="warn" sub="any flagged dummy covered margin (TVK losses)" >}}
+{{< /kpi-row >}}
+
+What is unambiguous: this was a wave year, and waves drown small mechanics.
+
+{{< pullquote >}}
+The strategy did not fail in 2026. It ran into a year where margins were too wide for it to matter.
+{{< /pullquote >}}
 
 The interactive near-miss table and the full per-pair breakdown live at **[election-dashboard/dummy-candidates-2026.html](/election-dashboard/dummy-candidates-2026.html)**.
 
@@ -65,7 +76,11 @@ The strategy needs a close election to bite. 2026 did not have many.
 
 To put a number on it: in only **3 of 152 lost seats** did the major lose by under 1,000 votes. In only **15** did they lose by under 5,000 votes. The rest ran into a winner who was not winning narrowly.
 
-The dummy-candidate strategy did not "fail" in 2026. It ran into a year where margins were too wide for it to matter. In 2016, when AIADMK won several seats by under 1,000 votes, the same 329 pairs would almost certainly have produced a non-zero strict-test count. **The mechanism is intact and waiting for the next close election.**
+The dummy-candidate strategy did not "fail" in 2026. It ran into a year where margins were too wide for it to matter. In 2016, when AIADMK won several seats by under 1,000 votes, the same 329 pairs would almost certainly have produced a non-zero strict-test count.
+
+{{< callout title="The takeaway" type="insight" >}}
+**The mechanism is intact and waiting for the next close election.** The same 329 pairs deployed in a 2016-style narrow-margin cycle would almost certainly have flipped seats. The story is not that dummies are harmless. The story is that the wave drowned them this time.
+{{< /callout >}}
 
 ---
 
@@ -112,11 +127,11 @@ The full near-miss table, sortable by ratio and margin percent, is in the [inter
 
 ---
 
-## What this is not
+{{< callout title="Caveat" type="caveat" >}}
+This is not a **causal** claim. Dummy votes are not stolen votes. Voters who chose an unknown `R. Saravanan` may have been confused, making a deliberate protest vote, or genuine supporters. The ECI's published data cannot separate those populations.
 
-A **causal** claim. Dummy votes are not stolen votes. Voters who chose an unknown `R. Saravanan` may have been confused, making a deliberate protest vote, or genuine supporters. The ECI's published data cannot separate those populations.
-
-A **complete** account. Tamil Nadu has a finite stock of common names. The dataset gives an upper bound on the strategy's footprint, not its ground truth.
+It is not a **complete** account either. Tamil Nadu has a finite stock of common names. The dataset gives an upper bound on the strategy's footprint, not its ground truth.
+{{< /callout >}}
 
 ---
 
@@ -137,4 +152,6 @@ The mechanism is waiting for a year where margins are narrow. 2026 was not it.
 
 ---
 
-*Numbers computed by [`pipelines/21_dummy_impact_analysis.py`](https://github.com/ndranandraj/tn-2026-candidates-dataset). All vote counts use the Indian comma format. Margins include absolute count and share of total votes polled. Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+{{< callout title="Methodology" type="method" >}}
+Numbers computed by [`pipelines/21_dummy_impact_analysis.py`](https://github.com/ndranandraj/tn-2026-candidates-dataset). All vote counts use the Indian comma format (last 3 digits, then groups of 2). Margin percent is `(margin / total_votes_polled_in_AC) × 100`. The strict test counts only EXACT and NEAR_FULL name matches; the inclusive test adds WORD_MATCH (one shared name fragment). Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+{{< /callout >}}

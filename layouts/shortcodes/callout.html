@@ -1,0 +1,21 @@
+{{- /*
+    CALLOUT — boxed note for key findings, caveats, or methodology.
+    Params:
+        title  optional — uppercase eyebrow line ("Key finding", "Caveat")
+        type   optional — primary | insight | caveat | method (defaults primary)
+    Usage:
+        {{< callout title="Key finding" type="insight" >}}
+        TVK won 108 seats with 34.9% vote share. The conversion ratio (1.32) is
+        the highest of any party with more than 5 seats.
+        {{< /callout >}}
+*/ -}}
+{{- $title := .Get "title" | default "" -}}
+{{- $type  := .Get "type" | default "primary" -}}
+<aside class="callout callout--{{ $type }}">
+    {{- if $title -}}
+    <div class="callout__title">{{ $title }}</div>
+    {{- end -}}
+    <div class="callout__body">
+        {{ .Inner | $.Page.RenderString }}
+    </div>
+</aside>

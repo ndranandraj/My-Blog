@@ -1,0 +1,12 @@
+{{- /*
+    KPI ROW — wraps a set of {{< kpi >}} shortcodes in a responsive grid.
+    Usage:
+        {{< kpi-row >}}
+        {{< kpi value="108" label="seats won" tone="accent" sub="46.2% of the assembly" >}}
+        {{< kpi value="34.92%" label="vote share" sub="1.72 crore votes" >}}
+        {{< kpi value="1.32" label="seat efficiency" tone="good" sub="highest of any major party" >}}
+        {{< /kpi-row >}}
+*/ -}}
+<div class="kpi-row">
+{{ .Inner | safeHTML }}
+</div>
