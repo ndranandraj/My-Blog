@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Dataset: TN 2026 Candidates + Dummy Match Pairs</title>
+<meta name="description" content="Open data release: every one of the 4,023 candidates contesting Tamil Nadu's 2026 Assembly Election, plus 329 suspect dummy candidate pairs. CC BY 4.0.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0F0F14;
+  --surface: #1A1A24;
+  --surface-2: #22222F;
+  --border: #2A2A3A;
+  --text: #E8E8EF;
+  --text-2: #9999AA;
+  --text-3: #666677;
+  --accent: #F59E0B;
+  --accent-glow: rgba(245,158,11,0.15);
+  --red: #EF4444;
+  --red-soft: rgba(239,68,68,0.12);
+  --amber: #F59E0B;
+  --amber-soft: rgba(245,158,11,0.12);
+  --blue: #3B82F6;
+  --blue-soft: rgba(59,130,246,0.12);
+  --green: #10B981;
+  --green-soft: rgba(16,185,129,0.12);
+  --india: #2563EB;
+  --nda: #F97316;
+  --tvk: #A855F7;
+  --ntk: #EC4899;
+  --ind: #6B7280;
+  --radius: 14px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: rgba(245,158,11,0.3); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* HERO */
+.hero {
+  position: relative;
+  padding: 80px 24px 100px;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #12121A 0%, #0F0F14 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 30% 40%, rgba(245,158,11,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 350px at 70% 60%, rgba(59,130,246,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; max-width: 820px; margin: 0 auto; }
+.hero .kicker {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: var(--text-2);
+  max-width: 660px;
+  margin: 0 auto 32px;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+.hero-stat .num { font-size: 1.9rem; font-weight: 800; color: #fff; line-height: 1; }
+.hero-stat .label {
+  font-size: 0.7rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+/* LAYOUT */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 56px 0; }
+.section-header { margin-bottom: 24px; }
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.section-header p { color: var(--text-2); font-size: 0.92rem; }
+
+/* DATASET CARDS */
+.dataset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 860px) { .dataset-grid { grid-template-columns: 1fr; } }
+.dataset-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.dataset-card .label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 3px 10px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+.dataset-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.dataset-card .filename {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-3);
+  margin-bottom: 12px;
+}
+.dataset-card .blurb {
+  color: var(--text-2);
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+.dataset-card .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--surface-2);
+  border-radius: 10px;
+}
+.dataset-card .stat-num {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.dataset-card .stat-label {
+  font-size: 0.65rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+.dataset-card .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  transition: transform 0.15s, border-color 0.15s, background 0.15s;
+}
+.btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+.btn-primary { background: var(--accent); color: #1a1a1a; border-color: var(--accent); }
+.btn-primary:hover { background: #fbbf24; }
+
+/* TABLES */
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th {
+  text-align: left;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+.num-cell { font-variant-numeric: tabular-nums; color: var(--text-2); }
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+.badge.dmk { background: rgba(220,38,38,0.18); color: #FCA5A5; }
+.badge.aiadmk { background: rgba(34,197,94,0.18); color: #86EFAC; }
+.badge.tvk { background: rgba(168,85,247,0.18); color: #D8B4FE; }
+.badge.ntk { background: rgba(236,72,153,0.18); color: #F9A8D4; }
+.badge.bjp { background: rgba(249,115,22,0.18); color: #FDBA74; }
+.badge.ind { background: rgba(107,114,128,0.18); color: #D1D5DB; }
+.badge.exact { background: var(--red-soft); color: var(--red); }
+.badge.near { background: var(--amber-soft); color: var(--amber); }
+.badge.word { background: var(--blue-soft); color: var(--blue); }
+
+/* SCHEMA */
+.schema-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 860px) { .schema-grid { grid-template-columns: 1fr; } }
+.schema details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0;
+  overflow: hidden;
+}
+.schema summary {
+  padding: 18px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.schema summary::-webkit-details-marker { display: none; }
+.schema summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--text-3);
+  transition: transform 0.2s;
+}
+.schema details[open] summary::after { content: '−'; }
+.schema details[open] summary { border-bottom: 1px solid var(--border); }
+.schema .schema-body { padding: 0; }
+.schema table { font-size: 0.82rem; }
+.schema td.col-name { font-family: 'JetBrains Mono', monospace; color: var(--accent); white-space: nowrap; }
+.schema td.col-type { color: var(--text-3); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; white-space: nowrap; }
+.schema td.col-note { color: var(--text-2); }
+
+/* CALLOUTS */
+.callout {
+  background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(239,68,68,0.06));
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.callout.warn {
+  background: linear-gradient(135deg, rgba(239,68,68,0.10), rgba(245,158,11,0.06));
+  border-color: rgba(239,68,68,0.28);
+}
+.callout strong { color: var(--accent); }
+.callout.warn strong { color: var(--red); }
+
+/* CODE BLOCKS */
+pre.code {
+  background: #0A0A10;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 0.83rem;
+  color: #E8E8EF;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+pre.code .kw { color: #C084FC; }
+pre.code .str { color: #FCD34D; }
+pre.code .com { color: var(--text-3); font-style: italic; }
+
+/* CAVEATS */
+.caveats { display: flex; flex-direction: column; gap: 12px; }
+.caveat {
+  background: var(--surface);
+  border-left: 3px solid var(--amber);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.caveat.red { border-left-color: var(--red); }
+.caveat.blue { border-left-color: var(--blue); }
+.caveat h4 { font-size: 0.95rem; margin-bottom: 6px; color: var(--text); }
+.caveat p { font-size: 0.88rem; color: var(--text-2); margin: 0; }
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 0.85rem;
+}
+.footer a { color: var(--text-2); }
+.footer .license-badge {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 4px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 0.72rem;
+  margin-top: 10px;
+}
+
+/* small util */
+.text-muted { color: var(--text-2); }
+.mt-2 { margin-top: 12px; }
+.mt-4 { margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Open Dataset · April 2026</span>
+    <h1>Tamil Nadu 2026 Candidates<br>+ Dummy Match Pairs</h1>
+    <p class="subtitle">
+      Two CSVs covering every contesting candidate in Tamil Nadu's 2026
+      Legislative Assembly election, plus the suspect namesake pairings
+      that suggest engineered vote-splitter strategy. Free to use, CC BY 4.0.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">4,023</div><div class="label">Candidates</div></div>
+      <div class="hero-stat"><div class="num">234</div><div class="label">Constituencies</div></div>
+      <div class="hero-stat"><div class="num">329</div><div class="label">Dummy Pairs</div></div>
+      <div class="hero-stat"><div class="num">144</div><div class="label">Affected Seats</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- DATASET CARDS -->
+<section class="section container">
+  <div class="section-header">
+    <h2>The two files</h2>
+    <p>One full roster, one analysis layer derived from it. They're released together because the second only makes sense alongside the first.</p>
+  </div>
+
+  <div class="dataset-grid">
+
+    <div class="dataset-card">
+      <span class="label">Primary</span>
+      <h3>Full Candidate Roster</h3>
+      <div class="filename">candidates-2026.csv · 431 KB · 21 columns</div>
+      <p class="blurb">
+        Every one of the 4,023 candidates the ECI has accepted as contesting,
+        keyed by official AC number. Includes party, alliance, gender, age,
+        education, declared assets and liabilities. Reconciled against the
+        Election Commission's published count of 4,023.
+      </p>
+      <div class="stats">
+        <div><div class="stat-num">4,023</div><div class="stat-label">Rows</div></div>
+        <div><div class="stat-num">106</div><div class="stat-label">Parties</div></div>
+        <div><div class="stat-num">32</div><div class="stat-label">Districts</div></div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="data/candidates-2026.csv" download>↓ Download CSV</a>
+        <a class="btn" href="#schema-candidates">View schema</a>
+      </div>
+    </div>
+
+    <div class="dataset-card">
+      <span class="label">Derived</span>
+      <h3>Dummy Match Pairs</h3>
+      <div class="filename">dummy-pairs-2026.csv · 45 KB · 12 columns</div>
+      <p class="blurb">
+        329 candidate pairs where a major-alliance nominee shares — exactly or
+        near-exactly — a name with another candidate (almost always
+        independent) in the same constituency. Output of normalized-name
+        matching across the candidate roster.
+      </p>
+      <div class="stats">
+        <div><div class="stat-num">329</div><div class="stat-label">Pairs</div></div>
+        <div><div class="stat-num">144</div><div class="stat-label">Constituencies</div></div>
+        <div><div class="stat-num">3</div><div class="stat-label">Match Tiers</div></div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="data/dummy-pairs-2026.csv" download>↓ Download CSV</a>
+        <a class="btn" href="#schema-dummy">View schema</a>
+        <a class="btn" href="dummy-candidates-2026.html">Open analysis →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout mt-4">
+    Prefer everything in one shot? Both files plus the README and methodology live in
+    <a href="data/">/data</a>. The analysis dashboard built on the dummy pairs is at
+    <a href="dummy-candidates-2026.html">dummy-candidates-2026.html</a>.
+  </div>
+</section>
+
+<!-- SAMPLE: candidates -->
+<section class="section container">
+  <div class="section-header">
+    <h2>Roster sample</h2>
+    <p>Six rows from <span class="mono">candidates-2026.csv</span>, columns trimmed for readability.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>AC no.</th><th>Constituency</th><th>Candidate</th><th>Party</th><th class="num-cell">Age</th><th>Education</th><th class="num-cell">Assets (₹)</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="num-cell">1</td><td>Gummidipoondi</td><td>Sudhakar.V</td><td><span class="badge aiadmk">AIADMK</span></td><td class="num-cell">40</td><td>12th Grade</td><td class="num-cell">5.62 Cr</td></tr>
+        <tr><td class="num-cell">11</td><td>Chepauk-Thiruvallikeni</td><td>Udhayanidhi Stalin</td><td><span class="badge dmk">DMK</span></td><td class="num-cell">48</td><td>Bachelor's</td><td class="num-cell">—</td></tr>
+        <tr><td class="num-cell">61</td><td>Erode (West)</td><td>R.Manoharan</td><td><span class="badge aiadmk">AIADMK</span></td><td class="num-cell">52</td><td>Bachelor's</td><td class="num-cell">—</td></tr>
+        <tr><td class="num-cell">128</td><td>Edappadi</td><td>Edappadi Palaniswami. K</td><td><span class="badge aiadmk">AIADMK</span></td><td class="num-cell">71</td><td>Bachelor's</td><td class="num-cell">—</td></tr>
+        <tr><td class="num-cell">170</td><td>Perambur</td><td>C.Joseph Vijay</td><td><span class="badge tvk">TVK</span></td><td class="num-cell">51</td><td>Bachelor's</td><td class="num-cell">809.17 Cr</td></tr>
+        <tr><td class="num-cell">208</td><td>Arani</td><td>Mahalakshmi. G</td><td><span class="badge ind">IND</span></td><td class="num-cell">36</td><td>10th Grade</td><td class="num-cell">2.35 L</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SAMPLE: dummy pairs -->
+<section class="section container">
+  <div class="section-header">
+    <h2>Dummy-pair sample</h2>
+    <p>Six rows from <span class="mono">dummy-pairs-2026.csv</span>, sorted by similarity.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>Constituency</th><th>Major Candidate</th><th>Major Party</th><th>Suspect</th><th>Suspect Party</th><th>Tier</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Alandur</td><td>S.Saravanan</td><td><span class="badge aiadmk">ADMK</span></td><td>A.Saravanan</td><td><span class="badge ind">IND</span></td><td><span class="badge exact">EXACT</span></td></tr>
+        <tr><td>Alandur</td><td>S.Saravanan</td><td><span class="badge aiadmk">ADMK</span></td><td>D.Saravanan</td><td><span class="badge ind">IND</span></td><td><span class="badge exact">EXACT</span></td></tr>
+        <tr><td>Tiruvannamalai</td><td>E.V.Velu</td><td><span class="badge dmk">DMK</span></td><td>Velu. V</td><td><span class="badge ind">IND</span></td><td><span class="badge near">NEAR</span></td></tr>
+        <tr><td>Kilpennathur</td><td>Ramachandran.S</td><td><span class="badge aiadmk">ADMK</span></td><td>Ramachandran.K</td><td><span class="badge ind">IND</span></td><td><span class="badge near">NEAR</span></td></tr>
+        <tr><td>Avadi</td><td>S. M. Nasar</td><td><span class="badge dmk">DMK</span></td><td>Nasar. K</td><td><span class="badge ind">IND</span></td><td><span class="badge word">WORD</span></td></tr>
+        <tr><td>Villivakkam</td><td>Karthik Mohan</td><td><span class="badge dmk">DMK</span></td><td>Mohan. P</td><td><span class="badge ind">IND</span></td><td><span class="badge word">WORD</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SCHEMAS -->
+<section class="section container schema">
+  <div class="section-header">
+    <h2>Schemas</h2>
+    <p>Click to expand. Full descriptions and notes live in <a href="data/README.md">data/README.md</a>.</p>
+  </div>
+  <div class="schema-grid">
+
+    <details id="schema-candidates" open>
+      <summary>candidates-2026.csv · 21 columns</summary>
+      <div class="schema-body">
+        <div class="table-wrap" style="border:none">
+        <table>
+          <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td class="col-name">candidate_id</td><td class="col-type">int</td><td class="col-note">Internal database id</td></tr>
+            <tr><td class="col-name">constituency_name</td><td class="col-type">text</td><td class="col-note">Full AC name</td></tr>
+            <tr><td class="col-name">constituency_no</td><td class="col-type">int</td><td class="col-note">Official ECI number, 1–234</td></tr>
+            <tr><td class="col-name">district_name</td><td class="col-type">text</td><td class="col-note">Revenue district</td></tr>
+            <tr><td class="col-name">candidate_name</td><td class="col-type">text</td><td class="col-note">As filed with returning officer</td></tr>
+            <tr><td class="col-name">party_name</td><td class="col-type">text</td><td class="col-note">Full registered name</td></tr>
+            <tr><td class="col-name">party_code</td><td class="col-type">text</td><td class="col-note">Short code, e.g. <span class="mono">DMK</span></td></tr>
+            <tr><td class="col-name">alliance</td><td class="col-type">text</td><td class="col-note">INDIA / NDA / TVK / NTK</td></tr>
+            <tr><td class="col-name">gender</td><td class="col-type">char(1)</td><td class="col-note">M / F / O</td></tr>
+            <tr><td class="col-name">age</td><td class="col-type">int</td><td class="col-note">At nomination</td></tr>
+            <tr><td class="col-name">education</td><td class="col-type">text</td><td class="col-note">Highest qualification</td></tr>
+            <tr><td class="col-name">criminal_cases</td><td class="col-type">int</td><td class="col-note">⚠ Currently 0 for all rows</td></tr>
+            <tr><td class="col-name">serious_cases</td><td class="col-type">int</td><td class="col-note">⚠ Currently 0 for all rows</td></tr>
+            <tr><td class="col-name">assets_declared</td><td class="col-type">bigint</td><td class="col-note">INR; parsed from "₹X.XX Cr/L"</td></tr>
+            <tr><td class="col-name">liabilities</td><td class="col-type">bigint</td><td class="col-note">INR</td></tr>
+            <tr><td class="col-name">votes_received</td><td class="col-type">int</td><td class="col-note">Empty pre-poll</td></tr>
+            <tr><td class="col-name">vote_share_pct</td><td class="col-type">numeric</td><td class="col-note">Empty pre-poll</td></tr>
+            <tr><td class="col-name">winner</td><td class="col-type">bool</td><td class="col-note">False pre-poll</td></tr>
+            <tr><td class="col-name">margin</td><td class="col-type">int</td><td class="col-note">Empty pre-poll</td></tr>
+            <tr><td class="col-name">deposit_forfeited</td><td class="col-type">bool</td><td class="col-note">False pre-poll</td></tr>
+            <tr><td class="col-name">source_url</td><td class="col-type">text</td><td class="col-note">Per-candidate source link where available</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </details>
+
+    <details id="schema-dummy">
+      <summary>dummy-pairs-2026.csv · 12 columns</summary>
+      <div class="schema-body">
+        <div class="table-wrap" style="border:none">
+        <table>
+          <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td class="col-name">constituency</td><td class="col-type">text</td><td class="col-note">AC where both contest</td></tr>
+            <tr><td class="col-name">major_candidate</td><td class="col-type">text</td><td class="col-note">Major-alliance nominee</td></tr>
+            <tr><td class="col-name">major_party</td><td class="col-type">text</td><td class="col-note">DMK, ADMK, etc.</td></tr>
+            <tr><td class="col-name">major_alliance</td><td class="col-type">text</td><td class="col-note">INDIA or NDA</td></tr>
+            <tr><td class="col-name">suspect_candidate</td><td class="col-type">text</td><td class="col-note">Candidate sharing the name</td></tr>
+            <tr><td class="col-name">suspect_party</td><td class="col-type">text</td><td class="col-note">Usually IND</td></tr>
+            <tr><td class="col-name">similarity</td><td class="col-type">float</td><td class="col-note">0.0–1.0; 1.0 = identical</td></tr>
+            <tr><td class="col-name">category</td><td class="col-type">text</td><td class="col-note">EXACT / NEAR_FULL / WORD_MATCH</td></tr>
+            <tr><td class="col-name">match_detail</td><td class="col-type">text</td><td class="col-note">Human-readable explanation</td></tr>
+            <tr><td class="col-name">matched_words</td><td class="col-type">text</td><td class="col-note">Shared name fragment</td></tr>
+            <tr><td class="col-name">normalized_major</td><td class="col-type">text</td><td class="col-note">Canonical form, major</td></tr>
+            <tr><td class="col-name">normalized_suspect</td><td class="col-type">text</td><td class="col-note">Canonical form, suspect</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section container">
+  <div class="section-header">
+    <h2>Methodology</h2>
+    <p>How the two files were built — short version. Full code is in the
+       parent project's <span class="mono">pipelines/</span> folder.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;" class="dataset-grid">
+    <div class="dataset-card">
+      <h3 style="font-size:1.1rem;">Roster</h3>
+      <p class="blurb" style="margin-bottom:0;">
+        Scraped from <a href="https://tnelections2026.in/candidates.html" target="_blank" rel="noopener">tnelections2026.in</a>'s
+        public Candidates Explorer (<span class="mono">data/candidates_bundle.min.js</span>),
+        cross-referenced against MyNeta's TN 2026 listings, and reconciled against the
+        ECI's official 4,023 count. Constituencies join via <span class="mono">constituency_no</span>;
+        parties resolved by short code with auto-creation for previously-unknown small parties.
+        Asset values re-parsed from "₹X.XX Cr / L" strings into INR integers.
+      </p>
+    </div>
+    <div class="dataset-card">
+      <h3 style="font-size:1.1rem;">Dummy pairs</h3>
+      <p class="blurb" style="margin-bottom:0;">
+        For every major-alliance candidate (DMK / ADMK / their formal allies),
+        scan all other candidates in the same AC and score the name overlap after
+        normalisation: prefixes (<span class="mono">Mr / Shri / Selvi / Thiru</span>) stripped,
+        single-letter initials dropped, punctuation removed. Three tiers of match emerge —
+        EXACT (identical post-normalisation), NEAR_FULL (≥0.85 similarity),
+        and WORD_MATCH (one significant word ≥ 4 chars in common).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section container">
+  <div class="section-header">
+    <h2>How to use it</h2>
+    <p>Quick-start snippets. Drop in, modify, ignore the rest.</p>
+  </div>
+
+  <pre class="code"><span class="com"># Python — pandas</span>
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+
+candidates = pd.read_csv(<span class="str">"candidates-2026.csv"</span>)
+pairs      = pd.read_csv(<span class="str">"dummy-pairs-2026.csv"</span>)
+
+<span class="com"># Top 10 wealthiest candidates with usable asset data</span>
+(candidates
+   .query(<span class="str">"assets_declared &gt; 100_000"</span>)             <span class="com"># filter the ~170 ambiguous rows</span>
+   .nlargest(<span class="kw">10</span>, <span class="str">"assets_declared"</span>)
+   [[<span class="str">"candidate_name"</span>, <span class="str">"party_code"</span>, <span class="str">"constituency_name"</span>, <span class="str">"assets_declared"</span>]])
+
+<span class="com"># DMK constituencies with at least one EXACT-match dummy</span>
+hot = (pairs
+   .query(<span class="str">"major_alliance == 'INDIA' and category == 'EXACT'"</span>)
+   .groupby(<span class="str">"constituency"</span>)
+   .size()
+   .sort_values(ascending=<span class="kw">False</span>))</pre>
+
+  <pre class="code mt-2"><span class="com"># SQL — load into Postgres or DuckDB</span>
+<span class="kw">CREATE TABLE</span> tn2026_candidates <span class="kw">AS</span>
+   <span class="kw">SELECT</span> * <span class="kw">FROM</span> read_csv_auto(<span class="str">'candidates-2026.csv'</span>);
+
+<span class="com">-- candidate count by alliance</span>
+<span class="kw">SELECT</span> alliance, <span class="kw">COUNT</span>(*) <span class="kw">FROM</span> tn2026_candidates
+ <span class="kw">WHERE</span> alliance <span class="kw">IS NOT NULL</span>
+ <span class="kw">GROUP BY</span> alliance
+ <span class="kw">ORDER BY</span> 2 <span class="kw">DESC</span>;</pre>
+</section>
+
+<!-- CAVEATS -->
+<section class="section container">
+  <div class="section-header">
+    <h2>Caveats — read before publishing</h2>
+    <p>Three known gaps. Worth knowing before you build a chart on top of any of them.</p>
+  </div>
+
+  <div class="caveats">
+    <div class="caveat red">
+      <h4>1 · Criminal-case data is missing</h4>
+      <p><span class="mono">criminal_cases</span> is <strong>0 for every row</strong>. MyNeta's
+      web pages broke against the scraper at publication time, and the ECI affidavit portal returns
+      403 to bot requests. The field will be backfilled when ADR releases its 2026 analysis report.</p>
+    </div>
+    <div class="caveat">
+      <h4>2 · ~170 asset values are still wrong</h4>
+      <p>Where a constituency has multiple candidates with the same name <em>and</em> same party
+      (e.g. three independents named <span class="mono">Loganathan. M</span> in Salem), the asset
+      re-parser couldn't disambiguate which physical candidate to update and skipped them.
+      Those rows hold values off by 10⁵–10⁷. Filter with
+      <span class="mono">assets_declared &gt; 100000</span> if assets matter.</p>
+    </div>
+    <div class="caveat blue">
+      <h4>3 · One person, two seats</h4>
+      <p><span class="mono">C. Joseph Vijay</span> (TVK) appears in both <strong>Perambur</strong>
+      and <strong>Tiruchirappalli (East)</strong> with different declared assets. Either he's
+      genuinely contesting both (legal but rare) or the source data has a snapshot mismatch.
+      Cross-reference with the official TVK list before drawing conclusions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    Compiled by <a href="https://ndranandraj.com">Anand Raj</a> · April 2026 ·
+    Sources: <a href="https://tnelections2026.in" target="_blank" rel="noopener">tnelections2026.in</a>,
+    <a href="https://www.myneta.info/TamilNadu2026/" target="_blank" rel="noopener">MyNeta</a>,
+    <a href="https://eci.gov.in" target="_blank" rel="noopener">ECI</a>
+  </div>
+  <div class="license-badge">
+    <strong>CC BY 4.0</strong>
+    <span class="text-muted">— free to use with attribution</span>
+  </div>
+</footer>
+
+</body>
+</html>

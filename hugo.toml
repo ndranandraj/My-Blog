@@ -59,13 +59,13 @@ enableRobotsTXT = true
   # Featured hero shown on the homepage above the latest-posts strip.
   # Remove or change to promote a different post/project.
   [params.featured]
-    kicker = "INVESTIGATION · FEATURED"
-    title = "Same Name, Different Initial"
-    description = "77 exact name-matches across 100+ constituencies. A data investigation into 4,000 candidates reveals how dummy nominations are being weaponised to split votes and confuse voters in Tamil Nadu 2026."
-    url = "/posts/tn-2026-dummy-candidates/"
-    image = "/images/dummy-candidates-cover.png"
-    imageAlt = "Mock EVM ballot showing C. Joseph Vijay alongside four namesake decoy candidates, illustrating Tamil Nadu's dummy-candidate problem"
-    cta = "Read the investigation →"
+    kicker = "RESULTS DAY · MAY 4, 2026"
+    title = "TVK 233: A Debut, Mapped"
+    description = "Vijay's TVK won 108 of 233 contested seats with 34.92% of the vote and the highest seat-to-vote efficiency of any major party. This is the regional anatomy of that result — where the wave broke and where it didn't."
+    url = "/posts/tvk-debut-2026/"
+    image = "/images/tvk-debut-cover.png"
+    imageAlt = "TVK 233: A Debut, Mapped — data analysis of Vijay's Tamilaga Vettri Kazhagam in the Tamil Nadu 2026 Assembly Election"
+    cta = "Read the analysis →"
 
   [params.assets]
     favicon = "/favicon.ico"

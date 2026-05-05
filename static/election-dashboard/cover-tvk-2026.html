@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVK 233: A Debut, Mapped — Cover · TN 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0B0A12;
+  color: #F0EFF8;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Background canvas ── */
+.bg-art {
+  position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+}
+.bg-art canvas { position: absolute; inset: 0; }
+
+/* Orbital glows */
+.glow-1 {
+  position: absolute; width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(140, 80, 240, 0.16) 0%, transparent 70%);
+  top: -200px; left: -100px;
+  animation: drift1 18s ease-in-out infinite;
+}
+.glow-2 {
+  position: absolute; width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 119, 87, 0.12) 0%, transparent 70%);
+  bottom: -100px; right: -80px;
+  animation: drift2 22s ease-in-out infinite;
+}
+.glow-3 {
+  position: absolute; width: 350px; height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.09) 0%, transparent 70%);
+  top: 50%; right: 15%;
+  animation: drift3 14s ease-in-out infinite;
+}
+@keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(60px,40px)} }
+@keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,-30px)} }
+@keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-50px)} }
+
+/* Subtle grid */
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Main layout ── */
+.page { position: relative; z-index: 1; max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+/* ── Top bar ── */
+.topbar {
+  position: relative; z-index: 10;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 20px 0;
+}
+.topbar .page { display: flex; align-items: center; justify-content: space-between; }
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: rgba(255,255,255,0.45);
+}
+.brand-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #D97757;
+}
+.topbar-meta {
+  font-size: 0.72rem; color: rgba(255,255,255,0.3);
+  font-weight: 500; letter-spacing: 0.04em;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 72px 0 56px;
+  position: relative; z-index: 1;
+}
+
+.issue-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(140, 80, 240, 0.14);
+  border: 1px solid rgba(140, 80, 240, 0.32);
+  border-radius: 40px;
+  padding: 6px 16px;
+  font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #C084FC;
+  margin-bottom: 32px;
+}
+.issue-badge span { width: 5px; height: 5px; border-radius: 50%; background: #C084FC; }
+
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1.07;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: #fff;
+}
+.hero-headline .accent { color: #C084FC; }
+.hero-headline .count {
+  display: inline-block;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97757 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-headline em {
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.65em;
+  display: block;
+  margin-top: 6px;
+  letter-spacing: 0;
+}
+
+.hero-deck {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: rgba(240, 239, 248, 0.6);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 48px;
+  font-weight: 400;
+}
+
+/* ── Stat strip ── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 52px;
+}
+@media (max-width: 640px) { .stat-strip { grid-template-columns: repeat(2, 1fr); } }
+
+.stat-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  padding: 20px 18px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
+}
+.stat-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(192, 132, 252, 0.3);
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--line-color, rgba(192,132,252,0.4));
+}
+.stat-card.gold::before { --line-color: rgba(245,158,11,0.6); }
+.stat-card.coral::before { --line-color: rgba(217,119,87,0.6); }
+.stat-card.teal::before { --line-color: rgba(20,184,166,0.6); }
+
+.stat-num {
+  font-size: 2.1rem; font-weight: 900; line-height: 1;
+  letter-spacing: -0.03em; color: #fff;
+  margin-bottom: 5px;
+}
+.stat-num.purple { color: #C084FC; }
+.stat-num.gold { color: #F59E0B; }
+.stat-num.teal { color: #14B8A6; }
+.stat-num.coral { color: #D97757; }
+
+.stat-label {
+  font-size: 0.67rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+}
+.stat-sub {
+  font-size: 0.72rem; color: rgba(255,255,255,0.25);
+  margin-top: 3px;
+}
+
+/* ── CTA row ── */
+.cta-row {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #9333EA 0%, #7C3AED 100%);
+  color: #fff;
+  font-size: 0.85rem; font-weight: 700;
+  padding: 13px 24px;
+  border-radius: 40px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(147,51,234,0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(147,51,234,0.5);
+  color: #fff;
+}
+.btn-primary svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.82rem; font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+.btn-secondary:hover { color: rgba(255,255,255,0.85); }
+
+/* ── Divider ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent);
+  margin-bottom: 48px;
+}
+
+/* ── Regional preview ── */
+.preview-section { margin-bottom: 64px; }
+
+.section-eyebrow {
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em;
+  text-transform: uppercase; color: #D97757;
+  margin-bottom: 16px;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+@media (max-width: 600px) { .preview-grid { grid-template-columns: 1fr 1fr; } }
+
+.region-pill {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex; flex-direction: column;
+}
+.region-name { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+.region-bar-wrap { height: 4px; background: rgba(255,255,255,0.07); border-radius: 2px; margin-bottom: 6px; overflow: hidden; }
+.region-bar { height: 100%; border-radius: 2px; }
+.region-meta { font-size: 0.67rem; color: rgba(255,255,255,0.3); }
+.region-meta strong { color: rgba(255,255,255,0.55); }
+
+/* ── Author block ── */
+.author-block {
+  display: flex; align-items: center; gap: 16px;
+  padding: 24px 28px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  margin-bottom: 32px;
+}
+.author-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: linear-gradient(135deg, #9333EA, #D97757);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 800; color: #fff;
+  flex-shrink: 0;
+}
+.author-name { font-size: 0.88rem; font-weight: 700; color: rgba(255,255,255,0.85); }
+.author-role { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 2px; }
+.author-sep { margin-left: auto; text-align: right; }
+.pub-date { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+.pub-date strong { color: rgba(255,255,255,0.55); display: block; font-size: 0.82rem; }
+
+/* ── Tags ── */
+.tag-row { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 48px; }
+.tag {
+  padding: 5px 12px; border-radius: 20px;
+  font-size: 0.67rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── Footer ── */
+footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0;
+  margin-top: auto;
+}
+footer .page { display: flex; justify-content: space-between; align-items: center; }
+.footer-left { font-size: 0.7rem; color: rgba(255,255,255,0.2); }
+.footer-right { font-size: 0.7rem; color: rgba(255,255,255,0.2); text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="bg-art">
+  <div class="bg-grid"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="glow-3"></div>
+</div>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="page">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      Anand Raj · Data Analysis
+    </div>
+    <div class="topbar-meta">Tamil Nadu Assembly Elections · 2026</div>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="page">
+
+    <div class="issue-badge">
+      <span></span>
+      TN 2026 · TVK Debut · Post-Results Analysis
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="count">233</span> Seats.
+      <br><span class="accent">One Debut.</span>
+      <em>Where the wave broke — and where it didn't.</em>
+    </h1>
+
+    <p class="hero-deck">
+      Vijay's Tamilaga Vettri Kazhagam fielded candidates across 233 of 234 constituencies.
+      They polled 1.72 crore votes, won 108 seats, and posted the highest vote-to-seat
+      efficiency of any party in the 2026 cycle. This is the regional anatomy of that result.
+    </p>
+
+    <div class="stat-strip">
+      <div class="stat-card">
+        <div class="stat-num purple">233</div>
+        <div class="stat-label">Seats Contested</div>
+        <div class="stat-sub">Skipped only Edappadi</div>
+      </div>
+      <div class="stat-card gold">
+        <div class="stat-num gold">108</div>
+        <div class="stat-label">Seats Won</div>
+        <div class="stat-sub">46.15% of the Assembly</div>
+      </div>
+      <div class="stat-card coral">
+        <div class="stat-num coral">34.9%</div>
+        <div class="stat-label">Statewide Vote Share</div>
+        <div class="stat-sub">1.72 crore votes polled</div>
+      </div>
+      <div class="stat-card teal">
+        <div class="stat-num teal">1.32×</div>
+        <div class="stat-label">Seat Efficiency</div>
+        <div class="stat-sub">Highest of any major party</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="tvk-debut-2026.html" class="btn-primary">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Read the Full Analysis
+      </a>
+      <a href="index.html" class="btn-secondary">
+        ← Back to Dashboard
+      </a>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Regional preview -->
+    <div class="preview-section">
+      <div class="section-eyebrow">Where the wave landed · 9 regions</div>
+      <div class="preview-grid">
+        <div class="region-pill">
+          <div class="region-name">Chennai &amp; Suburbs</div>
+          <div class="region-bar-wrap"><div class="region-bar" style="width:90%;background:linear-gradient(90deg,#A855F7,#C084FC)"></div></div>
+          <div class="region-meta"><strong>+18.5</strong> seats above weight</div>
+        </div>
+        <div class="region-pill">
+          <div class="region-name">Kongu (West)</div>
+          <div class="region-bar-wrap"><div class="region-bar" style="width:72%;background:linear-gradient(90deg,#A855F7,#C084FC)"></div></div>
+          <div class="region-meta"><strong>+8.4</strong> seats above weight</div>
+        </div>
+        <div class="region-pill">
+          <div class="region-name">Madurai Region</div>
+          <div class="region-bar-wrap"><div class="region-bar" style="width:55%;background:linear-gradient(90deg,#A855F7,#C084FC)"></div></div>
+          <div class="region-meta"><strong>+3.6</strong> seats above weight</div>
+        </div>
+        <div class="region-pill">
+          <div class="region-name">Central</div>
+          <div class="region-bar-wrap"><div class="region-bar" style="width:44%;background:linear-gradient(90deg,#F59E0B,#D97757)"></div></div>
+          <div class="region-meta"><strong>Near weight</strong></div>
+        </div>
+        <div class="region-pill">
+          <div class="region-name">Cauvery Delta</div>
+          <div class="region-bar-wrap"><div class="region-bar" style="width:28%;background:linear-gradient(90deg,#2F2F3F,#3a3a4a)"></div></div>
+          <div class="region-meta"><strong>-3.5</strong> seats below weight</div>
+        </div>
+        <div class="region-pill">
+          <div class="region-name">Northeast Coast</div>
+          <div class="region-bar-wrap"><div class="region-bar" style="width:22%;background:linear-gradient(90deg,#2F2F3F,#3a3a4a)"></div></div>
+          <div class="region-meta"><strong>-3.9</strong> seats below weight</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Author -->
+    <div class="author-block">
+      <div class="author-avatar">A</div>
+      <div>
+        <div class="author-name">Anand Raj</div>
+        <div class="author-role">Data journalist · ndranandraj.com</div>
+      </div>
+      <div class="author-sep">
+        <div class="pub-date">
+          <strong>May 2026</strong>
+          Results Day Analysis
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">Tamil Nadu</span>
+      <span class="tag">2026 Elections</span>
+      <span class="tag">TVK</span>
+      <span class="tag">Vijay</span>
+      <span class="tag">Regional Analysis</span>
+      <span class="tag">Seat Efficiency</span>
+      <span class="tag">Data Journalism</span>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="footer-left">
+      Analysis based on ECI official results · pipelines/23_tvk_debut_analysis.py
+    </div>
+    <div class="footer-right">
+      <a href="tvk-debut-post-template.md" style="color:rgba(255,255,255,0.2);text-decoration:none;">
+        Read the post template →
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

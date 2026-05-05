@@ -1,0 +1,118 @@
+{
+  "total_seats": 234,
+  "total_votes": 49324121,
+  "parties": [
+    {
+      "party": "TVK",
+      "seats": 108,
+      "vote_pct": 34.92,
+      "seat_pct": 46.15,
+      "ratio": 1.32,
+      "votes": 17226209
+    },
+    {
+      "party": "DMK",
+      "seats": 59,
+      "vote_pct": 24.19,
+      "seat_pct": 25.21,
+      "ratio": 1.04,
+      "votes": 11929144
+    },
+    {
+      "party": "AIADMK",
+      "seats": 47,
+      "vote_pct": 21.21,
+      "seat_pct": 20.09,
+      "ratio": 0.95,
+      "votes": 10462146
+    },
+    {
+      "party": "INC",
+      "seats": 5,
+      "vote_pct": 3.37,
+      "seat_pct": 2.14,
+      "ratio": 0.63,
+      "votes": 1661312
+    },
+    {
+      "party": "PMK",
+      "seats": 4,
+      "vote_pct": 2.17,
+      "seat_pct": 1.71,
+      "ratio": 0.79,
+      "votes": 1070745
+    },
+    {
+      "party": "VCK",
+      "seats": 2,
+      "vote_pct": 1.09,
+      "seat_pct": 0.85,
+      "ratio": 0.78,
+      "votes": 540056
+    },
+    {
+      "party": "CPI(M)",
+      "seats": 2,
+      "vote_pct": 0.6,
+      "seat_pct": 0.85,
+      "ratio": 1.43,
+      "votes": 293817
+    },
+    {
+      "party": "CPI",
+      "seats": 2,
+      "vote_pct": 0.66,
+      "seat_pct": 0.85,
+      "ratio": 1.29,
+      "votes": 326488
+    },
+    {
+      "party": "IUML",
+      "seats": 2,
+      "vote_pct": 0.29,
+      "seat_pct": 0.85,
+      "ratio": 2.96,
+      "votes": 142465
+    },
+    {
+      "party": "BJP",
+      "seats": 1,
+      "vote_pct": 2.97,
+      "seat_pct": 0.43,
+      "ratio": 0.14,
+      "votes": 1467024
+    },
+    {
+      "party": "DMDK",
+      "seats": 1,
+      "vote_pct": 1.2,
+      "seat_pct": 0.43,
+      "ratio": 0.36,
+      "votes": 589500
+    },
+    {
+      "party": "AMMK",
+      "seats": 1,
+      "vote_pct": 0.86,
+      "seat_pct": 0.43,
+      "ratio": 0.5,
+      "votes": 425345
+    },
+    {
+      "party": "NTK",
+      "seats": 0,
+      "vote_pct": 4.0,
+      "seat_pct": 0.0,
+      "ratio": 0.0,
+      "votes": 1972537
+    },
+    {
+      "party": "IND",
+      "seats": 0,
+      "vote_pct": 1.06,
+      "seat_pct": 0.0,
+      "ratio": 0.0,
+      "votes": 524744
+    }
+  ]
+}

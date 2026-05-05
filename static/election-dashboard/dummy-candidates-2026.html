@@ -530,6 +530,65 @@ footer a:hover { color: var(--accent); }
 
   <hr class="divider">
 
+  <!-- POST-RESULTS: Did the strategy work? -->
+  <div class="section" id="nearmiss">
+    <div class="section-header">
+      <h2>Post-results: did the strategy actually work?</h2>
+      <p>Computed against the official ECI tally on May 4, 2026. The honest answer is two answers, depending on how strictly you define a dummy.</p>
+    </div>
+    <div class="card" style="padding: 22px; margin-bottom: 16px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-bottom: 18px;">
+        <div>
+          <div style="font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em;">Targeted majors who lost</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--text);">152</div>
+          <div style="color: var(--text-2); font-size: 0.85rem;">of 221 distinct majors with both names on the EVM</div>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em;">Strict-test consequential</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: #86EFAC;">0</div>
+          <div style="color: var(--text-2); font-size: 0.85rem;">EXACT or NEAR_FULL dummies covering margin</div>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em;">Inclusive-test consequential</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: #FCD34D;">2</div>
+          <div style="color: var(--text-2); font-size: 0.85rem;">all flagged dummies covering margin (TVK losses)</div>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em;">Total flagged-dummy votes cast</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--text);">~80,000</div>
+          <div style="color: var(--text-2); font-size: 0.85rem;">across all 263 contested pairs</div>
+        </div>
+      </div>
+      <p style="color: var(--text-2); font-size: 0.92rem; line-height: 1.7;">
+        <strong style="color: var(--text);">The structural reading:</strong> 2026 was a wave year. The median margin of loss across the 152 lost seats was <strong>27,002 votes</strong>; the median dummy polled about <strong>200</strong>. Dummies need a close election to bite. Only <strong>3 of 152 losses</strong> came in under 1,000 votes. The strategy did not "fail" so much as the year did not give it a chance to succeed. The mechanism is intact and waiting for the next narrow contest.
+      </p>
+    </div>
+
+    <div class="section-header" style="margin-top: 22px;">
+      <h3 style="font-size: 1.05rem;">The 15 closest near-misses</h3>
+      <p>Sorted by ratio of combined flagged-dummy votes to margin of loss. Ratio above 1.0 means the dummies polled more than the gap. Margin is shown as both absolute votes (Indian format) and as a percentage of total votes polled in that constituency. Four of the top five are TVK losses, because TVK's loss column happens to contain almost all the close races this cycle.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtable">
+        <thead><tr>
+          <th>Constituency</th>
+          <th>Major (lost)</th>
+          <th>Party</th>
+          <th class="num-cell">Margin (votes)</th>
+          <th class="num-cell">Margin %</th>
+          <th class="num-cell">Dummies</th>
+          <th class="num-cell">Combined dummy votes</th>
+          <th class="num-cell">Ratio</th>
+        </tr></thead>
+        <tbody id="nearMissBody">
+          <tr><td colspan="8" style="text-align:center; padding: 24px; color: var(--text-3);">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
   <!-- Charts -->
   <div class="section">
     <div class="section-header">
@@ -652,7 +711,7 @@ footer a:hover { color: var(--accent); }
 </div>
 
 <footer>
-  <p>Analysis by <a href="#">Anandraj</a> &middot; Data from Election Commission of India Affidavit Portal</p>
+  <p>Analysis by <a href="#">Anand Raj</a> &middot; Data from Election Commission of India Affidavit Portal</p>
   <p style="margin-top:6px;">4,000 candidates &middot; 234 constituencies &middot; Tamil Nadu Assembly Election 2026</p>
 </footer>
 
@@ -994,6 +1053,38 @@ document.querySelectorAll('th[data-s]').forEach(th=>{
   });
 });
 renderTbl();
+
+// ─── Post-results: load near-miss data ─────────────────────────────
+const fmtIN = n => (n == null ? '—' : Number(n).toLocaleString('en-IN'));
+const fmtPct = n => (n == null ? '—' : Number(n).toFixed(2) + '%');
+
+async function loadNearMiss() {
+  try {
+    const rows = await fetch('data/dummy_near_misses_2026.json').then(r => r.ok ? r.json() : null);
+    if (!rows || !rows.length) return;
+    const tbody = document.getElementById('nearMissBody');
+    if (!tbody) return;
+    tbody.innerHTML = rows.slice(0, 15).map(r => {
+      const ratio = parseFloat(r.dummy_to_margin_ratio);
+      const ratioColor = ratio >= 1.0 ? 'color: #FCD34D; font-weight: 700;' :
+                         ratio >= 0.5 ? 'color: #FCA5A5;' : 'color: var(--text-2);';
+      const mpct = r.margin_pct;
+      const mpctColor = mpct != null && mpct < 1 ? 'color: #FCD34D; font-weight: 700;' :
+                        mpct != null && mpct < 5 ? 'color: #FCA5A5;' : 'color: var(--text-2);';
+      return `<tr>
+        <td><strong>${r.constituency}</strong></td>
+        <td>${r.major_candidate}</td>
+        <td><span class="pill" style="font-size:0.7rem; padding: 2px 8px;">${r.major_party}</span></td>
+        <td class="num-cell">${fmtIN(parseInt(r.margin_of_loss))}</td>
+        <td class="num-cell" style="${mpctColor}">${fmtPct(mpct)}</td>
+        <td class="num-cell">${r.dummy_count}</td>
+        <td class="num-cell">${fmtIN(parseInt(r.combined_dummy_votes))}</td>
+        <td class="num-cell" style="${ratioColor}">${ratio.toFixed(2)}</td>
+      </tr>`;
+    }).join('');
+  } catch (e) { console.warn('Near-miss data not loaded:', e); }
+}
+loadNearMiss();
 </script>
 </body>
 </html>

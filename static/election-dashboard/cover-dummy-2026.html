@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>329 Dummies. How Many Mattered? — Cover · TN 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0D0C09;
+  color: #F0EFE8;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Background ── */
+.bg-art {
+  position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+}
+
+/* Warm amber glow */
+.glow-1 {
+  position: absolute; width: 650px; height: 650px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,0.13) 0%, transparent 70%);
+  top: -150px; right: -100px;
+  animation: drift1 20s ease-in-out infinite;
+}
+.glow-2 {
+  position: absolute; width: 450px; height: 450px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,119,87,0.10) 0%, transparent 70%);
+  bottom: -80px; left: -60px;
+  animation: drift2 16s ease-in-out infinite;
+}
+.glow-3 {
+  position: absolute; width: 280px; height: 280px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(239,68,68,0.08) 0%, transparent 70%);
+  top: 40%; left: 20%;
+  animation: drift3 12s ease-in-out infinite;
+}
+@keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-50px,35px)} }
+@keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(45px,-30px)} }
+@keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-25px,40px)} }
+
+/* Diagonal line grid */
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Layout ── */
+.page { position: relative; z-index: 1; max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+/* ── Top bar ── */
+.topbar {
+  position: relative; z-index: 10;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0;
+}
+.topbar .page { display: flex; align-items: center; justify-content: space-between; }
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+}
+.brand-dot { width: 7px; height: 7px; border-radius: 50%; background: #F59E0B; }
+.topbar-meta { font-size: 0.72rem; color: rgba(255,255,255,0.25); font-weight: 500; letter-spacing: 0.04em; }
+
+/* ── Investigation tag ── */
+.inv-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.28);
+  border-radius: 40px;
+  padding: 6px 16px;
+  font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #F59E0B;
+  margin-bottom: 28px;
+}
+.inv-badge .dot { width: 5px; height: 5px; border-radius: 50%; background: #F59E0B; animation: blink 1.8s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── Hero section ── */
+.hero { padding: 64px 0 52px; position: relative; z-index: 1; }
+
+.hero-kicker {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(245,158,11,0.6);
+  margin-bottom: 16px;
+}
+
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.hero-headline .num {
+  background: linear-gradient(135deg, #F59E0B 20%, #D97757 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-headline .soft { color: rgba(255,255,255,0.45); }
+
+.hero-subhead {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 2.8vw, 1.7rem);
+  font-weight: 700; font-style: italic;
+  color: rgba(240,239,232,0.5);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.hero-deck {
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  color: rgba(240,239,232,0.55);
+  line-height: 1.75;
+  max-width: 600px;
+  margin-bottom: 44px;
+  font-weight: 400;
+}
+
+/* ── Verdict cards ── */
+.verdict-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+@media (max-width: 560px) { .verdict-row { grid-template-columns: 1fr; } }
+
+.verdict-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 22px 20px;
+  position: relative; overflow: hidden;
+}
+.verdict-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--bar-color);
+}
+.verdict-card.strict::after { --bar-color: rgba(34,197,94,0.5); }
+.verdict-card.loose::after  { --bar-color: rgba(245,158,11,0.5); }
+
+.verdict-label {
+  font-size: 0.62rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.12em; color: rgba(255,255,255,0.3);
+  margin-bottom: 10px;
+}
+.verdict-num {
+  font-size: 3rem; font-weight: 900; line-height: 1;
+  letter-spacing: -0.04em;
+}
+.verdict-num.zero { color: #22C55E; }
+.verdict-num.two  { color: #F59E0B; }
+.verdict-desc {
+  font-size: 0.78rem; color: rgba(255,255,255,0.4);
+  margin-top: 8px; line-height: 1.5;
+}
+.verdict-desc strong { color: rgba(255,255,255,0.65); }
+
+/* ── Stat strip ── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 44px;
+}
+@media (max-width: 640px) { .stat-strip { grid-template-columns: repeat(2, 1fr); } }
+
+.stat-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 16px 14px;
+}
+.stat-num-sm {
+  font-size: 1.65rem; font-weight: 900; line-height: 1;
+  color: #fff; letter-spacing: -0.02em; margin-bottom: 5px;
+}
+.stat-num-sm.amber { color: #F59E0B; }
+.stat-num-sm.red   { color: #F87171; }
+.stat-num-sm.coral { color: #D97757; }
+
+.stat-lbl {
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: rgba(255,255,255,0.3);
+}
+
+/* ── CTA ── */
+.cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 52px; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #D97716 0%, #B45309 100%);
+  color: #fff;
+  font-size: 0.85rem; font-weight: 700;
+  padding: 13px 24px; border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(217,119,22,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(217,119,22,0.5); color: #fff; }
+.btn-primary svg { width: 16px; height: 16px; }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,0.4); font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; transition: color 0.2s;
+}
+.btn-secondary:hover { color: rgba(255,255,255,0.75); }
+
+/* ── Methodology strip ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 30%, rgba(255,255,255,0.07) 70%, transparent);
+  margin-bottom: 40px;
+}
+.section-eyebrow {
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em;
+  text-transform: uppercase; color: #D97757; margin-bottom: 14px;
+}
+
+/* ── Tier breakdown ── */
+.tier-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin-bottom: 48px;
+}
+@media (max-width: 560px) { .tier-grid { grid-template-columns: 1fr; } }
+
+.tier-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 16px;
+}
+.tier-name { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 6px; }
+.tier-count { font-size: 1.4rem; font-weight: 900; color: #fff; letter-spacing: -0.02em; }
+.tier-detail { font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 4px; line-height: 1.5; }
+
+/* ── Author ── */
+.author-block {
+  display: flex; align-items: center; gap: 16px;
+  padding: 22px 26px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  margin-bottom: 28px;
+}
+.author-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, #F59E0B, #D97757);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 800; color: #fff; flex-shrink: 0;
+}
+.author-name { font-size: 0.86rem; font-weight: 700; color: rgba(255,255,255,0.8); }
+.author-role { font-size: 0.7rem; color: rgba(255,255,255,0.33); margin-top: 2px; }
+.pub-date { margin-left: auto; text-align: right; font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+.pub-date strong { display: block; color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+
+.tag-row { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 48px; }
+.tag {
+  padding: 5px 12px; border-radius: 20px; font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── Footer ── */
+footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 18px 0; margin-top: auto;
+}
+footer .page { display: flex; justify-content: space-between; align-items: center; }
+.footer-left, .footer-right { font-size: 0.68rem; color: rgba(255,255,255,0.18); }
+</style>
+</head>
+<body>
+
+<div class="bg-art">
+  <div class="bg-grid"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="glow-3"></div>
+</div>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="page">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      Anand Raj · Data Analysis
+    </div>
+    <div class="topbar-meta">Tamil Nadu Assembly Elections · 2026 · Investigative</div>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="page">
+
+    <div class="inv-badge">
+      <span class="dot"></span>
+      TN 2026 · Dummy Candidate Investigation · Post-Results
+    </div>
+
+    <div class="hero-kicker">The question everyone was asking after the candidate lists dropped</div>
+
+    <h1 class="hero-headline">
+      <span class="num">329</span> Dummies.<br>
+      How Many <span class="soft">Actually</span> Mattered?
+    </h1>
+    <div class="hero-subhead">
+      The honest answer depends on how strict your definition is.
+    </div>
+
+    <p class="hero-deck">
+      Three weeks before polling, 329 suspect candidate pairs were flagged: major-alliance
+      nominees who shared a name with another candidate in the same constituency. The thesis:
+      at least some were deliberate vote-splitters. Today the votes are in. So did it work?
+    </p>
+
+    <!-- Verdict cards -->
+    <div class="verdict-row">
+      <div class="verdict-card strict">
+        <div class="verdict-label">Strict test (EXACT + NEAR_FULL matches only)</div>
+        <div class="verdict-num zero">0</div>
+        <div class="verdict-desc">Seats where dummy votes provably covered the margin. In the cleanest test, <strong>zero</strong> seats turned on engineered name confusion.</div>
+      </div>
+      <div class="verdict-card loose">
+        <div class="verdict-label">Loose test (all flagged dummies including WORD_MATCH)</div>
+        <div class="verdict-num two">2</div>
+        <div class="verdict-desc">Razor-thin TVK losses where dummy vote totals exceeded the winning margin. Both under <strong>0.35%</strong> of votes polled.</div>
+      </div>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat-card">
+        <div class="stat-num-sm amber">329</div>
+        <div class="stat-lbl">Flagged Pairs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num-sm">263</div>
+        <div class="stat-lbl">Actually Contested</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num-sm red">152</div>
+        <div class="stat-lbl">Majors Who Lost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num-sm coral">~200</div>
+        <div class="stat-lbl">Median Dummy Votes</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="dummy-candidates-2026.html" class="btn-primary">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Read the Full Investigation
+      </a>
+      <a href="index.html" class="btn-secondary">
+        ← Back to Dashboard
+      </a>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Tier breakdown -->
+    <div class="section-eyebrow">Dummy Classification · 3 tiers</div>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">Exact Match</div>
+        <div class="tier-count">64 pairs</div>
+        <div class="tier-detail">Identical names after normalising prefixes and initials. Most likely to be engineered. Median 174 votes polled.</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Near-Full Match</div>
+        <div class="tier-count">36 pairs</div>
+        <div class="tier-detail">85%+ string similarity. Still high confidence. Median 210 votes polled. 0 strict-consequential.</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Word Match</div>
+        <div class="tier-count">163 pairs</div>
+        <div class="tier-detail">One shared significant name fragment. Noisiest signal. The 2 near-misses are both in this tier. Median 197 votes.</div>
+      </div>
+    </div>
+
+    <!-- Author -->
+    <div class="author-block">
+      <div class="author-avatar">A</div>
+      <div>
+        <div class="author-name">Anand Raj</div>
+        <div class="author-role">Data journalist · ndranandraj.com</div>
+      </div>
+      <div class="pub-date">
+        <strong>May 2026</strong>
+        Results Day Analysis
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">Tamil Nadu</span>
+      <span class="tag">2026 Elections</span>
+      <span class="tag">Dummy Candidates</span>
+      <span class="tag">Electoral Strategy</span>
+      <span class="tag">Name Confusion</span>
+      <span class="tag">Data Investigation</span>
+      <span class="tag">ECI Results</span>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="footer-left">Analysis: pipelines/21_dummy_impact_analysis.py · ECI official tally</div>
+    <div class="footer-right"><a href="dummy-impact-post-template.md" style="color:rgba(255,255,255,0.18);text-decoration:none;">Read the post template →</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
