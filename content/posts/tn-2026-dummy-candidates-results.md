@@ -38,7 +38,14 @@ What is unambiguous: this was a wave year, and waves drown small mechanics.
 The strategy did not fail in 2026. It ran into a year where margins were too wide for it to matter.
 {{< /pullquote >}}
 
-The interactive near-miss table and the full per-pair breakdown live at **[election-dashboard/dummy-candidates-2026.html](/election-dashboard/dummy-candidates-2026.html)**.
+{{< dashboard-cta
+    url="/election-dashboard/dummy-candidates-2026.html"
+    eyebrow="Interactive · 329 flagged pairs"
+    title="Open the dummy-candidates 2026 dashboard"
+    body="The 15 closest near-misses with margin-percent context, the full per-pair searchable table, the EXACT / NEAR_FULL / WORD_MATCH classifier breakdown, and a constituency explorer that lets you pull every flagged pair for any of the 234 ACs."
+    cta="Open the dashboard"
+    accent="dummy"
+>}}
 
 ---
 
@@ -145,10 +152,41 @@ The mechanism is waiting for a year where margins are narrow. 2026 was not it.
 
 ## Explore the data
 
-- [Interactive near-miss table and per-pair breakdown](/election-dashboard/dummy-candidates-2026.html)
-- [Tamil Nadu 2026 Candidates Dataset](/data/tn-2026-candidates/) — full 4,023-candidate roster
-- [Full election dashboard](/election-dashboard/) — historical TN results, 2011 to 2026
-- Original investigation: [Same Name, Different Initial](/posts/tn-2026-dummy-candidates/)
+{{< dashboard-cta
+    url="/election-dashboard/dummy-candidates-2026.html"
+    eyebrow="Primary · interactive"
+    title="The dummy candidates 2026 dashboard"
+    body="The 15 closest near-misses sorted by margin-percent, the full per-pair table with constituency-level filtering, the EXACT vs NEAR_FULL vs WORD_MATCH tier breakdown, and a constituency explorer that surfaces every flagged pair for any AC."
+    cta="Open the dummy dashboard"
+    accent="dummy"
+>}}
+
+<div class="explore-grid">
+<a href="/posts/tvk-debut-2026/">
+  <strong>Companion post: TVK 2026 debut, mapped</strong>
+  <span>The other half of the May 4 story. 108 seats, 1.32 efficiency, regional anatomy, and the 1st / 2nd / 3rd drill-downs.</span>
+</a>
+<a href="/election-dashboard/tvk-debut-2026.html">
+  <strong>TVK 2026 dashboard</strong>
+  <span>Constituency map, regional strike rate, party seat-vs-vote efficiency, and the position-anatomy interactive tables.</span>
+</a>
+<a href="/data/tn-2026-candidates/">
+  <strong>2026 candidates dataset</strong>
+  <span>The full 4,023-candidate roster with assets, qualifications, and criminal cases. CC BY 4.0.</span>
+</a>
+<a href="/posts/tn-2026-dummy-candidates/">
+  <strong>The original investigation</strong>
+  <span>"Same Name, Different Initial" — the pre-poll piece that flagged the 329 pairs three weeks before voting.</span>
+</a>
+<a href="/election-dashboard/">
+  <strong>Full election dashboard</strong>
+  <span>Historical TN results, 2011 to 2026. District swings, strongholds, flipped seats, and the full constituency explorer.</span>
+</a>
+<a href="/posts/tn-elections-2026-analysis/">
+  <strong>"3 crore votes that elected nobody"</strong>
+  <span>The earlier piece on Tamil Nadu's structural FPTP asymmetry. Reads as the prequel to both TVK and dummy posts.</span>
+</a>
+</div>
 
 ---
 

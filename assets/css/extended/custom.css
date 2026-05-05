@@ -1532,6 +1532,200 @@ html { scroll-behavior: smooth; }
 .callout--method .callout__title { background: transparent; }
 
 /* ────────────────────────────────────────────────────────────
+   DASHBOARD CTA — prominent card linking to interactive views.
+   Use the {{< dashboard-cta >}} shortcode in posts.
+   ──────────────────────────────────────────────────────────── */
+
+.post-content a.dashboard-cta {
+    display: block;
+    margin: 2.4rem 0 2.8rem;
+    padding: 26px 28px 22px;
+    border-radius: 16px;
+    text-decoration: none !important;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background:
+        radial-gradient(ellipse 600px 240px at 80% 0%,
+            color-mix(in srgb, var(--cta-glow, #A855F7) 18%, transparent) 0%,
+            transparent 60%),
+        linear-gradient(135deg,
+            color-mix(in srgb, var(--cta-bg, #A855F7) 10%, var(--theme)) 0%,
+            var(--theme) 100%);
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.04) inset,
+        0 14px 32px -22px rgba(0, 0, 0, 0.32);
+    /* The dotted halo top-right is a quiet "interactive" hint */
+}
+
+.post-content a.dashboard-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        circle at 1.5px 1.5px,
+        color-mix(in srgb, var(--cta-glow, #A855F7) 14%, transparent) 1px,
+        transparent 0);
+    background-size: 22px 22px;
+    opacity: 0.55;
+    mask-image: radial-gradient(ellipse 460px 220px at 90% 0%, black, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 460px 220px at 90% 0%, black, transparent 70%);
+    pointer-events: none;
+}
+
+.post-content a.dashboard-cta:hover {
+    transform: translateY(-3px);
+    border-color: var(--cta-bg, #A855F7);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 22px 44px -22px rgba(0, 0, 0, 0.42),
+        0 0 0 1px color-mix(in srgb, var(--cta-bg, #A855F7) 22%, transparent);
+}
+
+.post-content a.dashboard-cta--tvk {
+    --cta-bg: #A855F7;
+    --cta-glow: #A855F7;
+}
+
+.post-content a.dashboard-cta--dummy {
+    --cta-bg: #E8923A;
+    --cta-glow: #E8923A;
+}
+
+.post-content a.dashboard-cta--primary {
+    --cta-bg: var(--primary);
+    --cta-glow: var(--primary);
+}
+
+.dashboard-cta__eyebrow {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cta-bg, #A855F7);
+    background: color-mix(in srgb, var(--cta-bg, #A855F7) 14%, transparent);
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard-cta__title {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--content);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard-cta__body {
+    font-family: "Inter", sans-serif;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    max-width: 640px;
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard-cta__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 99px;
+    background: var(--cta-bg, #A855F7);
+    color: #ffffff !important;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: -0.005em;
+    box-shadow: 0 8px 22px -10px var(--cta-bg, #A855F7);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.post-content a.dashboard-cta:hover .dashboard-cta__button {
+    transform: translateX(4px);
+    box-shadow: 0 12px 28px -10px var(--cta-bg, #A855F7);
+}
+
+.post-content a.dashboard-cta:hover .dashboard-cta__button svg {
+    transform: translateX(2px);
+}
+
+.dashboard-cta__button svg {
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 600px) {
+    .post-content a.dashboard-cta { padding: 22px 22px 20px; }
+    .dashboard-cta__title { font-size: 1.18rem; }
+    .dashboard-cta__body { font-size: 0.9rem; }
+}
+
+/* ────────────────────────────────────────────────────────────
+   EXPLORE GRID — a 2-up or 3-up of secondary CTAs at the end of
+   a long article. Lighter weight than dashboard-cta but still
+   distinct from inline links.
+   ──────────────────────────────────────────────────────────── */
+
+.post-content .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 1.6rem 0 2.4rem;
+}
+
+.post-content .explore-grid > a {
+    display: block;
+    padding: 18px 20px;
+    background: var(--theme);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--content) !important;
+    text-decoration: none !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px -10px rgba(0, 0, 0, 0.18);
+}
+
+.post-content .explore-grid > a:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.25);
+}
+
+.post-content .explore-grid > a strong {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--content);
+    margin-bottom: 4px;
+}
+
+.post-content .explore-grid > a span {
+    font-family: "Inter", sans-serif;
+    font-size: 0.86rem;
+    color: var(--secondary);
+    line-height: 1.45;
+    display: block;
+}
+
+/* ────────────────────────────────────────────────────────────
    PULL QUOTE — for the single-sentence finding the post revolves around
    ──────────────────────────────────────────────────────────── */
 

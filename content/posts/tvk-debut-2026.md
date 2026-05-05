@@ -40,7 +40,14 @@ That conversion ratio (1.32 seats per unit of vote share) is the highest of any 
 A tsunami in Chennai, a ripple in the Cauvery delta. The gap between those two facts is what the rest of this post is about.
 {{< /pullquote >}}
 
-The interactive constituency-by-constituency map is at **[election-dashboard/tvk-debut-2026.html](/election-dashboard/tvk-debut-2026.html)**. Gold for seats won, purple for second place, teal for third.
+{{< dashboard-cta
+    url="/election-dashboard/tvk-debut-2026.html"
+    eyebrow="Interactive · 234 constituencies"
+    title="Explore the live TVK 2026 dashboard"
+    body="Constituency map shaded by TVK's finish position, regional strike-rate breakdown, party seat-vs-vote efficiency table, the 1st / 2nd / 3rd anatomy with closest-and-biggest tables, and the full 'consequential races' near-miss list. Hover any seat for candidate, vote count, and margin percent."
+    cta="Open the dashboard"
+    accent="tvk"
+>}}
 
 ---
 
@@ -332,9 +339,33 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
 
 ## Explore the data
 
-- [Interactive TVK constituency map](/election-dashboard/tvk-debut-2026.html) — gold for won, purple for 2nd, teal for 3rd, hover for candidate name and margin %
-- [Full election dashboard](/election-dashboard/) — historical context: 2011, 2016, 2021 results side by side
-- [Tamil Nadu 2026 Candidates Dataset](/data/tn-2026-candidates/) — the full 4,023-candidate roster with assets, qualifications, and criminal cases
+{{< dashboard-cta
+    url="/election-dashboard/tvk-debut-2026.html"
+    eyebrow="Primary · interactive"
+    title="The TVK 2026 dashboard"
+    body="Every number in this post is derived from the live dashboard. Open it for the full constituency map, the regional breakdown table, the position anatomy with sortable closest/biggest lists, and the consequential-races near-miss list."
+    cta="Open the TVK dashboard"
+    accent="tvk"
+>}}
+
+<div class="explore-grid">
+<a href="/election-dashboard/">
+  <strong>Full election dashboard</strong>
+  <span>Historical context. 2011, 2016, 2021, and 2026 results side by side, with district swings, strongholds, and flipped seats.</span>
+</a>
+<a href="/data/tn-2026-candidates/">
+  <strong>2026 candidates dataset</strong>
+  <span>The full 4,023-candidate roster with assets, qualifications, criminal cases, and party-alliance metadata. Open under CC BY 4.0.</span>
+</a>
+<a href="/posts/tn-2026-dummy-candidates-results/">
+  <strong>Companion post: dummy candidates</strong>
+  <span>The other half of the May 4 story. 329 flagged pairs, two TVK losses where the math came close to working, and what it means.</span>
+</a>
+<a href="/election-dashboard/dummy-candidates-2026.html">
+  <strong>Dummy candidates dashboard</strong>
+  <span>The 15 closest near-misses, full per-pair table, and the EXACT vs NEAR vs WORD_MATCH classifier breakdown.</span>
+</a>
+</div>
 
 ---
 

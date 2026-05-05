@@ -185,6 +185,217 @@ tr:hover td { background: rgba(168,85,247,0.06); }
 /* FOOTER */
 .footer { border-top: 1px solid var(--border); padding: 32px 20px; text-align: center; color: var(--text-3); font-size: 0.85rem; margin-top: 32px; }
 .footer a { color: var(--text-2); }
+
+/* ═══════════════════════════════════════════════════════════
+   VISUAL POLISH — UX-driven beautification pass
+   ═══════════════════════════════════════════════════════════ */
+
+/* Animated gradient blob in the hero — slow, drifting, low-contrast.
+   Adds depth without distracting from the type. */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -200px; left: 50%;
+  width: 720px; height: 720px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(168,85,247,0.18) 0%, transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(245,158,11,0.10) 0%, transparent 60%);
+  filter: blur(70px);
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  animation: drift 22s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes drift {
+  0%   { transform: translate(-52%, -8%) rotate(0deg); }
+  50%  { transform: translate(-48%, 4%)  rotate(20deg); }
+  100% { transform: translate(-50%, -2%) rotate(-10deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::after { animation: none; }
+}
+
+/* Refined card shadows + lift on hover (apply to every .stat block) */
+.stat {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.02) inset,
+    0 8px 24px -16px rgba(0,0,0,0.5);
+}
+.stat:hover {
+  transform: translateY(-2px);
+  border-color: rgba(168, 85, 247, 0.35);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 18px 36px -18px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(168, 85, 247, 0.12);
+}
+
+/* Section header treatment: a thin accent line above the title to
+   give the page a spine. Draws the eye to where each new section starts. */
+.section-header {
+  position: relative;
+  padding-top: 20px;
+}
+.section-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 36px; height: 3px;
+  background: linear-gradient(90deg, var(--tvk), transparent);
+  border-radius: 99px;
+}
+
+/* JUMP-NAV: in-page sticky pill rail just below the top-nav,
+   so readers can hop between map, anatomy, regional, etc. */
+.jumpnav {
+  position: sticky;
+  top: 56px;  /* just below the top-nav */
+  z-index: 100;
+  padding: 10px 0 12px;
+  background: linear-gradient(180deg, rgba(15,15,20,0.96) 0%, rgba(15,15,20,0.88) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+.jumpnav-inner {
+  display: flex;
+  gap: 8px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.jumpnav-inner::-webkit-scrollbar { display: none; }
+.jumpnav-pill {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.jumpnav-pill:hover {
+  color: var(--text);
+  border-color: var(--tvk);
+  background: var(--tvk-soft);
+  text-decoration: none;
+}
+.jumpnav-pill.active {
+  color: var(--tvk);
+  border-color: var(--tvk);
+  background: var(--tvk-soft);
+  font-weight: 700;
+}
+
+/* Fade-in on scroll-into-view for sections — subtle, fast, respectful of reduced motion */
+.section { opacity: 1; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .section {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  }
+}
+
+/* Refine bar-chart aesthetic — gradient fills, soft glow on hover */
+#distWon > div, #distSecond > div, #distThird > div {
+  transition: background 0.2s ease;
+}
+#distWon > div:hover, #distSecond > div:hover, #distThird > div:hover {
+  background: rgba(168,85,247,0.04);
+  border-radius: 6px;
+  margin-left: -4px;
+  padding-left: 4px;
+}
+
+/* Replace the flat bar fills with subtle gradients via inline style override */
+#distWon    [style*="background: var(--won)"],
+#distSecond [style*="background: var(--2nd)"],
+#distThird  [style*="background: var(--3rd)"] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Nicer table hover — row floats slightly on hover */
+.table-wrap tbody tr {
+  transition: background 0.15s ease;
+}
+.table-wrap tbody tr:hover td {
+  background: rgba(168, 85, 247, 0.06);
+}
+
+/* Section divider — quiet horizontal accent between major sections */
+.section + .section {
+  border-top: 1px solid rgba(168, 85, 247, 0.08);
+  position: relative;
+}
+.section + .section::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 50%;
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--tvk), transparent);
+  transform: translateX(-50%);
+}
+
+/* Back-to-top floating button */
+.back-to-top {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--tvk);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 12px 28px -10px rgba(168, 85, 247, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.2s ease;
+  z-index: 250;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-2px); }
+
+/* Refine stat numbers with a slight gradient — only on the big anatomy 3-up */
+.stat .num.tvk, .stat .num.gold {
+  background: linear-gradient(135deg, currentColor 30%, color-mix(in srgb, currentColor 70%, white) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile polish */
+@media (max-width: 640px) {
+  .hero { padding: 44px 18px 30px; }
+  .hero h1 { font-size: 1.7rem !important; }
+  .section { padding: 24px 0; }
+  .jumpnav-inner { padding: 0 14px; }
+  .back-to-top { bottom: 14px; right: 14px; width: 42px; height: 42px; }
+}
 </style>
 </head>
 <body>
@@ -219,14 +430,26 @@ tr:hover td { background: rgba(168,85,247,0.06); }
   <div class="stat"><div class="num" id="stConseq">—</div><div class="label">"Consequential" Races</div></div>
 </div>
 
-<section class="section container">
+<!-- Sticky jump nav for in-page navigation -->
+<nav class="jumpnav" aria-label="Section jumps">
+  <div class="jumpnav-inner">
+    <a class="jumpnav-pill" href="#map-section">Map</a>
+    <a class="jumpnav-pill" href="#regional">Regional</a>
+    <a class="jumpnav-pill" href="#efficiency">Seat efficiency</a>
+    <a class="jumpnav-pill" href="#anatomy">1st / 2nd / 3rd</a>
+    <a class="jumpnav-pill" href="#strongholds">Stronghold flips</a>
+    <a class="jumpnav-pill" href="#consequential">Consequential</a>
+  </div>
+</nav>
+
+<section class="section container" id="edappadi">
   <div class="section-header">
     <h2>The Edappadi exception</h2>
     <p>Of all 234 constituencies, the one TVK chose not to contest is AC #86 — <strong>Edappadi</strong>. Sitting AIADMK general secretary <em>Edappadi K. Palaniswami</em>'s home seat. Vijay's party fielded a candidate against every other major-party leader in TN. Not against EPS.</p>
   </div>
 </section>
 
-<section class="section container">
+<section class="section container" id="map-section">
   <div class="map-wrap">
     <div id="prePollBanner" class="banner">
       <strong>Pre-results view.</strong> The map is showing only constituency outlines. Once May 4 results land and pipeline 23 runs, each AC will be shaded by TVK's finish position.
@@ -242,7 +465,7 @@ tr:hover td { background: rgba(168,85,247,0.06); }
   </div>
 </section>
 
-<section class="section container">
+<section class="section container" id="regional">
   <div class="section-header">
     <h2>Where the wave landed: regional breakdown</h2>
     <p>234 ACs grouped into 9 standard political-geography buckets. <strong>Strike rate</strong> is the percent of seats in the region that TVK won. <strong>Above weight</strong> is wins minus what a uniform 34.9% statewide share would predict. Click a row to highlight the region on the map above.</p>
@@ -272,7 +495,7 @@ tr:hover td { background: rgba(168,85,247,0.06); }
   </p>
 </section>
 
-<section class="section container">
+<section class="section container" id="efficiency">
   <div class="section-header">
     <h2>Seat-vs-vote efficiency, all parties</h2>
     <p>The cleanest single number for understanding how TVK's 34.9% vote share converted to 46.2% of seats. Efficiency is seat share divided by vote share. Above 1.0 means the party converted votes to seats better than uniform; below 1.0 means worse. NTK at zero is the "votes that elected nobody" story; BJP at 0.14 is the spread-thin story.</p>
@@ -293,7 +516,7 @@ tr:hover td { background: rgba(168,85,247,0.06); }
   <p style="margin-top: 10px; color: var(--text-3); font-size: 0.78rem;">Vote counts use the Indian comma format. Total votes polled across all 234 ACs: <strong style="color: var(--text);">4,93,24,121</strong> (4.93 crore).</p>
 </section>
 
-<section class="section container">
+<section class="section container" id="anatomy">
   <div class="section-header">
     <h2>The anatomy of TVK's results: 1st, 2nd, 3rd</h2>
     <p>A finish-position headcount tells you how many seats. The interesting question is <em>who else was in the room</em>. Three drill-downs: the margin distribution where TVK won, who beat TVK and who got pushed to 3rd in the seats where TVK was 2nd, and the distribution of TVK's distant 3rd-place finishes.</p>
@@ -423,7 +646,7 @@ tr:hover td { background: rgba(168,85,247,0.06); }
   </div>
 </section>
 
-<section class="section container">
+<section class="section container" id="strongholds">
   <div class="section-header">
     <h2>Stronghold flips: the AIADMK-vs-DMK asymmetry</h2>
     <p>"Stronghold" = same camp won 2011, 2016, and 2021 consecutively. TVK ate dramatically deeper into AIADMK's fortresses than DMK's.</p>
@@ -450,7 +673,7 @@ tr:hover td { background: rgba(168,85,247,0.06); }
   </div>
 </section>
 
-<section class="section container">
+<section class="section container" id="consequential">
   <div class="section-header">
     <h2>Consequential races</h2>
     <p>Constituencies where TVK pulled more votes than the margin between the actual winner and runner-up. The clean ballot-mechanics version of "spoiler."</p>
@@ -714,17 +937,18 @@ function partyChip(p) {
 const fmtNum = n => (n == null ? '—' : Number(n).toLocaleString('en-IN'));
 const fmtPctV = n => (n == null ? '—' : Number(n).toFixed(2) + '%');
 
-function renderBuckets(elId, buckets, maxValue, color) {
+function renderBuckets(elId, buckets, maxValue, color, glow) {
   const max = maxValue || Math.max(...buckets.map(b => b.count));
   const html = buckets.map(b => {
     const w = max ? (100 * b.count / max) : 0;
+    const fillStyle = `width:${w}%;background:linear-gradient(90deg, ${color} 0%, color-mix(in srgb, ${color} 70%, white) 100%);box-shadow:0 0 14px -2px ${glow || color};`;
     return `
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;">
-        <div style="width:108px;font-size:0.78rem;color:var(--text-2);text-align:right;font-variant-numeric:tabular-nums;">${b.label}</div>
-        <div style="flex:1;background:var(--surface-2);border-radius:4px;height:18px;position:relative;overflow:hidden;">
-          <div style="position:absolute;top:0;left:0;bottom:0;width:${w}%;background:${color};border-radius:4px;transition:width 0.3s;"></div>
+      <div class="bucket-row" style="display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:3px 0;">
+        <div style="width:128px;font-size:0.78rem;color:var(--text-2);text-align:right;font-variant-numeric:tabular-nums;font-weight:500;">${b.label}</div>
+        <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:5px;height:20px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.04);">
+          <div style="position:absolute;top:0;left:0;bottom:0;border-radius:5px;transition:width 0.5s cubic-bezier(0.2,0.8,0.2,1);${fillStyle}"></div>
         </div>
-        <div style="width:46px;font-size:0.82rem;color:var(--text);font-weight:700;font-variant-numeric:tabular-nums;text-align:right;">${b.count}</div>
+        <div style="width:46px;font-size:0.86rem;color:var(--text);font-weight:800;font-variant-numeric:tabular-nums;text-align:right;">${b.count}</div>
       </div>`;
   }).join('');
   document.getElementById(elId).innerHTML = html;
@@ -742,9 +966,9 @@ async function loadAnatomy() {
       ...a.third.gap_buckets.map(b => b.count),
     ];
     const maxVal = Math.max(...allCounts);
-    renderBuckets('distWon',    a.won.margin_buckets,   maxVal, 'var(--won)');
-    renderBuckets('distSecond', a.second.gap_buckets,   maxVal, 'var(--2nd)');
-    renderBuckets('distThird',  a.third.gap_buckets,    maxVal, 'var(--3rd)');
+    renderBuckets('distWon',    a.won.margin_buckets,   maxVal, '#F59E0B', 'rgba(245,158,11,0.45)');
+    renderBuckets('distSecond', a.second.gap_buckets,   maxVal, '#C084FC', 'rgba(192,132,252,0.45)');
+    renderBuckets('distThird',  a.third.gap_buckets,    maxVal, '#14B8A6', 'rgba(20,184,166,0.45)');
 
     // Closest TVK wins
     document.getElementById('closestWonBody').innerHTML = a.won.closest.slice(0, 8).map(r => `
@@ -799,6 +1023,35 @@ async function loadAnatomy() {
   }
 }
 loadAnatomy();
+
+// ─── Jump-nav active-state via scroll-spy ─────────────────────────
+const jumpTargets = ['edappadi','map-section','regional','efficiency','anatomy','strongholds','consequential'];
+const jumpPills = Array.from(document.querySelectorAll('.jumpnav-pill'));
+function syncJumpNav() {
+  const y = window.scrollY + 180;
+  let active = jumpTargets[0];
+  for (const id of jumpTargets) {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= y) active = id;
+  }
+  jumpPills.forEach(p => {
+    const target = (p.getAttribute('href') || '').replace('#','');
+    p.classList.toggle('active', target === active);
+  });
+}
+window.addEventListener('scroll', syncJumpNav, { passive: true });
+syncJumpNav();
+
+// ─── Back-to-top button visibility ───────────────────────────────
+const backBtn = document.createElement('button');
+backBtn.className = 'back-to-top';
+backBtn.setAttribute('aria-label', 'Scroll to top');
+backBtn.innerHTML = '↑';
+backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+document.body.appendChild(backBtn);
+window.addEventListener('scroll', () => {
+  backBtn.classList.toggle('visible', window.scrollY > 800);
+}, { passive: true });
 </script>
 
 </body>
