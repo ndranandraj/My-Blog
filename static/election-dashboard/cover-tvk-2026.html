@@ -3,460 +3,347 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TVK 233: A Debut, Mapped — Cover · TN 2026</title>
+<title>TVK 233: A Debut, Mapped — TN 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+html, body { height: 100%; background: #080710; color: #F0EFF8; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #0B0A12;
-  color: #F0EFF8;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-}
+body { min-height: 100vh; display: flex; flex-direction: column; }
 
-/* ── Background canvas ── */
-.bg-art {
+/* ── BACKGROUND ── */
+.bg {
   position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+  background: radial-gradient(ellipse 900px 700px at 10% 20%, rgba(124,58,237,0.13) 0%, transparent 60%),
+              radial-gradient(ellipse 700px 500px at 85% 75%, rgba(217,119,87,0.10) 0%, transparent 60%),
+              radial-gradient(ellipse 500px 400px at 55% 50%, rgba(245,158,11,0.06) 0%, transparent 60%);
 }
-.bg-art canvas { position: absolute; inset: 0; }
-
-/* Orbital glows */
-.glow-1 {
-  position: absolute; width: 700px; height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(140, 80, 240, 0.16) 0%, transparent 70%);
-  top: -200px; left: -100px;
-  animation: drift1 18s ease-in-out infinite;
-}
-.glow-2 {
-  position: absolute; width: 500px; height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(217, 119, 87, 0.12) 0%, transparent 70%);
-  bottom: -100px; right: -80px;
-  animation: drift2 22s ease-in-out infinite;
-}
-.glow-3 {
-  position: absolute; width: 350px; height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.09) 0%, transparent 70%);
-  top: 50%; right: 15%;
-  animation: drift3 14s ease-in-out infinite;
-}
-@keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(60px,40px)} }
-@keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,-30px)} }
-@keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-50px)} }
-
-/* Subtle grid */
 .bg-grid {
   position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
+.bg-glow-1 { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 65%); top: -150px; left: -80px; animation: float1 20s ease-in-out infinite; }
+.bg-glow-2 { position: absolute; width: 450px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(217,119,87,0.14) 0%, transparent 65%); bottom: -80px; right: -60px; animation: float2 25s ease-in-out infinite; }
+@keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(50px,35px) scale(1.05)} }
+@keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-35px,-25px) scale(1.08)} }
 
-/* ── Main layout ── */
-.page { position: relative; z-index: 1; max-width: 920px; margin: 0 auto; padding: 0 28px; }
+/* ── LAYOUT ── */
+.wrap { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 0 36px; width: 100%; }
+.topbar { padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.brand-pip { width: 6px; height: 6px; border-radius: 50%; background: #C084FC; }
+.topbar-right { display: flex; align-items: center; gap: 16px; }
+.tag-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; border: 1px solid rgba(192,132,252,0.35); color: #C084FC; }
 
-/* ── Top bar ── */
-.topbar {
-  position: relative; z-index: 10;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  padding: 20px 0;
-}
-.topbar .page { display: flex; align-items: center; justify-content: space-between; }
-.brand {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: rgba(255,255,255,0.45);
-}
-.brand-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: #D97757;
-}
-.topbar-meta {
-  font-size: 0.72rem; color: rgba(255,255,255,0.3);
-  font-weight: 500; letter-spacing: 0.04em;
-}
+/* ── HERO ── */
+.hero { padding: 72px 0 56px; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 340px; gap: 64px; align-items: center; }
 
-/* ── Hero ── */
-.hero {
-  padding: 72px 0 56px;
-  position: relative; z-index: 1;
-}
+.hero-left {}
+.kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.kicker-line { width: 32px; height: 2px; background: #C084FC; }
+.kicker-text { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9B7FD4; }
 
-.issue-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(140, 80, 240, 0.14);
-  border: 1px solid rgba(140, 80, 240, 0.32);
-  border-radius: 40px;
-  padding: 6px 16px;
-  font-size: 0.7rem; font-weight: 800;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: #C084FC;
-  margin-bottom: 32px;
-}
-.issue-badge span { width: 5px; height: 5px; border-radius: 50%; background: #C084FC; }
+.hero-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.01em; color: #FFFFFF; margin-bottom: 16px; }
+.hero-title em { font-style: italic; color: #C084FC; }
 
-.hero-headline {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  font-weight: 900;
-  line-height: 1.07;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-  color: #fff;
-}
-.hero-headline .accent { color: #C084FC; }
-.hero-headline .count {
-  display: inline-block;
-  background: linear-gradient(135deg, #F59E0B 0%, #D97757 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-headline em {
-  font-style: italic;
-  color: rgba(255,255,255,0.55);
-  font-size: 0.65em;
-  display: block;
-  margin-top: 6px;
-  letter-spacing: 0;
-}
+.hero-sub { font-size: 1.05rem; font-weight: 400; line-height: 1.65; color: rgba(240,239,248,0.60); max-width: 480px; margin-bottom: 36px; }
 
-.hero-deck {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  color: rgba(240, 239, 248, 0.6);
-  line-height: 1.7;
-  max-width: 580px;
-  margin-bottom: 48px;
-  font-weight: 400;
+.read-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, #7C3AED 0%, #C084FC 100%);
+  color: #fff; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 13px 28px; border-radius: 8px;
+  text-decoration: none; transition: opacity 0.2s;
 }
+.read-btn:hover { opacity: 0.88; }
+.read-btn svg { width: 14px; height: 14px; }
 
-/* ── Stat strip ── */
-.stat-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 52px;
-}
-@media (max-width: 640px) { .stat-strip { grid-template-columns: repeat(2, 1fr); } }
+/* ── SEAT METER (right side) ── */
+.seat-visual { display: flex; flex-direction: column; gap: 20px; }
 
-.stat-card {
+.fraction-display {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.09);
-  border-radius: 14px;
-  padding: 20px 18px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s, background 0.2s;
-}
-.stat-card:hover {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(192, 132, 252, 0.3);
-}
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--line-color, rgba(192,132,252,0.4));
-}
-.stat-card.gold::before { --line-color: rgba(245,158,11,0.6); }
-.stat-card.coral::before { --line-color: rgba(217,119,87,0.6); }
-.stat-card.teal::before { --line-color: rgba(20,184,166,0.6); }
-
-.stat-num {
-  font-size: 2.1rem; font-weight: 900; line-height: 1;
-  letter-spacing: -0.03em; color: #fff;
-  margin-bottom: 5px;
-}
-.stat-num.purple { color: #C084FC; }
-.stat-num.gold { color: #F59E0B; }
-.stat-num.teal { color: #14B8A6; }
-.stat-num.coral { color: #D97757; }
-
-.stat-label {
-  font-size: 0.67rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.35);
-}
-.stat-sub {
-  font-size: 0.72rem; color: rgba(255,255,255,0.25);
-  margin-top: 3px;
-}
-
-/* ── CTA row ── */
-.cta-row {
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  margin-bottom: 64px;
-}
-
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: linear-gradient(135deg, #9333EA 0%, #7C3AED 100%);
-  color: #fff;
-  font-size: 0.85rem; font-weight: 700;
-  padding: 13px 24px;
-  border-radius: 40px;
-  text-decoration: none;
-  letter-spacing: 0.01em;
-  transition: all 0.2s;
-  box-shadow: 0 4px 20px rgba(147,51,234,0.35);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(147,51,234,0.5);
-  color: #fff;
-}
-.btn-primary svg { width: 16px; height: 16px; flex-shrink: 0; }
-
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: 8px;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.82rem; font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.01em;
-  transition: color 0.2s;
-}
-.btn-secondary:hover { color: rgba(255,255,255,0.85); }
-
-/* ── Divider ── */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent);
-  margin-bottom: 48px;
-}
-
-/* ── Regional preview ── */
-.preview-section { margin-bottom: 64px; }
-
-.section-eyebrow {
-  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em;
-  text-transform: uppercase; color: #D97757;
-  margin-bottom: 16px;
-}
-
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-@media (max-width: 600px) { .preview-grid { grid-template-columns: 1fr 1fr; } }
-
-.region-pill {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 10px;
-  padding: 14px 16px;
-  display: flex; flex-direction: column;
-}
-.region-name { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
-.region-bar-wrap { height: 4px; background: rgba(255,255,255,0.07); border-radius: 2px; margin-bottom: 6px; overflow: hidden; }
-.region-bar { height: 100%; border-radius: 2px; }
-.region-meta { font-size: 0.67rem; color: rgba(255,255,255,0.3); }
-.region-meta strong { color: rgba(255,255,255,0.55); }
-
-/* ── Author block ── */
-.author-block {
-  display: flex; align-items: center; gap: 16px;
-  padding: 24px 28px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(192,132,252,0.18);
   border-radius: 16px;
-  margin-bottom: 32px;
+  padding: 28px 28px 22px;
+  text-align: center;
 }
-.author-avatar {
-  width: 46px; height: 46px; border-radius: 50%;
-  background: linear-gradient(135deg, #9333EA, #D97757);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem; font-weight: 800; color: #fff;
-  flex-shrink: 0;
-}
-.author-name { font-size: 0.88rem; font-weight: 700; color: rgba(255,255,255,0.85); }
-.author-role { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 2px; }
-.author-sep { margin-left: auto; text-align: right; }
-.pub-date { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
-.pub-date strong { color: rgba(255,255,255,0.55); display: block; font-size: 0.82rem; }
+.fraction-num { font-size: 5rem; font-weight: 900; line-height: 1; color: #C084FC; letter-spacing: -0.04em; }
+.fraction-denom { font-size: 1.5rem; font-weight: 600; color: rgba(255,255,255,0.3); }
+.fraction-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 8px; }
 
-/* ── Tags ── */
-.tag-row { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 48px; }
-.tag {
-  padding: 5px 12px; border-radius: 20px;
-  font-size: 0.67rem; font-weight: 700; letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.35);
-}
+/* Parliament bar */
+.parl-bar { height: 12px; border-radius: 6px; background: rgba(255,255,255,0.08); overflow: hidden; margin-bottom: 6px; }
+.parl-bar-fill { height: 100%; background: linear-gradient(90deg, #7C3AED, #C084FC); border-radius: 6px; width: 46.15%; }
+.parl-label { display: flex; justify-content: space-between; font-size: 0.68rem; color: rgba(255,255,255,0.35); font-weight: 500; }
+.parl-label strong { color: #C084FC; }
 
-/* ── Footer ── */
-footer {
-  position: relative; z-index: 1;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 20px 0;
-  margin-top: auto;
+/* Mini stats */
+.mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ms { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 14px 16px; }
+.ms-num { font-size: 1.5rem; font-weight: 800; line-height: 1; }
+.ms-num.amber { color: #F59E0B; }
+.ms-num.teal  { color: #14B8A6; }
+.ms-num.coral { color: #D97757; }
+.ms-num.purple { color: #C084FC; }
+.ms-lbl { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 4px; }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 0; }
+
+/* ── REGIONAL STRIP ── */
+.regional { padding: 40px 0; }
+.regional .wrap {}
+.section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.30); margin-bottom: 20px; }
+
+.region-grid { display: grid; grid-template-columns: repeat(9,1fr); gap: 8px; }
+.rg-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.rg-bar-wrap { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.rg-bar-track { width: 100%; height: 70px; background: rgba(255,255,255,0.06); border-radius: 6px 6px 0 0; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; position: relative; }
+.rg-bar-fill { width: 100%; border-radius: 4px 4px 0 0; transition: height 0.6s; }
+.rg-rate { font-size: 0.7rem; font-weight: 800; color: #fff; }
+.rg-name { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.3; }
+.rg-note { font-size: 0.6rem; color: rgba(255,255,255,0.25); text-align: center; }
+
+/* ── EDAPPADI NOTE ── */
+.edappadi-note {
+  padding: 40px 0 48px;
 }
-footer .page { display: flex; justify-content: space-between; align-items: center; }
-.footer-left { font-size: 0.7rem; color: rgba(255,255,255,0.2); }
-.footer-right { font-size: 0.7rem; color: rgba(255,255,255,0.2); text-align: right; }
+.edappadi-card {
+  background: rgba(245,158,11,0.06);
+  border: 1px solid rgba(245,158,11,0.18);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.edappadi-icon { font-size: 1.4rem; line-height: 1; margin-top: 2px; flex-shrink: 0; }
+.edappadi-body {}
+.edappadi-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #F59E0B; margin-bottom: 4px; }
+.edappadi-text { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+.edappadi-text strong { color: rgba(255,255,255,0.80); }
+
+/* ── AUTHOR / FOOTER ── */
+.footer { margin-top: auto; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.07); }
+.footer .wrap { display: flex; align-items: center; justify-content: space-between; }
+.author { display: flex; align-items: center; gap: 12px; }
+.author-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #7C3AED, #C084FC); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 800; color: #fff; }
+.author-name { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.70); }
+.author-handle { font-size: 0.70rem; color: rgba(255,255,255,0.35); }
+.footer-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.ftag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 100px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.40); }
+
+@media (max-width: 760px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
+  .region-grid { grid-template-columns: repeat(3,1fr); }
+}
 </style>
 </head>
 <body>
 
-<div class="bg-art">
+<div class="bg">
   <div class="bg-grid"></div>
-  <div class="glow-1"></div>
-  <div class="glow-2"></div>
-  <div class="glow-3"></div>
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
 </div>
 
-<!-- Top bar -->
-<div class="topbar">
-  <div class="page">
+<header class="topbar">
+  <div class="wrap">
     <div class="brand">
-      <div class="brand-dot"></div>
-      Anand Raj · Data Analysis
+      <div class="brand-pip"></div>
+      ndranandraj.com
     </div>
-    <div class="topbar-meta">Tamil Nadu Assembly Elections · 2026</div>
+    <div class="topbar-right">
+      <span class="tag-pill">TN 2026</span>
+      <span class="tag-pill">TVK Debut</span>
+    </div>
   </div>
-</div>
+</header>
 
-<!-- Hero -->
 <section class="hero">
-  <div class="page">
-
-    <div class="issue-badge">
-      <span></span>
-      TN 2026 · TVK Debut · Post-Results Analysis
-    </div>
-
-    <h1 class="hero-headline">
-      <span class="count">233</span> Seats.
-      <br><span class="accent">One Debut.</span>
-      <em>Where the wave broke — and where it didn't.</em>
-    </h1>
-
-    <p class="hero-deck">
-      Vijay's Tamilaga Vettri Kazhagam fielded candidates across 233 of 234 constituencies.
-      They polled 1.72 crore votes, won 108 seats, and posted the highest vote-to-seat
-      efficiency of any party in the 2026 cycle. This is the regional anatomy of that result.
-    </p>
-
-    <div class="stat-strip">
-      <div class="stat-card">
-        <div class="stat-num purple">233</div>
-        <div class="stat-label">Seats Contested</div>
-        <div class="stat-sub">Skipped only Edappadi</div>
+  <div class="wrap">
+    <div class="hero-left">
+      <div class="kicker">
+        <div class="kicker-line"></div>
+        <span class="kicker-text">Results Day &middot; May 4, 2026</span>
       </div>
-      <div class="stat-card gold">
-        <div class="stat-num gold">108</div>
-        <div class="stat-label">Seats Won</div>
-        <div class="stat-sub">46.15% of the Assembly</div>
-      </div>
-      <div class="stat-card coral">
-        <div class="stat-num coral">34.9%</div>
-        <div class="stat-label">Statewide Vote Share</div>
-        <div class="stat-sub">1.72 crore votes polled</div>
-      </div>
-      <div class="stat-card teal">
-        <div class="stat-num teal">1.32×</div>
-        <div class="stat-label">Seat Efficiency</div>
-        <div class="stat-sub">Highest of any major party</div>
-      </div>
-    </div>
-
-    <div class="cta-row">
-      <a href="tvk-debut-2026.html" class="btn-primary">
-        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Read the Full Analysis
-      </a>
-      <a href="index.html" class="btn-secondary">
-        ← Back to Dashboard
+      <h1 class="hero-title">TVK 233:<br><em>A Debut, Mapped</em></h1>
+      <p class="hero-sub">
+        Vijay's Tamilaga Vettri Kazhagam contested 233 of 234 constituencies and won 108 seats with a 1.32 seat-efficiency&mdash;the highest of any major party. A tsunami in Chennai. A ripple in the Cauvery delta. This is the regional anatomy of that result.
+      </p>
+      <a href="/posts/tvk-debut-2026/" class="read-btn">
+        Read the analysis
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/>
+        </svg>
       </a>
     </div>
 
-    <div class="section-divider"></div>
+    <div class="hero-right seat-visual">
+      <div class="fraction-display">
+        <div class="fraction-num">108</div>
+        <div class="fraction-denom">/ 233</div>
+        <div class="fraction-label">Seats won of contested</div>
+        <div style="margin-top:18px;">
+          <div class="parl-bar"><div class="parl-bar-fill"></div></div>
+          <div class="parl-label"><span>0%</span><strong>46.15% of Assembly</strong><span>100%</span></div>
+        </div>
+      </div>
 
-    <!-- Regional preview -->
-    <div class="preview-section">
-      <div class="section-eyebrow">Where the wave landed · 9 regions</div>
-      <div class="preview-grid">
-        <div class="region-pill">
-          <div class="region-name">Chennai &amp; Suburbs</div>
-          <div class="region-bar-wrap"><div class="region-bar" style="width:90%;background:linear-gradient(90deg,#A855F7,#C084FC)"></div></div>
-          <div class="region-meta"><strong>+18.5</strong> seats above weight</div>
+      <div class="mini-stats">
+        <div class="ms">
+          <div class="ms-num amber">34.9%</div>
+          <div class="ms-lbl">Vote share</div>
         </div>
-        <div class="region-pill">
-          <div class="region-name">Kongu (West)</div>
-          <div class="region-bar-wrap"><div class="region-bar" style="width:72%;background:linear-gradient(90deg,#A855F7,#C084FC)"></div></div>
-          <div class="region-meta"><strong>+8.4</strong> seats above weight</div>
+        <div class="ms">
+          <div class="ms-num teal">1.32&times;</div>
+          <div class="ms-lbl">Seat efficiency</div>
         </div>
-        <div class="region-pill">
-          <div class="region-name">Madurai Region</div>
-          <div class="region-bar-wrap"><div class="region-bar" style="width:55%;background:linear-gradient(90deg,#A855F7,#C084FC)"></div></div>
-          <div class="region-meta"><strong>+3.6</strong> seats above weight</div>
+        <div class="ms">
+          <div class="ms-num coral">1.72Cr</div>
+          <div class="ms-lbl">Total votes</div>
         </div>
-        <div class="region-pill">
-          <div class="region-name">Central</div>
-          <div class="region-bar-wrap"><div class="region-bar" style="width:44%;background:linear-gradient(90deg,#F59E0B,#D97757)"></div></div>
-          <div class="region-meta"><strong>Near weight</strong></div>
-        </div>
-        <div class="region-pill">
-          <div class="region-name">Cauvery Delta</div>
-          <div class="region-bar-wrap"><div class="region-bar" style="width:28%;background:linear-gradient(90deg,#2F2F3F,#3a3a4a)"></div></div>
-          <div class="region-meta"><strong>-3.5</strong> seats below weight</div>
-        </div>
-        <div class="region-pill">
-          <div class="region-name">Northeast Coast</div>
-          <div class="region-bar-wrap"><div class="region-bar" style="width:22%;background:linear-gradient(90deg,#2F2F3F,#3a3a4a)"></div></div>
-          <div class="region-meta"><strong>-3.9</strong> seats below weight</div>
+        <div class="ms">
+          <div class="ms-num purple">20</div>
+          <div class="ms-lbl">NDA strongholds flipped</div>
         </div>
       </div>
     </div>
-
-    <!-- Author -->
-    <div class="author-block">
-      <div class="author-avatar">A</div>
-      <div>
-        <div class="author-name">Anand Raj</div>
-        <div class="author-role">Data journalist · ndranandraj.com</div>
-      </div>
-      <div class="author-sep">
-        <div class="pub-date">
-          <strong>May 2026</strong>
-          Results Day Analysis
-        </div>
-      </div>
-    </div>
-
-    <div class="tag-row">
-      <span class="tag">Tamil Nadu</span>
-      <span class="tag">2026 Elections</span>
-      <span class="tag">TVK</span>
-      <span class="tag">Vijay</span>
-      <span class="tag">Regional Analysis</span>
-      <span class="tag">Seat Efficiency</span>
-      <span class="tag">Data Journalism</span>
-    </div>
-
   </div>
 </section>
 
-<footer>
-  <div class="page">
-    <div class="footer-left">
-      Analysis based on ECI official results · pipelines/23_tvk_debut_analysis.py
+<hr class="divider">
+
+<section class="regional">
+  <div class="wrap">
+    <div class="section-label">TVK strike rate by region</div>
+    <div class="region-grid">
+      <!-- strike rates from blog post table -->
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:86.5%;background:linear-gradient(0deg,#7C3AED,#C084FC);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#C084FC;">86%</div>
+        <div class="rg-name">Chennai &amp; Suburbs</div>
+        <div class="rg-note">32 / 37</div>
+      </div>
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:52.4%;background:linear-gradient(0deg,#D97757,#F59E0B);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#F59E0B;">52%</div>
+        <div class="rg-name">Madurai Region</div>
+        <div class="rg-note">11 / 21</div>
+      </div>
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:52.2%;background:linear-gradient(0deg,#D97757,#F59E0B);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#F59E0B;">52%</div>
+        <div class="rg-name">Kongu West</div>
+        <div class="rg-note">24 / 46</div>
+      </div>
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:43.5%;background:linear-gradient(0deg,#D97757,#E8923A);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#E8923A;">44%</div>
+        <div class="rg-name">Central</div>
+        <div class="rg-note">10 / 23</div>
+      </div>
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:42.9%;background:linear-gradient(0deg,#D97757,#E8923A);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#E8923A;">43%</div>
+        <div class="rg-name">North</div>
+        <div class="rg-note">9 / 21</div>
+      </div>
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:40.5%;background:linear-gradient(0deg,#D97757,#E8923A);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#E8923A;">41%</div>
+        <div class="rg-name">Deep South</div>
+        <div class="rg-note">15 / 37</div>
+      </div>
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:27.3%;background:linear-gradient(0deg,#3F3F5C,#6B6B8A);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#9999B8;">27%</div>
+        <div class="rg-name">Krishnagiri Belt</div>
+        <div class="rg-note">3 / 11</div>
+      </div>
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:11.1%;background:linear-gradient(0deg,#3F3F5C,#6B6B8A);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#9999B8;">11%</div>
+        <div class="rg-name">Cauvery Delta</div>
+        <div class="rg-note">2 / 18</div>
+      </div>
+      <div class="rg-col">
+        <div class="rg-bar-wrap">
+          <div class="rg-bar-track">
+            <div class="rg-bar-fill" style="height:10%;background:linear-gradient(0deg,#3F3F5C,#6B6B8A);"></div>
+          </div>
+        </div>
+        <div class="rg-rate" style="color:#9999B8;">10%</div>
+        <div class="rg-name">Northeast Coast</div>
+        <div class="rg-note">2 / 20</div>
+      </div>
     </div>
-    <div class="footer-right">
-      <a href="tvk-debut-post-template.md" style="color:rgba(255,255,255,0.2);text-decoration:none;">
-        Read the post template →
-      </a>
+  </div>
+</section>
+
+<section class="edappadi-note">
+  <div class="wrap">
+    <div class="edappadi-card">
+      <div class="edappadi-icon">&#9651;</div>
+      <div class="edappadi-body">
+        <div class="edappadi-title">The Edappadi exception</div>
+        <div class="edappadi-text">TVK filed a candidate against every major AIADMK leader in TN 2026 &mdash; except one. <strong>AC #88 Edappadi</strong>, home constituency of AIADMK general secretary <strong>Edappadi K. Palaniswami</strong>, was left uncontested. The only blank in 234 constituencies. Read as strategic deference, or a calculation that EPS in his fortress was not a fight worth picking.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="author">
+      <div class="author-avatar">A</div>
+      <div>
+        <div class="author-name">Anandraj</div>
+        <div class="author-handle">ndranandraj.com</div>
+      </div>
+    </div>
+    <div class="footer-tags">
+      <span class="ftag">Tamil Nadu 2026</span>
+      <span class="ftag">TVK</span>
+      <span class="ftag">Vijay</span>
+      <span class="ftag">Data Analysis</span>
+      <span class="ftag">Results</span>
     </div>
   </div>
 </footer>

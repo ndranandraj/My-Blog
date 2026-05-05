@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>329 Dummies: The Verdict — TN 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: #0C0A08; color: #F5F1ED; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── BACKGROUND ── */
+.bg {
+  position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+  background: radial-gradient(ellipse 900px 600px at 80% 15%, rgba(232,146,58,0.11) 0%, transparent 60%),
+              radial-gradient(ellipse 600px 500px at 10% 80%, rgba(217,119,87,0.09) 0%, transparent 60%);
+}
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.bg-glow-r { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(232,146,58,0.14) 0%, transparent 65%); top: -100px; right: -60px; animation: f1 22s ease-in-out infinite; }
+.bg-glow-l { position: absolute; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(217,119,87,0.10) 0%, transparent 65%); bottom: -60px; left: -40px; animation: f2 18s ease-in-out infinite; }
+@keyframes f1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,30px)} }
+@keyframes f2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-25px)} }
+
+/* ── LAYOUT ── */
+.wrap { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 0 36px; width: 100%; }
+
+/* ── TOPBAR ── */
+.topbar { padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; }
+.brand { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.30); display: flex; align-items: center; gap: 8px; }
+.brand-pip { width: 6px; height: 6px; border-radius: 50%; background: #E8923A; }
+.verdict-badge {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 13px; border-radius: 100px;
+  background: rgba(232,146,58,0.12); border: 1px solid rgba(232,146,58,0.35); color: #E8923A;
+}
+.verdict-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: #E8923A; animation: blink 1.4s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+/* ── HERO ── */
+.hero { padding: 64px 0 48px; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: start; }
+
+.kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.kicker-line { width: 28px; height: 2px; background: #E8923A; }
+.kicker-text { font-size: 0.70rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #A87040; }
+
+.hero-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 900; line-height: 1.10; color: #FFFFFF; margin-bottom: 14px; }
+.hero-title em { font-style: italic; color: #E8923A; }
+
+.hero-sub { font-size: 1rem; font-weight: 400; line-height: 1.68; color: rgba(245,241,237,0.55); max-width: 460px; margin-bottom: 32px; }
+
+.read-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, #C05A1A 0%, #E8923A 100%);
+  color: #fff; font-size: 0.80rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 12px 26px; border-radius: 8px;
+  text-decoration: none; transition: opacity 0.2s;
+}
+.read-btn:hover { opacity: 0.88; }
+.read-btn svg { width: 14px; height: 14px; }
+
+/* ── VERDICT PANEL (right) ── */
+.verdict-panel { display: flex; flex-direction: column; gap: 12px; }
+
+.verdict-card {
+  border-radius: 14px; padding: 22px 24px;
+  border: 1px solid;
+}
+.verdict-card.strict {
+  background: rgba(20,184,166,0.07);
+  border-color: rgba(20,184,166,0.22);
+}
+.verdict-card.loose {
+  background: rgba(232,146,58,0.07);
+  border-color: rgba(232,146,58,0.22);
+}
+.vc-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.vc-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
+.vc-label.strict { color: #14B8A6; }
+.vc-label.loose  { color: #E8923A; }
+.vc-big { font-size: 3.2rem; font-weight: 900; line-height: 1; }
+.vc-big.strict { color: #14B8A6; }
+.vc-big.loose  { color: #E8923A; }
+.vc-sub { font-size: 0.78rem; color: rgba(245,241,237,0.45); line-height: 1.5; margin-top: 6px; }
+.vc-sub strong { color: rgba(245,241,237,0.70); }
+
+/* Tier pill row */
+.tier-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.tier-pill { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+.tier-pill.exact { background: rgba(20,184,166,0.15); color: #14B8A6; border: 1px solid rgba(20,184,166,0.3); }
+.tier-pill.near  { background: rgba(232,146,58,0.12); color: #E8923A; border: 1px solid rgba(232,146,58,0.3); }
+.tier-pill.word  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.40); border: 1px solid rgba(255,255,255,0.12); }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); }
+
+/* ── NUMBERS STRIP ── */
+.numbers-strip { padding: 36px 0; }
+.ns-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+.ns-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 16px 18px; }
+.ns-num { font-size: 1.6rem; font-weight: 800; line-height: 1; color: #E8923A; }
+.ns-lbl { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 5px; }
+
+/* ── NEAR MISS STRIP ── */
+.near-miss { padding: 0 0 40px; }
+.nm-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 14px; }
+.nm-table { width: 100%; border-collapse: collapse; font-size: 0.80rem; }
+.nm-table th { font-size: 0.60rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.30); padding: 0 10px 10px 0; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.nm-table td { padding: 9px 10px 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.65); vertical-align: top; }
+.nm-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: #E8923A; }
+.nm-table td.constituency { color: rgba(255,255,255,0.85); font-weight: 600; }
+.ratio-high { color: #E8923A !important; }
+.ratio-low  { color: rgba(255,255,255,0.40) !important; }
+
+/* ── FOOTER ── */
+.footer { margin-top: auto; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.07); }
+.footer .wrap { display: flex; align-items: center; justify-content: space-between; }
+.author { display: flex; align-items: center; gap: 12px; }
+.author-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #C05A1A, #E8923A); display: flex; align-items: center; justify-content: center; font-size: 0.76rem; font-weight: 800; color: #fff; }
+.author-name { font-size: 0.80rem; font-weight: 600; color: rgba(255,255,255,0.65); }
+.author-handle { font-size: 0.68rem; color: rgba(255,255,255,0.30); }
+.footer-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.ftag { font-size: 0.63rem; font-weight: 600; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 100px; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.35); }
+
+@media (max-width: 740px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .ns-grid { grid-template-columns: repeat(3,1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-r"></div>
+  <div class="bg-glow-l"></div>
+</div>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><div class="brand-pip"></div>ndranandraj.com</div>
+    <div class="verdict-badge"><div class="verdict-badge-dot"></div>Results Verdict</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-left">
+      <div class="kicker">
+        <div class="kicker-line"></div>
+        <span class="kicker-text">Follow-up &middot; May 4, 2026</span>
+      </div>
+      <h1 class="hero-title">How Many of the<br><em>329 Dummies</em><br>Actually Mattered</h1>
+      <p class="hero-sub">
+        Three weeks before polling I flagged 329 suspect candidate pairs. The votes are in. In the cleanest test, zero seats flipped. In the noisiest test, two. Both can be true at once. Here is the full accounting.
+      </p>
+      <a href="/posts/tn-2026-dummy-candidates-results/" class="read-btn">
+        Read the verdict
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="verdict-panel">
+      <div class="verdict-card strict">
+        <div class="vc-header">
+          <span class="vc-label strict">Strict test (Exact + Near-Full)</span>
+        </div>
+        <div class="vc-big strict">0</div>
+        <div class="vc-sub">Consequential seat losses. No major candidate lost a seat where exact-name dummies plausibly covered the margin.</div>
+        <div class="tier-row">
+          <span class="tier-pill exact">EXACT: 64 pairs</span>
+          <span class="tier-pill near">NEAR-FULL: 36 pairs</span>
+        </div>
+      </div>
+
+      <div class="verdict-card loose">
+        <div class="vc-header">
+          <span class="vc-label loose">Inclusive test (all 329 pairs)</span>
+        </div>
+        <div class="vc-big loose">2</div>
+        <div class="vc-sub">Near-miss seats. <strong>Tirukkoyilur</strong> (285-vote margin, 571 dummy votes) and <strong>Palani</strong> (693-vote margin, 1,057 dummy votes). Both TVK losses. Neither a causal claim.</div>
+        <div class="tier-row">
+          <span class="tier-pill word">WORD-MATCH: 163 pairs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="numbers-strip">
+  <div class="wrap">
+    <div class="ns-grid">
+      <div class="ns-card">
+        <div class="ns-num">329</div>
+        <div class="ns-lbl">Pairs flagged</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num">263</div>
+        <div class="ns-lbl">Pairs that contested</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num">152</div>
+        <div class="ns-lbl">Targeted majors lost</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num" style="color:#9999B8;">~200</div>
+        <div class="ns-lbl">Median dummy votes</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num" style="color:#9999B8;">27K</div>
+        <div class="ns-lbl">Median losing margin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="near-miss">
+  <div class="wrap">
+    <div class="nm-label">Closest the math came to working</div>
+    <table class="nm-table">
+      <thead>
+        <tr>
+          <th>Constituency</th>
+          <th>Party</th>
+          <th>Margin</th>
+          <th>Dummy votes</th>
+          <th>Ratio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="constituency">TIRUKKOYILUR</td>
+          <td>TVK</td>
+          <td>285 (0.13%)</td>
+          <td>571</td>
+          <td class="ratio-high">2.00&times;</td>
+        </tr>
+        <tr>
+          <td class="constituency">PALANI</td>
+          <td>TVK</td>
+          <td>693 (0.33%)</td>
+          <td>1,057</td>
+          <td class="ratio-high">1.53&times;</td>
+        </tr>
+        <tr>
+          <td class="constituency">KALLAKURICHI</td>
+          <td>ADMK</td>
+          <td>798 (0.32%)</td>
+          <td>616</td>
+          <td class="ratio-low">0.77&times;</td>
+        </tr>
+        <tr>
+          <td class="constituency">TIRUVANNAMALAI</td>
+          <td>TVK</td>
+          <td>2,455 (1.12%)</td>
+          <td>850</td>
+          <td class="ratio-low">0.35&times;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="author">
+      <div class="author-avatar">A</div>
+      <div>
+        <div class="author-name">Anandraj</div>
+        <div class="author-handle">ndranandraj.com</div>
+      </div>
+    </div>
+    <div class="footer-tags">
+      <span class="ftag">Tamil Nadu 2026</span>
+      <span class="ftag">Dummy Candidates</span>
+      <span class="ftag">Investigation</span>
+      <span class="ftag">Results</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

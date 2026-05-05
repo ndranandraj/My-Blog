@@ -437,7 +437,7 @@ async function load() {
     const data = await fetch('data/tvk_map_data.json').then(r => r.ok ? r.json() : null);
     if (data && data.per_ac) {
       data.per_ac.forEach(d => { perAc[d.ac_no] = d; });
-      if (data.as_of === 'results_loaded') {
+      if (data.as_of && !data._mock) {
         document.getElementById('prePollBanner').style.display = 'none';
       }
       updateStatBar(data.per_ac);

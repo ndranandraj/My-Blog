@@ -11,9 +11,9 @@ pillar: true
 readingTime: true
 showToc: true
 TocOpen: false
-image: "/images/dummy-candidates-cover.png"
+image: "/images/dummy-candidates-results-cover.png"
 cover:
-  image: "/images/dummy-candidates-cover.png"
+  image: "/images/dummy-candidates-results-cover.png"
   alt: "How Many of the 329 Dummies Actually Mattered — TN 2026 post-results analysis"
   caption: "329 flagged pairs. 263 contested. Zero strict-test consequential seats. Two near misses."
   relative: false
