@@ -61,7 +61,7 @@ enableRobotsTXT = true
   [params.featured]
     kicker = "RESULTS DAY · MAY 4, 2026"
     title = "TVK 233: A Debut, Mapped"
-    description = "Vijay's TVK won 108 of 233 contested seats with 34.92% of the vote and the highest seat-to-vote efficiency of any major party. This is the regional anatomy of that result — where the wave broke and where it didn't."
+    description = "Vijay's TVK won 108 of 233 contested seats with 34.92% of the vote and the highest seat-to-vote efficiency of any major party. This is the regional anatomy of that result: where the wave broke and where it did not."
     url = "/posts/tvk-debut-2026/"
     image = "/images/tvk-debut-cover.png"
     imageAlt = "TVK 233: A Debut, Mapped — data analysis of Vijay's Tamilaga Vettri Kazhagam in the Tamil Nadu 2026 Assembly Election"
