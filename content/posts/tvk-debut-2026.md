@@ -25,7 +25,7 @@ That is not random. AC #88 is the home constituency of **Edappadi K. Palaniswami
 
 The data tells you the rest.
 
-**TVK won 108 of 233 contested seats.** They came second in 72 more, third in 51, and fourth or lower in only 2. They polled **1.72 crore votes (1,72,26,209)**, **34.92% of the statewide vote**, and converted that into **46.15% of the Assembly**.
+**TVK won 108 of 233 contested seats.** They came second in 74 more and third in 51. They were never below third place in any constituency they contested. They polled **1.72 crore votes (1,72,26,209)**, **34.92% of the statewide vote**, and converted that into **46.15% of the Assembly**.
 
 {{< kpi-row >}}
 {{< kpi value="108" label="seats won" tone="accent" sub="46.15% of the 234-seat assembly" >}}
@@ -97,13 +97,27 @@ TVK candidates are, on average, a generation younger than the people they were t
 | Where TVK landed | ACs | Share of contested |
 | :--- | ---: | ---: |
 | 1st (won) | 108 | 46.4% |
-| 2nd | 72 | 30.9% |
+| 2nd | 74 | 31.8% |
 | 3rd | 51 | 21.9% |
-| 4th or lower | 2 | 0.9% |
+| 4th or lower | 0 | 0.0% |
 
-In **180 of 233 seats** (77.3%), TVK was either the winner or the runner-up. There is almost no part of Tamil Nadu where TVK did not register as a top-two force. For a debut party, that is the most basic consolidation test, and the number is unusually high.
+In **182 of 233 seats** (78.1%), TVK was either the winner or the runner-up. There is almost no part of Tamil Nadu where TVK did not register as a top-two force. For a debut party, that is the most basic consolidation test, and the number is unusually high.
 
 Across the 108 wins, the **median winning margin was 8.93% of the votes polled in that constituency**. The 10th-percentile winning margin was 1.27% (seats that hung on a few hundred votes). The 90th-percentile was 22.05% (the Chennai metro sweep-seats). TVK won by huge margins where the wave concentrated, and by photo-finish margins where it was contested.
+
+---
+
+{{< callout title="The Chief Minister lost his seat" type="insight" >}}
+M.K. Stalin lost Kolathur to V.S. Babu of TVK, his own former associate, by 8,795 votes. He is one of **93 sitting MLAs who defended their 2021 seat and lost** in 2026. **64 of those defeats came from TVK directly.** Only 56 of the outgoing 234 incumbents retained their seats — a 23.9% retention rate, the lowest in modern TN history.
+
+**[Read the full incumbents-defeated post →](/posts/tn-2026-incumbents-defeated/)**
+{{< /callout >}}
+
+{{< callout title="The youngest, most-educated assembly TN has elected" type="insight" >}}
+Median MLA age in the new Assembly is **52**. TVK's median MLA is **44** (13 to 15 years younger than DMK and AIADMK). **41 MLAs are under 40, 35 of them from TVK.** **22 women** were elected statewide, 13 of them from TVK (DMK has zero).
+
+**[Read the full new-assembly-profile post →](/posts/tn-2026-new-assembly-profile/)**
+{{< /callout >}}
 
 ---
 
@@ -156,7 +170,7 @@ Five of the eight biggest wins came against DMK in Chennai-metro seats DMK was s
 TVK won by tens of thousands where the wave concentrated and by hundreds where the field had time to tighten. Both halves of that statement matter for 2031.
 {{< /pullquote >}}
 
-### When TVK came 2nd (72 seats)
+### When TVK came 2nd (74 seats)
 
 This is the column to watch most carefully. It tells you where TVK is one cycle of consolidation away from a win, and it also tells you which of the two old majors absorbed the wave and which did not.
 
@@ -164,11 +178,11 @@ The gap-to-winner distribution is much tighter than the win column:
 
 | Gap to winner (votes) | Seats | Share of TVK 2nd-place |
 | :--- | ---: | ---: |
-| under 2,000 | 12 | 16.7% |
-| 2,000 to 5,000 | 14 | 19.4% |
-| 5,000 to 10,000 | 18 | 25.0% |
-| 10,000 to 25,000 | 22 | 30.6% |
-| over 25,000 | 6 | 8.3% |
+| under 2,000 | 12 | 16.2% |
+| 2,000 to 5,000 | 15 | 20.3% |
+| 5,000 to 10,000 | 18 | 24.3% |
+| 10,000 to 25,000 | 23 | 31.1% |
+| over 25,000 | 6 | 8.1% |
 
 Twelve seats lost by under 2,000 votes is the headline. That is a queue of "next time" candidates if either DMK or AIADMK can be split or weakened in the same constituencies in 2031.
 
@@ -176,33 +190,33 @@ When TVK came 2nd, who actually won?
 
 | Winner party | Seats | Share |
 | :--- | ---: | ---: |
-| DMK | 35 | 48.6% |
-| ADMK | 24 | 33.3% |
-| INC | 4 | 5.6% |
-| IUML | 2 | 2.8% |
-| PMK | 2 | 2.8% |
-| CPI(M) | 2 | 2.8% |
+| DMK | 37 | 50.0% |
+| ADMK | 24 | 32.4% |
+| INC | 4 | 5.4% |
+| IUML | 2 | 2.7% |
+| PMK | 2 | 2.7% |
+| CPI(M) | 2 | 2.7% |
 | BJP | 1 | 1.4% |
 | DMDK | 1 | 1.4% |
 | CPI | 1 | 1.4% |
 
-Almost half (35 of 72) were DMK wins. TVK's 2nd-place column is, more than anything else, the map of seats DMK successfully held against the wave. ADMK held 24, mostly in the Kongu pockets that did not break.
+Half (37 of 74) were DMK wins. TVK's 2nd-place column is, more than anything else, the map of seats DMK successfully held against the wave. ADMK held 24, mostly in the Kongu pockets that did not break.
 
 When TVK came 2nd, who was pushed to 3rd?
 
 | Pushed-to-3rd party | Seats | Share |
 | :--- | ---: | ---: |
-| ADMK | 30 | 41.7% |
-| DMK | 18 | 25.0% |
-| BJP | 10 | 13.9% |
-| DMDK | 4 | 5.6% |
-| PMK | 3 | 4.2% |
-| INC | 3 | 4.2% |
-| AMMK | 2 | 2.8% |
+| ADMK | 32 | 43.2% |
+| DMK | 18 | 24.3% |
+| BJP | 10 | 13.5% |
+| DMDK | 4 | 5.4% |
+| PMK | 3 | 4.1% |
+| INC | 3 | 4.1% |
+| AMMK | 2 | 2.7% |
 | VCK | 1 | 1.4% |
 | CPI(M) | 1 | 1.4% |
 
-This is the cleanest single number for the "TVK ate AIADMK's lunch" thesis. Across 72 seats where TVK came 2nd, the candidate displaced from contention was AIADMK 30 times versus DMK 18 times. Even outside their own wins, TVK was twice as likely to have crowded out an AIADMK candidate as a DMK one.
+This is the cleanest single number for the "TVK ate AIADMK's lunch" thesis. Across 74 seats where TVK came 2nd, the candidate displaced from contention was AIADMK 32 times versus DMK 18 times. Even outside their own wins, TVK was nearly twice as likely to have crowded out an AIADMK candidate as a DMK one.
 
 The eight closest 2nd-place misses:
 
@@ -349,21 +363,29 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
 >}}
 
 <div class="explore-grid">
-<a href="/election-dashboard/">
-  <strong>Full election dashboard</strong>
-  <span>Historical context. 2011, 2016, 2021, and 2026 results side by side, with district swings, strongholds, and flipped seats.</span>
+<a href="/posts/tn-2026-incumbents-defeated/">
+  <strong>The Chief Minister lost his seat</strong>
+  <span>The deep-dive on the 56 sitting MLAs who lost. M.K. Stalin, PTR, Anbil Mahesh, Geetha Jeevan. Marquee table of every defeat.</span>
 </a>
-<a href="/data/tn-2026-candidates/">
-  <strong>2026 candidates dataset</strong>
-  <span>The full 4,023-candidate roster with assets, qualifications, criminal cases, and party-alliance metadata. Open under CC BY 4.0.</span>
+<a href="/posts/tn-2026-new-assembly-profile/">
+  <strong>Youngest, most-educated assembly TN has elected</strong>
+  <span>Median age dropped 12 years. 41 MLAs under 40. 22 women. Demographic anatomy of the generational reset.</span>
 </a>
 <a href="/posts/tn-2026-dummy-candidates-results/">
-  <strong>Companion post: dummy candidates</strong>
-  <span>The other half of the May 4 story. 329 flagged pairs, two TVK losses where the math came close to working, and what it means.</span>
+  <strong>How many of the 329 dummies actually mattered</strong>
+  <span>The dummy-pair follow-up. 329 flagged pairs, two TVK losses where the math came close to working in a wave year.</span>
+</a>
+<a href="/election-dashboard/">
+  <strong>Full election dashboard</strong>
+  <span>Historical context: 2011, 2016, 2021, 2026 side by side, district swings, strongholds, and flipped seats.</span>
 </a>
 <a href="/election-dashboard/dummy-candidates-2026.html">
   <strong>Dummy candidates dashboard</strong>
-  <span>The 15 closest near-misses, full per-pair table, and the EXACT vs NEAR vs WORD_MATCH classifier breakdown.</span>
+  <span>The 15 closest near-misses, full per-pair table, EXACT vs NEAR vs WORD_MATCH classifier breakdown.</span>
+</a>
+<a href="/data/tn-2026-candidates/">
+  <strong>2026 candidates dataset</strong>
+  <span>The full 4,023-candidate roster with assets, qualifications, criminal cases, party metadata. CC BY 4.0.</span>
 </a>
 </div>
 

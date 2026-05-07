@@ -1,0 +1,503 @@
+{
+  "overall": {
+    "seats": 234,
+    "median_age": 52.0,
+    "youngest": 28.0,
+    "oldest": 79.0,
+    "under_40": 41,
+    "under_45": 68,
+    "women": 22,
+    "women_pct": 9.4,
+    "graduate_plus": 123,
+    "postgrad_plus": 35,
+    "edu_breakdown": {
+      "Graduate": 88,
+      "Other / Not declared": 55,
+      "Postgraduate": 35,
+      "Secondary": 29,
+      "Higher secondary": 19,
+      "Not declared": 8
+    }
+  },
+  "party_profiles": [
+    {
+      "party": "TVK",
+      "seats": 108,
+      "median_age": 44.0,
+      "mean_age": 44.9,
+      "youngest_age": 28.0,
+      "oldest_age": 78.0,
+      "under_35": 18,
+      "under_40": 35,
+      "under_45": 57,
+      "women": 13,
+      "women_pct": 12.0,
+      "graduate_plus": 58,
+      "graduate_plus_pct": 53.7,
+      "postgrad_plus": 18,
+      "postgrad_plus_pct": 16.7,
+      "median_assets_lakh": 109.0,
+      "mean_assets_lakh": 2241.6,
+      "edu_breakdown": {
+        "Graduate": 40,
+        "Other / Not declared": 28,
+        "Postgraduate": 18,
+        "Secondary": 12,
+        "Higher secondary": 6,
+        "Not declared": 4
+      }
+    },
+    {
+      "party": "DMK",
+      "seats": 59,
+      "median_age": 59.0,
+      "mean_age": 59.0,
+      "youngest_age": 32.0,
+      "oldest_age": 77.0,
+      "under_35": 1,
+      "under_40": 2,
+      "under_45": 4,
+      "women": 0,
+      "women_pct": 0.0,
+      "graduate_plus": 38,
+      "graduate_plus_pct": 64.4,
+      "postgrad_plus": 13,
+      "postgrad_plus_pct": 22.0,
+      "median_assets_lakh": 191.0,
+      "mean_assets_lakh": 467.4,
+      "edu_breakdown": {
+        "Secondary": 6,
+        "Graduate": 25,
+        "Higher secondary": 7,
+        "Postgraduate": 13,
+        "Other / Not declared": 7,
+        "Not declared": 1
+      }
+    },
+    {
+      "party": "AIADMK",
+      "seats": 47,
+      "median_age": 57.0,
+      "mean_age": 57.3,
+      "youngest_age": 29.0,
+      "oldest_age": 72.0,
+      "under_35": 1,
+      "under_40": 3,
+      "under_45": 5,
+      "women": 5,
+      "women_pct": 10.6,
+      "graduate_plus": 18,
+      "graduate_plus_pct": 38.3,
+      "postgrad_plus": 3,
+      "postgrad_plus_pct": 6.4,
+      "median_assets_lakh": 215.0,
+      "mean_assets_lakh": 3632.3,
+      "edu_breakdown": {
+        "Postgraduate": 3,
+        "Other / Not declared": 14,
+        "Secondary": 9,
+        "Higher secondary": 4,
+        "Graduate": 15,
+        "Not declared": 2
+      }
+    },
+    {
+      "party": "INC",
+      "seats": 5,
+      "median_age": 51.0,
+      "mean_age": 49.6,
+      "youngest_age": 38.0,
+      "oldest_age": 61.0,
+      "under_35": 0,
+      "under_40": 1,
+      "under_45": 1,
+      "women": 1,
+      "women_pct": 20.0,
+      "graduate_plus": 2,
+      "graduate_plus_pct": 40.0,
+      "postgrad_plus": 1,
+      "postgrad_plus_pct": 20.0,
+      "median_assets_lakh": 823.0,
+      "mean_assets_lakh": 1828.2,
+      "edu_breakdown": {
+        "Secondary": 1,
+        "Graduate": 1,
+        "Other / Not declared": 2,
+        "Postgraduate": 1
+      }
+    },
+    {
+      "party": "PMK",
+      "seats": 4,
+      "median_age": 52.0,
+      "mean_age": 50.0,
+      "youngest_age": 41.0,
+      "oldest_age": 55.0,
+      "under_35": 0,
+      "under_40": 0,
+      "under_45": 1,
+      "women": 1,
+      "women_pct": 25.0,
+      "graduate_plus": 0,
+      "graduate_plus_pct": 0.0,
+      "postgrad_plus": 0,
+      "postgrad_plus_pct": 0.0,
+      "median_assets_lakh": 766.5,
+      "mean_assets_lakh": 1622.5,
+      "edu_breakdown": {
+        "Other / Not declared": 3,
+        "Higher secondary": 1
+      }
+    },
+    {
+      "party": "BJP",
+      "seats": 1,
+      "median_age": 79.0,
+      "mean_age": 79.0,
+      "youngest_age": 79.0,
+      "oldest_age": 79.0,
+      "under_35": 0,
+      "under_40": 0,
+      "under_45": 0,
+      "women": 0,
+      "women_pct": 0.0,
+      "graduate_plus": 1,
+      "graduate_plus_pct": 100.0,
+      "postgrad_plus": 0,
+      "postgrad_plus_pct": 0.0,
+      "median_assets_lakh": null,
+      "mean_assets_lakh": null,
+      "edu_breakdown": {
+        "Graduate": 1
+      }
+    },
+    {
+      "party": "CPI(M)",
+      "seats": 2,
+      "median_age": 55.5,
+      "mean_age": 55.5,
+      "youngest_age": 46.0,
+      "oldest_age": 65.0,
+      "under_35": 0,
+      "under_40": 0,
+      "under_45": 0,
+      "women": 1,
+      "women_pct": 50.0,
+      "graduate_plus": 1,
+      "graduate_plus_pct": 50.0,
+      "postgrad_plus": 0,
+      "postgrad_plus_pct": 0.0,
+      "median_assets_lakh": 10.8,
+      "mean_assets_lakh": 10.8,
+      "edu_breakdown": {
+        "Secondary": 1,
+        "Graduate": 1
+      }
+    },
+    {
+      "party": "CPI",
+      "seats": 2,
+      "median_age": 57.0,
+      "mean_age": 57.0,
+      "youngest_age": 56.0,
+      "oldest_age": 58.0,
+      "under_35": 0,
+      "under_40": 0,
+      "under_45": 0,
+      "women": 0,
+      "women_pct": 0.0,
+      "graduate_plus": 2,
+      "graduate_plus_pct": 100.0,
+      "postgrad_plus": 0,
+      "postgrad_plus_pct": 0.0,
+      "median_assets_lakh": 0.0,
+      "mean_assets_lakh": 0.0,
+      "edu_breakdown": {
+        "Graduate": 2
+      }
+    },
+    {
+      "party": "VCK",
+      "seats": 2,
+      "median_age": 63.0,
+      "mean_age": 63.0,
+      "youngest_age": 55.0,
+      "oldest_age": 71.0,
+      "under_35": 0,
+      "under_40": 0,
+      "under_45": 0,
+      "women": 0,
+      "women_pct": 0.0,
+      "graduate_plus": 1,
+      "graduate_plus_pct": 50.0,
+      "postgrad_plus": 0,
+      "postgrad_plus_pct": 0.0,
+      "median_assets_lakh": 6.2,
+      "mean_assets_lakh": 6.2,
+      "edu_breakdown": {
+        "Higher secondary": 1,
+        "Graduate": 1
+      }
+    },
+    {
+      "party": "IUML",
+      "seats": 2,
+      "median_age": 60.5,
+      "mean_age": 60.5,
+      "youngest_age": 57.0,
+      "oldest_age": 64.0,
+      "under_35": 0,
+      "under_40": 0,
+      "under_45": 0,
+      "women": 0,
+      "women_pct": 0.0,
+      "graduate_plus": 1,
+      "graduate_plus_pct": 50.0,
+      "postgrad_plus": 0,
+      "postgrad_plus_pct": 0.0,
+      "median_assets_lakh": 109.2,
+      "mean_assets_lakh": 109.2,
+      "edu_breakdown": {
+        "Other / Not declared": 1,
+        "Graduate": 1
+      }
+    },
+    {
+      "party": "DMDK",
+      "seats": 1,
+      "median_age": 60.0,
+      "mean_age": 60.0,
+      "youngest_age": 60.0,
+      "oldest_age": 60.0,
+      "under_35": 0,
+      "under_40": 0,
+      "under_45": 0,
+      "women": 1,
+      "women_pct": 100.0,
+      "graduate_plus": 1,
+      "graduate_plus_pct": 100.0,
+      "postgrad_plus": 0,
+      "postgrad_plus_pct": 0.0,
+      "median_assets_lakh": null,
+      "mean_assets_lakh": null,
+      "edu_breakdown": {
+        "Graduate": 1
+      }
+    },
+    {
+      "party": "AMMK",
+      "seats": 1,
+      "median_age": null,
+      "mean_age": null,
+      "youngest_age": null,
+      "oldest_age": null,
+      "under_35": 0,
+      "under_40": 0,
+      "under_45": 0,
+      "women": 0,
+      "women_pct": 0.0,
+      "graduate_plus": 0,
+      "graduate_plus_pct": 0.0,
+      "postgrad_plus": 0,
+      "postgrad_plus_pct": 0.0,
+      "median_assets_lakh": null,
+      "mean_assets_lakh": null,
+      "edu_breakdown": {
+        "Not declared": 1
+      }
+    }
+  ],
+  "youngest_tvk": [
+    {
+      "name": "Kamali.S",
+      "age": 28,
+      "ac": "AVANASHI",
+      "education": "Master's Degree",
+      "gender": "F",
+      "votes": 84209,
+      "margin": 15373,
+      "vote_share_pct": 36.36
+    },
+    {
+      "name": "Sabari Iyngaran G",
+      "age": 28,
+      "ac": "PERIYAKULAM",
+      "education": "Master's Degree",
+      "gender": "M",
+      "votes": 85656,
+      "margin": 19321,
+      "vote_share_pct": 40.56
+    },
+    {
+      "name": "Rhevanth Charan",
+      "age": 30,
+      "ac": "MADURAVOYAL",
+      "education": "Not Specified",
+      "gender": "M",
+      "votes": 141725,
+      "margin": 61509,
+      "vote_share_pct": 48.26
+    },
+    {
+      "name": "Sabarinathan.R",
+      "age": 30,
+      "ac": "VIRUGAMPAKKAM",
+      "education": "Bachelor's Degree",
+      "gender": "M",
+      "votes": 76092,
+      "margin": 27086,
+      "vote_share_pct": 44.03
+    },
+    {
+      "name": "Abishek. R",
+      "age": 30,
+      "ac": "POLUR",
+      "education": "Bachelor's Degree",
+      "gender": "M",
+      "votes": 67961,
+      "margin": 227,
+      "vote_share_pct": 32.1
+    },
+    {
+      "name": "Keerthana S",
+      "age": 30,
+      "ac": "SIVAKASI",
+      "education": "Master's Degree",
+      "gender": "F",
+      "votes": 68709,
+      "margin": 11670,
+      "vote_share_pct": 35.51
+    },
+    {
+      "name": "Ramesh",
+      "age": 31,
+      "ac": "SRIRANGAM",
+      "education": "Bachelor's Degree",
+      "gender": "M",
+      "votes": 103235,
+      "margin": 33590,
+      "vote_share_pct": 40.49
+    },
+    {
+      "name": "Mohamed Farvas. J",
+      "age": 31,
+      "ac": "ARANTANGI",
+      "education": "Bachelor's Degree",
+      "gender": "M",
+      "votes": 73244,
+      "margin": 10062,
+      "vote_share_pct": 40.08
+    },
+    {
+      "name": "Selvam P",
+      "age": 31,
+      "ac": "VIRUDHUNAGAR",
+      "education": "Not Specified",
+      "gender": "M",
+      "votes": 63653,
+      "margin": 9391,
+      "vote_share_pct": 37.93
+    },
+    {
+      "name": "B.Vijayaraj",
+      "age": 32,
+      "ac": "THIRUPORUR",
+      "education": "Bachelor's Degree",
+      "gender": "M",
+      "votes": 110095,
+      "margin": 39351,
+      "vote_share_pct": 41.96
+    }
+  ],
+  "youngest_assembly": [
+    {
+      "name": "Kamali.S",
+      "age": 28,
+      "ac": "AVANASHI",
+      "party": "TVK",
+      "gender": "F",
+      "education": "Master's Degree"
+    },
+    {
+      "name": "Sabari Iyngaran G",
+      "age": 28,
+      "ac": "PERIYAKULAM",
+      "party": "TVK",
+      "gender": "M",
+      "education": "Master's Degree"
+    },
+    {
+      "name": "Dr. Dhilipan Jaishankar",
+      "age": 29,
+      "ac": "SANKARANKOVIL",
+      "party": "AIADMK",
+      "gender": "M",
+      "education": "Bachelor's Degree"
+    },
+    {
+      "name": "Rhevanth Charan",
+      "age": 30,
+      "ac": "MADURAVOYAL",
+      "party": "TVK",
+      "gender": "M",
+      "education": "Not Specified"
+    },
+    {
+      "name": "Sabarinathan.R",
+      "age": 30,
+      "ac": "VIRUGAMPAKKAM",
+      "party": "TVK",
+      "gender": "M",
+      "education": "Bachelor's Degree"
+    },
+    {
+      "name": "Abishek. R",
+      "age": 30,
+      "ac": "POLUR",
+      "party": "TVK",
+      "gender": "M",
+      "education": "Bachelor's Degree"
+    },
+    {
+      "name": "Keerthana S",
+      "age": 30,
+      "ac": "SIVAKASI",
+      "party": "TVK",
+      "gender": "F",
+      "education": "Master's Degree"
+    },
+    {
+      "name": "Ramesh",
+      "age": 31,
+      "ac": "SRIRANGAM",
+      "party": "TVK",
+      "gender": "M",
+      "education": "Bachelor's Degree"
+    },
+    {
+      "name": "Mohamed Farvas. J",
+      "age": 31,
+      "ac": "ARANTANGI",
+      "party": "TVK",
+      "gender": "M",
+      "education": "Bachelor's Degree"
+    },
+    {
+      "name": "Selvam P",
+      "age": 31,
+      "ac": "VIRUDHUNAGAR",
+      "party": "TVK",
+      "gender": "M",
+      "education": "Not Specified"
+    }
+  ],
+  "women_winners_by_party": {
+    "TVK": 13,
+    "AIADMK": 5,
+    "PMK": 1,
+    "DMDK": 1,
+    "CPI(M)": 1,
+    "INC": 1
+  },
+  "women_total": 22
+}

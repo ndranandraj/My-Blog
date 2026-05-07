@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Chief Minister Lost His Seat — TN 2026 Incumbents Defeated</title>
+<meta name="description" content="M.K. Stalin lost Kolathur by 8,795 votes. 56 sitting MLAs defended and lost in TN 2026. 37 fell to TVK directly.">
+<!-- Open Graph -->
+<meta property="og:title" content="The Chief Minister Lost His Seat: 56 sitting MLAs fell in TN 2026">
+<meta property="og:description" content="M.K. Stalin lost Kolathur to V.S. Babu of TVK by 8,795 votes. He had won the same seat in 2021 by 70,384 votes. He's one of 56 sitting MLAs defeated, 37 of them by TVK directly.">
+<meta property="og:image" content="https://ndranandraj.com/images/incumbents-defeated-cover.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ndranandraj.com/posts/tn-2026-incumbents-defeated/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: #0A0A12; color: #F5F1ED; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Color tokens — defeat-themed crimson primary, TVK purple for "who took the seat" */
+:root {
+  --crimson: #EF4444;
+  --crimson-deep: #B91C1C;
+  --crimson-soft: rgba(239, 68, 68, 0.12);
+  --tvk: #C084FC;
+  --tvk-deep: #7C3AED;
+  --tvk-soft: rgba(192, 132, 252, 0.14);
+  --gold: #F59E0B;
+  --ink: #F5F1ED;
+  --ink-2: rgba(245, 241, 237, 0.62);
+  --ink-3: rgba(245, 241, 237, 0.32);
+  --rule: rgba(255, 255, 255, 0.07);
+}
+
+/* ── BACKGROUND ── */
+.bg {
+  position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+  background:
+    radial-gradient(ellipse 1100px 600px at 78% 12%, rgba(239,68,68,0.13) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 500px at 18% 86%, rgba(192,132,252,0.10) 0%, transparent 60%);
+}
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.bg-glow-r { position: absolute; width: 540px; height: 540px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(239,68,68,0.16) 0%, transparent 65%);
+  top: -120px; right: -80px; animation: f1 22s ease-in-out infinite; }
+.bg-glow-l { position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(192,132,252,0.12) 0%, transparent 65%);
+  bottom: -80px; left: -60px; animation: f2 18s ease-in-out infinite; }
+@keyframes f1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-44px,32px)} }
+@keyframes f2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(34px,-26px)} }
+
+/* ── LAYOUT ── */
+.wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 36px; width: 100%; }
+
+/* ── TOPBAR ── */
+.topbar { padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; }
+.brand { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--ink-3); display: flex; align-items: center; gap: 8px; }
+.brand-pip { width: 6px; height: 6px; border-radius: 50%; background: var(--crimson); }
+.results-badge {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 13px; border-radius: 100px;
+  background: var(--crimson-soft); border: 1px solid rgba(239,68,68,0.32); color: var(--crimson);
+}
+.results-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--crimson); animation: blink 1.4s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+/* ── HERO ── */
+.hero { padding: 56px 0 44px; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 360px; gap: 56px; align-items: start; }
+
+.kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.kicker-line { width: 28px; height: 2px; background: var(--crimson); }
+.kicker-text { font-size: 0.70rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C56565; }
+
+.hero-title { font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.04; color: #FFFFFF; margin-bottom: 16px; letter-spacing: -0.015em; }
+.hero-title em { font-style: italic; color: var(--crimson); }
+.hero-title .accent-purple { color: var(--tvk); font-style: normal; font-weight: 800; }
+
+.hero-sub { font-size: 1.02rem; font-weight: 400; line-height: 1.66; color: var(--ink-2); max-width: 540px; margin-bottom: 30px; }
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.read-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--crimson-deep) 0%, var(--crimson) 100%);
+  color: #fff; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 13px 26px; border-radius: 8px;
+  text-decoration: none; transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 8px 22px -8px rgba(239,68,68,0.5);
+}
+.read-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+.read-btn svg { width: 14px; height: 14px; }
+
+.dash-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--tvk); text-decoration: none; padding: 10px 16px;
+  border-radius: 8px; border: 1px solid rgba(192,132,252,0.35);
+  background: var(--tvk-soft);
+  transition: background 0.2s;
+}
+.dash-btn:hover { background: rgba(192,132,252,0.22); }
+
+/* ── BEFORE/AFTER PANEL (right) ── */
+.ba-panel { display: flex; flex-direction: column; gap: 12px; }
+.ba-card {
+  border-radius: 14px; padding: 22px 24px;
+  border: 1px solid; position: relative; overflow: hidden;
+}
+.ba-card.before {
+  background: rgba(192,132,252,0.05);
+  border-color: rgba(192,132,252,0.20);
+}
+.ba-card.after {
+  background: rgba(239,68,68,0.06);
+  border-color: rgba(239,68,68,0.28);
+}
+.ba-arrow {
+  text-align: center; padding: 4px 0;
+  color: var(--ink-3); font-size: 1.4rem; line-height: 0.6;
+}
+
+.ba-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 6px; }
+.ba-label.before { color: var(--tvk); }
+.ba-label.after  { color: var(--crimson); }
+
+.ba-name { font-size: 0.96rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; line-height: 1.25; }
+.ba-name .seat { color: var(--ink-3); font-weight: 500; font-size: 0.84rem; }
+
+.ba-margin { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+.ba-margin .num { font-size: 2.4rem; font-weight: 900; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.ba-margin .num.before { color: var(--tvk); }
+.ba-margin .num.after  { color: var(--crimson); }
+.ba-margin .lbl { font-size: 0.74rem; font-weight: 600; color: var(--ink-2); }
+.ba-context { font-size: 0.74rem; color: var(--ink-3); line-height: 1.45; margin-top: 8px; }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid var(--rule); }
+
+/* ── NUMBERS STRIP ── */
+.numbers-strip { padding: 36px 0 8px; }
+.ns-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+.ns-card { background: rgba(255,255,255,0.03); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; }
+.ns-num { font-size: 1.8rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.ns-num.crimson { color: var(--crimson); }
+.ns-num.purple  { color: var(--tvk); }
+.ns-num.gold    { color: var(--gold); }
+.ns-num.muted   { color: rgba(255,255,255,0.55); }
+.ns-lbl { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; line-height: 1.4; }
+
+/* ── MARQUEE DEFEATS TABLE ── */
+.marquee { padding: 32px 0 12px; }
+.marquee-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.marquee-label::before { content: ''; width: 22px; height: 1px; background: var(--crimson); }
+
+.marquee-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.marquee-table th {
+  font-size: 0.60rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-3); padding: 0 12px 12px 0; text-align: left;
+  border-bottom: 1px solid var(--rule);
+}
+.marquee-table th.right { text-align: right; padding-right: 0; }
+.marquee-table td {
+  padding: 11px 12px 11px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--ink-2); vertical-align: middle;
+}
+.marquee-table td.right { text-align: right; padding-right: 0; font-variant-numeric: tabular-nums; }
+.marquee-table td.name {
+  color: var(--ink); font-weight: 600;
+}
+.marquee-table td.name .seat { color: var(--ink-3); font-weight: 400; font-size: 0.78rem; display: block; margin-top: 2px; }
+.marquee-table .ministerial { color: var(--gold); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; margin-left: 6px; padding: 1px 7px; border-radius: 99px; background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.22); display: inline-block; vertical-align: 1px; }
+.party-pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.02em; }
+.party-pill.dmk { background: rgba(220,38,38,0.16); color: #FCA5A5; }
+.party-pill.admk { background: rgba(34,197,94,0.16); color: #86EFAC; }
+.party-pill.tvk  { background: rgba(192,132,252,0.16); color: var(--tvk); }
+.party-pill.inc  { background: rgba(59,130,246,0.16); color: #93C5FD; }
+.flow-arrow { color: var(--ink-3); font-size: 0.78rem; padding: 0 8px; }
+.lost-margin { color: var(--crimson); font-weight: 700; }
+.won-margin  { color: var(--tvk); font-weight: 700; }
+.special-stalin td { background: rgba(239,68,68,0.04); }
+
+/* ── FOOTER ── */
+.footer { margin-top: auto; padding: 24px 0; border-top: 1px solid var(--rule); }
+.footer .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.author { display: flex; align-items: center; gap: 12px; }
+.author-avatar { width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--crimson-deep), var(--crimson));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem; font-weight: 800; color: #fff; }
+.author-name { font-size: 0.82rem; font-weight: 600; color: var(--ink-2); }
+.author-handle { font-size: 0.68rem; color: var(--ink-3); }
+.footer-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.ftag { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 100px; background: rgba(255,255,255,0.05); color: var(--ink-3); }
+
+@media (max-width: 740px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
+  .ns-grid { grid-template-columns: repeat(2,1fr); }
+  .marquee-table { font-size: 0.78rem; }
+  .marquee-table .seat { font-size: 0.7rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-r"></div>
+  <div class="bg-glow-l"></div>
+</div>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><div class="brand-pip"></div>ndranandraj.com</div>
+    <div class="results-badge"><div class="results-badge-dot"></div>Election Results · May 4, 2026</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-left">
+      <div class="kicker">
+        <div class="kicker-line"></div>
+        <span class="kicker-text">Tamil Nadu 2026 &middot; Post-results</span>
+      </div>
+      <h1 class="hero-title">The Chief Minister<br><em>Lost His Seat</em></h1>
+      <p class="hero-sub">
+        <strong>M.K. Stalin lost Kolathur by 8,795 votes</strong> to V.S. Babu of <span class="accent-purple">TVK</span>, his own former associate. Stalin had won the same seat in 2021 by 70,384 votes.
+        <br><br>
+        He is one of <strong>93 sitting MLAs</strong> who defended their 2021 seat in 2026 and lost. <strong>64 of those defeats came from TVK directly.</strong> Of the outgoing 234 incumbents, only 56 retained their seats. The cabinet is gone.
+      </p>
+      <div class="cta-row">
+        <a href="/posts/tn-2026-incumbents-defeated/" class="read-btn">
+          Read the full breakdown
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/>
+          </svg>
+        </a>
+        <a href="/election-dashboard/tvk-debut-2026.html" class="dash-btn">
+          Open the dashboard &rarr;
+        </a>
+      </div>
+    </div>
+
+    <div class="ba-panel">
+      <div class="ba-card before">
+        <div class="ba-label before">2021 · Incumbent</div>
+        <div class="ba-name">M.K. Stalin <span class="seat">Kolathur (AC 13) · DMK</span></div>
+        <div class="ba-margin">
+          <span class="num before">+70,384</span><span class="lbl">vote margin</span>
+        </div>
+        <div class="ba-context">Won with a 30-point cushion. The DMK chief was elected Tamil Nadu's Chief Minister.</div>
+      </div>
+
+      <div class="ba-arrow">&darr;</div>
+
+      <div class="ba-card after">
+        <div class="ba-label after">2026 · Defeat</div>
+        <div class="ba-name">V.S. Babu <span class="seat">Kolathur (AC 13) · TVK</span></div>
+        <div class="ba-margin">
+          <span class="num after">&minus;8,795</span><span class="lbl">votes for the CM</span>
+        </div>
+        <div class="ba-context">Beaten by a 75-year-old debutant with an 8th-grade education and ₹36 lakh in declared assets, vs Stalin's ₹6.01 crore.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="numbers-strip">
+  <div class="wrap">
+    <div class="ns-grid">
+      <div class="ns-card">
+        <div class="ns-num crimson">93</div>
+        <div class="ns-lbl">Defended seat<br>and lost</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num purple">64</div>
+        <div class="ns-lbl">Lost directly<br>to TVK</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num muted">63</div>
+        <div class="ns-lbl">Off the ballot<br>entirely</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num gold">56</div>
+        <div class="ns-lbl">Held same seat<br>(+6 won by shifting)</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num crimson">23.9%</div>
+        <div class="ns-lbl">Same-seat<br>retention rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="marquee">
+  <div class="wrap">
+    <div class="marquee-label">Marquee defeats &middot; ranked by 2021 winning margin</div>
+    <table class="marquee-table">
+      <thead>
+        <tr>
+          <th>Incumbent</th>
+          <th>Party</th>
+          <th class="right">Won 2021 by</th>
+          <th></th>
+          <th class="right">Lost 2026 by</th>
+          <th>Now</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">Krishnaswamy A<span class="seat">Poonamallee · AC 5</span></td>
+          <td><span class="party-pill dmk">DMK</span></td>
+          <td class="right won-margin">+94,110</td>
+          <td><span class="flow-arrow">&rarr;</span></td>
+          <td class="right lost-margin">&minus;72,740</td>
+          <td><span class="party-pill tvk">TVK</span></td>
+        </tr>
+        <tr class="special-stalin">
+          <td class="name">M.K. Stalin <span class="ministerial">CHIEF MINISTER</span><span class="seat">Kolathur · AC 13</span></td>
+          <td><span class="party-pill dmk">DMK</span></td>
+          <td class="right won-margin">+70,384</td>
+          <td><span class="flow-arrow">&rarr;</span></td>
+          <td class="right lost-margin">&minus;8,795</td>
+          <td><span class="party-pill tvk">TVK</span></td>
+        </tr>
+        <tr>
+          <td class="name">P. Geetha Jeevan<span class="seat">Thoothukkudi · AC 214</span></td>
+          <td><span class="party-pill dmk">DMK</span></td>
+          <td class="right won-margin">+50,310</td>
+          <td><span class="flow-arrow">&rarr;</span></td>
+          <td class="right lost-margin">&minus;37,731</td>
+          <td><span class="party-pill tvk">TVK</span></td>
+        </tr>
+        <tr>
+          <td class="name">Anbil Mahesh Poyyamozhi <span class="ministerial">SCHOOL EDUCATION MIN.</span><span class="seat">Thiruverambur · AC 142</span></td>
+          <td><span class="party-pill dmk">DMK</span></td>
+          <td class="right won-margin">+49,697</td>
+          <td><span class="flow-arrow">&rarr;</span></td>
+          <td class="right lost-margin">&minus;8,705</td>
+          <td><span class="party-pill tvk">TVK</span></td>
+        </tr>
+        <tr>
+          <td class="name">Palanivel Thiaga Rajan <span class="ministerial">FORMER FIN. MIN.</span><span class="seat">Madurai Central · AC 193</span></td>
+          <td><span class="party-pill dmk">DMK</span></td>
+          <td class="right won-margin">+34,176</td>
+          <td><span class="flow-arrow">&rarr;</span></td>
+          <td class="right lost-margin">&minus;19,128</td>
+          <td><span class="party-pill tvk">TVK</span></td>
+        </tr>
+        <tr>
+          <td class="name">Kandasamy V.P.<span class="seat">Sulur · AC 116</span></td>
+          <td><span class="party-pill admk">ADMK</span></td>
+          <td class="right won-margin">+31,932</td>
+          <td><span class="flow-arrow">&rarr;</span></td>
+          <td class="right lost-margin">&minus;4,790</td>
+          <td><span class="party-pill tvk">TVK</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="author">
+      <div class="author-avatar">A</div>
+      <div>
+        <div class="author-name">Anandraj</div>
+        <div class="author-handle">ndranandraj.com</div>
+      </div>
+    </div>
+    <div class="footer-tags">
+      <span class="ftag">Tamil Nadu 2026</span>
+      <span class="ftag">Stalin Kolathur</span>
+      <span class="ftag">DMK Cabinet</span>
+      <span class="ftag">Incumbents Defeated</span>
+      <span class="ftag">TVK Debut</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
