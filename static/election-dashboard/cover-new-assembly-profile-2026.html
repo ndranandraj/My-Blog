@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Youngest Assembly Tamil Nadu Has Ever Elected — TN 2026</title>
+<meta name="description" content="The new TN Assembly's median MLA is 52, down 12 years. TVK median 44 vs DMK 59 vs AIADMK 57. 41 MLAs under 40, 22 women elected. Two 28-year-old women in the youngest five.">
+<!-- Open Graph -->
+<meta property="og:title" content="The Youngest Assembly Tamil Nadu Has Ever Elected">
+<meta property="og:description" content="Median MLA age dropped 12 years in one cycle. TVK median 44 vs DMK 59 vs AIADMK 57. 41 MLAs under 40 (35 from TVK alone). 22 women elected (13 from TVK, 0 from DMK). The demographic anatomy of Tamil Nadu's generational reset.">
+<meta property="og:image" content="https://ndranandraj.com/images/new-assembly-profile-cover.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ndranandraj.com/posts/tn-2026-new-assembly-profile/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: #08120E; color: #ECF7F0; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Color tokens — teal/emerald primary for "youth + growth + new", gold accent
+   for the hero numbers, soft purple to flag TVK lineage continuity. */
+:root {
+  --teal: #14B8A6;
+  --teal-deep: #0F766E;
+  --teal-soft: rgba(20, 184, 166, 0.13);
+  --emerald: #10B981;
+  --gold: #F59E0B;
+  --tvk: #C084FC;
+  --tvk-soft: rgba(192, 132, 252, 0.14);
+  --rose: #F472B6;
+  --ink: #ECF7F0;
+  --ink-2: rgba(236, 247, 240, 0.62);
+  --ink-3: rgba(236, 247, 240, 0.32);
+  --rule: rgba(255, 255, 255, 0.07);
+}
+
+/* ── BACKGROUND ── */
+.bg {
+  position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+  background:
+    radial-gradient(ellipse 1100px 600px at 78% 12%, rgba(20,184,166,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 500px at 18% 86%, rgba(245,158,11,0.08) 0%, transparent 60%);
+}
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.bg-glow-r { position: absolute; width: 540px; height: 540px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,184,166,0.16) 0%, transparent 65%);
+  top: -120px; right: -80px; animation: f1 22s ease-in-out infinite; }
+.bg-glow-l { position: absolute; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,0.10) 0%, transparent 65%);
+  bottom: -80px; left: -60px; animation: f2 18s ease-in-out infinite; }
+@keyframes f1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-44px,32px)} }
+@keyframes f2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(34px,-26px)} }
+
+/* ── LAYOUT ── */
+.wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 36px; width: 100%; }
+
+/* ── TOPBAR ── */
+.topbar { padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; }
+.brand { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--ink-3); display: flex; align-items: center; gap: 8px; }
+.brand-pip { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+.results-badge {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 13px; border-radius: 100px;
+  background: var(--teal-soft); border: 1px solid rgba(20,184,166,0.32); color: var(--teal);
+}
+.results-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); animation: blink 1.4s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+/* ── HERO ── */
+.hero { padding: 56px 0 44px; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 360px; gap: 56px; align-items: start; }
+
+.kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.kicker-line { width: 28px; height: 2px; background: var(--teal); }
+.kicker-text { font-size: 0.70rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5BB89A; }
+
+.hero-title { font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.04; color: #FFFFFF; margin-bottom: 16px; letter-spacing: -0.015em; }
+.hero-title em { font-style: italic; color: var(--teal); }
+
+.hero-sub { font-size: 1.02rem; font-weight: 400; line-height: 1.66; color: var(--ink-2); max-width: 540px; margin-bottom: 30px; }
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.hero-sub .gold-num { color: var(--gold); font-weight: 700; }
+.hero-sub .teal-num { color: var(--teal); font-weight: 700; }
+
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.read-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 100%);
+  color: #fff; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 13px 26px; border-radius: 8px;
+  text-decoration: none; transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 8px 22px -8px rgba(20,184,166,0.55);
+}
+.read-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+.read-btn svg { width: 14px; height: 14px; }
+
+.dash-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--tvk); text-decoration: none; padding: 10px 16px;
+  border-radius: 8px; border: 1px solid rgba(192,132,252,0.35);
+  background: var(--tvk-soft);
+  transition: background 0.2s;
+}
+.dash-btn:hover { background: rgba(192,132,252,0.22); }
+
+/* ── AGE COMPARISON PANEL ── */
+.age-panel { display: flex; flex-direction: column; gap: 10px; }
+.age-card {
+  border-radius: 14px; padding: 18px 22px;
+  border: 1px solid; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.age-card.tvk    { background: rgba(192,132,252,0.07); border-color: rgba(192,132,252,0.28); }
+.age-card.dmk    { background: rgba(220,38,38,0.06);   border-color: rgba(220,38,38,0.22); }
+.age-card.aiadmk { background: rgba(34,197,94,0.06);   border-color: rgba(34,197,94,0.20); }
+.age-card.assembly {
+  background: linear-gradient(135deg, rgba(20,184,166,0.10), rgba(245,158,11,0.06));
+  border-color: rgba(20,184,166,0.32);
+  margin-top: 4px;
+}
+
+.age-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.age-card.tvk    .age-label { color: var(--tvk); }
+.age-card.dmk    .age-label { color: #FCA5A5; }
+.age-card.aiadmk .age-label { color: #86EFAC; }
+.age-card.assembly .age-label { color: var(--teal); }
+
+.age-num { font-size: 2.3rem; font-weight: 900; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.age-card.tvk    .age-num { color: var(--tvk); }
+.age-card.dmk    .age-num { color: #FCA5A5; }
+.age-card.aiadmk .age-num { color: #86EFAC; }
+.age-card.assembly .age-num { color: var(--teal); }
+.age-card.assembly .age-num em { font-style: normal; font-size: 1.1rem; color: var(--gold); margin-left: 8px; font-weight: 700; }
+
+.age-meta { font-size: 0.74rem; color: var(--ink-3); margin-top: 4px; line-height: 1.4; max-width: 140px; text-align: right; }
+.age-meta strong { color: var(--ink-2); font-weight: 600; }
+.age-num-wrap { text-align: left; }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid var(--rule); }
+
+/* ── NUMBERS STRIP ── */
+.numbers-strip { padding: 36px 0 8px; }
+.ns-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+.ns-card { background: rgba(255,255,255,0.03); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; }
+.ns-num { font-size: 1.85rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.ns-num.teal     { color: var(--teal); }
+.ns-num.gold     { color: var(--gold); }
+.ns-num.tvk      { color: var(--tvk); }
+.ns-num.rose     { color: var(--rose); }
+.ns-num.muted    { color: rgba(255,255,255,0.55); }
+.ns-lbl { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; line-height: 1.4; }
+
+/* ── YOUNGEST FIVE TABLE ── */
+.youngest { padding: 32px 0 12px; }
+.youngest-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.youngest-label::before { content: ''; width: 22px; height: 1px; background: var(--teal); }
+
+.y-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.y-table th {
+  font-size: 0.60rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-3); padding: 0 12px 12px 0; text-align: left;
+  border-bottom: 1px solid var(--rule);
+}
+.y-table th.right { text-align: right; padding-right: 0; }
+.y-table td {
+  padding: 11px 12px 11px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--ink-2); vertical-align: middle;
+}
+.y-table td.age {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.4rem; font-weight: 900;
+  color: var(--teal); width: 56px;
+}
+.y-table td.name { color: var(--ink); font-weight: 600; }
+.y-table td.name .seat { color: var(--ink-3); font-weight: 400; font-size: 0.78rem; display: block; margin-top: 2px; }
+.y-table td.party { width: 70px; }
+.party-pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.02em; }
+.party-pill.tvk    { background: rgba(192,132,252,0.16); color: var(--tvk); }
+.party-pill.aiadmk { background: rgba(34,197,94,0.16); color: #86EFAC; }
+.gender-tag { display: inline-block; padding: 1px 7px; border-radius: 99px; font-size: 0.62rem; font-weight: 700; background: rgba(244,114,182,0.13); color: var(--rose); border: 1px solid rgba(244,114,182,0.26); margin-left: 6px; vertical-align: 1px; }
+
+/* ── FOOTER ── */
+.footer { margin-top: auto; padding: 24px 0; border-top: 1px solid var(--rule); }
+.footer .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.author { display: flex; align-items: center; gap: 12px; }
+.author-avatar { width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem; font-weight: 800; color: #fff; }
+.author-name { font-size: 0.82rem; font-weight: 600; color: var(--ink-2); }
+.author-handle { font-size: 0.68rem; color: var(--ink-3); }
+.footer-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.ftag { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 100px; background: rgba(255,255,255,0.05); color: var(--ink-3); }
+
+@media (max-width: 740px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
+  .ns-grid { grid-template-columns: repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-r"></div>
+  <div class="bg-glow-l"></div>
+</div>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><div class="brand-pip"></div>ndranandraj.com</div>
+    <div class="results-badge"><div class="results-badge-dot"></div>Election Results · May 4, 2026</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-left">
+      <div class="kicker">
+        <div class="kicker-line"></div>
+        <span class="kicker-text">Tamil Nadu 2026 &middot; The 14th Assembly</span>
+      </div>
+      <h1 class="hero-title">The <em>Youngest</em><br>Assembly Tamil Nadu<br>Has Ever Elected</h1>
+      <p class="hero-sub">
+        The new Assembly's median MLA is <strong>52</strong>, down <span class="gold-num">12 years</span> from the cohort it replaced.
+        <br><br>
+        TVK alone: median age <span class="teal-num">44</span>. <strong>41 MLAs are under 40, 35 of them from TVK.</strong> <strong class="rose">22 women</strong> elected — 13 from TVK, 0 from DMK. The demographic anatomy of a generational reset.
+      </p>
+      <div class="cta-row">
+        <a href="/posts/tn-2026-new-assembly-profile/" class="read-btn">
+          Read the demographic breakdown
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/>
+          </svg>
+        </a>
+        <a href="/election-dashboard/tvk-debut-2026.html" class="dash-btn">
+          Open the dashboard &rarr;
+        </a>
+      </div>
+    </div>
+
+    <div class="age-panel">
+      <div class="age-card tvk">
+        <div class="age-num-wrap">
+          <div class="age-label">TVK · 108 MLAs</div>
+          <div class="age-num">44</div>
+        </div>
+        <div class="age-meta">median age<br><strong>13–15 yrs younger</strong></div>
+      </div>
+
+      <div class="age-card dmk">
+        <div class="age-num-wrap">
+          <div class="age-label">DMK · 59 MLAs</div>
+          <div class="age-num">59</div>
+        </div>
+        <div class="age-meta">median age<br><strong>0 women</strong> elected</div>
+      </div>
+
+      <div class="age-card aiadmk">
+        <div class="age-num-wrap">
+          <div class="age-label">AIADMK · 47 MLAs</div>
+          <div class="age-num">57</div>
+        </div>
+        <div class="age-meta">median age<br><strong>5 women</strong> elected</div>
+      </div>
+
+      <div class="age-card assembly">
+        <div class="age-num-wrap">
+          <div class="age-label">Whole assembly · 234</div>
+          <div class="age-num">52 <em>↓ 12 yrs</em></div>
+        </div>
+        <div class="age-meta">median age<br><strong>since 2021</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="numbers-strip">
+  <div class="wrap">
+    <div class="ns-grid">
+      <div class="ns-card">
+        <div class="ns-num teal">52</div>
+        <div class="ns-lbl">Median MLA age<br>(was ~64)</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num gold">41</div>
+        <div class="ns-lbl">MLAs under<br>age 40</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num rose">22</div>
+        <div class="ns-lbl">Women MLAs<br>(13 from TVK)</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num tvk">35</div>
+        <div class="ns-lbl">Postgraduate<br>or doctorate</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num muted">28</div>
+        <div class="ns-lbl">Age of the<br>youngest MLA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="youngest">
+  <div class="wrap">
+    <div class="youngest-label">Youngest five MLAs in the new assembly</div>
+    <table class="y-table">
+      <thead>
+        <tr>
+          <th class="right">Age</th>
+          <th>Name</th>
+          <th>Party</th>
+          <th>Education</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="age">28</td>
+          <td class="name">Kamali S <span class="gender-tag">F</span><span class="seat">Avanashi · AC 101</span></td>
+          <td class="party"><span class="party-pill tvk">TVK</span></td>
+          <td>Master's Degree</td>
+        </tr>
+        <tr>
+          <td class="age">28</td>
+          <td class="name">Sabari Iyngaran G<span class="seat">Periyakulam · AC 127</span></td>
+          <td class="party"><span class="party-pill tvk">TVK</span></td>
+          <td>Master's Degree</td>
+        </tr>
+        <tr>
+          <td class="age">29</td>
+          <td class="name">Dr. Dhilipan Jaishankar<span class="seat">Sankarankovil · AC 219</span></td>
+          <td class="party"><span class="party-pill aiadmk">AIADMK</span></td>
+          <td>Bachelor's Degree</td>
+        </tr>
+        <tr>
+          <td class="age">30</td>
+          <td class="name">Rhevanth Charan<span class="seat">Maduravoyal · AC 7</span></td>
+          <td class="party"><span class="party-pill tvk">TVK</span></td>
+          <td>Not declared</td>
+        </tr>
+        <tr>
+          <td class="age">30</td>
+          <td class="name">Sabarinathan R<span class="seat">Virugampakkam · AC 9</span></td>
+          <td class="party"><span class="party-pill tvk">TVK</span></td>
+          <td>Bachelor's Degree</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="author">
+      <div class="author-avatar">A</div>
+      <div>
+        <div class="author-name">Anandraj</div>
+        <div class="author-handle">ndranandraj.com</div>
+      </div>
+    </div>
+    <div class="footer-tags">
+      <span class="ftag">Tamil Nadu 2026</span>
+      <span class="ftag">14th Assembly</span>
+      <span class="ftag">Youngest MLAs</span>
+      <span class="ftag">Women in Politics</span>
+      <span class="ftag">Demographic Reset</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
