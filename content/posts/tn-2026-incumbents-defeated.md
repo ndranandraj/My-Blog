@@ -19,11 +19,11 @@ cover:
   relative: false
 ---
 
-Of the 234 sitting MLAs who walked into the Tamil Nadu Legislative Assembly in 2021, only **56 retained their seat after May 4, 2026**. Another **6** held their place by shifting constituency and winning the new seat. Everyone else is gone.
+Of the 234 sitting MLAs who walked into the Tamil Nadu Legislative Assembly in 2021, only **56 retained their seat after May 4, 2026**. Another **7** held their place by shifting constituency and winning the new seat. Everyone else is gone.
 
 That is a **23.9% same-seat retention rate**. Across the last decade of state elections in India, no major Assembly has churned over 75% of its sitting members in a single cycle. Tamil Nadu just did.
 
-**93 incumbents defended their 2021 seat in 2026 and lost.** **11 more contested a different seat and lost there too.** **63 sitting MLAs were entirely out of the contest** (retired, denied tickets, or otherwise not on any ballot). 6 won from a different seat. The 56 retentions are everything that's left untouched.
+**93 incumbents defended their 2021 seat in 2026 and lost.** **11 more contested a different seat and lost there too.** **67 sitting MLAs were entirely out of the contest** (retired, denied tickets, or otherwise not on any ballot). 7 won from a different seat. The 56 retentions are everything that's left untouched.
 
 Of the 93 contested-and-lost incumbents, **64 lost directly to TVK**. That includes the sitting Chief Minister of Tamil Nadu.
 
@@ -35,7 +35,7 @@ M.K. Stalin lost his Kolathur seat by 8,795 votes to V.S. Babu of TVK, his own f
 {{< kpi value="56" label="held the same seat" tone="muted" sub="23.9% same-seat retention. Lowest in modern TN history." >}}
 {{< kpi value="93" label="contested and lost" tone="warn" sub="defended their 2021 seat in 2026" >}}
 {{< kpi value="64" label="lost directly to TVK" tone="accent" sub="69% of all contested-and-lost defeats" >}}
-{{< kpi value="63" label="off the ballot entirely" tone="muted" sub="retired or denied tickets · 6 more won by shifting · 11 lost from a different seat" >}}
+{{< kpi value="67" label="off the ballot entirely" tone="muted" sub="retired or denied tickets · 7 more won by shifting · 11 lost from a different seat" >}}
 {{< /kpi-row >}}
 
 {{< dashboard-cta
@@ -55,9 +55,7 @@ M.K. Stalin had won Kolathur in 2021 with **70,384 votes of margin**, a 30-point
 
 The Babu story is the part that gets lost in the bare margin number. **V.S. Babu was M.K. Stalin's own long-time associate** — someone who had been in the DMK ecosystem before crossing to TVK to contest against the very leader he had worked with. The race was not just an outsider toppling a Chief Minister. It was a former ally walking out the door, joining the new party, and beating the man he used to work for, in his home seat.
 
-For comparison: Stalin is 72, holds a Bachelor's degree, and declared ₹6.01 crore in assets. V.S. Babu's declared assets are roughly **6%** of Stalin's. There is no straightforward "experience and resources" reading of the result. The candidate quality was extremely asymmetric. The vote was not.
-
-The Kolathur result is the headline-event of TN 2026, but it is also the cleanest expression of a wider pattern. Sitting incumbents across the state, irrespective of party, age, or asset class, lost in a way that does not yield to any single explanation other than "the wave came for them and the wave was bigger than their incumbency advantage."
+The Kolathur result is the headline-event of TN 2026, but it is also the cleanest expression of a wider pattern. Sitting incumbents across the state, irrespective of party, age, or seniority, lost in a way that does not yield to any single explanation other than "the wave came for them and the wave was bigger than their incumbency advantage."
 
 ---
 
@@ -107,15 +105,15 @@ TVK's 64 incumbent defeats are the largest single haul of sitting-MLA wins by a 
 
 ## Where the incumbents who didn't defend their seat went
 
-Of the 178 sitting MLAs who did not retain their 2021 seat, the breakdown is:
+The 178 sitting MLAs who did not retain their 2021 seat split into four clean buckets.
 
-**93 defended the same seat in 2026 and lost.** This is the headline category — incumbents who tried, and the wave found them anyway. The 12 most decisive of these losses are listed in the marquee table above.
+**The largest is the 93 who fought for re-election in their old constituency and lost.** This is the headline-event group. The 12 most consequential losses, including the Chief Minister, are in the marquee table above. The full ranked list of 93 is on the [interactive dashboard](/election-dashboard/tvk-debut-2026.html#consequential).
 
-**63 were off the ballot entirely.** No 2026 candidate matching their name appears in any of the 234 constituencies. Either retired, denied tickets and stood down, or otherwise out of the contest. This is the second-largest bucket and tells you that **about 27% of the outgoing Assembly was triaged out by the parties themselves before the count even began.**
+**67 incumbents were off the ballot entirely.** No 2026 candidate matching their name appears in any of the 234 constituencies. Some retired. Some were denied tickets and stood down. Some shifted careers or filed too late. About 29% of the outgoing Assembly was triaged out by the party leaderships themselves before the count even began, which tells you what the pre-poll polling was telling them.
 
-**11 contested a different seat and lost there too.** They got moved to what the party hoped was safer ground, and the wave found them anyway.
+**11 were moved to a different seat and lost there too.** Their parties relocated them to what was hoped to be safer ground; the wave found them anyway.
 
-**6 contested a different seat and won — the only "soft landing" group.** These are the 2021 incumbents who held a place in the legislature by accepting a shift:
+**7 contested a different seat and won — the only "soft landing" group.** These are the 2021 incumbents who held a place in the legislature by accepting a constituency change:
 
 | 2021 seat | 2026 seat | Name | Party |
 |:---|:---|:---|:---|
@@ -125,8 +123,9 @@ Of the 178 sitting MLAs who did not retain their 2021 seat, the breakdown is:
 | Palani (AC 127) | Dindigul (AC 132) | Senthil Kumar I.P. | DMK |
 | Sirkali (AC 160) | Kurinjipadi (AC 156) | M.R.K. Panneerselvam | DMK |
 | Papanasam (AC 172) | Nagapattinam (AC 163) | M.H. Jawahirullah | DMK |
+| Sankarankovil (AC 219) | Vasudevanallur (AC 220) | E. Raja | DMK |
 
-Two more (S. Ramachandran of AIADMK shifting Arani → Kilpennathur, and E. Raja of DMK shifting Sankarankovil → Vasudevanallur) are plausible same-person shifts based on initials and party continuity, but the bare-surname-vs-with-initials format mismatch in the affidavits leaves room for doubt without manual verification. The 6-confirmed list is the safe count.
+Six of the seven shifted within DMK. AIADMK and PMK got one each. No incumbent who switched parties before May 4 won a seat in the new colours.
 
 The point worth making: when **178 of 234 sitting members do not survive their seat**, that is not normal democratic churn. It is the visible part of pre-poll triage by party leaderships who could read the polling, plus the wave swallowing the rest. The wave was anticipated. It just hit harder than they planned for.
 

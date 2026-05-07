@@ -1,16 +1,16 @@
 {
   "totals": {
     "contested_same_lost": 93,
-    "truly_out": 63,
+    "truly_out": 67,
     "retained_same_seat": 56,
     "shifted_same_party_lost": 11,
-    "shifted_same_party_won": 11
+    "shifted_same_party_won": 7
   },
   "survival_rate": {
     "same_seat_count": 56,
     "same_seat_pct": 23.93,
-    "any_seat_count": 67,
-    "any_seat_pct": 28.63
+    "any_seat_count": 63,
+    "any_seat_pct": 26.92
   },
   "rows": [
     {
@@ -569,13 +569,7 @@
       "margin_2016": 3155.0,
       "margin_2021": 137,
       "margin_2026": null,
-      "situation": "shifted_same_party_won",
-      "match_ac": 218,
-      "match_ac_name": "KOVILPATTI",
-      "match_name_2026": "KARUNANITHI.K",
-      "match_party_2026": "DMK",
-      "match_pos_2026": 1,
-      "match_votes_2026": 61643
+      "situation": "truly_out"
     },
     {
       "constituency_no": 25,
@@ -719,13 +713,7 @@
       "margin_2016": 22165.0,
       "margin_2021": 37781,
       "margin_2026": null,
-      "situation": "shifted_same_party_won",
-      "match_ac": 218,
-      "match_ac_name": "KOVILPATTI",
-      "match_name_2026": "KARUNANITHI.K",
-      "match_party_2026": "DMK",
-      "match_pos_2026": 1,
-      "match_votes_2026": 61643
+      "situation": "truly_out"
     },
     {
       "constituency_no": 31,
@@ -1590,13 +1578,7 @@
       "margin_2016": 7327.0,
       "margin_2021": 3128,
       "margin_2026": null,
-      "situation": "shifted_same_party_won",
-      "match_ac": 64,
-      "match_ac_name": "KILPENNATHUR",
-      "match_name_2026": "RAMACHANDRAN.S",
-      "match_party_2026": "AIADMK",
-      "match_pos_2026": 1,
-      "match_votes_2026": 90503
+      "situation": "truly_out"
     },
     {
       "constituency_no": 68,
@@ -2575,13 +2557,7 @@
       "margin_2016": 3710.0,
       "margin_2021": 4105,
       "margin_2026": null,
-      "situation": "shifted_same_party_won",
-      "match_ac": 207,
-      "match_ac_name": "ARUPPUKKOTTAI",
-      "match_name_2026": "RAMACHANDRAN. K.K.S.S.R",
-      "match_party_2026": "DMK",
-      "match_pos_2026": 1,
-      "match_votes_2026": 65104
+      "situation": "truly_out"
     },
     {
       "constituency_no": 111,
