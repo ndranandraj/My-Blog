@@ -19,13 +19,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-<!-- Reading progress bar -->
+<!-- Reading progress bar.
+     Color follows the site --primary so it auto-adapts to light/dark mode
+     and reads as part of the brand (same accent as KPI rail / callout borders /
+     kicker labels). A soft trailing edge keeps the growth feeling fluid
+     rather than blocky; the leading right edge is full primary so the
+     reader can see where progress has reached. -->
 <style>
   #reading-progress {
     position: fixed;
     top: 0; left: 0;
     width: 0%; height: 3px;
-    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    background: linear-gradient(90deg,
+        color-mix(in srgb, var(--primary) 65%, var(--theme)),
+        var(--primary));
     z-index: 9999;
     transition: width 0.08s linear;
     border-radius: 0 2px 2px 0;
