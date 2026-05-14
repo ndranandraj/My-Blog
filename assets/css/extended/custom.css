@@ -1992,6 +1992,19 @@ html { scroll-behavior: smooth; }
     .post-single--with-toc details.toc {
         display: none;
     }
+
+    /* Wide-table bleed vs. sticky TOC collision fix.
+       Elsewhere in this file (.post-content table at min-width 900px) wide
+       data tables are allowed to extend up to 120px past the prose column
+       for scannability. On posts with the sticky TOC enabled, that 120px
+       bleed lands in the TOC's lane (prose right edge at 50vw + 384px;
+       table right edge at 50vw + 504px; TOC starts at 50vw + 408px = 96px
+       overlap). Constrain tables back to the prose column on TOC posts;
+       data-dense posts that need the wider table treatment should drop
+       `showToc: true` from front matter and rely on the inline details TOC. */
+    .post-single--with-toc .post-content table {
+        max-width: 100%;
+    }
 }
 
 /* Class added by the IntersectionObserver in extend_head.html when the
