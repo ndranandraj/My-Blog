@@ -1809,11 +1809,211 @@ html { scroll-behavior: smooth; }
     border-bottom-color: var(--primary);
 }
 
+/* ────────────────────────────────────────────────────────────
+   EDITORIAL UPGRADES (2026-05)
+   - "Updated [date]" line shown when a post's lastmod is strictly
+     after its date (i.e. the post has been edited post-publication).
+   - Drop cap on the first paragraph of any post that sets
+     `pillar: true` in front-matter. Short personal essays are
+     unaffected; the `.post-single--pillar` modifier in single.html
+     gates the rule.
+
+   Note: heading anchor links are already provided by PaperMod's
+   anchored_headings.html partial and md-content.css. Don't duplicate.
+   ──────────────────────────────────────────────────────────── */
+
+/* "Updated [date]" indicator below post-meta */
+.post-updated {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: fit-content;
+    margin-top: 0.5rem;
+    padding: 0.15rem 0;
+    font-family: "Inter", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--secondary);
+    opacity: 0.85;
+    letter-spacing: 0.005em;
+}
+
+.post-updated__icon {
+    color: var(--primary);
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+/* Drop cap on pillar posts only, first direct-child paragraph only.
+   `:first-of-type` on `> p` skips opening shortcodes (dashboard-cta,
+   callout, pullquote) and blockquotes, since those emit div/aside/
+   blockquote rather than p. The drop cap therefore lands on the real
+   lede paragraph regardless of what the post opens with. */
+.post-single--pillar .post-content > p:first-of-type::first-letter {
+    float: left;
+    font-family: "Merriweather", Georgia, serif;
+    font-weight: 700;
+    font-size: 4.2rem;
+    line-height: 0.92;
+    margin: 0.35rem 0.55rem -0.1rem 0;
+    color: var(--primary);
+    letter-spacing: -0.03em;
+}
+
+@media (max-width: 640px) {
+    .post-single--pillar .post-content > p:first-of-type::first-letter {
+        font-size: 3.4rem;
+        margin: 0.3rem 0.4rem -0.05rem 0;
+    }
+}
+
+/* ────────────────────────────────────────────────────────────
+   STICKY TABLE OF CONTENTS — desktop right rail (≥1280px)
+   ----------------------------------------------------------
+   Markup is rendered by layouts/_default/single.html when a post sets
+   `showToc: true`. The aside lives OUTSIDE .post-single (as a sibling
+   inside <main>), positioned fixed in viewport coordinates so it doesn't
+   have to fight PaperMod's narrow .main column (max-width 768px).
+
+   Below 1280px the sticky aside is hidden via display:none and the
+   inline <details class="toc"> from partial "toc.html" takes over.
+
+   Active-section highlighting (the .toc-active class) is driven by an
+   IntersectionObserver in extend_head.html.
+   ──────────────────────────────────────────────────────────── */
+
+/* Mobile / tablet: the sticky version is suppressed; the inline details TOC
+   inside .post-content is the wayfinding affordance. */
+.toc-sticky { display: none; }
+
+/* Smooth scroll-to-section: when a TOC link is clicked, the target heading
+   should land below the reading-progress bar and any sticky page chrome
+   instead of butting up against the viewport top. */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    scroll-margin-top: 84px;
+}
+
+@media (min-width: 1280px) {
+    .toc-sticky {
+        display: block;
+        position: fixed;
+        top: 96px;
+        /* Anchor to the right edge of the (max 768px) main column with a
+           24px breathing gap. 768 / 2 = 384; add 24px gap = 408px right of
+           viewport center. */
+        left: calc(50vw + 408px);
+        width: 220px;
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
+        z-index: 50;
+        padding: 0 0 0 4px;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        /* Quieter scrollbar (Firefox) */
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) transparent;
+    }
+
+    /* Webkit scrollbar inside the sticky panel */
+    .toc-sticky::-webkit-scrollbar { width: 6px; }
+    .toc-sticky::-webkit-scrollbar-track { background: transparent; }
+    .toc-sticky::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 3px;
+    }
+    .toc-sticky::-webkit-scrollbar-thumb:hover {
+        background: color-mix(in srgb, var(--primary) 30%, var(--border));
+    }
+
+    /* Header label */
+    .toc-sticky__header {
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--secondary);
+        padding: 0 0 0.55rem 0.75rem;
+        margin-bottom: 0.65rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* Hugo's TOC body lives at nav#TableOfContents inside .toc-sticky__body */
+    .toc-sticky__body nav#TableOfContents > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .toc-sticky__body nav#TableOfContents ul ul {
+        list-style: none;
+        padding-left: 0.85rem;
+        margin: 0.2rem 0 0.35rem;
+    }
+
+    .toc-sticky__body nav#TableOfContents li {
+        margin: 0;
+    }
+
+    .toc-sticky__body nav#TableOfContents a {
+        display: block;
+        color: var(--secondary);
+        text-decoration: none !important;
+        padding: 0.3rem 0.5rem 0.3rem 0.75rem;
+        margin-left: -2px;
+        border-left: 2px solid transparent;
+        font-family: "Inter", sans-serif;
+        font-size: 0.84rem;
+        line-height: 1.4;
+        transition: color 0.15s ease, border-color 0.15s ease;
+        /* Long heading text: truncate with ellipsis rather than wrap awkwardly */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .toc-sticky__body nav#TableOfContents a:hover {
+        color: var(--primary);
+    }
+
+    .toc-sticky__body nav#TableOfContents a.toc-active {
+        color: var(--primary);
+        border-left-color: var(--primary);
+        font-weight: 600;
+    }
+
+    /* Suppress the inline <details class="toc"> on desktop — the sticky
+       version covers the same need with better wayfinding. The inline one
+       still renders for users with JS disabled or on narrow viewports. */
+    .post-single--with-toc details.toc {
+        display: none;
+    }
+}
+
+/* Class added by the IntersectionObserver in extend_head.html when the
+   reader scrolls past the bottom of the article. Prevents the TOC from
+   awkwardly hovering over the footer / related posts / next-up section. */
+.toc-sticky--past-end {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+}
+
+/* Respect prefers-reduced-motion globally — fade only, no slide. */
+@media (prefers-reduced-motion: reduce) {
+    .toc-sticky--past-end { transform: none; }
+}
+
 /* ── Print friendly ── */
 @media print {
-    .share-buttons, .toc, .breadcrumbs, #reading-progress, .post-nav-links, .home-latest {
+    .share-buttons, .toc, .breadcrumbs, #reading-progress, .post-nav-links, .home-latest, .post-updated, .toc-sticky {
         display: none !important;
     }
     .post-content { max-width: 100%; }
     .post-content table { box-shadow: none; }
+    /* Drop cap survives in print, it's editorial rather than decorative. */
 }

@@ -1,0 +1,17 @@
+{{- /*
+  Pass-through heading render hook.
+
+  Why this exists as a pass-through, not as a richer template:
+  PaperMod already injects a "#" anchor link into every heading via
+  themes/PaperMod/layouts/partials/anchored_headings.html (a regex
+  pass over the rendered .Content). That partial requires headings
+  to carry an `id` attribute. Hugo's default heading rendering emits
+  the id automatically, but the moment ANY render-heading hook is
+  defined in a theme or plugin, Hugo skips its default and the id
+  goes missing. This template preserves the id-emitting default so
+  PaperMod's existing anchor system keeps working.
+
+  Do NOT add an anchor link inside the heading here — PaperMod's
+  partial injects one after the fact and you'd end up with two.
+*/ -}}
+<h{{ .Level }} id="{{ .Anchor }}">{{ .Text | safeHTML }}</h{{ .Level }}>

@@ -52,9 +52,13 @@ enableRobotsTXT = true
   ShowToc = false
   TocOpen = false
 
-  # Default social share image used when a post has no cover.
-  # Ensures LinkedIn / X / WhatsApp previews always have a visual.
-  images = ["/images/Anand_enhanced.jpg"]
+  # Default social share image used when a post sets no `cover.image`.
+  # PaperMod's opengraph partial reads this list and emits each entry as a
+  # separate <meta property="og:image"> tag. Path is relative to /static so
+  # `/images/og-default.png` lives at `static/images/og-default.png`.
+  # Regenerate the card with `python3 /tmp/make_og.py` (script in CLAUDE.md
+  # under "Common tasks") or hand-edit the PNG.
+  images = ["/images/og-default.png"]
 
   # Featured hero shown on the homepage above the latest-posts strip.
   # Remove or change to promote a different post/project.

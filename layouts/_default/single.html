@@ -6,7 +6,7 @@
 */ -}}
 {{- define "main" }}
 
-<article class="post-single">
+<article class="post-single{{ if .Params.pillar }} post-single--pillar{{ end }}{{ if (.Param "ShowToc") }} post-single--with-toc{{ end }}">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title entry-hint-parent">
@@ -32,6 +32,18 @@
       {{- partial "edit_post.html" . -}}
       {{- partial "post_canonical.html" . -}}
     </div>
+    {{- /* Show an "Updated" line only when the post has been edited
+           after publication (lastmod is strictly after date). Renders
+           nothing on first-publish posts where lastmod == date. */ -}}
+    {{- if .Lastmod.After .Date }}
+    <div class="post-updated" title="Last edited {{ .Lastmod.Format "January 2, 2006" }}">
+      <svg class="post-updated__icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="23 4 23 10 17 10"></polyline>
+        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+      </svg>
+      <span>Updated {{ .Lastmod.Format (site.Params.DateFormat | default "January 2, 2006") }}</span>
+    </div>
+    {{- end }}
     {{- end }}
   </header>
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
@@ -72,5 +84,20 @@
   {{- partial "comments.html" . }}
   {{- end }}
 </article>
+
+{{- /* Sticky right-rail TOC for desktop.
+       Rendered only when `showToc: true` is set in front matter.
+       Hidden via CSS below 1280px viewport width; on those widths the
+       inline <details class="toc"> from partial "toc.html" takes over.
+       The aside lives OUTSIDE .post-single so position:fixed positioning
+       doesn't have to fight the article's containing block. */ -}}
+{{- if (.Param "ShowToc") }}
+{{- with .TableOfContents }}
+<aside class="toc-sticky" aria-label="Table of contents">
+  <div class="toc-sticky__header">On this page</div>
+  <div class="toc-sticky__body">{{ . }}</div>
+</aside>
+{{- end }}
+{{- end }}
 
 {{- end }}{{/* end main */}}

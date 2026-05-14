@@ -45,6 +45,78 @@
   });
 </script>
 
+<!-- Sticky TOC: active-section highlighting + fade-out past article end.
+     The aside is rendered by single.html when front-matter sets ShowToc: true.
+     CSS in custom.css hides .toc-sticky below 1280px; this script is cheap
+     to run on every page because it no-ops when the aside is absent. -->
+<script>
+  (function () {
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    function init() {
+      var stickyToc = document.querySelector('.toc-sticky');
+      if (!stickyToc) return;
+
+      var tocLinks = stickyToc.querySelectorAll('nav#TableOfContents a');
+      if (!tocLinks.length) return;
+
+      var headingsMap = new Map();
+      tocLinks.forEach(function (link) {
+        var href = link.getAttribute('href') || '';
+        if (href.charAt(0) !== '#') return;
+        var id = decodeURIComponent(href.slice(1));
+        var heading = document.getElementById(id);
+        if (heading) headingsMap.set(heading, link);
+      });
+      if (!headingsMap.size) return;
+
+      var visible = new Set();
+      function highlight() {
+        if (!visible.size) return;
+        var topMost = null;
+        var topMostY = Infinity;
+        visible.forEach(function (h) {
+          var y = h.getBoundingClientRect().top;
+          if (y < topMostY) { topMostY = y; topMost = h; }
+        });
+        tocLinks.forEach(function (a) { a.classList.remove('toc-active'); });
+        if (topMost) {
+          var link = headingsMap.get(topMost);
+          if (link) link.classList.add('toc-active');
+        }
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) visible.add(entry.target);
+          else visible.delete(entry.target);
+        });
+        highlight();
+      }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+
+      headingsMap.forEach(function (link, heading) { observer.observe(heading); });
+
+      // Fade the sticky TOC out once the article footer scrolls past viewport.
+      var article = document.querySelector('.post-single');
+      if (article) {
+        var onScroll = function () {
+          var bottom = article.getBoundingClientRect().bottom;
+          if (bottom < 140) stickyToc.classList.add('toc-sticky--past-end');
+          else stickyToc.classList.remove('toc-sticky--past-end');
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
 <!-- JSON-LD Structured Data -->
 {{/*
   Hugo auto-escapes values inside <script> blocks as JS strings. Since `jsonify`
