@@ -1999,11 +1999,34 @@ html { scroll-behavior: smooth; }
        for scannability. On posts with the sticky TOC enabled, that 120px
        bleed lands in the TOC's lane (prose right edge at 50vw + 384px;
        table right edge at 50vw + 504px; TOC starts at 50vw + 408px = 96px
-       overlap). Constrain tables back to the prose column on TOC posts;
-       data-dense posts that need the wider table treatment should drop
-       `showToc: true` from front matter and rely on the inline details TOC. */
+       overlap). Constrain tables back to the prose column on TOC posts.
+
+       Tables wider than the prose column get horizontal scroll (same pattern
+       as the mobile fallback at max-width 760px). display:block flips the
+       table itself into a scroll container; the inner thead/tbody/tr/td
+       keep their default table-* display values so column alignment is
+       preserved. The gradient hints at left/right edges signal that more
+       content is offscreen, fading away as the reader scrolls horizontally. */
     .post-single--with-toc .post-content table {
+        display: block;
         max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        /* Scroll-edge fade hints (same technique as mobile) */
+        background-image:
+            linear-gradient(to right, var(--theme), var(--theme)),
+            linear-gradient(to right, var(--theme), var(--theme)),
+            linear-gradient(to right,
+                color-mix(in srgb, var(--content) 14%, transparent),
+                transparent),
+            linear-gradient(to left,
+                color-mix(in srgb, var(--content) 14%, transparent),
+                transparent);
+        background-position: left center, right center, left center, right center;
+        background-repeat: no-repeat;
+        background-size: 28px 100%, 28px 100%, 20px 100%, 20px 100%;
+        background-attachment: local, local, scroll, scroll;
     }
 }
 
