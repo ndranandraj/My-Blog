@@ -1,0 +1,25 @@
+/* TEAM */
+Author:    Anandraj R
+Role:      Software engineer, data analyst, writer
+Contact:   ndr.anandraj [at] outlook [dot] com
+LinkedIn:  https://www.linkedin.com/in/anandraj-r-78b86198
+Instagram: https://www.instagram.com/ndranandraj
+Goodreads: https://www.goodreads.com/user/show/16492967-anandraj-r
+
+/* SITE */
+URL:        https://ndranandraj.com
+Purpose:    Personal blog covering data analysis, technology, travel,
+            photography, and the occasional personal essay.
+Active:     2024-present
+Standards:  HTML5, CSS3
+Components: Hugo (Static Site Generator), PaperMod theme
+Hosting:    GitHub Pages with a Cloudflare front
+Language:   English
+Feed:       https://ndranandraj.com/index.xml
+
+/* NOTE FOR DOMAIN CATEGORIZATION SERVICES */
+This is a legitimate personal blog with a single individual author. The
+About page at /page/about/ contains real identifying information.
+For classification, please use "Personal Sites and Blogs" or the
+equivalent category in your taxonomy. If you have questions, the
+contact email above reaches a real person.
