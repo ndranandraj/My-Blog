@@ -320,7 +320,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
 .cx-tab:hover { color: var(--text); background: rgba(255,255,255,.04); }
 .cx-tab.active { background: var(--accent); color: #1a1408; font-weight: 800; }
 
-#cx-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,158,11,.18); }
+#cx-search:focus, #swing-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,158,11,.18); }
 
 #cx-table th {
   text-align: left; padding: 11px 14px;
@@ -603,6 +603,12 @@ tr:hover td { background: rgba(245,158,11,0.04); }
         <option value="INC">INC</option>
       </select>
     </div>
+    <div style="margin-bottom: 12px;">
+      <input id="swing-search" type="search" placeholder="Search constituency, district, region, candidate, party…"
+             style="width:100%; padding:10px 16px; border-radius:10px; border:1px solid var(--border);
+                    background:var(--surface-2); color:var(--text); font-size:0.92rem; font-family:inherit; outline:none;" />
+    </div>
+    <div id="swing-count" style="font-size:.78rem; color:var(--text-3); margin-bottom:8px;">—</div>
 
     <div class="table-wrap">
       <table id="swing-table">
@@ -1162,6 +1168,7 @@ let swingData = [];        // rows from swing_2021_to_2026.json
 let acMargins = {};        // ac_no -> {margin, margin_pct} from explorer_ac_2026.json
 let swingFilter = 'all';   // 'all' | 'flipped' | 'held'
 let swingParty = 'all';
+let swingSearch = '';
 let swingSortKey = 'ac_no';
 let swingSortDir = 1;
 
@@ -1188,6 +1195,21 @@ function renderSwing() {
   if (swingFilter === 'flipped') rows = rows.filter(r => r.flipped);
   if (swingFilter === 'held')    rows = rows.filter(r => !r.flipped);
   if (swingParty !== 'all')      rows = rows.filter(r => r.winner_2026.party === swingParty);
+
+  const q = swingSearch.toLowerCase().trim();
+  if (q) {
+    rows = rows.filter(r => {
+      const hay = [
+        r.ac_name, r.district, r.region,
+        r.winner_2021.candidate, r.winner_2021.party,
+        r.winner_2026.candidate, r.winner_2026.party,
+        String(r.ac_no),
+      ].join(' ').toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  const countEl = document.getElementById('swing-count');
+  if (countEl) countEl.textContent = `${rows.length} of 234 seats match the current filters`;
 
   // Sort
   const getKey = r => {
@@ -1245,6 +1267,14 @@ document.querySelectorAll('[data-swing-show]').forEach(b => {
 document.getElementById('swing-party-filter').addEventListener('change', e => {
   swingParty = e.target.value;
   renderSwing();
+});
+let swingSearchTimer = null;
+document.getElementById('swing-search').addEventListener('input', e => {
+  clearTimeout(swingSearchTimer);
+  swingSearchTimer = setTimeout(() => {
+    swingSearch = e.target.value;
+    renderSwing();
+  }, 120);
 });
 document.querySelectorAll('#swing-table th[data-sort]').forEach(th => {
   th.style.cursor = 'pointer';
