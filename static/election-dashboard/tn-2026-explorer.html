@@ -310,11 +310,51 @@ tr:hover td { background: rgba(245,158,11,0.04); }
 .pc-ind   { background: var(--c-ind); }
 .pc-other { background: var(--c-other); }
 
+/* ── CONSTITUENCY EXPLORER ──────────────────────────────── */
+.cx-tab {
+  background: transparent; border: 0; color: var(--text-2);
+  font-size: 0.80rem; font-weight: 600; letter-spacing: 0.02em;
+  padding: 8px 16px; border-radius: 99px; cursor: pointer;
+  font-family: inherit; transition: all .18s ease;
+}
+.cx-tab:hover { color: var(--text); background: rgba(255,255,255,.04); }
+.cx-tab.active { background: var(--accent); color: #1a1408; font-weight: 800; }
+
+#cx-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,158,11,.18); }
+
+#cx-table th {
+  text-align: left; padding: 11px 14px;
+  background: var(--surface-2); color: var(--text-2);
+  font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 800; border-bottom: 1px solid var(--border); white-space: nowrap;
+  cursor: pointer; user-select: none;
+}
+#cx-table th.right { text-align: right; }
+#cx-table th:hover { color: var(--text); background: rgba(245,158,11,.06); }
+#cx-table th .sort-ind { color: var(--accent); margin-left: 4px; opacity: 0.85; font-size: 0.72rem; }
+#cx-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.04); color: var(--text); }
+#cx-table td.right { text-align: right; font-variant-numeric: tabular-nums; }
+#cx-table tr:hover td { background: rgba(245,158,11,.04); }
+#cx-table .ac-no { color: var(--text-3); font-weight: 600; font-variant-numeric: tabular-nums; }
+#cx-table .const-cell { font-weight: 700; }
+#cx-table .const-cell .dist { display: block; font-size: 0.72rem; color: var(--text-3); font-weight: 400; margin-top: 2px; }
+#cx-table .cand-cell { color: var(--text); }
+#cx-table .num { font-variant-numeric: tabular-nums; }
+.cx-pg-btn {
+  padding: 5px 11px; border: 1px solid var(--border); background: var(--surface-2);
+  color: var(--text-2); font-size: .76rem; font-weight: 600; border-radius: 6px;
+  cursor: pointer; font-family: inherit; transition: all .15s ease;
+}
+.cx-pg-btn:hover:not(:disabled) { color: var(--text); border-color: var(--accent); }
+.cx-pg-btn.active { background: var(--accent); color: #1a1408; border-color: var(--accent); font-weight: 800; }
+.cx-pg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
 @media (max-width: 720px) {
   .hero { padding: 36px 18px 28px; }
   .container { padding: 0 14px; }
   #map { height: 460px; }
   .nav-meta .home-link { display: none; }
+  .cx-tabs { font-size: .76rem; }
 }
 </style>
 </head>
@@ -353,6 +393,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
 <!-- ─────────────────── JUMP NAV ─────────────────── -->
 <div class="jumpnav">
   <div class="jumpnav-inner">
+    <a href="#explorer" class="jumpnav-pill">Search</a>
     <a href="#map-section" class="jumpnav-pill">Map</a>
     <a href="#efficiency" class="jumpnav-pill">Party efficiency</a>
     <a href="#regional" class="jumpnav-pill">Regional anatomy</a>
@@ -363,6 +404,62 @@ tr:hover td { background: rgba(245,158,11,0.04); }
     <a href="#posts" class="jumpnav-pill">Read the series</a>
   </div>
 </div>
+
+<!-- ─────────────────── SECTION · CONSTITUENCY EXPLORER ─────────────────── -->
+<section id="explorer" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Data explorer · Search and filter</span>
+      <h2>Constituency Explorer</h2>
+      <p>Find any seat, any candidate, any party. Switch between 2026 winners, 2021 winners, the side-by-side flip view, or the full 4,257-row 2026 ballot. Type to filter by name, district, party, or any visible field; click a column header to sort.</p>
+    </div>
+
+    <div class="table-wrap" style="padding: 16px 18px;">
+      <div class="cx-tabs" style="display:flex; gap:6px; flex-wrap:wrap; background:var(--surface-2); padding:6px; border-radius:99px; margin-bottom:14px; width:fit-content; border:1px solid var(--border);">
+        <button class="cx-tab active" data-tab="winners_2026">2026 Winners</button>
+        <button class="cx-tab" data-tab="winners_2021">2021 Winners</button>
+        <button class="cx-tab" data-tab="compare">2021 vs 2026</button>
+        <button class="cx-tab" data-tab="all_2026">All 2026 Candidates</button>
+      </div>
+
+      <div class="cx-controls" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+        <input id="cx-search" type="search" placeholder="Search constituency, district, candidate, party…"
+               style="flex:1; min-width:260px; padding:10px 16px; border-radius:10px; border:1px solid var(--border);
+                      background:var(--surface-2); color:var(--text); font-size:0.92rem; font-family:inherit;
+                      outline:none;" />
+        <div style="display:flex; gap:8px; align-items:center; font-size:.78rem; color:var(--text-2);">
+          <span>Show</span>
+          <select id="cx-page-size" style="background:var(--surface-2); border:1px solid var(--border); color:var(--text); font-size:.78rem; padding:6px 10px; border-radius:8px; font-family:inherit; cursor:pointer;">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="all">All</option>
+          </select>
+          <span>entries</span>
+        </div>
+        <div id="cx-count" style="font-size:.78rem; color:var(--text-3); margin-left:auto;">—</div>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table id="cx-table" style="width:100%; min-width:760px; border-collapse:collapse; font-size:0.86rem;">
+          <thead id="cx-head"></thead>
+          <tbody id="cx-body">
+            <tr><td colspan="9" style="text-align:center; padding:32px; color:var(--text-3);">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="cx-pager" style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:14px; flex-wrap:wrap;">
+        <div id="cx-pager-info" style="font-size:.78rem; color:var(--text-3);">—</div>
+        <div id="cx-pager-buttons" style="display:flex; gap:6px;"></div>
+      </div>
+    </div>
+
+    <p style="font-size:.78rem; color:var(--text-3); margin-top:12px; line-height:1.5;">
+      Sources: <span class="mono">explorer_ac_2026.json</span> (2026 winners), <span class="mono">winners_2021.json</span> (2021 winners, from TCPD Lok Dhaba via OpenCity CKAN), <span class="mono">swing_2021_to_2026.json</span> (side-by-side), <span class="mono">all_candidates_2026.json</span> (every name on the 2026 ballot, derived from the raw ECI tally).
+    </p>
+  </div>
+</section>
 
 <!-- ─────────────────── SECTION 1 · AC MAP ─────────────────── -->
 <section id="map-section" class="section">
@@ -1351,6 +1448,278 @@ async function loadDummies() {
   }
 }
 
+// ═════════════════════════════════════════════════════════════════
+// CONSTITUENCY EXPLORER  (top of page — search, tabs, sort, paginate)
+// ═════════════════════════════════════════════════════════════════
+const CX = {
+  data: {},                 // tab key -> rows array
+  tab: 'winners_2026',
+  q: '',
+  pageSize: 25,
+  page: 1,
+  sortKey: null,
+  sortDir: 1,
+  schemas: {
+    winners_2026: {
+      columns: [
+        { key: 'ac_no',          label: '#',           cls: 'right', width: '50px',  type: 'num' },
+        { key: 'ac_name',        label: 'Constituency', type: 'const' },
+        { key: 'district',       label: 'District',     type: 'str' },
+        { key: 'winner_candidate', label: 'Winner',     type: 'cand' },
+        { key: 'winner_party',   label: 'Party',        type: 'party' },
+        { key: 'winner_votes',   label: 'Votes',        cls: 'right', type: 'num' },
+        { key: 'winner_share',   label: 'Share',        cls: 'right', type: 'pct' },
+        { key: 'margin',         label: 'Margin',       cls: 'right', type: 'num' },
+        { key: 'margin_pct',     label: 'Margin %',     cls: 'right', type: 'pct' },
+      ],
+      defaultSort: { key: 'ac_no', dir: 1 },
+    },
+    winners_2021: {
+      columns: [
+        { key: 'ac_no',     label: '#',           cls: 'right', width: '50px', type: 'num' },
+        { key: 'ac_name',   label: 'Constituency', type: 'const' },
+        { key: 'district',  label: 'District',     type: 'str' },
+        { key: 'type',      label: 'Type',         type: 'str' },
+        { key: 'candidate', label: 'Winner',       type: 'cand' },
+        { key: 'party',     label: 'Party',        type: 'party' },
+        { key: 'votes',     label: 'Votes',        cls: 'right', type: 'num' },
+        { key: 'share',     label: 'Share',        cls: 'right', type: 'pct' },
+        { key: 'margin',    label: 'Margin',       cls: 'right', type: 'num' },
+      ],
+      defaultSort: { key: 'ac_no', dir: 1 },
+    },
+    compare: {
+      columns: [
+        { key: 'ac_no',    label: '#', cls: 'right', width: '50px', type: 'num' },
+        { key: 'ac_name',  label: 'Constituency', type: 'const' },
+        { key: 'region',   label: 'Region', type: 'str' },
+        { key: 'w21_name', label: '2021 winner', type: 'cand' },
+        { key: 'w21_party', label: '2021', type: 'party' },
+        { key: 'w26_name', label: '2026 winner', type: 'cand' },
+        { key: 'w26_party', label: '2026', type: 'party' },
+        { key: 'flipped',  label: 'Flip', type: 'flip' },
+      ],
+      defaultSort: { key: 'ac_no', dir: 1 },
+    },
+    all_2026: {
+      columns: [
+        { key: 'ac_no',     label: '#',  cls: 'right', width: '50px', type: 'num' },
+        { key: 'ac_name',   label: 'Constituency', type: 'const' },
+        { key: 'candidate', label: 'Candidate', type: 'cand' },
+        { key: 'party',     label: 'Party', type: 'party' },
+        { key: 'votes',     label: 'Votes', cls: 'right', type: 'num' },
+        { key: 'share',     label: 'Share', cls: 'right', type: 'pct' },
+        { key: 'position',  label: 'Pos', cls: 'right', type: 'num' },
+        { key: 'winner',    label: 'Won', type: 'bool' },
+      ],
+      defaultSort: { key: 'ac_no', dir: 1 },
+    },
+  },
+};
+
+async function cxLoadAll() {
+  try {
+    const [w26, w21, sw, all] = await Promise.all([
+      fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null),
+      fetch('data/winners_2021.json').then(r => r.ok ? r.json() : null),
+      fetch('data/swing_2021_to_2026.json').then(r => r.ok ? r.json() : null),
+      fetch('data/all_candidates_2026.json').then(r => r.ok ? r.json() : null),
+    ]);
+    CX.data.winners_2026 = (w26 && w26.per_ac) ? w26.per_ac : [];
+    CX.data.winners_2021 = (w21 && w21.rows) ? w21.rows : [];
+    CX.data.compare = (sw && sw.rows) ? sw.rows.map(r => ({
+      ac_no: r.ac_no, ac_name: r.ac_name, region: r.region,
+      w21_name: r.winner_2021.candidate, w21_party: r.winner_2021.party,
+      w26_name: r.winner_2026.candidate, w26_party: r.winner_2026.party,
+      flipped: r.flipped,
+    })) : [];
+    CX.data.all_2026 = (all && all.rows) ? all.rows.filter(r => r.party !== 'NOTA') : [];
+    cxRender();
+  } catch (e) {
+    document.getElementById('cx-body').innerHTML =
+      `<tr><td colspan="9" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load: ${e.message}</td></tr>`;
+  }
+}
+
+function cxRender() {
+  const schema = CX.schemas[CX.tab];
+  const rows = CX.data[CX.tab] || [];
+
+  // header
+  const head = document.getElementById('cx-head');
+  head.innerHTML = '<tr>' + schema.columns.map(col => {
+    const isSorted = CX.sortKey === col.key;
+    const ind = isSorted ? `<span class="sort-ind">${CX.sortDir > 0 ? '▲' : '▼'}</span>` : '';
+    return `<th class="${col.cls || ''}" data-key="${col.key}" ${col.width ? `style="width:${col.width}"` : ''}>${col.label}${ind}</th>`;
+  }).join('') + '</tr>';
+  head.querySelectorAll('th').forEach(th => {
+    th.addEventListener('click', () => {
+      const k = th.dataset.key;
+      if (CX.sortKey === k) CX.sortDir *= -1;
+      else { CX.sortKey = k; CX.sortDir = 1; }
+      CX.page = 1; cxRender();
+    });
+  });
+
+  // Filter
+  const q = CX.q.toLowerCase().trim();
+  let filtered = rows;
+  if (q) {
+    filtered = rows.filter(r =>
+      schema.columns.some(col => {
+        const v = r[col.key];
+        if (v == null) return false;
+        return String(v).toLowerCase().includes(q);
+      })
+    );
+  }
+
+  // Sort
+  let sortKey = CX.sortKey || schema.defaultSort.key;
+  let sortDir = CX.sortKey ? CX.sortDir : schema.defaultSort.dir;
+  filtered = filtered.slice().sort((a, b) => {
+    let ka = a[sortKey], kb = b[sortKey];
+    if (ka == null) ka = (typeof kb === 'number') ? -Infinity : '';
+    if (kb == null) kb = (typeof ka === 'number') ? -Infinity : '';
+    if (typeof ka === 'string' && typeof kb === 'string') return sortDir * ka.localeCompare(kb);
+    if (typeof ka === 'boolean') ka = ka ? 1 : 0;
+    if (typeof kb === 'boolean') kb = kb ? 1 : 0;
+    return sortDir * (ka - kb);
+  });
+
+  // Paginate
+  const total = filtered.length;
+  const pageSize = CX.pageSize === 'all' ? total : CX.pageSize;
+  const totalPages = pageSize ? Math.max(1, Math.ceil(total / pageSize)) : 1;
+  if (CX.page > totalPages) CX.page = totalPages;
+  const start = (CX.page - 1) * pageSize;
+  const end = pageSize ? Math.min(total, start + pageSize) : total;
+  const visible = filtered.slice(start, end);
+
+  // Counts
+  document.getElementById('cx-count').textContent =
+    `Showing ${total ? start + 1 : 0} to ${end} of ${total.toLocaleString('en-IN')} entries`;
+
+  // Body
+  const tbody = document.getElementById('cx-body');
+  if (!visible.length) {
+    tbody.innerHTML = `<tr><td colspan="${schema.columns.length}" style="text-align:center;padding:32px;color:var(--text-3);">No matches.</td></tr>`;
+  } else {
+    tbody.innerHTML = visible.map(r => {
+      const cells = schema.columns.map(col => {
+        const v = r[col.key];
+        return `<td class="${col.cls || ''}">${cxFormatCell(col, v, r)}</td>`;
+      }).join('');
+      return '<tr>' + cells + '</tr>';
+    }).join('');
+  }
+
+  // Pager
+  cxRenderPager(total, totalPages);
+}
+
+function cxFormatCell(col, v, row) {
+  if (col.type === 'num') {
+    if (v == null) return '<span style="color:var(--text-3)">—</span>';
+    return `<span class="num">${typeof v === 'number' ? v.toLocaleString('en-IN') : v}</span>`;
+  }
+  if (col.type === 'pct') {
+    if (v == null || isNaN(v)) return '<span style="color:var(--text-3)">—</span>';
+    return `<span class="num">${(+v).toFixed(2)}%</span>`;
+  }
+  if (col.type === 'party') {
+    if (!v) return '<span style="color:var(--text-3)">—</span>';
+    const partyCode = v === 'AIADMK' ? 'ADMK' : v;
+    return `<span class="party-chip ${pcClass(partyCode)}">${v}</span>`;
+  }
+  if (col.type === 'const') {
+    const dist = row.district ? `<span class="dist">${row.district}</span>` : '';
+    return `<span class="const-cell">${v || '—'}${dist}</span>`;
+  }
+  if (col.type === 'cand') {
+    return `<span class="cand-cell">${v || '—'}</span>`;
+  }
+  if (col.type === 'flip') {
+    return v
+      ? `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:800;letter-spacing:.04em;background:rgba(245,158,11,.18);color:var(--accent);">FLIPPED</span>`
+      : `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,.05);color:var(--text-3);">HELD</span>`;
+  }
+  if (col.type === 'bool') {
+    return v
+      ? `<span style="color:var(--accent);font-weight:800;">✓</span>`
+      : `<span style="color:var(--text-3);">—</span>`;
+  }
+  return v != null ? String(v) : '<span style="color:var(--text-3)">—</span>';
+}
+
+function cxRenderPager(total, totalPages) {
+  const info = document.getElementById('cx-pager-info');
+  const buttons = document.getElementById('cx-pager-buttons');
+  if (CX.pageSize === 'all' || totalPages <= 1) {
+    info.textContent = '';
+    buttons.innerHTML = '';
+    return;
+  }
+  info.textContent = `Page ${CX.page} of ${totalPages}`;
+  // Render up to 7 page buttons with ellipsis
+  const pages = [];
+  const add = p => pages.push(p);
+  const win = 2;
+  add(1);
+  if (CX.page - win > 2) add('...');
+  for (let p = Math.max(2, CX.page - win); p <= Math.min(totalPages - 1, CX.page + win); p++) add(p);
+  if (CX.page + win < totalPages - 1) add('...');
+  if (totalPages > 1) add(totalPages);
+
+  buttons.innerHTML = `
+    <button class="cx-pg-btn" data-pg="prev" ${CX.page === 1 ? 'disabled' : ''}>‹ Prev</button>
+    ${pages.map(p => p === '...'
+        ? `<span style="padding:5px 4px; color:var(--text-3);">…</span>`
+        : `<button class="cx-pg-btn ${p === CX.page ? 'active' : ''}" data-pg="${p}">${p}</button>`).join('')}
+    <button class="cx-pg-btn" data-pg="next" ${CX.page === totalPages ? 'disabled' : ''}>Next ›</button>
+  `;
+  buttons.querySelectorAll('[data-pg]').forEach(b => {
+    b.addEventListener('click', () => {
+      const v = b.dataset.pg;
+      if (v === 'prev') CX.page = Math.max(1, CX.page - 1);
+      else if (v === 'next') CX.page = Math.min(totalPages, CX.page + 1);
+      else CX.page = +v;
+      cxRender();
+      document.getElementById('explorer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+// Tab switching
+document.querySelectorAll('.cx-tab').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.cx-tab').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    CX.tab = b.dataset.tab;
+    CX.page = 1;
+    CX.sortKey = null;
+    cxRender();
+  });
+});
+
+// Search
+let cxSearchTimer = null;
+document.getElementById('cx-search').addEventListener('input', e => {
+  clearTimeout(cxSearchTimer);
+  cxSearchTimer = setTimeout(() => {
+    CX.q = e.target.value;
+    CX.page = 1;
+    cxRender();
+  }, 120);
+});
+
+// Page size
+document.getElementById('cx-page-size').addEventListener('change', e => {
+  CX.pageSize = e.target.value === 'all' ? 'all' : parseInt(e.target.value, 10);
+  CX.page = 1;
+  cxRender();
+});
+
 // ─── Boot (each section catches its own errors so one failure doesn't break the page) ───
 const mapOk = initMap();
 if (mapOk) loadMap().catch(e => console.error('Map load failed:', e));
@@ -1360,6 +1729,7 @@ loadSwing().catch(e => console.error('Swing load failed:', e));
 loadDemographics().catch(e => console.error('Demographics load failed:', e));
 loadIncumbents().catch(e => console.error('Incumbents load failed:', e));
 loadDummies().catch(e => console.error('Dummies load failed:', e));
+cxLoadAll().catch(e => console.error('Constituency Explorer load failed:', e));
 </script>
 
 </body>
