@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TN 2026 Explorer · Tamil Nadu Assembly Election Dashboard</title>
+<meta name="description" content="The complete data view of Tamil Nadu's 2026 Assembly election. Interactive 234-seat map, party seat-vs-vote efficiency, regional anatomy, 2021 to 2026 swing, demographics of winners, defeated incumbents, and dummy near-misses.">
+<meta property="og:title" content="TN 2026 Explorer: The complete data view">
+<meta property="og:description" content="Every seat, every party, every region. The single comprehensive dashboard for Tamil Nadu's 2026 Assembly election.">
+<meta property="og:image" content="https://ndranandraj.com/images/tn-2026-explorer-cover.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ndranandraj.com/election-dashboard/tn-2026-explorer.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+:root {
+  --bg: #0E0E14; --surface: #181820; --surface-2: #21212C; --border: #2E2E3D;
+  --text: #EEEDF6; --text-2: #B4B4C8; --text-3: #8888A2;
+  --accent: #F59E0B; --accent-soft: rgba(245,158,11,0.14);
+
+  /* Party colors — consistent across the whole explorer */
+  --c-tvk:   #A855F7;
+  --c-dmk:   #E5172A;
+  --c-admk:  #16A34A;
+  --c-bjp:   #F97316;
+  --c-pmk:   #FACC15;
+  --c-inc:   #2563EB;
+  --c-ntk:   #DC2626;
+  --c-vck:   #1E40AF;
+  --c-cpi:   #B91C1C;
+  --c-cpim:  #B91C1C;
+  --c-iuml:  #14532D;
+  --c-dmdk:  #EAB308;
+  --c-ammk:  #7C3AED;
+  --c-ind:   #6B7280;
+  --c-other: #475569;
+
+  --c-india: #2563EB;
+  --c-nda:   #F97316;
+  --c-tvk-a: #A855F7;
+  --c-other-a: #6B7280;
+
+  --radius: 14px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+::selection { background: rgba(245,158,11,0.30); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* ── TOP NAV (sticky) ───────────────────────────────────────── */
+.top-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(14,14,20,0.88);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  position: sticky; top: 0; z-index: 200;
+}
+.nav-brand {
+  font-size: 0.76rem; font-weight: 700; letter-spacing: 0.10em;
+  text-transform: uppercase; color: var(--text-3);
+  display: flex; align-items: center; gap: 9px;
+}
+.nav-brand .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.nav-meta { display: flex; gap: 14px; align-items: center; }
+.nav-meta .results-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 99px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(245,158,11,0.32); color: var(--accent);
+}
+.results-pill .blip { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); animation: blink 1.6s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+.nav-meta .home-link { font-size: 0.74rem; font-weight: 600; color: var(--text-3); }
+.nav-meta .home-link:hover { color: var(--text); text-decoration: none; }
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.hero {
+  padding: 56px 24px 36px; text-align: center;
+  background: linear-gradient(180deg, #161020 0%, #0E0E14 100%);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 760px 460px at 30% 35%, rgba(168,85,247,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 620px 380px at 75% 60%, rgba(245,158,11,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
+.hero .kicker {
+  display: inline-block; font-size: 0.70rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  padding: 5px 15px; border-radius: 99px; margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.1rem, 5vw, 3.1rem);
+  font-weight: 900; line-height: 1.10; margin-bottom: 14px;
+  background: linear-gradient(135deg, #fff 25%, var(--accent) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero .subtitle {
+  font-size: clamp(0.96rem, 1.8vw, 1.08rem);
+  color: var(--text-2); max-width: 680px; margin: 0 auto;
+}
+.hero .subtitle strong { color: var(--text); font-weight: 600; }
+
+/* ── KPI STRIP (alliance + party headline) ─────────────────── */
+.kpi-strip {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  max-width: 1180px; margin: 30px auto -6px;
+  padding: 0 20px; position: relative; z-index: 5;
+}
+.kpi {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px 16px; text-align: center;
+  transition: transform .22s cubic-bezier(.2,.8,.2,1), border-color .22s;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 8px 22px -16px rgba(0,0,0,0.55);
+}
+.kpi:hover { transform: translateY(-2px); border-color: rgba(245,158,11,0.34); }
+.kpi .num { font-size: 1.85rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.kpi .num.tvk  { color: var(--c-tvk); }
+.kpi .num.india{ color: var(--c-india); }
+.kpi .num.nda  { color: var(--c-nda); }
+.kpi .num.muted{ color: var(--text-2); }
+.kpi .num.dmk  { color: var(--c-dmk); }
+.kpi .num.admk { color: var(--c-admk); }
+.kpi .num.accent { color: var(--accent); }
+.kpi .label { font-size: 0.68rem; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.10em; margin-top: 6px; font-weight: 700; }
+.kpi .sub { font-size: 0.66rem; color: var(--text-3); margin-top: 4px; line-height: 1.4; }
+
+/* ── JUMP NAV (sticky pill rail) ───────────────────────────── */
+.jumpnav {
+  position: sticky; top: 56px; z-index: 100;
+  padding: 11px 0 13px;
+  background: linear-gradient(180deg, rgba(14,14,20,0.96) 0%, rgba(14,14,20,0.88) 100%);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(245,158,11,0.10);
+}
+.jumpnav-inner {
+  display: flex; gap: 8px; align-items: center;
+  max-width: 1180px; margin: 0 auto; padding: 0 20px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.jumpnav-inner::-webkit-scrollbar { display: none; }
+.jumpnav-pill {
+  flex-shrink: 0; padding: 7px 14px; border-radius: 99px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-2); font-size: 0.78rem; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+  transition: all .2s ease;
+}
+.jumpnav-pill:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); text-decoration: none; }
+.jumpnav-pill.active { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+.jumpnav-pill.soon { opacity: .45; pointer-events: none; font-weight: 500; }
+.jumpnav-pill.soon::after { content: ' · soon'; opacity: .6; font-weight: 400; }
+
+/* ── CONTAINER + SECTION ───────────────────────────────────── */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 40px 0 8px; scroll-margin-top: 110px; }
+.section-header { position: relative; padding-top: 20px; margin-bottom: 18px; }
+.section-header::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 36px; height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 99px;
+}
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem; font-weight: 800; margin-bottom: 6px; color: var(--text);
+}
+.section-header p { color: var(--text-2); font-size: 0.92rem; line-height: 1.65; max-width: 760px; }
+.section-header .h-eyebrow {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 6px; display: block;
+}
+
+/* ── MAP ────────────────────────────────────────────────────── */
+.map-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
+.map-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; align-items: center; }
+.map-controls .ctl-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-right: 6px; }
+.map-controls .ctl {
+  padding: 6px 13px; border-radius: 99px; border: 1px solid var(--border);
+  background: var(--surface-2); color: var(--text-2);
+  font-size: 0.77rem; font-weight: 600; cursor: pointer;
+  transition: all .18s ease;
+}
+.map-controls .ctl:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+.map-controls .ctl.active { color: var(--text); border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+.map-controls .ctl.party-active { color: #fff; }
+.map-controls .divider { width: 1px; height: 22px; background: var(--border); margin: 0 6px; }
+#map { width: 100%; height: 640px; border-radius: 10px; background: #08080F; }
+
+/* ── Tooltip ─────────────────────────────────────────────── */
+.leaflet-tooltip.exp-tip {
+  background: #13131C !important; color: var(--text) !important;
+  border: 1.5px solid rgba(245,158,11,0.55) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.4) !important;
+  padding: 12px 16px !important;
+  font-size: 0.84rem !important; line-height: 1.55 !important;
+  min-width: 220px; pointer-events: none;
+}
+.exp-tip .tip-name { font-size: 0.96rem; font-weight: 800; color: #fff; display: block; margin-bottom: 2px; letter-spacing: -0.01em; }
+.exp-tip .tip-district { font-size: 0.72rem; color: var(--text-3); display: block; margin-bottom: 9px; }
+.exp-tip .tip-row { display: flex; justify-content: space-between; gap: 14px; font-size: 0.78rem; color: var(--text-2); padding: 2px 0; }
+.exp-tip .tip-row strong { color: var(--text); font-weight: 700; }
+.exp-tip .party-chip { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 0.70rem; font-weight: 800; color: #fff; letter-spacing: 0.03em; }
+.leaflet-tooltip-top.exp-tip:before { border-top-color: rgba(245,158,11,0.55); }
+
+/* ── LEGEND ────────────────────────────────────────────────── */
+.legend { display: flex; flex-wrap: wrap; gap: 14px 18px; margin-top: 14px; padding: 12px 16px;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px;
+  font-size: 0.80rem; align-items: center; }
+.legend .item { display: flex; align-items: center; gap: 7px; color: var(--text); font-weight: 500; }
+.legend .sw { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); }
+.legend .h { color: var(--text-3); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.10em; font-weight: 700; margin-right: 4px; }
+
+/* ── TABLES ────────────────────────────────────────────────── */
+.table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { text-align: left; padding: 12px 14px; background: var(--surface-2);
+  color: var(--text-2); font-size: 0.70rem; text-transform: uppercase;
+  letter-spacing: 0.08em; font-weight: 800;
+  border-bottom: 1px solid var(--border); white-space: nowrap; }
+th.right { text-align: right; }
+td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text); }
+td.right { text-align: right; font-variant-numeric: tabular-nums; }
+td.num { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(245,158,11,0.04); }
+.party-chip {
+  display: inline-block; padding: 2px 9px; border-radius: 99px;
+  font-size: 0.70rem; font-weight: 800; color: #fff; letter-spacing: 0.02em;
+}
+.bar-cell { position: relative; min-width: 100px; }
+.bar-cell .bar { position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  height: 22px; border-radius: 4px; opacity: 0.20; }
+.bar-cell .val { position: relative; padding-left: 8px; }
+
+/* ── EFFICIENCY VISUAL ROW ───────────────────────────────── */
+.eff-ratio-bar { display: inline-block; width: 90px; height: 8px; border-radius: 99px;
+  background: rgba(255,255,255,0.06); position: relative; vertical-align: middle; margin-right: 6px; }
+.eff-ratio-bar .fill { position: absolute; left: 50%; top: 0; height: 100%; border-radius: 99px; }
+.eff-ratio-bar .center-mark { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: rgba(255,255,255,0.18); }
+.eff-ratio { font-variant-numeric: tabular-nums; font-weight: 700; }
+.eff-ratio.over { color: var(--accent); }
+.eff-ratio.under { color: #FCA5A5; }
+
+/* ── BANNERS / NOTES ─────────────────────────────────────── */
+.coming-soon {
+  background: linear-gradient(135deg, var(--accent-soft) 0%, rgba(245,158,11,0.05) 100%);
+  border: 1px dashed rgba(245,158,11,0.35);
+  border-radius: 12px; padding: 22px 24px;
+  color: var(--text-2); font-size: 0.92rem; line-height: 1.6;
+}
+.coming-soon strong { color: var(--text); }
+
+/* ── EXPLORE GRID (closing) ─────────────────────────────── */
+.explore { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.explore a {
+  display: block; padding: 18px 20px; border-radius: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  text-decoration: none; color: var(--text); transition: all .2s;
+}
+.explore a:hover { transform: translateY(-2px); border-color: var(--accent); text-decoration: none; background: linear-gradient(180deg, var(--surface) 0%, rgba(245,158,11,0.04) 100%); }
+.explore a strong { display: block; font-size: 0.96rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.explore a span { display: block; font-size: 0.82rem; color: var(--text-2); line-height: 1.5; }
+.explore a .ex-tag { display: inline-block; font-size: 0.60rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 8px; }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.footer { border-top: 1px solid var(--border); padding: 32px 20px;
+  text-align: center; color: var(--text-3); font-size: 0.84rem; margin-top: 36px; }
+.footer a { color: var(--text-2); }
+
+/* ── PARTY COLOR HELPERS ─────────────────────────────────── */
+.pc-tvk   { background: var(--c-tvk); }
+.pc-dmk   { background: var(--c-dmk); }
+.pc-admk  { background: var(--c-admk); }
+.pc-bjp   { background: var(--c-bjp); }
+.pc-pmk   { background: var(--c-pmk); color: #1f1f1f; }
+.pc-inc   { background: var(--c-inc); }
+.pc-ntk   { background: var(--c-ntk); }
+.pc-vck   { background: var(--c-vck); }
+.pc-iuml  { background: var(--c-iuml); }
+.pc-cpim  { background: var(--c-cpim); }
+.pc-cpi   { background: var(--c-cpi); }
+.pc-dmdk  { background: var(--c-dmdk); color: #1f1f1f; }
+.pc-ammk  { background: var(--c-ammk); }
+.pc-ind   { background: var(--c-ind); }
+.pc-other { background: var(--c-other); }
+
+@media (max-width: 720px) {
+  .hero { padding: 36px 18px 28px; }
+  .container { padding: 0 14px; }
+  #map { height: 460px; }
+  .nav-meta .home-link { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─────────────────── TOP NAV ─────────────────── -->
+<nav class="top-nav">
+  <div class="nav-brand"><span class="dot"></span>ndranandraj.com · TN 2026</div>
+  <div class="nav-meta">
+    <span class="results-pill"><span class="blip"></span>Results loaded · May 4, 2026</span>
+    <a href="/" class="home-link">Home</a>
+  </div>
+</nav>
+
+<!-- ─────────────────── HERO ─────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Tamil Nadu 2026 · Comprehensive Explorer</span>
+    <h1>The complete data view of the 2026 Tamil Nadu Assembly election</h1>
+    <p class="subtitle">
+      Every seat, every party, every region. <strong>234 constituencies</strong>, <strong>4.93 crore votes polled</strong>, <strong>12 parties with seats</strong>. The interactive companion to the five-post series on TN 2026.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────── KPI STRIP ─────────────────── -->
+<div class="kpi-strip">
+  <div class="kpi"><div class="num tvk">108</div><div class="label">TVK</div><div class="sub">46.2% seat share · 34.9% vote share</div></div>
+  <div class="kpi"><div class="num dmk">59</div><div class="label">DMK</div><div class="sub">25.2% seat share · 24.2% vote share</div></div>
+  <div class="kpi"><div class="num admk">47</div><div class="label">AIADMK</div><div class="sub">20.1% seat share · 21.2% vote share</div></div>
+  <div class="kpi"><div class="num india">70</div><div class="label">INDIA bloc</div><div class="sub">DMK + INC + VCK + CPI(M) + CPI + IUML</div></div>
+  <div class="kpi"><div class="num nda">53</div><div class="label">NDA bloc</div><div class="sub">AIADMK + BJP + PMK + DMDK</div></div>
+  <div class="kpi"><div class="num accent">234</div><div class="label">Constituencies</div><div class="sub">4.93 crore votes polled</div></div>
+</div>
+
+<!-- ─────────────────── JUMP NAV ─────────────────── -->
+<div class="jumpnav">
+  <div class="jumpnav-inner">
+    <a href="#map-section" class="jumpnav-pill">Map</a>
+    <a href="#efficiency" class="jumpnav-pill">Party efficiency</a>
+    <a href="#regional" class="jumpnav-pill">Regional anatomy</a>
+    <a href="#swing" class="jumpnav-pill">2021 → 2026 swing</a>
+    <a href="#demographics" class="jumpnav-pill">Demographics</a>
+    <a href="#incumbents" class="jumpnav-pill">Defeated incumbents</a>
+    <a href="#dummies" class="jumpnav-pill">Dummy near-misses</a>
+    <a href="#posts" class="jumpnav-pill">Read the series</a>
+  </div>
+</div>
+
+<!-- ─────────────────── SECTION 1 · AC MAP ─────────────────── -->
+<section id="map-section" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Section 1 · Interactive map</span>
+      <h2>234 constituencies, colored by winner</h2>
+      <p>Hover any seat for the winning candidate, party, vote total, margin, and second-place finisher. Filter by alliance or by major party to see the geographic shape of each force.</p>
+    </div>
+
+    <div class="map-wrap">
+      <div class="map-controls">
+        <span class="ctl-label">View</span>
+        <button class="ctl active" data-view="winner">By winning party</button>
+        <button class="ctl" data-view="alliance">By alliance</button>
+        <div class="divider"></div>
+        <span class="ctl-label">Highlight</span>
+        <button class="ctl active" data-filter="all">All</button>
+        <button class="ctl" data-filter="TVK">TVK</button>
+        <button class="ctl" data-filter="DMK">DMK</button>
+        <button class="ctl" data-filter="ADMK">AIADMK</button>
+        <button class="ctl" data-filter="INDIA">INDIA bloc</button>
+        <button class="ctl" data-filter="NDA">NDA bloc</button>
+      </div>
+      <div id="map"></div>
+      <div class="legend" id="legend">
+        <span class="h">Winner</span>
+        <span class="item"><span class="sw pc-tvk"></span>TVK · 108</span>
+        <span class="item"><span class="sw pc-dmk"></span>DMK · 59</span>
+        <span class="item"><span class="sw pc-admk"></span>AIADMK · 47</span>
+        <span class="item"><span class="sw pc-inc"></span>INC · 5</span>
+        <span class="item"><span class="sw pc-pmk"></span>PMK · 4</span>
+        <span class="item"><span class="sw pc-vck"></span>VCK · 2</span>
+        <span class="item"><span class="sw pc-iuml"></span>IUML · 2</span>
+        <span class="item"><span class="sw pc-cpi"></span>CPI / CPI(M) · 4</span>
+        <span class="item"><span class="sw pc-bjp"></span>BJP · 1</span>
+        <span class="item"><span class="sw pc-dmdk"></span>DMDK · 1</span>
+        <span class="item"><span class="sw pc-ammk"></span>AMMK · 1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── SECTION 2 · PARTY EFFICIENCY ─────────────────── -->
+<section id="efficiency" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Section 2 · Seat-to-vote efficiency</span>
+      <h2>Who converted votes into seats, and who didn't</h2>
+      <p>Vote share, seat share, and the seat-share-over-vote-share ratio. Ratio above 1.0 means the party won a larger share of seats than its share of votes (FPTP working in their favour). Below 1.0 means votes were spread thin. NTK polled 4% statewide and won zero. BJP's 2.97% delivered one. TVK's 1.32 is the highest among parties with five or more seats.</p>
+    </div>
+    <div class="table-wrap">
+      <table id="eff-table">
+        <thead>
+          <tr>
+            <th>Party</th>
+            <th class="right">Votes polled</th>
+            <th class="right">Vote share</th>
+            <th class="right">Seats</th>
+            <th class="right">Seat share</th>
+            <th>Efficiency (seat ÷ vote share)</th>
+          </tr>
+        </thead>
+        <tbody id="eff-body">
+          <tr><td colspan="6" style="text-align:center; padding: 32px; color: var(--text-3);">Loading <span class="mono">party_efficiency_2026.json</span>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size: 0.78rem; color: var(--text-3); margin-top: 12px; line-height: 1.5;">
+      Source: <span class="mono">party_efficiency_2026.json</span>. Total state pool: 4,93,24,121 votes (4.93 crore). Independents and unlisted micro-parties grouped into the residual; not shown here.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────── SECTION 3 · REGIONAL ANATOMY ─────────────────── -->
+<section id="regional" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Section 3 · Regional anatomy</span>
+      <h2>9 regions, all major parties</h2>
+      <p>Tamil Nadu's 234 constituencies grouped into nine political-geography regions. Each cell shows <strong>seats / vote share</strong>. The headline pattern: TVK over-performed in Chennai &amp; Suburbs (32 of 37 seats, 45% share) and underperformed in the Cauvery Delta and Northeast Coast. AIADMK held the Krishnagiri Belt and held strong in the North. DMK's rump survives in Cauvery Delta, Central, and Madurai. Use the toggle to switch between seat count and vote share view.</p>
+    </div>
+
+    <div class="map-controls" style="margin-bottom: 12px;">
+      <span class="ctl-label">View</span>
+      <button class="ctl active" data-reg-view="combined">Seats &amp; share</button>
+      <button class="ctl" data-reg-view="seats">Seats only</button>
+      <button class="ctl" data-reg-view="share">Vote share only</button>
+    </div>
+
+    <div class="table-wrap">
+      <table id="reg-table">
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th class="right">ACs</th>
+            <th class="right">TVK</th>
+            <th class="right">DMK</th>
+            <th class="right">ADMK</th>
+            <th class="right">BJP</th>
+            <th class="right">PMK</th>
+            <th class="right">INC</th>
+            <th class="right">NTK</th>
+            <th class="right">Other</th>
+          </tr>
+        </thead>
+        <tbody id="reg-body">
+          <tr><td colspan="10" style="text-align:center; padding:32px; color:var(--text-3);">Loading <span class="mono">regional_all_parties_2026.json</span>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-3);margin-top:12px;line-height:1.5;">
+      Source: <span class="mono">regional_all_parties_2026.json</span>. NTK polled 4% statewide and won zero seats anywhere; the column shows its regional vote-share footprint. Sivaganga is grouped under Deep South to match the published TVK regional file.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────── SECTION 4 · 2021 → 2026 SWING ─────────────────── -->
+<section id="swing" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Section 4 · 2021 → 2026 swing</span>
+      <h2>Every seat, then and now</h2>
+      <p><strong>164 of 234 seats flipped party</strong> (70%). The top flow is DMK → TVK (65 seats), followed by AIADMK → TVK (26), DMK → AIADMK (22), and AIADMK → DMK (15). Sort the table by any column. Filter to flipped or held; or jump to a specific 2021 or 2026 winning party.</p>
+    </div>
+
+    <div class="map-controls" style="margin-bottom: 12px;">
+      <span class="ctl-label">Show</span>
+      <button class="ctl active" data-swing-show="all">All 234</button>
+      <button class="ctl" data-swing-show="flipped">Flipped (164)</button>
+      <button class="ctl" data-swing-show="held">Held (70)</button>
+      <div class="divider"></div>
+      <span class="ctl-label">2026 winner</span>
+      <select id="swing-party-filter" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
+        <option value="all">Any</option>
+        <option value="TVK">TVK</option>
+        <option value="DMK">DMK</option>
+        <option value="ADMK">AIADMK</option>
+        <option value="BJP">BJP</option>
+        <option value="PMK">PMK</option>
+        <option value="INC">INC</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table id="swing-table">
+        <thead>
+          <tr>
+            <th data-sort="ac_no">AC</th>
+            <th data-sort="ac_name">Constituency</th>
+            <th data-sort="region">Region</th>
+            <th data-sort="winner_2021_party">2021 winner</th>
+            <th data-sort="winner_2026_party">2026 winner</th>
+            <th class="right" data-sort="margin_2026">2026 margin (%)</th>
+            <th>Flip</th>
+          </tr>
+        </thead>
+        <tbody id="swing-body">
+          <tr><td colspan="7" style="text-align:center; padding:32px; color:var(--text-3);">Loading <span class="mono">swing_2021_to_2026.json</span>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-3);margin-top:12px;line-height:1.5;">
+      Source: <span class="mono">swing_2021_to_2026.json</span> + <span class="mono">explorer_ac_2026.json</span> for 2026 margins. Click any column header to sort. Margin shown is the 2026 winner's lead over the 2026 runner-up as a percentage of votes polled.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────── SECTION 5 · DEMOGRAPHICS ─────────────────── -->
+<section id="demographics" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Section 5 · Demographics of winners</span>
+      <h2>Who actually got elected</h2>
+      <p>The 2026 assembly is younger than any in Tamil Nadu's recent history. Median MLA age fell 12 years from 2021. <strong>22 women elected</strong> (9.4%), 13 of them from TVK alone, zero from DMK. <strong>41 MLAs under 40</strong>, 35 of those from TVK. The youngest sitting MLA is 28.</p>
+    </div>
+
+    <div class="kpi-strip" style="margin: 4px 0 18px; padding: 0;">
+      <div class="kpi"><div class="num accent" id="dm-median-age">—</div><div class="label">Median age</div><div class="sub">down ~12 years from 2021</div></div>
+      <div class="kpi"><div class="num tvk" id="dm-under-40">—</div><div class="label">MLAs under 40</div><div class="sub">35 of these are from TVK</div></div>
+      <div class="kpi"><div class="num dmk" id="dm-women">—</div><div class="label">Women MLAs</div><div class="sub" id="dm-women-sub">—% of assembly</div></div>
+      <div class="kpi"><div class="num muted" id="dm-graduate">—</div><div class="label">Graduate or above</div><div class="sub" id="dm-postgrad-sub">of which postgraduate: —</div></div>
+      <div class="kpi"><div class="num muted" id="dm-range">—</div><div class="label">Age range</div><div class="sub">youngest to oldest</div></div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="dm-party-table">
+        <thead>
+          <tr>
+            <th>Party</th>
+            <th class="right">Seats</th>
+            <th class="right">Median age</th>
+            <th class="right">Under 40</th>
+            <th class="right">Women</th>
+            <th class="right">Graduate+ %</th>
+            <th class="right">Median assets (₹ lakh)</th>
+          </tr>
+        </thead>
+        <tbody id="dm-party-body">
+          <tr><td colspan="7" style="text-align:center; padding:32px; color:var(--text-3);">Loading <span class="mono">new_assembly_profile_2026.json</span>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-header" style="padding-top: 28px; margin-bottom: 14px;">
+      <h2 style="font-size: 1.20rem;">Youngest 10 in the new assembly</h2>
+    </div>
+    <div class="table-wrap">
+      <table id="dm-young-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th class="right">Age</th>
+            <th>Constituency</th>
+            <th>Party</th>
+            <th>Gender</th>
+            <th>Education</th>
+          </tr>
+        </thead>
+        <tbody id="dm-young-body">
+          <tr><td colspan="6" style="text-align:center; padding:32px; color:var(--text-3);">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:.78rem;color:var(--text-3);margin-top:12px;line-height:1.5;">
+      Source: <span class="mono">new_assembly_profile_2026.json</span>, derived from the 4,023-row 2026 candidate roster (MyNeta + ECI). Asset numbers are subject to the known parser caveats documented in the dataset README; treat "Not declared" as missing rather than zero.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────── SECTION 6 · DEFEATED INCUMBENTS ─────────────────── -->
+<section id="incumbents" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Section 6 · Defeated incumbents</span>
+      <h2>The 196 who didn't return on the same seat</h2>
+      <p>Of 234 sitting MLAs, only <strong>38 held their seat</strong>. <strong>56 defended their 2021 seat and lost</strong>. <strong>27 shifted constituency and lost there too</strong>. <strong>108 were off the ballot entirely</strong> (retired, denied tickets, or otherwise out of contest). 37 of the 56 contested-and-lost defeats came directly at TVK's hands, including the Chief Minister.</p>
+    </div>
+
+    <div class="map-controls" style="margin-bottom: 12px;">
+      <span class="ctl-label">Situation</span>
+      <button class="ctl active" data-inc-sit="contested_and_lost">Contested &amp; lost (56)</button>
+      <button class="ctl" data-inc-sit="truly_out_of_contest">Off the ballot (108)</button>
+      <button class="ctl" data-inc-sit="shifted_and_lost">Shifted &amp; lost (27)</button>
+      <button class="ctl" data-inc-sit="shifted_and_won">Shifted &amp; won (5)</button>
+      <button class="ctl" data-inc-sit="all">All 196</button>
+      <div class="divider"></div>
+      <span class="ctl-label">2021 party</span>
+      <select id="inc-party-filter" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
+        <option value="all">Any</option>
+        <option value="DMK">DMK</option>
+        <option value="AIADMK">AIADMK</option>
+        <option value="INC">INC</option>
+        <option value="VCK">VCK</option>
+        <option value="PMK">PMK</option>
+        <option value="CPI">CPI</option>
+        <option value="CPI(M)">CPI(M)</option>
+        <option value="IUML">IUML</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table id="inc-table">
+        <thead>
+          <tr>
+            <th data-sort="ac_no">AC</th>
+            <th data-sort="incumbent_name">2021 winner (incumbent)</th>
+            <th data-sort="incumbent_2021_margin" class="right">2021 margin</th>
+            <th data-sort="winner_2026">2026 winner</th>
+            <th data-sort="margin_pct_2026" class="right">2026 margin (%)</th>
+            <th data-sort="situation">Situation</th>
+          </tr>
+        </thead>
+        <tbody id="inc-body">
+          <tr><td colspan="6" style="text-align:center; padding:32px; color:var(--text-3);">Loading <span class="mono">defeated_incumbents_2026.json</span>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-3);margin-top:12px;line-height:1.5;">
+      Source: <span class="mono">defeated_incumbents_2026.json</span>. "Contested and lost" means the 2021 winner appeared on the 2026 ballot in the same constituency and did not finish first. "Off the ballot" means no candidate matching the 2021 winner's name appears in any 2026 contest. M.K. Stalin's Kolathur defeat (AC 13) is the marquee case in the Contested &amp; lost subset.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────── SECTION 7 · DUMMY NEAR-MISSES ─────────────────── -->
+<section id="dummies" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Section 7 · Dummy near-misses</span>
+      <h2>Where the spoiler tactic almost mattered</h2>
+      <p>Across the 234 races, 329 candidates were flagged as plausible "dummies" by name-similarity heuristics. In <strong>25 seats</strong>, the combined dummy votes exceeded the margin of loss for the major candidate. Under the strict definition (only exact and near-exact name matches), the count is <strong>0</strong>. Under the loose definition (including word-match flags), <strong>2 races</strong> are consequential: TIRUKKOYILUR (TVK lost by 285 votes, dummy ratio 2.00) and PALANI (TVK lost by 693, ratio 1.53). The remaining 23 are explanatory, not decisive.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table id="dum-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Constituency</th>
+            <th>Major candidate (party)</th>
+            <th class="right">Margin of loss</th>
+            <th class="right">Margin (%)</th>
+            <th class="right">Dummy votes</th>
+            <th class="right">Ratio</th>
+            <th>Flag tier</th>
+          </tr>
+        </thead>
+        <tbody id="dum-body">
+          <tr><td colspan="8" style="text-align:center; padding:32px; color:var(--text-3);">Loading <span class="mono">dummy_near_misses_2026.json</span>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-3);margin-top:12px;line-height:1.5;">
+      Source: <span class="mono">dummy_near_misses_2026.json</span>. "Ratio" is combined dummy votes divided by the margin of loss; values above 1 mean the dummies' aggregate pool exceeded what the major candidate needed to win. "Flag tier" reports the strictness of the matches: EXACT and NEAR are high-confidence name doubles; WORD is a looser substring match. See the <a href="/posts/tn-2026-dummy-candidates-results/">dummy results post</a> for the methodology.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────── EXPLORE THE SERIES ─────────────────── -->
+<section id="posts" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="h-eyebrow">Read the five-post series</span>
+      <h2>The narrative companion to this dashboard</h2>
+      <p>Each post anchors on a different reading of the same 234 results. Start anywhere; they cross-link tightly.</p>
+    </div>
+    <div class="explore">
+      <a href="/posts/tvk-debut-2026/">
+        <span class="ex-tag">The winner</span>
+        <strong>TVK 233: A Debut, Mapped</strong>
+        <span>108 seats, 1.32 efficiency, regional anatomy, position drill-down. The headline post of the series.</span>
+      </a>
+      <a href="/posts/dmk-collapse-2026/">
+        <span class="ex-tag">The opposition</span>
+        <strong>How DMK Lost Tamil Nadu, Region by Region</strong>
+        <span>From 133 seats to 59. Chennai 31→2. 65 seats lost directly to TVK. The structural collapse mapped.</span>
+      </a>
+      <a href="/posts/tn-2026-incumbents-defeated/">
+        <span class="ex-tag">The defeated</span>
+        <strong>The Chief Minister lost his seat</strong>
+        <span>M.K. Stalin lost Kolathur by 8,795 votes. 56 sitting MLAs were defeated. 64 fell directly to TVK.</span>
+      </a>
+      <a href="/posts/tn-2026-new-assembly-profile/">
+        <span class="ex-tag">The new MLAs</span>
+        <strong>The youngest assembly TN has elected</strong>
+        <span>Median MLA age fell 12 years. 41 MLAs under 40. 22 women. The generational reset.</span>
+      </a>
+      <a href="/posts/tn-2026-dummy-candidates-results/">
+        <span class="ex-tag">The tactic</span>
+        <strong>Did the 329 dummy pairs matter?</strong>
+        <span>Strict test says 0 consequential. Loose test says 2, both razor-thin TVK losses. The post-mortem.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Tamil Nadu 2026 Assembly Election · Comprehensive Explorer · Built and maintained by <a href="/">Anandraj</a></p>
+  <p style="margin-top:6px;">Data: official ECI tally · <a href="/data/tn-2026-candidates/">Full candidate dataset (CC BY 4.0)</a> · <a href="https://github.com/ndranandraj/tn-2026-candidates-dataset">Source on GitHub</a></p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   TN 2026 Explorer — interactive JS
+   Sections 1 (Map) + 2 (Party Efficiency) wired up.
+   Sections 3-7 placeholders; data sidecars ready for next session.
+   ═══════════════════════════════════════════════════════════════════ */
+
+// ─── Color tokens (read from CSS for single source of truth) ───
+const PARTY_COLOR = {
+  'TVK':   getCss('--c-tvk'),
+  'DMK':   getCss('--c-dmk'),
+  'ADMK':  getCss('--c-admk'),
+  'AIADMK':getCss('--c-admk'),
+  'BJP':   getCss('--c-bjp'),
+  'PMK':   getCss('--c-pmk'),
+  'INC':   getCss('--c-inc'),
+  'NTK':   getCss('--c-ntk'),
+  'VCK':   getCss('--c-vck'),
+  'IUML':  getCss('--c-iuml'),
+  'CPI':   getCss('--c-cpi'),
+  'CPI(M)':getCss('--c-cpim'),
+  'DMDK':  getCss('--c-dmdk'),
+  'AMMK':  getCss('--c-ammk'),
+  'IND':   getCss('--c-ind'),
+};
+const ALLIANCE_COLOR = {
+  'TVK': getCss('--c-tvk'),
+  'INDIA': getCss('--c-india'),
+  'AIADMK': getCss('--c-nda'),    /* AIADMK led NDA bloc */
+  'NDA': getCss('--c-nda'),
+  'OTHERS': getCss('--c-other'),
+  '': getCss('--c-other'),
+};
+function getCss(v) {
+  return getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+}
+function pcClass(p) {
+  const map = {
+    'TVK':'pc-tvk','DMK':'pc-dmk','ADMK':'pc-admk','AIADMK':'pc-admk',
+    'BJP':'pc-bjp','PMK':'pc-pmk','INC':'pc-inc','NTK':'pc-ntk','VCK':'pc-vck',
+    'IUML':'pc-iuml','CPI':'pc-cpi','CPI(M)':'pc-cpim','DMDK':'pc-dmdk','AMMK':'pc-ammk',
+    'IND':'pc-ind',
+  };
+  return map[p] || 'pc-other';
+}
+
+// ─── MAP setup (defensive: only run if Leaflet loaded) ───
+let map = null;
+let perAc = {};          // ac_no -> map_data row
+let geoLayer = null;
+let currentView = 'winner';   // 'winner' | 'alliance'
+let currentFilter = 'all';    // 'all' | party code | alliance code
+
+function initMap() {
+  if (typeof L === 'undefined') {
+    document.getElementById('map').innerHTML =
+      '<div style="padding:40px;text-align:center;color:var(--text-2);">Leaflet failed to load. Please refresh, or check your network connection.</div>';
+    return false;
+  }
+  map = L.map('map', {
+    zoomControl: true, attributionControl: false, preferCanvas: true,
+  }).setView([10.85, 78.6], 7);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    maxZoom: 12, minZoom: 6, attribution: '&copy; OpenStreetMap, &copy; CARTO',
+  }).addTo(map);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+    maxZoom: 12, minZoom: 6,
+  }).addTo(map);
+  return true;
+}
+
+function styleFor(d) {
+  if (!d || !d.winner_party) {
+    return { fillColor: '#1a1a24', fillOpacity: 0.15, color: '#3a3a4a', weight: 0.6, dashArray: null };
+  }
+  const winnerParty = d.winner_party;
+  const winnerAlliance = d.winner_alliance || 'OTHERS';
+  let color;
+  if (currentView === 'winner') {
+    color = PARTY_COLOR[winnerParty] || PARTY_COLOR['IND'];
+  } else {
+    color = ALLIANCE_COLOR[winnerAlliance] || ALLIANCE_COLOR['OTHERS'];
+  }
+  const filterMatch = filterMatches(d);
+  return {
+    fillColor: color,
+    fillOpacity: filterMatch ? 0.86 : 0.10,
+    color: filterMatch ? '#fff' : '#2a2a3a',
+    weight: filterMatch ? 1.0 : 0.4,
+    dashArray: null,
+  };
+}
+
+function filterMatches(d) {
+  if (currentFilter === 'all') return true;
+  if (!d.winner_party) return false;
+  if (currentFilter === 'INDIA' || currentFilter === 'NDA') {
+    return d.winner_alliance === currentFilter;
+  }
+  return d.winner_party === currentFilter;
+}
+
+function tooltipHTML(d, props) {
+  const name = (d && d.ac_name) || props.AC_NAME || 'Unknown';
+  const dist = (d && d.district) || props.DISTRICT || '';
+  if (!d || !d.winner_party) {
+    return `<span class="tip-name">${name}</span>
+            <span class="tip-district">${dist}</span>
+            <div class="tip-row" style="font-style:italic;color:var(--text-3)">No 2026 result loaded</div>`;
+  }
+  const wp = d.winner_party;
+  const wcand = d.winner_candidate || '?';
+  const wvotes = (d.winner_votes != null ? d.winner_votes.toLocaleString('en-IN') : '—');
+  const margin = d.margin;
+  const marginPct = (d.margin_pct != null && d.margin_pct > 0) ? d.margin_pct.toFixed(2) + '%' : '—';
+  const sp = d.second_party || '?';
+  const scand = d.second_candidate || '?';
+  const svotes = (d.second_votes != null ? d.second_votes.toLocaleString('en-IN') : '—');
+  return `
+    <span class="tip-name">${name} · AC ${props.AC_NO}</span>
+    <span class="tip-district">${dist}${d.region ? ' · ' + d.region : ''}</span>
+    <div class="tip-row"><span>Winner</span><strong>${wcand}</strong></div>
+    <div class="tip-row"><span>Party</span><span class="party-chip ${pcClass(wp)}">${wp}</span></div>
+    <div class="tip-row"><span>Winner votes</span><strong>${wvotes}</strong></div>
+    <div class="tip-row"><span>Margin</span><strong>${margin != null && margin > 0 ? margin.toLocaleString('en-IN') : '—'} (${marginPct})</strong></div>
+    <div class="tip-row"><span>Runner-up</span><strong>${scand} <span style="opacity:.6">(${sp})</span></strong></div>
+    <div class="tip-row"><span>Runner-up votes</span><strong>${svotes}</strong></div>`;
+}
+
+async function loadMap() {
+  if (!map) return;  // Leaflet not available
+  const geo = await fetch('tn_constituencies.geojson').then(r => r.json());
+  try {
+    // explorer_ac_2026.json is built fresh from raw ECI CSV — authoritative source.
+    const data = await fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null);
+    if (data && data.per_ac) {
+      data.per_ac.forEach(d => { perAc[d.ac_no] = d; });
+    }
+  } catch (e) { console.warn('map sidecar load failed', e); }
+
+  geoLayer = L.geoJSON(geo, {
+    style: f => styleFor(perAc[f.properties.AC_NO]),
+    onEachFeature: (f, layer) => {
+      layer.bindTooltip(tooltipHTML(perAc[f.properties.AC_NO], f.properties), {
+        sticky: true, className: 'exp-tip', direction: 'top', offset: [0, -8],
+      });
+    },
+  }).addTo(map);
+  map.fitBounds(geoLayer.getBounds(), { padding: [20, 20] });
+}
+
+function restyle() {
+  if (!geoLayer) return;
+  geoLayer.setStyle(f => styleFor(perAc[f.properties.AC_NO]));
+}
+
+// ─── Map controls ───
+document.querySelectorAll('.map-controls .ctl[data-view]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.map-controls .ctl[data-view]').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    currentView = b.dataset.view;
+    updateLegend();
+    restyle();
+  });
+});
+document.querySelectorAll('.map-controls .ctl[data-filter]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.map-controls .ctl[data-filter]').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    currentFilter = b.dataset.filter;
+    restyle();
+  });
+});
+
+function updateLegend() {
+  const legend = document.getElementById('legend');
+  if (currentView === 'alliance') {
+    legend.innerHTML = `
+      <span class="h">Alliance</span>
+      <span class="item"><span class="sw" style="background:var(--c-tvk)"></span>TVK · 108</span>
+      <span class="item"><span class="sw" style="background:var(--c-india)"></span>INDIA bloc · 70</span>
+      <span class="item"><span class="sw" style="background:var(--c-nda)"></span>NDA bloc · 53</span>
+      <span class="item"><span class="sw" style="background:var(--c-other)"></span>Others · 3</span>`;
+  } else {
+    legend.innerHTML = `
+      <span class="h">Winner</span>
+      <span class="item"><span class="sw pc-tvk"></span>TVK · 108</span>
+      <span class="item"><span class="sw pc-dmk"></span>DMK · 59</span>
+      <span class="item"><span class="sw pc-admk"></span>AIADMK · 47</span>
+      <span class="item"><span class="sw pc-inc"></span>INC · 5</span>
+      <span class="item"><span class="sw pc-pmk"></span>PMK · 4</span>
+      <span class="item"><span class="sw pc-vck"></span>VCK · 2</span>
+      <span class="item"><span class="sw pc-iuml"></span>IUML · 2</span>
+      <span class="item"><span class="sw pc-cpi"></span>CPI / CPI(M) · 4</span>
+      <span class="item"><span class="sw pc-bjp"></span>BJP · 1</span>
+      <span class="item"><span class="sw pc-dmdk"></span>DMDK · 1</span>
+      <span class="item"><span class="sw pc-ammk"></span>AMMK · 1</span>`;
+  }
+}
+
+// ─── PARTY EFFICIENCY ───
+async function loadEfficiency() {
+  try {
+    const eff = await fetch('data/party_efficiency_2026.json').then(r => r.ok ? r.json() : null);
+    if (!eff) return;
+    const tbody = document.getElementById('eff-body');
+    // Sort by seats desc, then by vote share desc
+    const rows = [...eff.parties].sort((a, b) => (b.seats - a.seats) || (b.vote_pct - a.vote_pct));
+    tbody.innerHTML = rows.map(p => {
+      const ratio = p.ratio;
+      const ratioClass = ratio > 1.05 ? 'over' : ratio < 0.95 ? 'under' : '';
+      // bar visualisation: center mark at 1.0, fill grows left if <1, right if >1
+      const maxRatio = 3.0;  // cap for IUML 2.96
+      const t = Math.min(1, Math.abs(ratio - 1) / (maxRatio - 1));
+      const fillW = (t * 45).toFixed(1);
+      const fillLeft = ratio >= 1 ? '50%' : (50 - parseFloat(fillW)) + '%';
+      const fillColor = ratio >= 1 ? 'var(--accent)' : '#FCA5A5';
+      return `<tr>
+        <td><span class="party-chip ${pcClass(p.party)}">${p.party}</span></td>
+        <td class="right num">${p.votes.toLocaleString('en-IN')}</td>
+        <td class="right num">${p.vote_pct.toFixed(2)}%</td>
+        <td class="right num">${p.seats}</td>
+        <td class="right num">${p.seat_pct.toFixed(2)}%</td>
+        <td>
+          <span class="eff-ratio-bar">
+            <span class="center-mark"></span>
+            <span class="fill" style="left:${fillLeft}; width:${fillW}%; background:${fillColor};"></span>
+          </span>
+          <span class="eff-ratio ${ratioClass}">${ratio.toFixed(2)}×</span>
+        </td>
+      </tr>`;
+    }).join('');
+  } catch (e) {
+    document.getElementById('eff-body').innerHTML =
+      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load party_efficiency_2026.json: ${e.message}</td></tr>`;
+  }
+}
+
+// ─── JUMP NAV active-state on scroll ───
+const sections = ['#map-section', '#efficiency', '#regional', '#swing', '#demographics', '#incumbents', '#dummies', '#posts'];
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      const id = '#' + en.target.id;
+      document.querySelectorAll('.jumpnav-pill').forEach(p => {
+        p.classList.toggle('active', p.getAttribute('href') === id);
+      });
+    }
+  });
+}, { rootMargin: '-120px 0px -55% 0px' });
+sections.forEach(s => {
+  const el = document.querySelector(s);
+  if (el) observer.observe(el);
+});
+
+// ─── SECTION 3 · Regional anatomy ───
+let regionalData = null;
+let regViewMode = 'combined';
+
+async function loadRegional() {
+  try {
+    const data = await fetch('data/regional_all_parties_2026.json').then(r => r.ok ? r.json() : null);
+    if (!data) throw new Error('null');
+    regionalData = data;
+    renderRegional();
+  } catch (e) {
+    document.getElementById('reg-body').innerHTML =
+      `<tr><td colspan="10" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load regional sidecar: ${e.message}</td></tr>`;
+  }
+}
+
+function renderRegional() {
+  if (!regionalData) return;
+  const cols = ['TVK','DMK','ADMK','BJP','PMK','INC','NTK','OTHER'];
+  const tbody = document.getElementById('reg-body');
+  tbody.innerHTML = regionalData.regions.map(reg => {
+    const cells = cols.map(party => {
+      const p = reg.parties.find(x => x.party === party);
+      if (!p) return '<td class="right num" style="color:var(--text-3)">—</td>';
+      let inner;
+      if (regViewMode === 'seats') {
+        inner = `<span style="color:${p.seats>0?'var(--text)':'var(--text-3)'};font-weight:700;">${p.seats}</span>`;
+      } else if (regViewMode === 'share') {
+        inner = `<span style="color:${p.vote_share>15?'var(--text)':'var(--text-2)'};">${p.vote_share.toFixed(1)}%</span>`;
+      } else {
+        const seatsClass = p.seats > 0 ? '' : 'opacity:.35';
+        inner = `<span style="font-weight:700;color:${p.seats>0?'var(--text)':'var(--text-3)'}">${p.seats}</span>
+                 <span style="display:block;font-size:.74rem;color:var(--text-2);margin-top:2px;">${p.vote_share.toFixed(1)}%</span>`;
+      }
+      return `<td class="right num">${inner}</td>`;
+    }).join('');
+    return `<tr>
+      <td><strong>${reg.region}</strong></td>
+      <td class="right num">${reg.acs}</td>
+      ${cells}
+    </tr>`;
+  }).join('');
+
+  // totals row
+  const totalAcs = regionalData.regions.reduce((s,r)=>s+r.acs, 0);
+  const totalCells = cols.map(party => {
+    const totalSeats = regionalData.regions.reduce((s,r) => {
+      const p = r.parties.find(x => x.party === party);
+      return s + (p ? p.seats : 0);
+    }, 0);
+    const totalVotes = regionalData.regions.reduce((s,r) => {
+      const p = r.parties.find(x => x.party === party);
+      return s + (p ? p.votes : 0);
+    }, 0);
+    const stateVotes = regionalData.regions.reduce((s,r) => s + r.total_votes, 0);
+    const sharePct = stateVotes ? (100 * totalVotes / stateVotes) : 0;
+    let inner;
+    if (regViewMode === 'seats') inner = `<strong>${totalSeats}</strong>`;
+    else if (regViewMode === 'share') inner = `<span>${sharePct.toFixed(1)}%</span>`;
+    else inner = `<strong>${totalSeats}</strong><span style="display:block;font-size:.74rem;color:var(--text-2);margin-top:2px;">${sharePct.toFixed(1)}%</span>`;
+    return `<td class="right num">${inner}</td>`;
+  }).join('');
+  tbody.innerHTML += `<tr style="background:var(--surface-2);font-weight:800;border-top:2px solid var(--border);">
+    <td><strong>STATE TOTAL</strong></td>
+    <td class="right num">${totalAcs}</td>
+    ${totalCells}
+  </tr>`;
+}
+
+document.querySelectorAll('[data-reg-view]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('[data-reg-view]').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    regViewMode = b.dataset.regView;
+    renderRegional();
+  });
+});
+
+// ─── SECTION 4 · 2021 → 2026 swing ───
+let swingData = [];        // rows from swing_2021_to_2026.json
+let acMargins = {};        // ac_no -> {margin, margin_pct} from explorer_ac_2026.json
+let swingFilter = 'all';   // 'all' | 'flipped' | 'held'
+let swingParty = 'all';
+let swingSortKey = 'ac_no';
+let swingSortDir = 1;
+
+async function loadSwing() {
+  try {
+    const [swing, expAc] = await Promise.all([
+      fetch('data/swing_2021_to_2026.json').then(r => r.ok ? r.json() : null),
+      fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null),
+    ]);
+    if (!swing || !swing.rows) throw new Error('swing sidecar missing');
+    swingData = swing.rows;
+    if (expAc && expAc.per_ac) {
+      expAc.per_ac.forEach(a => { acMargins[a.ac_no] = { margin: a.margin, margin_pct: a.margin_pct }; });
+    }
+    renderSwing();
+  } catch (e) {
+    document.getElementById('swing-body').innerHTML =
+      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load swing sidecar: ${e.message}</td></tr>`;
+  }
+}
+
+function renderSwing() {
+  let rows = swingData.slice();
+  if (swingFilter === 'flipped') rows = rows.filter(r => r.flipped);
+  if (swingFilter === 'held')    rows = rows.filter(r => !r.flipped);
+  if (swingParty !== 'all')      rows = rows.filter(r => r.winner_2026.party === swingParty);
+
+  // Sort
+  const getKey = r => {
+    switch (swingSortKey) {
+      case 'ac_no': return r.ac_no;
+      case 'ac_name': return r.ac_name;
+      case 'region': return r.region;
+      case 'winner_2021_party': return r.winner_2021.party;
+      case 'winner_2026_party': return r.winner_2026.party;
+      case 'margin_2026': return (acMargins[r.ac_no] || {}).margin_pct || 0;
+      default: return r.ac_no;
+    }
+  };
+  rows.sort((a, b) => {
+    const ka = getKey(a), kb = getKey(b);
+    if (typeof ka === 'string') return swingSortDir * ka.localeCompare(kb);
+    return swingSortDir * (ka - kb);
+  });
+
+  const tbody = document.getElementById('swing-body');
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--text-3);">No matches with current filters.</td></tr>`;
+    return;
+  }
+  const MAX = 234;
+  tbody.innerHTML = rows.slice(0, MAX).map(r => {
+    const wp21 = r.winner_2021.party;
+    const wp26 = r.winner_2026.party;
+    const mar = acMargins[r.ac_no];
+    const marStr = mar && mar.margin_pct ?
+      `${mar.margin.toLocaleString('en-IN')} <span style="color:var(--text-2);font-size:.78rem;">(${mar.margin_pct.toFixed(2)}%)</span>` : '—';
+    const flipBadge = r.flipped
+      ? `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:800;background:rgba(245,158,11,.18);color:var(--accent);letter-spacing:.04em;">FLIPPED</span>`
+      : `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:700;background:rgba(255,255,255,.05);color:var(--text-3);letter-spacing:.04em;">HELD</span>`;
+    return `<tr>
+      <td class="num">${r.ac_no}</td>
+      <td>${r.ac_name}<br><span style="font-size:.72rem;color:var(--text-3)">${r.district}</span></td>
+      <td style="font-size:.82rem;color:var(--text-2)">${r.region}</td>
+      <td><span class="party-chip ${pcClass(wp21)}">${wp21}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2021.share.toFixed(1)}%</span></td>
+      <td><span class="party-chip ${pcClass(wp26)}">${wp26}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2026.share.toFixed(1)}%</span></td>
+      <td class="right num">${marStr}</td>
+      <td>${flipBadge}</td>
+    </tr>`;
+  }).join('');
+}
+
+document.querySelectorAll('[data-swing-show]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('[data-swing-show]').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    swingFilter = b.dataset.swingShow;
+    renderSwing();
+  });
+});
+document.getElementById('swing-party-filter').addEventListener('change', e => {
+  swingParty = e.target.value;
+  renderSwing();
+});
+document.querySelectorAll('#swing-table th[data-sort]').forEach(th => {
+  th.style.cursor = 'pointer';
+  th.addEventListener('click', () => {
+    const k = th.dataset.sort;
+    if (swingSortKey === k) swingSortDir *= -1;
+    else { swingSortKey = k; swingSortDir = (k === 'margin_2026') ? -1 : 1; }
+    document.querySelectorAll('#swing-table th[data-sort]').forEach(t => {
+      t.innerHTML = t.innerHTML.replace(/ [▼▲]$/, '');
+    });
+    th.innerHTML = th.innerHTML.replace(/ [▼▲]$/, '') + (swingSortDir > 0 ? ' ▲' : ' ▼');
+    renderSwing();
+  });
+});
+
+// ─── SECTION 5 · Demographics ───
+async function loadDemographics() {
+  try {
+    const d = await fetch('data/new_assembly_profile_2026.json').then(r => r.ok ? r.json() : null);
+    if (!d) throw new Error('null');
+    const o = d.overall;
+    document.getElementById('dm-median-age').textContent = o.median_age + 'y';
+    document.getElementById('dm-under-40').textContent = o.under_40;
+    document.getElementById('dm-women').textContent = o.women;
+    document.getElementById('dm-women-sub').textContent = o.women_pct + '% of assembly';
+    document.getElementById('dm-graduate').textContent = o.graduate_plus;
+    document.getElementById('dm-postgrad-sub').textContent = `of which postgraduate: ${o.postgrad_plus}`;
+    document.getElementById('dm-range').textContent = `${o.youngest}y → ${o.oldest}y`;
+
+    // Per-party table (sorted by seats desc, only parties with at least 1 seat)
+    const rows = [...d.party_profiles].sort((a,b) => b.seats - a.seats);
+    document.getElementById('dm-party-body').innerHTML = rows.map(p => {
+      const partyCode = p.party === 'AIADMK' ? 'ADMK' : p.party;
+      const womenStr = p.women > 0 ? `${p.women} <span style="color:var(--text-3);font-size:.76rem;">(${p.women_pct.toFixed(1)}%)</span>` : '<span style="color:var(--text-3)">0</span>';
+      const assets = p.median_assets_lakh != null ? `₹${p.median_assets_lakh.toFixed(0)}L` : '—';
+      return `<tr>
+        <td><span class="party-chip ${pcClass(partyCode)}">${p.party}</span></td>
+        <td class="right num">${p.seats}</td>
+        <td class="right num">${p.median_age}y</td>
+        <td class="right num">${p.under_40}</td>
+        <td class="right num">${womenStr}</td>
+        <td class="right num">${p.graduate_plus_pct ? p.graduate_plus_pct.toFixed(1) + '%' : '—'}</td>
+        <td class="right num">${assets}</td>
+      </tr>`;
+    }).join('');
+
+    // Youngest 10 in the assembly
+    const young = d.youngest_assembly.slice(0, 10);
+    document.getElementById('dm-young-body').innerHTML = young.map(y => {
+      const partyCode = y.party === 'AIADMK' ? 'ADMK' : y.party;
+      const gender = y.gender === 'F' ? '♀' : (y.gender === 'M' ? '♂' : y.gender || '?');
+      return `<tr>
+        <td><strong>${y.name}</strong></td>
+        <td class="right num"><span style="font-size:1.05rem;font-weight:700;color:var(--accent)">${y.age}</span></td>
+        <td>${y.ac}</td>
+        <td><span class="party-chip ${pcClass(partyCode)}">${y.party}</span></td>
+        <td style="text-align:center;font-size:1.0rem;">${gender}</td>
+        <td style="font-size:.82rem;color:var(--text-2);">${y.education || '—'}</td>
+      </tr>`;
+    }).join('');
+  } catch (e) {
+    document.getElementById('dm-party-body').innerHTML =
+      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load demographics sidecar: ${e.message}</td></tr>`;
+  }
+}
+
+// ─── SECTION 6 · Defeated incumbents ───
+let incData = [];
+let incSituation = 'contested_and_lost';
+let incParty = 'all';
+let incSortKey = 'incumbent_2021_margin';
+let incSortDir = -1;
+
+async function loadIncumbents() {
+  try {
+    const d = await fetch('data/defeated_incumbents_2026.json').then(r => r.ok ? r.json() : null);
+    if (!d || !d.rows) throw new Error('null');
+    incData = d.rows;
+    renderIncumbents();
+  } catch (e) {
+    document.getElementById('inc-body').innerHTML =
+      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load incumbents sidecar: ${e.message}</td></tr>`;
+  }
+}
+
+const SITUATION_LABEL = {
+  contested_and_lost: 'Contested & lost',
+  truly_out_of_contest: 'Off the ballot',
+  shifted_and_lost: 'Shifted seat & lost',
+  shifted_and_won: 'Shifted seat & won',
+};
+const SITUATION_COLOR = {
+  contested_and_lost: '#FCA5A5',
+  truly_out_of_contest: 'var(--text-3)',
+  shifted_and_lost: '#FCD34D',
+  shifted_and_won: 'var(--accent)',
+};
+
+function renderIncumbents() {
+  let rows = incData.slice();
+  if (incSituation !== 'all') rows = rows.filter(r => r.situation === incSituation);
+  if (incParty !== 'all')     rows = rows.filter(r => r.incumbent_party_2021 === incParty);
+
+  rows.sort((a, b) => {
+    let ka = a[incSortKey], kb = b[incSortKey];
+    if (ka == null) ka = -Infinity;
+    if (kb == null) kb = -Infinity;
+    if (typeof ka === 'string') return incSortDir * ka.localeCompare(kb);
+    return incSortDir * (ka - kb);
+  });
+
+  const tbody = document.getElementById('inc-body');
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:32px;color:var(--text-3);">No matches with current filters.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = rows.map(r => {
+    const is_stalin = r.ac_no === 13;
+    const wp21 = r.incumbent_party_2021 === 'AIADMK' ? 'ADMK' : r.incumbent_party_2021;
+    const wp26 = r.winner_party_2026 === 'AIADMK' ? 'ADMK' : r.winner_party_2026;
+    const mar21 = r.incumbent_2021_margin != null ? r.incumbent_2021_margin.toLocaleString('en-IN') : '—';
+    const mar26 = r.margin_2026 != null
+      ? `${r.margin_2026.toLocaleString('en-IN')} <span style="color:var(--text-2);font-size:.78rem;">(${r.margin_pct_2026 != null ? r.margin_pct_2026.toFixed(2) : '?'}%)</span>`
+      : '—';
+    const sit = SITUATION_LABEL[r.situation] || r.situation;
+    const sitColor = SITUATION_COLOR[r.situation] || 'var(--text-2)';
+    const stalinTag = is_stalin ? ' <span style="font-size:.62rem;font-weight:800;letter-spacing:.06em;color:#FCD34D;background:rgba(252,211,77,.16);padding:2px 7px;border-radius:99px;margin-left:6px;">CHIEF MINISTER</span>' : '';
+    const rowStyle = is_stalin ? 'background:rgba(252,211,77,0.04);' : '';
+    return `<tr style="${rowStyle}">
+      <td class="num">${r.ac_no}</td>
+      <td><strong>${r.incumbent_name}</strong>${stalinTag}<br>
+          <span style="font-size:.72rem;color:var(--text-3)">${r.ac_name} · ${r.district}</span><br>
+          <span class="party-chip ${pcClass(wp21)}" style="margin-top:4px;">${r.incumbent_party_2021}</span></td>
+      <td class="right num">+${mar21}</td>
+      <td>${r.winner_2026 || '—'}<br><span class="party-chip ${pcClass(wp26)}" style="margin-top:3px;">${r.winner_party_2026 || '?'}</span></td>
+      <td class="right num">${mar26}</td>
+      <td style="color:${sitColor};font-weight:600;font-size:.82rem;">${sit}</td>
+    </tr>`;
+  }).join('');
+}
+
+document.querySelectorAll('[data-inc-sit]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('[data-inc-sit]').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    incSituation = b.dataset.incSit;
+    renderIncumbents();
+  });
+});
+document.getElementById('inc-party-filter').addEventListener('change', e => {
+  incParty = e.target.value;
+  renderIncumbents();
+});
+document.querySelectorAll('#inc-table th[data-sort]').forEach(th => {
+  th.style.cursor = 'pointer';
+  th.addEventListener('click', () => {
+    const k = th.dataset.sort;
+    if (incSortKey === k) incSortDir *= -1;
+    else { incSortKey = k; incSortDir = (k === 'incumbent_2021_margin' || k === 'margin_pct_2026') ? -1 : 1; }
+    document.querySelectorAll('#inc-table th[data-sort]').forEach(t => {
+      t.innerHTML = t.innerHTML.replace(/ [▼▲]$/, '');
+    });
+    th.innerHTML = th.innerHTML.replace(/ [▼▲]$/, '') + (incSortDir > 0 ? ' ▲' : ' ▼');
+    renderIncumbents();
+  });
+});
+
+// ─── SECTION 7 · Dummy near-misses ───
+async function loadDummies() {
+  try {
+    const rows = await fetch('data/dummy_near_misses_2026.json').then(r => r.ok ? r.json() : null);
+    if (!Array.isArray(rows)) throw new Error('not an array');
+    const tbody = document.getElementById('dum-body');
+    tbody.innerHTML = rows.map((r, i) => {
+      const partyCode = r.major_party === 'AIADMK' ? 'ADMK' : r.major_party;
+      const won = String(r.major_won).toLowerCase() === 'true';
+      const status = won
+        ? `<span style="color:var(--accent);font-weight:700;">WON</span>`
+        : `<span style="color:#FCA5A5;font-weight:700;">LOST</span>`;
+      // Flag tier: prefer exact > near > word
+      let tier = 'WORD';
+      let tierColor = 'var(--text-3)';
+      if (parseInt(r.exact_count) > 0) { tier = 'EXACT'; tierColor = '#FCA5A5'; }
+      else if (parseInt(r.near_count) > 0) { tier = 'NEAR'; tierColor = '#FCD34D'; }
+      const ratio = r.dummy_to_margin_ratio;
+      const ratioColor = ratio >= 1.5 ? '#FCA5A5' : ratio >= 1.0 ? 'var(--accent)' : 'var(--text-2)';
+      return `<tr>
+        <td class="num"><strong>${i + 1}</strong></td>
+        <td><strong>${r.constituency}</strong><br><span style="font-size:.72rem;color:var(--text-3)">AC ${r.ac_no}</span></td>
+        <td>${r.major_candidate}<br><span class="party-chip ${pcClass(partyCode)}" style="margin-top:3px;">${r.major_party}</span> · ${status}</td>
+        <td class="right num">${parseInt(r.margin_of_loss).toLocaleString('en-IN')}</td>
+        <td class="right num">${(r.margin_pct).toFixed(2)}%</td>
+        <td class="right num">${parseInt(r.combined_dummy_votes).toLocaleString('en-IN')}</td>
+        <td class="right num" style="color:${ratioColor};font-weight:800;">${ratio.toFixed(2)}×</td>
+        <td><span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.66rem;font-weight:800;letter-spacing:.04em;background:rgba(255,255,255,.05);color:${tierColor};border:1px solid ${tierColor === 'var(--text-3)' ? 'var(--border)' : tierColor};">${tier}</span></td>
+      </tr>`;
+    }).join('');
+  } catch (e) {
+    document.getElementById('dum-body').innerHTML =
+      `<tr><td colspan="8" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load dummies sidecar: ${e.message}</td></tr>`;
+  }
+}
+
+// ─── Boot (each section catches its own errors so one failure doesn't break the page) ───
+const mapOk = initMap();
+if (mapOk) loadMap().catch(e => console.error('Map load failed:', e));
+loadEfficiency().catch(e => console.error('Eff load failed:', e));
+loadRegional().catch(e => console.error('Regional load failed:', e));
+loadSwing().catch(e => console.error('Swing load failed:', e));
+loadDemographics().catch(e => console.error('Demographics load failed:', e));
+loadIncumbents().catch(e => console.error('Incumbents load failed:', e));
+loadDummies().catch(e => console.error('Dummies load failed:', e));
+</script>
+
+</body>
+</html>

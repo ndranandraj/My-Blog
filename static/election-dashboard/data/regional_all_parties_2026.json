@@ -1,0 +1,499 @@
+{
+  "regions": [
+    {
+      "region": "Chennai & Suburbs",
+      "acs": 37,
+      "total_votes": 8191333,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 32,
+          "votes": 3702965,
+          "vote_share": 45.21
+        },
+        {
+          "party": "DMK",
+          "seats": 2,
+          "votes": 1918482,
+          "vote_share": 23.42
+        },
+        {
+          "party": "ADMK",
+          "seats": 3,
+          "votes": 1335593,
+          "vote_share": 16.3
+        },
+        {
+          "party": "BJP",
+          "seats": 0,
+          "votes": 71933,
+          "vote_share": 0.88
+        },
+        {
+          "party": "PMK",
+          "seats": 0,
+          "votes": 174759,
+          "vote_share": 2.13
+        },
+        {
+          "party": "INC",
+          "seats": 0,
+          "votes": 193964,
+          "vote_share": 2.37
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 282012,
+          "vote_share": 3.44
+        },
+        {
+          "party": "OTHER",
+          "seats": 0,
+          "votes": 511482,
+          "vote_share": 6.24
+        }
+      ]
+    },
+    {
+      "region": "North",
+      "acs": 21,
+      "total_votes": 4468790,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 9,
+          "votes": 1514216,
+          "vote_share": 33.88
+        },
+        {
+          "party": "DMK",
+          "seats": 3,
+          "votes": 1055064,
+          "vote_share": 23.61
+        },
+        {
+          "party": "ADMK",
+          "seats": 8,
+          "votes": 1138199,
+          "vote_share": 25.47
+        },
+        {
+          "party": "BJP",
+          "seats": 0,
+          "votes": 66340,
+          "vote_share": 1.48
+        },
+        {
+          "party": "PMK",
+          "seats": 0,
+          "votes": 140264,
+          "vote_share": 3.14
+        },
+        {
+          "party": "INC",
+          "seats": 0,
+          "votes": 57997,
+          "vote_share": 1.3
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 118745,
+          "vote_share": 2.66
+        },
+        {
+          "party": "OTHER",
+          "seats": 1,
+          "votes": 377977,
+          "vote_share": 8.46
+        }
+      ]
+    },
+    {
+      "region": "Krishnagiri Belt",
+      "acs": 11,
+      "total_votes": 2505054,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 3,
+          "votes": 755987,
+          "vote_share": 30.18
+        },
+        {
+          "party": "DMK",
+          "seats": 1,
+          "votes": 404644,
+          "vote_share": 16.15
+        },
+        {
+          "party": "ADMK",
+          "seats": 5,
+          "votes": 671352,
+          "vote_share": 26.8
+        },
+        {
+          "party": "BJP",
+          "seats": 0,
+          "votes": 73043,
+          "vote_share": 2.92
+        },
+        {
+          "party": "PMK",
+          "seats": 1,
+          "votes": 171788,
+          "vote_share": 6.86
+        },
+        {
+          "party": "INC",
+          "seats": 0,
+          "votes": 174491,
+          "vote_share": 6.97
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 64922,
+          "vote_share": 2.59
+        },
+        {
+          "party": "OTHER",
+          "seats": 1,
+          "votes": 188865,
+          "vote_share": 7.54
+        }
+      ]
+    },
+    {
+      "region": "Northeast Coast",
+      "acs": 20,
+      "total_votes": 4197455,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 2,
+          "votes": 1236524,
+          "vote_share": 29.46
+        },
+        {
+          "party": "DMK",
+          "seats": 7,
+          "votes": 931325,
+          "vote_share": 22.19
+        },
+        {
+          "party": "ADMK",
+          "seats": 6,
+          "votes": 1041958,
+          "vote_share": 24.82
+        },
+        {
+          "party": "BJP",
+          "seats": 0,
+          "votes": 0,
+          "vote_share": 0.0
+        },
+        {
+          "party": "PMK",
+          "seats": 2,
+          "votes": 316323,
+          "vote_share": 7.54
+        },
+        {
+          "party": "INC",
+          "seats": 0,
+          "votes": 55337,
+          "vote_share": 1.32
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 111582,
+          "vote_share": 2.66
+        },
+        {
+          "party": "OTHER",
+          "seats": 3,
+          "votes": 504522,
+          "vote_share": 12.02
+        }
+      ]
+    },
+    {
+      "region": "Kongu (West)",
+      "acs": 46,
+      "total_votes": 9661766,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 24,
+          "votes": 3412814,
+          "vote_share": 35.32
+        },
+        {
+          "party": "DMK",
+          "seats": 7,
+          "votes": 2347646,
+          "vote_share": 24.3
+        },
+        {
+          "party": "ADMK",
+          "seats": 14,
+          "votes": 2543387,
+          "vote_share": 26.32
+        },
+        {
+          "party": "BJP",
+          "seats": 1,
+          "votes": 358430,
+          "vote_share": 3.71
+        },
+        {
+          "party": "PMK",
+          "seats": 0,
+          "votes": 89778,
+          "vote_share": 0.93
+        },
+        {
+          "party": "INC",
+          "seats": 0,
+          "votes": 299085,
+          "vote_share": 3.1
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 334576,
+          "vote_share": 3.46
+        },
+        {
+          "party": "OTHER",
+          "seats": 0,
+          "votes": 537786,
+          "vote_share": 5.57
+        }
+      ]
+    },
+    {
+      "region": "Central",
+      "acs": 23,
+      "total_votes": 4709972,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 10,
+          "votes": 1579036,
+          "vote_share": 33.53
+        },
+        {
+          "party": "DMK",
+          "seats": 8,
+          "votes": 1353997,
+          "vote_share": 28.75
+        },
+        {
+          "party": "ADMK",
+          "seats": 4,
+          "votes": 1103131,
+          "vote_share": 23.42
+        },
+        {
+          "party": "BJP",
+          "seats": 0,
+          "votes": 120301,
+          "vote_share": 2.55
+        },
+        {
+          "party": "PMK",
+          "seats": 1,
+          "votes": 88992,
+          "vote_share": 1.89
+        },
+        {
+          "party": "INC",
+          "seats": 0,
+          "votes": 112404,
+          "vote_share": 2.39
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 193173,
+          "vote_share": 4.1
+        },
+        {
+          "party": "OTHER",
+          "seats": 0,
+          "votes": 158877,
+          "vote_share": 3.37
+        }
+      ]
+    },
+    {
+      "region": "Cauvery Delta",
+      "acs": 18,
+      "total_votes": 3508926,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 2,
+          "votes": 1063281,
+          "vote_share": 30.3
+        },
+        {
+          "party": "DMK",
+          "seats": 9,
+          "votes": 1005425,
+          "vote_share": 28.65
+        },
+        {
+          "party": "ADMK",
+          "seats": 2,
+          "votes": 641747,
+          "vote_share": 18.29
+        },
+        {
+          "party": "BJP",
+          "seats": 0,
+          "votes": 103280,
+          "vote_share": 2.94
+        },
+        {
+          "party": "PMK",
+          "seats": 0,
+          "votes": 88841,
+          "vote_share": 2.53
+        },
+        {
+          "party": "INC",
+          "seats": 1,
+          "votes": 68011,
+          "vote_share": 1.94
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 157485,
+          "vote_share": 4.49
+        },
+        {
+          "party": "OTHER",
+          "seats": 4,
+          "votes": 380978,
+          "vote_share": 10.86
+        }
+      ]
+    },
+    {
+      "region": "Madurai Region",
+      "acs": 21,
+      "total_votes": 4412631,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 11,
+          "votes": 1545137,
+          "vote_share": 35.02
+        },
+        {
+          "party": "DMK",
+          "seats": 7,
+          "votes": 1283262,
+          "vote_share": 29.08
+        },
+        {
+          "party": "ADMK",
+          "seats": 2,
+          "votes": 908924,
+          "vote_share": 20.6
+        },
+        {
+          "party": "BJP",
+          "seats": 0,
+          "votes": 80950,
+          "vote_share": 1.83
+        },
+        {
+          "party": "PMK",
+          "seats": 0,
+          "votes": 0,
+          "vote_share": 0.0
+        },
+        {
+          "party": "INC",
+          "seats": 1,
+          "votes": 119545,
+          "vote_share": 2.71
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 199100,
+          "vote_share": 4.51
+        },
+        {
+          "party": "OTHER",
+          "seats": 0,
+          "votes": 275718,
+          "vote_share": 6.25
+        }
+      ]
+    },
+    {
+      "region": "Deep South",
+      "acs": 37,
+      "total_votes": 7406191,
+      "parties": [
+        {
+          "party": "TVK",
+          "seats": 15,
+          "votes": 2416249,
+          "vote_share": 32.62
+        },
+        {
+          "party": "DMK",
+          "seats": 15,
+          "votes": 1629299,
+          "vote_share": 22.0
+        },
+        {
+          "party": "ADMK",
+          "seats": 3,
+          "votes": 1077855,
+          "vote_share": 14.55
+        },
+        {
+          "party": "BJP",
+          "seats": 0,
+          "votes": 592747,
+          "vote_share": 8.0
+        },
+        {
+          "party": "PMK",
+          "seats": 0,
+          "votes": 0,
+          "vote_share": 0.0
+        },
+        {
+          "party": "INC",
+          "seats": 3,
+          "votes": 580478,
+          "vote_share": 7.84
+        },
+        {
+          "party": "NTK",
+          "seats": 0,
+          "votes": 510942,
+          "vote_share": 6.9
+        },
+        {
+          "party": "OTHER",
+          "seats": 1,
+          "votes": 598799,
+          "vote_share": 8.09
+        }
+      ]
+    }
+  ]
+}

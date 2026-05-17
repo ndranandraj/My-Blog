@@ -39,7 +39,7 @@ The strategy did not fail in 2026. It ran into a year where margins were too wid
 {{< /pullquote >}}
 
 {{< dashboard-cta
-    url="/election-dashboard/dummy-candidates-2026.html"
+    url="/election-dashboard/tn-2026-explorer.html#dummies"
     eyebrow="Interactive · 329 flagged pairs"
     title="Open the dummy-candidates 2026 dashboard"
     body="The 15 closest near-misses with margin-percent context, the full per-pair searchable table, the EXACT / NEAR_FULL / WORD_MATCH classifier breakdown, and a constituency explorer that lets you pull every flagged pair for any of the 234 ACs."
@@ -130,7 +130,7 @@ Ratio = combined dummy votes divided by margin. Above 1.0 means the dummies poll
 
 The TIRUKKOYILUR case: TVK's Vijay R Baranibalaaji lost to AIADMK's Palanisamy S by 285 votes (0.13% of polled). A flagged independent polled 571. The door is open. The data does not show anyone walking through it.
 
-The full near-miss table, sortable by ratio and margin percent, is in the [interactive dashboard](/election-dashboard/dummy-candidates-2026.html).
+The full near-miss table, sortable by ratio and margin percent, is in the [interactive dashboard](/election-dashboard/tn-2026-explorer.html#dummies).
 
 ---
 
@@ -153,11 +153,11 @@ The mechanism is waiting for a year where margins are narrow. 2026 was not it.
 ## Explore the data
 
 {{< dashboard-cta
-    url="/election-dashboard/dummy-candidates-2026.html"
+    url="/election-dashboard/tn-2026-explorer.html#dummies"
     eyebrow="Primary · interactive"
     title="The dummy candidates 2026 dashboard"
     body="The 15 closest near-misses sorted by margin-percent, the full per-pair table with constituency-level filtering, the EXACT vs NEAR_FULL vs WORD_MATCH tier breakdown, and a constituency explorer that surfaces every flagged pair for any AC."
-    cta="Open the dummy dashboard"
+    cta="Open the Explorer"
     accent="dummy"
 >}}
 
@@ -166,8 +166,8 @@ The mechanism is waiting for a year where margins are narrow. 2026 was not it.
   <strong>Companion post: TVK 2026 debut, mapped</strong>
   <span>The other half of the May 4 story. 108 seats, 1.32 efficiency, regional anatomy, and the 1st / 2nd / 3rd drill-downs.</span>
 </a>
-<a href="/election-dashboard/tvk-debut-2026.html">
-  <strong>TVK 2026 dashboard</strong>
+<a href="/election-dashboard/tn-2026-explorer.html">
+  <strong>TN 2026 Explorer dashboard</strong>
   <span>Constituency map, regional strike rate, party seat-vs-vote efficiency, and the position-anatomy interactive tables.</span>
 </a>
 <a href="/data/tn-2026-candidates/">

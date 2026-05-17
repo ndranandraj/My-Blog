@@ -35,7 +35,7 @@ TVK's median MLA is 44. DMK's is 59. AIADMK's is 57. Vijay's party has put a gen
 {{< /kpi-row >}}
 
 {{< dashboard-cta
-    url="/election-dashboard/tvk-debut-2026.html"
+    url="/election-dashboard/tn-2026-explorer.html"
     eyebrow="Interactive · 234 winners"
     title="Open the new-assembly profile dashboard"
     body="Filter the 234 winners by age, education, party, gender, and assets. Sortable, with the youngest five MLAs surfaced as a featured row. Built from the canonical 4,023-candidate dataset."
@@ -130,11 +130,11 @@ The companion post on [the 56 sitting MLAs who were defeated](/posts/tn-2026-inc
 ## Explore the data
 
 {{< dashboard-cta
-    url="/election-dashboard/tvk-debut-2026.html"
+    url="/election-dashboard/tn-2026-explorer.html"
     eyebrow="Primary · interactive"
-    title="The TVK 2026 dashboard"
+    title="TN 2026 Explorer dashboard"
     body="The full election dashboard with constituency map, regional breakdown, position anatomy, and the demographic profile of all 234 winners overlaid on the seat geometry."
-    cta="Open the TVK dashboard"
+    cta="Open the Explorer"
     accent="tvk"
 >}}
 

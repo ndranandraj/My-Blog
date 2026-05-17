@@ -41,9 +41,9 @@ A tsunami in Chennai, a ripple in the Cauvery delta. The gap between those two f
 {{< /pullquote >}}
 
 {{< dashboard-cta
-    url="/election-dashboard/tvk-debut-2026.html"
+    url="/election-dashboard/tn-2026-explorer.html"
     eyebrow="Interactive · 234 constituencies"
-    title="Explore the live TVK 2026 dashboard"
+    title="Explore the live TN 2026 dashboard"
     body="Constituency map shaded by TVK's finish position, regional strike-rate breakdown, party seat-vs-vote efficiency table, the 1st / 2nd / 3rd anatomy with closest-and-biggest tables, and the full 'consequential races' near-miss list. Hover any seat for candidate, vote count, and margin percent."
     cta="Open the dashboard"
     accent="tvk"
@@ -354,11 +354,11 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
 ## Explore the data
 
 {{< dashboard-cta
-    url="/election-dashboard/tvk-debut-2026.html"
+    url="/election-dashboard/tn-2026-explorer.html"
     eyebrow="Primary · interactive"
-    title="The TVK 2026 dashboard"
+    title="TN 2026 Explorer dashboard"
     body="Every number in this post is derived from the live dashboard. Open it for the full constituency map, the regional breakdown table, the position anatomy with sortable closest/biggest lists, and the consequential-races near-miss list."
-    cta="Open the TVK dashboard"
+    cta="Open the Explorer"
     accent="tvk"
 >}}
 
@@ -379,7 +379,7 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
   <strong>Full election dashboard</strong>
   <span>Historical context: 2011, 2016, 2021, 2026 side by side, district swings, strongholds, and flipped seats.</span>
 </a>
-<a href="/election-dashboard/dummy-candidates-2026.html">
+<a href="/election-dashboard/tn-2026-explorer.html#dummies">
   <strong>Dummy candidates dashboard</strong>
   <span>The 15 closest near-misses, full per-pair table, EXACT vs NEAR vs WORD_MATCH classifier breakdown.</span>
 </a>

@@ -97,7 +97,7 @@ The full analysis, covering every suspicious pair, filterable by alliance, match
 
 {{< rawhtml >}}
 <div style="margin: 2rem 0;">
-  <a href="/election-dashboard/dummy-candidates-2026.html"
+  <a href="/election-dashboard/tn-2026-explorer.html#dummies"
      style="display:inline-block; background:#EF4444; color:#fff; font-weight:700;
             padding:.75rem 1.75rem; border-radius:8px; text-decoration:none;
             font-size:1rem; letter-spacing:.3px;">

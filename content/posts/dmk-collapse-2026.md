@@ -84,7 +84,7 @@ Two of the three regions where DMK held above 25% in 2026 (Central at 28.75%, Ca
 
 ## What this is, and isn't
 
-This is a region-level accounting of where DMK's seat majority unraveled. It does not explain *why* the wave hit. The structural drivers (anti-incumbency, alliance fatigue, Vijay's brand, cadre defections) are layered and seat-specific, and the per-AC story is for the [constituency-level explorer](/election-dashboard/tvk-debut-2026.html) when that lands.
+This is a region-level accounting of where DMK's seat majority unraveled. It does not explain *why* the wave hit. The structural drivers (anti-incumbency, alliance fatigue, Vijay's brand, cadre defections) are layered and seat-specific. The full per-AC story lives in the [TN 2026 Explorer dashboard](/election-dashboard/tn-2026-explorer.html), with the constituency map, the 2021→2026 swing table for every seat, and the 9-region breakdown for all parties.
 
 The pattern that stays consistent across geography is that incumbency was a liability and not a moat. The 12 most decisive defeats of sitting MLAs are documented in the [incumbents post](/posts/tn-2026-incumbents-defeated/). The full demographic replacement is in the [new assembly profile](/posts/tn-2026-new-assembly-profile/). The TVK side of the same story, with the regional asymmetry that produced 108 seats, is in [the TVK post](/posts/tvk-debut-2026/).
 

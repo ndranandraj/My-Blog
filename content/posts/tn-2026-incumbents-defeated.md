@@ -39,7 +39,7 @@ M.K. Stalin lost his Kolathur seat by 8,795 votes to V.S. Babu of TVK, his own f
 {{< /kpi-row >}}
 
 {{< dashboard-cta
-    url="/election-dashboard/tvk-debut-2026.html#consequential"
+    url="/election-dashboard/tn-2026-explorer.html#incumbents"
     eyebrow="Interactive · 56 defeats"
     title="Open the defeated-incumbents dashboard"
     body="The full sortable list of every 2021 winner who lost in 2026, who beat them, by what margin, and the share of polled votes. Filter by party, by district, or by closeness."
@@ -107,7 +107,7 @@ TVK's 64 incumbent defeats are the largest single haul of sitting-MLA wins by a 
 
 The 178 sitting MLAs who did not retain their 2021 seat split into four clean buckets.
 
-**The largest is the 93 who fought for re-election in their old constituency and lost.** This is the headline-event group. The 12 most consequential losses, including the Chief Minister, are in the marquee table above. The full ranked list of 93 is on the [interactive dashboard](/election-dashboard/tvk-debut-2026.html#consequential).
+**The largest is the 93 who fought for re-election in their old constituency and lost.** This is the headline-event group. The 12 most consequential losses, including the Chief Minister, are in the marquee table above. The full ranked list of 93 is on the [interactive dashboard](/election-dashboard/tn-2026-explorer.html#incumbents).
 
 **67 incumbents were off the ballot entirely.** No 2026 candidate matching their name appears in any of the 234 constituencies. Some retired. Some were denied tickets and stood down. Some shifted careers or filed too late. About 29% of the outgoing Assembly was triaged out by the party leaderships themselves before the count even began, which tells you what the pre-poll polling was telling them.
 
@@ -144,11 +144,11 @@ A second post on the **demographic profile of the 234 winners** ([read it here](
 ## Explore the data
 
 {{< dashboard-cta
-    url="/election-dashboard/tvk-debut-2026.html"
+    url="/election-dashboard/tn-2026-explorer.html"
     eyebrow="Primary · interactive"
-    title="The TVK 2026 dashboard"
+    title="TN 2026 Explorer dashboard"
     body="Constituency map, regional strike rate, party seat-vs-vote efficiency, and the 1st / 2nd / 3rd position anatomy. Hover any seat for the candidate, vote count, margin, and margin percent."
-    cta="Open the TVK dashboard"
+    cta="Open the Explorer"
     accent="tvk"
 >}}
 
