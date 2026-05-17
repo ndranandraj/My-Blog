@@ -63,13 +63,13 @@ enableRobotsTXT = true
   # Featured hero shown on the homepage above the latest-posts strip.
   # Remove or change to promote a different post/project.
   [params.featured]
-    kicker = "RESULTS DAY · MAY 4, 2026"
-    title = "TVK 233: A Debut, Mapped"
-    description = "Vijay's TVK won 108 of 233 contested seats with 34.92% of the vote and the highest seat-to-vote efficiency of any major party. This is the regional anatomy of that result: where the wave broke and where it did not."
-    url = "/posts/tvk-debut-2026/"
-    image = "/images/tvk-debut-cover.png"
-    imageAlt = "TVK 233: A Debut, Mapped — data analysis of Vijay's Tamilaga Vettri Kazhagam in the Tamil Nadu 2026 Assembly Election"
-    cta = "Read the analysis →"
+    kicker = "NEW · INTERACTIVE DASHBOARD"
+    title = "TN 2026 Explorer: Every Seat, Every Party, Every Region"
+    description = "234 constituencies, 12 parties with seats, 4.93 crore votes. The complete data view of Tamil Nadu's 2026 Assembly election in seven interactive sections: map, party efficiency, regional anatomy, 2021 → 2026 swing, demographics, defeated incumbents, dummy near-misses."
+    url = "/posts/tn-2026-explorer/"
+    image = "/images/tn-2026-explorer-cover.png"
+    imageAlt = "TN 2026 Explorer: interactive dashboard for Tamil Nadu's 2026 Assembly election. 234 constituencies, 12 parties with seats."
+    cta = "Open the Explorer →"
 
   [params.assets]
     favicon = "/favicon.ico"
