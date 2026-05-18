@@ -18,6 +18,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 Tamil Nadu's 2026 Assembly election was the largest single-cycle electoral reset the state has produced in modern times. **164 of 234 seats flipped party**. A debutant won **108 of them**. The sitting Chief Minister lost his own seat by 8,795 votes. To put all of that into a single navigable view that anyone can pull on, I built the TN 2026 Explorer.
 
 {{< dashboard-cta

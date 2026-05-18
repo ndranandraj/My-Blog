@@ -19,6 +19,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 Perambur is the most watched constituency in Tamil Nadu this election. The reason is one name: C. Joseph Vijay, the actor, making his political debut as TVK's candidate. Millions know him simply as Vijay. The ballot, however, has other ideas. Alongside C. Joseph Vijay, voters in Perambur will find "Vijay" contesting under the All India Jananayaka Makkal Kazhagam banner. They will also find "Vijay. G," an Independent. And then there is "M. Joseph" and "S. Joseph," two more Independents who carry the other half of the star candidate's name. Four candidates, each carrying a fragment of one man's identity, none with any realistic path to victory. Together, they form a small constellation of confusion around the most high-profile nomination in the state.
 
 Perambur is not an exception. It is the most visible example of something happening across Tamil Nadu.

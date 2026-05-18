@@ -2328,3 +2328,36 @@ html { scroll-behavior: smooth; }
 @media print {
     .newsletter-inline { display: none !important; }
 }
+
+/* ── Series hat ──
+   Tiny meta line at the top of each TN 2026 election post linking back
+   to the pillar page at /tamil-nadu-elections-2026/. Rendered as a <div>
+   rather than a <p> on purpose: PaperMod's drop-cap selector is
+   .post-single--pillar .post-content > p:first-of-type::first-letter,
+   so a leading <div> does not absorb the drop cap. The lede paragraph
+   still gets it.
+
+   Visually understated: small caps, tinted background, accent-color link.
+   The arrow at the end is part of the link text so it inherits the
+   underline-on-hover treatment. */
+.series-hat {
+    display: inline-block;
+    margin: 0 0 1.5rem;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    background: color-mix(in srgb, var(--primary) 6%, transparent);
+    border-radius: 999px;
+}
+.series-hat a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+.series-hat a:hover { text-decoration: underline; }
+
+/* Series hat survives the explore-grid bleed and the wide-table rules,
+   because it is anchored to .post-content > .series-hat (a div, not a
+   table or grid). No special print rule needed; the hat takes one line. */

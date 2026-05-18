@@ -17,6 +17,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 DMK won **133 of 234 Assembly seats in 2021**. In 2026 they won **59**. Tamil Nadu replaced its ruling party, and the team most analysts had been calling well-organised, well-funded, and incumbency-protected lost three out of every four seats it had defended.
 
 The interesting question is not whether DMK fell. They obviously did. The question is *where*. Because the collapse was not uniform. It was concentrated in exactly the regions where DMK had been the strongest one cycle earlier.

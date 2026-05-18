@@ -16,6 +16,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 *Twelve TVK MLAs share the founder's name. A short note from the floor of the 2026 vote of confidence.*
 
 I grew up in Thiruvarur in the years when Rajinikanth ruled the box office. Two of the most popular young men in the neighbourhood went by Rajini Sakthi and Rajini Chinna. Neither was born with that name. Both ran small Rajini *rasigar mandram* (fan club) units, and the Rajini prefix was how the rest of us knew them. They were not unusual. Almost every Tamil town had its Rajini-something or Kamal-something or, later, Ajith-this and Vijay-that running fan clubs that erected hoardings the size of buildings in front of the local theatre, poured milk and draped flower garlands over giant cut-outs on release day, and blasted firecrackers down the main road through the small hours of the morning.

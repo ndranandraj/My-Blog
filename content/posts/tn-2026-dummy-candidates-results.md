@@ -19,6 +19,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 Three weeks before polling, I published a list of **329 suspect candidate pairs**: major-alliance nominees who shared a name, exactly or near-exactly, with another candidate in the same constituency. Almost always an independent. The thesis was straightforward. At least some of these are deliberate vote-splitters, fielded to confuse voters at the EVM and bleed the major candidate's tally.
 
 Today the votes are in. So: **did it work?**

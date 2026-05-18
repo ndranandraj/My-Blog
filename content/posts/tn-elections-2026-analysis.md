@@ -16,6 +16,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 In 2021, a Tamil Nadu party put up a candidate in every single one of the 234 assembly seats. Chennai South, Coimbatore North, Madurai East, all 234. When the votes were counted, **30.4 lakh people** had voted for them. More than INC. More than PMK. More than BJP.
 
 They won zero seats.

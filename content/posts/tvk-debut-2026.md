@@ -19,6 +19,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 Of the 234 constituencies in Tamil Nadu's 2026 Legislative Assembly election, Vijay's Tamilaga Vettri Kazhagam fielded a candidate in 233. The one they skipped is **Edappadi**.
 
 That is not random. AC #88 is the home constituency of **Edappadi K. Palaniswami**, sitting general secretary of the AIADMK, former Chief Minister, and the alliance face of the NDA in this state. Vijay's debut campaign promised to take on the establishment "everywhere." The roster says: everywhere except the AIADMK chief's home seat.

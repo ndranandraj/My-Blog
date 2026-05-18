@@ -19,6 +19,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 The 234 people who walked into the Tamil Nadu Legislative Assembly after May 4 are, taken together, **the youngest cohort the state has elected in living electoral memory.** Median age: 52. The cohort they replaced (the 16th Assembly elected in 2021) had a median age of around 64 by the time it dissolved.
 
 That is a **12-year compression** of the legislature's median age, in one election cycle. Almost all of it is concentrated in TVK's 108 new MLAs.

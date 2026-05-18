@@ -19,6 +19,8 @@ cover:
   relative: false
 ---
 
+<div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
+
 Of the 234 sitting MLAs who walked into the Tamil Nadu Legislative Assembly in 2021, only **56 retained their seat after May 4, 2026**. Another **7** held their place by shifting constituency and winning the new seat. Everyone else is gone.
 
 That is a **23.9% same-seat retention rate**. Across the last decade of state elections in India, no major Assembly has churned over 75% of its sitting members in a single cycle. Tamil Nadu just did.
