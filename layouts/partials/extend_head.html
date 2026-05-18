@@ -14,10 +14,22 @@
 <meta name="msvalidate.01" content="{{ . }}" />
 {{- end -}}
 
-<!-- Google Fonts: Inter for UI + Merriweather for article body -->
+<!-- Google Fonts: Inter for UI + Merriweather for article body.
+     Loaded non-blocking via the print-then-all swap so the font stylesheet
+     does not delay First Contentful Paint. The preconnect hints warm the
+     TLS connection, the preload tells the browser to fetch the CSS at high
+     priority, and the print-media trick lets the stylesheet download in
+     parallel with render. onload flips media back to 'all' so the fonts
+     actually apply once they have arrived. font-display: swap (in the URL
+     param) prevents any flash of invisible text in the meantime.
+     The noscript fallback covers users with JS disabled. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap">
+</noscript>
 
 <!-- Reading progress bar.
      Color follows the site --primary so it auto-adapts to light/dark mode
