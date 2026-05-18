@@ -40,6 +40,9 @@ Seven sections in one page. An **interactive map** of every constituency, colore
 - **Only 38 incumbents held their seat. 56 defended and lost.** 37 of those defeats came directly at TVK's hands. M.K. Stalin lost Kolathur to a 75-year-old debutant.
 - **The new assembly is 12 years younger than the outgoing one.** Median MLA age fell from 64 to 52. 41 MLAs are under 40, 35 of those from TVK. 22 women elected, 13 from TVK alone, zero from DMK.
 
+{{< newsletter title="Want the next data deep-dive in your inbox?"
+               body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
+
 ## Read the five-post series
 
 The dashboard is the data spine. The narrative analyses live in the five posts of the TN 2026 series.

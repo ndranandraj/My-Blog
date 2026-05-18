@@ -56,6 +56,9 @@ Which is precisely why Vijay's TVK is the most unpredictable variable heading in
 
 ---
 
+{{< newsletter title="Want the next data deep-dive in your inbox?"
+               body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
+
 ## Fortresses and Fault Lines
 
 Set the wave elections aside for a moment and something steadier comes into view.

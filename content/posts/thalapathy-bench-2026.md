@@ -55,6 +55,9 @@ A footnote on Joseph Vijay: the TVK founder contested from two seats and won bot
 
 The more interesting cut is what happens when you look at how Vijay-named candidates *performed*. TVK fielded 18 candidates with Vijay in the name across all 234 seats. Twelve of them won. That is a 66.7% strike rate, well above the party's overall 46.4% (108 wins out of 233 contests). Make of that what you will. It could be a quirk of where the party slotted those candidates, or it could be that voters glanced at a ballot, saw the name, and felt a flicker of recognition.
 
+{{< newsletter title="Want the next data deep-dive in your inbox?"
+               body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
+
 ## The cycle, completed
 
 The DMK and AIADMK built their pantheons over decades through ideology, film, and patronage in roughly equal measure. TVK has compressed the same arc into a single election cycle, and the roll call is the receipt. The fan club captains who once stood outside theatres pouring milk over cut-outs have become office bearers. The office bearers became cadre. And in 2026, a meaningful slice of that cadre walked into the Assembly with a ballot win behind them, the founder's name still pinned to their own.

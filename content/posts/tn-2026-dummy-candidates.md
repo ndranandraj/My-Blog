@@ -65,6 +65,9 @@ The pattern is not random. It concentrates in competitive seats where margins ar
 
 ---
 
+{{< newsletter title="Want the next data deep-dive in your inbox?"
+               body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
+
 ## Why It Works
 
 Tamil Nadu uses EVMs with candidate lists that include names and party symbols. But within a long list of 15 to 20 candidates per constituency, voters scanning for a familiar name can easily press the wrong button. The confusion does not need to be widespread. In a state where 94 seats were decided by fewer than 13,000 votes in 2021, and several by fewer than 500, diverting even a few hundred votes through name confusion can be decisive.

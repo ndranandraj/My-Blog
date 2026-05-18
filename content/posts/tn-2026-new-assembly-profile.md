@@ -68,6 +68,9 @@ Three numbers stand out.
 
 ---
 
+{{< newsletter title="Want the next data deep-dive in your inbox?"
+               body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
+
 ## The five youngest MLAs in the new assembly
 
 The youngest five winners are all under 30. Four of the five are TVK candidates. Two are women.

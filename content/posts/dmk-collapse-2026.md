@@ -44,6 +44,9 @@ This matters because it overturns the easier narrative that DMK lost because of 
 The Chennai region gave DMK 31 of its 37 seats in 2021. In 2026 it gave them 2. The fortress was the wave's first stop.
 {{< /pullquote >}}
 
+{{< newsletter title="Want the next data deep-dive in your inbox?"
+               body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
+
 ## Region by region
 
 | Region | ACs | DMK won 2021 | DMK won 2026 | Vote share 2021 | Vote share 2026 | Change | Of seats lost, to TVK | To AIADMK | To other |

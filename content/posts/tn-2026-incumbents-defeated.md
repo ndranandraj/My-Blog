@@ -59,6 +59,9 @@ The Kolathur result is the headline-event of TN 2026, but it is also the cleanes
     
 ---
 
+{{< newsletter title="Want the next data deep-dive in your inbox?"
+               body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
+
 ## The 12 most decisive flips
 
 Ranked by **2021 winning margin**. These are not marginal seats. These are the seats incumbents thought they could not lose.
