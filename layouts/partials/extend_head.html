@@ -260,3 +260,30 @@
 }
 </script>
 {{ end }}
+
+<!-- GA4 outbound link click tracking.
+     Fires an `outbound_click` event for every click on a link whose hostname
+     differs from the current site. Lets us measure clicks to the Explorer
+     dashboard, the Election-Analysis GitHub repo, dataset CSVs, social
+     profiles, and any external citation. Guards on the presence of `gtag`
+     so the script no-ops when GA is blocked or the env is local. The
+     `link_text` is truncated to 80 chars so long cards do not blow up the
+     event payload. -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof gtag !== 'function') return;
+    document.querySelectorAll('a[href^="http"]').forEach(function (link) {
+      var href = link.getAttribute('href') || '';
+      var url;
+      try { url = new URL(href, window.location.href); } catch (e) { return; }
+      if (url.hostname === window.location.hostname) return;
+      link.addEventListener('click', function () {
+        gtag('event', 'outbound_click', {
+          link_url: url.href,
+          link_domain: url.hostname,
+          link_text: (link.textContent || '').trim().slice(0, 80)
+        });
+      });
+    });
+  });
+</script>
