@@ -1,51 +1,51 @@
 {{ define "main" }}
-<div style="
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 2rem;
-">
-    <div style="font-size: 7rem; line-height: 1; margin-bottom: 1rem;">🏜️</div>
-    <h1 style="
-        font-family: 'Inter', sans-serif;
-        font-size: 3.2rem;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        margin: 0 0 1rem 0;
-        color: var(--card-text-color-main);
-    ">Lost in the desert?</h1>
-    <p style="
-        font-size: 1.7rem;
-        color: var(--card-text-color-secondary);
-        max-width: 420px;
-        line-height: 1.7;
-        margin: 0 0 2.5rem 0;
-    ">This page doesn't exist — unlike the Kelso Sand Dunes, which very much do. Let's get you back on track.</p>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-        <a href="/" style="
-            display: inline-block;
-            padding: 1rem 2.2rem;
-            background: #2563eb;
-            color: #fff;
-            border-radius: 999px;
-            font-size: 1.4rem;
-            font-weight: 600;
-            text-decoration: none;
-        ">🏠 Go Home</a>
-        <a href="/posts/" style="
-            display: inline-block;
-            padding: 1rem 2.2rem;
-            background: transparent;
-            color: #2563eb;
-            border: 1.5px solid #2563eb;
-            border-radius: 999px;
-            font-size: 1.4rem;
-            font-weight: 600;
-            text-decoration: none;
-        ">📖 Read the Blog</a>
+<div class="not-found">
+  <div class="not-found__emoji" aria-hidden="true">🏜️</div>
+  <h1 class="not-found__title">Lost in the desert?</h1>
+  <p class="not-found__lede">
+    This page does not exist, unlike the Kelso Sand Dunes, which very much do.
+    Let us get you back on track.
+  </p>
+
+  <form action="/search/" method="get" class="not-found__search" role="search">
+    <label for="not-found-q" class="not-found__search-label">Search the site</label>
+    <div class="not-found__search-row">
+      <input id="not-found-q" type="search" name="q"
+             placeholder="e.g. TVK, incumbents, dummy candidates"
+             autocomplete="off" required>
+      <button type="submit">Search</button>
     </div>
+  </form>
+
+  <div class="not-found__cta-row">
+    <a href="/" class="not-found__btn not-found__btn--primary">Go home</a>
+    <a href="/posts/" class="not-found__btn not-found__btn--ghost">Read the blog</a>
+  </div>
+
+  <section class="not-found__popular">
+    <h2 class="not-found__popular-title">Or try one of these</h2>
+    <ul>
+      <li>
+        <a href="/posts/tn-2026-explorer/">TN 2026 Explorer: every seat, every party, every region</a>
+        <span class="not-found__popular-meta">Interactive dashboard</span>
+      </li>
+      <li>
+        <a href="/posts/tvk-debut-2026/">TVK won 108 seats. The regional anatomy.</a>
+        <span class="not-found__popular-meta">14 min read</span>
+      </li>
+      <li>
+        <a href="/posts/dmk-collapse-2026/">DMK 133 to 59: the region-by-region collapse</a>
+        <span class="not-found__popular-meta">8 min read</span>
+      </li>
+      <li>
+        <a href="/posts/tn-2026-incumbents-defeated/">56 sitting MLAs lost. Stalin lost Kolathur.</a>
+        <span class="not-found__popular-meta">11 min read</span>
+      </li>
+      <li>
+        <a href="/posts/tn-2026-new-assembly-profile/">Youngest, most-educated assembly TN has ever elected</a>
+        <span class="not-found__popular-meta">9 min read</span>
+      </li>
+    </ul>
+  </section>
 </div>
 {{ end }}
