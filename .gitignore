@@ -29,6 +29,13 @@ ehthumbs.db
 # Original unprocessed photos
 Anand.jpg
 
+# Internal files that were untracked in commit 4436a28 (pre-launch privacy audit,
+# May 17 2026). Listed explicitly so a stray `git add .` cannot re-add them.
+architecture.jsx
+docs/web-filter-categorization.md
+docs/MIGRATE-TO-HUGO-MODULES.md
+docs/EXECUTION_PLAN.md
+
 # Locally kept full-resolution image originals (pre-compression).
 # Never commit or publish.
 static/images/_originals_backup/
