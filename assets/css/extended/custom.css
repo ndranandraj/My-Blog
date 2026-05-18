@@ -2226,3 +2226,105 @@ html { scroll-behavior: smooth; }
     .not-found__search-row { flex-direction: column; }
     .not-found__search button { width: 100%; }
 }
+
+/* ── Inline newsletter CTA shortcode ──
+   Rendered by layouts/shortcodes/newsletter.html. Sits mid-article between
+   paragraphs without breaking prose flow. Two-column on desktop (copy left,
+   form right), stacks to a single column on mobile. Uses --primary for the
+   accent so light/dark mode just works. The tinted background and accent
+   border keep the block visually distinct from surrounding paragraphs
+   without resorting to a heavy frame. */
+.post-content .newsletter-inline,
+.newsletter-inline {
+    margin: 2.5rem 0;
+    padding: 1.75rem 1.75rem 1.85rem;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--primary) 6%, var(--theme));
+    border: 1px solid color-mix(in srgb, var(--primary) 22%, var(--border));
+    display: grid;
+    gap: 1.25rem;
+    align-items: center;
+}
+@media (min-width: 720px) {
+    .post-content .newsletter-inline,
+    .newsletter-inline {
+        grid-template-columns: 1.35fr 1fr;
+        gap: 2rem;
+    }
+}
+.newsletter-inline__copy { min-width: 0; }
+.newsletter-inline__kicker {
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0 0 0.45rem;
+    font-weight: 700;
+}
+.newsletter-inline__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.18rem;
+    line-height: 1.35;
+    font-weight: 700;
+    color: var(--content);
+}
+.newsletter-inline__body {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--secondary);
+}
+.newsletter-inline__form { min-width: 0; }
+.newsletter-inline__label {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+.newsletter-inline__row {
+    display: flex;
+    gap: 0.5rem;
+}
+.newsletter-inline__row input[type="email"] {
+    flex: 1;
+    min-width: 0;
+    padding: 0.7rem 0.95rem;
+    font-size: 0.98rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--theme);
+    color: var(--content);
+}
+.newsletter-inline__row input[type="email"]:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+    border-color: transparent;
+}
+.newsletter-inline__row button {
+    padding: 0.7rem 1.1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    background: var(--primary);
+    color: var(--theme);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: filter 0.15s ease;
+}
+.newsletter-inline__row button:hover { filter: brightness(1.08); }
+
+/* Below 480px the email + button row gets cramped. Stack it. */
+@media (max-width: 480px) {
+    .newsletter-inline__row { flex-direction: column; }
+    .newsletter-inline__row button { width: 100%; }
+}
+
+/* Hide the newsletter CTA in print output; saves a tree, looks weird on
+   paper, and the URL is in the meta block. */
+@media print {
+    .newsletter-inline { display: none !important; }
+}

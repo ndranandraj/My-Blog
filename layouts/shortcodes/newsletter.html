@@ -1,0 +1,54 @@
+{{- /*
+    NEWSLETTER — inline subscribe CTA designed to sit mid-article at a natural
+    pivot point (typically right after the headline finding or KPI row).
+    Sits between paragraphs without breaking flow. Two-column on desktop
+    (copy left, form right), stacks on mobile.
+
+    Params (all optional):
+        title    — H3 line. Defaults to a generic CTA.
+        body     — sub-copy under the title. Keep it one sentence.
+        button   — submit-button label. Defaults to "Subscribe".
+
+    Usage:
+        {{< newsletter >}}
+
+        {{< newsletter title="Liked this? Get the next one in your inbox."
+                       body="Tamil Nadu politics, data deep-dives, no spam."
+                       button="Sign me up" >}}
+
+    Dependencies:
+        - hugo.toml [params.buttondown].username must be set.
+        - GA4 outbound_click tracking (item 4 of the May 2026 execution plan)
+          plus an additional newsletter_submit event fired on submit.
+*/ -}}
+{{- $title  := .Get "title"  | default "Liked this? Get the next post in your inbox." -}}
+{{- $body   := .Get "body"   | default "Tamil Nadu politics, data deep-dives, and the occasional travel essay. No spam, unsubscribe anytime." -}}
+{{- $button := .Get "button" | default "Subscribe" -}}
+{{- $user   := $.Site.Params.buttondown.username -}}
+{{- if $user -}}
+<aside class="newsletter-inline" aria-label="Subscribe to newsletter">
+    <div class="newsletter-inline__copy">
+        <p class="newsletter-inline__kicker">Stay in the loop</p>
+        <h3 class="newsletter-inline__title">{{ $title }}</h3>
+        <p class="newsletter-inline__body">{{ $body }}</p>
+    </div>
+    <form class="newsletter-inline__form"
+          action="https://buttondown.com/api/emails/embed-subscribe/{{ $user }}"
+          method="post"
+          target="popupwindow"
+          onsubmit="if(typeof gtag==='function'){gtag('event','newsletter_submit',{location:'inline_shortcode',page_path:window.location.pathname});}window.open('https://buttondown.com/{{ $user }}','popupwindow');">
+        <label for="newsletter-email-{{ .Ordinal }}" class="newsletter-inline__label">
+            Email address
+        </label>
+        <div class="newsletter-inline__row">
+            <input id="newsletter-email-{{ .Ordinal }}"
+                   type="email"
+                   name="email"
+                   placeholder="you@example.com"
+                   autocomplete="email"
+                   required>
+            <button type="submit">{{ $button }}</button>
+        </div>
+    </form>
+</aside>
+{{- end -}}

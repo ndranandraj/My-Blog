@@ -72,6 +72,9 @@ Efficiency here is seat share divided by vote share. Above 1.0 means the party c
 
 A debut party at 1.32 efficiency is unusual. It means TVK did not win where it had the most absolute support. It won where the rest of the field was most divided. The wave is real, and the wave is also amplified by first-past-the-post arithmetic.
 
+{{< newsletter title="Want the next data deep-dive in your inbox?"
+               body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
+
 ---
 
 ## Before May 4: who TVK fielded
