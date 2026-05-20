@@ -1848,7 +1848,7 @@ html { scroll-behavior: smooth; }
     display: block;
 }
 
-/* ── Hub card grid — visual landing layout for the TN 2026 pillar page ── */
+/* ── Hub card grid: visual landing layout for the TN 2026 pillar page ── */
 .post-content .hub-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2580,3 +2580,170 @@ html { scroll-behavior: smooth; }
 /* Series hat survives the explore-grid bleed and the wide-table rules,
    because it is anchored to .post-content > .series-hat (a div, not a
    table or grid). No special print rule needed; the hat takes one line. */
+
+/* ── Related posts cards (end of single post) ──
+   Topical "You might also like" grid rendered by single.html via Hugo's
+   Related method. Mirrors the homepage card language so the two read as
+   one family. */
+.related-posts {
+    max-width: 768px;
+    margin: 2.6rem auto 0;
+}
+
+.related-posts__title {
+    font-family: "Merriweather", "Georgia", serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.1rem;
+    color: var(--content);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.related-posts__title::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 20px;
+    border-radius: 2px;
+    background: var(--primary);
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+}
+
+.related-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+    color: inherit !important;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px -10px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px -14px rgba(0, 0, 0, 0.22);
+    border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+}
+
+.related-cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--code-bg);
+}
+
+.related-cover--empty {
+    background: linear-gradient(135deg, var(--code-bg), var(--tertiary));
+}
+
+.related-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.85rem 0.95rem 1rem;
+}
+
+.related-cat {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.related-title {
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--content);
+}
+
+.related-meta {
+    font-size: 0.74rem;
+    color: var(--secondary);
+    opacity: 0.8;
+    margin-top: 0.15rem;
+}
+
+@media (max-width: 720px) {
+    .related-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Motion: gentle entrance + cover zoom, only when the reader welcomes it ──
+   Wrapped in prefers-reduced-motion: no-preference so it never fires for
+   anyone who has asked the OS to limit motion. Cards rise and fade once on
+   load; covers zoom slightly on hover. */
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes cardRise {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .home-latest-card,
+    .home-topic-card,
+    .post-content .hub-grid > a.hub-card,
+    .related-card {
+        animation: cardRise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .home-latest-grid .home-latest-card:nth-child(2),
+    .home-topics-grid .home-topic-card:nth-child(2),
+    .post-content .hub-grid > a.hub-card:nth-child(2),
+    .related-grid .related-card:nth-child(2) { animation-delay: 0.06s; }
+
+    .home-latest-grid .home-latest-card:nth-child(3),
+    .home-topics-grid .home-topic-card:nth-child(3),
+    .post-content .hub-grid > a.hub-card:nth-child(3),
+    .related-grid .related-card:nth-child(3) { animation-delay: 0.12s; }
+
+    .home-latest-grid .home-latest-card:nth-child(4),
+    .home-topics-grid .home-topic-card:nth-child(4),
+    .post-content .hub-grid > a.hub-card:nth-child(4) { animation-delay: 0.18s; }
+
+    .post-content .hub-grid > a.hub-card:nth-child(5) { animation-delay: 0.24s; }
+
+    .home-latest-cover,
+    .hub-card-cover,
+    .related-cover { transition: transform 0.4s ease, filter 0.3s ease; }
+
+    .home-latest-card:hover .home-latest-cover,
+    .post-content .hub-grid > a.hub-card:hover .hub-card-cover,
+    .related-card:hover .related-cover { transform: scale(1.04); }
+}
+
+/* ── Accessibility: visible focus rings on interactive cards and buttons ──
+   Keyboard users get a clear, theme-coloured ring. :focus-visible keeps it
+   from showing on mouse clicks, so it adds no visual noise for pointer use. */
+.profile .buttons .button:focus-visible,
+.about-cta-btn:focus-visible,
+.home-featured-card:focus-visible,
+.home-latest-card:focus-visible,
+.home-topic-card:focus-visible,
+.post-content .hub-grid > a.hub-card:focus-visible,
+.related-card:focus-visible,
+.paginav-card:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.post-cta-btn:focus-visible,
+.post-cta-input:focus-visible,
+.home-latest-all:focus-visible,
+.home-topics-all:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}

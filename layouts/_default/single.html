@@ -67,6 +67,34 @@
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
+    {{- /* Custom: topical related posts as cards. Uses Hugo's Related method,
+           which is tag/category weighted via the [related] config in hugo.toml.
+           Set `disableRelated: true` in front matter to hide on a given post. */ -}}
+    {{- if (ne .Params.disableRelated true) }}
+    {{- $related := first 3 (where (site.RegularPages.Related .) "Type" "in" site.Params.mainSections) }}
+    {{- with $related }}
+    <section class="related-posts" aria-label="Related posts">
+      <h2 class="related-posts__title">You might also like</h2>
+      <div class="related-grid">
+        {{- range . }}
+        <a class="related-card" href="{{ .Permalink }}">
+          {{- $cover := .Params.cover.image | default .Params.image -}}
+          {{- if $cover }}
+          <span class="related-cover" style="background-image:url('{{ $cover | absURL }}');"></span>
+          {{- else }}
+          <span class="related-cover related-cover--empty"></span>
+          {{- end }}
+          <span class="related-body">
+            {{- with .Params.categories }}<span class="related-cat">{{ index . 0 }}</span>{{ end }}
+            <span class="related-title">{{ .Title }}</span>
+            <span class="related-meta">{{ .Date.Format (site.Params.DateFormat | default "Jan 2, 2006") }}{{ if .ReadingTime }} &middot; {{ .ReadingTime }} min{{ end }}</span>
+          </span>
+        </a>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+    {{- end }}
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}

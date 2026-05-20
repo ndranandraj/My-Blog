@@ -16,7 +16,8 @@
            username = "YOUR_USERNAME"
     4. Redeploy — the form becomes active.
 
-  Brand colour `#2563eb` matches the reading-progress bar in extend_head.html.
+  Accent colour follows the site --primary token (matching the reading-progress
+  bar in extend_head.html), so it adapts to light and dark mode automatically.
 */ -}}
 {{- $bdUser := site.Params.buttondown.username -}}
 <aside class="post-cta" aria-label="Stay in touch">
@@ -83,7 +84,7 @@
   .post-cta-card {
     background: var(--entry, #fff);
     border: 1px solid var(--border, #e5e7eb);
-    border-left: 3px solid #2563eb;
+    border-left: 3px solid var(--primary);
     border-radius: 12px;
     padding: 1.5rem 1.75rem;
   }
@@ -100,15 +101,15 @@
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    background: rgba(37, 99, 235, 0.12);
-    color: #2563eb;
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    color: var(--primary);
   }
   .post-cta-tag-text {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #2563eb;
+    color: var(--primary);
   }
   .post-cta-h {
     font-size: 1.35rem;
@@ -144,15 +145,15 @@
   }
   .post-cta-input:focus {
     outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent);
   }
   .post-cta-btn {
     padding: .7rem 1.4rem;
     font-size: .95rem;
     font-weight: 600;
-    color: #fff;
-    background: #2563eb;
+    color: var(--theme);
+    background: var(--primary);
     border: 0;
     border-radius: 8px;
     cursor: pointer;
@@ -161,7 +162,7 @@
     transition: background-color .12s ease, transform .06s ease;
   }
   .post-cta-btn:hover {
-    background: #1d4ed8;
+    background: color-mix(in srgb, var(--primary) 90%, black);
   }
   .post-cta-btn:active {
     transform: translateY(1px);
@@ -180,7 +181,7 @@
     text-decoration-thickness: 1px;
   }
   .post-cta-fineprint a:hover {
-    color: #2563eb;
+    color: var(--primary);
   }
   .post-cta-sep {
     margin: 0 .35rem;
