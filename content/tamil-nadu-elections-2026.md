@@ -40,27 +40,55 @@ If you arrived here from search, social, or a citation, start with the dashboard
 
 ## The findings, in five investigations
 
-Each post below targets a distinct angle of the same election. They cross-link tightly. The summary lines give the headline finding; the full posts give the regional and demographic anatomy behind it.
+Each card targets a distinct angle of the same election: its headline number and the one finding it turns on. They cross-link tightly, and the full posts carry the regional and demographic anatomy behind each figure.
 
-### TVK 233: A Debut, Mapped
-
-Vijay's Tamilaga Vettri Kazhagam contested 233 of 234 seats and won **108 of them** with **34.92% of the statewide vote**. Their seat-to-vote efficiency ratio of **1.32** is the highest of any party with more than five seats this cycle. The wave was not uniform: a tsunami in Chennai, a ripple in the Cauvery delta, and a stronghold-flip pattern that tells you exactly where the wave broke. **[Read the full TVK post →](/posts/tvk-debut-2026/)**
-
-### How DMK Lost Tamil Nadu, Region by Region
-
-DMK went from **133 seats in 2021 to 59 in 2026**. The collapse was not even. The correlation between a region's 2021 DMK vote share and the size of its 2026 share drop is **+0.67**: the taller they stood, the further they fell. Chennai and Suburbs went from 31 wins to 2. Three regions (Central, Cauvery Delta, Madurai) held the line. **[Read the DMK collapse post →](/posts/dmk-collapse-2026/)**
-
-### The Chief Minister Lost His Seat
-
-Only **56 of 234 sitting MLAs retained their seat**, a 23.9% same-seat retention rate, the lowest in modern TN history. **93 incumbents defended their 2021 seat and lost. 64 of those defeats came directly to TVK.** M.K. Stalin lost Kolathur to V.S. Babu of TVK, his own former associate, by 8,795 votes. The school education minister, the former finance minister, the sitting Chief Minister, all gone. **[Read the incumbents post →](/posts/tn-2026-incumbents-defeated/)**
-
-### The Youngest, Most-Educated Assembly TN Has Elected
-
-Median MLA age in the new Assembly is **52**, twelve years younger than the cohort it replaced. TVK's median MLA is **44**, a generation younger than DMK (59) and AIADMK (57). **41 MLAs are under 40**, 35 of them from TVK alone. **22 women** were elected, 13 of them from TVK, zero from DMK. **[Read the new assembly post →](/posts/tn-2026-new-assembly-profile/)**
-
-### How Many of the 329 Dummies Actually Mattered
-
-Three weeks before polling, I flagged 329 suspected dummy candidate pairs. After the results: in the strict test, **zero** seats flipped because of dummy votes. In the loose test, **two** razor-thin TVK losses had enough flagged-namesake votes to plausibly cover the margin. The mechanism is intact. The wave drowned it this time. **[Read the dummy-candidates results post →](/posts/tn-2026-dummy-candidates-results/)**
+<div class="hub-grid">
+<a class="hub-card" href="/posts/tvk-debut-2026/">
+<span class="hub-card-cover" style="background-image:url('/images/tvk-debut-cover.png');"></span>
+<span class="hub-card-body">
+<span class="hub-card-stat"><b>108</b><i>of 233 seats won</i></span>
+<span class="hub-card-title">TVK 233: A Debut, Mapped</span>
+<span class="hub-card-take">A tsunami in Chennai, a ripple in the Cauvery delta. The debut wave mapped to exactly where it broke, at a 1.32 seat-to-vote efficiency.</span>
+<span class="hub-card-cta">Read the analysis →</span>
+</span>
+</a>
+<a class="hub-card" href="/posts/dmk-collapse-2026/">
+<span class="hub-card-cover" style="background-image:url('/images/dmk-collapse-cover.png');"></span>
+<span class="hub-card-body">
+<span class="hub-card-stat"><b>133 → 59</b><i>seats, in one cycle</i></span>
+<span class="hub-card-title">How DMK Lost Tamil Nadu, Region by Region</span>
+<span class="hub-card-take">The taller they stood in 2021, the harder they fell (a +0.67 correlation). Chennai dropped from 31 wins to 2.</span>
+<span class="hub-card-cta">Read the analysis →</span>
+</span>
+</a>
+<a class="hub-card" href="/posts/tn-2026-incumbents-defeated/">
+<span class="hub-card-cover" style="background-image:url('/images/incumbents-defeated-cover.png');"></span>
+<span class="hub-card-body">
+<span class="hub-card-stat"><b>56 / 234</b><i>incumbents kept their seat</i></span>
+<span class="hub-card-title">The Chief Minister Lost His Seat</span>
+<span class="hub-card-take">M.K. Stalin lost Kolathur by 8,795 votes. Of the 93 incumbents who fell, 64 went straight to TVK.</span>
+<span class="hub-card-cta">Read the analysis →</span>
+</span>
+</a>
+<a class="hub-card" href="/posts/tn-2026-new-assembly-profile/">
+<span class="hub-card-cover" style="background-image:url('/images/new-assembly-profile-cover.png');"></span>
+<span class="hub-card-body">
+<span class="hub-card-stat"><b>52</b><i>median MLA age, down 12 years</i></span>
+<span class="hub-card-title">The Youngest, Most-Educated Assembly TN Has Elected</span>
+<span class="hub-card-take">41 MLAs under 40 and 22 women elected. A generational reset in a single election.</span>
+<span class="hub-card-cta">Read the analysis →</span>
+</span>
+</a>
+<a class="hub-card" href="/posts/tn-2026-dummy-candidates-results/">
+<span class="hub-card-cover" style="background-image:url('/images/dummy-candidates-results-cover.png');"></span>
+<span class="hub-card-body">
+<span class="hub-card-stat"><b>0 / 2</b><i>seats flipped (strict / loose)</i></span>
+<span class="hub-card-title">How Many of the 329 Dummies Actually Mattered</span>
+<span class="hub-card-take">The mechanism stayed intact, the wave drowned it. Zero consequential seats by the strict test, two by the loose one.</span>
+<span class="hub-card-cta">Read the analysis →</span>
+</span>
+</a>
+</div>
 
 ## The dataset
 

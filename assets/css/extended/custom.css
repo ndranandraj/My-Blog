@@ -563,6 +563,129 @@ body {
     .home-latest-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Homepage "Browse by topic" strip ── */
+.home-topics {
+    max-width: 960px;
+    margin: 3.5rem auto 4rem;
+    padding: 0 1rem;
+    position: relative;
+}
+
+/* Dotted divider above, matching the Featured→Latest divider */
+.home-latest + .home-topics::before {
+    content: "· · ·";
+    display: block;
+    text-align: center;
+    letter-spacing: 0.65em;
+    color: var(--tertiary);
+    font-size: 1.1rem;
+    margin: 0 0 2.2rem;
+    opacity: 0.9;
+}
+
+.home-topics-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.home-topics-header h2 {
+    font-family: "Merriweather", "Georgia", serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--content);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.home-topics-header h2::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 22px;
+    border-radius: 2px;
+    background: var(--primary);
+    margin-right: 0.15rem;
+}
+
+.home-topics-all {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.home-topics-all:hover { text-decoration: underline; }
+
+.home-topics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.home-topic-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    padding: 1.25rem 1.2rem 1.35rem;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.home-topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px -12px rgba(0, 0, 0, 0.18);
+    border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+}
+
+.home-topic-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+    margin-bottom: 0.15rem;
+}
+
+.home-topic-name {
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--content);
+}
+
+.home-topic-count {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.home-topic-blurb {
+    font-size: 0.86rem;
+    color: var(--secondary);
+    line-height: 1.5;
+    margin-top: 0.15rem;
+}
+
+@media (max-width: 880px) {
+    .home-topics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .home-topics-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Post Cards (List pages) — Clear Separation ── */
 .post-entry {
     border-radius: 16px;
@@ -1723,6 +1846,102 @@ html { scroll-behavior: smooth; }
     color: var(--secondary);
     line-height: 1.45;
     display: block;
+}
+
+/* ── Hub card grid — visual landing layout for the TN 2026 pillar page ── */
+.post-content .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 1.8rem 0 2.6rem;
+}
+
+.post-content .hub-grid > a.hub-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none !important;
+    color: var(--content) !important;
+    box-shadow: 0 4px 14px -10px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-content .hub-grid > a.hub-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+    box-shadow: 0 18px 36px -14px rgba(0, 0, 0, 0.25);
+}
+
+.post-content .hub-card-cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--code-bg);
+}
+
+.post-content .hub-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.1rem 1.2rem 1.25rem;
+}
+
+.post-content .hub-card-stat {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.1rem;
+}
+
+.post-content .hub-card-stat b {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--primary);
+}
+
+.post-content .hub-card-stat i {
+    font-style: normal;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.post-content .hub-card-title {
+    display: block;
+    font-family: "Merriweather", "Georgia", serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--content);
+}
+
+.post-content .hub-card-take {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--secondary);
+}
+
+.post-content .hub-card-cta {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 0.15rem;
 }
 
 /* ────────────────────────────────────────────────────────────

@@ -117,3 +117,34 @@
   </div>
 </section>
 {{- end }}
+
+{{- /* --- Browse by Topic --- */ -}}
+{{- $topics := slice
+    (dict "name" "Data" "slug" "data" "icon" "📊" "blurb" "Investigations and puzzles hiding inside public datasets.")
+    (dict "name" "Tech" "slug" "tech" "icon" "🛠️" "blurb" "Things I'm building, breaking, or trying to understand.")
+    (dict "name" "Travel" "slug" "travel" "icon" "✈️" "blurb" "Notes from trips, long walks, and slow waits for the light.")
+    (dict "name" "Photography" "slug" "photography" "icon" "📷" "blurb" "Wildlife, birds, and the occasional 2am Milky Way.")
+-}}
+{{- $anyTopic := false -}}
+{{- range $topics }}{{- if gt (len (where site.RegularPages "Params.categories" "intersect" (slice .name))) 0 }}{{- $anyTopic = true }}{{- end }}{{- end }}
+{{- if $anyTopic }}
+<section class="home-topics">
+  <div class="home-topics-header">
+    <h2>Browse by topic</h2>
+    <a class="home-topics-all" href="/tags/">All tags &rarr;</a>
+  </div>
+  <div class="home-topics-grid">
+    {{- range $topics }}
+    {{- $count := len (where site.RegularPages "Params.categories" "intersect" (slice .name)) -}}
+    {{- if gt $count 0 }}
+    <a class="home-topic-card" href="/categories/{{ .slug }}/">
+      <span class="home-topic-icon" aria-hidden="true">{{ .icon }}</span>
+      <span class="home-topic-name">{{ .name }}</span>
+      <span class="home-topic-count">{{ $count }} post{{ if gt $count 1 }}s{{ end }}</span>
+      <span class="home-topic-blurb">{{ .blurb }}</span>
+    </a>
+    {{- end }}
+    {{- end }}
+  </div>
+</section>
+{{- end }}
