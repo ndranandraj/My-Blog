@@ -1,34 +1,41 @@
 {{- /*
   Markdown image render hook.
-  Ensures every inline ![alt](src) image in markdown gets lazy-loading + async decoding.
-  For page-bundle images it also produces responsive srcset and explicit width/height.
+  Three paths, in priority order:
+    1. Absolute "/images/..." src  → responsive-image partial (resolves an
+       assets/images/ master, emits WebP + srcset, falls back to plain <img>).
+    2. Page-bundle relative src    → resize + srcset from the page resource.
+    3. Anything else (external)    → plain lazy <img>.
 */ -}}
 {{- $src := .Destination -}}
 {{- $alt := .Text -}}
 {{- $title := .Title -}}
-{{- $img := "" -}}
-{{- if not (or (hasPrefix $src "http") (hasPrefix $src "/")) -}}
-  {{- $img = .Page.Resources.GetMatch $src -}}
-{{- end -}}
 
-{{- if $img -}}
-  {{- $sizes := slice 480 720 1080 1500 -}}
-  {{- $srcset := slice -}}
-  {{- range $sizes -}}
-    {{- if ge $img.Width . -}}
-      {{- $resized := $img.Resize (printf "%dx q82" .) -}}
-      {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink .) -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
-  <img src="{{ $img.RelPermalink }}"
-       srcset="{{ delimit $srcset ", " }}"
-       sizes="(min-width: 768px) 720px, 100vw"
-       width="{{ $img.Width }}" height="{{ $img.Height }}"
-       loading="lazy" decoding="async"
-       alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
+{{- if hasPrefix $src "/images/" -}}
+  {{- partial "responsive-image.html" (dict "src" $src "alt" $alt "title" $title) -}}
 {{- else -}}
-  <img src="{{ $src | safeURL }}"
-       loading="lazy" decoding="async"
-       alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
+  {{- $img := "" -}}
+  {{- if not (or (hasPrefix $src "http") (hasPrefix $src "/")) -}}
+    {{- $img = .Page.Resources.GetMatch $src -}}
+  {{- end -}}
+  {{- if $img -}}
+    {{- $sizes := slice 480 720 1080 1500 -}}
+    {{- $srcset := slice -}}
+    {{- range $sizes -}}
+      {{- if ge $img.Width . -}}
+        {{- $resized := $img.Resize (printf "%dx q82" .) -}}
+        {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+    <img src="{{ $img.RelPermalink }}"
+         srcset="{{ delimit $srcset ", " }}"
+         sizes="(min-width: 768px) 720px, 100vw"
+         width="{{ $img.Width }}" height="{{ $img.Height }}"
+         loading="lazy" decoding="async"
+         alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
+  {{- else -}}
+    <img src="{{ $src | safeURL }}"
+         loading="lazy" decoding="async"
+         alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
+  {{- end -}}
 {{- end -}}

@@ -1,11 +1,10 @@
 baseURL = "https://ndranandraj.com/"
 languageCode = "en-us"
 title = "Anand's Blog"
-# PaperMod is pulled in via Hugo Modules (see [module.imports] below). The legacy
-# `theme = "PaperMod"` line + `themes/PaperMod` submodule are retained as a
-# fallback during the migration. Once CI is green on modules, delete the submodule
-# and this comment block.
-theme = "PaperMod"
+# PaperMod is loaded via Hugo Modules only (see [module.imports] below), pinned
+# in go.mod. The legacy `theme = "PaperMod"` line and the themes/PaperMod
+# submodule have been removed as part of the modules cutover (see
+# docs/MIGRATE-TO-HUGO-MODULES.md). Build locally to confirm before pushing.
 enableRobotsTXT = true
 # canonifyURLs is legacy; relative URLs serve better and don't break preview deploys.
 

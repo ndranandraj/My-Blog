@@ -24,7 +24,11 @@
 <figure{{ with $class }} class="{{ . }}"{{ end }}>
   {{- if $link }}<a href="{{ $link }}"{{ with $target }} target="{{ . }}"{{ end }}{{ with $rel }} rel="{{ . }}"{{ end }}>{{ end -}}
 
-  {{- if $img -}}
+  {{- if hasPrefix $src "/images/" -}}
+    {{- /* Absolute /images path: route through the responsive-image partial
+           (assets master → WebP + srcset, plain <img> fallback). */ -}}
+    {{- partial "responsive-image.html" (dict "src" $src "alt" $alt "title" $title) -}}
+  {{- else if $img -}}
     {{- $sizes := slice 480 720 1080 1500 -}}
     {{- $srcset := slice -}}
     {{- range $sizes -}}

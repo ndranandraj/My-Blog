@@ -423,7 +423,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       </div>
 
       <div class="cx-controls" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
-        <input id="cx-search" type="search" placeholder="Search constituency, district, candidate, party…"
+        <input id="cx-search" type="search" aria-label="Search the constituency table by constituency, district, candidate, or party" placeholder="Search constituency, district, candidate, party…"
                style="flex:1; min-width:260px; padding:10px 16px; border-radius:10px; border:1px solid var(--border);
                       background:var(--surface-2); color:var(--text); font-size:0.92rem; font-family:inherit;
                       outline:none;" />
@@ -437,7 +437,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
           </select>
           <span>entries</span>
         </div>
-        <div id="cx-count" style="font-size:.78rem; color:var(--text-3); margin-left:auto;">—</div>
+        <div id="cx-count" role="status" aria-live="polite" style="font-size:.78rem; color:var(--text-3); margin-left:auto;">—</div>
       </div>
 
       <div style="overflow-x:auto;">
@@ -604,23 +604,23 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       </select>
     </div>
     <div style="margin-bottom: 12px;">
-      <input id="swing-search" type="search" placeholder="Search constituency, district, region, candidate, party…"
+      <input id="swing-search" type="search" aria-label="Search the 2021 to 2026 swing table by constituency, district, region, candidate, or party" placeholder="Search constituency, district, region, candidate, party…"
              style="width:100%; padding:10px 16px; border-radius:10px; border:1px solid var(--border);
                     background:var(--surface-2); color:var(--text); font-size:0.92rem; font-family:inherit; outline:none;" />
     </div>
-    <div id="swing-count" style="font-size:.78rem; color:var(--text-3); margin-bottom:8px;">—</div>
+    <div id="swing-count" role="status" aria-live="polite" style="font-size:.78rem; color:var(--text-3); margin-bottom:8px;">—</div>
 
     <div class="table-wrap">
       <table id="swing-table">
         <thead>
           <tr>
-            <th data-sort="ac_no">AC</th>
-            <th data-sort="ac_name">Constituency</th>
-            <th data-sort="region">Region</th>
-            <th data-sort="winner_2021_party">2021 winner</th>
-            <th data-sort="winner_2026_party">2026 winner</th>
-            <th class="right" data-sort="margin_2026">2026 margin (%)</th>
-            <th>Flip</th>
+            <th scope="col" aria-sort="none" data-sort="ac_no">AC</th>
+            <th scope="col" aria-sort="none" data-sort="ac_name">Constituency</th>
+            <th scope="col" aria-sort="none" data-sort="region">Region</th>
+            <th scope="col" aria-sort="none" data-sort="winner_2021_party">2021 winner</th>
+            <th scope="col" aria-sort="none" data-sort="winner_2026_party">2026 winner</th>
+            <th scope="col" aria-sort="none" class="right" data-sort="margin_2026">2026 margin (%)</th>
+            <th scope="col">Flip</th>
           </tr>
         </thead>
         <tbody id="swing-body">
@@ -732,12 +732,12 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       <table id="inc-table">
         <thead>
           <tr>
-            <th data-sort="ac_no">AC</th>
-            <th data-sort="incumbent_name">2021 winner (incumbent)</th>
-            <th data-sort="incumbent_2021_margin" class="right">2021 margin</th>
-            <th data-sort="winner_2026">2026 winner</th>
-            <th data-sort="margin_pct_2026" class="right">2026 margin (%)</th>
-            <th data-sort="situation">Situation</th>
+            <th scope="col" aria-sort="none" data-sort="ac_no">AC</th>
+            <th scope="col" aria-sort="none" data-sort="incumbent_name">2021 winner (incumbent)</th>
+            <th scope="col" aria-sort="none" data-sort="incumbent_2021_margin" class="right">2021 margin</th>
+            <th scope="col" aria-sort="none" data-sort="winner_2026">2026 winner</th>
+            <th scope="col" aria-sort="none" data-sort="margin_pct_2026" class="right">2026 margin (%)</th>
+            <th scope="col" aria-sort="none" data-sort="situation">Situation</th>
           </tr>
         </thead>
         <tbody id="inc-body">
@@ -834,6 +834,19 @@ tr:hover td { background: rgba(245,158,11,0.04); }
    Sections 1 (Map) + 2 (Party Efficiency) wired up.
    Sections 3-7 placeholders; data sidecars ready for next session.
    ═══════════════════════════════════════════════════════════════════ */
+
+// ─── Cached JSON fetch ───
+// Several sections request the same sidecar: explorer_ac_2026.json is used by
+// the map, the 2021→2026 swing table, and the constituency explorer, and
+// swing_2021_to_2026.json by two sections. Cache the in-flight promise by URL
+// so each file is fetched at most once per page load instead of 2-3 times.
+const _jsonCache = new Map();
+function jget(url) {
+  if (!_jsonCache.has(url)) {
+    _jsonCache.set(url, fetch(url).then(r => r.ok ? r.json() : null).catch(() => null));
+  }
+  return _jsonCache.get(url);
+}
 
 // ─── Color tokens (read from CSS for single source of truth) ───
 const PARTY_COLOR = {
@@ -963,7 +976,7 @@ async function loadMap() {
   const geo = await fetch('tn_constituencies.geojson').then(r => r.json());
   try {
     // explorer_ac_2026.json is built fresh from raw ECI CSV — authoritative source.
-    const data = await fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null);
+    const data = await jget('data/explorer_ac_2026.json');
     if (data && data.per_ac) {
       data.per_ac.forEach(d => { perAc[d.ac_no] = d; });
     }
@@ -1033,7 +1046,7 @@ function updateLegend() {
 // ─── PARTY EFFICIENCY ───
 async function loadEfficiency() {
   try {
-    const eff = await fetch('data/party_efficiency_2026.json').then(r => r.ok ? r.json() : null);
+    const eff = await jget('data/party_efficiency_2026.json');
     if (!eff) return;
     const tbody = document.getElementById('eff-body');
     // Sort by seats desc, then by vote share desc
@@ -1091,7 +1104,7 @@ let regViewMode = 'combined';
 
 async function loadRegional() {
   try {
-    const data = await fetch('data/regional_all_parties_2026.json').then(r => r.ok ? r.json() : null);
+    const data = await jget('data/regional_all_parties_2026.json');
     if (!data) throw new Error('null');
     regionalData = data;
     renderRegional();
@@ -1175,8 +1188,8 @@ let swingSortDir = 1;
 async function loadSwing() {
   try {
     const [swing, expAc] = await Promise.all([
-      fetch('data/swing_2021_to_2026.json').then(r => r.ok ? r.json() : null),
-      fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null),
+      jget('data/swing_2021_to_2026.json'),
+      jget('data/explorer_ac_2026.json'),
     ]);
     if (!swing || !swing.rows) throw new Error('swing sidecar missing');
     swingData = swing.rows;
@@ -1284,8 +1297,10 @@ document.querySelectorAll('#swing-table th[data-sort]').forEach(th => {
     else { swingSortKey = k; swingSortDir = (k === 'margin_2026') ? -1 : 1; }
     document.querySelectorAll('#swing-table th[data-sort]').forEach(t => {
       t.innerHTML = t.innerHTML.replace(/ [▼▲]$/, '');
+      t.setAttribute('aria-sort', 'none');
     });
     th.innerHTML = th.innerHTML.replace(/ [▼▲]$/, '') + (swingSortDir > 0 ? ' ▲' : ' ▼');
+    th.setAttribute('aria-sort', swingSortDir > 0 ? 'ascending' : 'descending');
     renderSwing();
   });
 });
@@ -1293,7 +1308,7 @@ document.querySelectorAll('#swing-table th[data-sort]').forEach(th => {
 // ─── SECTION 5 · Demographics ───
 async function loadDemographics() {
   try {
-    const d = await fetch('data/new_assembly_profile_2026.json').then(r => r.ok ? r.json() : null);
+    const d = await jget('data/new_assembly_profile_2026.json');
     if (!d) throw new Error('null');
     const o = d.overall;
     document.getElementById('dm-median-age').textContent = o.median_age + 'y';
@@ -1350,7 +1365,7 @@ let incSortDir = -1;
 
 async function loadIncumbents() {
   try {
-    const d = await fetch('data/defeated_incumbents_2026.json').then(r => r.ok ? r.json() : null);
+    const d = await jget('data/defeated_incumbents_2026.json');
     if (!d || !d.rows) throw new Error('null');
     incData = d.rows;
     renderIncumbents();
@@ -1436,8 +1451,10 @@ document.querySelectorAll('#inc-table th[data-sort]').forEach(th => {
     else { incSortKey = k; incSortDir = (k === 'incumbent_2021_margin' || k === 'margin_pct_2026') ? -1 : 1; }
     document.querySelectorAll('#inc-table th[data-sort]').forEach(t => {
       t.innerHTML = t.innerHTML.replace(/ [▼▲]$/, '');
+      t.setAttribute('aria-sort', 'none');
     });
     th.innerHTML = th.innerHTML.replace(/ [▼▲]$/, '') + (incSortDir > 0 ? ' ▲' : ' ▼');
+    th.setAttribute('aria-sort', incSortDir > 0 ? 'ascending' : 'descending');
     renderIncumbents();
   });
 });
@@ -1445,7 +1462,7 @@ document.querySelectorAll('#inc-table th[data-sort]').forEach(th => {
 // ─── SECTION 7 · Dummy near-misses ───
 async function loadDummies() {
   try {
-    const rows = await fetch('data/dummy_near_misses_2026.json').then(r => r.ok ? r.json() : null);
+    const rows = await jget('data/dummy_near_misses_2026.json');
     if (!Array.isArray(rows)) throw new Error('not an array');
     const tbody = document.getElementById('dum-body');
     tbody.innerHTML = rows.map((r, i) => {
@@ -1550,10 +1567,10 @@ const CX = {
 async function cxLoadAll() {
   try {
     const [w26, w21, sw, all] = await Promise.all([
-      fetch('data/explorer_ac_2026.json').then(r => r.ok ? r.json() : null),
-      fetch('data/winners_2021.json').then(r => r.ok ? r.json() : null),
-      fetch('data/swing_2021_to_2026.json').then(r => r.ok ? r.json() : null),
-      fetch('data/all_candidates_2026.json').then(r => r.ok ? r.json() : null),
+      jget('data/explorer_ac_2026.json'),
+      jget('data/winners_2021.json'),
+      jget('data/swing_2021_to_2026.json'),
+      jget('data/all_candidates_2026.json'),
     ]);
     CX.data.winners_2026 = (w26 && w26.per_ac) ? w26.per_ac : [];
     CX.data.winners_2021 = (w21 && w21.rows) ? w21.rows : [];
@@ -1580,7 +1597,8 @@ function cxRender() {
   head.innerHTML = '<tr>' + schema.columns.map(col => {
     const isSorted = CX.sortKey === col.key;
     const ind = isSorted ? `<span class="sort-ind">${CX.sortDir > 0 ? '▲' : '▼'}</span>` : '';
-    return `<th class="${col.cls || ''}" data-key="${col.key}" ${col.width ? `style="width:${col.width}"` : ''}>${col.label}${ind}</th>`;
+    const ariaSort = isSorted ? (CX.sortDir > 0 ? 'ascending' : 'descending') : 'none';
+    return `<th scope="col" aria-sort="${ariaSort}" class="${col.cls || ''}" data-key="${col.key}" ${col.width ? `style="width:${col.width}"` : ''}>${col.label}${ind}</th>`;
   }).join('') + '</tr>';
   head.querySelectorAll('th').forEach(th => {
     th.addEventListener('click', () => {

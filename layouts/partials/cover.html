@@ -1,0 +1,70 @@
+{{- /*
+  Override of PaperMod's cover.html.
+
+  Why: every post cover is referenced by an absolute path like
+  "/images/foo.jpg". Files under static cannot be processed by Hugo, and
+  PaperMod's own global-resource lookup misses them: its glob is built from the
+  cover value, which keeps the leading slash, so it never matches the asset path
+  images/foo.jpg. Result: covers shipped full-size with no WebP, and the cover
+  is the LCP element on every post.
+
+  This override resolves the matching master under assets/images/ via
+  resources.Get and routes it through the shared responsive-image partial
+  (WebP + srcset). On single pages the cover loads eager + fetchpriority=high
+  (it is the LCP); in lists it loads lazy. Everything else — the
+  figure.entry-cover wrapper, link-to-full-image, hidden flag, caption — matches
+  PaperMod's original behaviour. Safe-by-fallback: if no asset master exists it
+  emits the same plain <img> at the original URL that PaperMod would have.
+
+  Note: this handles the absolute /images/ covers this site uses. It does not
+  add page-bundle cover processing (no post uses page bundles); if that changes,
+  extend the responsive-image partial to accept a resource object.
+*/ -}}
+{{- with .cxt }}
+{{- if (and .Params.cover.image (not $.isHidden)) }}
+<figure class="entry-cover">
+    {{- $loading := cond $.IsSingle "eager" "lazy" }}
+    {{- $fp := cond $.IsSingle "high" "" }}
+    {{- $addLink := (and site.Params.cover.linkFullImages $.IsSingle) }}
+    {{- $alt := (.Params.cover.alt | default .Params.cover.caption | plainify) }}
+    {{- $cov := .Params.cover.image }}
+
+    {{- /* Resolve an assets/ master so we can process the cover. */}}
+    {{- $asset := "" }}
+    {{- if hasPrefix $cov "/" }}
+        {{- $asset = resources.Get (strings.TrimPrefix "/" $cov) }}
+    {{- end }}
+
+    {{- /* Link target: processed original if we have an asset, else the static URL. */}}
+    {{- $imgdl := $cov | absURL }}
+    {{- if $asset }}{{ $imgdl = $asset.RelPermalink }}{{ end }}
+
+    {{- if $addLink }}
+        <a href="{{ $imgdl }}" target="_blank" rel="noopener noreferrer">
+    {{- end }}
+
+    {{- if (and $asset (in (slice "jpeg" "png") $asset.MediaType.SubType)) }}
+        {{- partial "responsive-image.html" (dict
+              "src" $cov
+              "alt" $alt
+              "loading" $loading
+              "fetchpriority" $fp
+              "sizes" "(min-width: 768px) 720px, 100vw") }}
+    {{- else }}
+        {{- /* Unprocessable (SVG, external, or missing master): plain <img>. */}}
+        <img loading="{{ $loading }}"{{ with $fp }} fetchpriority="{{ . }}"{{ end }} src="{{ $imgdl }}" alt="{{ $alt }}">
+    {{- end }}
+
+    {{- if $addLink }}
+        </a>
+    {{- end -}}
+
+    {{- /* Display caption (single pages only). */}}
+    {{- if $.IsSingle }}
+        {{ with .Params.cover.caption -}}
+            <figcaption>{{ . | markdownify }}</figcaption>
+        {{- end }}
+    {{- end }}
+</figure>
+{{- end }}{{/* End image */}}
+{{- end -}}{{/* End context */ -}}
