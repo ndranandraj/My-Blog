@@ -103,6 +103,7 @@ jobs:
             https://ndranandraj.com/posts/tn-2026-dummy-candidates/
             https://ndranandraj.com/election-dashboard/tn-2026-explorer.html
           uploadArtifacts: true
+          artifactName: lighthouse-desktop
           temporaryPublicStorage: true
           configPath: ./.github/lighthouserc.json
 
@@ -114,5 +115,6 @@ jobs:
             https://ndranandraj.com/posts/tn-2026-dummy-candidates/
             https://ndranandraj.com/election-dashboard/tn-2026-explorer.html
           uploadArtifacts: true
+          artifactName: lighthouse-mobile
           temporaryPublicStorage: true
           configPath: ./.github/lighthouserc-mobile.json
