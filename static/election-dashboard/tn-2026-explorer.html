@@ -20,7 +20,7 @@
 <style>
 :root {
   --bg: #0E0E14; --surface: #181820; --surface-2: #21212C; --border: #2E2E3D;
-  --text: #EEEDF6; --text-2: #B4B4C8; --text-3: #8888A2;
+  --text: #EEEDF6; --text-2: #B4B4C8; --text-3: #9C9CB8;
   --accent: #F59E0B; --accent-soft: rgba(245,158,11,0.14);
 
   /* Party colors — consistent across the whole explorer */
@@ -252,6 +252,8 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   display: inline-block; padding: 2px 9px; border-radius: 99px;
   font-size: 0.70rem; font-weight: 800; color: #fff; letter-spacing: 0.02em;
 }
+/* In-body text links must be distinguishable without relying on colour alone. */
+.container p a, footer p a { text-decoration: underline; text-underline-offset: 2px; }
 .bar-cell { position: relative; min-width: 100px; }
 .bar-cell .bar { position: absolute; left: 0; top: 50%; transform: translateY(-50%);
   height: 22px; border-radius: 4px; opacity: 0.20; }
@@ -294,10 +296,10 @@ tr:hover td { background: rgba(245,158,11,0.04); }
 .footer a { color: var(--text-2); }
 
 /* ── PARTY COLOR HELPERS ─────────────────────────────────── */
-.pc-tvk   { background: var(--c-tvk); }
+.pc-tvk   { background: color-mix(in srgb, var(--c-tvk) 82%, #000); }
 .pc-dmk   { background: var(--c-dmk); }
-.pc-admk  { background: var(--c-admk); }
-.pc-bjp   { background: var(--c-bjp); }
+.pc-admk  { background: color-mix(in srgb, var(--c-admk) 78%, #000); }
+.pc-bjp   { background: color-mix(in srgb, var(--c-bjp) 66%, #000); }
 .pc-pmk   { background: var(--c-pmk); color: #1f1f1f; }
 .pc-inc   { background: var(--c-inc); }
 .pc-ntk   { background: var(--c-ntk); }
@@ -429,7 +431,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
                       outline:none;" />
         <div style="display:flex; gap:8px; align-items:center; font-size:.78rem; color:var(--text-2);">
           <span>Show</span>
-          <select id="cx-page-size" style="background:var(--surface-2); border:1px solid var(--border); color:var(--text); font-size:.78rem; padding:6px 10px; border-radius:8px; font-family:inherit; cursor:pointer;">
+          <select id="cx-page-size" aria-label="Rows per page" style="background:var(--surface-2); border:1px solid var(--border); color:var(--text); font-size:.78rem; padding:6px 10px; border-radius:8px; font-family:inherit; cursor:pointer;">
             <option value="25">25</option>
             <option value="50">50</option>
             <option value="100">100</option>
@@ -593,7 +595,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       <button class="ctl" data-swing-show="held">Held (70)</button>
       <div class="divider"></div>
       <span class="ctl-label">2026 winner</span>
-      <select id="swing-party-filter" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
+      <select id="swing-party-filter" aria-label="Filter the swing table by party" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
         <option value="all">Any</option>
         <option value="TVK">TVK</option>
         <option value="DMK">DMK</option>
@@ -715,7 +717,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
       <button class="ctl" data-inc-sit="all">All 179</button>
       <div class="divider"></div>
       <span class="ctl-label">2021 party</span>
-      <select id="inc-party-filter" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
+      <select id="inc-party-filter" aria-label="Filter the defeated-incumbents table by party" style="background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-size:.77rem;padding:6px 12px;border-radius:99px;font-family:inherit;font-weight:600;cursor:pointer;">
         <option value="all">Any</option>
         <option value="DMK">DMK</option>
         <option value="AIADMK">AIADMK</option>
