@@ -1,21 +1,23 @@
 {{- /*
-  responsive-image.html — emit a <picture> with WebP + original-format srcset
-  for an image that lives under assets/ (so Hugo Pipes can process it).
+  responsive-image.html — emit a resized, responsive <img srcset> for an image
+  that lives under assets/ (so Hugo Pipes can process it).
 
   Why this exists: every published image is referenced by an absolute path like
   "/images/foo.jpg". Files under static are copied verbatim and CANNOT be
   processed by Hugo, so the old render hooks always fell through to a full-size
   <img>. We now keep a processing master under assets/images/ with the same
-  filename; this partial resolves it via resources.Get, generates resized WebP
-  + original-format variants, and emits a <picture>.
+  filename; this partial resolves it via resources.Get and emits resized
+  variants (capped at 1500px) with a srcset so phones get a small file.
 
-  Safe-by-fallback: it emits a plain lazy <img> at the original src — the
-  previous behaviour — when there is no asset master (SVGs, external URLs), or
-  when the asset cannot be decoded. That last case matters: some files carry a
-  misleading extension (e.g. WebP bytes saved as .jpg). Hugo trusts the
-  extension and then fails to decode, so we probe the resize with `try` and fall
-  back cleanly instead of failing the whole build. Browsers sniff the real
-  content, so the fallback <img> still renders.
+  WebP note: this intentionally does NOT generate WebP. Hugo 0.153's bundled
+  WebP encoder OOMs the GitHub Actions runner even on modest (~3 MP) images, so
+  WebP is best handled at the CDN edge (Cloudflare) rather than at build time.
+  Right-sizing alone is the bulk of the performance win.
+
+  Safe-by-fallback: emits a plain lazy <img> at the original src — the previous
+  behaviour — when there is no asset master (SVGs, external URLs), or when the
+  asset cannot be decoded (e.g. WebP bytes mislabeled as .jpg). We probe the
+  resize with `try` and fall back cleanly instead of failing the build.
 
   Params (dict):
     src      (required) e.g. "/images/foo.jpg"
@@ -47,36 +49,34 @@
        back instead of erroring the build. */ -}}
 {{- $canProcess := false -}}
 {{- if and $img (in (slice "jpeg" "png") $img.MediaType.SubType) -}}
-  {{- $probe := try ($img.Resize "480x webp q80") -}}
+  {{- $probe := try ($img.Resize "480x q82") -}}
   {{- if not $probe.Err -}}{{- $canProcess = true -}}{{- end -}}
 {{- end -}}
 
 {{- if $canProcess -}}
-  {{- $webpset := slice -}}
-  {{- $origset := slice -}}
+  {{- /* Build the set of target widths (those <= the source width), capped at
+         1500px. If the source is narrower than the smallest target, just use
+         its native width. */ -}}
+  {{- $targets := slice -}}
   {{- range $w := $widths -}}
-    {{- if ge $img.Width $w -}}
-      {{- $orig := $img.Resize (printf "%dx q82" $w) -}}
-      {{- $webp := $img.Resize (printf "%dx webp q80" $w) -}}
-      {{- $origset = $origset | append (printf "%s %dw" $orig.RelPermalink $w) -}}
-      {{- $webpset = $webpset | append (printf "%s %dw" $webp.RelPermalink $w) -}}
-    {{- end -}}
+    {{- if ge $img.Width $w -}}{{- $targets = $targets | append $w -}}{{- end -}}
   {{- end -}}
-  {{- /* Always include a candidate at the native width so large viewports get full quality. */ -}}
-  {{- $webpfull := $img.Resize (printf "%dx webp q80" $img.Width) -}}
-  {{- $origset = $origset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
-  {{- $webpset = $webpset | append (printf "%s %dw" $webpfull.RelPermalink $img.Width) -}}
-  <picture>
-    <source type="image/webp" srcset="{{ delimit $webpset ", " }}" sizes="{{ $sizes }}">
-    <img src="{{ $img.RelPermalink }}"
-         srcset="{{ delimit $origset ", " }}"
-         sizes="{{ $sizes }}"
-         width="{{ $img.Width }}" height="{{ $img.Height }}"
-         loading="{{ $loading }}" decoding="{{ $decoding }}"
-         {{- with $fetchpriority }} fetchpriority="{{ . }}"{{ end }}
-         {{- with $class }} class="{{ . }}"{{ end }}
-         alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
-  </picture>
+  {{- if not $targets -}}{{- $targets = $targets | append $img.Width -}}{{- end -}}
+  {{- $srcset := slice -}}
+  {{- $fallback := $img.RelPermalink -}}
+  {{- range $w := $targets -}}
+    {{- $r := $img.Resize (printf "%dx q82" $w) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink $w) -}}
+    {{- $fallback = $r.RelPermalink -}}
+  {{- end -}}
+  <img src="{{ $fallback }}"
+       srcset="{{ delimit $srcset ", " }}"
+       sizes="{{ $sizes }}"
+       width="{{ $img.Width }}" height="{{ $img.Height }}"
+       loading="{{ $loading }}" decoding="{{ $decoding }}"
+       {{- with $fetchpriority }} fetchpriority="{{ . }}"{{ end }}
+       {{- with $class }} class="{{ . }}"{{ end }}
+       alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }}>
 {{- else -}}
   <img src="{{ $src | safeURL }}"
        loading="{{ $loading }}" decoding="{{ $decoding }}"
