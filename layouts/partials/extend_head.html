@@ -142,7 +142,7 @@
   already emits a valid JSON-quoted string, we pipe through `safeJS` to prevent
   double-quoting (e.g. "\"Anand's Blog\"") which breaks rich-results parsing.
 */}}
-{{ if .IsPage }}
+{{ if and .IsPage (ne .Section "data") }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -180,6 +180,53 @@
   }
   {{- end -}}
   {{- end -}}
+}
+</script>
+{{ end }}
+
+{{/*
+  Dataset structured data for pages in the `data` section. Eligible for
+  Google Dataset Search, a discovery surface most blogs never compete in.
+  Distribution points at the two CSVs in the public GitHub release.
+*/}}
+{{ if and .IsPage (eq .Section "data") }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ (or .Description .Summary) | plainify | jsonify | safeJS }},
+  "url": "{{ .Permalink }}",
+  "sameAs": "https://github.com/ndranandraj/tn-2026-candidates-dataset",
+  "keywords": {{ .Params.keywords | jsonify | safeJS }},
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+  "temporalCoverage": "2026",
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Tamil Nadu, India"
+  },
+  "creator": {
+    "@type": "Person",
+    "name": "Anandraj R.",
+    "url": "{{ .Site.BaseURL }}page/about/"
+  },
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "candidates_raw_2026.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://raw.githubusercontent.com/ndranandraj/tn-2026-candidates-dataset/main/data/candidates_raw_2026.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "candidates_2026.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://raw.githubusercontent.com/ndranandraj/tn-2026-candidates-dataset/main/data/candidates_2026.csv"
+    }
+  ]
 }
 </script>
 {{ end }}

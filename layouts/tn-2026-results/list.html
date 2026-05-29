@@ -1,0 +1,156 @@
+{{- define "main" -}}
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+
+{{/* Intro prose stays in .post-content for normal article styling. */}}
+<div class="post-content tn-results-intro">
+  {{ .Content }}
+</div>
+
+{{/* The results table lives OUTSIDE .post-content so the global framed-table
+     CSS (higher specificity) cannot override its width/margins/borders. */}}
+<div class="results-controls">
+  <input type="search" id="results-search" placeholder="Search constituency, district, winner or party…"
+         aria-label="Search results" autocomplete="off">
+  <p class="results-count" id="results-count" aria-live="polite"></p>
+</div>
+
+{{ $total := len .Pages }}
+<div id="results-wrap" data-total="{{ $total }}">
+  {{ range $group := (.Pages.GroupByParam "region") }}
+  <section class="region-group" data-region="{{ $group.Key }}">
+    <h2>{{ $group.Key }} <span class="region-count">{{ len $group.Pages }}</span></h2>
+    <div class="results-scroll">
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Constituency</th>
+            <th>District</th>
+            <th>Winner</th>
+            <th>Party</th>
+            <th class="num">Share</th>
+            <th class="num">Margin</th>
+            <th>vs 2021</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $p := ($group.Pages.ByParam "ac_no") }}
+          <tr data-search="{{ lower (printf "%s %s %s %s" $p.Params.constituency $p.Params.district $p.Params.winner $p.Params.winner_party) }}">
+            <td class="c-name"><a href="{{ $p.RelPermalink }}">{{ $p.Params.constituency }}</a></td>
+            <td class="muted">{{ $p.Params.district }}</td>
+            <td>{{ $p.Params.winner }}</td>
+            <td><span class="pbadge" data-party="{{ $p.Params.winner_party }}">{{ $p.Params.winner_party }}</span></td>
+            <td class="num">{{ $p.Params.winner_share }}%</td>
+            <td class="num">{{ $p.Params.margin_pct }}%</td>
+            <td>{{ if $p.Params.flipped }}<span class="pill flip">Flip</span>{{ else }}<span class="pill hold">Hold</span>{{ end }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {{ end }}
+  <p class="results-empty" id="results-empty" hidden>No constituency matches that search.</p>
+</div>
+
+<style>
+  .results-controls { margin: 1.75rem 0 1.25rem; }
+  #results-search {
+    width: 100%; padding: 0.7rem 1rem; font-size: 1rem; box-sizing: border-box;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--entry); color: var(--primary);
+  }
+  #results-search:focus { outline: 2px solid var(--secondary); outline-offset: 1px; }
+  .results-count { color: var(--secondary); font-size: 0.85rem; margin: 0.5rem 2px 0; }
+
+  #results-wrap .region-group {
+    margin: 1.5rem 0;
+    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    box-shadow: 0 12px 28px -24px rgba(0,0,0,0.22);
+  }
+  #results-wrap .region-group h2 {
+    margin: 0; padding: 0.7rem 1rem; font-size: 1.05rem;
+    background: color-mix(in srgb, var(--primary) 6%, var(--theme));
+    border-bottom: 1px solid var(--border);
+  }
+  #results-wrap .region-count {
+    font-size: 0.72em; color: var(--secondary); font-weight: 500;
+    background: var(--entry); padding: 0.1em 0.55em; border-radius: 999px;
+    vertical-align: middle; margin-left: 0.25rem;
+  }
+
+  .results-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #results-wrap table.results-table {
+    width: 100%; margin: 0; border: none; box-shadow: none; border-radius: 0;
+    border-collapse: separate; border-spacing: 0; font-size: 0.92rem;
+    min-width: 640px;
+  }
+  #results-wrap table.results-table th,
+  #results-wrap table.results-table td {
+    text-align: left; padding: 0.55rem 1rem; white-space: nowrap;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  }
+  #results-wrap table.results-table thead th {
+    background: color-mix(in srgb, var(--primary) 4%, var(--theme));
+    color: var(--secondary); font-weight: 700; font-size: 0.72rem;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  #results-wrap table.results-table th.num,
+  #results-wrap table.results-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  #results-wrap table.results-table td.c-name { white-space: normal; }
+  #results-wrap table.results-table tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--primary) 2.5%, var(--theme)); }
+  #results-wrap table.results-table tbody tr:hover td { background: color-mix(in srgb, var(--primary) 7%, var(--theme)); }
+  #results-wrap table.results-table tbody tr:last-child td { border-bottom: none; }
+  #results-wrap table.results-table a { font-weight: 600; }
+  #results-wrap table.results-table td.muted { color: var(--secondary); }
+
+  .pill {
+    display: inline-block; padding: 0.1em 0.55em; border-radius: 999px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em;
+  }
+  .pill.flip { background: rgba(220,38,38,0.12); color: #dc2626; }
+  .pill.hold { background: color-mix(in srgb, var(--secondary) 12%, transparent); color: var(--secondary); }
+  .dark .pill.flip { color: #fca5a5; }
+</style>
+
+<script>
+  (function () {
+    var input = document.getElementById('results-search');
+    var wrap = document.getElementById('results-wrap');
+    if (!input || !wrap) return;
+    var total = parseInt(wrap.getAttribute('data-total'), 10) || 0;
+    var rows = Array.prototype.slice.call(wrap.querySelectorAll('tr[data-search]'));
+    var groups = Array.prototype.slice.call(wrap.querySelectorAll('.region-group'));
+    var countEl = document.getElementById('results-count');
+    var emptyEl = document.getElementById('results-empty');
+
+    function render(q) {
+      q = (q || '').trim().toLowerCase();
+      var shown = 0;
+      rows.forEach(function (r) {
+        var match = !q || r.getAttribute('data-search').indexOf(q) !== -1;
+        r.style.display = match ? '' : 'none';
+        if (match) shown++;
+      });
+      groups.forEach(function (g) {
+        var anyVisible = false;
+        var grp = g.querySelectorAll('tr[data-search]');
+        for (var i = 0; i < grp.length; i++) {
+          if (grp[i].style.display !== 'none') { anyVisible = true; break; }
+        }
+        g.style.display = anyVisible ? '' : 'none';
+      });
+      emptyEl.hidden = shown !== 0;
+      countEl.textContent = q
+        ? ('Showing ' + shown + ' of ' + total + ' constituencies')
+        : (total + ' constituencies');
+    }
+
+    input.addEventListener('input', function () { render(input.value); });
+    render('');
+  })();
+</script>
+
+{{- end -}}
