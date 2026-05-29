@@ -8,6 +8,12 @@ constituency: "Vikravandi"
 ac_no: 75
 district: "Viluppuram"
 region: "Northeast Coast"
+winner: "Sivakumar C"
+winner_party: "PMK"
+winner_share: 33.33
+margin: 910
+margin_pct: 0.43
+flipped: true
 keywords: ["Vikravandi election result 2026", "Vikravandi 2026 winner", "Tamil Nadu 2026 Viluppuram"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,40 +30,50 @@ Sivakumar C of PMK won the Vikravandi Assembly constituency (Viluppuram district
 
 ## Full candidate results, Vikravandi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Sivakumar C** | PMK | 69,727 | 33.33% |
-| 2 | Vijai Vadivel A | TVK | 68,817 | 32.89% |
-| 3 | Anniyur Siva @ Sivashanmugam A | DMK | 60,941 | 29.13% |
-| 4 | Subha Chandrasekaran A | NTK | 4,979 | 2.38% |
-| 5 | Settu C | Tamizhaga Vaazhvurimai Katchi | 592 | 0.28% |
-| 6 | Sivakumar S | IND | 455 | 0.22% |
-| 7 | Inbarasan G | Bahujan Samaj Party | 442 | 0.21% |
-| 8 | Sanmugam B | IND | 432 | 0.21% |
-| 9 | Nota | NOTA | 401 | 0.19% |
-| 10 | Ramachandran P | Anti Corruption Dynamic Party | 342 | 0.16% |
-| 11 | Tamilselvan D | IND | 288 | 0.14% |
-| 12 | Shanmugam P | IND | 244 | 0.12% |
-| 13 | Gokul Raj B | IND | 205 | 0.1% |
-| 14 | Stalin D | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 194 | 0.09% |
-| 15 | Shanmugam R | IND | 158 | 0.08% |
-| 16 | Selvakumar S | IND | 154 | 0.07% |
-| 17 | Backiyalakshmi C | Thakkam Katchi | 141 | 0.07% |
-| 18 | Rajaram M | IND | 127 | 0.06% |
-| 19 | Yeasuraja M | IND | 115 | 0.05% |
-| 20 | Sakthivel A | IND | 104 | 0.05% |
-| 21 | Thamizhvengai Ka | Desiya Makkal Sakthi Katchi | 103 | 0.05% |
-| 22 | Murugan C | IND | 76 | 0.04% |
-| 23 | Mohammad Siddiq M H | Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi | 71 | 0.03% |
-| 24 | Ramachandran A | IND | 68 | 0.03% |
-| 25 | Prabhakaran D | IND | 55 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Sivakumar C <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="PMK">PMK</span></td><td class="num">69,727</td><td class="num share">33.33%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Vijai Vadivel A <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">68,817</td><td class="num share">32.89%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Anniyur Siva @ Sivashanmugam A</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">60,941</td><td class="num share">29.13%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Subha Chandrasekaran A</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">4,979</td><td class="num share">2.38%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Settu C</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">592</td><td class="num share">0.28%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Sivakumar S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">455</td><td class="num share">0.22%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Inbarasan G</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">442</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Sanmugam B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">432</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">401</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Ramachandran P</td><td class="pcell"><span class="pname">Anti Corruption Dynamic Party</span></td><td class="num">342</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Tamilselvan D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">288</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Shanmugam P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">244</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Gokul Raj B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">205</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Stalin D</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">194</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Shanmugam R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">158</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Selvakumar S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">154</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Backiyalakshmi C</td><td class="pcell"><span class="pname">Thakkam Katchi</span></td><td class="num">141</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Rajaram M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">127</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Yeasuraja M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">115</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Sakthivel A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">104</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Thamizhvengai Ka</td><td class="pcell"><span class="pname">Desiya Makkal Sakthi Katchi</span></td><td class="num">103</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Murugan C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">76</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Mohammad Siddiq M H</td><td class="pcell"><span class="pname">Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi</span></td><td class="num">71</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Ramachandran A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">68</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Prabhakaran D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">55</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Vikravandi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | PUGAZHENTHI N | DMK | 48.41% |
-| 2026 | SIVAKUMAR C | PMK | 33.33% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">PUGAZHENTHI N</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">48.41%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SIVAKUMAR C</td><td class="pcell"><span class="pbadge" data-party="PMK">PMK</span></td><td class="num">33.33%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -15.08 percentage points in the winning vote share.
 

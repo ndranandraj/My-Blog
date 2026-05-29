@@ -8,6 +8,12 @@ constituency: "Nanguneri"
 ac_no: 227
 district: "Tirunelveli"
 region: "Deep South"
+winner: "Reddiarpatti V. Narayanan"
+winner_party: "TVK"
+winner_share: 35.79
+margin: 16419
+margin_pct: 7.84
+flipped: true
 keywords: ["Nanguneri election result 2026", "Nanguneri 2026 winner", "Tamil Nadu 2026 Tirunelveli"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,41 +30,51 @@ Reddiarpatti V. Narayanan of TVK won the Nanguneri Assembly constituency (Tirune
 
 ## Full candidate results, Nanguneri 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Reddiarpatti V. Narayanan** | TVK | 74,952 | 35.79% |
-| 2 | Ruby.R.Manoharan | INC | 58,533 | 27.95% |
-| 3 | R. Esakkimuthu | AMMK | 38,316 | 18.3% |
-| 4 | S. Selvam | NTK | 17,618 | 8.41% |
-| 5 | Tamilselvi | Puthiya Tamilagam | 11,141 | 5.32% |
-| 6 | M. Kumar | IND | 1,098 | 0.52% |
-| 7 | Dr.S.Vellai Durai | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 1,048 | 0.5% |
-| 8 | Nota | NOTA | 721 | 0.34% |
-| 9 | R. Janarthanan | Bahujan Samaj Party | 659 | 0.31% |
-| 10 | S.Mariyappan | IND | 637 | 0.3% |
-| 11 | A.Rani Nadar Alias Pushparani | IND | 529 | 0.25% |
-| 12 | Chithirai Selvan | Tamizhaga Vaazhvurimai Katchi | 491 | 0.23% |
-| 13 | Thanithangam | IND | 441 | 0.21% |
-| 14 | Krish.Mariappan | Thamizhaka Padaippalar Makkal Katchi | 377 | 0.18% |
-| 15 | Thulasi Sudalai | Puthiya Makkal Tamil Desam Katchi | 366 | 0.17% |
-| 16 | T. Sankar | IND | 360 | 0.17% |
-| 17 | Shanmugam | IND | 293 | 0.14% |
-| 18 | N.Kalaberumal | IND | 265 | 0.13% |
-| 19 | Dev.P.Jegadeesan | IND | 265 | 0.13% |
-| 20 | M. Aruna | IND | 251 | 0.12% |
-| 21 | S. Shunmuga Sundaram | Naam Indiar Party | 202 | 0.1% |
-| 22 | Sudaroli S.Murugan Yadhav B.Com | IND | 191 | 0.09% |
-| 23 | T. Lingadurai | IND | 178 | 0.08% |
-| 24 | Nallakkannu Alias Karthic.K | IND | 170 | 0.08% |
-| 25 | R.Ananthi | IND | 169 | 0.08% |
-| 26 | T. Rajkumar | IND | 148 | 0.07% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Reddiarpatti V. Narayanan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">74,952</td><td class="num share">35.79%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Ruby.R.Manoharan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">58,533</td><td class="num share">27.95%</td></tr>
+<tr><td class="rank">3</td><td class="cand">R. Esakkimuthu</td><td class="pcell"><span class="pbadge" data-party="AMMK">AMMK</span></td><td class="num">38,316</td><td class="num share">18.3%</td></tr>
+<tr><td class="rank">4</td><td class="cand">S. Selvam</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">17,618</td><td class="num share">8.41%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Tamilselvi</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">11,141</td><td class="num share">5.32%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">M. Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">1,098</td><td class="num share">0.52%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Dr.S.Vellai Durai</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">1,048</td><td class="num share">0.5%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">721</td><td class="num share">0.34%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">R. Janarthanan</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">659</td><td class="num share">0.31%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">S.Mariyappan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">637</td><td class="num share">0.3%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">A.Rani Nadar Alias Pushparani</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">529</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Chithirai Selvan</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">491</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Thanithangam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">441</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Krish.Mariappan</td><td class="pcell"><span class="pname">Thamizhaka Padaippalar Makkal Katchi</span></td><td class="num">377</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Thulasi Sudalai</td><td class="pcell"><span class="pname">Puthiya Makkal Tamil Desam Katchi</span></td><td class="num">366</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">T. Sankar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">360</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Shanmugam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">293</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">N.Kalaberumal</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">265</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Dev.P.Jegadeesan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">265</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">M. Aruna</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">251</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">S. Shunmuga Sundaram</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">202</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Sudaroli S.Murugan Yadhav B.Com</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">191</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">T. Lingadurai</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">178</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Nallakkannu Alias Karthic.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">170</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">R.Ananthi</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">169</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">T. Rajkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">148</td><td class="num share">0.07%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Nanguneri compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | RUBY R MANOHARAN | INC | 39.43% |
-| 2026 | REDDIARPATTI V. NARAYANAN | TVK | 35.79% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">RUBY R MANOHARAN</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">39.43%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">REDDIARPATTI V. NARAYANAN</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">35.79%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -3.64 percentage points in the winning vote share.
 

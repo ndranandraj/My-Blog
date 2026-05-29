@@ -8,6 +8,12 @@ constituency: "Panruti"
 ac_no: 154
 district: "Cuddalore"
 region: "Northeast Coast"
+winner: "Mohan. K"
+winner_party: "ADMK"
+winner_share: 37.2
+margin: 10663
+margin_pct: 5.06
+flipped: true
 keywords: ["Panruti election result 2026", "Panruti 2026 winner", "Tamil Nadu 2026 Cuddalore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,25 +30,35 @@ Mohan. K of ADMK won the Panruti Assembly constituency (Cuddalore district, Nort
 
 ## Full candidate results, Panruti 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Mohan. K** | ADMK | 78,398 | 37.2% |
-| 2 | Abdur Rahman. A.R | VCK | 67,735 | 32.14% |
-| 3 | Manikandan. M | TVK | 56,022 | 26.58% |
-| 4 | Banupriya. M | NTK | 4,884 | 2.32% |
-| 5 | Surendar. R | Tamizhaga Vaazhvurimai Katchi | 1,449 | 0.69% |
-| 6 | Nota | NOTA | 907 | 0.43% |
-| 7 | Mohammed Safi. A | IND | 431 | 0.2% |
-| 8 | Srikanthu. S | Bahujan Samaj Party | 412 | 0.2% |
-| 9 | Prakash. R | Thamizhaka Padaippalar Makkal Katchi | 388 | 0.18% |
-| 10 | Ramalingam. A | IND | 141 | 0.07% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Mohan. K <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">78,398</td><td class="num share">37.2%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Abdur Rahman. A.R <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="VCK">VCK</span></td><td class="num">67,735</td><td class="num share">32.14%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Manikandan. M</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">56,022</td><td class="num share">26.58%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Banupriya. M</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">4,884</td><td class="num share">2.32%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Surendar. R</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">1,449</td><td class="num share">0.69%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">907</td><td class="num share">0.43%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Mohammed Safi. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">431</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Srikanthu. S</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">412</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Prakash. R</td><td class="pcell"><span class="pname">Thamizhaka Padaippalar Makkal Katchi</span></td><td class="num">388</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Ramalingam. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">141</td><td class="num share">0.07%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Panruti compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | VELMURUGAN.T | DMK | 47.6% |
-| 2026 | MOHAN. K | ADMK | 37.2% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">VELMURUGAN.T</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">47.6%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">MOHAN. K</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">37.2%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -10.40 percentage points in the winning vote share.
 

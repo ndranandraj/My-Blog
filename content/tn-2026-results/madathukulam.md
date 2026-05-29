@@ -8,6 +8,12 @@ constituency: "Madathukulam"
 ac_no: 126
 district: "Tiruppur"
 region: "Kongu (West)"
+winner: "R Jayaramakrishnan"
+winner_party: "DMK"
+winner_share: 37.43
+margin: 15968
+margin_pct: 8.48
+flipped: true
 keywords: ["Madathukulam election result 2026", "Madathukulam 2026 winner", "Tamil Nadu 2026 Tiruppur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ R Jayaramakrishnan of DMK won the Madathukulam Assembly constituency (Tiruppur d
 
 ## Full candidate results, Madathukulam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **R Jayaramakrishnan** | DMK | 70,458 | 37.43% |
-| 2 | C Shanmugavelu | AMMK | 54,490 | 28.95% |
-| 3 | R Thirumalai | TVK | 52,684 | 27.99% |
-| 4 | M Radhamani | NTK | 6,578 | 3.49% |
-| 5 | Nota | NOTA | 911 | 0.48% |
-| 6 | K Vadivazhagan Balaji | IND | 664 | 0.35% |
-| 7 | Ak Senthilkumar | Puthiya Tamilagam | 621 | 0.33% |
-| 8 | Sp Mahendran | IND | 464 | 0.25% |
-| 9 | M Shanugavel | IND | 397 | 0.21% |
-| 10 | S Shanmugavel | IND | 301 | 0.16% |
-| 11 | P Thangaraj | IND | 263 | 0.14% |
-| 12 | M Ahamed Ali | IND | 206 | 0.11% |
-| 13 | A Shanmugavel | IND | 120 | 0.06% |
-| 14 | K Shanmugavel | IND | 92 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">R Jayaramakrishnan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">70,458</td><td class="num share">37.43%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">C Shanmugavelu <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="AMMK">AMMK</span></td><td class="num">54,490</td><td class="num share">28.95%</td></tr>
+<tr><td class="rank">3</td><td class="cand">R Thirumalai</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">52,684</td><td class="num share">27.99%</td></tr>
+<tr><td class="rank">4</td><td class="cand">M Radhamani</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,578</td><td class="num share">3.49%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">911</td><td class="num share">0.48%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">K Vadivazhagan Balaji</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">664</td><td class="num share">0.35%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Ak Senthilkumar</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">621</td><td class="num share">0.33%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Sp Mahendran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">464</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">M Shanugavel</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">397</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">S Shanmugavel</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">301</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">P Thangaraj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">263</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">M Ahamed Ali</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">206</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">A Shanmugavel</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">120</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">K Shanmugavel</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">92</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Madathukulam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | C MAHENDRAN | ADMK | 46.35% |
-| 2026 | R JAYARAMAKRISHNAN | DMK | 37.43% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">C MAHENDRAN</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">46.35%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">R JAYARAMAKRISHNAN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">37.43%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -8.92 percentage points in the winning vote share.
 

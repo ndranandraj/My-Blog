@@ -8,6 +8,12 @@ constituency: "Veerapandi"
 ac_no: 91
 district: "Salem"
 region: "Kongu (West)"
+winner: "Palanivel. M.S"
+winner_party: "TVK"
+winner_share: 33.88
+margin: 4071
+margin_pct: 1.73
+flipped: true
 keywords: ["Veerapandi election result 2026", "Veerapandi 2026 winner", "Tamil Nadu 2026 Salem"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,36 +30,46 @@ Palanivel. M.S of TVK won the Veerapandi Assembly constituency (Salem district, 
 
 ## Full candidate results, Veerapandi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Palanivel. M.S** | TVK | 79,907 | 33.88% |
-| 2 | Sri Balaji Sugumar. S | ADMK | 75,836 | 32.15% |
-| 3 | Tharun. A.K | DMK | 69,296 | 29.38% |
-| 4 | Rajeshkumar. S | NTK | 6,820 | 2.89% |
-| 5 | Bramamoorthi. M | Tamizhaga Vaazhvurimai Katchi | 642 | 0.27% |
-| 6 | Nota | NOTA | 594 | 0.25% |
-| 7 | Palanisamy. P | IND | 449 | 0.19% |
-| 8 | Anbazhagan. P | Communist Party of India (Marxist-Leninist) (Liberation) | 437 | 0.19% |
-| 9 | Sakthivel. M | Naadaalum Makkal Katchi | 397 | 0.17% |
-| 10 | Prabhu. V | IND | 349 | 0.15% |
-| 11 | Vaidesswara Prasad. N | IND | 197 | 0.08% |
-| 12 | Indrajith Guptha. G | IND | 153 | 0.06% |
-| 13 | Tamilarasan. D | IND | 142 | 0.06% |
-| 14 | Senthilkumar. M | IND | 135 | 0.06% |
-| 15 | Devendhiraprabu. M | IND | 103 | 0.04% |
-| 16 | Gopi. R | IND | 96 | 0.04% |
-| 17 | Karthi. R | IND | 80 | 0.03% |
-| 18 | Jayavel. M | IND | 79 | 0.03% |
-| 19 | Gopinath. B | IND | 58 | 0.02% |
-| 20 | Kavitha. M.P | IND | 56 | 0.02% |
-| 21 | Ranganathan. D | IND | 49 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Palanivel. M.S <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">79,907</td><td class="num share">33.88%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Sri Balaji Sugumar. S <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">75,836</td><td class="num share">32.15%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Tharun. A.K</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">69,296</td><td class="num share">29.38%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Rajeshkumar. S</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,820</td><td class="num share">2.89%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Bramamoorthi. M</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">642</td><td class="num share">0.27%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">594</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Palanisamy. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">449</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Anbazhagan. P</td><td class="pcell"><span class="pname">Communist Party of India (Marxist-Leninist) (Liberation)</span></td><td class="num">437</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Sakthivel. M</td><td class="pcell"><span class="pname">Naadaalum Makkal Katchi</span></td><td class="num">397</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Prabhu. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">349</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Vaidesswara Prasad. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">197</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Indrajith Guptha. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">153</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Tamilarasan. D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">142</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Senthilkumar. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">135</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Devendhiraprabu. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">103</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Gopi. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">96</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Karthi. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">80</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Jayavel. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">79</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Gopinath. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">58</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Kavitha. M.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">56</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Ranganathan. D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">49</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Veerapandi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | RAJAMUTHU, M. | ADMK | 49.92% |
-| 2026 | PALANIVEL. M.S | TVK | 33.88% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">RAJAMUTHU, M.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">49.92%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">PALANIVEL. M.S</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">33.88%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -16.04 percentage points in the winning vote share.
 

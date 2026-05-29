@@ -8,6 +8,12 @@ constituency: "Rishivandiyam"
 ac_no: 78
 district: "Viluppuram"
 region: "Northeast Coast"
+winner: "Karthikeyan K"
+winner_party: "DMK"
+winner_share: 36.65
+margin: 4862
+margin_pct: 1.99
+flipped: false
 keywords: ["Rishivandiyam election result 2026", "Rishivandiyam 2026 winner", "Tamil Nadu 2026 Viluppuram"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,41 +30,51 @@ Karthikeyan K of DMK won the Rishivandiyam Assembly constituency (Viluppuram dis
 
 ## Full candidate results, Rishivandiyam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Karthikeyan K** | DMK | 89,711 | 36.65% |
-| 2 | Ashok Kumar G | TVK | 84,849 | 34.66% |
-| 3 | Chezhiyan P | PMK | 56,488 | 23.08% |
-| 4 | Radhika P | NTK | 7,247 | 2.96% |
-| 5 | Senthikumar V N | IND | 1,071 | 0.44% |
-| 6 | Selvaraj P | IND | 800 | 0.33% |
-| 7 | Balakrishnan A | Bahujan Samaj Party | 578 | 0.24% |
-| 8 | Nota | NOTA | 534 | 0.22% |
-| 9 | Anbumurugan S | IND | 458 | 0.19% |
-| 10 | Sevvantha G K | Anna Makkal Katchi | 322 | 0.13% |
-| 11 | Ranganathan N | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 302 | 0.12% |
-| 12 | Arumugam G | Parivartan Rajniti Party | 291 | 0.12% |
-| 13 | Venkatraman J | Naadaalum Makkal Katchi | 251 | 0.1% |
-| 14 | Karthikeyan A | IND | 244 | 0.1% |
-| 15 | Manikandan C | IND | 241 | 0.1% |
-| 16 | Vinoth S | IND | 208 | 0.08% |
-| 17 | Sezhiyan K | IND | 173 | 0.07% |
-| 18 | Sankar R | Tamizhaga Vaazhvurimai Katchi | 161 | 0.07% |
-| 19 | Vijayakumar G | IND | 141 | 0.06% |
-| 20 | Gowtham C | IND | 136 | 0.06% |
-| 21 | Raja S | IND | 130 | 0.05% |
-| 22 | Karthikeyan V | IND | 125 | 0.05% |
-| 23 | Raja K | IND | 97 | 0.04% |
-| 24 | Anbu D | IND | 90 | 0.04% |
-| 25 | Narayanan L | IND | 83 | 0.03% |
-| 26 | Marikkannu A | IND | 64 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Karthikeyan K <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">89,711</td><td class="num share">36.65%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Ashok Kumar G <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">84,849</td><td class="num share">34.66%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Chezhiyan P</td><td class="pcell"><span class="pbadge" data-party="PMK">PMK</span></td><td class="num">56,488</td><td class="num share">23.08%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Radhika P</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">7,247</td><td class="num share">2.96%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Senthikumar V N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">1,071</td><td class="num share">0.44%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Selvaraj P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">800</td><td class="num share">0.33%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Balakrishnan A</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">578</td><td class="num share">0.24%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">534</td><td class="num share">0.22%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Anbumurugan S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">458</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Sevvantha G K</td><td class="pcell"><span class="pname">Anna Makkal Katchi</span></td><td class="num">322</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Ranganathan N</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">302</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Arumugam G</td><td class="pcell"><span class="pname">Parivartan Rajniti Party</span></td><td class="num">291</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Venkatraman J</td><td class="pcell"><span class="pname">Naadaalum Makkal Katchi</span></td><td class="num">251</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Karthikeyan A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">244</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Manikandan C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">241</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Vinoth S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">208</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Sezhiyan K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">173</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Sankar R</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">161</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Vijayakumar G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">141</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Gowtham C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">136</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Raja S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">130</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Karthikeyan V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">125</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Raja K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">97</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Anbu D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">90</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Narayanan L</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">83</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">Marikkannu A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">64</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Rishivandiyam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | KARTHIKEYAN K | DMK | 52.96% |
-| 2026 | KARTHIKEYAN K | DMK | 36.65% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">KARTHIKEYAN K</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">52.96%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">KARTHIKEYAN K</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">36.65%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -16.31 percentage points in the winning vote share.
 

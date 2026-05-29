@@ -8,6 +8,12 @@ constituency: "Pattukkottai"
 ac_no: 176
 district: "Thanjavur"
 region: "Cauvery Delta"
+winner: "Annadurai K"
+winner_party: "DMK"
+winner_share: 35.9
+margin: 13754
+margin_pct: 7.49
+flipped: false
 keywords: ["Pattukkottai election result 2026", "Pattukkottai 2026 winner", "Tamil Nadu 2026 Thanjavur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,27 +30,37 @@ Annadurai K of DMK won the Pattukkottai Assembly constituency (Thanjavur distric
 
 ## Full candidate results, Pattukkottai 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Annadurai K** | DMK | 65,963 | 35.9% |
-| 2 | Mathan C | TVK | 52,209 | 28.41% |
-| 3 | Sekar C V | ADMK | 49,575 | 26.98% |
-| 4 | Kannan S | NTK | 13,145 | 7.15% |
-| 5 | Nota | NOTA | 738 | 0.4% |
-| 6 | Gurumoorthy M | Puthiya Tamilagam | 521 | 0.28% |
-| 7 | Annadurai C N | IND | 382 | 0.21% |
-| 8 | Ziaudeen A J | IND | 289 | 0.16% |
-| 9 | Mohamed Sharif M | IND | 250 | 0.14% |
-| 10 | Muthukumar D | IND | 240 | 0.13% |
-| 11 | Suresh M R | IND | 238 | 0.13% |
-| 12 | Suresh R | IND | 195 | 0.11% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Annadurai K <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">65,963</td><td class="num share">35.9%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Mathan C <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">52,209</td><td class="num share">28.41%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Sekar C V</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">49,575</td><td class="num share">26.98%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Kannan S</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">13,145</td><td class="num share">7.15%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">738</td><td class="num share">0.4%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Gurumoorthy M</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">521</td><td class="num share">0.28%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Annadurai C N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">382</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Ziaudeen A J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">289</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Mohamed Sharif M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">250</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Muthukumar D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">240</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Suresh M R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">238</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Suresh R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">195</td><td class="num share">0.11%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Pattukkottai compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | ANNADURAI, K. | DMK | 44.62% |
-| 2026 | ANNADURAI K | DMK | 35.9% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">ANNADURAI, K.</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">44.62%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">ANNADURAI K</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">35.9%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -8.72 percentage points in the winning vote share.
 

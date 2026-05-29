@@ -8,6 +8,12 @@ constituency: "Thousand Lights"
 ac_no: 20
 district: "Chennai"
 region: "Chennai & Suburbs"
+winner: "Prabhakar.J.C.D"
+winner_party: "TVK"
+winner_share: 44.73
+margin: 15141
+margin_pct: 11.49
+flipped: true
 keywords: ["Thousand Lights election result 2026", "Thousand Lights 2026 winner", "Tamil Nadu 2026 Chennai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,34 +30,44 @@ Prabhakar.J.C.D of TVK won the Thousand Lights Assembly constituency (Chennai di
 
 ## Full candidate results, Thousand Lights 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Prabhakar.J.C.D** | TVK | 58,965 | 44.73% |
-| 2 | Ezhilan Naganathan | DMK | 43,824 | 33.24% |
-| 3 | Valarmathi.B | ADMK | 23,320 | 17.69% |
-| 4 | Kalanchiyam.Mu | NTK | 3,717 | 2.82% |
-| 5 | Nota | NOTA | 815 | 0.62% |
-| 6 | Valarmathi.E | IND | 245 | 0.19% |
-| 7 | Mohamed Ghouse.H | Tamizhaga Vaazhvurimai Katchi | 203 | 0.15% |
-| 8 | Sathya.A | IND | 165 | 0.13% |
-| 9 | Valarmathy.D | IND | 102 | 0.08% |
-| 10 | Vijay.D | IND | 83 | 0.06% |
-| 11 | Prabhakaran.B | IND | 64 | 0.05% |
-| 12 | Prabhakaran.V | IND | 63 | 0.05% |
-| 13 | Karthikeyan.S | IND | 61 | 0.05% |
-| 14 | Sundara Raju.A | IND | 48 | 0.04% |
-| 15 | Shankar.V | IND | 42 | 0.03% |
-| 16 | Prabhakaran.T | IND | 36 | 0.03% |
-| 17 | Muniyan.E | IND | 28 | 0.02% |
-| 18 | Dhanasekaran.V | IND | 23 | 0.02% |
-| 19 | Pachaiyappan.E | IND | 20 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Prabhakar.J.C.D <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">58,965</td><td class="num share">44.73%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Ezhilan Naganathan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">43,824</td><td class="num share">33.24%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Valarmathi.B</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">23,320</td><td class="num share">17.69%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Kalanchiyam.Mu</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">3,717</td><td class="num share">2.82%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">815</td><td class="num share">0.62%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Valarmathi.E</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">245</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Mohamed Ghouse.H</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">203</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Sathya.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">165</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Valarmathy.D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">102</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Vijay.D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">83</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Prabhakaran.B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">64</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Prabhakaran.V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">63</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Karthikeyan.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">61</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Sundara Raju.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">48</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Shankar.V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">42</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Prabhakaran.T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">36</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Muniyan.E</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">28</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Dhanasekaran.V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">23</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Pachaiyappan.E</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">20</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thousand Lights compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | EZHILAN N | DMK | 52.87% |
-| 2026 | PRABHAKAR.J.C.D | TVK | 44.73% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">EZHILAN N</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">52.87%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">PRABHAKAR.J.C.D</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">44.73%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -8.14 percentage points in the winning vote share.
 

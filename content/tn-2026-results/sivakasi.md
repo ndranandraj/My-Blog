@@ -8,6 +8,12 @@ constituency: "Sivakasi"
 ac_no: 205
 district: "Virudhunagar"
 region: "Deep South"
+winner: "Keerthana S"
+winner_party: "TVK"
+winner_share: 35.51
+margin: 11670
+margin_pct: 6.03
+flipped: true
 keywords: ["Sivakasi election result 2026", "Sivakasi 2026 winner", "Tamil Nadu 2026 Virudhunagar"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Keerthana S of TVK won the Sivakasi Assembly constituency (Virudhunagar district
 
 ## Full candidate results, Sivakasi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Keerthana S** | TVK | 68,709 | 35.51% |
-| 2 | Ashokan G | INC | 57,039 | 29.47% |
-| 3 | Rajenthrabhalaji K T | ADMK | 51,078 | 26.39% |
-| 4 | Esther Mary Diana A | NTK | 10,191 | 5.27% |
-| 5 | Kanipandi M | Puthiya Tamilagam | 2,513 | 1.3% |
-| 6 | Ganesan M | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 1,729 | 0.89% |
-| 7 | Nota | NOTA | 948 | 0.49% |
-| 8 | Suresh K | Bahujan Samaj Party | 229 | 0.12% |
-| 9 | Ramesh P | IND | 213 | 0.11% |
-| 10 | Nagalakshmi V | IND | 205 | 0.11% |
-| 11 | Venkatesh V | IND | 199 | 0.1% |
-| 12 | Chinnadurai Alias Dimitro S | Communist Party of India (Marxist-Leninist) (Liberation) | 162 | 0.08% |
-| 13 | Murugan M | IND | 120 | 0.06% |
-| 14 | Ganesan S | IND | 102 | 0.05% |
-| 15 | Ganesan V | IND | 80 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Keerthana S <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">68,709</td><td class="num share">35.51%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Ashokan G <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">57,039</td><td class="num share">29.47%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Rajenthrabhalaji K T</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">51,078</td><td class="num share">26.39%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Esther Mary Diana A</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">10,191</td><td class="num share">5.27%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Kanipandi M</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">2,513</td><td class="num share">1.3%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Ganesan M</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">1,729</td><td class="num share">0.89%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">948</td><td class="num share">0.49%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Suresh K</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">229</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Ramesh P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">213</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Nagalakshmi V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">205</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Venkatesh V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">199</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Chinnadurai Alias Dimitro S</td><td class="pcell"><span class="pname">Communist Party of India (Marxist-Leninist) (Liberation)</span></td><td class="num">162</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Murugan M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">120</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Ganesan S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">102</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Ganesan V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">80</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Sivakasi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | Ashokan.G | INC | 42.66% |
-| 2026 | KEERTHANA S | TVK | 35.51% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">Ashokan.G</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">42.66%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">KEERTHANA S</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">35.51%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -7.15 percentage points in the winning vote share.
 

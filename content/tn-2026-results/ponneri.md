@@ -8,6 +8,12 @@ constituency: "Ponneri"
 ac_no: 2
 district: "Thiruvallur"
 region: "Chennai & Suburbs"
+winner: "Dr.Ravi.M.S"
+winner_party: "TVK"
+winner_share: 48.69
+margin: 55768
+margin_pct: 24.59
+flipped: true
 keywords: ["Ponneri election result 2026", "Ponneri 2026 winner", "Tamil Nadu 2026 Thiruvallur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Dr.Ravi.M.S of TVK won the Ponneri Assembly constituency (Thiruvallur district, 
 
 ## Full candidate results, Ponneri 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Dr.Ravi.M.S** | TVK | 110,439 | 48.69% |
-| 2 | Durai Chandrasekar | INC | 54,671 | 24.1% |
-| 3 | Balaraman.P | ADMK | 51,468 | 22.69% |
-| 4 | Rajathi.M | NTK | 6,676 | 2.94% |
-| 5 | Nota | NOTA | 865 | 0.38% |
-| 6 | Santhoshkumar.J | Bahujan Samaj Party | 615 | 0.27% |
-| 7 | Malathi.S | Tamizhaga Murpokku Makkal Katchi | 371 | 0.16% |
-| 8 | Ashok Priyadarshan | Desiya Makkal Sakthi Katchi | 366 | 0.16% |
-| 9 | Raja.S | Vanchit Bahujan Aaghadi | 299 | 0.13% |
-| 10 | Rajasekar.J | IND | 289 | 0.13% |
-| 11 | Nagaiyan.G | IND | 232 | 0.1% |
-| 12 | Venkatesan.S | IND | 203 | 0.09% |
-| 13 | Kotteeswaran. K | Tamizhaga Vaazhvurimai Katchi | 166 | 0.07% |
-| 14 | Barathiraja.K | IND | 159 | 0.07% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Dr.Ravi.M.S <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">110,439</td><td class="num share">48.69%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Durai Chandrasekar <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">54,671</td><td class="num share">24.1%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Balaraman.P</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">51,468</td><td class="num share">22.69%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Rajathi.M</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,676</td><td class="num share">2.94%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">865</td><td class="num share">0.38%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Santhoshkumar.J</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">615</td><td class="num share">0.27%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Malathi.S</td><td class="pcell"><span class="pname">Tamizhaga Murpokku Makkal Katchi</span></td><td class="num">371</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Ashok Priyadarshan</td><td class="pcell"><span class="pname">Desiya Makkal Sakthi Katchi</span></td><td class="num">366</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Raja.S</td><td class="pcell"><span class="pname">Vanchit Bahujan Aaghadi</span></td><td class="num">299</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Rajasekar.J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">289</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Nagaiyan.G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">232</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Venkatesan.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">203</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Kotteeswaran. K</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">166</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Barathiraja.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">159</td><td class="num share">0.07%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Ponneri compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | DURAI. CHANDRASEKAR | INC | 44.94% |
-| 2026 | DR.RAVI.M.S | TVK | 48.69% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">DURAI. CHANDRASEKAR</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">44.94%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">DR.RAVI.M.S</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">48.69%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +3.75 percentage points in the winning vote share.
 

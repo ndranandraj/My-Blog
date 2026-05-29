@@ -8,6 +8,12 @@ constituency: "Bhuvanagiri"
 ac_no: 157
 district: "Cuddalore"
 region: "Northeast Coast"
+winner: "Arunmozhithevan . A"
+winner_party: "ADMK"
+winner_share: 36.52
+margin: 2487
+margin_pct: 1.2
+flipped: false
 keywords: ["Bhuvanagiri election result 2026", "Bhuvanagiri 2026 winner", "Tamil Nadu 2026 Cuddalore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Arunmozhithevan . A of ADMK won the Bhuvanagiri Assembly constituency (Cuddalore
 
 ## Full candidate results, Bhuvanagiri 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Arunmozhithevan . A** | ADMK | 75,707 | 36.52% |
-| 2 | Saravanan. Durai . K | DMK | 73,220 | 35.32% |
-| 3 | Mahalingam . T | TVK | 49,904 | 24.07% |
-| 4 | Sumathi . S | NTK | 5,105 | 2.46% |
-| 5 | Muthamizhan . Seva | Tamizhaga Vaazhvurimai Katchi | 912 | 0.44% |
-| 6 | Nota | NOTA | 681 | 0.33% |
-| 7 | Kumaravelu . M | Bahujan Samaj Party | 363 | 0.18% |
-| 8 | Balamurugan . G. C | IND | 339 | 0.16% |
-| 9 | Balamurugan . M. R | IND | 324 | 0.16% |
-| 10 | Arunmozhi . V | IND | 308 | 0.15% |
-| 11 | Raja Sekar . G | IND | 239 | 0.12% |
-| 12 | Saravanan . J | IND | 89 | 0.04% |
-| 13 | Iyyappan . S | IND | 70 | 0.03% |
-| 14 | Ezhilventhan . P | IND | 49 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Arunmozhithevan . A <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">75,707</td><td class="num share">36.52%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Saravanan. Durai . K <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">73,220</td><td class="num share">35.32%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Mahalingam . T</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">49,904</td><td class="num share">24.07%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Sumathi . S</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,105</td><td class="num share">2.46%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Muthamizhan . Seva</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">912</td><td class="num share">0.44%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">681</td><td class="num share">0.33%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Kumaravelu . M</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">363</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Balamurugan . G. C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">339</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Balamurugan . M. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">324</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Arunmozhi . V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">308</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Raja Sekar . G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">239</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Saravanan . J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">89</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Iyyappan . S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">70</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Ezhilventhan . P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">49</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Bhuvanagiri compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | Arunmozhithevan. A | ADMK | 48.92% |
-| 2026 | ARUNMOZHITHEVAN . A | ADMK | 36.52% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">Arunmozhithevan. A</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">48.92%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">ARUNMOZHITHEVAN . A</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">36.52%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -12.40 percentage points in the winning vote share.
 

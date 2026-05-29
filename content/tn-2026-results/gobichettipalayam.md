@@ -8,6 +8,12 @@ constituency: "Gobichettipalayam"
 ac_no: 106
 district: "Erode"
 region: "Kongu (West)"
+winner: "Sengottaiyan.K.A"
+winner_party: "TVK"
+winner_share: 37.6
+margin: 16620
+margin_pct: 7.56
+flipped: true
 keywords: ["Gobichettipalayam election result 2026", "Gobichettipalayam 2026 winner", "Tamil Nadu 2026 Erode"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,34 +30,44 @@ Sengottaiyan.K.A of TVK won the Gobichettipalayam Assembly constituency (Erode d
 
 ## Full candidate results, Gobichettipalayam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Sengottaiyan.K.A** | TVK | 82,612 | 37.6% |
-| 2 | Nallasivam.N | DMK | 65,992 | 30.03% |
-| 3 | Prabhu.V.B | ADMK | 56,232 | 25.59% |
-| 4 | Seethalakshmi.M.K | NTK | 8,137 | 3.7% |
-| 5 | Thiruvengatesh.M | Tamizhaga Vaazhvurimai Katchi | 1,746 | 0.79% |
-| 6 | Nota | NOTA | 907 | 0.41% |
-| 7 | Ravikumar.R | Bahujan Samaj Party | 760 | 0.35% |
-| 8 | Palanisamyraaj.M | IND | 539 | 0.25% |
-| 9 | Bhuvaneshwari.A | IND | 499 | 0.23% |
-| 10 | Venkatachalam | IND | 470 | 0.21% |
-| 11 | Dhanapal.K | IND | 349 | 0.16% |
-| 12 | Sumathi.G | IND | 332 | 0.15% |
-| 13 | Selvakumar.R | IND | 292 | 0.13% |
-| 14 | Malarvizhi | Party for the Rights of Other backward Classes | 197 | 0.09% |
-| 15 | Anandhakumar.M | IND | 161 | 0.07% |
-| 16 | Ramesh.P | IND | 149 | 0.07% |
-| 17 | Seetha.R | IND | 139 | 0.06% |
-| 18 | Sakthivel.G | IND | 114 | 0.05% |
-| 19 | Shanmugam.G | IND | 100 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Sengottaiyan.K.A <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">82,612</td><td class="num share">37.6%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Nallasivam.N <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">65,992</td><td class="num share">30.03%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Prabhu.V.B</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">56,232</td><td class="num share">25.59%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Seethalakshmi.M.K</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">8,137</td><td class="num share">3.7%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Thiruvengatesh.M</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">1,746</td><td class="num share">0.79%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">907</td><td class="num share">0.41%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Ravikumar.R</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">760</td><td class="num share">0.35%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Palanisamyraaj.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">539</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Bhuvaneshwari.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">499</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Venkatachalam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">470</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Dhanapal.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">349</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Sumathi.G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">332</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Selvakumar.R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">292</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Malarvizhi</td><td class="pcell"><span class="pname">Party for the Rights of Other backward Classes</span></td><td class="num">197</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Anandhakumar.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">161</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Ramesh.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">149</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Seetha.R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">139</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Sakthivel.G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">114</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Shanmugam.G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">100</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Gobichettipalayam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SENGOTTAIYAN K.A | ADMK | 50.68% |
-| 2026 | SENGOTTAIYAN.K.A | TVK | 37.6% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SENGOTTAIYAN K.A</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">50.68%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SENGOTTAIYAN.K.A</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">37.6%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -13.08 percentage points in the winning vote share.
 

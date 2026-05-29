@@ -8,6 +8,12 @@ constituency: "Usilampatti"
 ac_no: 197
 district: "Madurai"
 region: "Madurai Region"
+winner: "Vijay. M"
+winner_party: "TVK"
+winner_share: 29.34
+margin: 1805
+margin_pct: 0.81
+flipped: true
 keywords: ["Usilampatti election result 2026", "Usilampatti 2026 winner", "Tamil Nadu 2026 Madurai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,28 +30,38 @@ Vijay. M of TVK won the Usilampatti Assembly constituency (Madurai district, Mad
 
 ## Full candidate results, Usilampatti 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Vijay. M** | TVK | 65,743 | 29.34% |
-| 2 | Mahendran. I | ADMK | 63,938 | 28.54% |
-| 3 | Saravanakumar. T | INC | 59,465 | 26.54% |
-| 4 | Ayyappan. P | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 16,620 | 7.42% |
-| 5 | Abirami. D | NTK | 15,185 | 6.78% |
-| 6 | Vellaipandi. V | Bahujan Samaj Party | 724 | 0.32% |
-| 7 | Nota | NOTA | 692 | 0.31% |
-| 8 | Praveena. S | IND | 343 | 0.15% |
-| 9 | Thiagarajan. O. V | IND | 337 | 0.15% |
-| 10 | Muthu. N | IND | 300 | 0.13% |
-| 11 | Thirumoorthy. A | IND | 270 | 0.12% |
-| 12 | Kiranya. S | IND | 262 | 0.12% |
-| 13 | Dhanasekaran. T | IND | 169 | 0.08% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Vijay. M <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">65,743</td><td class="num share">29.34%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Mahendran. I <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">63,938</td><td class="num share">28.54%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Saravanakumar. T</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">59,465</td><td class="num share">26.54%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Ayyappan. P</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">16,620</td><td class="num share">7.42%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Abirami. D</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">15,185</td><td class="num share">6.78%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Vellaipandi. V</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">724</td><td class="num share">0.32%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">692</td><td class="num share">0.31%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Praveena. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">343</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Thiagarajan. O. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">337</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Muthu. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">300</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Thirumoorthy. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">270</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Kiranya. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">262</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Dhanasekaran. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">169</td><td class="num share">0.08%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Usilampatti compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | AYYAPPAN P | ADMK | 33.53% |
-| 2026 | VIJAY. M | TVK | 29.34% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">AYYAPPAN P</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">33.53%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">VIJAY. M</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">29.34%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -4.19 percentage points in the winning vote share.
 

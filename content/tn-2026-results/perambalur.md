@@ -8,6 +8,12 @@ constituency: "Perambalur"
 ac_no: 147
 district: "Perambalur"
 region: "Central"
+winner: "Sivakumar. K"
+winner_party: "TVK"
+winner_share: 35.83
+margin: 14393
+margin_pct: 5.67
+flipped: true
 keywords: ["Perambalur election result 2026", "Perambalur 2026 winner", "Tamil Nadu 2026 Perambalur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,27 +30,37 @@ Sivakumar. K of TVK won the Perambalur Assembly constituency (Perambalur distric
 
 ## Full candidate results, Perambalur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Sivakumar. K** | TVK | 90,882 | 35.83% |
-| 2 | Dr. Jayalakshmi. S.T | DMK | 76,489 | 30.15% |
-| 3 | Thamizhselvan. R | ADMK | 72,716 | 28.67% |
-| 4 | Suganya. J | NTK | 9,474 | 3.74% |
-| 5 | Nota | NOTA | 1,160 | 0.46% |
-| 6 | Arivazhagan. D | Bahujan Samaj Party | 678 | 0.27% |
-| 7 | Subramanian. R | IND | 595 | 0.23% |
-| 8 | Shiyamala. M | IND | 421 | 0.17% |
-| 9 | Dhamodharan. S | Tamizhaga Vaazhvurimai Katchi | 360 | 0.14% |
-| 10 | Chandrakumar. P | IND | 339 | 0.13% |
-| 11 | Jayachandran. B | IND | 305 | 0.12% |
-| 12 | Anandajothi Paramasivam | IND | 235 | 0.09% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Sivakumar. K <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">90,882</td><td class="num share">35.83%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Dr. Jayalakshmi. S.T <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">76,489</td><td class="num share">30.15%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Thamizhselvan. R</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">72,716</td><td class="num share">28.67%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Suganya. J</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">9,474</td><td class="num share">3.74%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,160</td><td class="num share">0.46%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Arivazhagan. D</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">678</td><td class="num share">0.27%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Subramanian. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">595</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Shiyamala. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">421</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Dhamodharan. S</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">360</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Chandrakumar. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">339</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Jayachandran. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">305</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Anandajothi Paramasivam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">235</td><td class="num share">0.09%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Perambalur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | PRABHAHARAN, M. | DMK | 50.87% |
-| 2026 | SIVAKUMAR. K | TVK | 35.83% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">PRABHAHARAN, M.</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">50.87%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SIVAKUMAR. K</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">35.83%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -15.04 percentage points in the winning vote share.
 

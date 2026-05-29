@@ -8,6 +8,12 @@ constituency: "Kinathukadavu"
 ac_no: 122
 district: "Coimbatore"
 region: "Kongu (West)"
+winner: "Vignesh K"
+winner_party: "TVK"
+winner_share: 37.31
+margin: 11710
+margin_pct: 4.37
+flipped: true
 keywords: ["Kinathukadavu election result 2026", "Kinathukadavu 2026 winner", "Tamil Nadu 2026 Coimbatore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,21 +30,31 @@ Vignesh K of TVK won the Kinathukadavu Assembly constituency (Coimbatore distric
 
 ## Full candidate results, Kinathukadavu 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Vignesh K** | TVK | 99,950 | 37.31% |
-| 2 | Sabari Karthikeyan K.V.K.S | DMK | 88,240 | 32.94% |
-| 3 | Damodaran S | ADMK | 67,789 | 25.3% |
-| 4 | Banupriya M | NTK | 9,667 | 3.61% |
-| 5 | Nota | NOTA | 1,717 | 0.64% |
-| 6 | Mariyappan R | Ganasangam Party of India | 554 | 0.21% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Vignesh K <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">99,950</td><td class="num share">37.31%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Sabari Karthikeyan K.V.K.S <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">88,240</td><td class="num share">32.94%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Damodaran S</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">67,789</td><td class="num share">25.3%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Banupriya M</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">9,667</td><td class="num share">3.61%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,717</td><td class="num share">0.64%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Mariyappan R</td><td class="pcell"><span class="pname">Ganasangam Party of India</span></td><td class="num">554</td><td class="num share">0.21%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Kinathukadavu compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | Damodaran.S | ADMK | 43.68% |
-| 2026 | VIGNESH K | TVK | 37.31% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">Damodaran.S</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">43.68%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">VIGNESH K</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">37.31%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -6.37 percentage points in the winning vote share.
 

@@ -8,6 +8,12 @@ constituency: "Tittakudi"
 ac_no: 151
 district: "Cuddalore"
 region: "Northeast Coast"
+winner: "Ganesan C.V"
+winner_party: "DMK"
+winner_share: 35.91
+margin: 2629
+margin_pct: 1.5
+flipped: false
 keywords: ["Tittakudi election result 2026", "Tittakudi 2026 winner", "Tamil Nadu 2026 Cuddalore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Ganesan C.V of DMK won the Tittakudi Assembly constituency (Cuddalore district, 
 
 ## Full candidate results, Tittakudi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Ganesan C.V** | DMK | 63,106 | 35.91% |
-| 2 | Rajasekar A | TVK | 60,477 | 34.41% |
-| 3 | Murugumaran N | ADMK | 42,502 | 24.18% |
-| 4 | Mahalakshmi V | NTK | 5,709 | 3.25% |
-| 5 | Nota | NOTA | 584 | 0.33% |
-| 6 | Velmurugan G | IND | 549 | 0.31% |
-| 7 | Palanivel R | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 443 | 0.25% |
-| 8 | Murugan A | IND | 401 | 0.23% |
-| 9 | Ravichandran K.P | Bahujan Samaj Party | 399 | 0.23% |
-| 10 | Sathya M | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 362 | 0.21% |
-| 11 | Jaya K | Tamizhaga Vaazhvurimai Katchi | 338 | 0.19% |
-| 12 | Perinbam D | IND | 315 | 0.18% |
-| 13 | Silambarasan J | IND | 275 | 0.16% |
-| 14 | Jayaraman N | Bahujan Dravida Party | 158 | 0.09% |
-| 15 | Padmanathan V | IND | 136 | 0.08% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Ganesan C.V <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">63,106</td><td class="num share">35.91%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Rajasekar A <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">60,477</td><td class="num share">34.41%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Murugumaran N</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">42,502</td><td class="num share">24.18%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Mahalakshmi V</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,709</td><td class="num share">3.25%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">584</td><td class="num share">0.33%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Velmurugan G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">549</td><td class="num share">0.31%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Palanivel R</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">443</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Murugan A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">401</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Ravichandran K.P</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">399</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Sathya M</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">362</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Jaya K</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">338</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Perinbam D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">315</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Silambarasan J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">275</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Jayaraman N</td><td class="pcell"><span class="pname">Bahujan Dravida Party</span></td><td class="num">158</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Padmanathan V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">136</td><td class="num share">0.08%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Tittakudi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | GANESAN,  C.V. | DMK | 49.78% |
-| 2026 | GANESAN C.V | DMK | 35.91% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">GANESAN,  C.V.</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">49.78%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">GANESAN C.V</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">35.91%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -13.87 percentage points in the winning vote share.
 

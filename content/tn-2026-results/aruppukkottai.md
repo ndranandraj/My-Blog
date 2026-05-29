@@ -8,6 +8,12 @@ constituency: "Aruppukkottai"
 ac_no: 207
 district: "Virudhunagar"
 region: "Deep South"
+winner: "Ramachandran. K.K.S.S.R"
+winner_party: "DMK"
+winner_share: 36.49
+margin: 4943
+margin_pct: 2.77
+flipped: false
 keywords: ["Aruppukkottai election result 2026", "Aruppukkottai 2026 winner", "Tamil Nadu 2026 Virudhunagar"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,41 +30,51 @@ Ramachandran. K.K.S.S.R of DMK won the Aruppukkottai Assembly constituency (Viru
 
 ## Full candidate results, Aruppukkottai 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Ramachandran. K.K.S.S.R** | DMK | 65,104 | 36.49% |
-| 2 | Karthik Kumar. K | TVK | 60,161 | 33.72% |
-| 3 | Sethupathy. S | ADMK | 37,190 | 20.84% |
-| 4 | Manimaran. G | NTK | 8,499 | 4.76% |
-| 5 | Ragupathi. K | Puthiya Tamilagam | 2,179 | 1.22% |
-| 6 | Dharmaraj. P | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 1,147 | 0.64% |
-| 7 | Nota | NOTA | 692 | 0.39% |
-| 8 | Arumugam. V | IND | 641 | 0.36% |
-| 9 | Sureshkumar. K | IND | 573 | 0.32% |
-| 10 | Sundaramoorthi. S | IND | 424 | 0.24% |
-| 11 | Senthilkumar. S | IND | 265 | 0.15% |
-| 12 | Ganesan. V | Puthiya Makkal Tamil Desam Katchi | 194 | 0.11% |
-| 13 | Ramakrishnan. S | IND | 162 | 0.09% |
-| 14 | Sanjay Gandhi. V | Desa Makkal Munnetrak Kazhagam | 160 | 0.09% |
-| 15 | Advocate Sadhuragiri. M | IND | 160 | 0.09% |
-| 16 | Elango. G | Ezhuchi Tamilargal Munnetra Kazhagam | 139 | 0.08% |
-| 17 | Sundaramahalingam. A | IND | 120 | 0.07% |
-| 18 | Anandhan. A | IND | 115 | 0.06% |
-| 19 | Muniyandi. M | IND | 80 | 0.04% |
-| 20 | Chinnasamy. G | IND | 76 | 0.04% |
-| 21 | Palanikumar. M | IND | 68 | 0.04% |
-| 22 | Ramamoorthy. G | IND | 58 | 0.03% |
-| 23 | Veeraraj. R | IND | 56 | 0.03% |
-| 24 | Karthik. M | IND | 53 | 0.03% |
-| 25 | Venkatesan. P.S | IND | 49 | 0.03% |
-| 26 | Marivel. K | IND | 48 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Ramachandran. K.K.S.S.R <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">65,104</td><td class="num share">36.49%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Karthik Kumar. K <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">60,161</td><td class="num share">33.72%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Sethupathy. S</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">37,190</td><td class="num share">20.84%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Manimaran. G</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">8,499</td><td class="num share">4.76%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Ragupathi. K</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">2,179</td><td class="num share">1.22%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Dharmaraj. P</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">1,147</td><td class="num share">0.64%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">692</td><td class="num share">0.39%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Arumugam. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">641</td><td class="num share">0.36%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Sureshkumar. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">573</td><td class="num share">0.32%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Sundaramoorthi. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">424</td><td class="num share">0.24%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Senthilkumar. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">265</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Ganesan. V</td><td class="pcell"><span class="pname">Puthiya Makkal Tamil Desam Katchi</span></td><td class="num">194</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Ramakrishnan. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">162</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Sanjay Gandhi. V</td><td class="pcell"><span class="pname">Desa Makkal Munnetrak Kazhagam</span></td><td class="num">160</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Advocate Sadhuragiri. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">160</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Elango. G</td><td class="pcell"><span class="pname">Ezhuchi Tamilargal Munnetra Kazhagam</span></td><td class="num">139</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Sundaramahalingam. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">120</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Anandhan. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">115</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Muniyandi. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">80</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Chinnasamy. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">76</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Palanikumar. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">68</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Ramamoorthy. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">58</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Veeraraj. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">56</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Karthik. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">53</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Venkatesan. P.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">49</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">Marivel. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">48</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Aruppukkottai compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | K.K.S.S.R.RAMACHANDRAN | DMK | 53.18% |
-| 2026 | RAMACHANDRAN. K.K.S.S.R | DMK | 36.49% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">K.K.S.S.R.RAMACHANDRAN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">53.18%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">RAMACHANDRAN. K.K.S.S.R</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">36.49%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -16.69 percentage points in the winning vote share.
 

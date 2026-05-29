@@ -8,6 +8,12 @@ constituency: "Arakkonam"
 ac_no: 38
 district: "Vellore"
 region: "North"
+winner: "V. Gandhiraj"
+winner_party: "TVK"
+winner_share: 40.46
+margin: 23121
+margin_pct: 12.68
+flipped: true
 keywords: ["Arakkonam election result 2026", "Arakkonam 2026 winner", "Tamil Nadu 2026 Vellore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ V. Gandhiraj of TVK won the Arakkonam Assembly constituency (Vellore district, N
 
 ## Full candidate results, Arakkonam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **V. Gandhiraj** | TVK | 73,776 | 40.46% |
-| 2 | Ezhil Caroline | VCK | 50,655 | 27.78% |
-| 3 | S. Ravi | ADMK | 50,052 | 27.45% |
-| 4 | K. Rajkumar | NTK | 5,191 | 2.85% |
-| 5 | Nota | NOTA | 899 | 0.49% |
-| 6 | P. Sudhakar | Bahujan Samaj Party | 451 | 0.25% |
-| 7 | Vetrivel. M | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 251 | 0.14% |
-| 8 | N. Praveenkumar | IND | 238 | 0.13% |
-| 9 | N. Lakshmipathy | Tamizhaga Vaazhvurimai Katchi | 229 | 0.13% |
-| 10 | T. Muralidharan | IND | 197 | 0.11% |
-| 11 | M. Santhanam | IND | 150 | 0.08% |
-| 12 | G. Mohan | IND | 106 | 0.06% |
-| 13 | M. Manikandan | IND | 75 | 0.04% |
-| 14 | P. Govindaraj | IND | 70 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">V. Gandhiraj <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">73,776</td><td class="num share">40.46%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Ezhil Caroline <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="VCK">VCK</span></td><td class="num">50,655</td><td class="num share">27.78%</td></tr>
+<tr><td class="rank">3</td><td class="cand">S. Ravi</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">50,052</td><td class="num share">27.45%</td></tr>
+<tr><td class="rank">4</td><td class="cand">K. Rajkumar</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,191</td><td class="num share">2.85%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">899</td><td class="num share">0.49%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">P. Sudhakar</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">451</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Vetrivel. M</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">251</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">N. Praveenkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">238</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">N. Lakshmipathy</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">229</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">T. Muralidharan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">197</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">M. Santhanam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">150</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">G. Mohan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">106</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">M. Manikandan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">75</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">P. Govindaraj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">70</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Arakkonam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | S.RAVI | ADMK | 49.82% |
-| 2026 | V. GANDHIRAJ | TVK | 40.46% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">S.RAVI</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">49.82%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">V. GANDHIRAJ</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">40.46%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -9.36 percentage points in the winning vote share.
 

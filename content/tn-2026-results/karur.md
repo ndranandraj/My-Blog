@@ -8,6 +8,12 @@ constituency: "Karur"
 ac_no: 135
 district: "Karur"
 region: "Central"
+winner: "M.R. Vijayabhaskar"
+winner_party: "ADMK"
+winner_share: 32.99
+margin: 1821
+margin_pct: 0.84
+flipped: true
 keywords: ["Karur election result 2026", "Karur 2026 winner", "Tamil Nadu 2026 Karur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,95 +30,105 @@ M.R. Vijayabhaskar of ADMK won the Karur Assembly constituency (Karur district, 
 
 ## Full candidate results, Karur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **M.R. Vijayabhaskar** | ADMK | 71,542 | 32.99% |
-| 2 | Mathiyalagan V.P | TVK | 69,721 | 32.15% |
-| 3 | Aasee.M. Thiagarajan | DMK | 67,256 | 31.02% |
-| 4 | Karuppaiya. R | NTK | 5,465 | 2.52% |
-| 5 | Nota | NOTA | 539 | 0.25% |
-| 6 | Jayagopal. P | Bahujan Samaj Party | 302 | 0.14% |
-| 7 | Gunasekaran. K | Tamizhaga Vaazhvurimai Katchi | 252 | 0.12% |
-| 8 | Kathirvel. K | IND | 143 | 0.07% |
-| 9 | Kandasamy. P | IND | 134 | 0.06% |
-| 10 | Kathiravan. P | IND | 103 | 0.05% |
-| 11 | Ramachandran. A | Ganasangam Party of India | 101 | 0.05% |
-| 12 | Anbazhagan. T | IND | 67 | 0.03% |
-| 13 | Elamathi. S | IND | 59 | 0.03% |
-| 14 | Krishnakumar. K | IND | 53 | 0.02% |
-| 15 | Kalimuthu. V | Samaniya Makkal Nala Katchi | 51 | 0.02% |
-| 16 | Murali. M | IND | 47 | 0.02% |
-| 17 | Asarudheen. A | IND | 45 | 0.02% |
-| 18 | Arulmaniarasu. P | IND | 43 | 0.02% |
-| 19 | Subash Malayalam. T | IND | 39 | 0.02% |
-| 20 | Praveenkumar. J | IND | 37 | 0.02% |
-| 21 | Kalairaj. K | IND | 35 | 0.02% |
-| 22 | Karunamoorthy. S | IND | 34 | 0.02% |
-| 23 | Anbarasan. N | IND | 30 | 0.01% |
-| 24 | Sampath. S | IND | 28 | 0.01% |
-| 25 | Seetha Lakshmi. D | IND | 28 | 0.01% |
-| 26 | Senbagakumar. L | IND | 28 | 0.01% |
-| 27 | Mailvaganan. B | IND | 28 | 0.01% |
-| 28 | Kanagaraj. S | IND | 27 | 0.01% |
-| 29 | Sivakumar. N | IND | 27 | 0.01% |
-| 30 | Babu. G | IND | 24 | 0.01% |
-| 31 | Muthu. K.R | IND | 23 | 0.01% |
-| 32 | Sivakumar. V | IND | 21 | 0.01% |
-| 33 | Mohamad Ismail. M | IND | 21 | 0.01% |
-| 34 | Parameswari | IND | 20 | 0.01% |
-| 35 | Hariharan. S | IND | 20 | 0.01% |
-| 36 | Bharathi. P | IND | 19 | 0.01% |
-| 37 | Devastin Augustin. G | IND | 18 | 0.01% |
-| 38 | Sivakumar. A | IND | 17 | 0.01% |
-| 39 | Palamuthir Selvan. O | IND | 17 | 0.01% |
-| 40 | Kalimuthu. R | IND | 16 | 0.01% |
-| 41 | Suriyakumar. J | IND | 16 | 0.01% |
-| 42 | Mariammal. P.M | IND | 16 | 0.01% |
-| 43 | Sathish Kumar. S | IND | 15 | 0.01% |
-| 44 | Stephenraj. L | IND | 15 | 0.01% |
-| 45 | Dinesh Kumar. K | IND | 14 | 0.01% |
-| 46 | Nandhakumar. A | IND | 14 | 0.01% |
-| 47 | Vanitha. K.M | IND | 14 | 0.01% |
-| 48 | Soundaryan. K | IND | 13 | 0.01% |
-| 49 | Hari Raaj. B | IND | 13 | 0.01% |
-| 50 | Sathish. P | IND | 12 | 0.01% |
-| 51 | Kanagaraj. P | IND | 11 | 0.01% |
-| 52 | Thiyagarajan. M | IND | 11 | 0.01% |
-| 53 | Palanirajan. K | IND | 11 | 0.01% |
-| 54 | Manoj. P | IND | 11 | 0.01% |
-| 55 | Yoonus Ali. R | IND | 11 | 0.01% |
-| 56 | Thirugnanam. M | IND | 10 | 0.0% |
-| 57 | Saravanan. R | IND | 9 | 0.0% |
-| 58 | Thamilalagan. A | IND | 9 | 0.0% |
-| 59 | Vijaya Baskar. R.V | IND | 9 | 0.0% |
-| 60 | Karthikperumal. R | IND | 8 | 0.0% |
-| 61 | Gopala Krishnan. A | IND | 8 | 0.0% |
-| 62 | Senthilkumar. G | IND | 8 | 0.0% |
-| 63 | Senthilkumar. M | IND | 8 | 0.0% |
-| 64 | Thangavelraj. S | IND | 8 | 0.0% |
-| 65 | Dinesh. B | IND | 8 | 0.0% |
-| 66 | Rajapandian. K | IND | 8 | 0.0% |
-| 67 | Daniya. P | IND | 7 | 0.0% |
-| 68 | Duraisamy. J | IND | 5 | 0.0% |
-| 69 | Prasanth. S | IND | 5 | 0.0% |
-| 70 | Manikandan | IND | 5 | 0.0% |
-| 71 | Mathanraj. P | IND | 5 | 0.0% |
-| 72 | Vinothkumar. N | IND | 5 | 0.0% |
-| 73 | Palanivel. P | IND | 4 | 0.0% |
-| 74 | Baskar. P | IND | 4 | 0.0% |
-| 75 | Raguraman Muruganantham | IND | 4 | 0.0% |
-| 76 | Vijayan. K | IND | 4 | 0.0% |
-| 77 | Soundara Rajan. R | IND | 3 | 0.0% |
-| 78 | Prakash. N | IND | 3 | 0.0% |
-| 79 | Vineeth. B | IND | 3 | 0.0% |
-| 80 | Vigneshwaran. D | IND | 2 | 0.0% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">M.R. Vijayabhaskar <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">71,542</td><td class="num share">32.99%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Mathiyalagan V.P <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">69,721</td><td class="num share">32.15%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Aasee.M. Thiagarajan</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">67,256</td><td class="num share">31.02%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Karuppaiya. R</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,465</td><td class="num share">2.52%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">539</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Jayagopal. P</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">302</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Gunasekaran. K</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">252</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Kathirvel. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">143</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Kandasamy. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">134</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Kathiravan. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">103</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Ramachandran. A</td><td class="pcell"><span class="pname">Ganasangam Party of India</span></td><td class="num">101</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Anbazhagan. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">67</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Elamathi. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">59</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Krishnakumar. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">53</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Kalimuthu. V</td><td class="pcell"><span class="pname">Samaniya Makkal Nala Katchi</span></td><td class="num">51</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Murali. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">47</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Asarudheen. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">45</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Arulmaniarasu. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">43</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Subash Malayalam. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">39</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Praveenkumar. J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">37</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Kalairaj. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">35</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Karunamoorthy. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">34</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Anbarasan. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">30</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Sampath. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">28</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Seetha Lakshmi. D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">28</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">Senbagakumar. L</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">28</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">27</td><td class="cand">Mailvaganan. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">28</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">28</td><td class="cand">Kanagaraj. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">27</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">29</td><td class="cand">Sivakumar. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">27</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">30</td><td class="cand">Babu. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">24</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">31</td><td class="cand">Muthu. K.R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">23</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">32</td><td class="cand">Sivakumar. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">21</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">33</td><td class="cand">Mohamad Ismail. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">21</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">34</td><td class="cand">Parameswari</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">20</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">35</td><td class="cand">Hariharan. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">20</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">36</td><td class="cand">Bharathi. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">19</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">37</td><td class="cand">Devastin Augustin. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">18</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">38</td><td class="cand">Sivakumar. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">17</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">39</td><td class="cand">Palamuthir Selvan. O</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">17</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">40</td><td class="cand">Kalimuthu. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">16</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">41</td><td class="cand">Suriyakumar. J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">16</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">42</td><td class="cand">Mariammal. P.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">16</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">43</td><td class="cand">Sathish Kumar. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">15</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">44</td><td class="cand">Stephenraj. L</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">15</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">45</td><td class="cand">Dinesh Kumar. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">14</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">46</td><td class="cand">Nandhakumar. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">14</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">47</td><td class="cand">Vanitha. K.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">14</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">48</td><td class="cand">Soundaryan. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">13</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">49</td><td class="cand">Hari Raaj. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">13</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">50</td><td class="cand">Sathish. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">12</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">51</td><td class="cand">Kanagaraj. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">11</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">52</td><td class="cand">Thiyagarajan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">11</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">53</td><td class="cand">Palanirajan. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">11</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">54</td><td class="cand">Manoj. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">11</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">55</td><td class="cand">Yoonus Ali. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">11</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">56</td><td class="cand">Thirugnanam. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">10</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">57</td><td class="cand">Saravanan. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">9</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">58</td><td class="cand">Thamilalagan. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">9</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">59</td><td class="cand">Vijaya Baskar. R.V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">9</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">60</td><td class="cand">Karthikperumal. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">8</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">61</td><td class="cand">Gopala Krishnan. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">8</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">62</td><td class="cand">Senthilkumar. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">8</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">63</td><td class="cand">Senthilkumar. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">8</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">64</td><td class="cand">Thangavelraj. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">8</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">65</td><td class="cand">Dinesh. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">8</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">66</td><td class="cand">Rajapandian. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">8</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">67</td><td class="cand">Daniya. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">7</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">68</td><td class="cand">Duraisamy. J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">5</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">69</td><td class="cand">Prasanth. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">5</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">70</td><td class="cand">Manikandan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">5</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">71</td><td class="cand">Mathanraj. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">5</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">72</td><td class="cand">Vinothkumar. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">5</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">73</td><td class="cand">Palanivel. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">4</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">74</td><td class="cand">Baskar. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">4</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">75</td><td class="cand">Raguraman Muruganantham</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">4</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">76</td><td class="cand">Vijayan. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">4</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">77</td><td class="cand">Soundara Rajan. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">3</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">78</td><td class="cand">Prakash. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">3</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">79</td><td class="cand">Vineeth. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">3</td><td class="num share">0.0%</td></tr>
+<tr class="minor"><td class="rank">80</td><td class="cand">Vigneshwaran. D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">2</td><td class="num share">0.0%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Karur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SENTHILBALAJI V | DMK | 49.08% |
-| 2026 | M.R. VIJAYABHASKAR | ADMK | 32.99% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SENTHILBALAJI V</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">49.08%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">M.R. VIJAYABHASKAR</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">32.99%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -16.09 percentage points in the winning vote share.
 

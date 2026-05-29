@@ -8,6 +8,12 @@ constituency: "Thirumayam"
 ac_no: 181
 district: "Pudukkottai"
 region: "Central"
+winner: "Regupathy.S"
+winner_party: "DMK"
+winner_share: 31.87
+margin: 1492
+margin_pct: 0.82
+flipped: false
 keywords: ["Thirumayam election result 2026", "Thirumayam 2026 winner", "Tamil Nadu 2026 Pudukkottai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Regupathy.S of DMK won the Thirumayam Assembly constituency (Pudukkottai distric
 
 ## Full candidate results, Thirumayam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Regupathy.S** | DMK | 58,201 | 31.87% |
-| 2 | Chinthamani.C | TVK | 56,709 | 31.05% |
-| 3 | Vairamuthu.Pk | ADMK | 55,464 | 30.37% |
-| 4 | Lakshmi Srinivasan | NTK | 9,102 | 4.98% |
-| 5 | Nota | NOTA | 945 | 0.52% |
-| 6 | Subbiah.A | Puthiya Tamilagam | 359 | 0.2% |
-| 7 | Durairajan.M | IND | 289 | 0.16% |
-| 8 | Ramnath.T | IND | 287 | 0.16% |
-| 9 | Subramanian.P | IND | 279 | 0.15% |
-| 10 | Eswar.S | IND | 238 | 0.13% |
-| 11 | Muthukaruppan.Cn | Party for the Rights of Other backward Classes | 228 | 0.12% |
-| 12 | Chinnathambi.P | IND | 193 | 0.11% |
-| 13 | Raja.K | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 135 | 0.07% |
-| 14 | Ramsingh.Sk | Tamizhaga Vaazhvurimai Katchi | 97 | 0.05% |
-| 15 | Sathishkumar.M | IND | 86 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Regupathy.S <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">58,201</td><td class="num share">31.87%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Chinthamani.C <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">56,709</td><td class="num share">31.05%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Vairamuthu.Pk</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">55,464</td><td class="num share">30.37%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Lakshmi Srinivasan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">9,102</td><td class="num share">4.98%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">945</td><td class="num share">0.52%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Subbiah.A</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">359</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Durairajan.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">289</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Ramnath.T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">287</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Subramanian.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">279</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Eswar.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">238</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Muthukaruppan.Cn</td><td class="pcell"><span class="pname">Party for the Rights of Other backward Classes</span></td><td class="num">228</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Chinnathambi.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">193</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Raja.K</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">135</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Ramsingh.Sk</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">97</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Sathishkumar.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">86</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thirumayam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | S.REGUPATHY | DMK | 41.0% |
-| 2026 | REGUPATHY.S | DMK | 31.87% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">S.REGUPATHY</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">41.0%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">REGUPATHY.S</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">31.87%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -9.13 percentage points in the winning vote share.
 

@@ -8,6 +8,12 @@ constituency: "Tiruppattur"
 ac_no: 185
 district: "Sivaganga"
 region: "Deep South"
+winner: "Seenivasa Sethupathy. R"
+winner_party: "TVK"
+winner_share: 38.65
+margin: 1
+margin_pct: 0.0
+flipped: true
 keywords: ["Tiruppattur election result 2026", "Tiruppattur 2026 winner", "Tamil Nadu 2026 Sivaganga"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Seenivasa Sethupathy. R of TVK won the Tiruppattur Assembly constituency (Sivaga
 
 ## Full candidate results, Tiruppattur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Seenivasa Sethupathy. R** | TVK | 83,375 | 38.65% |
-| 2 | Periakaruppan. Kr | DMK | 83,374 | 38.65% |
-| 3 | Thirumaran. K.C | BJP | 29,054 | 13.47% |
-| 4 | Ramya Mohan | NTK | 15,291 | 7.09% |
-| 5 | Raja. K.P.M | IND | 753 | 0.35% |
-| 6 | Nota | NOTA | 747 | 0.35% |
-| 7 | Umadevi. S | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 611 | 0.28% |
-| 8 | Vishwanathan. S | IND | 496 | 0.23% |
-| 9 | Shanmugam. M | IND | 383 | 0.18% |
-| 10 | Dr.Vinayaga Meyyarasu. T | IND | 380 | 0.18% |
-| 11 | Marimuthu. S | IND | 350 | 0.16% |
-| 12 | Bakiyalakshmi. M | IND | 266 | 0.12% |
-| 13 | Piraman. P | IND | 223 | 0.1% |
-| 14 | Mallika. A | IND | 143 | 0.07% |
-| 15 | Sethu. P | IND | 135 | 0.06% |
-| 16 | Panchavarnam. M | IND | 129 | 0.06% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Seenivasa Sethupathy. R <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">83,375</td><td class="num share">38.65%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Periakaruppan. Kr <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">83,374</td><td class="num share">38.65%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Thirumaran. K.C</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">29,054</td><td class="num share">13.47%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Ramya Mohan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">15,291</td><td class="num share">7.09%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Raja. K.P.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">753</td><td class="num share">0.35%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">747</td><td class="num share">0.35%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Umadevi. S</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">611</td><td class="num share">0.28%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Vishwanathan. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">496</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Shanmugam. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">383</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Dr.Vinayaga Meyyarasu. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">380</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Marimuthu. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">350</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Bakiyalakshmi. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">266</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Piraman. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">223</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Mallika. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">143</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Sethu. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">135</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Panchavarnam. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">129</td><td class="num share">0.06%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Tiruppattur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | KR.PERIYAKARUPPAN | DMK | 49.19% |
-| 2026 | SEENIVASA SETHUPATHY. R | TVK | 38.65% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">KR.PERIYAKARUPPAN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">49.19%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SEENIVASA SETHUPATHY. R</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">38.65%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -10.54 percentage points in the winning vote share.
 

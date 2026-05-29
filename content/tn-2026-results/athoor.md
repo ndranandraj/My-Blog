@@ -8,6 +8,12 @@ constituency: "Athoor"
 ac_no: 129
 district: "Dindigul"
 region: "Madurai Region"
+winner: "I. Periasamy"
+winner_party: "DMK"
+winner_share: 44.79
+margin: 22368
+margin_pct: 9.43
+flipped: false
 keywords: ["Athoor election result 2026", "Athoor 2026 winner", "Tamil Nadu 2026 Dindigul"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ I. Periasamy of DMK won the Athoor Assembly constituency (Dindigul district, Mad
 
 ## Full candidate results, Athoor 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **I. Periasamy** | DMK | 106,240 | 44.79% |
-| 2 | N. Kalaiselvi | TVK | 83,872 | 35.36% |
-| 3 | A. Viswanathan | ADMK | 32,477 | 13.69% |
-| 4 | Dr. A. Simon Justin | NTK | 9,946 | 4.19% |
-| 5 | Nota | NOTA | 812 | 0.34% |
-| 6 | D. Sankar | Naadaalum Makkal Katchi | 720 | 0.3% |
-| 7 | M.K. Nagendran | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 576 | 0.24% |
-| 8 | K. Visvanathan | IND | 538 | 0.23% |
-| 9 | S. Karthigaiselvan | Bahujan Samaj Party | 531 | 0.22% |
-| 10 | P. Manivel | IND | 353 | 0.15% |
-| 11 | M. Periyasamy | IND | 236 | 0.1% |
-| 12 | K. Jayaprakash | Puthiya Tamilagam | 230 | 0.1% |
-| 13 | K. Kathiresan | IND | 200 | 0.08% |
-| 14 | S. Bala Murugan | Tamizhaga Vaazhvurimai Katchi | 183 | 0.08% |
-| 15 | D. Nagaraj | IND | 155 | 0.07% |
-| 16 | K. Velmurugan | IND | 114 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">I. Periasamy <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">106,240</td><td class="num share">44.79%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">N. Kalaiselvi <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">83,872</td><td class="num share">35.36%</td></tr>
+<tr><td class="rank">3</td><td class="cand">A. Viswanathan</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">32,477</td><td class="num share">13.69%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Dr. A. Simon Justin</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">9,946</td><td class="num share">4.19%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">812</td><td class="num share">0.34%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">D. Sankar</td><td class="pcell"><span class="pname">Naadaalum Makkal Katchi</span></td><td class="num">720</td><td class="num share">0.3%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">M.K. Nagendran</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">576</td><td class="num share">0.24%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">K. Visvanathan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">538</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">S. Karthigaiselvan</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">531</td><td class="num share">0.22%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">P. Manivel</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">353</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">M. Periyasamy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">236</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">K. Jayaprakash</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">230</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">K. Kathiresan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">200</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">S. Bala Murugan</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">183</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">D. Nagaraj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">155</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">K. Velmurugan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">114</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Athoor compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | PERIYASAMY I | DMK | 72.11% |
-| 2026 | I. PERIASAMY | DMK | 44.79% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">PERIYASAMY I</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">72.11%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">I. PERIASAMY</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">44.79%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -27.32 percentage points in the winning vote share.
 

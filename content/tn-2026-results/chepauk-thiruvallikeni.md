@@ -8,6 +8,12 @@ constituency: "Chepauk-Thiruvallikeni"
 ac_no: 19
 district: "Chennai"
 region: "Chennai & Suburbs"
+winner: "Udhayanidhi Stalin"
+winner_party: "DMK"
+winner_share: 44.76
+margin: 7140
+margin_pct: 5.07
+flipped: false
 keywords: ["Chepauk-Thiruvallikeni election result 2026", "Chepauk-Thiruvallikeni 2026 winner", "Tamil Nadu 2026 Chennai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,42 +30,52 @@ Udhayanidhi Stalin of DMK won the Chepauk-Thiruvallikeni Assembly constituency (
 
 ## Full candidate results, Chepauk-Thiruvallikeni 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Udhayanidhi Stalin** | DMK | 62,992 | 44.76% |
-| 2 | Selvam. D | TVK | 55,852 | 39.68% |
-| 3 | Aadirajaram | ADMK | 16,507 | 11.73% |
-| 4 | Aysha | NTK | 2,971 | 2.11% |
-| 5 | Nota | NOTA | 643 | 0.46% |
-| 6 | Mohammed Yasser | Bahujan Samaj Party | 244 | 0.17% |
-| 7 | Agni Aalvar | IND | 243 | 0.17% |
-| 8 | Mirza Safder Ali | IND | 185 | 0.13% |
-| 9 | Rajeshkumar. K | IND | 154 | 0.11% |
-| 10 | Irfan Basha | Tamizhaga Vaazhvurimai Katchi | 145 | 0.1% |
-| 11 | Rajasekar. S | IND | 115 | 0.08% |
-| 12 | Syeed Layak Bhasha | IND | 83 | 0.06% |
-| 13 | Ayisha | IND | 72 | 0.05% |
-| 14 | Bharathkumar. G | IND | 69 | 0.05% |
-| 15 | Mohamed Meera. A | IND | 68 | 0.05% |
-| 16 | Selvam. K | IND | 43 | 0.03% |
-| 17 | Saamy. S.K. Dr | IND | 40 | 0.03% |
-| 18 | Mohamed Dharik. I | IND | 38 | 0.03% |
-| 19 | Selvam. K | IND | 37 | 0.03% |
-| 20 | Vijaya Kumar. B | IND | 34 | 0.02% |
-| 21 | Kumar. M | IND | 33 | 0.02% |
-| 22 | Selvam ( Alias ) Harinarayanan | IND | 33 | 0.02% |
-| 23 | Athimulam | IND | 30 | 0.02% |
-| 24 | Milany. P | IND | 30 | 0.02% |
-| 25 | Seenivasan. L | IND | 29 | 0.02% |
-| 26 | Selvam ( Alias ) Venkatesh | IND | 26 | 0.02% |
-| 27 | Arumugam. C | IND | 25 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Udhayanidhi Stalin <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">62,992</td><td class="num share">44.76%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Selvam. D <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">55,852</td><td class="num share">39.68%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Aadirajaram</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">16,507</td><td class="num share">11.73%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Aysha</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">2,971</td><td class="num share">2.11%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">643</td><td class="num share">0.46%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Mohammed Yasser</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">244</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Agni Aalvar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">243</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Mirza Safder Ali</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">185</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Rajeshkumar. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">154</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Irfan Basha</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">145</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Rajasekar. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">115</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Syeed Layak Bhasha</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">83</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Ayisha</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">72</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Bharathkumar. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">69</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Mohamed Meera. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">68</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Selvam. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">43</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Saamy. S.K. Dr</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">40</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Mohamed Dharik. I</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">38</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Selvam. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">37</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Vijaya Kumar. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">34</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Kumar. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">33</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Selvam ( Alias ) Harinarayanan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">33</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Athimulam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">30</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Milany. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">30</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Seenivasan. L</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">29</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">Selvam ( Alias ) Venkatesh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">26</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">27</td><td class="cand">Arumugam. C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">25</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Chepauk-Thiruvallikeni compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | UDHAYANIDHI STALIN | DMK | 67.89% |
-| 2026 | UDHAYANIDHI STALIN | DMK | 44.76% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">UDHAYANIDHI STALIN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">67.89%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">UDHAYANIDHI STALIN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">44.76%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -23.13 percentage points in the winning vote share.
 

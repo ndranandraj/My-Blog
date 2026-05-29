@@ -8,6 +8,12 @@ constituency: "Thiruparankundram"
 ac_no: 195
 district: "Madurai"
 region: "Madurai Region"
+winner: "Nirmalkumar. R."
+winner_party: "TVK"
+winner_share: 44.75
+margin: 41553
+margin_pct: 16.27
+flipped: true
 keywords: ["Thiruparankundram election result 2026", "Thiruparankundram 2026 winner", "Tamil Nadu 2026 Madurai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Nirmalkumar. R. of TVK won the Thiruparankundram Assembly constituency (Madurai 
 
 ## Full candidate results, Thiruparankundram 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Nirmalkumar. R.** | TVK | 114,316 | 44.75% |
-| 2 | Kiruthiga Thangapandi | DMK | 72,763 | 28.48% |
-| 3 | Rajanchellappa. V.V. | ADMK | 49,865 | 19.52% |
-| 4 | Sathyadevi. T. | NTK | 14,350 | 5.62% |
-| 5 | Nota | NOTA | 1,148 | 0.45% |
-| 6 | Thanapandian. T. | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 1,088 | 0.43% |
-| 7 | Sethuraman. A. | Puthiya Tamilagam | 368 | 0.14% |
-| 8 | Raj. P. | IND | 353 | 0.14% |
-| 9 | Mookkayee. C. | Ezhuchi Tamilargal Munnetra Kazhagam | 249 | 0.1% |
-| 10 | Chelladurai. R | Naam Indiar Party | 231 | 0.09% |
-| 11 | Syed Ibrahim. M. | Tamizhaga Vaazhvurimai Katchi | 163 | 0.06% |
-| 12 | Renganathan Doraisamy | Rashtriya Samaj Dal (R) | 140 | 0.05% |
-| 13 | Vallarasan. K. | IND | 136 | 0.05% |
-| 14 | Ukkra Pandian. S. | IND | 122 | 0.05% |
-| 15 | Arumugam. G. | IND | 108 | 0.04% |
-| 16 | Pounraj. N. | IND | 66 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Nirmalkumar. R. <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">114,316</td><td class="num share">44.75%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Kiruthiga Thangapandi <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">72,763</td><td class="num share">28.48%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Rajanchellappa. V.V.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">49,865</td><td class="num share">19.52%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Sathyadevi. T.</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">14,350</td><td class="num share">5.62%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,148</td><td class="num share">0.45%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Thanapandian. T.</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">1,088</td><td class="num share">0.43%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Sethuraman. A.</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">368</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Raj. P.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">353</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Mookkayee. C.</td><td class="pcell"><span class="pname">Ezhuchi Tamilargal Munnetra Kazhagam</span></td><td class="num">249</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Chelladurai. R</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">231</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Syed Ibrahim. M.</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">163</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Renganathan Doraisamy</td><td class="pcell"><span class="pname">Rashtriya Samaj Dal (R)</span></td><td class="num">140</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Vallarasan. K.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">136</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Ukkra Pandian. S.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">122</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Arumugam. G.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">108</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Pounraj. N.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">66</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thiruparankundram compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | RAJANCHELLAPPA, V.V. | ADMK | 43.96% |
-| 2026 | NIRMALKUMAR. R. | TVK | 44.75% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">RAJANCHELLAPPA, V.V.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">43.96%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">NIRMALKUMAR. R.</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">44.75%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +0.79 percentage points in the winning vote share.
 

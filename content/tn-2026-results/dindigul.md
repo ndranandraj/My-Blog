@@ -8,6 +8,12 @@ constituency: "Dindigul"
 ac_no: 132
 district: "Dindigul"
 region: "Madurai Region"
+winner: "Senthilkumar. I.P"
+winner_party: "DMK"
+winner_share: 35.13
+margin: 1131
+margin_pct: 0.53
+flipped: true
 keywords: ["Dindigul election result 2026", "Dindigul 2026 winner", "Tamil Nadu 2026 Dindigul"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,36 +30,46 @@ Senthilkumar. I.P of DMK won the Dindigul Assembly constituency (Dindigul distri
 
 ## Full candidate results, Dindigul 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Senthilkumar. I.P** | DMK | 74,489 | 35.13% |
-| 2 | Nazeer Raja. G | TVK | 73,358 | 34.6% |
-| 3 | Sreenivasan. C | ADMK | 53,986 | 25.46% |
-| 4 | Mutharasi. S | NTK | 7,299 | 3.44% |
-| 5 | Nota | NOTA | 833 | 0.39% |
-| 6 | Selvadhayanithi. M | IND | 252 | 0.12% |
-| 7 | Sheik Bareeth.B | Tamizhaga Vaazhvurimai Katchi | 249 | 0.12% |
-| 8 | Nagaraj. N | IND | 211 | 0.1% |
-| 9 | Pradeep. M | Puthiya Tamilagam | 203 | 0.1% |
-| 10 | Babu. S | IND | 197 | 0.09% |
-| 11 | Ramuthevar. P | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 184 | 0.09% |
-| 12 | Seenivasan. P | IND | 176 | 0.08% |
-| 13 | Umar Ali. R | IND | 103 | 0.05% |
-| 14 | Gopi Krishnan Pillai. S | Rashtriya Samaj Dal (R) | 96 | 0.05% |
-| 15 | Saranya. M | IND | 88 | 0.04% |
-| 16 | Anis Babu. M | IND | 75 | 0.04% |
-| 17 | Arockia Dass. J | IND | 56 | 0.03% |
-| 18 | Karmegam. R | IND | 54 | 0.03% |
-| 19 | Ganesh Perumal. D | IND | 45 | 0.02% |
-| 20 | Rajendran. G | IND | 38 | 0.02% |
-| 21 | Muniyappan. M | IND | 32 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Senthilkumar. I.P <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">74,489</td><td class="num share">35.13%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Nazeer Raja. G <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">73,358</td><td class="num share">34.6%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Sreenivasan. C</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">53,986</td><td class="num share">25.46%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Mutharasi. S</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">7,299</td><td class="num share">3.44%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">833</td><td class="num share">0.39%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Selvadhayanithi. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">252</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Sheik Bareeth.B</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">249</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Nagaraj. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">211</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Pradeep. M</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">203</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Babu. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">197</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Ramuthevar. P</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">184</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Seenivasan. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">176</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Umar Ali. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">103</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Gopi Krishnan Pillai. S</td><td class="pcell"><span class="pname">Rashtriya Samaj Dal (R)</span></td><td class="num">96</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Saranya. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">88</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Anis Babu. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">75</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Arockia Dass. J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">56</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Karmegam. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">54</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Ganesh Perumal. D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">45</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Rajendran. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">38</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Muniyappan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">32</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Dindigul compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SREENIVASAN.C | ADMK | 46.43% |
-| 2026 | SENTHILKUMAR. I.P | DMK | 35.13% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SREENIVASAN.C</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">46.43%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SENTHILKUMAR. I.P</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">35.13%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -11.30 percentage points in the winning vote share.
 

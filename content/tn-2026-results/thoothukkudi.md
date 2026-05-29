@@ -8,6 +8,12 @@ constituency: "Thoothukkudi"
 ac_no: 214
 district: "Thoothukkudi"
 region: "Deep South"
+winner: "Srinath"
+winner_party: "TVK"
+winner_share: 49.11
+margin: 37731
+margin_pct: 18.43
+flipped: true
 keywords: ["Thoothukkudi election result 2026", "Thoothukkudi 2026 winner", "Tamil Nadu 2026 Thoothukkudi"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Srinath of TVK won the Thoothukkudi Assembly constituency (Thoothukkudi district
 
 ## Full candidate results, Thoothukkudi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Srinath** | TVK | 100,536 | 49.11% |
-| 2 | P. Geetha Jeevan | DMK | 62,805 | 30.68% |
-| 3 | Chellapandian S.T. | ADMK | 26,213 | 12.8% |
-| 4 | Jacob Devadoss Abisheak R. | NTK | 11,752 | 5.74% |
-| 5 | Nota | NOTA | 853 | 0.42% |
-| 6 | Yesadurai S. | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 689 | 0.34% |
-| 7 | Samuel J. | IND | 342 | 0.17% |
-| 8 | Dhinakaran S.T.R.M. | IND | 262 | 0.13% |
-| 9 | Ponkumaran P.P.M.T | Nam Naadu Nam Makkal Nam Ethirkaalam Katchi | 261 | 0.13% |
-| 10 | Srikanth M.V. | Naam Indiar Party | 243 | 0.12% |
-| 11 | Kidar Samsdeen N.A. | Tamizhaga Vaazhvurimai Katchi | 172 | 0.08% |
-| 12 | Sahayam T. | Communist Party of India (Marxist-Leninist) (Liberation) | 143 | 0.07% |
-| 13 | Prasanna Kumar M. | Makkal Nalvaazhvuk Katchi | 137 | 0.07% |
-| 14 | Babu P. | IND | 115 | 0.06% |
-| 15 | Muneeswara Moorthy S. | IND | 104 | 0.05% |
-| 16 | Maruthu Pandian P. | IND | 85 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Srinath <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">100,536</td><td class="num share">49.11%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">P. Geetha Jeevan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">62,805</td><td class="num share">30.68%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Chellapandian S.T.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">26,213</td><td class="num share">12.8%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Jacob Devadoss Abisheak R.</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">11,752</td><td class="num share">5.74%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">853</td><td class="num share">0.42%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Yesadurai S.</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">689</td><td class="num share">0.34%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Samuel J.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">342</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Dhinakaran S.T.R.M.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">262</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Ponkumaran P.P.M.T</td><td class="pcell"><span class="pname">Nam Naadu Nam Makkal Nam Ethirkaalam Katchi</span></td><td class="num">261</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Srikanth M.V.</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">243</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Kidar Samsdeen N.A.</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">172</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Sahayam T.</td><td class="pcell"><span class="pname">Communist Party of India (Marxist-Leninist) (Liberation)</span></td><td class="num">143</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Prasanna Kumar M.</td><td class="pcell"><span class="pname">Makkal Nalvaazhvuk Katchi</span></td><td class="num">137</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Babu P.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">115</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Muneeswara Moorthy S.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">104</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Maruthu Pandian P.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">85</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thoothukkudi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | P.Geetha Jeevan | DMK | 49.0% |
-| 2026 | SRINATH | TVK | 49.11% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">P.Geetha Jeevan</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">49.0%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SRINATH</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">49.11%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +0.11 percentage points in the winning vote share.
 

@@ -8,6 +8,12 @@ constituency: "Cheyyar"
 ac_no: 68
 district: "Tiruvannamalai"
 region: "North"
+winner: "Mukkur N. Subramanian"
+winner_party: "ADMK"
+winner_share: 38.95
+margin: 21081
+margin_pct: 9.47
+flipped: true
 keywords: ["Cheyyar election result 2026", "Cheyyar 2026 winner", "Tamil Nadu 2026 Tiruvannamalai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Mukkur N. Subramanian of ADMK won the Cheyyar Assembly constituency (Tiruvannama
 
 ## Full candidate results, Cheyyar 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Mukkur N. Subramanian** | ADMK | 86,680 | 38.95% |
-| 2 | Dusi K Mohan | TVK | 65,599 | 29.47% |
-| 3 | Jothi. O | DMK | 59,894 | 26.91% |
-| 4 | Tamilselvan. M | NTK | 7,043 | 3.16% |
-| 5 | Nota | NOTA | 950 | 0.43% |
-| 6 | Kuttimani. S | Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi | 401 | 0.18% |
-| 7 | Mohan. R | IND | 394 | 0.18% |
-| 8 | Durugan. M | Vanchit Bahujan Aaghadi | 334 | 0.15% |
-| 9 | Arjunan. M | IND | 320 | 0.14% |
-| 10 | Srinivasan. K | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 259 | 0.12% |
-| 11 | Venkatesan. V | Anaithindia Samudaya Munnetra Kazhagam | 224 | 0.1% |
-| 12 | Palani. M | Tamizhaga Vaazhvurimai Katchi | 182 | 0.08% |
-| 13 | Chandrasekaran. M | All India Jananayaka Makkal Kazhagam | 145 | 0.07% |
-| 14 | Ragupathi. S | Anti Corruption Dynamic Party | 145 | 0.07% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Mukkur N. Subramanian <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">86,680</td><td class="num share">38.95%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Dusi K Mohan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">65,599</td><td class="num share">29.47%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Jothi. O</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">59,894</td><td class="num share">26.91%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Tamilselvan. M</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">7,043</td><td class="num share">3.16%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">950</td><td class="num share">0.43%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Kuttimani. S</td><td class="pcell"><span class="pname">Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi</span></td><td class="num">401</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Mohan. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">394</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Durugan. M</td><td class="pcell"><span class="pname">Vanchit Bahujan Aaghadi</span></td><td class="num">334</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Arjunan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">320</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Srinivasan. K</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">259</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Venkatesan. V</td><td class="pcell"><span class="pname">Anaithindia Samudaya Munnetra Kazhagam</span></td><td class="num">224</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Palani. M</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">182</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Chandrasekaran. M</td><td class="pcell"><span class="pname">All India Jananayaka Makkal Kazhagam</span></td><td class="num">145</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Ragupathi. S</td><td class="pcell"><span class="pname">Anti Corruption Dynamic Party</span></td><td class="num">145</td><td class="num share">0.07%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Cheyyar compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | JOTHI. O | DMK | 47.78% |
-| 2026 | MUKKUR N. SUBRAMANIAN | ADMK | 38.95% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">JOTHI. O</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">47.78%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">MUKKUR N. SUBRAMANIAN</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">38.95%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -8.83 percentage points in the winning vote share.
 

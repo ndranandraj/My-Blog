@@ -8,6 +8,12 @@ constituency: "Thirumangalam"
 ac_no: 196
 district: "Madurai"
 region: "Madurai Region"
+winner: "Manimaran.M"
+winner_party: "DMK"
+winner_share: 38.22
+margin: 23807
+margin_pct: 10.31
+flipped: true
 keywords: ["Thirumangalam election result 2026", "Thirumangalam 2026 winner", "Tamil Nadu 2026 Madurai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Manimaran.M of DMK won the Thirumangalam Assembly constituency (Madurai district
 
 ## Full candidate results, Thirumangalam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Manimaran.M** | DMK | 88,291 | 38.22% |
-| 2 | Udhayakumar.R.B | ADMK | 64,484 | 27.92% |
-| 3 | Sathishkumar.N | TVK | 60,826 | 26.33% |
-| 4 | Munish.N | NTK | 11,139 | 4.82% |
-| 5 | Jeevitha Nachiyar.B | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 2,851 | 1.23% |
-| 6 | Nota | NOTA | 933 | 0.4% |
-| 7 | Bharath.M | IND | 924 | 0.4% |
-| 8 | Vengateswaran.B | IND | 427 | 0.18% |
-| 9 | Kalaiselvi.R | Ahila India Dhayaga Makkal Munnetra Katchi | 283 | 0.12% |
-| 10 | Murugan.S | IND | 253 | 0.11% |
-| 11 | Alagar.A | Ezhuchi Tamilargal Munnetra Kazhagam | 133 | 0.06% |
-| 12 | Ayyanan.P | IND | 112 | 0.05% |
-| 13 | Sakkaravarthy.P | IND | 105 | 0.05% |
-| 14 | Nagoor.M | IND | 84 | 0.04% |
-| 15 | Muthuraja.M | IND | 83 | 0.04% |
-| 16 | Girishkumar.A | IND | 52 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Manimaran.M <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">88,291</td><td class="num share">38.22%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Udhayakumar.R.B <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">64,484</td><td class="num share">27.92%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Sathishkumar.N</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">60,826</td><td class="num share">26.33%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Munish.N</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">11,139</td><td class="num share">4.82%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Jeevitha Nachiyar.B</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">2,851</td><td class="num share">1.23%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">933</td><td class="num share">0.4%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Bharath.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">924</td><td class="num share">0.4%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Vengateswaran.B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">427</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Kalaiselvi.R</td><td class="pcell"><span class="pname">Ahila India Dhayaga Makkal Munnetra Katchi</span></td><td class="num">283</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Murugan.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">253</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Alagar.A</td><td class="pcell"><span class="pname">Ezhuchi Tamilargal Munnetra Kazhagam</span></td><td class="num">133</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Ayyanan.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">112</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Sakkaravarthy.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">105</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Nagoor.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">84</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Muthuraja.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">83</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Girishkumar.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">52</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thirumangalam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | UDHAYAKUMAR R B | ADMK | 45.51% |
-| 2026 | MANIMARAN.M | DMK | 38.22% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">UDHAYAKUMAR R B</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">45.51%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">MANIMARAN.M</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">38.22%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -7.29 percentage points in the winning vote share.
 

@@ -8,6 +8,12 @@ constituency: "Thiru-Vi-Ka-Nagar"
 ac_no: 15
 district: "Chennai"
 region: "Chennai & Suburbs"
+winner: "M. R. Pallavi"
+winner_party: "TVK"
+winner_share: 48.04
+margin: 22333
+margin_pct: 15.52
+flipped: true
 keywords: ["Thiru-Vi-Ka-Nagar election result 2026", "Thiru-Vi-Ka-Nagar 2026 winner", "Tamil Nadu 2026 Chennai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,39 +30,49 @@ M. R. Pallavi of TVK won the Thiru-Vi-Ka-Nagar Assembly constituency (Chennai di
 
 ## Full candidate results, Thiru-Vi-Ka-Nagar 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **M. R. Pallavi** | TVK | 69,125 | 48.04% |
-| 2 | K. S. Ravichandran | DMK | 46,792 | 32.52% |
-| 3 | Porkodi Armstrong | ADMK | 23,304 | 16.19% |
-| 4 | Jagadesh Chander .M | NTK | 2,658 | 1.85% |
-| 5 | Nota | NOTA | 527 | 0.37% |
-| 6 | S Jayakalpana | Republican Party of India (Athawale) | 350 | 0.24% |
-| 7 | A. Selva Kumar | Thakkam Katchi | 170 | 0.12% |
-| 8 | Prakash Arunachalam | IND | 134 | 0.09% |
-| 9 | Prasanth. D | IND | 134 | 0.09% |
-| 10 | M. Lokesh | IND | 127 | 0.09% |
-| 11 | C. Christy | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 94 | 0.07% |
-| 12 | M. Kolanji | IND | 77 | 0.05% |
-| 13 | Praveen Thiyagarajan | IND | 70 | 0.05% |
-| 14 | C. Jagan Mohan | IND | 51 | 0.04% |
-| 15 | S. Parthiban | IND | 45 | 0.03% |
-| 16 | D. Sathish Kumar | IND | 40 | 0.03% |
-| 17 | S. Rajendran | IND | 40 | 0.03% |
-| 18 | R. Murugan | IND | 32 | 0.02% |
-| 19 | R. Anandan | IND | 29 | 0.02% |
-| 20 | G. J. Dharaniraj | IND | 27 | 0.02% |
-| 21 | M. Kannadasan | IND | 23 | 0.02% |
-| 22 | Sathish | IND | 21 | 0.01% |
-| 23 | S. Senthamizhan | IND | 18 | 0.01% |
-| 24 | M. Mohan | IND | 15 | 0.01% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">M. R. Pallavi <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">69,125</td><td class="num share">48.04%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">K. S. Ravichandran <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">46,792</td><td class="num share">32.52%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Porkodi Armstrong</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">23,304</td><td class="num share">16.19%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Jagadesh Chander .M</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">2,658</td><td class="num share">1.85%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">527</td><td class="num share">0.37%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">S Jayakalpana</td><td class="pcell"><span class="pname">Republican Party of India (Athawale)</span></td><td class="num">350</td><td class="num share">0.24%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">A. Selva Kumar</td><td class="pcell"><span class="pname">Thakkam Katchi</span></td><td class="num">170</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Prakash Arunachalam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">134</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Prasanth. D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">134</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">M. Lokesh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">127</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">C. Christy</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">94</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">M. Kolanji</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">77</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Praveen Thiyagarajan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">70</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">C. Jagan Mohan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">51</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">S. Parthiban</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">45</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">D. Sathish Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">40</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">S. Rajendran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">40</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">R. Murugan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">32</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">R. Anandan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">29</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">G. J. Dharaniraj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">27</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">M. Kannadasan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">23</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Sathish</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">21</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">S. Senthamizhan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">18</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">M. Mohan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">15</td><td class="num share">0.01%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thiru-Vi-Ka-Nagar compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SIVAKUMAR.P | DMK | 61.13% |
-| 2026 | M. R. PALLAVI | TVK | 48.04% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SIVAKUMAR.P</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">61.13%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">M. R. PALLAVI</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">48.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -13.09 percentage points in the winning vote share.
 

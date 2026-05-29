@@ -8,6 +8,12 @@ constituency: "Thanjavur"
 ac_no: 174
 district: "Thanjavur"
 region: "Cauvery Delta"
+winner: "R. Vijaysaravanan"
+winner_party: "TVK"
+winner_share: 44.12
+margin: 16955
+margin_pct: 8.53
+flipped: true
 keywords: ["Thanjavur election result 2026", "Thanjavur 2026 winner", "Tamil Nadu 2026 Thanjavur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,27 +30,37 @@ R. Vijaysaravanan of TVK won the Thanjavur Assembly constituency (Thanjavur dist
 
 ## Full candidate results, Thanjavur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **R. Vijaysaravanan** | TVK | 87,705 | 44.12% |
-| 2 | Shan. Ramanathan | DMK | 70,750 | 35.59% |
-| 3 | Karuppu Muruganantham | BJP | 26,790 | 13.48% |
-| 4 | N. Krishnakumar | NTK | 9,383 | 4.72% |
-| 5 | Nota | NOTA | 1,274 | 0.64% |
-| 6 | R. Muralidharan | IND | 844 | 0.42% |
-| 7 | S. Karikala Cholan | IND | 800 | 0.4% |
-| 8 | S. Muthuvel | Bahujan Dravida Party | 513 | 0.26% |
-| 9 | H. Mohamed Abdul Khadir | Tamizhaga Vaazhvurimai Katchi | 266 | 0.13% |
-| 10 | M. Santhosh | IND | 179 | 0.09% |
-| 11 | D. Kumaran | IND | 157 | 0.08% |
-| 12 | R. Sabthagiri | IND | 137 | 0.07% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">R. Vijaysaravanan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">87,705</td><td class="num share">44.12%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Shan. Ramanathan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">70,750</td><td class="num share">35.59%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Karuppu Muruganantham</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">26,790</td><td class="num share">13.48%</td></tr>
+<tr><td class="rank">4</td><td class="cand">N. Krishnakumar</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">9,383</td><td class="num share">4.72%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,274</td><td class="num share">0.64%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">R. Muralidharan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">844</td><td class="num share">0.42%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">S. Karikala Cholan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">800</td><td class="num share">0.4%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">S. Muthuvel</td><td class="pcell"><span class="pname">Bahujan Dravida Party</span></td><td class="num">513</td><td class="num share">0.26%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">H. Mohamed Abdul Khadir</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">266</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">M. Santhosh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">179</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">D. Kumaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">157</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">R. Sabthagiri</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">137</td><td class="num share">0.07%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thanjavur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | NEELAMEGAM, T.K.G. | DMK | 53.25% |
-| 2026 | R. VIJAYSARAVANAN | TVK | 44.12% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">NEELAMEGAM, T.K.G.</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">53.25%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">R. VIJAYSARAVANAN</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">44.12%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -9.13 percentage points in the winning vote share.
 

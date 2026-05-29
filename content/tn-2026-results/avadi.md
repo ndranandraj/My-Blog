@@ -8,6 +8,12 @@ constituency: "Avadi"
 ac_no: 6
 district: "Thiruvallur"
 region: "Chennai & Suburbs"
+winner: "R.Ramesh Kumar"
+winner_party: "TVK"
+winner_share: 52.13
+margin: 76311
+margin_pct: 22.05
+flipped: true
 keywords: ["Avadi election result 2026", "Avadi 2026 winner", "Tamil Nadu 2026 Thiruvallur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,36 +30,46 @@ R.Ramesh Kumar of TVK won the Avadi Assembly constituency (Thiruvallur district,
 
 ## Full candidate results, Avadi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **R.Ramesh Kumar** | TVK | 180,384 | 52.13% |
-| 2 | S.M.Nasar | DMK | 104,073 | 30.08% |
-| 3 | Rajasimha Mahendra | BJP | 39,605 | 11.45% |
-| 4 | Punitha Shanmugam | NTK | 16,335 | 4.72% |
-| 5 | Nota | NOTA | 1,533 | 0.44% |
-| 6 | S. Charles | Bahujan Samaj Party | 761 | 0.22% |
-| 7 | R. Bakthavatchalam | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 627 | 0.18% |
-| 8 | R.Edmund Jayendren | Tamizhaga Vaazhvurimai Katchi | 478 | 0.14% |
-| 9 | R. Kumar | IND | 308 | 0.09% |
-| 10 | P. Chellapandian | IND | 255 | 0.07% |
-| 11 | C.S. Karnan | Anti Corruption Dynamic Party | 224 | 0.06% |
-| 12 | G.D. Arunkumar | IND | 205 | 0.06% |
-| 13 | R. Manikandan | IND | 195 | 0.06% |
-| 14 | P.Jayakumar | Samaniya Makkal Nala Katchi | 177 | 0.05% |
-| 15 | S. Senthilkumar | IND | 167 | 0.05% |
-| 16 | Senthilkumar. S | Anna Puratchi Thalaivar Amma Dravida Munnetra Kazhagam | 156 | 0.05% |
-| 17 | K. Balakrishnan | IND | 141 | 0.04% |
-| 18 | M. Erajasimman | IND | 105 | 0.03% |
-| 19 | Rajasekar. R | IND | 105 | 0.03% |
-| 20 | Uniesh Raj. M | IND | 94 | 0.03% |
-| 21 | K. Annamalai | IND | 77 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">R.Ramesh Kumar <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">180,384</td><td class="num share">52.13%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">S.M.Nasar <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">104,073</td><td class="num share">30.08%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Rajasimha Mahendra</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">39,605</td><td class="num share">11.45%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Punitha Shanmugam</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">16,335</td><td class="num share">4.72%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,533</td><td class="num share">0.44%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">S. Charles</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">761</td><td class="num share">0.22%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">R. Bakthavatchalam</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">627</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">R.Edmund Jayendren</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">478</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">R. Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">308</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">P. Chellapandian</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">255</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">C.S. Karnan</td><td class="pcell"><span class="pname">Anti Corruption Dynamic Party</span></td><td class="num">224</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">G.D. Arunkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">205</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">R. Manikandan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">195</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">P.Jayakumar</td><td class="pcell"><span class="pname">Samaniya Makkal Nala Katchi</span></td><td class="num">177</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">S. Senthilkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">167</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Senthilkumar. S</td><td class="pcell"><span class="pname">Anna Puratchi Thalaivar Amma Dravida Munnetra Kazhagam</span></td><td class="num">156</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">K. Balakrishnan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">141</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">M. Erajasimman</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">105</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Rajasekar. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">105</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Uniesh Raj. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">94</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">K. Annamalai</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">77</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Avadi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | Nasar S M | DMK | 49.94% |
-| 2026 | R.RAMESH KUMAR | TVK | 52.13% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">Nasar S M</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">49.94%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">R.RAMESH KUMAR</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">52.13%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +2.19 percentage points in the winning vote share.
 

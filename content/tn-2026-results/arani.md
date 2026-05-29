@@ -8,6 +8,12 @@ constituency: "Arani"
 ac_no: 67
 district: "Tiruvannamalai"
 region: "North"
+winner: "Jayasudha. L"
+winner_party: "ADMK"
+winner_share: 33.34
+margin: 5631
+margin_pct: 2.45
+flipped: false
 keywords: ["Arani election result 2026", "Arani 2026 winner", "Tamil Nadu 2026 Tiruvannamalai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,40 +30,50 @@ Jayasudha. L of ADMK won the Arani Assembly constituency (Tiruvannamalai distric
 
 ## Full candidate results, Arani 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Jayasudha. L** | ADMK | 76,735 | 33.34% |
-| 2 | Mahalakshmi Govarthanan | DMK | 71,104 | 30.89% |
-| 3 | Venkatesh Kumar. D | TVK | 70,857 | 30.79% |
-| 4 | Dhavamani. R | NTK | 6,888 | 2.99% |
-| 5 | Nota | NOTA | 707 | 0.31% |
-| 6 | Baskaran. S | IND | 424 | 0.18% |
-| 7 | Dhamotharan. M | IND | 387 | 0.17% |
-| 8 | Mahalakshmi. G | IND | 359 | 0.16% |
-| 9 | Ganapathy. S | Thamizhaka Padaippalar Makkal Katchi | 358 | 0.16% |
-| 10 | Kalaimani. V | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 292 | 0.13% |
-| 11 | Sudha. S | IND | 257 | 0.11% |
-| 12 | Saravanan. S | IND | 229 | 0.1% |
-| 13 | Silambarasan. C | IND | 202 | 0.09% |
-| 14 | Sakthivel. S | IND | 184 | 0.08% |
-| 15 | Sethurama Sasthri. G | IND | 178 | 0.08% |
-| 16 | Tamilmannan. D | Samaniya Makkal Nala Katchi | 164 | 0.07% |
-| 17 | Ekambaram. V | IND | 154 | 0.07% |
-| 18 | Suresh. S | Tamizhaga Vaazhvurimai Katchi | 143 | 0.06% |
-| 19 | Mahalakshmi. G | IND | 117 | 0.05% |
-| 20 | Ammu. V | IND | 104 | 0.05% |
-| 21 | Jayanthi. M | IND | 90 | 0.04% |
-| 22 | Selvakotti. E | Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi | 68 | 0.03% |
-| 23 | Jayanthi. E | IND | 60 | 0.03% |
-| 24 | Venkatesan. P | IND | 53 | 0.02% |
-| 25 | Vinoth. A | IND | 48 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Jayasudha. L <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">76,735</td><td class="num share">33.34%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Mahalakshmi Govarthanan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">71,104</td><td class="num share">30.89%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Venkatesh Kumar. D</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">70,857</td><td class="num share">30.79%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Dhavamani. R</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,888</td><td class="num share">2.99%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">707</td><td class="num share">0.31%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Baskaran. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">424</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Dhamotharan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">387</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Mahalakshmi. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">359</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Ganapathy. S</td><td class="pcell"><span class="pname">Thamizhaka Padaippalar Makkal Katchi</span></td><td class="num">358</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Kalaimani. V</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">292</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Sudha. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">257</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Saravanan. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">229</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Silambarasan. C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">202</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Sakthivel. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">184</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Sethurama Sasthri. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">178</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Tamilmannan. D</td><td class="pcell"><span class="pname">Samaniya Makkal Nala Katchi</span></td><td class="num">164</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Ekambaram. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">154</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Suresh. S</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">143</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Mahalakshmi. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">117</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Ammu. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">104</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Jayanthi. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">90</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Selvakotti. E</td><td class="pcell"><span class="pname">Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi</span></td><td class="num">68</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Jayanthi. E</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">60</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Venkatesan. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">53</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Vinoth. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">48</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Arani compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | S.RAMACHANDRAN | ADMK | 46.5% |
-| 2026 | JAYASUDHA. L | ADMK | 33.34% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">S.RAMACHANDRAN</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">46.5%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">JAYASUDHA. L</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">33.34%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -13.16 percentage points in the winning vote share.
 

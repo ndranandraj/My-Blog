@@ -8,6 +8,12 @@ constituency: "Viluppuram"
 ac_no: 74
 district: "Viluppuram"
 region: "Northeast Coast"
+winner: "Lakshmanan R"
+winner_party: "DMK"
+winner_share: 33.88
+margin: 4119
+margin_pct: 1.91
+flipped: false
 keywords: ["Viluppuram election result 2026", "Viluppuram 2026 winner", "Tamil Nadu 2026 Viluppuram"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,40 +30,50 @@ Lakshmanan R of DMK won the Viluppuram Assembly constituency (Viluppuram distric
 
 ## Full candidate results, Viluppuram 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Lakshmanan R** | DMK | 72,982 | 33.88% |
-| 2 | Mohanraj N | TVK | 68,863 | 31.97% |
-| 3 | Vijayasureshbabu | ADMK | 63,808 | 29.62% |
-| 4 | Abinaya Ponnivalavan | NTK | 5,786 | 2.69% |
-| 5 | Nota | NOTA | 573 | 0.27% |
-| 6 | Kumaran R | Tamizhaga Vaazhvurimai Katchi | 440 | 0.2% |
-| 7 | Murugan S | Bahujan Samaj Party | 390 | 0.18% |
-| 8 | Mohamed Ali Jinna M | IND | 282 | 0.13% |
-| 9 | Raghul R | IND | 277 | 0.13% |
-| 10 | Lakshmanan R | IND | 243 | 0.11% |
-| 11 | Nagarajan P | Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi | 231 | 0.11% |
-| 12 | Lakshmanan R | IND | 175 | 0.08% |
-| 13 | Rajkumar S | IND | 172 | 0.08% |
-| 14 | Arumugam M | IND | 150 | 0.07% |
-| 15 | Lakshmanan K | IND | 148 | 0.07% |
-| 16 | Rayar K | IND | 142 | 0.07% |
-| 17 | Vijaya M | IND | 141 | 0.07% |
-| 18 | Vijaya D | IND | 100 | 0.05% |
-| 19 | Raman K | IND | 94 | 0.04% |
-| 20 | Vijaya M | IND | 93 | 0.04% |
-| 21 | Praveen Kumar R | IND | 84 | 0.04% |
-| 22 | Balamurugan N | IND | 77 | 0.04% |
-| 23 | Akbar Ali P | IND | 63 | 0.03% |
-| 24 | Mohan C | IND | 62 | 0.03% |
-| 25 | Vijaya K | IND | 46 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Lakshmanan R <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">72,982</td><td class="num share">33.88%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Mohanraj N <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">68,863</td><td class="num share">31.97%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Vijayasureshbabu</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">63,808</td><td class="num share">29.62%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Abinaya Ponnivalavan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,786</td><td class="num share">2.69%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">573</td><td class="num share">0.27%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Kumaran R</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">440</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Murugan S</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">390</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Mohamed Ali Jinna M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">282</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Raghul R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">277</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Lakshmanan R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">243</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Nagarajan P</td><td class="pcell"><span class="pname">Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi</span></td><td class="num">231</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Lakshmanan R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">175</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Rajkumar S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">172</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Arumugam M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">150</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Lakshmanan K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">148</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Rayar K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">142</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Vijaya M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">141</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Vijaya D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">100</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Raman K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">94</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Vijaya M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">93</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Praveen Kumar R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">84</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Balamurugan N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">77</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Akbar Ali P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">63</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Mohan C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">62</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Vijaya K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">46</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Viluppuram compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | LAKSHMANAN R | DMK | 49.92% |
-| 2026 | LAKSHMANAN R | DMK | 33.88% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">LAKSHMANAN R</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">49.92%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">LAKSHMANAN R</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">33.88%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -16.04 percentage points in the winning vote share.
 

@@ -8,6 +8,12 @@ constituency: "Vriddhachalam"
 ac_no: 152
 district: "Cuddalore"
 region: "Northeast Coast"
+winner: "Premallatha Vijayakant"
+winner_party: "DMDK"
+winner_share: 33.15
+margin: 2387
+margin_pct: 1.14
+flipped: true
 keywords: ["Vriddhachalam election result 2026", "Vriddhachalam 2026 winner", "Tamil Nadu 2026 Cuddalore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,34 +30,44 @@ Premallatha Vijayakant of DMDK won the Vriddhachalam Assembly constituency (Cudd
 
 ## Full candidate results, Vriddhachalam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Premallatha Vijayakant** | DMDK | 69,351 | 33.15% |
-| 2 | Vijay.S | TVK | 66,964 | 32.01% |
-| 3 | Dr.Tamizharasi.P | PMK | 59,791 | 28.58% |
-| 4 | Ananthi Dhandapani | NTK | 6,047 | 2.89% |
-| 5 | Arivazhagan.E.N | Tamizhaga Vaazhvurimai Katchi | 1,896 | 0.91% |
-| 6 | Arivudainambi.S | Anti Corruption Dynamic Party | 904 | 0.43% |
-| 7 | Nota | NOTA | 755 | 0.36% |
-| 8 | Durai.K | IND | 738 | 0.35% |
-| 9 | Gnanasundari.M | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 611 | 0.29% |
-| 10 | Sivaprakasam.V | Bahujan Samaj Party | 374 | 0.18% |
-| 11 | Srinivasan.R | IND | 328 | 0.16% |
-| 12 | Balu.P | IND | 252 | 0.12% |
-| 13 | Sidharthan.S | Desiya Makkal Sakthi Katchi | 225 | 0.11% |
-| 14 | Ezhilkumar.K | IND | 175 | 0.08% |
-| 15 | Deiveegadass.M | IND | 163 | 0.08% |
-| 16 | Jayaprakash.S | IND | 162 | 0.08% |
-| 17 | Sivasankaran.K | IND | 161 | 0.08% |
-| 18 | Sathiya.B | Anna Makkal Katchi | 160 | 0.08% |
-| 19 | Prabakaran.T | IND | 129 | 0.06% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Premallatha Vijayakant <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMDK">DMDK</span></td><td class="num">69,351</td><td class="num share">33.15%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Vijay.S <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">66,964</td><td class="num share">32.01%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Dr.Tamizharasi.P</td><td class="pcell"><span class="pbadge" data-party="PMK">PMK</span></td><td class="num">59,791</td><td class="num share">28.58%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Ananthi Dhandapani</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,047</td><td class="num share">2.89%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Arivazhagan.E.N</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">1,896</td><td class="num share">0.91%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Arivudainambi.S</td><td class="pcell"><span class="pname">Anti Corruption Dynamic Party</span></td><td class="num">904</td><td class="num share">0.43%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">755</td><td class="num share">0.36%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Durai.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">738</td><td class="num share">0.35%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Gnanasundari.M</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">611</td><td class="num share">0.29%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Sivaprakasam.V</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">374</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Srinivasan.R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">328</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Balu.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">252</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Sidharthan.S</td><td class="pcell"><span class="pname">Desiya Makkal Sakthi Katchi</span></td><td class="num">225</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Ezhilkumar.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">175</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Deiveegadass.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">163</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Jayaprakash.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">162</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Sivasankaran.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">161</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Sathiya.B</td><td class="pcell"><span class="pname">Anna Makkal Katchi</span></td><td class="num">160</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Prabakaran.T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">129</td><td class="num share">0.06%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Vriddhachalam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | Radhakrishnan | INC | 39.17% |
-| 2026 | PREMALLATHA VIJAYAKANT | DMDK | 33.15% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">Radhakrishnan</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">39.17%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">PREMALLATHA VIJAYAKANT</td><td class="pcell"><span class="pbadge" data-party="DMDK">DMDK</span></td><td class="num">33.15%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -6.02 percentage points in the winning vote share.
 

@@ -8,6 +8,12 @@ constituency: "Madurantakam"
 ac_no: 35
 district: "Kancheepuram"
 region: "Chennai & Suburbs"
+winner: "Maragatham Kumaravel.K"
+winner_party: "ADMK"
+winner_share: 34.95
+margin: 7194
+margin_pct: 3.63
+flipped: false
 keywords: ["Madurantakam election result 2026", "Madurantakam 2026 winner", "Tamil Nadu 2026 Kancheepuram"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,25 +30,35 @@ Maragatham Kumaravel.K of ADMK won the Madurantakam Assembly constituency (Kanch
 
 ## Full candidate results, Madurantakam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Maragatham Kumaravel.K** | ADMK | 69,284 | 34.95% |
-| 2 | Ezhil Katharine Ezhilmalai | TVK | 62,090 | 31.32% |
-| 3 | S.Amulu Ponmalar | DMK | 59,838 | 30.18% |
-| 4 | G.Janakiraman | NTK | 4,950 | 2.5% |
-| 5 | Nota | NOTA | 797 | 0.4% |
-| 6 | Neelam E.Ramkumar | Bahujan Samaj Party | 374 | 0.19% |
-| 7 | Ranjitham.M | IND | 357 | 0.18% |
-| 8 | R.Sugan | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 237 | 0.12% |
-| 9 | S.Punniyakotti | Tamizhaga Vaazhvurimai Katchi | 206 | 0.1% |
-| 10 | M.Kadirvel | IND | 118 | 0.06% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Maragatham Kumaravel.K <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">69,284</td><td class="num share">34.95%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Ezhil Katharine Ezhilmalai <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">62,090</td><td class="num share">31.32%</td></tr>
+<tr><td class="rank">3</td><td class="cand">S.Amulu Ponmalar</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">59,838</td><td class="num share">30.18%</td></tr>
+<tr><td class="rank">4</td><td class="cand">G.Janakiraman</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">4,950</td><td class="num share">2.5%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">797</td><td class="num share">0.4%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Neelam E.Ramkumar</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">374</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Ranjitham.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">357</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">R.Sugan</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">237</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">S.Punniyakotti</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">206</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">M.Kadirvel</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">118</td><td class="num share">0.06%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Madurantakam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | Maragatham. K | ADMK | 46.62% |
-| 2026 | MARAGATHAM KUMARAVEL.K | ADMK | 34.95% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">Maragatham. K</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">46.62%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">MARAGATHAM KUMARAVEL.K</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">34.95%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -11.67 percentage points in the winning vote share.
 

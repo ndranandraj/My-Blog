@@ -8,6 +8,12 @@ constituency: "Royapuram"
 ac_no: 17
 district: "Chennai"
 region: "Chennai & Suburbs"
+winner: "K.V. Vijay Damu"
+winner_party: "TVK"
+winner_share: 46.4
+margin: 14249
+margin_pct: 11.19
+flipped: true
 keywords: ["Royapuram election result 2026", "Royapuram 2026 winner", "Tamil Nadu 2026 Chennai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,44 +30,54 @@ K.V. Vijay Damu of TVK won the Royapuram Assembly constituency (Chennai district
 
 ## Full candidate results, Royapuram 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **K.V. Vijay Damu** | TVK | 59,091 | 46.4% |
-| 2 | Dr. A. Subair Khan | DMK | 44,842 | 35.21% |
-| 3 | D. Jayakumar | ADMK | 18,420 | 14.46% |
-| 4 | A. Babu Mailan | NTK | 2,947 | 2.31% |
-| 5 | Nota | NOTA | 459 | 0.36% |
-| 6 | M. Jayarajkumar | Bahujan Samaj Party | 222 | 0.17% |
-| 7 | M Dhinakaran | IND | 216 | 0.17% |
-| 8 | R. Vinothkumar | Naam Indiar Party | 149 | 0.12% |
-| 9 | R. Rajkumar | IND | 99 | 0.08% |
-| 10 | J. Selvakumar | IND | 84 | 0.07% |
-| 11 | M. Rajkumar | Tamizhaga Vaazhvurimai Katchi | 83 | 0.07% |
-| 12 | D. Jayakumar | IND | 76 | 0.06% |
-| 13 | T. Kaviyarasu | IND | 64 | 0.05% |
-| 14 | A. Sathik Kumar | Democratic National Allegiance | 63 | 0.05% |
-| 15 | V. Bhagath Singh | IND | 62 | 0.05% |
-| 16 | T. Rajesh | IND | 52 | 0.04% |
-| 17 | P. Sumathi | IND | 49 | 0.04% |
-| 18 | G. Karthikeyan | IND | 40 | 0.03% |
-| 19 | Kerthivarunnan .R | IND | 38 | 0.03% |
-| 20 | A. Sasikumar | IND | 37 | 0.03% |
-| 21 | A. Nizar Ahamed | IND | 37 | 0.03% |
-| 22 | K. Prasath | IND | 36 | 0.03% |
-| 23 | A. Jayakumar | IND | 35 | 0.03% |
-| 24 | I Jayaprakash | IND | 34 | 0.03% |
-| 25 | K.J. Sivakumar | IND | 31 | 0.02% |
-| 26 | M. Mahalakshmi | IND | 30 | 0.02% |
-| 27 | C. Sridhar | IND | 27 | 0.02% |
-| 28 | M. Shanmugam | IND | 20 | 0.02% |
-| 29 | S. Raju | IND | 13 | 0.01% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">K.V. Vijay Damu <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">59,091</td><td class="num share">46.4%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Dr. A. Subair Khan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">44,842</td><td class="num share">35.21%</td></tr>
+<tr><td class="rank">3</td><td class="cand">D. Jayakumar</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">18,420</td><td class="num share">14.46%</td></tr>
+<tr><td class="rank">4</td><td class="cand">A. Babu Mailan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">2,947</td><td class="num share">2.31%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">459</td><td class="num share">0.36%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">M. Jayarajkumar</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">222</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">M Dhinakaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">216</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">R. Vinothkumar</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">149</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">R. Rajkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">99</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">J. Selvakumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">84</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">M. Rajkumar</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">83</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">D. Jayakumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">76</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">T. Kaviyarasu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">64</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">A. Sathik Kumar</td><td class="pcell"><span class="pname">Democratic National Allegiance</span></td><td class="num">63</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">V. Bhagath Singh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">62</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">T. Rajesh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">52</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">P. Sumathi</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">49</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">G. Karthikeyan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">40</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Kerthivarunnan .R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">38</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">A. Sasikumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">37</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">A. Nizar Ahamed</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">37</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">K. Prasath</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">36</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">A. Jayakumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">35</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">I Jayaprakash</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">34</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">K.J. Sivakumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">31</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">M. Mahalakshmi</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">30</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">27</td><td class="cand">C. Sridhar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">27</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">28</td><td class="cand">M. Shanmugam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">20</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">29</td><td class="cand">S. Raju</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">13</td><td class="num share">0.01%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Royapuram compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | MURTHY.R.IDREAM | DMK | 53.16% |
-| 2026 | K.V. VIJAY DAMU | TVK | 46.4% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">MURTHY.R.IDREAM</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">53.16%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">K.V. VIJAY DAMU</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">46.4%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -6.76 percentage points in the winning vote share.
 

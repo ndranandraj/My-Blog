@@ -8,6 +8,12 @@ constituency: "Gangavalli"
 ac_no: 81
 district: "Salem"
 region: "Kongu (West)"
+winner: "Nallathambi. A"
+winner_party: "ADMK"
+winner_share: 37.2
+margin: 14404
+margin_pct: 7.32
+flipped: false
 keywords: ["Gangavalli election result 2026", "Gangavalli 2026 winner", "Tamil Nadu 2026 Salem"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Nallathambi. A of ADMK won the Gangavalli Assembly constituency (Salem district,
 
 ## Full candidate results, Gangavalli 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Nallathambi. A** | ADMK | 73,167 | 37.2% |
-| 2 | Chinnadurai. K | DMK | 58,763 | 29.88% |
-| 3 | Sujatha. V | TVK | 55,291 | 28.11% |
-| 4 | Abirami. A | NTK | 6,242 | 3.17% |
-| 5 | Nota | NOTA | 731 | 0.37% |
-| 6 | Balakrishnan. P | Bahujan Samaj Party | 533 | 0.27% |
-| 7 | Dhanapal. S | IND | 444 | 0.23% |
-| 8 | Ramesh. S | IND | 390 | 0.2% |
-| 9 | Kaviarasan. T.T | Tamizhaga Vaazhvurimai Katchi | 234 | 0.12% |
-| 10 | Marimuthu. S | Puthiya Tamilagam | 220 | 0.11% |
-| 11 | Kannan. S | IND | 212 | 0.11% |
-| 12 | Tamilarasan. T | IND | 196 | 0.1% |
-| 13 | Anbazhagan. S | Anna Makkal Katchi | 151 | 0.08% |
-| 14 | Gunaprakash. D | IND | 105 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Nallathambi. A <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">73,167</td><td class="num share">37.2%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Chinnadurai. K <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">58,763</td><td class="num share">29.88%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Sujatha. V</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">55,291</td><td class="num share">28.11%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Abirami. A</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,242</td><td class="num share">3.17%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">731</td><td class="num share">0.37%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Balakrishnan. P</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">533</td><td class="num share">0.27%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Dhanapal. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">444</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Ramesh. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">390</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Kaviarasan. T.T</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">234</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Marimuthu. S</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">220</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Kannan. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">212</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Tamilarasan. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">196</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Anbazhagan. S</td><td class="pcell"><span class="pname">Anna Makkal Katchi</span></td><td class="num">151</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Gunaprakash. D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">105</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Gangavalli compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | NALLATHAMBI,A. | ADMK | 48.02% |
-| 2026 | NALLATHAMBI. A | ADMK | 37.2% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">NALLATHAMBI,A.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">48.02%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">NALLATHAMBI. A</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">37.2%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -10.82 percentage points in the winning vote share.
 

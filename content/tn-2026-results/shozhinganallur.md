@@ -8,6 +8,12 @@ constituency: "Shozhinganallur"
 ac_no: 27
 district: "Kancheepuram"
 region: "Chennai & Suburbs"
+winner: "Ecr P Saravanan"
+winner_party: "TVK"
+winner_share: 49.27
+margin: 96780
+margin_pct: 21.64
+flipped: true
 keywords: ["Shozhinganallur election result 2026", "Shozhinganallur 2026 winner", "Tamil Nadu 2026 Kancheepuram"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,43 +30,53 @@ Ecr P Saravanan of TVK won the Shozhinganallur Assembly constituency (Kancheepur
 
 ## Full candidate results, Shozhinganallur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Ecr P Saravanan** | TVK | 220,382 | 49.27% |
-| 2 | S. Aravind Ramesh | DMK | 123,602 | 27.63% |
-| 3 | K.P.Kandan | ADMK | 74,112 | 16.57% |
-| 4 | R Jayalakshmi | NTK | 21,919 | 4.9% |
-| 5 | Nota | NOTA | 2,079 | 0.46% |
-| 6 | N.Prashantha Rao | IND | 527 | 0.12% |
-| 7 | S.Pushna Kumar | Bahujan Samaj Party | 524 | 0.12% |
-| 8 | M. Christhu Dass | Dravida Jananayaga Makkal Katchi | 486 | 0.11% |
-| 9 | G Suresh Kumar | IND | 414 | 0.09% |
-| 10 | M.G.Ramu | Jebamani Janata | 321 | 0.07% |
-| 11 | Ramanathan M | IND | 263 | 0.06% |
-| 12 | E. Vijay | IND | 257 | 0.06% |
-| 13 | D. Srinivasan | IND | 254 | 0.06% |
-| 14 | K. Vishwanathan | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 251 | 0.06% |
-| 15 | S. Karthik | IND | 214 | 0.05% |
-| 16 | R Ravichandran | IND | 189 | 0.04% |
-| 17 | Chandrasekaran | IND | 177 | 0.04% |
-| 18 | Rajesh | IND | 160 | 0.04% |
-| 19 | E. Murali B.A | IND | 156 | 0.03% |
-| 20 | S.Govindhan | IND | 149 | 0.03% |
-| 21 | M. Alexandar | Naam Indiar Party | 123 | 0.03% |
-| 22 | Jaikumar Balachandran | IND | 123 | 0.03% |
-| 23 | P.Chandra Kanth | IND | 115 | 0.03% |
-| 24 | R.Yogeshwaran | IND | 115 | 0.03% |
-| 25 | Farmer Jayaraman S K J | IND | 115 | 0.03% |
-| 26 | V. Kandhan | IND | 103 | 0.02% |
-| 27 | A.Mohammed Gani | IND | 98 | 0.02% |
-| 28 | Mutharasan | IND | 67 | 0.01% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Ecr P Saravanan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">220,382</td><td class="num share">49.27%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">S. Aravind Ramesh <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">123,602</td><td class="num share">27.63%</td></tr>
+<tr><td class="rank">3</td><td class="cand">K.P.Kandan</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">74,112</td><td class="num share">16.57%</td></tr>
+<tr><td class="rank">4</td><td class="cand">R Jayalakshmi</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">21,919</td><td class="num share">4.9%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">2,079</td><td class="num share">0.46%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">N.Prashantha Rao</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">527</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">S.Pushna Kumar</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">524</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">M. Christhu Dass</td><td class="pcell"><span class="pname">Dravida Jananayaga Makkal Katchi</span></td><td class="num">486</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">G Suresh Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">414</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">M.G.Ramu</td><td class="pcell"><span class="pname">Jebamani Janata</span></td><td class="num">321</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Ramanathan M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">263</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">E. Vijay</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">257</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">D. Srinivasan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">254</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">K. Vishwanathan</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">251</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">S. Karthik</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">214</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">R Ravichandran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">189</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Chandrasekaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">177</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Rajesh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">160</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">E. Murali B.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">156</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">S.Govindhan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">149</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">M. Alexandar</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">123</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Jaikumar Balachandran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">123</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">P.Chandra Kanth</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">115</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">R.Yogeshwaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">115</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Farmer Jayaraman S K J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">115</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">V. Kandhan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">103</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">27</td><td class="cand">A.Mohammed Gani</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">98</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">28</td><td class="cand">Mutharasan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">67</td><td class="num share">0.01%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Shozhinganallur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | S.ARAVINDRAMESH | DMK | 44.18% |
-| 2026 | ECR P SARAVANAN | TVK | 49.27% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">S.ARAVINDRAMESH</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">44.18%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">ECR P SARAVANAN</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">49.27%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +5.09 percentage points in the winning vote share.
 

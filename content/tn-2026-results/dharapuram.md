@@ -8,6 +8,12 @@ constituency: "Dharapuram"
 ac_no: 101
 district: "Tiruppur"
 region: "Kongu (West)"
+winner: "Sathyabama.P"
+winner_party: "ADMK"
+winner_share: 40.56
+margin: 16727
+margin_pct: 8.37
+flipped: true
 keywords: ["Dharapuram election result 2026", "Dharapuram 2026 winner", "Tamil Nadu 2026 Tiruppur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,25 +30,35 @@ Sathyabama.P of ADMK won the Dharapuram Assembly constituency (Tiruppur district
 
 ## Full candidate results, Dharapuram 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Sathyabama.P** | ADMK | 81,100 | 40.56% |
-| 2 | Indirani.T | DMK | 64,373 | 32.2% |
-| 3 | Gowri Chitra | TVK | 46,438 | 23.23% |
-| 4 | Dhivya | NTK | 6,026 | 3.01% |
-| 5 | Nota | NOTA | 1,058 | 0.53% |
-| 6 | Rohini.S | IND | 357 | 0.18% |
-| 7 | Mohanraj.M | IND | 174 | 0.09% |
-| 8 | Ananthi.S | IND | 151 | 0.08% |
-| 9 | Indhirani.C | IND | 142 | 0.07% |
-| 10 | Gowri.P | IND | 125 | 0.06% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Sathyabama.P <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">81,100</td><td class="num share">40.56%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Indirani.T <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">64,373</td><td class="num share">32.2%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Gowri Chitra</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">46,438</td><td class="num share">23.23%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Dhivya</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,026</td><td class="num share">3.01%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,058</td><td class="num share">0.53%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Rohini.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">357</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Mohanraj.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">174</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Ananthi.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">151</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Indhirani.C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">142</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Gowri.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">125</td><td class="num share">0.06%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Dharapuram compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | KAYALVIZHI N | DMK | 46.39% |
-| 2026 | SATHYABAMA.P | ADMK | 40.56% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">KAYALVIZHI N</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">46.39%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SATHYABAMA.P</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">40.56%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -5.83 percentage points in the winning vote share.
 

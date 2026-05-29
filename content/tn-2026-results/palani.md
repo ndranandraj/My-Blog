@@ -8,6 +8,12 @@ constituency: "Palani"
 ac_no: 127
 district: "Dindigul"
 region: "Madurai Region"
+winner: "Ravimanoharan. K"
+winner_party: "ADMK"
+winner_share: 32.11
+margin: 693
+margin_pct: 0.33
+flipped: true
 keywords: ["Palani election result 2026", "Palani 2026 winner", "Tamil Nadu 2026 Dindigul"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Ravimanoharan. K of ADMK won the Palani Assembly constituency (Dindigul district
 
 ## Full candidate results, Palani 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Ravimanoharan. K** | ADMK | 66,986 | 32.11% |
-| 2 | Dr. Praveen Kumar. M | TVK | 66,293 | 31.78% |
-| 3 | Pandi. N | CPI(M) | 65,534 | 31.41% |
-| 4 | Murugeswari. B | NTK | 6,300 | 3.02% |
-| 5 | Nota | NOTA | 750 | 0.36% |
-| 6 | Nachimuthu. S | Bahujan Samaj Party | 585 | 0.28% |
-| 7 | Jayakumar. T | IND | 520 | 0.25% |
-| 8 | Praveenkumar. R | IND | 283 | 0.14% |
-| 9 | Ramamoorthi. G | Rashtriya Samaj Dal (R) | 273 | 0.13% |
-| 10 | Ashokkumar. G | IND | 254 | 0.12% |
-| 11 | Balachandran. M | IND | 214 | 0.1% |
-| 12 | Madheswari. R | IND | 178 | 0.09% |
-| 13 | Vaykkaldurai. K | Puthiya Tamilagam | 151 | 0.07% |
-| 14 | Thannasiappan. P | IND | 136 | 0.07% |
-| 15 | Thirumalaisamy. B | IND | 92 | 0.04% |
-| 16 | Anbarasu. R | IND | 70 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Ravimanoharan. K <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">66,986</td><td class="num share">32.11%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Dr. Praveen Kumar. M <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">66,293</td><td class="num share">31.78%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Pandi. N</td><td class="pcell"><span class="pbadge" data-party="CPI(M)">CPI(M)</span></td><td class="num">65,534</td><td class="num share">31.41%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Murugeswari. B</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,300</td><td class="num share">3.02%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">750</td><td class="num share">0.36%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nachimuthu. S</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">585</td><td class="num share">0.28%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Jayakumar. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">520</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Praveenkumar. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">283</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Ramamoorthi. G</td><td class="pcell"><span class="pname">Rashtriya Samaj Dal (R)</span></td><td class="num">273</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Ashokkumar. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">254</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Balachandran. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">214</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Madheswari. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">178</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Vaykkaldurai. K</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">151</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Thannasiappan. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">136</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Thirumalaisamy. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">92</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Anbarasu. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">70</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Palani compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SENTHIL KUMAR I.P | DMK | 52.86% |
-| 2026 | RAVIMANOHARAN. K | ADMK | 32.11% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SENTHIL KUMAR I.P</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">52.86%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">RAVIMANOHARAN. K</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">32.11%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -20.75 percentage points in the winning vote share.
 

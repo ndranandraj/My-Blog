@@ -8,6 +8,12 @@ constituency: "Erode (West)"
 ac_no: 99
 district: "Erode"
 region: "Kongu (West)"
+winner: "Ananth Moghan K.K."
+winner_party: "TVK"
+winner_share: 43.74
+margin: 22250
+margin_pct: 10.05
+flipped: true
 keywords: ["Erode (West) election result 2026", "Erode (West) 2026 winner", "Tamil Nadu 2026 Erode"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Ananth Moghan K.K. of TVK won the Erode (West) Assembly constituency (Erode dist
 
 ## Full candidate results, Erode (West) 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Ananth Moghan K.K.** | TVK | 96,836 | 43.74% |
-| 2 | S. Muthusamy | DMK | 74,586 | 33.69% |
-| 3 | M. Yuvaraja | BJP | 38,185 | 17.25% |
-| 4 | N. Vijay | NTK | 8,124 | 3.67% |
-| 5 | Nota | NOTA | 1,257 | 0.57% |
-| 6 | V . Palani | Bahujan Samaj Party | 516 | 0.23% |
-| 7 | K. Kalaiyarasan | Party for the Rights of Other backward Classes | 439 | 0.2% |
-| 8 | C. Rajendran | IND | 332 | 0.15% |
-| 9 | Shanmugam M. | IND | 235 | 0.11% |
-| 10 | A. Ramu | IND | 227 | 0.1% |
-| 11 | Moorthi P. | IND | 205 | 0.09% |
-| 12 | M. Nataraj | Vishwa Tamil Kazhagam | 177 | 0.08% |
-| 13 | V. Dhanalakshmi | Tamizhaga Vaazhvurimai Katchi | 163 | 0.07% |
-| 14 | M. Rukmani | Samaniya Makkal Nala Katchi | 118 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Ananth Moghan K.K. <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">96,836</td><td class="num share">43.74%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">S. Muthusamy <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">74,586</td><td class="num share">33.69%</td></tr>
+<tr><td class="rank">3</td><td class="cand">M. Yuvaraja</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">38,185</td><td class="num share">17.25%</td></tr>
+<tr><td class="rank">4</td><td class="cand">N. Vijay</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">8,124</td><td class="num share">3.67%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,257</td><td class="num share">0.57%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">V . Palani</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">516</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">K. Kalaiyarasan</td><td class="pcell"><span class="pname">Party for the Rights of Other backward Classes</span></td><td class="num">439</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">C. Rajendran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">332</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Shanmugam M.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">235</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">A. Ramu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">227</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Moorthi P.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">205</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">M. Nataraj</td><td class="pcell"><span class="pname">Vishwa Tamil Kazhagam</span></td><td class="num">177</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">V. Dhanalakshmi</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">163</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">M. Rukmani</td><td class="pcell"><span class="pname">Samaniya Makkal Nala Katchi</span></td><td class="num">118</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Erode (West) compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | Muthusamy S | DMK | 49.01% |
-| 2026 | ANANTH MOGHAN K.K. | TVK | 43.74% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">Muthusamy S</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">49.01%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">ANANTH MOGHAN K.K.</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">43.74%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -5.27 percentage points in the winning vote share.
 

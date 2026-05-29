@@ -8,6 +8,12 @@ constituency: "Veppanahalli"
 ac_no: 54
 district: "Krishnagiri"
 region: "Krishnagiri Belt"
+winner: "Srinivasan.P.S"
+winner_party: "DMK"
+winner_share: 33.55
+margin: 138
+margin_pct: 0.06
+flipped: true
 keywords: ["Veppanahalli election result 2026", "Veppanahalli 2026 winner", "Tamil Nadu 2026 Krishnagiri"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Srinivasan.P.S of DMK won the Veppanahalli Assembly constituency (Krishnagiri di
 
 ## Full candidate results, Veppanahalli 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Srinivasan.P.S** | DMK | 74,691 | 33.55% |
-| 2 | Munusamy.K.P | ADMK | 74,553 | 33.49% |
-| 3 | Sampangi.S.R | TVK | 63,907 | 28.71% |
-| 4 | Nagaraj.R | NTK | 4,519 | 2.03% |
-| 5 | Nota | NOTA | 1,570 | 0.71% |
-| 6 | Iyappan.L | Tamizhaga Vaazhvurimai Katchi | 871 | 0.39% |
-| 7 | Venkatesan.C | IND | 692 | 0.31% |
-| 8 | Ramasamy.G.C | IND | 487 | 0.22% |
-| 9 | Manoharan.K.A | IND | 345 | 0.15% |
-| 10 | Yuvaraj.K.P.U | IND | 265 | 0.12% |
-| 11 | Senthilkumar.R | Tamil Nadu Ilangyar Katchi | 215 | 0.1% |
-| 12 | Govindaraj.G.J | IND | 185 | 0.08% |
-| 13 | Prajapathi Vijay.C | Tamilar Makkal Katchi | 156 | 0.07% |
-| 14 | Eshwaran.C | IND | 152 | 0.07% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Srinivasan.P.S <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">74,691</td><td class="num share">33.55%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Munusamy.K.P <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">74,553</td><td class="num share">33.49%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Sampangi.S.R</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">63,907</td><td class="num share">28.71%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Nagaraj.R</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">4,519</td><td class="num share">2.03%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,570</td><td class="num share">0.71%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Iyappan.L</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">871</td><td class="num share">0.39%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Venkatesan.C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">692</td><td class="num share">0.31%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Ramasamy.G.C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">487</td><td class="num share">0.22%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Manoharan.K.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">345</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Yuvaraj.K.P.U</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">265</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Senthilkumar.R</td><td class="pcell"><span class="pname">Tamil Nadu Ilangyar Katchi</span></td><td class="num">215</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Govindaraj.G.J</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">185</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Prajapathi Vijay.C</td><td class="pcell"><span class="pname">Tamilar Makkal Katchi</span></td><td class="num">156</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Eshwaran.C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">152</td><td class="num share">0.07%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Veppanahalli compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | K.P.Munusamy | ADMK | 45.87% |
-| 2026 | SRINIVASAN.P.S | DMK | 33.55% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">K.P.Munusamy</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">45.87%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SRINIVASAN.P.S</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">33.55%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -12.32 percentage points in the winning vote share.
 

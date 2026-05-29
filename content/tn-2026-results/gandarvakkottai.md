@@ -8,6 +8,12 @@ constituency: "Gandarvakkottai"
 ac_no: 178
 district: "Pudukkottai"
 region: "Central"
+winner: "N. Subramanian"
+winner_party: "TVK"
+winner_share: 35.08
+margin: 11039
+margin_pct: 6.59
+flipped: true
 keywords: ["Gandarvakkottai election result 2026", "Gandarvakkottai 2026 winner", "Tamil Nadu 2026 Pudukkottai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,26 +30,36 @@ N. Subramanian of TVK won the Gandarvakkottai Assembly constituency (Pudukkottai
 
 ## Full candidate results, Gandarvakkottai 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **N. Subramanian** | TVK | 58,795 | 35.08% |
-| 2 | C. Uthayakumar | BJP | 47,756 | 28.49% |
-| 3 | M. Chinnadurai | CPI(M) | 46,734 | 27.88% |
-| 4 | Nathiya | NTK | 10,189 | 6.08% |
-| 5 | Nota | NOTA | 1,127 | 0.67% |
-| 6 | Arunkumar . S | IND | 653 | 0.39% |
-| 7 | Senthilkumar N | IND | 642 | 0.38% |
-| 8 | M. Lakshmanan | IND | 584 | 0.35% |
-| 9 | Dhanarasu | Namadhu Makkal Katchi | 405 | 0.24% |
-| 10 | T. Murugesan | IND | 404 | 0.24% |
-| 11 | Sasikumar P | IND | 329 | 0.2% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">N. Subramanian <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">58,795</td><td class="num share">35.08%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">C. Uthayakumar <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">47,756</td><td class="num share">28.49%</td></tr>
+<tr><td class="rank">3</td><td class="cand">M. Chinnadurai</td><td class="pcell"><span class="pbadge" data-party="CPI(M)">CPI(M)</span></td><td class="num">46,734</td><td class="num share">27.88%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Nathiya</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">10,189</td><td class="num share">6.08%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,127</td><td class="num share">0.67%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Arunkumar . S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">653</td><td class="num share">0.39%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Senthilkumar N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">642</td><td class="num share">0.38%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">M. Lakshmanan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">584</td><td class="num share">0.35%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Dhanarasu</td><td class="pcell"><span class="pname">Namadhu Makkal Katchi</span></td><td class="num">405</td><td class="num share">0.24%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">T. Murugesan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">404</td><td class="num share">0.24%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Sasikumar P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">329</td><td class="num share">0.2%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Gandarvakkottai compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | M.Chinnadurai | CPM | 44.23% |
-| 2026 | N. SUBRAMANIAN | TVK | 35.08% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">M.Chinnadurai</td><td class="pcell"><span class="pbadge" data-party="CPM">CPM</span></td><td class="num">44.23%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">N. SUBRAMANIAN</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">35.08%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -9.15 percentage points in the winning vote share.
 

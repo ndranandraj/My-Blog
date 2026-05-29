@@ -8,6 +8,12 @@ constituency: "Kilvelur"
 ac_no: 164
 district: "Nagapattinam"
 region: "Cauvery Delta"
+winner: "Latha. T"
+winner_party: "CPI(M)"
+winner_share: 37.0
+margin: 2278
+margin_pct: 1.5
+flipped: true
 keywords: ["Kilvelur election result 2026", "Kilvelur 2026 winner", "Tamil Nadu 2026 Nagapattinam"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,23 +30,33 @@ Latha. T of CPI(M) won the Kilvelur Assembly constituency (Nagapattinam district
 
 ## Full candidate results, Kilvelur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Latha. T** | CPI(M) | 56,108 | 37.0% |
-| 2 | Senthil Pandian. P | TVK | 53,830 | 35.5% |
-| 3 | Vadivel Ravanan. S | PMK | 31,675 | 20.89% |
-| 4 | Karthika. M | NTK | 8,069 | 5.32% |
-| 5 | Surenthar. K | Puthiya Tamilagam | 563 | 0.37% |
-| 6 | Nota | NOTA | 545 | 0.36% |
-| 7 | Vedha Mukundhan | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 437 | 0.29% |
-| 8 | Jaivishnudevi. M | IND | 410 | 0.27% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Latha. T <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="CPI(M)">CPI(M)</span></td><td class="num">56,108</td><td class="num share">37.0%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Senthil Pandian. P <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">53,830</td><td class="num share">35.5%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Vadivel Ravanan. S</td><td class="pcell"><span class="pbadge" data-party="PMK">PMK</span></td><td class="num">31,675</td><td class="num share">20.89%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Karthika. M</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">8,069</td><td class="num share">5.32%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Surenthar. K</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">563</td><td class="num share">0.37%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">545</td><td class="num share">0.36%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Vedha Mukundhan</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">437</td><td class="num share">0.29%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Jaivishnudevi. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">410</td><td class="num share">0.27%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Kilvelur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | NAGAIMAALI V P | CPM | 47.55% |
-| 2026 | LATHA. T | CPI(M) | 37.0% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">NAGAIMAALI V P</td><td class="pcell"><span class="pbadge" data-party="CPM">CPM</span></td><td class="num">47.55%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">LATHA. T</td><td class="pcell"><span class="pbadge" data-party="CPI(M)">CPI(M)</span></td><td class="num">37.0%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -10.55 percentage points in the winning vote share.
 

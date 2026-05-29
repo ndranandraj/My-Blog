@@ -8,6 +8,12 @@ constituency: "Tenkasi"
 ac_no: 222
 district: "Tirunelveli"
 region: "Deep South"
+winner: "Dr.Kalai Kathiravan"
+winner_party: "DMK"
+winner_share: 33.92
+margin: 10299
+margin_pct: 4.38
+flipped: true
 keywords: ["Tenkasi election result 2026", "Tenkasi 2026 winner", "Tamil Nadu 2026 Tirunelveli"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,38 +30,48 @@ Dr.Kalai Kathiravan of DMK won the Tenkasi Assembly constituency (Tirunelveli di
 
 ## Full candidate results, Tenkasi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Dr.Kalai Kathiravan** | DMK | 79,699 | 33.92% |
-| 2 | S.Selva Mohandas Pandian | ADMK | 69,400 | 29.53% |
-| 3 | A. Rajaprakash | TVK | 55,543 | 23.64% |
-| 4 | P. Pushpalatha | NTK | 16,394 | 6.98% |
-| 5 | M.Poosa Durai | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 7,715 | 3.28% |
-| 6 | S.Thirumalai Kumar | Puthiya Tamilagam | 1,365 | 0.58% |
-| 7 | Nota | NOTA | 673 | 0.29% |
-| 8 | G. Poorana Selvan | IND | 548 | 0.23% |
-| 9 | Isaki Pandian | Bahujan Samaj Party | 518 | 0.22% |
-| 10 | S. Thangapalam | IND | 432 | 0.18% |
-| 11 | Durairaj | IND | 424 | 0.18% |
-| 12 | M. Ponnudurai | IND | 311 | 0.13% |
-| 13 | Shahul Hameed | IND | 295 | 0.13% |
-| 14 | S.Manogaran | Kamarajar Deseeya Congress | 244 | 0.1% |
-| 15 | P.Noble Krishna | IND | 239 | 0.1% |
-| 16 | Gomathi Sankar | Tamizhaga Vaazhvurimai Katchi | 234 | 0.1% |
-| 17 | R. Ramkumar | IND | 224 | 0.1% |
-| 18 | R.Krishnan | IND | 204 | 0.09% |
-| 19 | K.M.Kaliappan | IND | 130 | 0.06% |
-| 20 | K.Muthu | IND | 114 | 0.05% |
-| 21 | A.Mariappan | IND | 111 | 0.05% |
-| 22 | Ganeshan. S | IND | 90 | 0.04% |
-| 23 | R. Selvakumar | Naam Indiar Party | 80 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Dr.Kalai Kathiravan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">79,699</td><td class="num share">33.92%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">S.Selva Mohandas Pandian <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">69,400</td><td class="num share">29.53%</td></tr>
+<tr><td class="rank">3</td><td class="cand">A. Rajaprakash</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">55,543</td><td class="num share">23.64%</td></tr>
+<tr><td class="rank">4</td><td class="cand">P. Pushpalatha</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">16,394</td><td class="num share">6.98%</td></tr>
+<tr><td class="rank">5</td><td class="cand">M.Poosa Durai</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">7,715</td><td class="num share">3.28%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">S.Thirumalai Kumar</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">1,365</td><td class="num share">0.58%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">673</td><td class="num share">0.29%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">G. Poorana Selvan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">548</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Isaki Pandian</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">518</td><td class="num share">0.22%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">S. Thangapalam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">432</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Durairaj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">424</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">M. Ponnudurai</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">311</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Shahul Hameed</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">295</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">S.Manogaran</td><td class="pcell"><span class="pname">Kamarajar Deseeya Congress</span></td><td class="num">244</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">P.Noble Krishna</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">239</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Gomathi Sankar</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">234</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">R. Ramkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">224</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">R.Krishnan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">204</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">K.M.Kaliappan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">130</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">K.Muthu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">114</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">A.Mariappan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">111</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Ganeshan. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">90</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">R. Selvakumar</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">80</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Tenkasi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | PALANI NADAR.S | INC | 41.71% |
-| 2026 | DR.KALAI KATHIRAVAN | DMK | 33.92% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">PALANI NADAR.S</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">41.71%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">DR.KALAI KATHIRAVAN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">33.92%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -7.79 percentage points in the winning vote share.
 

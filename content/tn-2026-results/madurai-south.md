@@ -8,6 +8,12 @@ constituency: "Madurai South"
 ac_no: 192
 district: "Madurai"
 region: "Madurai Region"
+winner: "M.M.Gopison"
+winner_party: "TVK"
+winner_share: 44.11
+margin: 21529
+margin_pct: 15.21
+flipped: true
 keywords: ["Madurai South election result 2026", "Madurai South 2026 winner", "Tamil Nadu 2026 Madurai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,22 +30,32 @@ M.M.Gopison of TVK won the Madurai South Assembly constituency (Madurai district
 
 ## Full candidate results, Madurai South 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **M.M.Gopison** | TVK | 62,415 | 44.11% |
-| 2 | M.Boominathan | DMK | 40,886 | 28.89% |
-| 3 | Raama Sreenivasan | BJP | 31,100 | 21.98% |
-| 4 | B.M.Sumathy | NTK | 5,863 | 4.14% |
-| 5 | Nota | NOTA | 612 | 0.43% |
-| 6 | S.Iruthyaraj | Tamizhaga Vaazhvurimai Katchi | 370 | 0.26% |
-| 7 | K.Jeya | IND | 257 | 0.18% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">M.M.Gopison <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">62,415</td><td class="num share">44.11%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">M.Boominathan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">40,886</td><td class="num share">28.89%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Raama Sreenivasan</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">31,100</td><td class="num share">21.98%</td></tr>
+<tr><td class="rank">4</td><td class="cand">B.M.Sumathy</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,863</td><td class="num share">4.14%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">612</td><td class="num share">0.43%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">S.Iruthyaraj</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">370</td><td class="num share">0.26%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">K.Jeya</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">257</td><td class="num share">0.18%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Madurai South compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | BOOMINATHAN.M | DMK | 42.49% |
-| 2026 | M.M.GOPISON | TVK | 44.11% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">BOOMINATHAN.M</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">42.49%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">M.M.GOPISON</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">44.11%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +1.62 percentage points in the winning vote share.
 

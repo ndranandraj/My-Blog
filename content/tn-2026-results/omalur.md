@@ -8,6 +8,12 @@ constituency: "Omalur"
 ac_no: 84
 district: "Salem"
 region: "Kongu (West)"
+winner: "Mani. R"
+winner_party: "ADMK"
+winner_share: 41.4
+margin: 14539
+margin_pct: 5.36
+flipped: false
 keywords: ["Omalur election result 2026", "Omalur 2026 winner", "Tamil Nadu 2026 Salem"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Mani. R of ADMK won the Omalur Assembly constituency (Salem district, Kongu (Wes
 
 ## Full candidate results, Omalur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Mani. R** | ADMK | 112,246 | 41.4% |
-| 2 | Adhiyamaan. R.V | TVK | 97,707 | 36.04% |
-| 3 | Elangovan. A.R | DMDK | 46,917 | 17.3% |
-| 4 | Sivasakthi. M | NTK | 8,370 | 3.09% |
-| 5 | Gobinathan. R | IND | 1,544 | 0.57% |
-| 6 | Nota | NOTA | 1,433 | 0.53% |
-| 7 | Mayakkannan. R | IND | 629 | 0.23% |
-| 8 | Krishnamoorthy. D | Tamizhaga Vaazhvurimai Katchi | 537 | 0.2% |
-| 9 | Mohanraj. P.M | IND | 378 | 0.14% |
-| 10 | Sureshkumar. S | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 363 | 0.13% |
-| 11 | Jeganathan. A | IND | 207 | 0.08% |
-| 12 | Manokaran. A | IND | 197 | 0.07% |
-| 13 | Santhalingam. C | IND | 164 | 0.06% |
-| 14 | Arul Prakash. T | IND | 149 | 0.05% |
-| 15 | Perumal. S | IND | 142 | 0.05% |
-| 16 | Mani. V | IND | 136 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Mani. R <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">112,246</td><td class="num share">41.4%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Adhiyamaan. R.V <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">97,707</td><td class="num share">36.04%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Elangovan. A.R</td><td class="pcell"><span class="pbadge" data-party="DMDK">DMDK</span></td><td class="num">46,917</td><td class="num share">17.3%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Sivasakthi. M</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">8,370</td><td class="num share">3.09%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Gobinathan. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">1,544</td><td class="num share">0.57%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,433</td><td class="num share">0.53%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Mayakkannan. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">629</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Krishnamoorthy. D</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">537</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Mohanraj. P.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">378</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Sureshkumar. S</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">363</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Jeganathan. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">207</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Manokaran. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">197</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Santhalingam. C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">164</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Arul Prakash. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">149</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Perumal. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">142</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Mani. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">136</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Omalur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | R.MANI | ADMK | 57.22% |
-| 2026 | MANI. R | ADMK | 41.4% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">R.MANI</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">57.22%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">MANI. R</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">41.4%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -15.82 percentage points in the winning vote share.
 

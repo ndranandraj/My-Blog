@@ -8,6 +8,12 @@ constituency: "Coimbatore (South)"
 ac_no: 120
 district: "Coimbatore"
 region: "Kongu (West)"
+winner: "V Senthilbalaji"
+winner_party: "DMK"
+winner_share: 38.16
+margin: 2271
+margin_pct: 1.45
+flipped: true
 keywords: ["Coimbatore (South) election result 2026", "Coimbatore (South) 2026 winner", "Tamil Nadu 2026 Coimbatore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,47 +30,57 @@ V Senthilbalaji of DMK won the Coimbatore (South) Assembly constituency (Coimbat
 
 ## Full candidate results, Coimbatore (South) 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **V Senthilbalaji** | DMK | 59,724 | 38.16% |
-| 2 | V. Senthilkumar | TVK | 57,453 | 36.71% |
-| 3 | Amman K.Arjunan | ADMK | 31,689 | 20.25% |
-| 4 | Perarivalan. V | NTK | 5,062 | 3.23% |
-| 5 | Nota | NOTA | 759 | 0.48% |
-| 6 | J. Praveenkumar | IND | 170 | 0.11% |
-| 7 | Gokula Krishnan.S | Tamizhaga Vaazhvurimai Katchi | 158 | 0.1% |
-| 8 | M. Senthilkumar | IND | 158 | 0.1% |
-| 9 | B. Dhandapani | New Generation People's Party | 157 | 0.1% |
-| 10 | P. Palanivel | IND | 154 | 0.1% |
-| 11 | K. Dinesh Kumar | IND | 117 | 0.07% |
-| 12 | B. Yuvaraj | IND | 105 | 0.07% |
-| 13 | V. Senthilkumar | IND | 92 | 0.06% |
-| 14 | S. Rangaraj | IND | 67 | 0.04% |
-| 15 | Imthiyas | IND | 65 | 0.04% |
-| 16 | V. Velmurugan | IND | 48 | 0.03% |
-| 17 | Venkatachalam Paramasivam | IND | 43 | 0.03% |
-| 18 | T. Magizhan | IND | 40 | 0.03% |
-| 19 | K. Rajapandian | IND | 40 | 0.03% |
-| 20 | L. Hakkim | IND | 38 | 0.02% |
-| 21 | J. Suriyakumar | IND | 37 | 0.02% |
-| 22 | G. Maheshwaran | Tamizhaga Murpokku Makkal Katchi | 36 | 0.02% |
-| 23 | P. Sangararaj | IND | 36 | 0.02% |
-| 24 | M. John Bosco | IND | 33 | 0.02% |
-| 25 | D. Vigneshwaran | IND | 32 | 0.02% |
-| 26 | K. Vijayan | IND | 32 | 0.02% |
-| 27 | N. Abilazan | IND | 31 | 0.02% |
-| 28 | P. Manoj | IND | 28 | 0.02% |
-| 29 | K.S. Rajagopal | IND | 27 | 0.02% |
-| 30 | Gopalakrishnan | IND | 24 | 0.02% |
-| 31 | P. Kathiravan | IND | 23 | 0.01% |
-| 32 | M. Ravichandran | IND | 21 | 0.01% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">V Senthilbalaji <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">59,724</td><td class="num share">38.16%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">V. Senthilkumar <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">57,453</td><td class="num share">36.71%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Amman K.Arjunan</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">31,689</td><td class="num share">20.25%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Perarivalan. V</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,062</td><td class="num share">3.23%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">759</td><td class="num share">0.48%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">J. Praveenkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">170</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Gokula Krishnan.S</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">158</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">M. Senthilkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">158</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">B. Dhandapani</td><td class="pcell"><span class="pname">New Generation People's Party</span></td><td class="num">157</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">P. Palanivel</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">154</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">K. Dinesh Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">117</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">B. Yuvaraj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">105</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">V. Senthilkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">92</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">S. Rangaraj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">67</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Imthiyas</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">65</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">V. Velmurugan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">48</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Venkatachalam Paramasivam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">43</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">T. Magizhan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">40</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">K. Rajapandian</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">40</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">L. Hakkim</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">38</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">J. Suriyakumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">37</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">G. Maheshwaran</td><td class="pcell"><span class="pname">Tamizhaga Murpokku Makkal Katchi</span></td><td class="num">36</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">P. Sangararaj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">36</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">M. John Bosco</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">33</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">D. Vigneshwaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">32</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">K. Vijayan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">32</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">27</td><td class="cand">N. Abilazan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">31</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">28</td><td class="cand">P. Manoj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">28</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">29</td><td class="cand">K.S. Rajagopal</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">27</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">30</td><td class="cand">Gopalakrishnan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">24</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">31</td><td class="cand">P. Kathiravan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">23</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">32</td><td class="cand">M. Ravichandran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">21</td><td class="num share">0.01%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Coimbatore (South) compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | VANATHI SRINIVASAN | BJP | 34.38% |
-| 2026 | V SENTHILBALAJI | DMK | 38.16% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">VANATHI SRINIVASAN</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">34.38%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">V SENTHILBALAJI</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">38.16%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +3.78 percentage points in the winning vote share.
 

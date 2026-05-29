@@ -8,6 +8,12 @@ constituency: "Ramanathapuram"
 ac_no: 211
 district: "Ramanathapuram"
 region: "Deep South"
+winner: "Katharbatcha Muthuramalingam"
+winner_party: "DMK"
+winner_share: 37.52
+margin: 12459
+margin_pct: 5.24
+flipped: false
 keywords: ["Ramanathapuram election result 2026", "Ramanathapuram 2026 winner", "Tamil Nadu 2026 Ramanathapuram"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Katharbatcha Muthuramalingam of DMK won the Ramanathapuram Assembly constituency
 
 ## Full candidate results, Ramanathapuram 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Katharbatcha Muthuramalingam** | DMK | 89,137 | 37.52% |
-| 2 | Shahul Hameed | TVK | 76,678 | 32.28% |
-| 3 | Gbs K.Nagendran | BJP | 57,730 | 24.3% |
-| 4 | S.M. Muthu Kesavan | NTK | 10,766 | 4.53% |
-| 5 | Nota | NOTA | 953 | 0.4% |
-| 6 | Dr.J. Abubakkar Sithick | Anna Puratchi Thalaivar Amma Dravida Munnetra Kazhagam | 359 | 0.15% |
-| 7 | K. Maleswaran | IND | 356 | 0.15% |
-| 8 | A. Chinna Raja | IND | 350 | 0.15% |
-| 9 | Kan Ilango | IND | 347 | 0.15% |
-| 10 | C. Parirajan | Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi | 229 | 0.1% |
-| 11 | Pullani | IND | 223 | 0.09% |
-| 12 | Karthigai Pandi | IND | 160 | 0.07% |
-| 13 | S. Murugaboopathy | Communist Party of India (Marxist-Leninist) (Liberation) | 146 | 0.06% |
-| 14 | Balakrishnan | IND | 142 | 0.06% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Katharbatcha Muthuramalingam <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">89,137</td><td class="num share">37.52%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Shahul Hameed <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">76,678</td><td class="num share">32.28%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Gbs K.Nagendran</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">57,730</td><td class="num share">24.3%</td></tr>
+<tr><td class="rank">4</td><td class="cand">S.M. Muthu Kesavan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">10,766</td><td class="num share">4.53%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">953</td><td class="num share">0.4%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Dr.J. Abubakkar Sithick</td><td class="pcell"><span class="pname">Anna Puratchi Thalaivar Amma Dravida Munnetra Kazhagam</span></td><td class="num">359</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">K. Maleswaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">356</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">A. Chinna Raja</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">350</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Kan Ilango</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">347</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">C. Parirajan</td><td class="pcell"><span class="pname">Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi</span></td><td class="num">229</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Pullani</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">223</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Karthigai Pandi</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">160</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">S. Murugaboopathy</td><td class="pcell"><span class="pname">Communist Party of India (Marxist-Leninist) (Liberation)</span></td><td class="num">146</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Balakrishnan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">142</td><td class="num share">0.06%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Ramanathapuram compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | KATHARBATCHA MUTHURAMALINGAM | DMK | 51.88% |
-| 2026 | KATHARBATCHA MUTHURAMALINGAM | DMK | 37.52% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">KATHARBATCHA MUTHURAMALINGAM</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">51.88%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">KATHARBATCHA MUTHURAMALINGAM</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">37.52%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -14.36 percentage points in the winning vote share.
 

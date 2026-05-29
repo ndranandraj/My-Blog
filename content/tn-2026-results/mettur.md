@@ -8,6 +8,12 @@ constituency: "Mettur"
 ac_no: 85
 district: "Salem"
 region: "Kongu (West)"
+winner: "Venkatachalam. G"
+winner_party: "ADMK"
+winner_share: 37.43
+margin: 19105
+margin_pct: 8.27
+flipped: true
 keywords: ["Mettur election result 2026", "Mettur 2026 winner", "Tamil Nadu 2026 Salem"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,34 +30,44 @@ Venkatachalam. G of ADMK won the Mettur Assembly constituency (Salem district, K
 
 ## Full candidate results, Mettur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Venkatachalam. G** | ADMK | 86,498 | 37.43% |
-| 2 | Midhun Chakravarthy. M | DMK | 67,393 | 29.16% |
-| 3 | Selvam. K | TVK | 65,260 | 28.24% |
-| 4 | Vidhya Veerappan | NTK | 7,109 | 3.08% |
-| 5 | Nota | NOTA | 794 | 0.34% |
-| 6 | Ramkumar. D.M | IND | 706 | 0.31% |
-| 7 | Durairaj. V | IND | 659 | 0.29% |
-| 8 | Venkatasalam. G | IND | 471 | 0.2% |
-| 9 | Periyaponnu. O | Tamizhaga Vaazhvurimai Katchi | 403 | 0.17% |
-| 10 | Dr.Padmarajan. K | IND | 390 | 0.17% |
-| 11 | Prabakaran. S | IND | 251 | 0.11% |
-| 12 | Krishnamoorthy. P | IND | 237 | 0.1% |
-| 13 | Saravanakumar. M | IND | 223 | 0.1% |
-| 14 | Murugan. P | IND | 192 | 0.08% |
-| 15 | Jaganathan. A | IND | 121 | 0.05% |
-| 16 | Velu. A | Vada Tamil Nadu Munnetra Katchi | 107 | 0.05% |
-| 17 | Chidambaram. A | IND | 104 | 0.05% |
-| 18 | Kannan. M | IND | 99 | 0.04% |
-| 19 | Kannan. R | IND | 88 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Venkatachalam. G <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">86,498</td><td class="num share">37.43%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Midhun Chakravarthy. M <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">67,393</td><td class="num share">29.16%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Selvam. K</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">65,260</td><td class="num share">28.24%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Vidhya Veerappan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">7,109</td><td class="num share">3.08%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">794</td><td class="num share">0.34%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Ramkumar. D.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">706</td><td class="num share">0.31%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Durairaj. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">659</td><td class="num share">0.29%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Venkatasalam. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">471</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Periyaponnu. O</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">403</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Dr.Padmarajan. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">390</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Prabakaran. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">251</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Krishnamoorthy. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">237</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Saravanakumar. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">223</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Murugan. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">192</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Jaganathan. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">121</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Velu. A</td><td class="pcell"><span class="pname">Vada Tamil Nadu Munnetra Katchi</span></td><td class="num">107</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Chidambaram. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">104</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Kannan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">99</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Kannan. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">88</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Mettur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SADHASIVAM.S | PMK | 44.43% |
-| 2026 | VENKATACHALAM. G | ADMK | 37.43% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SADHASIVAM.S</td><td class="pcell"><span class="pbadge" data-party="PMK">PMK</span></td><td class="num">44.43%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">VENKATACHALAM. G</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">37.43%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -7.00 percentage points in the winning vote share.
 

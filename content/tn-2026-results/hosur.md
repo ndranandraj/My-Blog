@@ -8,6 +8,12 @@ constituency: "Hosur"
 ac_no: 55
 district: "Krishnagiri"
 region: "Krishnagiri Belt"
+winner: "Balakrishnareddy. P"
+winner_party: "ADMK"
+winner_share: 39.55
+margin: 27803
+margin_pct: 10.01
+flipped: true
 keywords: ["Hosur election result 2026", "Hosur 2026 winner", "Tamil Nadu 2026 Krishnagiri"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Balakrishnareddy. P of ADMK won the Hosur Assembly constituency (Krishnagiri dis
 
 ## Full candidate results, Hosur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Balakrishnareddy. P** | ADMK | 109,867 | 39.55% |
-| 2 | Vendarkarasan.S | TVK | 82,064 | 29.54% |
-| 3 | Sathya.S.A. | DMK | 73,773 | 26.56% |
-| 4 | Stalin.R | NTK | 7,632 | 2.75% |
-| 5 | Nota | NOTA | 1,614 | 0.58% |
-| 6 | Surya. Y | Republican Party of India (Athawale) | 1,175 | 0.42% |
-| 7 | Masood.S | IND | 292 | 0.11% |
-| 8 | Rajendran.P | IND | 271 | 0.1% |
-| 9 | Ponnumani.R | Tamilar Makkal Katchi | 240 | 0.09% |
-| 10 | Mariya Francis.S | IND | 238 | 0.09% |
-| 11 | Ganesh.M | IND | 190 | 0.07% |
-| 12 | Pattabirama. C | IND | 176 | 0.06% |
-| 13 | Devappa.Y | IND | 135 | 0.05% |
-| 14 | Dr.Shanmugam.A.R. | IND | 103 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Balakrishnareddy. P <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">109,867</td><td class="num share">39.55%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Vendarkarasan.S <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">82,064</td><td class="num share">29.54%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Sathya.S.A.</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">73,773</td><td class="num share">26.56%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Stalin.R</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">7,632</td><td class="num share">2.75%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,614</td><td class="num share">0.58%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Surya. Y</td><td class="pcell"><span class="pname">Republican Party of India (Athawale)</span></td><td class="num">1,175</td><td class="num share">0.42%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Masood.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">292</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Rajendran.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">271</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Ponnumani.R</td><td class="pcell"><span class="pname">Tamilar Makkal Katchi</span></td><td class="num">240</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Mariya Francis.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">238</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Ganesh.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">190</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Pattabirama. C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">176</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Devappa.Y</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">135</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Dr.Shanmugam.A.R.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">103</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Hosur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | PRAKAASH Y | DMK | 47.65% |
-| 2026 | BALAKRISHNAREDDY. P | ADMK | 39.55% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">PRAKAASH Y</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">47.65%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">BALAKRISHNAREDDY. P</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">39.55%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -8.10 percentage points in the winning vote share.
 

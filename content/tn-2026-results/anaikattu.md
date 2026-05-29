@@ -8,6 +8,12 @@ constituency: "Anaikattu"
 ac_no: 44
 district: "Vellore"
 region: "North"
+winner: "D.Velazhagan"
+winner_party: "ADMK"
+winner_share: 35.27
+margin: 7081
+margin_pct: 3.27
+flipped: true
 keywords: ["Anaikattu election result 2026", "Anaikattu 2026 winner", "Tamil Nadu 2026 Vellore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ D.Velazhagan of ADMK won the Anaikattu Assembly constituency (Vellore district, 
 
 ## Full candidate results, Anaikattu 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **D.Velazhagan** | ADMK | 76,302 | 35.27% |
-| 2 | A.P.Nandakumar | DMK | 69,221 | 32.0% |
-| 3 | R.Velmurugan | TVK | 63,287 | 29.26% |
-| 4 | M.Ravikumar | NTK | 4,746 | 2.19% |
-| 5 | Nota | NOTA | 1,103 | 0.51% |
-| 6 | R.Saravanan | Namadhu Makkal Katchi | 351 | 0.16% |
-| 7 | K.Manoharan | IND | 319 | 0.15% |
-| 8 | V.S.Venkatesh | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 217 | 0.1% |
-| 9 | V.Vinothkanna | Tamizhaga Vaazhvurimai Katchi | 192 | 0.09% |
-| 10 | P.Jayaseelan | Puthiya Tamilagam | 166 | 0.08% |
-| 11 | R.Ramesh | IND | 152 | 0.07% |
-| 12 | M.Nandha Kumar | IND | 95 | 0.04% |
-| 13 | S.Selvamoorthy | IND | 90 | 0.04% |
-| 14 | E.Suresh | IND | 77 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">D.Velazhagan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">76,302</td><td class="num share">35.27%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">A.P.Nandakumar <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">69,221</td><td class="num share">32.0%</td></tr>
+<tr><td class="rank">3</td><td class="cand">R.Velmurugan</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">63,287</td><td class="num share">29.26%</td></tr>
+<tr><td class="rank">4</td><td class="cand">M.Ravikumar</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">4,746</td><td class="num share">2.19%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,103</td><td class="num share">0.51%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">R.Saravanan</td><td class="pcell"><span class="pname">Namadhu Makkal Katchi</span></td><td class="num">351</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">K.Manoharan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">319</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">V.S.Venkatesh</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">217</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">V.Vinothkanna</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">192</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">P.Jayaseelan</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">166</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">R.Ramesh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">152</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">M.Nandha Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">95</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">S.Selvamoorthy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">90</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">E.Suresh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">77</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Anaikattu compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | A.P.Nandakumar | DMK | 48.11% |
-| 2026 | D.VELAZHAGAN | ADMK | 35.27% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">A.P.Nandakumar</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">48.11%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">D.VELAZHAGAN</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">35.27%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -12.84 percentage points in the winning vote share.
 

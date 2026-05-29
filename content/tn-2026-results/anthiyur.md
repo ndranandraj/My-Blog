@@ -8,6 +8,12 @@ constituency: "Anthiyur"
 ac_no: 105
 district: "Erode"
 region: "Kongu (West)"
+winner: "Haribaskar.P"
+winner_party: "ADMK"
+winner_share: 32.32
+margin: 1260
+margin_pct: 0.68
+flipped: true
 keywords: ["Anthiyur election result 2026", "Anthiyur 2026 winner", "Tamil Nadu 2026 Erode"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Haribaskar.P of ADMK won the Anthiyur Assembly constituency (Erode district, Kon
 
 ## Full candidate results, Anthiyur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Haribaskar.P** | ADMK | 60,042 | 32.32% |
-| 2 | Sivabalan.M | DMK | 58,782 | 31.64% |
-| 3 | Vijay Venkatesh.M | TVK | 56,372 | 30.34% |
-| 4 | Aalangattur Anandhi | NTK | 5,287 | 2.85% |
-| 5 | Veeran.K | IND | 990 | 0.53% |
-| 6 | Dhanabal.C | IND | 782 | 0.42% |
-| 7 | Nota | NOTA | 754 | 0.41% |
-| 8 | Ramasamy.S | Samaniya Makkal Nala Katchi | 611 | 0.33% |
-| 9 | Gobal.S.C.R | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 432 | 0.23% |
-| 10 | Easwaramurthi.K | Tamizhaga Vaazhvurimai Katchi | 390 | 0.21% |
-| 11 | Kavibharathi.K | Bahujan Samaj Party | 380 | 0.2% |
-| 12 | Sankarkumar.K.A | IND | 330 | 0.18% |
-| 13 | Sheik Davood.A.M | IND | 250 | 0.13% |
-| 14 | Karthi.M | IND | 197 | 0.11% |
-| 15 | Selvi.A | IND | 176 | 0.09% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Haribaskar.P <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">60,042</td><td class="num share">32.32%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Sivabalan.M <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">58,782</td><td class="num share">31.64%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Vijay Venkatesh.M</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">56,372</td><td class="num share">30.34%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Aalangattur Anandhi</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,287</td><td class="num share">2.85%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Veeran.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">990</td><td class="num share">0.53%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Dhanabal.C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">782</td><td class="num share">0.42%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">754</td><td class="num share">0.41%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Ramasamy.S</td><td class="pcell"><span class="pname">Samaniya Makkal Nala Katchi</span></td><td class="num">611</td><td class="num share">0.33%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Gobal.S.C.R</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">432</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Easwaramurthi.K</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">390</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Kavibharathi.K</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">380</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Sankarkumar.K.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">330</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Sheik Davood.A.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">250</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Karthi.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">197</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Selvi.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">176</td><td class="num share">0.09%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Anthiyur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | VENKATACHALAM.A.G | DMK | 44.84% |
-| 2026 | HARIBASKAR.P | ADMK | 32.32% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">VENKATACHALAM.A.G</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">44.84%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">HARIBASKAR.P</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">32.32%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -12.52 percentage points in the winning vote share.
 

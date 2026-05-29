@@ -8,6 +8,12 @@ constituency: "Mannargudi"
 ac_no: 167
 district: "Thiruvarur"
 region: "Cauvery Delta"
+winner: "Kamaraj. S"
+winner_party: "AMMK"
+winner_share: 35.25
+margin: 1566
+margin_pct: 0.81
+flipped: true
 keywords: ["Mannargudi election result 2026", "Mannargudi 2026 winner", "Tamil Nadu 2026 Thiruvarur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Kamaraj. S of AMMK won the Mannargudi Assembly constituency (Thiruvarur district
 
 ## Full candidate results, Mannargudi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Kamaraj. S** | AMMK | 68,416 | 35.25% |
-| 2 | Rajaa.T.R.B | DMK | 66,850 | 34.44% |
-| 3 | Rajarajan.U | TVK | 44,266 | 22.81% |
-| 4 | Bharathiselvan.R | NTK | 8,240 | 4.25% |
-| 5 | Rasupillai.S | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 1,949 | 1.0% |
-| 6 | Kamaraj.A | IND | 664 | 0.34% |
-| 7 | Namasivayam.N | IND | 659 | 0.34% |
-| 8 | Govindaraj.G | Tamizhaga Vaazhvurimai Katchi | 635 | 0.33% |
-| 9 | Prabhu. S | IND | 633 | 0.33% |
-| 10 | Nota | NOTA | 405 | 0.21% |
-| 11 | Kamaraj.S | Bahujan Samaj Party | 387 | 0.2% |
-| 12 | Bharathi.B | Puthiya Tamilagam | 343 | 0.18% |
-| 13 | Arulprakash. P | IND | 285 | 0.15% |
-| 14 | Durai Arasan.K | IND | 149 | 0.08% |
-| 15 | Muthuvel.V | Tamilaga Makkal Nala Katchi | 115 | 0.06% |
-| 16 | Marimuthu.A.V.M | IND | 104 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Kamaraj. S <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="AMMK">AMMK</span></td><td class="num">68,416</td><td class="num share">35.25%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Rajaa.T.R.B <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">66,850</td><td class="num share">34.44%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Rajarajan.U</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">44,266</td><td class="num share">22.81%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Bharathiselvan.R</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">8,240</td><td class="num share">4.25%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Rasupillai.S</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">1,949</td><td class="num share">1.0%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Kamaraj.A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">664</td><td class="num share">0.34%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Namasivayam.N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">659</td><td class="num share">0.34%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Govindaraj.G</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">635</td><td class="num share">0.33%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Prabhu. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">633</td><td class="num share">0.33%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">405</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Kamaraj.S</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">387</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Bharathi.B</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">343</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Arulprakash. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">285</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Durai Arasan.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">149</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Muthuvel.V</td><td class="pcell"><span class="pname">Tamilaga Makkal Nala Katchi</span></td><td class="num">115</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Marimuthu.A.V.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">104</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Mannargudi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | RAJAA T R B | DMK | 45.11% |
-| 2026 | KAMARAJ. S | Amma Makkal Munnettra Kazagam | 35.25% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">RAJAA T R B</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">45.11%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">KAMARAJ. S</td><td class="pcell"><span class="pname">Amma Makkal Munnettra Kazagam</span></td><td class="num">35.25%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -9.86 percentage points in the winning vote share.
 

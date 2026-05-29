@@ -8,6 +8,12 @@ constituency: "Salem (South)"
 ac_no: 90
 district: "Salem"
 region: "Kongu (West)"
+winner: "Vijay Tamilan Parthiban. A"
+winner_party: "TVK"
+winner_share: 43.95
+margin: 33369
+margin_pct: 16.05
+flipped: true
 keywords: ["Salem (South) election result 2026", "Salem (South) 2026 winner", "Tamil Nadu 2026 Salem"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,35 +30,45 @@ Vijay Tamilan Parthiban. A of TVK won the Salem (South) Assembly constituency (S
 
 ## Full candidate results, Salem (South) 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Vijay Tamilan Parthiban. A** | TVK | 91,371 | 43.95% |
-| 2 | Loganathan. M | DMK | 58,002 | 27.9% |
-| 3 | Vinoth. J | ADMK | 50,216 | 24.15% |
-| 4 | Sofia. S | NTK | 5,819 | 2.8% |
-| 5 | Nota | NOTA | 745 | 0.36% |
-| 6 | Bas Madheswaran | Tamizhaga Vaazhvurimai Katchi | 407 | 0.2% |
-| 7 | Varatharajan. S.P | IND | 166 | 0.08% |
-| 8 | Loganathan. M | IND | 165 | 0.08% |
-| 9 | Ambedkar. C | IND | 158 | 0.08% |
-| 10 | Jayaraj. S | IND | 117 | 0.06% |
-| 11 | Mayakannan. N | IND | 99 | 0.05% |
-| 12 | Parthiban. A | IND | 93 | 0.04% |
-| 13 | Santhosh. S | IND | 92 | 0.04% |
-| 14 | Praveen Kumar. M | IND | 91 | 0.04% |
-| 15 | Palaniappan. M | IND | 75 | 0.04% |
-| 16 | Loganathan. M | IND | 71 | 0.03% |
-| 17 | Sumathi. P | IND | 61 | 0.03% |
-| 18 | Parthiban. V | IND | 58 | 0.03% |
-| 19 | Sundaram. R | IND | 56 | 0.03% |
-| 20 | Padmanapan. M | IND | 40 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Vijay Tamilan Parthiban. A <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">91,371</td><td class="num share">43.95%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Loganathan. M <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">58,002</td><td class="num share">27.9%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Vinoth. J</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">50,216</td><td class="num share">24.15%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Sofia. S</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,819</td><td class="num share">2.8%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">745</td><td class="num share">0.36%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Bas Madheswaran</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">407</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Varatharajan. S.P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">166</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Loganathan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">165</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Ambedkar. C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">158</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Jayaraj. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">117</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Mayakannan. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">99</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Parthiban. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">93</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Santhosh. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">92</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Praveen Kumar. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">91</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Palaniappan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">75</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Loganathan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">71</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Sumathi. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">61</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Parthiban. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">58</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Sundaram. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">56</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Padmanapan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">40</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Salem (South) compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | E.BALASUBRAMANIAN | ADMK | 48.76% |
-| 2026 | VIJAY TAMILAN PARTHIBAN. A | TVK | 43.95% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">E.BALASUBRAMANIAN</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">48.76%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">VIJAY TAMILAN PARTHIBAN. A</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">43.95%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -4.81 percentage points in the winning vote share.
 

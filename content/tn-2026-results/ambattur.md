@@ -8,6 +8,12 @@ constituency: "Ambattur"
 ac_no: 8
 district: "Thiruvallur"
 region: "Chennai & Suburbs"
+winner: "Balamurugan.G"
+winner_party: "TVK"
+winner_share: 51.29
+margin: 58781
+margin_pct: 22.61
+flipped: true
 keywords: ["Ambattur election result 2026", "Ambattur 2026 winner", "Tamil Nadu 2026 Thiruvallur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,39 +30,49 @@ Balamurugan.G of TVK won the Ambattur Assembly constituency (Thiruvallur distric
 
 ## Full candidate results, Ambattur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Balamurugan.G** | TVK | 133,339 | 51.29% |
-| 2 | Dr A.P. Poornima | DMK | 74,558 | 28.68% |
-| 3 | K.N. Sekar | PMK | 35,997 | 13.85% |
-| 4 | Silambarasan | NTK | 11,088 | 4.26% |
-| 5 | Nota | NOTA | 1,490 | 0.57% |
-| 6 | A.Kalyanasundaram | Nationalist Janshakti Party | 588 | 0.23% |
-| 7 | R.Balamurugan | IND | 493 | 0.19% |
-| 8 | Dr. J.Sailas | Bahujan Samaj Party | 443 | 0.17% |
-| 9 | Dr. S.Praveen | IND | 308 | 0.12% |
-| 10 | V. Ramkumar | India Suyarajya Party | 224 | 0.09% |
-| 11 | S. Madhavan | IND | 179 | 0.07% |
-| 12 | M.S. Arumugam | IND | 135 | 0.05% |
-| 13 | Rajkumar | Tamizhaga Vaazhvurimai Katchi | 127 | 0.05% |
-| 14 | K. Sekar | IND | 127 | 0.05% |
-| 15 | S. Janarthanan | IND | 126 | 0.05% |
-| 16 | G.P. Sekar | IND | 103 | 0.04% |
-| 17 | Palani | IND | 103 | 0.04% |
-| 18 | D.K.Meshack Kirubakaran | IND | 102 | 0.04% |
-| 19 | Jothi.M | IND | 89 | 0.03% |
-| 20 | Vinayagamoorthy.R | IND | 83 | 0.03% |
-| 21 | P. Arumugam | IND | 77 | 0.03% |
-| 22 | G. Sampath | IND | 72 | 0.03% |
-| 23 | D. Pushpa | IND | 68 | 0.03% |
-| 24 | D. Jeyaganesh | Naam Indiar Party | 67 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Balamurugan.G <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">133,339</td><td class="num share">51.29%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Dr A.P. Poornima <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">74,558</td><td class="num share">28.68%</td></tr>
+<tr><td class="rank">3</td><td class="cand">K.N. Sekar</td><td class="pcell"><span class="pbadge" data-party="PMK">PMK</span></td><td class="num">35,997</td><td class="num share">13.85%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Silambarasan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">11,088</td><td class="num share">4.26%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,490</td><td class="num share">0.57%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">A.Kalyanasundaram</td><td class="pcell"><span class="pname">Nationalist Janshakti Party</span></td><td class="num">588</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">R.Balamurugan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">493</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Dr. J.Sailas</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">443</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Dr. S.Praveen</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">308</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">V. Ramkumar</td><td class="pcell"><span class="pname">India Suyarajya Party</span></td><td class="num">224</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">S. Madhavan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">179</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">M.S. Arumugam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">135</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Rajkumar</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">127</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">K. Sekar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">127</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">S. Janarthanan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">126</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">G.P. Sekar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">103</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Palani</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">103</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">D.K.Meshack Kirubakaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">102</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Jothi.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">89</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Vinayagamoorthy.R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">83</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">P. Arumugam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">77</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">G. Sampath</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">72</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">D. Pushpa</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">68</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">D. Jeyaganesh</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">67</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Ambattur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | JOSEPH SAMUEL | DMK | 47.67% |
-| 2026 | BALAMURUGAN.G | TVK | 51.29% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">JOSEPH SAMUEL</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">47.67%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">BALAMURUGAN.G</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">51.29%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +3.62 percentage points in the winning vote share.
 

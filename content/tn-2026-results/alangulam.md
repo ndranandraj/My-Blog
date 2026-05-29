@@ -8,6 +8,12 @@ constituency: "Alangulam"
 ac_no: 223
 district: "Tirunelveli"
 region: "Deep South"
+winner: "Paul Manoj Pandian"
+winner_party: "DMK"
+winner_share: 31.32
+margin: 7798
+margin_pct: 3.53
+flipped: true
 keywords: ["Alangulam election result 2026", "Alangulam 2026 winner", "Tamil Nadu 2026 Tirunelveli"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ Paul Manoj Pandian of DMK won the Alangulam Assembly constituency (Tirunelveli d
 
 ## Full candidate results, Alangulam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Paul Manoj Pandian** | DMK | 69,170 | 31.32% |
-| 2 | K R P Prabakaran | ADMK | 61,372 | 27.79% |
-| 3 | Vibin Chakkaravarthy | TVK | 60,684 | 27.48% |
-| 4 | R Paulraj | NTK | 23,380 | 10.59% |
-| 5 | Madasamy | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 2,158 | 0.98% |
-| 6 | A Udhayakumar | Puthiya Tamilagam | 1,620 | 0.73% |
-| 7 | Nota | NOTA | 982 | 0.44% |
-| 8 | Jeyanthi | IND | 432 | 0.2% |
-| 9 | R Kotherimohideen | IND | 199 | 0.09% |
-| 10 | W Jayson | IND | 196 | 0.09% |
-| 11 | U Aravind | IND | 189 | 0.09% |
-| 12 | A Subash Chandra Bose | Thakkam Katchi | 182 | 0.08% |
-| 13 | T Marikumar | IND | 161 | 0.07% |
-| 14 | K Arunkumar | IND | 132 | 0.06% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Paul Manoj Pandian <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">69,170</td><td class="num share">31.32%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">K R P Prabakaran <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">61,372</td><td class="num share">27.79%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Vibin Chakkaravarthy</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">60,684</td><td class="num share">27.48%</td></tr>
+<tr><td class="rank">4</td><td class="cand">R Paulraj</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">23,380</td><td class="num share">10.59%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Madasamy</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">2,158</td><td class="num share">0.98%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">A Udhayakumar</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">1,620</td><td class="num share">0.73%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">982</td><td class="num share">0.44%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Jeyanthi</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">432</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">R Kotherimohideen</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">199</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">W Jayson</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">196</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">U Aravind</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">189</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">A Subash Chandra Bose</td><td class="pcell"><span class="pname">Thakkam Katchi</span></td><td class="num">182</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">T Marikumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">161</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">K Arunkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">132</td><td class="num share">0.06%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Alangulam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | PAUL MANOJ PANDIAN | ADMK | 36.44% |
-| 2026 | PAUL MANOJ PANDIAN | DMK | 31.32% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">PAUL MANOJ PANDIAN</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">36.44%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">PAUL MANOJ PANDIAN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">31.32%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -5.12 percentage points in the winning vote share.
 

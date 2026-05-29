@@ -8,6 +8,12 @@ constituency: "Kavundampalayam"
 ac_no: 117
 district: "Coimbatore"
 region: "Kongu (West)"
+winner: "Kanimozhi Santhosh"
+winner_party: "TVK"
+winner_share: 40.24
+margin: 42140
+margin_pct: 11.58
+flipped: true
 keywords: ["Kavundampalayam election result 2026", "Kavundampalayam 2026 winner", "Tamil Nadu 2026 Coimbatore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Kanimozhi Santhosh of TVK won the Kavundampalayam Assembly constituency (Coimbat
 
 ## Full candidate results, Kavundampalayam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Kanimozhi Santhosh** | TVK | 146,466 | 40.24% |
-| 2 | Arunkumar Prg | ADMK | 104,326 | 28.66% |
-| 3 | Surya Prakash K.P | INC | 90,726 | 24.93% |
-| 4 | Kalamani Jaganathan | NTK | 16,834 | 4.62% |
-| 5 | Nota | NOTA | 2,116 | 0.58% |
-| 6 | Kanimozhi.K | IND | 567 | 0.16% |
-| 7 | K.Velmurugan | Bahujan Samaj Party | 524 | 0.14% |
-| 8 | Thozhar.N.Arunkumar | Tamizhaga Vaazhvurimai Katchi | 424 | 0.12% |
-| 9 | S.Thamarai Kannan | Party for the Rights of Other backward Classes | 356 | 0.1% |
-| 10 | A.Balamurugan | IND | 340 | 0.09% |
-| 11 | M.Rajalingam | IND | 338 | 0.09% |
-| 12 | Malliga.M | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 314 | 0.09% |
-| 13 | M.John Bosco | IND | 306 | 0.08% |
-| 14 | Suriyakumar.K | IND | 235 | 0.06% |
-| 15 | V.Pushpanantham | Tamizhaga Murpokku Makkal Katchi | 119 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Kanimozhi Santhosh <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">146,466</td><td class="num share">40.24%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Arunkumar Prg <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">104,326</td><td class="num share">28.66%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Surya Prakash K.P</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">90,726</td><td class="num share">24.93%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Kalamani Jaganathan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">16,834</td><td class="num share">4.62%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">2,116</td><td class="num share">0.58%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Kanimozhi.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">567</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">K.Velmurugan</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">524</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Thozhar.N.Arunkumar</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">424</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">S.Thamarai Kannan</td><td class="pcell"><span class="pname">Party for the Rights of Other backward Classes</span></td><td class="num">356</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">A.Balamurugan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">340</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">M.Rajalingam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">338</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Malliga.M</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">314</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">M.John Bosco</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">306</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Suriyakumar.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">235</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">V.Pushpanantham</td><td class="pcell"><span class="pname">Tamizhaga Murpokku Makkal Katchi</span></td><td class="num">119</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Kavundampalayam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | G.Arunkumar | ADMK | 43.78% |
-| 2026 | KANIMOZHI SANTHOSH | TVK | 40.24% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">G.Arunkumar</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">43.78%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">KANIMOZHI SANTHOSH</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">40.24%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -3.54 percentage points in the winning vote share.
 

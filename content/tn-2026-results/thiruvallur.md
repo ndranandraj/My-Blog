@@ -8,6 +8,12 @@ constituency: "Thiruvallur"
 ac_no: 4
 district: "Thiruvallur"
 region: "Chennai & Suburbs"
+winner: "Dr. T. Arunkumar"
+winner_party: "TVK"
+winner_share: 40.71
+margin: 24760
+margin_pct: 10.94
+flipped: true
 keywords: ["Thiruvallur election result 2026", "Thiruvallur 2026 winner", "Tamil Nadu 2026 Thiruvallur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Dr. T. Arunkumar of TVK won the Thiruvallur Assembly constituency (Thiruvallur d
 
 ## Full candidate results, Thiruvallur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Dr. T. Arunkumar** | TVK | 92,190 | 40.71% |
-| 2 | V.G. Raajendran | DMK | 67,430 | 29.78% |
-| 3 | Be Vee Ramanah | ADMK | 56,562 | 24.98% |
-| 4 | K. Senthilkumar | NTK | 5,513 | 2.43% |
-| 5 | Nota | NOTA | 1,132 | 0.5% |
-| 6 | S. Rajendran | IND | 868 | 0.38% |
-| 7 | B. Rajesh Kumar | Bahujan Samaj Party | 674 | 0.3% |
-| 8 | E. Mani | Republican Party of India (Athawale) | 653 | 0.29% |
-| 9 | N. Venkatesan | Aanaithinthiya Jananayaka Pathukappu Kazhagam | 354 | 0.16% |
-| 10 | G. Rajendiran | IND | 227 | 0.1% |
-| 11 | E.Kothandan | IND | 203 | 0.09% |
-| 12 | N. Balakrishnan | IND | 186 | 0.08% |
-| 13 | N. Nagendrababu | IND | 184 | 0.08% |
-| 14 | E. Rajarathinam | Tamizhaga Vaazhvurimai Katchi | 134 | 0.06% |
-| 15 | R. Ramanan | IND | 118 | 0.05% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Dr. T. Arunkumar <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">92,190</td><td class="num share">40.71%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">V.G. Raajendran <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">67,430</td><td class="num share">29.78%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Be Vee Ramanah</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">56,562</td><td class="num share">24.98%</td></tr>
+<tr><td class="rank">4</td><td class="cand">K. Senthilkumar</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,513</td><td class="num share">2.43%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,132</td><td class="num share">0.5%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">S. Rajendran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">868</td><td class="num share">0.38%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">B. Rajesh Kumar</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">674</td><td class="num share">0.3%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">E. Mani</td><td class="pcell"><span class="pname">Republican Party of India (Athawale)</span></td><td class="num">653</td><td class="num share">0.29%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">N. Venkatesan</td><td class="pcell"><span class="pname">Aanaithinthiya Jananayaka Pathukappu Kazhagam</span></td><td class="num">354</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">G. Rajendiran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">227</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">E.Kothandan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">203</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">N. Balakrishnan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">186</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">N. Nagendrababu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">184</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">E. Rajarathinam</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">134</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">R. Ramanan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">118</td><td class="num share">0.05%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thiruvallur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | RAAJENDRAN, V.G. | DMK | 50.27% |
-| 2026 | DR. T. ARUNKUMAR | TVK | 40.71% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">RAAJENDRAN, V.G.</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">50.27%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">DR. T. ARUNKUMAR</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">40.71%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -9.56 percentage points in the winning vote share.
 

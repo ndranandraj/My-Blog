@@ -8,6 +8,12 @@ constituency: "Mudhukulathur"
 ac_no: 212
 district: "Ramanathapuram"
 region: "Deep South"
+winner: "R.S.Rajakannappan"
+winner_party: "DMK"
+winner_share: 29.39
+margin: 16598
+margin_pct: 7.17
+flipped: false
 keywords: ["Mudhukulathur election result 2026", "Mudhukulathur 2026 winner", "Tamil Nadu 2026 Ramanathapuram"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,36 +30,46 @@ R.S.Rajakannappan of DMK won the Mudhukulathur Assembly constituency (Ramanathap
 
 ## Full candidate results, Mudhukulathur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **R.S.Rajakannappan** | DMK | 68,003 | 29.39% |
-| 2 | Malarvizhi. B | TVK | 51,405 | 22.22% |
-| 3 | S.Pandi | ADMK | 47,501 | 20.53% |
-| 4 | Dr.R.Ramkumar | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 40,422 | 17.47% |
-| 5 | Chandra Prabha Jeyapal | NTK | 15,112 | 6.53% |
-| 6 | Sathiyam C.Saravanan | IND | 2,042 | 0.88% |
-| 7 | M. Irulandi | Naadaalum Makkal Katchi | 1,250 | 0.54% |
-| 8 | K.Senthil Mallar | Tamizhaga Vaazhvurimai Katchi | 1,149 | 0.5% |
-| 9 | C.Malaiselvam | Puthiya Tamilagam | 993 | 0.43% |
-| 10 | R.Moovendran | IND | 486 | 0.21% |
-| 11 | Ravi Govinthan | IND | 445 | 0.19% |
-| 12 | V.Pandi | IND | 440 | 0.19% |
-| 13 | Nota | NOTA | 429 | 0.19% |
-| 14 | G. Selvaraj | Puthiya Makkal Tamil Desam Katchi | 339 | 0.15% |
-| 15 | M.Boominathan (A) M.K.Vaiyavan | IND | 335 | 0.14% |
-| 16 | K.Murugan | IND | 208 | 0.09% |
-| 17 | K.Gangai Amaran | IND | 196 | 0.08% |
-| 18 | C.Kengusamy | IND | 166 | 0.07% |
-| 19 | M.Karuppa Samy | IND | 164 | 0.07% |
-| 20 | A. Saravanakumar | Naam Indiar Party | 148 | 0.06% |
-| 21 | K.Rajakumar | IND | 140 | 0.06% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">R.S.Rajakannappan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">68,003</td><td class="num share">29.39%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Malarvizhi. B <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">51,405</td><td class="num share">22.22%</td></tr>
+<tr><td class="rank">3</td><td class="cand">S.Pandi</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">47,501</td><td class="num share">20.53%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Dr.R.Ramkumar</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">40,422</td><td class="num share">17.47%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Chandra Prabha Jeyapal</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">15,112</td><td class="num share">6.53%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Sathiyam C.Saravanan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">2,042</td><td class="num share">0.88%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">M. Irulandi</td><td class="pcell"><span class="pname">Naadaalum Makkal Katchi</span></td><td class="num">1,250</td><td class="num share">0.54%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">K.Senthil Mallar</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">1,149</td><td class="num share">0.5%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">C.Malaiselvam</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">993</td><td class="num share">0.43%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">R.Moovendran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">486</td><td class="num share">0.21%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Ravi Govinthan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">445</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">V.Pandi</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">440</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">429</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">G. Selvaraj</td><td class="pcell"><span class="pname">Puthiya Makkal Tamil Desam Katchi</span></td><td class="num">339</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">M.Boominathan (A) M.K.Vaiyavan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">335</td><td class="num share">0.14%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">K.Murugan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">208</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">K.Gangai Amaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">196</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">C.Kengusamy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">166</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">M.Karuppa Samy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">164</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">A. Saravanakumar</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">148</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">K.Rajakumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">140</td><td class="num share">0.06%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Mudhukulathur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | R.S.RAJAKANNAPPAN | DMK | 46.06% |
-| 2026 | R.S.RAJAKANNAPPAN | DMK | 29.39% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">R.S.RAJAKANNAPPAN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">46.06%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">R.S.RAJAKANNAPPAN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">29.39%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -16.67 percentage points in the winning vote share.
 

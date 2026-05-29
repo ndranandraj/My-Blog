@@ -8,6 +8,12 @@ constituency: "Vellore"
 ac_no: 43
 district: "Vellore"
 region: "North"
+winner: "M.M.Vinoth Kannan"
+winner_party: "TVK"
+winner_share: 38.33
+margin: 6777
+margin_pct: 3.56
+flipped: true
 keywords: ["Vellore election result 2026", "Vellore 2026 winner", "Tamil Nadu 2026 Vellore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ M.M.Vinoth Kannan of TVK won the Vellore Assembly constituency (Vellore district
 
 ## Full candidate results, Vellore 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **M.M.Vinoth Kannan** | TVK | 73,032 | 38.33% |
-| 2 | P.Karthikeyan | DMK | 66,255 | 34.77% |
-| 3 | S R K Appu | ADMK | 45,458 | 23.86% |
-| 4 | A.Soniya | NTK | 3,793 | 1.99% |
-| 5 | Nota | NOTA | 757 | 0.4% |
-| 6 | K.Vimala | Naam Indiar Party | 195 | 0.1% |
-| 7 | U.Vijaya Kumar | IND | 191 | 0.1% |
-| 8 | S.M.Irshad | Tamizhaga Vaazhvurimai Katchi | 135 | 0.07% |
-| 9 | M.Vinothkumar | Anna MGR Dravida Makkal Kalgam | 131 | 0.07% |
-| 10 | S.Madhan Kumar | IND | 123 | 0.06% |
-| 11 | S.Giridhara Prasad | Party for the Rights of Other backward Classes | 103 | 0.05% |
-| 12 | S.Appu | IND | 103 | 0.05% |
-| 13 | K.M.Vinaayagam | Viro Ke Vir Indian Party | 88 | 0.05% |
-| 14 | M.Loganathan | IND | 59 | 0.03% |
-| 15 | K.Muniyappan | ALL PENSIONER'S PARTY | 55 | 0.03% |
-| 16 | S.Rajkamal | IND | 49 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">M.M.Vinoth Kannan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">73,032</td><td class="num share">38.33%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">P.Karthikeyan <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">66,255</td><td class="num share">34.77%</td></tr>
+<tr><td class="rank">3</td><td class="cand">S R K Appu</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">45,458</td><td class="num share">23.86%</td></tr>
+<tr><td class="rank">4</td><td class="cand">A.Soniya</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">3,793</td><td class="num share">1.99%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">757</td><td class="num share">0.4%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">K.Vimala</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">195</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">U.Vijaya Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">191</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">S.M.Irshad</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">135</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">M.Vinothkumar</td><td class="pcell"><span class="pname">Anna MGR Dravida Makkal Kalgam</span></td><td class="num">131</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">S.Madhan Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">123</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">S.Giridhara Prasad</td><td class="pcell"><span class="pname">Party for the Rights of Other backward Classes</span></td><td class="num">103</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">S.Appu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">103</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">K.M.Vinaayagam</td><td class="pcell"><span class="pname">Viro Ke Vir Indian Party</span></td><td class="num">88</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">M.Loganathan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">59</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">K.Muniyappan</td><td class="pcell"><span class="pname">ALL PENSIONER'S PARTY</span></td><td class="num">55</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">S.Rajkamal</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">49</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Vellore compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | Karthikeyan .P | DMK | 46.86% |
-| 2026 | M.M.VINOTH KANNAN | TVK | 38.33% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">Karthikeyan .P</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">46.86%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">M.M.VINOTH KANNAN</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">38.33%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -8.53 percentage points in the winning vote share.
 

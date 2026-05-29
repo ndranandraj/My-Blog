@@ -8,6 +8,12 @@ constituency: "Udhagamandalam"
 ac_no: 108
 district: "The nilgiris"
 region: "Kongu (West)"
+winner: "Bhojarajan.M"
+winner_party: "BJP"
+winner_share: 32.61
+margin: 976
+margin_pct: 0.66
+flipped: true
 keywords: ["Udhagamandalam election result 2026", "Udhagamandalam 2026 winner", "Tamil Nadu 2026 The nilgiris"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,22 +30,32 @@ Bhojarajan.M of BJP won the Udhagamandalam Assembly constituency (The nilgiris d
 
 ## Full candidate results, Udhagamandalam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Bhojarajan.M** | BJP | 48,488 | 32.61% |
-| 2 | Ibrahim.R | TVK | 47,512 | 31.95% |
-| 3 | Ramachandran.B | INC | 45,658 | 30.7% |
-| 4 | Ragupathy.B | NTK | 4,641 | 3.12% |
-| 5 | Nota | NOTA | 1,525 | 1.03% |
-| 6 | Manian.R | IND | 462 | 0.31% |
-| 7 | Saveetha.R | Tamizhaga Vaazhvurimai Katchi | 418 | 0.28% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Bhojarajan.M <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">48,488</td><td class="num share">32.61%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Ibrahim.R <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">47,512</td><td class="num share">31.95%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Ramachandran.B</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">45,658</td><td class="num share">30.7%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Ragupathy.B</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">4,641</td><td class="num share">3.12%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,525</td><td class="num share">1.03%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Manian.R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">462</td><td class="num share">0.31%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Saveetha.R</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">418</td><td class="num share">0.28%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Udhagamandalam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | GANESH, R. | INC | 46.44% |
-| 2026 | BHOJARAJAN.M | BJP | 32.61% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">GANESH, R.</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">46.44%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">BHOJARAJAN.M</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">32.61%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -13.83 percentage points in the winning vote share.
 

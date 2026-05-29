@@ -8,6 +8,12 @@ constituency: "Attur"
 ac_no: 82
 district: "Salem"
 region: "Kongu (West)"
+winner: "Jayasankaran. A.P."
+winner_party: "ADMK"
+winner_share: 38.81
+margin: 15318
+margin_pct: 7.35
+flipped: false
 keywords: ["Attur election result 2026", "Attur 2026 winner", "Tamil Nadu 2026 Salem"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Jayasankaran. A.P. of ADMK won the Attur Assembly constituency (Salem district, 
 
 ## Full candidate results, Attur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Jayasankaran. A.P.** | ADMK | 80,843 | 38.81% |
-| 2 | Selvabharathi. R. | TVK | 65,525 | 31.46% |
-| 3 | Arthanari. S.K. | INC | 51,896 | 24.91% |
-| 4 | Monisha Chinnadurai. | NTK | 6,532 | 3.14% |
-| 5 | Nota | NOTA | 1,031 | 0.49% |
-| 6 | Rajeshkannan. K. | IND | 511 | 0.25% |
-| 7 | Sellammal. V.M. | Bahujan Samaj Party | 412 | 0.2% |
-| 8 | Manickam. K. | IND | 256 | 0.12% |
-| 9 | Poomalai. C. | IND | 235 | 0.11% |
-| 10 | Palaniyammal. S. | Desiya Makkal Sakthi Katchi | 215 | 0.1% |
-| 11 | Selvakannan. L. | IND | 173 | 0.08% |
-| 12 | Ramesh. G. | Tamizhaga Vaazhvurimai Katchi | 172 | 0.08% |
-| 13 | Jagan. T. | IND | 158 | 0.08% |
-| 14 | Varatharaj. G. | IND | 141 | 0.07% |
-| 15 | Manimaran. A. | IND | 107 | 0.05% |
-| 16 | Manikandan. M. | IND | 89 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Jayasankaran. A.P. <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">80,843</td><td class="num share">38.81%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Selvabharathi. R. <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">65,525</td><td class="num share">31.46%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Arthanari. S.K.</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">51,896</td><td class="num share">24.91%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Monisha Chinnadurai.</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,532</td><td class="num share">3.14%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,031</td><td class="num share">0.49%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Rajeshkannan. K.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">511</td><td class="num share">0.25%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Sellammal. V.M.</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">412</td><td class="num share">0.2%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Manickam. K.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">256</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Poomalai. C.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">235</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Palaniyammal. S.</td><td class="pcell"><span class="pname">Desiya Makkal Sakthi Katchi</span></td><td class="num">215</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Selvakannan. L.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">173</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Ramesh. G.</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">172</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Jagan. T.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">158</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Varatharaj. G.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">141</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Manimaran. A.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">107</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Manikandan. M.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">89</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Attur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | JAYASANKARAN, A.P. | ADMK | 47.72% |
-| 2026 | JAYASANKARAN. A.P. | ADMK | 38.81% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">JAYASANKARAN, A.P.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">47.72%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">JAYASANKARAN. A.P.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">38.81%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -8.91 percentage points in the winning vote share.
 

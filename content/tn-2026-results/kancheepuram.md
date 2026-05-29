@@ -8,6 +8,12 @@ constituency: "Kancheepuram"
 ac_no: 37
 district: "Kancheepuram"
 region: "Chennai & Suburbs"
+winner: "R.V. Ranjithkumar"
+winner_party: "TVK"
+winner_share: 37.09
+margin: 15488
+margin_pct: 6.29
+flipped: true
 keywords: ["Kancheepuram election result 2026", "Kancheepuram 2026 winner", "Tamil Nadu 2026 Kancheepuram"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ R.V. Ranjithkumar of TVK won the Kancheepuram Assembly constituency (Kancheepura
 
 ## Full candidate results, Kancheepuram 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **R.V. Ranjithkumar** | TVK | 91,350 | 37.09% |
-| 2 | V. Somasundaram | ADMK | 75,862 | 30.8% |
-| 3 | Nithya Sugumar | DMK | 69,344 | 28.15% |
-| 4 | Vetriselvi | NTK | 6,950 | 2.82% |
-| 5 | Nota | NOTA | 1,078 | 0.44% |
-| 6 | G. Babu | IND | 364 | 0.15% |
-| 7 | M. Meganathan | IND | 286 | 0.12% |
-| 8 | M. Nandhakumar | Anti Corruption Dynamic Party | 217 | 0.09% |
-| 9 | V. Naresh | Tamizhaga Vaazhvurimai Katchi | 178 | 0.07% |
-| 10 | E. Dhakshnamoorthy | IND | 178 | 0.07% |
-| 11 | M. Balaji | IND | 138 | 0.06% |
-| 12 | P. Venkatesan | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 110 | 0.04% |
-| 13 | V. Somasundaram | IND | 78 | 0.03% |
-| 14 | Gnanamoorthy | IND | 74 | 0.03% |
-| 15 | M. Somasundaram | IND | 68 | 0.03% |
-| 16 | C. Dillibabu | IND | 42 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">R.V. Ranjithkumar <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">91,350</td><td class="num share">37.09%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">V. Somasundaram <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">75,862</td><td class="num share">30.8%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Nithya Sugumar</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">69,344</td><td class="num share">28.15%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Vetriselvi</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,950</td><td class="num share">2.82%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,078</td><td class="num share">0.44%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">G. Babu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">364</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">M. Meganathan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">286</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">M. Nandhakumar</td><td class="pcell"><span class="pname">Anti Corruption Dynamic Party</span></td><td class="num">217</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">V. Naresh</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">178</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">E. Dhakshnamoorthy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">178</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">M. Balaji</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">138</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">P. Venkatesan</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">110</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">V. Somasundaram</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">78</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Gnanamoorthy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">74</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">M. Somasundaram</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">68</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">C. Dillibabu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">42</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Kancheepuram compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | C.V.M.P. Ezhailzrasan | DMK | 44.77% |
-| 2026 | R.V. RANJITHKUMAR | TVK | 37.09% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">C.V.M.P. Ezhailzrasan</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">44.77%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">R.V. RANJITHKUMAR</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">37.09%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -7.68 percentage points in the winning vote share.
 

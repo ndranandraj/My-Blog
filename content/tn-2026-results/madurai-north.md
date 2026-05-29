@@ -8,6 +8,12 @@ constituency: "Madurai North"
 ac_no: 191
 district: "Madurai"
 region: "Madurai Region"
+winner: "A.Kallanai"
+winner_party: "TVK"
+winner_share: 45.03
+margin: 18038
+margin_pct: 11.15
+flipped: true
 keywords: ["Madurai North election result 2026", "Madurai North 2026 winner", "Tamil Nadu 2026 Madurai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,29 +30,39 @@ A.Kallanai of TVK won the Madurai North Assembly constituency (Madurai district,
 
 ## Full candidate results, Madurai North 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **A.Kallanai** | TVK | 72,853 | 45.03% |
-| 2 | G.Thalapathi | DMK | 54,815 | 33.88% |
-| 3 | P.Saravanan | ADMK | 24,982 | 15.44% |
-| 4 | V Thirunavukkarasu | NTK | 7,415 | 4.58% |
-| 5 | Nota | NOTA | 753 | 0.47% |
-| 6 | D.Mohamed Ismail | IND | 164 | 0.1% |
-| 7 | R Rajkumar | Naam Indiar Party | 138 | 0.09% |
-| 8 | A.Rajangam | IND | 135 | 0.08% |
-| 9 | M J Voltaire | Socialist Unity Centre Of India (COMMUNIST) | 122 | 0.08% |
-| 10 | M.P.Sankarapandi | IND | 122 | 0.08% |
-| 11 | P Muthusamy | IND | 101 | 0.06% |
-| 12 | C.Sathishkumar | IND | 94 | 0.06% |
-| 13 | J.Kesavarajah | IND | 82 | 0.05% |
-| 14 | N.Kuppusamy | IND | 25 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">A.Kallanai <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">72,853</td><td class="num share">45.03%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">G.Thalapathi <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">54,815</td><td class="num share">33.88%</td></tr>
+<tr><td class="rank">3</td><td class="cand">P.Saravanan</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">24,982</td><td class="num share">15.44%</td></tr>
+<tr><td class="rank">4</td><td class="cand">V Thirunavukkarasu</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">7,415</td><td class="num share">4.58%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">753</td><td class="num share">0.47%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">D.Mohamed Ismail</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">164</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">R Rajkumar</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">138</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">A.Rajangam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">135</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">M J Voltaire</td><td class="pcell"><span class="pname">Socialist Unity Centre Of India (COMMUNIST)</span></td><td class="num">122</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">M.P.Sankarapandi</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">122</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">P Muthusamy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">101</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">C.Sathishkumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">94</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">J.Kesavarajah</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">82</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">N.Kuppusamy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">25</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Madurai North compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | THALAPATHI G | DMK | 46.64% |
-| 2026 | A.KALLANAI | TVK | 45.03% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">THALAPATHI G</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">46.64%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">A.KALLANAI</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">45.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -1.61 percentage points in the winning vote share.
 

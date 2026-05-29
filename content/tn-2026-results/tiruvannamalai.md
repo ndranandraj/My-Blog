@@ -8,6 +8,12 @@ constituency: "Tiruvannamalai"
 ac_no: 63
 district: "Tiruvannamalai"
 region: "North"
+winner: "Velu. E.V"
+winner_party: "DMK"
+winner_share: 40.11
+margin: 2455
+margin_pct: 1.12
+flipped: false
 keywords: ["Tiruvannamalai election result 2026", "Tiruvannamalai 2026 winner", "Tamil Nadu 2026 Tiruvannamalai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,46 +30,56 @@ Velu. E.V of DMK won the Tiruvannamalai Assembly constituency (Tiruvannamalai di
 
 ## Full candidate results, Tiruvannamalai 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Velu. E.V** | DMK | 88,273 | 40.11% |
-| 2 | Arul Arumugam | TVK | 85,818 | 39.0% |
-| 3 | Elumalai. C | BJP | 34,280 | 15.58% |
-| 4 | Vignesh. S | NTK | 6,011 | 2.73% |
-| 5 | Nota | NOTA | 785 | 0.36% |
-| 6 | Benny Rajan. C.J | Republican Party of India (Athawale) | 627 | 0.28% |
-| 7 | Salam .M | IND | 474 | 0.22% |
-| 8 | Elumalai. A S/O Arumugam | IND | 356 | 0.16% |
-| 9 | Arul. K | IND | 325 | 0.15% |
-| 10 | Kothandapani. B | IND | 284 | 0.13% |
-| 11 | Raj. S | Bahujan Samaj Party | 281 | 0.13% |
-| 12 | Vijayakumar. S | Naadaalum Makkal Katchi | 277 | 0.13% |
-| 13 | Kannan. P | Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi | 256 | 0.12% |
-| 14 | Palani. N | IND | 219 | 0.1% |
-| 15 | Ananth. A. M | IND | 212 | 0.1% |
-| 16 | Adhithya Palanisamy. A | IND | 188 | 0.09% |
-| 17 | Arul Anand. V | IND | 169 | 0.08% |
-| 18 | Nakkiran. A | Thamizhaka Padaippalar Makkal Katchi | 135 | 0.06% |
-| 19 | Elumalai. C S/O Chinnakuzhanthai | IND | 130 | 0.06% |
-| 20 | Ramesh. V | IND | 129 | 0.06% |
-| 21 | Malli. S | Tamizhaga Vaazhvurimai Katchi | 122 | 0.06% |
-| 22 | Vignesh. M | IND | 93 | 0.04% |
-| 23 | Raja. V | IND | 91 | 0.04% |
-| 24 | Elumalai. C S/O Chinnarasu | IND | 87 | 0.04% |
-| 25 | Velu. V | Anti Corruption Dynamic Party | 81 | 0.04% |
-| 26 | Maheswari. R | IND | 77 | 0.03% |
-| 27 | Venkatesan. M | IND | 66 | 0.03% |
-| 28 | Marikkannu. E | IND | 61 | 0.03% |
-| 29 | Anbalagan. M | IND | 59 | 0.03% |
-| 30 | Velu. K | IND | 58 | 0.03% |
-| 31 | Moorthy. P | IND | 42 | 0.02% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Velu. E.V <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">88,273</td><td class="num share">40.11%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Arul Arumugam <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">85,818</td><td class="num share">39.0%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Elumalai. C</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">34,280</td><td class="num share">15.58%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Vignesh. S</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,011</td><td class="num share">2.73%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">785</td><td class="num share">0.36%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Benny Rajan. C.J</td><td class="pcell"><span class="pname">Republican Party of India (Athawale)</span></td><td class="num">627</td><td class="num share">0.28%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Salam .M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">474</td><td class="num share">0.22%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Elumalai. A S/O Arumugam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">356</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Arul. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">325</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Kothandapani. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">284</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Raj. S</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">281</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Vijayakumar. S</td><td class="pcell"><span class="pname">Naadaalum Makkal Katchi</span></td><td class="num">277</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Kannan. P</td><td class="pcell"><span class="pname">Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi</span></td><td class="num">256</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Palani. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">219</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Ananth. A. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">212</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Adhithya Palanisamy. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">188</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Arul Anand. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">169</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Nakkiran. A</td><td class="pcell"><span class="pname">Thamizhaka Padaippalar Makkal Katchi</span></td><td class="num">135</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Elumalai. C S/O Chinnakuzhanthai</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">130</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Ramesh. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">129</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Malli. S</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">122</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Vignesh. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">93</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Raja. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">91</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">Elumalai. C S/O Chinnarasu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">87</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Velu. V</td><td class="pcell"><span class="pname">Anti Corruption Dynamic Party</span></td><td class="num">81</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">Maheswari. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">77</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">27</td><td class="cand">Venkatesan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">66</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">28</td><td class="cand">Marikkannu. E</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">61</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">29</td><td class="cand">Anbalagan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">59</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">30</td><td class="cand">Velu. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">58</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">31</td><td class="cand">Moorthy. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">42</td><td class="num share">0.02%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Tiruvannamalai compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | E V VELU | DMK | 66.02% |
-| 2026 | VELU. E.V | DMK | 40.11% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">E V VELU</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">66.02%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">VELU. E.V</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">40.11%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -25.91 percentage points in the winning vote share.
 

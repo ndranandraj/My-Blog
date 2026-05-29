@@ -8,6 +8,12 @@ constituency: "Srivilliputhur"
 ac_no: 203
 district: "Virudhunagar"
 region: "Deep South"
+winner: "Karthik.A"
+winner_party: "TVK"
+winner_share: 33.93
+margin: 8581
+margin_pct: 4.44
+flipped: true
 keywords: ["Srivilliputhur election result 2026", "Srivilliputhur 2026 winner", "Tamil Nadu 2026 Virudhunagar"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Karthik.A of TVK won the Srivilliputhur Assembly constituency (Virudhunagar dist
 
 ## Full candidate results, Srivilliputhur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Karthik.A** | TVK | 65,653 | 33.93% |
-| 2 | Mahalingam.P | CPI | 57,072 | 29.5% |
-| 3 | Chandraprabha.M | ADMK | 42,839 | 22.14% |
-| 4 | Karikalapandiyan.A | NTK | 13,274 | 6.86% |
-| 5 | Dr. Shyam Krishnasamy | Puthiya Tamilagam | 9,522 | 4.92% |
-| 6 | Chandra.M | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 1,726 | 0.89% |
-| 7 | Nota | NOTA | 873 | 0.45% |
-| 8 | Devialakshmi Saranya.K | IND | 509 | 0.26% |
-| 9 | Muthuraj.U | IND | 443 | 0.23% |
-| 10 | Alaguraja T | IND | 365 | 0.19% |
-| 11 | Murugesan.S | IND | 341 | 0.18% |
-| 12 | Pandiyammal.M | IND | 340 | 0.18% |
-| 13 | Suryaprakash.R | IND | 235 | 0.12% |
-| 14 | Sudandiradoss.M | IND | 151 | 0.08% |
-| 15 | Varatharajan.A | Naam Indiar Party | 128 | 0.07% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Karthik.A <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">65,653</td><td class="num share">33.93%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Mahalingam.P <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="CPI">CPI</span></td><td class="num">57,072</td><td class="num share">29.5%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Chandraprabha.M</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">42,839</td><td class="num share">22.14%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Karikalapandiyan.A</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">13,274</td><td class="num share">6.86%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Dr. Shyam Krishnasamy</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">9,522</td><td class="num share">4.92%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Chandra.M</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">1,726</td><td class="num share">0.89%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">873</td><td class="num share">0.45%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Devialakshmi Saranya.K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">509</td><td class="num share">0.26%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Muthuraj.U</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">443</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Alaguraja T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">365</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Murugesan.S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">341</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Pandiyammal.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">340</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Suryaprakash.R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">235</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Sudandiradoss.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">151</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Varatharajan.A</td><td class="pcell"><span class="pname">Naam Indiar Party</span></td><td class="num">128</td><td class="num share">0.07%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Srivilliputhur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | MANRAJ, E.M. | ADMK | 38.09% |
-| 2026 | KARTHIK.A | TVK | 33.93% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">MANRAJ, E.M.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">38.09%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">KARTHIK.A</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">33.93%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -4.16 percentage points in the winning vote share.
 

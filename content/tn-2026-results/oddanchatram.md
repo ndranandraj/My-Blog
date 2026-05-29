@@ -8,6 +8,12 @@ constituency: "Oddanchatram"
 ac_no: 128
 district: "Dindigul"
 region: "Madurai Region"
+winner: "Sakkarapani. R"
+winner_party: "DMK"
+winner_share: 46.17
+margin: 43249
+margin_pct: 21.45
+flipped: false
 keywords: ["Oddanchatram election result 2026", "Oddanchatram 2026 winner", "Tamil Nadu 2026 Dindigul"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Sakkarapani. R of DMK won the Oddanchatram Assembly constituency (Dindigul distr
 
 ## Full candidate results, Oddanchatram 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Sakkarapani. R** | DMK | 93,099 | 46.17% |
-| 2 | Vidiyal S. Sekar | BJP | 49,850 | 24.72% |
-| 3 | Mohan. S | TVK | 49,155 | 24.38% |
-| 4 | Ragupathi. P | NTK | 5,454 | 2.71% |
-| 5 | Nota | NOTA | 1,491 | 0.74% |
-| 6 | Prabaharan. M | IND | 646 | 0.32% |
-| 7 | Murugaraj. P | Bahujan Samaj Party | 516 | 0.26% |
-| 8 | Alagiyannan. A | IND | 301 | 0.15% |
-| 9 | Nagul Prakash. A | IND | 240 | 0.12% |
-| 10 | Raghunath. K | IND | 216 | 0.11% |
-| 11 | Manikannan. A | IND | 192 | 0.1% |
-| 12 | Kumarrathinam. M | IND | 175 | 0.09% |
-| 13 | Chellamuthu. K | IND | 101 | 0.05% |
-| 14 | Ananthraj. T | IND | 99 | 0.05% |
-| 15 | Arumugam. M | IND | 89 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Sakkarapani. R <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">93,099</td><td class="num share">46.17%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Vidiyal S. Sekar <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">49,850</td><td class="num share">24.72%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Mohan. S</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">49,155</td><td class="num share">24.38%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Ragupathi. P</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,454</td><td class="num share">2.71%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,491</td><td class="num share">0.74%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Prabaharan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">646</td><td class="num share">0.32%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Murugaraj. P</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">516</td><td class="num share">0.26%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Alagiyannan. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">301</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Nagul Prakash. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">240</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Raghunath. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">216</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Manikannan. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">192</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Kumarrathinam. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">175</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Chellamuthu. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">101</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Ananthraj. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">99</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Arumugam. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">89</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Oddanchatram compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SAKKARAPANI R | DMK | 54.51% |
-| 2026 | SAKKARAPANI. R | DMK | 46.17% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SAKKARAPANI R</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">54.51%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">SAKKARAPANI. R</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">46.17%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -8.34 percentage points in the winning vote share.
 

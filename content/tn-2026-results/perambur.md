@@ -8,6 +8,12 @@ constituency: "Perambur"
 ac_no: 12
 district: "Chennai"
 region: "Chennai & Suburbs"
+winner: "C. Joseph Vijay"
+winner_party: "TVK"
+winner_share: 58.89
+margin: 53715
+margin_pct: 26.28
+flipped: true
 keywords: ["Perambur election result 2026", "Perambur 2026 winner", "Tamil Nadu 2026 Chennai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,63 +30,73 @@ C. Joseph Vijay of TVK won the Perambur Assembly constituency (Chennai district,
 
 ## Full candidate results, Perambur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **C. Joseph Vijay** | TVK | 120,365 | 58.89% |
-| 2 | R.D. Shekar | DMK | 66,650 | 32.61% |
-| 3 | M. Thilagabama | PMK | 8,561 | 4.19% |
-| 4 | S. Vetri Thamizhan | NTK | 5,114 | 2.5% |
-| 5 | Nota | NOTA | 601 | 0.29% |
-| 6 | A. Rajaram | Republican Party of India (Athawale) | 256 | 0.13% |
-| 7 | G. Ruthra Kumar | IND | 238 | 0.12% |
-| 8 | Agni Aalvar | IND | 230 | 0.11% |
-| 9 | Vijay | All India Jananayaka Makkal Kazhagam | 216 | 0.11% |
-| 10 | Vetri Vel Selvam | Bahujan Samaj Party | 174 | 0.09% |
-| 11 | V. Raji | IND | 148 | 0.07% |
-| 12 | Bowdharaj | IND | 118 | 0.06% |
-| 13 | J. Sebastin | Socialist Unity Centre Of India (COMMUNIST) | 101 | 0.05% |
-| 14 | D.V. Venugopal | Tamizhaga Vaazhvurimai Katchi | 98 | 0.05% |
-| 15 | Dr.D. Madan | IND | 95 | 0.05% |
-| 16 | K.M. Devan | Makkal Murasu Katchi | 94 | 0.05% |
-| 17 | B. Balaji | IND | 93 | 0.05% |
-| 18 | Vijay. G | IND | 90 | 0.04% |
-| 19 | Azarutheen.M | IND | 78 | 0.04% |
-| 20 | P. Thangamani | IND | 78 | 0.04% |
-| 21 | S. Joseph | IND | 77 | 0.04% |
-| 22 | Ashlin Belmen .A.S | Tamilnadu Mahatma Gandhi Makkal Katchi | 71 | 0.03% |
-| 23 | Nivetha | IND | 70 | 0.03% |
-| 24 | P. Ponraj | IND | 63 | 0.03% |
-| 25 | Dr.G. Moorthy | IND | 53 | 0.03% |
-| 26 | R. Jayaseelan | IND | 51 | 0.02% |
-| 27 | M. Geeta | Thakkam Katchi | 47 | 0.02% |
-| 28 | S. Sureshkumar | Makkalatchi Katchi | 46 | 0.02% |
-| 29 | M. Joseph | IND | 43 | 0.02% |
-| 30 | M. Kadhiravan | IND | 41 | 0.02% |
-| 31 | Dr.R. Saravana Perumal | Makkal Nalvaazhvuk Katchi | 39 | 0.02% |
-| 32 | M.I. Thahira Banu | IND | 33 | 0.02% |
-| 33 | S. Malathi | Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi | 32 | 0.02% |
-| 34 | Amala.R | IND | 32 | 0.02% |
-| 35 | Reegan Prabhu | IND | 31 | 0.02% |
-| 36 | Sivakumar.V | Tamil Telugu National Party | 30 | 0.01% |
-| 37 | H. Dhanasekar | IND | 28 | 0.01% |
-| 38 | B. Venkatesan | IND | 26 | 0.01% |
-| 39 | S. Michael | IND | 24 | 0.01% |
-| 40 | S. Rajesh Kumar | IND | 21 | 0.01% |
-| 41 | B. Sathish Kumar | IND | 19 | 0.01% |
-| 42 | Sathish.B | IND | 19 | 0.01% |
-| 43 | P. Gunasekar | IND | 18 | 0.01% |
-| 44 | S. Ramesh | IND | 17 | 0.01% |
-| 45 | E. Udhaya Kumar | IND | 16 | 0.01% |
-| 46 | P. Esakki Muthu | IND | 14 | 0.01% |
-| 47 | S. Vishnu Varthan | IND | 13 | 0.01% |
-| 48 | M. Tamilselvam | IND | 12 | 0.01% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">C. Joseph Vijay <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">120,365</td><td class="num share">58.89%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">R.D. Shekar <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">66,650</td><td class="num share">32.61%</td></tr>
+<tr><td class="rank">3</td><td class="cand">M. Thilagabama</td><td class="pcell"><span class="pbadge" data-party="PMK">PMK</span></td><td class="num">8,561</td><td class="num share">4.19%</td></tr>
+<tr><td class="rank">4</td><td class="cand">S. Vetri Thamizhan</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">5,114</td><td class="num share">2.5%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">601</td><td class="num share">0.29%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">A. Rajaram</td><td class="pcell"><span class="pname">Republican Party of India (Athawale)</span></td><td class="num">256</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">G. Ruthra Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">238</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Agni Aalvar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">230</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Vijay</td><td class="pcell"><span class="pname">All India Jananayaka Makkal Kazhagam</span></td><td class="num">216</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Vetri Vel Selvam</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">174</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">V. Raji</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">148</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Bowdharaj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">118</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">J. Sebastin</td><td class="pcell"><span class="pname">Socialist Unity Centre Of India (COMMUNIST)</span></td><td class="num">101</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">D.V. Venugopal</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">98</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Dr.D. Madan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">95</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">K.M. Devan</td><td class="pcell"><span class="pname">Makkal Murasu Katchi</span></td><td class="num">94</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">B. Balaji</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">93</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Vijay. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">90</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Azarutheen.M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">78</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">P. Thangamani</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">78</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">S. Joseph</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">77</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Ashlin Belmen .A.S</td><td class="pcell"><span class="pname">Tamilnadu Mahatma Gandhi Makkal Katchi</span></td><td class="num">71</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Nivetha</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">70</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">24</td><td class="cand">P. Ponraj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">63</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">25</td><td class="cand">Dr.G. Moorthy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">53</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">26</td><td class="cand">R. Jayaseelan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">51</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">27</td><td class="cand">M. Geeta</td><td class="pcell"><span class="pname">Thakkam Katchi</span></td><td class="num">47</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">28</td><td class="cand">S. Sureshkumar</td><td class="pcell"><span class="pname">Makkalatchi Katchi</span></td><td class="num">46</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">29</td><td class="cand">M. Joseph</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">43</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">30</td><td class="cand">M. Kadhiravan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">41</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">31</td><td class="cand">Dr.R. Saravana Perumal</td><td class="pcell"><span class="pname">Makkal Nalvaazhvuk Katchi</span></td><td class="num">39</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">32</td><td class="cand">M.I. Thahira Banu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">33</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">33</td><td class="cand">S. Malathi</td><td class="pcell"><span class="pname">Veerath Thiyagi Viswanathadoss Thozhilalarkal Katchi</span></td><td class="num">32</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">34</td><td class="cand">Amala.R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">32</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">35</td><td class="cand">Reegan Prabhu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">31</td><td class="num share">0.02%</td></tr>
+<tr class="minor"><td class="rank">36</td><td class="cand">Sivakumar.V</td><td class="pcell"><span class="pname">Tamil Telugu National Party</span></td><td class="num">30</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">37</td><td class="cand">H. Dhanasekar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">28</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">38</td><td class="cand">B. Venkatesan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">26</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">39</td><td class="cand">S. Michael</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">24</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">40</td><td class="cand">S. Rajesh Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">21</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">41</td><td class="cand">B. Sathish Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">19</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">42</td><td class="cand">Sathish.B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">19</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">43</td><td class="cand">P. Gunasekar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">18</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">44</td><td class="cand">S. Ramesh</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">17</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">45</td><td class="cand">E. Udhaya Kumar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">16</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">46</td><td class="cand">P. Esakki Muthu</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">14</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">47</td><td class="cand">S. Vishnu Varthan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">13</td><td class="num share">0.01%</td></tr>
+<tr class="minor"><td class="rank">48</td><td class="cand">M. Tamilselvam</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">12</td><td class="num share">0.01%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Perambur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SHEKAR. R.D | DMK | 52.53% |
-| 2026 | C. JOSEPH VIJAY | TVK | 58.89% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SHEKAR. R.D</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">52.53%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">C. JOSEPH VIJAY</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">58.89%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of +6.36 percentage points in the winning vote share.
 

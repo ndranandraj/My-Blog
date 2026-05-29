@@ -26,6 +26,15 @@ def slugify(s):
     return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", s.lower())).strip("-")
 
 
+def party_cell(p):
+    """Short party codes render as a colored badge (styled in custom.css by
+    data-party); long full names render as muted plain text so the badge
+    does not blow out the column."""
+    if len(p) <= 9:
+        return f'<span class="pbadge" data-party="{p}">{p}</span>'
+    return f'<span class="pname">{p}</span>'
+
+
 def load():
     per = json.load(open(DATA / "explorer_ac_2026.json"))["per_ac"]
     cand = json.load(open(DATA / "all_candidates_2026.json"))["rows"]
@@ -72,10 +81,17 @@ def build_page(ac, cands, sw):
         pp_txt = (f"a swing of {swing_pp:+.2f} percentage points in the winning "
                   f"vote share" if swing_pp is not None else "")
         swing_section = (
-            f"| Year | Winning candidate | Party | Vote share |\n"
-            f"|:---|:---|:---|---:|\n"
-            f"| 2021 | {w21['candidate']} | {w21['party']} | {w21['share']}% |\n"
-            f"| 2026 | {w26['candidate']} | {w26['party']} | {w26['share']}% |\n\n"
+            '<div class="cand-table-wrap">\n'
+            '<table class="cand-table swing-table">\n'
+            '<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th>'
+            '<th class="num">Vote share</th></tr></thead>\n<tbody>\n'
+            f'<tr><td class="yr">2021</td><td class="cand">{w21["candidate"]}</td>'
+            f'<td class="pcell">{party_cell(w21["party"])}</td>'
+            f'<td class="num">{w21["share"]}%</td></tr>\n'
+            f'<tr><td class="yr">2026</td><td class="cand">{w26["candidate"]}</td>'
+            f'<td class="pcell">{party_cell(w26["party"])}</td>'
+            f'<td class="num">{w26["share"]}%</td></tr>\n'
+            '</tbody>\n</table>\n</div>\n\n'
             f"{'The seat changed hands' if flipped else 'The same party retained the seat'}, "
             f"{pp_txt}.")
     else:
@@ -83,16 +99,36 @@ def build_page(ac, cands, sw):
         swing_kpi = ""
         swing_section = "No 2021 comparison is available for this seat."
 
-    # candidate table (sorted by position)
+    # candidate table (sorted by position) as hand-built HTML for full
+    # control of the winner highlight, party badges, and vote-share bars.
     rows = sorted(cands, key=lambda r: r["position"])
-    table = ["| # | Candidate | Party | Votes | Vote % |",
-             "|---:|:---|:---|---:|---:|"]
+    trs = []
     for r in rows:
-        mark = " **" if r.get("winner") else " "
-        cand_name = f"**{r['candidate']}**" if r.get("winner") else r["candidate"]
-        table.append(f"| {r['position']} | {cand_name} | {r['party']} | "
-                     f"{r['votes']:,} | {r['share']}% |")
-    table = "\n".join(table)
+        cls = []
+        if r.get("winner"):
+            cls.append("winner")
+        elif r["position"] == 2:
+            cls.append("runner")
+        if r["share"] < 1:
+            cls.append("minor")
+        cls_attr = f' class="{" ".join(cls)}"' if cls else ""
+        tag = ""
+        if r.get("winner"):
+            tag = ' <span class="rtag win">Winner</span>'
+        elif r["position"] == 2:
+            tag = ' <span class="rtag run">2nd</span>'
+        trs.append(
+            f'<tr{cls_attr}>'
+            f'<td class="rank">{r["position"]}</td>'
+            f'<td class="cand">{r["candidate"]}{tag}</td>'
+            f'<td class="pcell">{party_cell(r["party"])}</td>'
+            f'<td class="num">{r["votes"]:,}</td>'
+            f'<td class="num share">{r["share"]}%</td>'
+            f'</tr>')
+    table = ('<div class="cand-table-wrap">\n<table class="cand-table">\n'
+             '<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th>'
+             '<th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>\n'
+             '<tbody>\n' + "\n".join(trs) + '\n</tbody>\n</table>\n</div>')
 
     fm = f"""---
 title: "{yaml_escape(title)}"
@@ -104,6 +140,12 @@ constituency: "{yaml_escape(name)}"
 ac_no: {ac['ac_no']}
 district: "{yaml_escape(district)}"
 region: "{yaml_escape(region)}"
+winner: "{yaml_escape(winner)}"
+winner_party: "{wparty}"
+winner_share: {share}
+margin: {margin}
+margin_pct: {mpct}
+flipped: {str(bool(sw.get('flipped'))).lower() if sw else 'false'}
 keywords: ["{yaml_escape(name)} election result 2026", "{yaml_escape(name)} 2026 winner", "Tamil Nadu 2026 {yaml_escape(district)}"]
 ShowReadingTime: false
 ShowToc: false

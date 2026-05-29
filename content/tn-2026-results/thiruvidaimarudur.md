@@ -8,6 +8,12 @@ constituency: "Thiruvidaimarudur"
 ac_no: 170
 district: "Thanjavur"
 region: "Cauvery Delta"
+winner: "Govi.Chezhiaan"
+winner_party: "DMK"
+winner_share: 38.26
+margin: 14116
+margin_pct: 6.76
+flipped: false
 keywords: ["Thiruvidaimarudur election result 2026", "Thiruvidaimarudur 2026 winner", "Tamil Nadu 2026 Thanjavur"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ Govi.Chezhiaan of DMK won the Thiruvidaimarudur Assembly constituency (Thanjavur
 
 ## Full candidate results, Thiruvidaimarudur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Govi.Chezhiaan** | DMK | 79,951 | 38.26% |
-| 2 | S.Prabakaran | TVK | 65,835 | 31.51% |
-| 3 | Elamathi Subramanian | ADMK | 52,922 | 25.33% |
-| 4 | M.Divya Bharathi | NTK | 6,363 | 3.05% |
-| 5 | T.M.Puratchi Mani | Bahujan Samaj Party | 1,043 | 0.5% |
-| 6 | Nota | NOTA | 747 | 0.36% |
-| 7 | P.Manikandan | IND | 588 | 0.28% |
-| 8 | Kannaiyan. T | Communist Party of India (Marxist-Leninist) (Liberation) | 321 | 0.15% |
-| 9 | A.Viswanathan | Tamizhaga Vaazhvurimai Katchi | 273 | 0.13% |
-| 10 | Dhanasekar | IND | 266 | 0.13% |
-| 11 | L.Prabakaran | IND | 174 | 0.08% |
-| 12 | M.Tamilmaran | IND | 143 | 0.07% |
-| 13 | Selvarani. S | IND | 139 | 0.07% |
-| 14 | Keerthiga. K | IND | 95 | 0.05% |
-| 15 | Aravindaraj. R | IND | 84 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Govi.Chezhiaan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">79,951</td><td class="num share">38.26%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">S.Prabakaran <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">65,835</td><td class="num share">31.51%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Elamathi Subramanian</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">52,922</td><td class="num share">25.33%</td></tr>
+<tr><td class="rank">4</td><td class="cand">M.Divya Bharathi</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,363</td><td class="num share">3.05%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">T.M.Puratchi Mani</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">1,043</td><td class="num share">0.5%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">747</td><td class="num share">0.36%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">P.Manikandan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">588</td><td class="num share">0.28%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Kannaiyan. T</td><td class="pcell"><span class="pname">Communist Party of India (Marxist-Leninist) (Liberation)</span></td><td class="num">321</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">A.Viswanathan</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">273</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Dhanasekar</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">266</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">L.Prabakaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">174</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">M.Tamilmaran</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">143</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Selvarani. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">139</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Keerthiga. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">95</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Aravindaraj. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">84</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Thiruvidaimarudur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | CHEZHIAAN,  GOVI. | DMK | 48.26% |
-| 2026 | GOVI.CHEZHIAAN | DMK | 38.26% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">CHEZHIAAN,  GOVI.</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">48.26%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">GOVI.CHEZHIAAN</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">38.26%</td></tr>
+</tbody>
+</table>
+</div>
 
 The same party retained the seat, a swing of -10.00 percentage points in the winning vote share.
 

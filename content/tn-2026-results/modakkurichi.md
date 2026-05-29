@@ -8,6 +8,12 @@ constituency: "Modakkurichi"
 ac_no: 100
 district: "Erode"
 region: "Kongu (West)"
+winner: "D.Shanmugan"
+winner_party: "TVK"
+winner_share: 31.83
+margin: 2430
+margin_pct: 1.27
+flipped: true
 keywords: ["Modakkurichi election result 2026", "Modakkurichi 2026 winner", "Tamil Nadu 2026 Erode"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,30 +30,40 @@ D.Shanmugan of TVK won the Modakkurichi Assembly constituency (Erode district, K
 
 ## Full candidate results, Modakkurichi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **D.Shanmugan** | TVK | 60,715 | 31.83% |
-| 2 | S.Kirthika | BJP | 58,285 | 30.55% |
-| 3 | S.Senthilnathan | DMK | 58,236 | 30.53% |
-| 4 | M.Arunkumar | NTK | 6,723 | 3.52% |
-| 5 | R.Karthikeyan | Tamizhaga Vaazhvurimai Katchi | 2,239 | 1.17% |
-| 6 | Nota | NOTA | 925 | 0.48% |
-| 7 | R.Velusamy | IND | 918 | 0.48% |
-| 8 | K.Muniyappan | Bahujan Samaj Party | 651 | 0.34% |
-| 9 | L.Bharathi | IND | 585 | 0.31% |
-| 10 | A.Duraisamy | IND | 303 | 0.16% |
-| 11 | K.Dhanabal | IND | 284 | 0.15% |
-| 12 | A.Kathirvel | IND | 245 | 0.13% |
-| 13 | R.Natarajan | IND | 227 | 0.12% |
-| 14 | M.Ravikumar | Ganasangam Party of India | 223 | 0.12% |
-| 15 | M.Ramesh | Namathu Kongu Munnetra Kalagam | 200 | 0.1% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">D.Shanmugan <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">60,715</td><td class="num share">31.83%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">S.Kirthika <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">58,285</td><td class="num share">30.55%</td></tr>
+<tr><td class="rank">3</td><td class="cand">S.Senthilnathan</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">58,236</td><td class="num share">30.53%</td></tr>
+<tr><td class="rank">4</td><td class="cand">M.Arunkumar</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">6,723</td><td class="num share">3.52%</td></tr>
+<tr><td class="rank">5</td><td class="cand">R.Karthikeyan</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">2,239</td><td class="num share">1.17%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">925</td><td class="num share">0.48%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">R.Velusamy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">918</td><td class="num share">0.48%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">K.Muniyappan</td><td class="pcell"><span class="pname">Bahujan Samaj Party</span></td><td class="num">651</td><td class="num share">0.34%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">L.Bharathi</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">585</td><td class="num share">0.31%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">A.Duraisamy</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">303</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">K.Dhanabal</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">284</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">A.Kathirvel</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">245</td><td class="num share">0.13%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">R.Natarajan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">227</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">M.Ravikumar</td><td class="pcell"><span class="pname">Ganasangam Party of India</span></td><td class="num">223</td><td class="num share">0.12%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">M.Ramesh</td><td class="pcell"><span class="pname">Namathu Kongu Munnetra Kalagam</span></td><td class="num">200</td><td class="num share">0.1%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Modakkurichi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | SARASWATHI.C | BJP | 42.96% |
-| 2026 | D.SHANMUGAN | TVK | 31.83% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">SARASWATHI.C</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">42.96%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">D.SHANMUGAN</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">31.83%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -11.13 percentage points in the winning vote share.
 

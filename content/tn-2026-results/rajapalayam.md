@@ -8,6 +8,12 @@ constituency: "Rajapalayam"
 ac_no: 202
 district: "Virudhunagar"
 region: "Deep South"
+winner: "Jegadeshwari. K"
+winner_party: "TVK"
+winner_share: 35.81
+margin: 10605
+margin_pct: 5.79
+flipped: true
 keywords: ["Rajapalayam election result 2026", "Rajapalayam 2026 winner", "Tamil Nadu 2026 Virudhunagar"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,38 +30,48 @@ Jegadeshwari. K of TVK won the Rajapalayam Assembly constituency (Virudhunagar d
 
 ## Full candidate results, Rajapalayam 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Jegadeshwari. K** | TVK | 65,548 | 35.81% |
-| 2 | Thangapandian. S | DMK | 54,943 | 30.02% |
-| 3 | Priscilla Pandian. J | BJP | 36,318 | 19.84% |
-| 4 | Dr. Karthikeyan. T.E. | NTK | 16,972 | 9.27% |
-| 5 | Ramadevi. T | Puthiya Tamilagam | 2,544 | 1.39% |
-| 6 | Harish. A | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 1,547 | 0.85% |
-| 7 | Nasrin Banu. T | Republican Party of India (Athawale) | 1,240 | 0.68% |
-| 8 | Nota | NOTA | 753 | 0.41% |
-| 9 | Manmathan. M | IND | 414 | 0.23% |
-| 10 | Muthulakshmi. R | IND | 351 | 0.19% |
-| 11 | Thangapandi. B | IND | 304 | 0.17% |
-| 12 | Selvi. K | IND | 298 | 0.16% |
-| 13 | Jegathishwari. N | IND | 292 | 0.16% |
-| 14 | Alagumurugan. S | IND | 268 | 0.15% |
-| 15 | Balamurugan. V | IND | 203 | 0.11% |
-| 16 | Selvakumar. A | IND | 180 | 0.1% |
-| 17 | Murugan. D | IND | 171 | 0.09% |
-| 18 | Samuel Raj | IND | 140 | 0.08% |
-| 19 | Shanmugachandra Velavan. C.C | IND | 137 | 0.07% |
-| 20 | Saravanan. G | IND | 119 | 0.07% |
-| 21 | Vijendran. G | IND | 108 | 0.06% |
-| 22 | Ganesan. K | IND | 95 | 0.05% |
-| 23 | Alagupandian. A | IND | 75 | 0.04% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Jegadeshwari. K <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">65,548</td><td class="num share">35.81%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Thangapandian. S <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">54,943</td><td class="num share">30.02%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Priscilla Pandian. J</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">36,318</td><td class="num share">19.84%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Dr. Karthikeyan. T.E.</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">16,972</td><td class="num share">9.27%</td></tr>
+<tr><td class="rank">5</td><td class="cand">Ramadevi. T</td><td class="pcell"><span class="pname">Puthiya Tamilagam</span></td><td class="num">2,544</td><td class="num share">1.39%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Harish. A</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">1,547</td><td class="num share">0.85%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Nasrin Banu. T</td><td class="pcell"><span class="pname">Republican Party of India (Athawale)</span></td><td class="num">1,240</td><td class="num share">0.68%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">753</td><td class="num share">0.41%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Manmathan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">414</td><td class="num share">0.23%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Muthulakshmi. R</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">351</td><td class="num share">0.19%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Thangapandi. B</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">304</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Selvi. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">298</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Jegathishwari. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">292</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Alagumurugan. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">268</td><td class="num share">0.15%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Balamurugan. V</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">203</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Selvakumar. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">180</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">17</td><td class="cand">Murugan. D</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">171</td><td class="num share">0.09%</td></tr>
+<tr class="minor"><td class="rank">18</td><td class="cand">Samuel Raj</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">140</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">19</td><td class="cand">Shanmugachandra Velavan. C.C</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">137</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">20</td><td class="cand">Saravanan. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">119</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">21</td><td class="cand">Vijendran. G</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">108</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">22</td><td class="cand">Ganesan. K</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">95</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">23</td><td class="cand">Alagupandian. A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">75</td><td class="num share">0.04%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Rajapalayam compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | THANGAPANDIAN S. | DMK | 41.5% |
-| 2026 | JEGADESHWARI. K | TVK | 35.81% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">THANGAPANDIAN S.</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">41.5%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">JEGADESHWARI. K</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">35.81%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -5.69 percentage points in the winning vote share.
 

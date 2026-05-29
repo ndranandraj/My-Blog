@@ -8,6 +8,12 @@ constituency: "Aranthangi"
 ac_no: 183
 district: "Pudukkottai"
 region: "Central"
+winner: "Mohamed Farvas. J"
+winner_party: "TVK"
+winner_share: 40.08
+margin: 10062
+margin_pct: 5.51
+flipped: true
 keywords: ["Aranthangi election result 2026", "Aranthangi 2026 winner", "Tamil Nadu 2026 Pudukkottai"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Mohamed Farvas. J of TVK won the Aranthangi Assembly constituency (Pudukkottai d
 
 ## Full candidate results, Aranthangi 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Mohamed Farvas. J** | TVK | 73,244 | 40.08% |
-| 2 | Ramachandran . T | INC | 63,182 | 34.58% |
-| 3 | Kavitha Srikanth | BJP | 31,456 | 17.21% |
-| 4 | Muthulakshmi. S | NTK | 9,975 | 5.46% |
-| 5 | Shahul Hameed . N | IND | 798 | 0.44% |
-| 6 | Nazim Khan. M | Tamizhaga Vaazhvurimai Katchi | 774 | 0.42% |
-| 7 | Kalimuthu. P | IND | 762 | 0.42% |
-| 8 | Nota | NOTA | 580 | 0.32% |
-| 9 | Dhetchna Moorthy. Doctor. S | IND | 408 | 0.22% |
-| 10 | Abdul Jaffar. S | IND | 322 | 0.18% |
-| 11 | Murugarethinam. T | IND | 305 | 0.17% |
-| 12 | Sundar . A | IND | 293 | 0.16% |
-| 13 | Arunagiri . M | IND | 210 | 0.11% |
-| 14 | Karthikeyan. N | IND | 149 | 0.08% |
-| 15 | Aiyappan | IND | 138 | 0.08% |
-| 16 | Udaiyappan. M | IND | 134 | 0.07% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Mohamed Farvas. J <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">73,244</td><td class="num share">40.08%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">Ramachandran . T <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">63,182</td><td class="num share">34.58%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Kavitha Srikanth</td><td class="pcell"><span class="pbadge" data-party="BJP">BJP</span></td><td class="num">31,456</td><td class="num share">17.21%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Muthulakshmi. S</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">9,975</td><td class="num share">5.46%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Shahul Hameed . N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">798</td><td class="num share">0.44%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Nazim Khan. M</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">774</td><td class="num share">0.42%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Kalimuthu. P</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">762</td><td class="num share">0.42%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">580</td><td class="num share">0.32%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Dhetchna Moorthy. Doctor. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">408</td><td class="num share">0.22%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Abdul Jaffar. S</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">322</td><td class="num share">0.18%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Murugarethinam. T</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">305</td><td class="num share">0.17%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Sundar . A</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">293</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Arunagiri . M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">210</td><td class="num share">0.11%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Karthikeyan. N</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">149</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Aiyappan</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">138</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Udaiyappan. M</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">134</td><td class="num share">0.07%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Aranthangi compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | RAMACHANDRAN T | INC | 48.7% |
-| 2026 | MOHAMED FARVAS. J | TVK | 40.08% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">RAMACHANDRAN T</td><td class="pcell"><span class="pbadge" data-party="INC">INC</span></td><td class="num">48.7%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">MOHAMED FARVAS. J</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">40.08%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -8.62 percentage points in the winning vote share.
 

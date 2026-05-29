@@ -8,6 +8,12 @@ constituency: "Sulur"
 ac_no: 116
 district: "Coimbatore"
 region: "Kongu (West)"
+winner: "Nm.Sukumar"
+winner_party: "TVK"
+winner_share: 33.1
+margin: 4790
+margin_pct: 1.75
+flipped: true
 keywords: ["Sulur election result 2026", "Sulur 2026 winner", "Tamil Nadu 2026 Coimbatore"]
 ShowReadingTime: false
 ShowToc: false
@@ -24,31 +30,41 @@ Nm.Sukumar of TVK won the Sulur Assembly constituency (Coimbatore district, Kong
 
 ## Full candidate results, Sulur 2026
 
-| # | Candidate | Party | Votes | Vote % |
-|---:|:---|:---|---:|---:|
-| 1 | **Nm.Sukumar** | TVK | 90,531 | 33.1% |
-| 2 | V.P.Kandasamy | ADMK | 85,741 | 31.34% |
-| 3 | Thalapathy Murugesan | DMK | 83,654 | 30.58% |
-| 4 | Dr.S.Rajasekaran | NTK | 10,147 | 3.71% |
-| 5 | Nota | NOTA | 1,353 | 0.49% |
-| 6 | Murugesh.R. | IND | 437 | 0.16% |
-| 7 | Kanthasamy.K. | Anna Puratchi Thalaivar Amma Dravida Munnetra Kazhagam | 283 | 0.1% |
-| 8 | Kandasamy.R. | IND | 271 | 0.1% |
-| 9 | Pappa Muthulakshmi.P. | All India Puratchi Thalaivar Makkal Munnettra Kazhagam | 216 | 0.08% |
-| 10 | Suman Singh.R. | Tamizhaga Vaazhvurimai Katchi | 205 | 0.07% |
-| 11 | Palanisamy.M. | Party for the Rights of Other backward Classes | 156 | 0.06% |
-| 12 | Murugesan.N. | IND | 139 | 0.05% |
-| 13 | Nagaraj.K. | Ganasangam Party of India | 137 | 0.05% |
-| 14 | Kandasamy.A. | IND | 109 | 0.04% |
-| 15 | Kandasamy.V. | IND | 90 | 0.03% |
-| 16 | Nelson.W. | Tamilaga Makkal Nala Katchi | 75 | 0.03% |
+<div class="cand-table-wrap">
+<table class="cand-table">
+<thead><tr><th class="rank">#</th><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>
+<tbody>
+<tr class="winner"><td class="rank">1</td><td class="cand">Nm.Sukumar <span class="rtag win">Winner</span></td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">90,531</td><td class="num share">33.1%</td></tr>
+<tr class="runner"><td class="rank">2</td><td class="cand">V.P.Kandasamy <span class="rtag run">2nd</span></td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">85,741</td><td class="num share">31.34%</td></tr>
+<tr><td class="rank">3</td><td class="cand">Thalapathy Murugesan</td><td class="pcell"><span class="pbadge" data-party="DMK">DMK</span></td><td class="num">83,654</td><td class="num share">30.58%</td></tr>
+<tr><td class="rank">4</td><td class="cand">Dr.S.Rajasekaran</td><td class="pcell"><span class="pbadge" data-party="NTK">NTK</span></td><td class="num">10,147</td><td class="num share">3.71%</td></tr>
+<tr class="minor"><td class="rank">5</td><td class="cand">Nota</td><td class="pcell"><span class="pbadge" data-party="NOTA">NOTA</span></td><td class="num">1,353</td><td class="num share">0.49%</td></tr>
+<tr class="minor"><td class="rank">6</td><td class="cand">Murugesh.R.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">437</td><td class="num share">0.16%</td></tr>
+<tr class="minor"><td class="rank">7</td><td class="cand">Kanthasamy.K.</td><td class="pcell"><span class="pname">Anna Puratchi Thalaivar Amma Dravida Munnetra Kazhagam</span></td><td class="num">283</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">8</td><td class="cand">Kandasamy.R.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">271</td><td class="num share">0.1%</td></tr>
+<tr class="minor"><td class="rank">9</td><td class="cand">Pappa Muthulakshmi.P.</td><td class="pcell"><span class="pname">All India Puratchi Thalaivar Makkal Munnettra Kazhagam</span></td><td class="num">216</td><td class="num share">0.08%</td></tr>
+<tr class="minor"><td class="rank">10</td><td class="cand">Suman Singh.R.</td><td class="pcell"><span class="pname">Tamizhaga Vaazhvurimai Katchi</span></td><td class="num">205</td><td class="num share">0.07%</td></tr>
+<tr class="minor"><td class="rank">11</td><td class="cand">Palanisamy.M.</td><td class="pcell"><span class="pname">Party for the Rights of Other backward Classes</span></td><td class="num">156</td><td class="num share">0.06%</td></tr>
+<tr class="minor"><td class="rank">12</td><td class="cand">Murugesan.N.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">139</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">13</td><td class="cand">Nagaraj.K.</td><td class="pcell"><span class="pname">Ganasangam Party of India</span></td><td class="num">137</td><td class="num share">0.05%</td></tr>
+<tr class="minor"><td class="rank">14</td><td class="cand">Kandasamy.A.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">109</td><td class="num share">0.04%</td></tr>
+<tr class="minor"><td class="rank">15</td><td class="cand">Kandasamy.V.</td><td class="pcell"><span class="pbadge" data-party="IND">IND</span></td><td class="num">90</td><td class="num share">0.03%</td></tr>
+<tr class="minor"><td class="rank">16</td><td class="cand">Nelson.W.</td><td class="pcell"><span class="pname">Tamilaga Makkal Nala Katchi</span></td><td class="num">75</td><td class="num share">0.03%</td></tr>
+</tbody>
+</table>
+</div>
 
 ## How Sulur compares to 2021
 
-| Year | Winning candidate | Party | Vote share |
-|:---|:---|:---|---:|
-| 2021 | KANDASAMY V.P. | ADMK | 49.23% |
-| 2026 | NM.SUKUMAR | TVK | 33.1% |
+<div class="cand-table-wrap">
+<table class="cand-table swing-table">
+<thead><tr><th>Year</th><th>Winning candidate</th><th>Party</th><th class="num">Vote share</th></tr></thead>
+<tbody>
+<tr><td class="yr">2021</td><td class="cand">KANDASAMY V.P.</td><td class="pcell"><span class="pbadge" data-party="ADMK">ADMK</span></td><td class="num">49.23%</td></tr>
+<tr><td class="yr">2026</td><td class="cand">NM.SUKUMAR</td><td class="pcell"><span class="pbadge" data-party="TVK">TVK</span></td><td class="num">33.1%</td></tr>
+</tbody>
+</table>
+</div>
 
 The seat changed hands, a swing of -16.13 percentage points in the winning vote share.
 
