@@ -2,8 +2,8 @@
 title: "3 Crore Votes That Elected Nobody: What the Numbers Say About Tamil Nadu's Coming Election"
 date: 2026-04-16
 lastmod: 2026-04-16
-description: "A data-driven look at Tamil Nadu's three assembly elections — FPTP distortions, AIADMK's western fortress, the NTK spoiler effect, and 100 constituencies that will decide 2026."
-tags: ["elections", "tamil-nadu", "data", "politics", "analysis", "FPTP", "NTK", "DMK", "AIADMK"]
+description: "A data-driven look at Tamil Nadu's three assembly elections: FPTP distortions, AIADMK's western fortress, the NTK spoiler effect, and 100 constituencies that will decide 2026."
+tags: ["elections", "tamil-nadu", "data", "politics", "analysis", "dmk", "aiadmk"]
 categories: ["Data"]
 readingTime: true
 showToc: true

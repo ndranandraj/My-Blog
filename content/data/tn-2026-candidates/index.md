@@ -5,7 +5,7 @@ lastmod: 2026-04-23
 description: "Open dataset of all ~4,000 candidates contesting the Tamil Nadu 2026 Assembly Election, plus the 329 name-similarity match pairs across 144 constituencies used in the 'Same Name, Different Initial' investigation. Released under CC-BY-4.0."
 summary: "~4,000 candidates across 234 constituencies, scraped from the ECI Affidavit Portal. 329 name-match pairs flagged across 144 constituencies. Free to download, cite, and remix."
 keywords: ["Tamil Nadu 2026 candidates dataset", "dummy candidates CSV", "ECI affidavit portal data", "TN assembly election dataset", "namesake candidates data", "India election open data", "Tamil Nadu election 2026 candidates list"]
-tags: ["dataset", "elections", "tamil-nadu", "open-data", "2026", "data-release"]
+tags: ["data", "elections", "tamil-nadu", "2026"]
 categories: ["Data"]
 showToc: true
 TocOpen: true

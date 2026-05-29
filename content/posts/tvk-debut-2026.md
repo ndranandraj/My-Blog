@@ -1,5 +1,5 @@
 ---
-title: "TVK 233: A Debut, Mapped"
+title: "TVK 233: How Vijay's Party Won 108 Seats in Its 2026 Debut"
 date: 2026-05-04
 lastmod: 2026-05-04
 description: "Vijay's TVK won 108 of 233 contested seats with 34.92% of the vote, posting the highest seat-to-vote efficiency of any party in TN 2026. This is the regional anatomy of that result."

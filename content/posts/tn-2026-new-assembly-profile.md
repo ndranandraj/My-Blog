@@ -5,7 +5,7 @@ lastmod: 2026-05-07
 description: "The new Tamil Nadu Assembly's median MLA age is 52, twelve years younger than the cohort it replaced. 41 MLAs are under 40. 22 are women. TVK's 108 MLAs alone median 44 years old, with 13 women and a third of the bench under 40. The demographic anatomy of a generational reset."
 summary: "The 14th Tamil Nadu Assembly's median MLA is 52 years old, holds at least a Bachelor's degree, and declared roughly ₹1.5 crore in assets. TVK's median MLA is 44, against DMK's 59 and AIADMK's 57. A 13-year compression in one cycle. Here's what the new bench actually looks like."
 keywords: ["Tamil Nadu youngest assembly", "TN 2026 youngest MLAs", "youngest TVK MLAs Kamali Sabari Iyngaran", "Tamil Nadu women MLAs 2026", "TN assembly demographic profile", "TVK candidates age", "TN MLAs education levels", "Tamil Nadu 2026 women representation", "youngest MLA Tamil Nadu", "Tamil Nadu 14th assembly", "DMK AIADMK TVK age comparison"]
-tags: ["elections", "tamil-nadu", "data", "politics", "tvk", "demographics", "2026", "youth", "women", "results"]
+tags: ["elections", "tamil-nadu", "data", "politics", "tvk", "2026", "results"]
 categories: ["Data"]
 pillar: true
 readingTime: true

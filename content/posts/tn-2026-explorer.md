@@ -5,7 +5,7 @@ lastmod: 2026-05-17
 description: "An interactive dashboard for Tamil Nadu's 2026 Assembly election. 234 constituencies, 12 parties with seats, 4.93 crore votes polled. Map, party efficiency, regional anatomy, 2021 to 2026 swing, demographics, defeated incumbents, dummy near-misses, all in one page."
 summary: "The TN 2026 Explorer is the new canonical home for the 2026 election data on this site. Seven sections, one page. An interactive 234-seat map, party seat-vs-vote efficiency, a 9-region cross-party anatomy, the 2021 to 2026 swing for every seat, demographics of all 234 winners, the 196 incumbents who didn't return, and the 25 closest dummy near-misses. Companion to the five-post series."
 keywords: ["TN 2026 dashboard", "Tamil Nadu 2026 Assembly election interactive", "TN 2026 results map", "TVK 108 seats dashboard", "DMK collapse dashboard", "Tamil Nadu constituency map 2026", "TN 2026 party efficiency", "Tamil Nadu Assembly 2026 demographics", "TN 2026 swing analysis"]
-tags: ["elections", "tamil-nadu", "data", "politics", "2026", "results", "dashboard", "tvk", "dmk"]
+tags: ["elections", "tamil-nadu", "data", "politics", "2026", "results", "tvk", "dmk"]
 categories: ["Data"]
 featured: true
 readingTime: true

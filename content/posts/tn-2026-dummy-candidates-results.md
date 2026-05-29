@@ -5,7 +5,7 @@ lastmod: 2026-05-04
 description: "Three weeks ago I flagged 329 suspected dummy candidates in TN 2026. The results are in. In the cleanest test, zero seats flipped. In the noisiest test, two. Here is the full accounting."
 summary: "329 suspect pairs flagged before polling. 263 actually contested. 152 targeted majors lost. Consequential seats: 0 by the strict test, 2 by the inclusive test. And why that small number is itself the finding."
 keywords: ["dummy candidates Tamil Nadu results", "TN 2026 election dummy candidates follow-up", "dummy candidate impact analysis", "namesake candidates TN 2026 results", "TIRUKKOYILUR election margin", "PALANI election 2026 margin", "Tamil Nadu election spoilers", "EVM voter confusion Tamil Nadu"]
-tags: ["elections", "tamil-nadu", "data", "politics", "dummy-candidates", "2026", "results", "investigation"]
+tags: ["elections", "tamil-nadu", "data", "politics", "dummy-candidates", "2026", "results"]
 categories: ["Data"]
 pillar: true
 readingTime: true

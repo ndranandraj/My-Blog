@@ -3,9 +3,9 @@ title: "The Chief Minister Lost His Seat: How TVK Knocked Out 56 Sitting MLAs in
 date: 2026-05-06
 lastmod: 2026-05-06
 description: "M.K. Stalin lost Kolathur by 8,795 votes to his own former associate. He was one of 93 sitting Tamil Nadu MLAs who defended their seat in 2026 and lost. 64 of those defeats came at the hands of TVK candidates. Here is the full accounting, with the marquee names called out."
-summary: "Of the 234 MLAs who sat in the 2021 Tamil Nadu Assembly, only 56 retained their seats in 2026 — a 23.9% retention rate. M.K. Stalin lost Kolathur. PTR lost Madurai Central. Anbil Mahesh lost Thiruverambur. The cabinet is gone. Here are the 12 most decisive defeats."
+summary: "Of the 234 MLAs who sat in the 2021 Tamil Nadu Assembly, only 56 retained their seats in 2026, a 23.9% retention rate. M.K. Stalin lost Kolathur. PTR lost Madurai Central. Anbil Mahesh lost Thiruverambur. The cabinet is gone. Here are the 12 most decisive defeats."
 keywords: ["MK Stalin Kolathur defeat 2026", "Tamil Nadu Chief Minister lost seat", "TN 2026 sitting MLAs defeated", "DMK incumbents lost 2026", "Tamil Nadu cabinet ministers lost election", "Palanivel Thiaga Rajan defeated", "Anbil Mahesh Poyyamozhi lost", "TVK defeated incumbents", "Tamil Nadu 2026 assembly turnover", "Stalin loses seat to TVK", "VS Babu Kolathur winner", "TN incumbent retention rate"]
-tags: ["elections", "tamil-nadu", "data", "politics", "tvk", "dmk", "2026", "results", "stalin", "incumbents"]
+tags: ["elections", "tamil-nadu", "data", "politics", "tvk", "dmk", "2026", "results"]
 categories: ["Data"]
 pillar: true
 readingTime: true

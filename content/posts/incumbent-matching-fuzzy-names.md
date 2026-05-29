@@ -6,7 +6,7 @@ draft: true
 description: "How token-based fuzzy matching reconciled the Tamil Nadu 2026 incumbent-defeated count with the published headline numbers, and why exact match fails on Indian politician names. With Python code."
 summary: "Indian politician names drift between elections: initials swap, caste suffixes appear and disappear, transliterations vary, post-marriage name changes happen. Exact match misses most of these cases. Here is the token-based matching algorithm that recovered them, in Python."
 keywords: ["fuzzy matching candidate names python", "politician name matching across elections", "election incumbent detection algorithm", "token sort ratio python", "rapidfuzz token_set_ratio", "indian election data python", "fuzzywuzzy candidate matching", "name matching duplicate", "indian elections data cleaning", "election commission india data pipeline"]
-tags: ["data", "python", "methodology", "elections", "tamil-nadu", "tutorial", "fuzzy-matching", "name-resolution"]
+tags: ["data", "elections", "tamil-nadu", "analysis"]
 categories: ["Tech"]
 pillar: true
 readingTime: true

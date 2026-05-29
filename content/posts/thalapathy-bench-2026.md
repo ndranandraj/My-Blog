@@ -1,11 +1,11 @@
 ---
-title: "The Thalapathy Bench"
+title: "The Thalapathy Bench: 12 TVK MLAs Who Share Vijay's Name"
 date: 2026-05-14
 lastmod: 2026-05-14
 description: "Twelve of TVK's 108 MLAs in the new Tamil Nadu Assembly share the founder's name. A short note from the floor of the 2026 vote of confidence."
 summary: "Of TVK's 108 MLAs, twelve carry 'Vijay' somewhere in their name. The fan club captains have walked into the legislature, the founder's name still pinned to their own."
 keywords: ["TVK", "Tamil Nadu 2026", "Vijay", "Thalapathy", "fan club", "vote of confidence", "Tamil Nadu Assembly"]
-tags: ["TVK", "Tamil Nadu 2026", "Vijay", "Politics"]
+tags: ["tvk", "tamil-nadu", "vijay", "politics", "2026"]
 categories: ["Data"]
 readingTime: true
 image: "/images/thalapathy-bench-cover.png"

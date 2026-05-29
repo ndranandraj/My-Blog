@@ -3,7 +3,7 @@ title: "Stargazing in Joshua Tree National Park: A New Moon Night at Sky's The L
 date: 2026-04-24
 lastmod: 2026-04-24
 description: "A night of stargazing in Joshua Tree: the New Moon program at Sky's The Limit Observatory and astrophotography of M13, M51 and M101 under Bortle 3 skies in the Pinto Basin."
-tags: ["stargazing", "astrophotography", "joshua tree", "california", "travel", "dark skies", "deep sky"]
+tags: ["travel", "california"]
 categories: ["Travel", "Photography"]
 keywords: ["Joshua Tree stargazing", "Joshua Tree astrophotography", "Sky's The Limit Observatory", "New Moon Night Sky Program", "Pinto Basin dark skies", "Bortle 3 California", "M13 M51 M101 astrophotography", "Cholla Cactus Garden night sky"]
 image: "/images/joshua-tree-stargazing-cover.jpg"

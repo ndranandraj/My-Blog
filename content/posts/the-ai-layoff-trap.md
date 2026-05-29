@@ -5,7 +5,7 @@ lastmod: 2026-04-29
 description: "A new paper from Penn and BU explains why even rational companies cannot stop replacing workers with AI, and why most of the usual fixes do not work."
 summary: "Every AI layoff feels rational on its own. Together they may be marching the economy off a demand cliff. A walk through the Falk and Tsoukalas paper, in plain English."
 keywords: ["AI layoffs 2026", "AI replacing jobs", "automation tax explained", "AI demand cliff", "Falk Tsoukalas AI layoff trap", "AI economic impact", "AI prisoner's dilemma", "Red Queen automation", "future of work AI", "AI and unemployment", "AI job displacement", "tech layoffs 2026", "will AI take my job", "AI and middle management", "AI policy explained"]
-tags: ["AI", "AI-layoffs", "automation", "automation-tax", "future-of-work", "tech-layoffs", "jobs", "economics", "policy", "AI-and-jobs", "Falk-Tsoukalas", "tech"]
+tags: ["AI", "tech"]
 categories: ["Tech"]
 pillar: true
 readingTime: true

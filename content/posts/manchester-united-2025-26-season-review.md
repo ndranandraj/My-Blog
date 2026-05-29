@@ -5,7 +5,7 @@ lastmod: 2026-05-24
 description: "Manchester United's 2025/26 season was defined by a managerial implosion in January and an unlikely redemption arc that delivered third place and a Champions League return."
 summary: "From Amorim's exit to Carrick's rescue act, United's 2025/26 season was the most dramatic in years. Third place. Champions League back. A lot still to fix."
 keywords: ["Manchester United", "2025/26 season review", "Ruben Amorim", "Michael Carrick", "Bruno Fernandes", "Kobbie Mainoo", "Benjamin Sesko", "Premier League"]
-tags: ["Football", "Manchester United", "Premier League"]
+tags: ["Football"]
 categories: ["Personal"]
 readingTime: true
 showToc: false

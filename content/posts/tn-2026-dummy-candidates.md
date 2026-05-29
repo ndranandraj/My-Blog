@@ -5,7 +5,7 @@ lastmod: 2026-04-18
 description: "A data investigation into 4,000 candidates contesting the Tamil Nadu 2026 Assembly Election reveals a systematic pattern of namesake Independents deployed to split votes and confuse voters in 100+ constituencies."
 summary: "Vijay's Perambur ballot has four namesakes. Alandur has three Saravanans. Across Tamil Nadu, a data analysis of 4,000 candidates reveals how dummy candidatures are being weaponised to engineer voter confusion."
 keywords: ["dummy candidates Tamil Nadu", "TN 2026 election", "namesake candidates India", "voter confusion EVM", "Tamil Nadu assembly election 2026", "Vijay Perambur", "TVK election", "ADMK DMK dummy", "election manipulation India", "ECI affidavit portal"]
-tags: ["elections", "tamil-nadu", "data", "politics", "dummy-candidates", "2026", "DMK", "ADMK", "TVK", "Vijay", "voter-fraud"]
+tags: ["elections", "tamil-nadu", "data", "politics", "dummy-candidates", "2026", "dmk", "aiadmk", "tvk", "vijay"]
 categories: ["Data"]
 pillar: true
 readingTime: true
