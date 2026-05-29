@@ -158,6 +158,10 @@ A second post on the **demographic profile of the 234 winners** ([read it here](
 >}}
 
 <div class="explore-grid">
+<a href="/tn-2026-results/">
+  <strong>Every seat's result, in full</strong>
+  <span>All 234 constituencies: winner, party, vote share, margin, and the full candidate list for each, with a 2021 comparison.</span>
+</a>
 <a href="/posts/tvk-debut-2026/">
   <strong>TVK 233: A Debut, Mapped</strong>
   <span>The companion analysis. 108 seats, 1.32 efficiency, regional anatomy, and the stronghold-flip asymmetry.</span>

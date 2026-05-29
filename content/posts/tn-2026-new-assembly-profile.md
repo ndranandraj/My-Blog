@@ -144,6 +144,10 @@ The companion post on [the 56 sitting MLAs who were defeated](/posts/tn-2026-inc
 >}}
 
 <div class="explore-grid">
+<a href="/tn-2026-results/">
+  <strong>Every seat's result, in full</strong>
+  <span>All 234 constituencies: winner, party, vote share, margin, and the full candidate list for each, with a 2021 comparison.</span>
+</a>
 <a href="/posts/tn-2026-incumbents-defeated/">
   <strong>The Chief Minister lost his seat</strong>
   <span>The flow side of the same story. M.K. Stalin and 55 other sitting MLAs lost in 2026. 37 to TVK directly.</span>

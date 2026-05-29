@@ -167,6 +167,10 @@ The mechanism is waiting for a year where margins are narrow. 2026 was not it.
 >}}
 
 <div class="explore-grid">
+<a href="/tn-2026-results/">
+  <strong>Every seat's result, in full</strong>
+  <span>All 234 constituencies: winner, party, vote share, margin, and the full candidate list for each, with a 2021 comparison.</span>
+</a>
 <a href="/posts/tvk-debut-2026/">
   <strong>Companion post: TVK 2026 debut, mapped</strong>
   <span>The other half of the May 4 story. 108 seats, 1.32 efficiency, regional anatomy, and the 1st / 2nd / 3rd drill-downs.</span>

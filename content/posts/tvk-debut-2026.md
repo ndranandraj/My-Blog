@@ -368,6 +368,10 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
 >}}
 
 <div class="explore-grid">
+<a href="/tn-2026-results/">
+  <strong>Every seat's result, in full</strong>
+  <span>All 234 constituencies: winner, party, vote share, margin, and the full candidate list for each, with a 2021 comparison.</span>
+</a>
 <a href="/posts/tn-2026-incumbents-defeated/">
   <strong>The Chief Minister lost his seat</strong>
   <span>The deep-dive on the 56 sitting MLAs who lost. M.K. Stalin, PTR, Anbil Mahesh, Geetha Jeevan. Marquee table of every defeat.</span>

@@ -98,6 +98,10 @@ DMK is now the second-largest party in the Tamil Nadu Assembly. They will lead t
 ## Explore the data
 
 <div class="explore-grid">
+<a href="/tn-2026-results/">
+  <strong>Every seat's result, in full</strong>
+  <span>All 234 constituencies: winner, party, vote share, margin, and the full candidate list for each, with a 2021 comparison.</span>
+</a>
 <a href="/posts/tvk-debut-2026/">
   <strong>TVK 233: A Debut, Mapped</strong>
   <span>108 seats, 1.32 vote-to-seat efficiency, regional anatomy, and the +18.5 Chennai over-performance.</span>

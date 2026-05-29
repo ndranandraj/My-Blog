@@ -28,6 +28,15 @@
       {{- $priority = 0.6 -}}
       {{- $changefreq = "yearly" -}}
     {{- end -}}
+  {{- else if eq .Section "tn-2026-results" -}}
+    {{/* Constituency result pages: final data, low churn. Section hub ranks above leaves. */}}
+    {{- if .IsSection -}}
+      {{- $priority = 0.7 -}}
+      {{- $changefreq = "monthly" -}}
+    {{- else -}}
+      {{- $priority = 0.6 -}}
+      {{- $changefreq = "yearly" -}}
+    {{- end -}}
   {{- end -}}
 
   {{/* Per-page override via `sitemap.priority` / `sitemap.changefreq` frontmatter. */}}

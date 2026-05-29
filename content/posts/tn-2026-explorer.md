@@ -50,6 +50,10 @@ Seven sections in one page. An **interactive map** of every constituency, colore
 The dashboard is the data spine. The narrative analyses live in the five posts of the TN 2026 series.
 
 <div class="explore-grid">
+<a href="/tn-2026-results/">
+  <strong>Every seat's result, in full</strong>
+  <span>All 234 constituencies: winner, party, vote share, margin, and the full candidate list for each, with a 2021 comparison.</span>
+</a>
 <a href="/posts/tvk-debut-2026/">
   <strong>TVK 233: A Debut, Mapped</strong>
   <span>108 seats, 1.32 efficiency, the regional and position anatomy.</span>

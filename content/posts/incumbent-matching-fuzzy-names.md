@@ -265,6 +265,10 @@ But for elections, where the constituency is the natural unit and politicians ov
 >}}
 
 <div class="explore-grid">
+<a href="/tn-2026-results/">
+  <strong>Every seat's result, in full</strong>
+  <span>All 234 constituencies: winner, party, vote share, margin, and the full candidate list for each, with a 2021 comparison.</span>
+</a>
 <a href="/tamil-nadu-elections-2026/">
   <strong>The TN 2026 series hub</strong>
   <span>The five investigations, the dataset, the methodology, and the interactive dashboard. All in one place.</span>
