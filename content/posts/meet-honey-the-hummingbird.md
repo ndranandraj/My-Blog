@@ -3,8 +3,9 @@ title: "Meet Honey: A Hummingbird Built a Home on Our Patio"
 date: 2026-05-29
 lastmod: 2026-05-29
 description: "A tiny hummingbird named Honey built a walnut-sized nest in the Christmas lights on our patio. A short story about an uninvited guest, a nest no human could match, and learning to tiptoe."
-tags: ["personal", "nature", "backyard"]
-categories: ["Personal"]
+tags: ["hummingbird", "birds", "nature", "wildlife", "photography", "backyard", "california"]
+categories: ["Personal", "Photography", "Nature"]
+aliases: ["/honey"]
 image: "/images/honey-hummingbird-cover.jpg"
 cover:
     image: "/images/honey-hummingbird-cover.jpg"
