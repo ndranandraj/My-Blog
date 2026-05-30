@@ -62,13 +62,13 @@ enableRobotsTXT = true
   # Featured hero shown on the homepage above the latest-posts strip.
   # Remove or change to promote a different post/project.
   [params.featured]
-    kicker = "NEW · INTERACTIVE DASHBOARD"
-    title = "TN 2026 Explorer: Every Seat, Every Party, Every Region"
-    description = "234 constituencies, 12 parties with seats, 4.93 crore votes. The complete data view of Tamil Nadu's 2026 Assembly election in seven interactive sections: map, party efficiency, regional anatomy, 2021 → 2026 swing, demographics, defeated incumbents, dummy near-misses."
-    url = "/posts/tn-2026-explorer/"
+    kicker = "RESULTS · ALL 234 SEATS"
+    title = "Tamil Nadu 2026 Election Results: All 234 Constituencies"
+    description = "The complete seat-by-seat record of Tamil Nadu's 2026 Assembly election. Winner, party, vote share, margin and the full candidate list for every constituency, searchable and grouped by region, with a 2021 comparison for each seat."
+    url = "/tn-2026-results/"
     image = "/images/tn-2026-explorer-cover.png"
-    imageAlt = "TN 2026 Explorer: interactive dashboard for Tamil Nadu's 2026 Assembly election. 234 constituencies, 12 parties with seats."
-    cta = "Open the Explorer →"
+    imageAlt = "Tamil Nadu 2026 election results for all 234 constituencies, searchable and grouped by region."
+    cta = "Browse all 234 seats →"
 
   [params.assets]
     favicon = "/favicon.ico"
