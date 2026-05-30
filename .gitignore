@@ -47,6 +47,10 @@ static/images/_originals_backup/
 docs/outreach/
 outreach-assets/
 
+# Unpublished post drafts held outside content/ so Hugo never builds them
+# and git never tracks them. Move a file into content/posts/ to publish.
+drafts/
+
 # Internal Claude session files (workflow notes, not for the public repo)
 CLAUDE.md
 NOTES.md
