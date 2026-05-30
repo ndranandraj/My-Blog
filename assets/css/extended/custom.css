@@ -2785,6 +2785,11 @@ html { scroll-behavior: smooth; }
 .dark .pbadge[data-party="BJP"]   { color: #fdba74; }
 .dark .pbadge[data-party="INC"]   { color: #93c5fd; }
 .dark .pbadge[data-party="NTK"]   { color: #fcd34d; }
+.dark .pbadge[data-party="PMK"]   { color: #fbbf24; }
+.dark .pbadge[data-party="VCK"]   { color: #7dd3fc; }
+.dark .pbadge[data-party="IUML"]  { color: #5eead4; }
+.dark .pbadge[data-party="CPI"],
+.dark .pbadge[data-party="CPI(M)"]{ color: #fda4af; }
 
 /* Candidate result table — overrides the generic framed-table styling */
 .post-content .cand-table-wrap { overflow-x: auto; margin: 1.4rem 0 1.8rem; -webkit-overflow-scrolling: touch; }
