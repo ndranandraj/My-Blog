@@ -11,16 +11,24 @@
 
 {{/* The results table lives OUTSIDE .post-content so the global framed-table
      CSS (higher specificity) cannot override its width/margins/borders. */}}
-<div class="results-controls">
+{{ $groups := .Pages.GroupByParam "region" }}
+{{ $total := len .Pages }}
+
+<div class="results-controls" id="results-top">
   <input type="search" id="results-search" placeholder="Search constituency, district, winner or party…"
          aria-label="Search results" autocomplete="off">
   <p class="results-count" id="results-count" aria-live="polite"></p>
 </div>
 
-{{ $total := len .Pages }}
+<nav class="region-nav" aria-label="Jump to a region">
+  {{ range $groups }}
+  <a href="#region-{{ .Key | urlize }}">{{ .Key }}<span class="rn-count">{{ len .Pages }}</span></a>
+  {{ end }}
+</nav>
+
 <div id="results-wrap" data-total="{{ $total }}">
-  {{ range $group := (.Pages.GroupByParam "region") }}
-  <section class="region-group" data-region="{{ $group.Key }}">
+  {{ range $group := $groups }}
+  <section class="region-group" id="region-{{ $group.Key | urlize }}" data-region="{{ $group.Key }}">
     <h2>{{ $group.Key }} <span class="region-count">{{ len $group.Pages }}</span></h2>
     <div class="results-scroll">
       <table class="results-table">
@@ -50,13 +58,36 @@
         </tbody>
       </table>
     </div>
+    <div class="region-foot"><a href="#results-top">↑ Back to top</a></div>
   </section>
   {{ end }}
   <p class="results-empty" id="results-empty" hidden>No constituency matches that search.</p>
 </div>
 
 <style>
-  .results-controls { margin: 1.75rem 0 1.25rem; }
+  html { scroll-behavior: smooth; }
+  .results-controls { margin: 1.75rem 0 0.75rem; }
+
+  .region-nav {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 10px 0; margin: 0 0 1.25rem;
+    background: var(--theme);
+    border-bottom: 1px solid var(--border);
+  }
+  .region-nav a {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 11px; border-radius: 999px;
+    font-size: 0.8rem; font-weight: 600; text-decoration: none;
+    color: var(--secondary); background: var(--entry);
+    border: 1px solid var(--border); transition: color .12s, border-color .12s;
+  }
+  .region-nav a:hover { color: var(--primary); border-color: var(--secondary); }
+  .region-nav .rn-count { font-size: 0.85em; font-weight: 500; opacity: 0.7; }
+
+  .region-foot { padding: 0.5rem 1rem; border-top: 1px solid var(--border); text-align: right; }
+  .region-foot a { font-size: 0.78rem; font-weight: 600; color: var(--secondary); text-decoration: none; }
+  .region-foot a:hover { color: var(--primary); }
   #results-search {
     width: 100%; padding: 0.7rem 1rem; font-size: 1rem; box-sizing: border-box;
     border: 1px solid var(--border); border-radius: 8px;
@@ -69,6 +100,7 @@
     margin: 1.5rem 0;
     border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
     box-shadow: 0 12px 28px -24px rgba(0,0,0,0.22);
+    scroll-margin-top: 96px;
   }
   #results-wrap .region-group h2 {
     margin: 0; padding: 0.7rem 1rem; font-size: 1.05rem;
