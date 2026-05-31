@@ -1,5 +1,5 @@
 ---
-title: "How DMK Lost Tamil Nadu, Region by Region"
+title: "How DMK lost Tamil Nadu, region by region"
 date: 2026-05-16
 lastmod: 2026-05-16
 description: "DMK went from 133 seats to 59 in one cycle. The collapse was not uniform. Their strongest regions in 2021 fell the hardest. Chennai dropped from 31 wins to 2."

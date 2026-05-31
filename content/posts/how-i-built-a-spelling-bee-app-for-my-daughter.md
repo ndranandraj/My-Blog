@@ -1,5 +1,5 @@
 ---
-title: "How I Built a Spelling Bee App for My Daughter (and Why This Win Feels a Little Bit Mine Too)"
+title: "How I built a spelling bee app for my daughter (and why this win feels a little bit mine too)"
 date: 2026-04-06
 lastmod: 2026-04-06
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "TN 2026 Explorer: Every Seat, Every Party, Every Region in One Dashboard"
+title: "TN 2026 Explorer: Every seat, every party, every region in one dashboard"
 date: 2026-05-17
 lastmod: 2026-05-17
 description: "An interactive dashboard for Tamil Nadu's 2026 Assembly election. 234 constituencies, 12 parties with seats, 4.93 crore votes polled. Map, party efficiency, regional anatomy, 2021 to 2026 swing, demographics, defeated incumbents, dummy near-misses, all in one page."

@@ -1,5 +1,5 @@
 ---
-title: "The Chief Minister Lost His Seat: How TVK Knocked Out 56 Sitting MLAs in 2026"
+title: "The chief minister lost his seat: How TVK knocked out 56 sitting MLAs in 2026"
 date: 2026-05-06
 lastmod: 2026-05-06
 description: "M.K. Stalin lost Kolathur by 8,795 votes to his own former associate. He was one of 93 sitting Tamil Nadu MLAs who defended their seat in 2026 and lost. 64 of those defeats came at the hands of TVK candidates. Here is the full accounting, with the marquee names called out."

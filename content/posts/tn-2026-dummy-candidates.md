@@ -1,5 +1,5 @@
 ---
-title: "Same Name, Different Initial: The Dummy Candidate Factory in TN 2026"
+title: "Same name, different initial: The dummy candidate factory in TN 2026"
 date: 2026-04-18
 lastmod: 2026-04-18
 description: "A data investigation into 4,000 candidates contesting the Tamil Nadu 2026 Assembly Election reveals a systematic pattern of namesake Independents deployed to split votes and confuse voters in 100+ constituencies."

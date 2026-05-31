@@ -1,5 +1,5 @@
 ---
-title: "A Season of Two Halves: Manchester United 2025/26 Review"
+title: "A season of two halves: Manchester United 2025/26 review"
 date: 2026-05-24
 lastmod: 2026-05-24
 description: "Manchester United's 2025/26 season was defined by a managerial implosion in January and an unlikely redemption arc that delivered third place and a Champions League return."

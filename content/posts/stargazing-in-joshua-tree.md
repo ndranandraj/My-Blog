@@ -1,5 +1,5 @@
 ---
-title: "Stargazing in Joshua Tree National Park: A New Moon Night at Sky's The Limit and Pinto Basin"
+title: "Stargazing in Joshua Tree National Park: A new moon night at Sky's The Limit and Pinto Basin"
 date: 2026-04-24
 lastmod: 2026-04-24
 description: "A night of stargazing in Joshua Tree: the New Moon program at Sky's The Limit Observatory and astrophotography of M13, M51 and M101 under Bortle 3 skies in the Pinto Basin."

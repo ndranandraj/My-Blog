@@ -1,5 +1,5 @@
 ---
-title: "Tamil Nadu Just Elected Its Youngest, Most-Educated Assembly Ever"
+title: "Tamil Nadu just elected its youngest, most-educated assembly ever"
 date: 2026-05-07
 lastmod: 2026-05-07
 description: "The new Tamil Nadu Assembly's median MLA age is 52, twelve years younger than the cohort it replaced. 41 MLAs are under 40. 22 are women. TVK's 108 MLAs alone median 44 years old, with 13 women and a third of the bench under 40. The demographic anatomy of a generational reset."

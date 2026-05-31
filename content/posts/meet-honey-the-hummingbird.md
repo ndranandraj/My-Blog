@@ -1,5 +1,5 @@
 ---
-title: "Meet Honey: A Hummingbird Built a Home on Our Patio"
+title: "Meet Honey: A hummingbird built a home on our patio"
 date: 2026-05-29
 lastmod: 2026-05-29
 description: "A tiny hummingbird named Honey built a walnut-sized nest in the Christmas lights on our patio. A short story about an uninvited guest, a nest no human could match, and learning to tiptoe."

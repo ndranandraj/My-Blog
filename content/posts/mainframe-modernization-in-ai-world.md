@@ -1,5 +1,5 @@
 ---
-title: "Mainframe Modernization in the AI World: Why the Walls Haven't Changed"
+title: "Mainframe modernization in the AI world: Why the walls haven't changed"
 date: 2026-03-28
 lastmod: 2026-03-28
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "The AI Layoff Trap: Why Smart Companies Keep Racing Toward an Empty Stadium"
+title: "The AI layoff trap: Why smart companies keep racing toward an empty stadium"
 date: 2026-04-29
 lastmod: 2026-04-29
 description: "A new paper from Penn and BU explains why even rational companies cannot stop replacing workers with AI, and why most of the usual fixes do not work."

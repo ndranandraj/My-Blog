@@ -1,5 +1,5 @@
 ---
-title: "How Many of the 329 Dummies Actually Mattered"
+title: "How many of the 329 dummies actually mattered"
 date: 2026-05-04
 lastmod: 2026-05-04
 description: "Three weeks ago I flagged 329 suspected dummy candidates in TN 2026. The results are in. In the cleanest test, zero seats flipped. In the noisiest test, two. Here is the full accounting."
