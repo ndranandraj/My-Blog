@@ -14,7 +14,7 @@ TocOpen: false
 image: "/images/dummy-candidates-results-cover.png"
 cover:
   image: "/images/dummy-candidates-results-cover.png"
-  alt: "How Many of the 329 Dummies Actually Mattered — TN 2026 post-results analysis"
+  alt: "How Many of the 329 Dummies Actually Mattered: TN 2026 post-results analysis"
   caption: "329 flagged pairs. 263 contested. Zero strict-test consequential seats. Two near misses."
   relative: false
 ---
@@ -185,7 +185,7 @@ The mechanism is waiting for a year where margins are narrow. 2026 was not it.
 </a>
 <a href="/posts/tn-2026-dummy-candidates/">
   <strong>The original investigation</strong>
-  <span>"Same Name, Different Initial" — the pre-poll piece that flagged the 329 pairs three weeks before voting.</span>
+  <span>"Same Name, Different Initial", the pre-poll piece that flagged the 329 pairs three weeks before voting.</span>
 </a>
 <a href="/election-dashboard/">
   <strong>Full election dashboard</strong>

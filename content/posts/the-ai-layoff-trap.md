@@ -71,15 +71,15 @@ At this point, most policy conversations reach for familiar tools. The paper tes
 
 > "As a reminder, I'm in \*favor\* of universal basic income"
 >
-> — [Elon Musk (@elonmusk)](https://x.com/elonmusk/status/1286675223434141697), Jul 24, 2020
+> [Elon Musk (@elonmusk)](https://x.com/elonmusk/status/1286675223434141697), Jul 24, 2020
 
 > "There will be universal high income (not merely basic income). Everyone will have the best medical care, food, home, transport and everything else. Sustainable abundance."
 >
-> — [Elon Musk (@elonmusk)](https://x.com/elonmusk/status/1959723029531181380), May 2025
+> [Elon Musk (@elonmusk)](https://x.com/elonmusk/status/1959723029531181380), May 2025
 
 > "Universal HIGH INCOME via checks issued by the Federal government is the best way to deal with unemployment caused by AI. AI/robotics will produce goods & services far in excess of the increase in the money supply, so there will not be inflation."
 >
-> — [Elon Musk (@elonmusk)](https://x.com/elonmusk/status/2044990537145753894), April 2026
+> [Elon Musk (@elonmusk)](https://x.com/elonmusk/status/2044990537145753894), April 2026
 
 But here is the catch the paper points out: UBI does not change the incentive for a firm to automate. Companies will still race toward the cliff. They will just do it while workers receive a government-funded safety net on the way down.
 

@@ -18,7 +18,7 @@ Earlier this year, my daughter won her school Spelling Bee. Every single word.
 
 And honestly, this win feels a little bit mine too. Let me tell you why.
 
-I am a Mainframe developer. COBOL, JCL, batch processing — that has been my world for years. Web apps, mobile apps? Completely foreign territory.
+I am a Mainframe developer. COBOL, JCL, batch processing: that has been my world for years. Web apps, mobile apps? Completely foreign territory.
 
 Back in January, my daughter came home excited about her school Spelling Bee. She needed to practice. A lot. We started by looking for apps in the App Store, but nothing quite fit what we needed. Some were too basic, others were cluttered with features that got in the way. And somewhere between being a frustrated parent and a curious developer, I thought... what if I just build something for her?
 
@@ -32,13 +32,13 @@ The app reads out words at multiple speeds so she could hear every syllable, pul
 
 ## The Honest Part
 
-I could not have built this alone. Tailwind CSS, async API calls, the Web Speech API, PWA manifests — all new to me. But Claude did not just write code. It explained the reasoning behind every decision and flagged things I would never have considered. It felt less like using a tool and more like working with someone who knew what they were doing and had the patience to bring me along.
+I could not have built this alone. Tailwind CSS, async API calls, the Web Speech API, PWA manifests, all new to me. But Claude did not just write code. It explained the reasoning behind every decision and flagged things I would never have considered. It felt less like using a tool and more like working with someone who knew what they were doing and had the patience to bring me along.
 
 We built the whole thing conversationally, one feature at a time, inside a single Claude Project.
 
 ## What This Changes (and What It Doesn't)
 
-I have written before about how AI is not a magic wand — especially when it comes to complex legacy modernization, where the real challenges are organizational, not technical. I still believe that.
+I have written before about how AI is not a magic wand, especially when it comes to complex legacy modernization, where the real challenges are organizational, not technical. I still believe that.
 
 But this experience showed me the other side. When the scope is clear, the motivation is real, and you are willing to think through every decision yourself, AI can genuinely help you build something meaningful in a space you have never worked in before.
 

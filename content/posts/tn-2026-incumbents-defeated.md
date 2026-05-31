@@ -55,7 +55,7 @@ M.K. Stalin lost his Kolathur seat by 8,795 votes to V.S. Babu of TVK, his own f
 
 M.K. Stalin had won Kolathur in 2021 with **70,384 votes of margin**, a 30-point cushion against an AIADMK challenger. In 2026 he stood for re-election in the same seat. He lost by 8,795 votes to **V.S. Babu**, a 75-year-old politician from TVK with an 8th-grade education and ₹36.38 lakh in declared assets.
 
-The Babu story is the part that gets lost in the bare margin number. **V.S. Babu was M.K. Stalin's own long-time associate** — someone who had been in the DMK ecosystem before crossing to TVK to contest against the very leader he had worked with. The race was not just an outsider toppling a Chief Minister. It was a former ally walking out the door, joining the new party, and beating the man he used to work for, in his home seat.
+The Babu story is the part that gets lost in the bare margin number. **V.S. Babu was M.K. Stalin's own long-time associate**, someone who had been in the DMK ecosystem before crossing to TVK to contest against the very leader he had worked with. The race was not just an outsider toppling a Chief Minister. It was a former ally walking out the door, joining the new party, and beating the man he used to work for, in his home seat.
 
 The Kolathur result is the headline-event of TN 2026, but it is also the cleanest expression of a wider pattern. Sitting incumbents across the state, irrespective of party, age, or seniority, lost in a way that does not yield to any single explanation other than "the wave came for them and the wave was bigger than their incumbency advantage."
     
@@ -118,7 +118,7 @@ The 178 sitting MLAs who did not retain their 2021 seat split into four clean bu
 
 **11 were moved to a different seat and lost there too.** Their parties relocated them to what was hoped to be safer ground; the wave found them anyway.
 
-**7 contested a different seat and won — the only "soft landing" group.** These are the 2021 incumbents who held a place in the legislature by accepting a constituency change:
+**7 contested a different seat and won, the only "soft landing" group.** These are the 2021 incumbents who held a place in the legislature by accepting a constituency change:
 
 | 2021 seat | 2026 seat | Name | Party |
 |:---|:---|:---|:---|

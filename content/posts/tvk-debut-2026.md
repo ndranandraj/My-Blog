@@ -14,7 +14,7 @@ TocOpen: false
 image: "/images/tvk-debut-cover.png"
 cover:
   image: "/images/tvk-debut-cover.png"
-  alt: "TVK 233: A Debut, Mapped — data analysis of Vijay's Tamilaga Vettri Kazhagam in the TN 2026 Assembly Election"
+  alt: "TVK 233: A Debut, Mapped: data analysis of Vijay's Tamilaga Vettri Kazhagam in the TN 2026 Assembly Election"
   caption: "TVK won 108 of 233 contested seats. Gold = won, purple = 2nd, teal = 3rd."
   relative: false
 ---
@@ -113,7 +113,7 @@ Across the 108 wins, the **median winning margin was 8.93% of the votes polled i
 ---
 
 {{< callout title="The Chief Minister lost his seat" type="insight" >}}
-M.K. Stalin lost Kolathur to V.S. Babu of TVK, his own former associate, by 8,795 votes. He is one of **93 sitting MLAs who defended their 2021 seat and lost** in 2026. **64 of those defeats came from TVK directly.** Only 56 of the outgoing 234 incumbents retained their seats — a 23.9% retention rate, the lowest in modern TN history.
+M.K. Stalin lost Kolathur to V.S. Babu of TVK, his own former associate, by 8,795 votes. He is one of **93 sitting MLAs who defended their 2021 seat and lost** in 2026. **64 of those defeats came from TVK directly.** Only 56 of the outgoing 234 incumbents retained their seats, a 23.9% retention rate, the lowest in modern TN history.
 
 **[Read the full incumbents-defeated post →](/posts/tn-2026-incumbents-defeated/)**
 {{< /callout >}}

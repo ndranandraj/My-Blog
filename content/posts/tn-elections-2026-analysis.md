@@ -11,7 +11,7 @@ TocOpen: false
 image: "/images/tn-election-cover.jpg"
 cover:
   image: "/images/tn-election-cover.jpg"
-  alt: "Editorial cover reading '3 Crore votes that elected nobody' — data-driven analysis of Tamil Nadu's 2011, 2016 and 2021 assembly elections, with a small bar-chart motif in red and teal"
+  alt: "Editorial cover reading '3 Crore votes that elected nobody', data-driven analysis of Tamil Nadu's 2011, 2016 and 2021 assembly elections, with a small bar-chart motif in red and teal"
   caption: "Data analysis of Tamil Nadu's 2011, 2016 & 2021 assembly elections"
   relative: false
 ---
@@ -50,7 +50,7 @@ NTK grew from **1.1% of the vote in 2016 to 6.6% in 2021**, the steepest rise of
 
 Zero.
 
-INC got 19.8 lakh votes and won 18 seats. NTK got 30.4 lakh votes — **53% more than INC** — and won none. Kamal Haasan's MNM got 12.1 lakh votes. TTV Dhinakaran's AMMK got 10.9 lakh. Those three parties together polled something close to **54 lakh votes** and returned not a single MLA between them. The assembly simply did not reflect they existed.
+INC got 19.8 lakh votes and won 18 seats. NTK got 30.4 lakh votes, **53% more than INC**, and won none. Kamal Haasan's MNM got 12.1 lakh votes. TTV Dhinakaran's AMMK got 10.9 lakh. Those three parties together polled something close to **54 lakh votes** and returned not a single MLA between them. The assembly simply did not reflect they existed.
 
 Why did INC win 18 seats and NTK win nothing on fewer votes? Geography and alliance cover. INC's support was bundled into specific constituencies where the DMK umbrella cleared the field. NTK spread their 30 lakh votes across all 234 seats equally, which meant they were never close to winning anywhere. Under FPTP, evenly spread support is practically the same as no support at all.
 
@@ -87,7 +87,7 @@ The answers are in the constituencies. They always are.
 
 ## Explore the Full Data
 
-This piece draws from a database covering every candidate, every constituency and every vote across Tamil Nadu's 2011, 2016 and 2021 assembly elections — 10,984 candidate records across 234 constituencies and 32 districts.
+This piece draws from a database covering every candidate, every constituency and every vote across Tamil Nadu's 2011, 2016 and 2021 assembly elections, covering 10,984 candidate records across 234 constituencies and 32 districts.
 
 You can dig into it yourself: party vote shares year by year, the district-by-district breakdown of alliance wins, the complete seat-by-seat history, and all 100 constituencies flagged as battlegrounds for 2026.
 

@@ -1,5 +1,5 @@
 ---
-title: "Google Is Releasing Millions of Mosquitoes. Here Is What That Actually Means"
+title: "Google is releasing millions of mosquitoes. Here is what that actually means"
 date: 2026-05-31
 lastmod: 2026-05-31
 description: "Alphabet's Verily wants to release up to 32 million lab-bred mosquitoes across Florida and California. A simple, honest look at what the project is, what it does, and whether you should worry."

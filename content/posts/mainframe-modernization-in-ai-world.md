@@ -11,7 +11,7 @@ keywords: ["mainframe modernization", "COBOL AI", "legacy system migration", "ma
 image: "/images/mainframe-cover.jpg"
 cover:
     image: "/images/mainframe-cover.jpg"
-    alt: "Editorial cover with the headline 'The walls haven't changed' — a piece on why AI won't modernize the mainframe overnight"
+    alt: "Editorial cover with the headline 'The walls haven't changed', a piece on why AI won't modernize the mainframe overnight"
     caption: "Still here. Still running."
 ---
 
