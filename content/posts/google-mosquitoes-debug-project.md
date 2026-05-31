@@ -9,11 +9,11 @@ tags: ["science", "technology", "public health", "biotech", "google", "mosquitoe
 categories: ["Science", "Technology"]
 readingTime: true
 showToc: false
-image: "/images/google-mosquitoes-cover.png"
+image: "/images/google-mosquitoes-cover.jpg"
 cover:
-    image: "/images/google-mosquitoes-cover.png"
-    alt: "Title card reading 'Google Is Releasing Millions of Mosquitoes' on a dark slate background"
-    caption: "Google's Debug Project, explained."
+    image: "/images/google-mosquitoes-cover.jpg"
+    alt: "Close-up of an Aedes aegypti mosquito, with white-striped legs, feeding on human skin"
+    caption: "An *Aedes aegypti* mosquito, the target of the Debug Project. Photo: National Institute of Allergy and Infectious Diseases (NIAID)."
     relative: false
 ---
 
