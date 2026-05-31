@@ -64,6 +64,8 @@ There was a quieter improvement too, one that ran right through the season: set 
 
 Given everything that came before it, the third-place finish is nothing short of brilliant. Players in familiar positions made all the difference, and getting here under Carrick is a real achievement rather than a lucky one.
 
+{{< newsletter title="Liked this? Get the next match-day read in your inbox." body="Football opinion, data deep-dives, and the occasional travel essay. No spam, unsubscribe anytime." button="Sign me up" >}}
+
 ---
 
 ## The parts that did not work

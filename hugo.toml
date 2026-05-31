@@ -91,6 +91,9 @@ enableRobotsTXT = true
       name = "Read the Blog"
       url = "/posts/"
     [[params.profileMode.buttons]]
+      name = "TN 2026 Explorer"
+      url = "/election-dashboard/tn-2026-explorer.html"
+    [[params.profileMode.buttons]]
       name = "About Me"
       url = "/page/about/"
 

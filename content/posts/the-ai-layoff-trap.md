@@ -61,6 +61,8 @@ The authors borrow the Red Queen effect from Lewis Carroll's *Through the Lookin
 
 The race speeds up. The cliff gets closer. Nobody wins.
 
+{{< newsletter title="Enjoying this breakdown? Get the next one in your inbox." body="Essays on AI, work, and the economics that never make it onto the slide deck. No spam, unsubscribe anytime." button="Sign me up" >}}
+
 ## Why the Usual Fixes Fall Short
 
 At this point, most policy conversations reach for familiar tools. The paper tests several of them, and the findings are worth paying attention to.
