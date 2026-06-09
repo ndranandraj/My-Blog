@@ -4,8 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tamil Nadu Elections — Data Dashboard</title>
+<script>
+// Theme bootstrap. Runs before first paint. Reads the same localStorage key
+// the blog's PaperMod toggle writes, so the reader's choice carries across.
+// data-bs-theme flips Bootstrap (and DataTables chrome) to its dark palette.
+(function () {
+  var t = localStorage.getItem("pref-theme");
+  if (t !== "light" && t !== "dark") {
+    t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  var h = document.documentElement;
+  h.dataset.theme = t;
+  h.setAttribute("data-bs-theme", t);
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" integrity="sha384-5oFfLntNy8kuC2TaebWZbaHTqdh3Q+7PwYbB490gupK0YtTAB7mBJGv4bQl9g9rK" crossorigin="anonymous">
 <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
@@ -59,6 +73,32 @@
   --shadow:    0 4px 16px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
   --shadow-lg: 0 12px 40px rgba(0,0,0,.10), 0 4px 12px rgba(0,0,0,.05);
   --trans:     all .25s cubic-bezier(.4,0,.2,1);
+
+  /* Theme-dependent extras (light values; dark overrides below) */
+  --c-card-warm:  #FFF7E6;
+  --c-chart-grid: #F1F5F9;
+  --c-chart-tick: #374151;
+  --c-thead:      #FBF7F4;
+  --c-row-hover:  #FFF5EE;
+}
+html[data-theme="dark"] {
+  --c-bg:        #0E0E14;
+  --c-surface:   #181820;
+  --c-border:    #2E2E3D;
+  --c-border-2:  #21212C;
+  --c-text:      #EEEDF6;
+  --c-text-2:    #B4B4C8;
+  --c-text-3:    #7C7C94;
+  --c-accent-3:  #F59E0B;
+  --c-card-warm: #23200F;
+  --c-chart-grid: #2E2E3D;
+  --c-chart-tick: #B4B4C8;
+  --c-thead:      #21212C;
+  --c-row-hover:  rgba(245,158,11,.06);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.3);
+  --shadow:    0 4px 16px rgba(0,0,0,.45), 0 1px 4px rgba(0,0,0,.3);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.55), 0 4px 12px rgba(0,0,0,.35);
+  color-scheme: dark;
 }
 
 /* ═══════════════════════════════════════════
@@ -314,13 +354,13 @@ h1,h2,h3,h4 { font-weight: 700; line-height: 1.25; margin: 0; }
   font-size: .8rem;
 }
 .styled-table thead th {
-  background: #FBF7F4; border-bottom: 2px solid var(--c-border);
+  background: var(--c-thead); border-bottom: 2px solid var(--c-border);
   padding: .65rem .9rem; font-size: .65rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: .5px; color: var(--c-text-3);
   white-space: nowrap;
 }
 .styled-table tbody tr { transition: background .15s; }
-.styled-table tbody tr:hover td { background: #FFF5EE; }
+.styled-table tbody tr:hover td { background: var(--c-row-hover); }
 .styled-table tbody td {
   padding: .6rem .9rem; border-bottom: 1px solid #F1F5F9;
   vertical-align: middle;
@@ -335,7 +375,7 @@ h1,h2,h3,h4 { font-weight: 700; line-height: 1.25; margin: 0; }
   transition: var(--trans);
 }
 .dataTables_wrapper .dataTables_filter input:focus { border-color: var(--c-accent); box-shadow: 0 0 0 3px rgba(232,146,58,.15); }
-table.dataTable tbody tr:hover { background: #FFF5EE !important; }
+table.dataTable tbody tr:hover { background: var(--c-row-hover) !important; }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
   background: var(--c-accent) !important; border-color: var(--c-accent) !important;
   color: #1C1917 !important; border-radius: 6px;
@@ -452,7 +492,7 @@ table.dataTable tbody tr:hover { background: #FFF5EE !important; }
   padding: 1.2rem 1.4rem;
 }
 .inc-pct { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; }
-.inc-bar-bg { background: #F1F5F9; border-radius: 4px; height: 6px; margin: .4rem 0; overflow: hidden; }
+.inc-bar-bg { background: var(--c-chart-grid); border-radius: 4px; height: 6px; margin: .4rem 0; overflow: hidden; }
 .inc-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--c-accent-2), var(--c-accent)); /* coral to amber — near colors */ }
 
 /* ═══════════════════════════════════════════
@@ -652,6 +692,8 @@ footer a:hover { color: var(--c-accent); }
     <a class="snav-link" href="#watch2026" onclick="setActive(this)">Battlegrounds</a>
     <a class="snav-link" href="#map" onclick="setActive(this)">Map</a>
     <a class="snav-link" href="#explorer" onclick="setActive(this)">Explorer</a>
+    <button id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme"
+            style="margin-left:auto;border:1.5px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.7);border-radius:99px;width:28px;height:28px;line-height:1;font-size:.85rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;"></button>
   </div>
 </nav>
 
@@ -666,7 +708,7 @@ footer a:hover { color: var(--c-accent); }
     <!-- Feature banner: the new TN 2026 Explorer -->
     <div class="row g-3" style="margin-bottom: 16px;">
       <div class="col-12">
-        <div style="background:linear-gradient(135deg, #FFFFFF 0%, #FFF7E6 100%); border:1px solid rgba(245,158,11,0.45);border-radius:14px;padding:24px 28px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;">
+        <div style="background:linear-gradient(135deg, var(--c-surface) 0%, var(--c-card-warm) 100%); border:1px solid rgba(245,158,11,0.45);border-radius:14px;padding:24px 28px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;">
           <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.18) 0%,transparent 70%);pointer-events:none;"></div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative;">
             <div style="font-size:0.68rem;color:#B45309;text-transform:uppercase;letter-spacing:0.12em;font-weight:800;display:flex;align-items:center;gap:8px;">
@@ -675,8 +717,8 @@ footer a:hover { color: var(--c-accent); }
             </div>
             <span style="font-size:0.62rem;font-weight:800;color:#B45309;letter-spacing:0.06em;padding:3px 10px;border-radius:99px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);">7 SECTIONS · 234 SEATS</span>
           </div>
-          <h3 style="font-size:1.5rem;margin:0;color:#1C1917;line-height:1.3;font-weight:800;position:relative;">TN 2026 Explorer: every seat, every party, every region.</h3>
-          <p style="color:#57534E;font-size:0.92rem;line-height:1.65;margin:0;position:relative;">The comprehensive dashboard for Tamil Nadu's 2026 Assembly election. Interactive map of all 234 constituencies, seat-to-vote efficiency, 9-region anatomy, 2021 → 2026 swing per seat, demographics of the elected MLAs, defeated incumbents, dummy near-misses, and a 4-tab searchable constituency explorer with live search across 4,023 candidates.</p>
+          <h3 style="font-size:1.5rem;margin:0;color:var(--c-text);line-height:1.3;font-weight:800;position:relative;">TN 2026 Explorer: every seat, every party, every region.</h3>
+          <p style="color:var(--c-text-2);font-size:0.92rem;line-height:1.65;margin:0;position:relative;">The comprehensive dashboard for Tamil Nadu's 2026 Assembly election. Interactive map of all 234 constituencies, seat-to-vote efficiency, 9-region anatomy, 2021 → 2026 swing per seat, demographics of the elected MLAs, defeated incumbents, dummy near-misses, and a 4-tab searchable constituency explorer with live search across 4,023 candidates.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;position:relative;">
             <a href="tn-2026-explorer.html" style="display:inline-flex;align-items:center;gap:6px;padding:11px 22px;background:linear-gradient(135deg,#D97706,#F59E0B);color:#1a1408;border-radius:40px;text-decoration:none;font-weight:800;font-size:0.86rem;box-shadow:0 6px 20px rgba(245,158,11,0.4);">Open the Explorer →</a>
             <a href="/posts/tn-2026-explorer/" style="display:inline-flex;align-items:center;gap:6px;padding:11px 22px;background:rgba(245,158,11,0.10);border:1px solid rgba(245,158,11,0.4);color:#B45309;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.82rem;">Launch post</a>
@@ -689,10 +731,10 @@ footer a:hover { color: var(--c-accent); }
 
       <!-- TVK card -->
       <div class="col-md-6">
-        <div style="background:#FFFFFF;border:1px solid rgba(168,85,247,0.28);border-radius:14px;padding:22px;height:100%;display:flex;flex-direction:column;">
-          <div style="font-size:0.68rem;color:#57534E;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-weight:800;">Story 1 · TVK Debut</div>
-          <h3 style="font-size:1.25rem;margin-bottom:10px;color:#1C1917;line-height:1.3;">108 seats. 1.72 crore votes. 1.32 efficiency.</h3>
-          <p style="color:#57534E;font-size:0.88rem;line-height:1.65;flex:1;">Vijay's TVK won 108 of 233 contested seats, polling <strong style="color:#1C1917">1,72,26,209 votes (34.92%)</strong> and converting that to 46.2% of the assembly. The wave landed hardest in Chennai &amp; Suburbs (+18.5 seats above weight) and was absorbed in the Cauvery Delta. Vijay personally won Perambur by <strong style="color:#1C1917">53,715 votes (26.28% of polled)</strong>.</p>
+        <div style="background:var(--c-surface);border:1px solid rgba(168,85,247,0.28);border-radius:14px;padding:22px;height:100%;display:flex;flex-direction:column;">
+          <div style="font-size:0.68rem;color:var(--c-text-2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-weight:800;">Story 1 · TVK Debut</div>
+          <h3 style="font-size:1.25rem;margin-bottom:10px;color:var(--c-text);line-height:1.3;">108 seats. 1.72 crore votes. 1.32 efficiency.</h3>
+          <p style="color:var(--c-text-2);font-size:0.88rem;line-height:1.65;flex:1;">Vijay's TVK won 108 of 233 contested seats, polling <strong style="color:var(--c-text)">1,72,26,209 votes (34.92%)</strong> and converting that to 46.2% of the assembly. The wave landed hardest in Chennai &amp; Suburbs (+18.5 seats above weight) and was absorbed in the Cauvery Delta. Vijay personally won Perambur by <strong style="color:var(--c-text)">53,715 votes (26.28% of polled)</strong>.</p>
           <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
             <a href="cover-tvk-2026.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.5);color:#581C87;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;transition:all 0.2s;" onmouseover="this.style.background='rgba(168,85,247,0.24)'" onmouseout="this.style.background='rgba(168,85,247,0.12)'">Cover page</a>
             <a href="/posts/tvk-debut-2026/" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(168,85,247,0.18);border:1px solid rgba(168,85,247,0.4);color:#7C3AED;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;">Read the post</a>
@@ -703,10 +745,10 @@ footer a:hover { color: var(--c-accent); }
 
       <!-- Dummy card -->
       <div class="col-md-6">
-        <div style="background:#FFFFFF;border:1px solid rgba(232,146,58,0.28);border-radius:14px;padding:22px;height:100%;display:flex;flex-direction:column;">
-          <div style="font-size:0.68rem;color:#57534E;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-weight:800;">Story 2 · Dummy Candidates</div>
-          <h3 style="font-size:1.25rem;margin-bottom:10px;color:#1C1917;line-height:1.3;">329 flagged. Zero strict-test wins. Two near misses.</h3>
-          <p style="color:#57534E;font-size:0.88rem;line-height:1.65;flex:1;">Of 329 pre-poll flagged dummy pairs, 263 actually contested and 152 targeted majors lost. In the strict test, zero losses had dummies covering the margin. In the inclusive test: <strong style="color:#1C1917">TIRUKKOYILUR by 285 votes (0.13%)</strong> and <strong style="color:#1C1917">PALANI by 693 votes (0.33%)</strong>. The wave drowned the mechanism, but the mechanism is intact.</p>
+        <div style="background:var(--c-surface);border:1px solid rgba(232,146,58,0.28);border-radius:14px;padding:22px;height:100%;display:flex;flex-direction:column;">
+          <div style="font-size:0.68rem;color:var(--c-text-2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-weight:800;">Story 2 · Dummy Candidates</div>
+          <h3 style="font-size:1.25rem;margin-bottom:10px;color:var(--c-text);line-height:1.3;">329 flagged. Zero strict-test wins. Two near misses.</h3>
+          <p style="color:var(--c-text-2);font-size:0.88rem;line-height:1.65;flex:1;">Of 329 pre-poll flagged dummy pairs, 263 actually contested and 152 targeted majors lost. In the strict test, zero losses had dummies covering the margin. In the inclusive test: <strong style="color:var(--c-text)">TIRUKKOYILUR by 285 votes (0.13%)</strong> and <strong style="color:var(--c-text)">PALANI by 693 votes (0.33%)</strong>. The wave drowned the mechanism, but the mechanism is intact.</p>
           <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
             <a href="cover-dummy-2026.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(232,146,58,0.12);border:1px solid rgba(232,146,58,0.5);color:#7C2D12;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;transition:all 0.2s;" onmouseover="this.style.background='rgba(232,146,58,0.22)'" onmouseout="this.style.background='rgba(232,146,58,0.12)'">Cover page</a>
             <a href="/posts/tn-2026-dummy-candidates-results/" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(232,146,58,0.12);border:1px solid rgba(232,146,58,0.5);color:#7C2D12;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;">Read the post</a>
@@ -728,8 +770,8 @@ footer a:hover { color: var(--c-accent); }
             </div>
             <span style="font-size:0.62rem;font-weight:800;color:#B45309;letter-spacing:0.06em;padding:3px 10px;border-radius:99px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);">CHIEF MINISTER</span>
           </div>
-          <h3 style="font-size:1.4rem;margin:0;color:#1C1917;line-height:1.3;font-weight:800;">The Chief Minister lost his seat. So did 55 other sitting MLAs.</h3>
-          <p style="color:#57534E;font-size:0.92rem;line-height:1.7;margin:0;">M.K. Stalin lost <strong style="color:#1C1917">Kolathur by 8,795 votes</strong> to V.S. Babu of TVK, his own former associate. He had won the same seat in 2021 by 70,384 votes. He's one of <strong style="color:#1C1917">93 sitting MLAs</strong> who defended their seat in 2026 and lost. <strong style="color:#7C3AED">64 of those defeats came from TVK directly.</strong> Of 234 outgoing incumbents: 56 held their seat, 93 lost it, 11 lost a different seat too, 7 won by shifting, and 67 are off the ballot entirely. A 23.9% same-seat retention rate, the lowest in modern TN history.</p>
+          <h3 style="font-size:1.4rem;margin:0;color:var(--c-text);line-height:1.3;font-weight:800;">The Chief Minister lost his seat. So did 55 other sitting MLAs.</h3>
+          <p style="color:var(--c-text-2);font-size:0.92rem;line-height:1.7;margin:0;">M.K. Stalin lost <strong style="color:var(--c-text)">Kolathur by 8,795 votes</strong> to V.S. Babu of TVK, his own former associate. He had won the same seat in 2021 by 70,384 votes. He's one of <strong style="color:var(--c-text)">93 sitting MLAs</strong> who defended their seat in 2026 and lost. <strong style="color:#7C3AED">64 of those defeats came from TVK directly.</strong> Of 234 outgoing incumbents: 56 held their seat, 93 lost it, 11 lost a different seat too, 7 won by shifting, and 67 are off the ballot entirely. A 23.9% same-seat retention rate, the lowest in modern TN history.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;">
             <a href="cover-incumbents-defeated-2026.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(239,68,68,0.10);border:1px solid rgba(239,68,68,0.5);color:#7F1D1D;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;transition:all 0.2s;" onmouseover="this.style.background='rgba(239,68,68,0.20)'" onmouseout="this.style.background='rgba(239,68,68,0.10)'">Cover page</a>
             <a href="/posts/tn-2026-incumbents-defeated/" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:linear-gradient(135deg,#B91C1C,#EF4444);color:#1C1917;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;box-shadow:0 4px 14px rgba(239,68,68,0.35);">Read the full breakdown →</a>
@@ -750,8 +792,8 @@ footer a:hover { color: var(--c-accent); }
             </div>
             <span style="font-size:0.62rem;font-weight:800;color:#0F766E;letter-spacing:0.06em;padding:3px 10px;border-radius:99px;background:rgba(20,184,166,0.12);border:1px solid rgba(20,184,166,0.3);">YOUNGEST EVER</span>
           </div>
-          <h3 style="font-size:1.4rem;margin:0;color:#1C1917;line-height:1.3;font-weight:800;">Tamil Nadu just elected its youngest, most-educated assembly ever.</h3>
-          <p style="color:#57534E;font-size:0.92rem;line-height:1.7;margin:0;">Median MLA age dropped to <strong style="color:#1C1917">52</strong>, a 12-year compression from the cohort it replaced. <strong style="color:#7C3AED">TVK's median MLA is 44</strong>, against 59 for DMK and 57 for AIADMK. <strong style="color:#1C1917">41 MLAs are under 40</strong>, 35 of them from TVK alone. <strong style="color:#BE185D">22 women elected — 13 from TVK, 0 from DMK.</strong> Two of the youngest five (both 28-year-old TVK MLAs with Master's degrees) are women. The whole assembly is 53% graduate-or-higher, the most-educated in TN history.</p>
+          <h3 style="font-size:1.4rem;margin:0;color:var(--c-text);line-height:1.3;font-weight:800;">Tamil Nadu just elected its youngest, most-educated assembly ever.</h3>
+          <p style="color:var(--c-text-2);font-size:0.92rem;line-height:1.7;margin:0;">Median MLA age dropped to <strong style="color:var(--c-text)">52</strong>, a 12-year compression from the cohort it replaced. <strong style="color:#7C3AED">TVK's median MLA is 44</strong>, against 59 for DMK and 57 for AIADMK. <strong style="color:var(--c-text)">41 MLAs are under 40</strong>, 35 of them from TVK alone. <strong style="color:#BE185D">22 women elected — 13 from TVK, 0 from DMK.</strong> Two of the youngest five (both 28-year-old TVK MLAs with Master's degrees) are women. The whole assembly is 53% graduate-or-higher, the most-educated in TN history.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;">
             <a href="cover-new-assembly-profile-2026.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(20,184,166,0.10);border:1px solid rgba(20,184,166,0.5);color:#134E4A;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;transition:all 0.2s;" onmouseover="this.style.background='rgba(20,184,166,0.20)'" onmouseout="this.style.background='rgba(20,184,166,0.10)'">Cover page</a>
             <a href="/posts/tn-2026-new-assembly-profile/" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:linear-gradient(135deg,#0F766E,#14B8A6);color:#1C1917;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;box-shadow:0 4px 14px rgba(20,184,166,0.35);">Read the demographic breakdown →</a>
@@ -764,7 +806,7 @@ footer a:hover { color: var(--c-accent); }
     <!-- Fifth card: DMK collapse -->
     <div class="row g-3" style="margin-top: 16px;">
       <div class="col-12">
-        <div style="background:linear-gradient(135deg, rgba(220,38,38,0.06) 0%, #FFFFFF 100%);border:1px solid rgba(220,38,38,0.32);border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:14px;">
+        <div style="background:linear-gradient(135deg, rgba(220,38,38,0.06) 0%, var(--c-surface) 100%);border:1px solid rgba(220,38,38,0.32);border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:14px;">
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
             <div style="font-size:0.68rem;color:#B91C1C;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;display:flex;align-items:center;gap:8px;">
               <span style="width:7px;height:7px;border-radius:50%;background:#DC2626;"></span>
@@ -772,8 +814,8 @@ footer a:hover { color: var(--c-accent); }
             </div>
             <span style="font-size:0.62rem;font-weight:800;color:#B91C1C;letter-spacing:0.06em;padding:3px 10px;border-radius:99px;background:rgba(220,38,38,0.12);border:1px solid rgba(220,38,38,0.3);">133 → 59 SEATS</span>
           </div>
-          <h3 style="font-size:1.4rem;margin:0;color:#1C1917;line-height:1.3;font-weight:800;">How DMK lost Tamil Nadu, region by region.</h3>
-          <p style="color:#57534E;font-size:0.92rem;line-height:1.7;margin:0;">DMK went from <strong style="color:#1C1917">133 seats in 2021 to 59 in 2026</strong>. The collapse was not uniform. Their strongest regions in 2021, Chennai, Central, and the North, each dropped <strong style="color:#1C1917">17 to 19 percentage points</strong> of vote share. Chennai &amp; Suburbs alone went from 31 of 37 wins to <strong style="color:#1C1917">2 of 37</strong>. Of the 93 seats DMK held in 2021 and lost in 2026, <strong style="color:#7C3AED">65 went directly to TVK</strong>.</p>
+          <h3 style="font-size:1.4rem;margin:0;color:var(--c-text);line-height:1.3;font-weight:800;">How DMK lost Tamil Nadu, region by region.</h3>
+          <p style="color:var(--c-text-2);font-size:0.92rem;line-height:1.7;margin:0;">DMK went from <strong style="color:var(--c-text)">133 seats in 2021 to 59 in 2026</strong>. The collapse was not uniform. Their strongest regions in 2021, Chennai, Central, and the North, each dropped <strong style="color:var(--c-text)">17 to 19 percentage points</strong> of vote share. Chennai &amp; Suburbs alone went from 31 of 37 wins to <strong style="color:var(--c-text)">2 of 37</strong>. Of the 93 seats DMK held in 2021 and lost in 2026, <strong style="color:#7C3AED">65 went directly to TVK</strong>.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;">
             <a href="cover-dmk-collapse-2026.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(220,38,38,0.10);border:1px solid rgba(220,38,38,0.5);color:#7F1D1D;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;transition:all 0.2s;" onmouseover="this.style.background='rgba(220,38,38,0.20)'" onmouseout="this.style.background='rgba(220,38,38,0.10)'">Cover page</a>
             <a href="/posts/dmk-collapse-2026/" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:linear-gradient(135deg,#991B1B,#DC2626);color:#1C1917;border-radius:40px;text-decoration:none;font-weight:700;font-size:0.8rem;box-shadow:0 4px 14px rgba(220,38,38,0.35);">Read the regional breakdown →</a>
@@ -1081,6 +1123,26 @@ footer a:hover { color: var(--c-accent); }
      JAVASCRIPT
 ══════════════════════════════════════ -->
 <script>
+// ─── Theme helpers ────────────────────────────
+// cssv() reads a CSS custom property so Chart.js picks up the active theme's
+// colors at chart-build time. The toggle reloads the page: charts, DataTables
+// and the Leaflet map all rebuild cleanly under the new palette.
+function cssv(n) {
+  return getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+}
+(function () {
+  const isLight = () => document.documentElement.dataset.theme !== 'dark';
+  Chart.defaults.color = cssv('--c-chart-tick');
+  const btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.textContent = isLight() ? '☾' : '☀';
+    btn.addEventListener('click', () => {
+      localStorage.setItem('pref-theme', isLight() ? 'dark' : 'light');
+      location.reload();
+    });
+  }
+})();
+
 // ─── State ────────────────────────────────────
 let D = null, YEAR = 2021, MAP = null, GJ = null;
 let allianceChart=null, districtChart=null, trendChart=null, effChart=null;
@@ -1250,7 +1312,7 @@ function renderAlliance() {
       type:'doughnut',
       data:{
         labels: rows.map(r=>r.alliance),
-        datasets:[{data:rows.map(r=>r.seats_won),backgroundColor:rows.map(r=>ac(r.alliance)),borderWidth:3,borderColor:'#fff',hoverOffset:6}]
+        datasets:[{data:rows.map(r=>r.seats_won),backgroundColor:rows.map(r=>ac(r.alliance)),borderWidth:3,borderColor:cssv('--c-surface'),hoverOffset:6}]
       },
       options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
         plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14,font:{size:11}}},
@@ -1325,9 +1387,9 @@ function renderDistrict() {
       scales: {
         x: { stacked:true, beginAtZero:true, max: 20,
              ticks:{stepSize:2, font:{size:10}},
-             grid:{color:'#F1F5F9'} },
+             grid:{color:cssv('--c-chart-grid')} },
         y: { stacked:true,
-             ticks:{font:{size:10.5}, color:'#374151'},
+             ticks:{font:{size:10.5}, color:cssv('--c-chart-tick')},
              grid:{display:false} }
       }
     }
@@ -1474,7 +1536,7 @@ function renderVoteEfficiency() {
       },
       scales: {
         x: { grid:{display:false}, ticks:{font:{size:9.5}} },
-        y: { beginAtZero:true, grid:{color:'#F8FAFC'},
+        y: { beginAtZero:true, grid:{color:cssv('--c-chart-grid')},
              ticks:{ callback: v=>v+'%', font:{size:10} } }
       }
     }
@@ -1499,7 +1561,7 @@ function renderTrend() {
       plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}},
       scales:{
         x:{grid:{display:false}},
-        y:{beginAtZero:true,grid:{color:'#F8FAFC'}}
+        y:{beginAtZero:true,grid:{color:cssv('--c-chart-grid')}}
       }
     }
   });
@@ -1757,7 +1819,9 @@ function filterWatch(p, btn) {
 function loadMap() {
   MAP = L.map('tnMap', {zoomControl:true}).setView([10.8,78.5], 6);
   /* Warm-tinted basemap — no labels (we overlay constituency GeoJSON) */
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',{
+  L.tileLayer(document.documentElement.dataset.theme === 'dark'
+      ? 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
+      : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',{
     attribution:'©OpenStreetMap ©CARTO', maxZoom:19
   }).addTo(MAP);
 

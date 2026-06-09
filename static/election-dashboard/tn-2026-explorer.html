@@ -12,8 +12,21 @@
 <meta property="og:url" content="https://ndranandraj.com/election-dashboard/tn-2026-explorer.html">
 <meta name="twitter:card" content="summary_large_image">
 
+<script>
+// Theme bootstrap. Runs before first paint to avoid a flash of the wrong
+// theme. Reads the same localStorage key the blog's PaperMod toggle writes,
+// so the reader's choice on ndranandraj.com carries into this page.
+(function () {
+  var t = localStorage.getItem("pref-theme");
+  if (t !== "light" && t !== "dark") {
+    t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  document.documentElement.dataset.theme = t;
+})();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
@@ -47,6 +60,47 @@
 
   --radius: 14px;
   --shadow: 0 2px 12px rgba(0,0,0,0.3);
+
+  /* Theme-dependent semantics (dark values; light overrides below) */
+  --neg: var(--neg);
+  --warn: var(--warn);
+  --badge-muted-bg: var(--badge-muted-bg);
+  --hair: rgba(255,255,255,.04);
+  --hover-soft: rgba(255,255,255,.04);
+  --nav-bg: rgba(14,14,20,0.88);
+  --map-bg: #08080F;
+  --tip-bg: #13131C;
+  --tip-name: #fff;
+  --hero-title-from: #fff;
+  --hero-grad-a: #161020;
+  --hero-grad-b: #0E0E14;
+  --sw-border: rgba(255,255,255,0.08);
+  --bar-track: rgba(255,255,255,0.06);
+  --center-mark: rgba(255,255,255,0.18);
+  --on-accent: #1a1408;
+}
+html[data-theme="light"] {
+  --bg: #FAF9F7; --surface: #FFFFFF; --surface-2: #F1EFE9; --border: #E4E1D8;
+  --text: #1C1917; --text-2: #57534E; --text-3: #79716B;
+  --accent: #B45309; --accent-soft: rgba(180,83,9,0.10);
+  --shadow: 0 2px 12px rgba(28,25,23,0.08);
+
+  --neg: #B91C1C;
+  --warn: #92400E;
+  --badge-muted-bg: rgba(28,25,23,.06);
+  --hair: rgba(28,25,23,.07);
+  --hover-soft: rgba(28,25,23,.05);
+  --nav-bg: rgba(250,249,247,0.88);
+  --map-bg: #E9E7E1;
+  --tip-bg: #FFFFFF;
+  --tip-name: #1C1917;
+  --hero-title-from: #1C1917;
+  --hero-grad-a: #F3EFE7;
+  --hero-grad-b: #FAF9F7;
+  --sw-border: rgba(28,25,23,0.14);
+  --bar-track: rgba(28,25,23,0.08);
+  --center-mark: rgba(28,25,23,0.22);
+  --on-accent: #FFFFFF;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -64,7 +118,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 .top-nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 24px;
-  background: rgba(14,14,20,0.88);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -88,11 +142,19 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
 .nav-meta .home-link { font-size: 0.74rem; font-weight: 600; color: var(--text-3); }
 .nav-meta .home-link:hover { color: var(--text); text-decoration: none; }
+#theme-toggle {
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-2); border-radius: 99px;
+  width: 30px; height: 30px; line-height: 1; font-size: 0.95rem;
+  cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+  transition: all .18s ease;
+}
+#theme-toggle:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
 
 /* ── HERO ──────────────────────────────────────────────────── */
 .hero {
   padding: 56px 24px 36px; text-align: center;
-  background: linear-gradient(180deg, #161020 0%, #0E0E14 100%);
+  background: linear-gradient(180deg, var(--hero-grad-a) 0%, var(--hero-grad-b) 100%);
   position: relative; overflow: hidden;
 }
 .hero::before {
@@ -113,7 +175,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.1rem, 5vw, 3.1rem);
   font-weight: 900; line-height: 1.10; margin-bottom: 14px;
-  background: linear-gradient(135deg, #fff 25%, var(--accent) 100%);
+  background: linear-gradient(135deg, var(--hero-title-from) 25%, var(--accent) 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -152,7 +214,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 .jumpnav {
   position: sticky; top: 56px; z-index: 100;
   padding: 11px 0 13px;
-  background: linear-gradient(180deg, rgba(14,14,20,0.96) 0%, rgba(14,14,20,0.88) 100%);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(245,158,11,0.10);
 }
@@ -208,11 +270,11 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 .map-controls .ctl.active { color: var(--text); border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
 .map-controls .ctl.party-active { color: #fff; }
 .map-controls .divider { width: 1px; height: 22px; background: var(--border); margin: 0 6px; }
-#map { width: 100%; height: 640px; border-radius: 10px; background: #08080F; }
+#map { width: 100%; height: 640px; border-radius: 10px; background: var(--map-bg); }
 
 /* ── Tooltip ─────────────────────────────────────────────── */
 .leaflet-tooltip.exp-tip {
-  background: #13131C !important; color: var(--text) !important;
+  background: var(--tip-bg) !important; color: var(--text) !important;
   border: 1.5px solid rgba(245,158,11,0.55) !important;
   border-radius: 12px !important;
   box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.4) !important;
@@ -220,7 +282,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   font-size: 0.84rem !important; line-height: 1.55 !important;
   min-width: 220px; pointer-events: none;
 }
-.exp-tip .tip-name { font-size: 0.96rem; font-weight: 800; color: #fff; display: block; margin-bottom: 2px; letter-spacing: -0.01em; }
+.exp-tip .tip-name { font-size: 0.96rem; font-weight: 800; color: var(--tip-name); display: block; margin-bottom: 2px; letter-spacing: -0.01em; }
 .exp-tip .tip-district { font-size: 0.72rem; color: var(--text-3); display: block; margin-bottom: 9px; }
 .exp-tip .tip-row { display: flex; justify-content: space-between; gap: 14px; font-size: 0.78rem; color: var(--text-2); padding: 2px 0; }
 .exp-tip .tip-row strong { color: var(--text); font-weight: 700; }
@@ -232,7 +294,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px;
   font-size: 0.80rem; align-items: center; }
 .legend .item { display: flex; align-items: center; gap: 7px; color: var(--text); font-weight: 500; }
-.legend .sw { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); }
+.legend .sw { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--sw-border); }
 .legend .h { color: var(--text-3); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.10em; font-weight: 700; margin-right: 4px; }
 
 /* ── TABLES ────────────────────────────────────────────────── */
@@ -261,12 +323,12 @@ tr:hover td { background: rgba(245,158,11,0.04); }
 
 /* ── EFFICIENCY VISUAL ROW ───────────────────────────────── */
 .eff-ratio-bar { display: inline-block; width: 90px; height: 8px; border-radius: 99px;
-  background: rgba(255,255,255,0.06); position: relative; vertical-align: middle; margin-right: 6px; }
+  background: var(--bar-track); position: relative; vertical-align: middle; margin-right: 6px; }
 .eff-ratio-bar .fill { position: absolute; left: 50%; top: 0; height: 100%; border-radius: 99px; }
-.eff-ratio-bar .center-mark { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: rgba(255,255,255,0.18); }
+.eff-ratio-bar .center-mark { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--center-mark); }
 .eff-ratio { font-variant-numeric: tabular-nums; font-weight: 700; }
 .eff-ratio.over { color: var(--accent); }
-.eff-ratio.under { color: #FCA5A5; }
+.eff-ratio.under { color: var(--neg); }
 
 /* ── BANNERS / NOTES ─────────────────────────────────────── */
 .coming-soon {
@@ -319,8 +381,8 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   padding: 8px 16px; border-radius: 99px; cursor: pointer;
   font-family: inherit; transition: all .18s ease;
 }
-.cx-tab:hover { color: var(--text); background: rgba(255,255,255,.04); }
-.cx-tab.active { background: var(--accent); color: #1a1408; font-weight: 800; }
+.cx-tab:hover { color: var(--text); background: var(--hover-soft); }
+.cx-tab.active { background: var(--accent); color: var(--on-accent); font-weight: 800; }
 
 #cx-search:focus, #swing-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,158,11,.18); }
 
@@ -334,7 +396,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
 #cx-table th.right { text-align: right; }
 #cx-table th:hover { color: var(--text); background: rgba(245,158,11,.06); }
 #cx-table th .sort-ind { color: var(--accent); margin-left: 4px; opacity: 0.85; font-size: 0.72rem; }
-#cx-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.04); color: var(--text); }
+#cx-table td { padding: 10px 14px; border-bottom: 1px solid var(--hair); color: var(--text); }
 #cx-table td.right { text-align: right; font-variant-numeric: tabular-nums; }
 #cx-table tr:hover td { background: rgba(245,158,11,.04); }
 #cx-table .ac-no { color: var(--text-3); font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -348,7 +410,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   cursor: pointer; font-family: inherit; transition: all .15s ease;
 }
 .cx-pg-btn:hover:not(:disabled) { color: var(--text); border-color: var(--accent); }
-.cx-pg-btn.active { background: var(--accent); color: #1a1408; border-color: var(--accent); font-weight: 800; }
+.cx-pg-btn.active { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 800; }
 .cx-pg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
 @media (max-width: 720px) {
@@ -368,6 +430,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
   <div class="nav-meta">
     <span class="results-pill"><span class="blip"></span>Results loaded · May 4, 2026</span>
     <a href="/" class="home-link">Home</a>
+    <button id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme"></button>
   </div>
 </nav>
 
@@ -469,7 +532,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
     <div class="section-header">
       <span class="h-eyebrow">Section 1 · Interactive map</span>
       <h2>234 constituencies, colored by winner</h2>
-      <p>Hover any seat for the winning candidate, party, vote total, margin, and second-place finisher. Filter by alliance or by major party to see the geographic shape of each force.</p>
+      <p>Hover any seat for the winning candidate, party, vote total, margin, and second-place finisher. Filter by alliance or by major party to see the geographic shape of each force. Every figure shown on the map is also available in the searchable <a href="#explorer">Constituency Explorer table above</a>.</p>
     </div>
 
     <div class="map-wrap">
@@ -901,8 +964,21 @@ function esc(s) {
 let map = null;
 let perAc = {};          // ac_no -> map_data row
 let geoLayer = null;
+let tileBase = null;
+let tileLabels = null;
 let currentView = 'winner';   // 'winner' | 'alliance'
 let currentFilter = 'all';    // 'all' | party code | alliance code
+
+function isLightTheme() {
+  return document.documentElement.dataset.theme === 'light';
+}
+function tileUrls() {
+  return isLightTheme()
+    ? ['https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+       'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png']
+    : ['https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
+       'https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png'];
+}
 
 function initMap() {
   if (typeof L === 'undefined') {
@@ -914,18 +990,22 @@ function initMap() {
     zoomControl: true, attributionControl: false, preferCanvas: true,
   }).setView([10.85, 78.6], 7);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+  const [baseUrl, labelsUrl] = tileUrls();
+  tileBase = L.tileLayer(baseUrl, {
     maxZoom: 12, minZoom: 6, attribution: '&copy; OpenStreetMap, &copy; CARTO',
   }).addTo(map);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+  tileLabels = L.tileLayer(labelsUrl, {
     maxZoom: 12, minZoom: 6,
   }).addTo(map);
   return true;
 }
 
 function styleFor(d) {
+  const light = isLightTheme();
   if (!d || !d.winner_party) {
-    return { fillColor: '#1a1a24', fillOpacity: 0.15, color: '#3a3a4a', weight: 0.6, dashArray: null };
+    return light
+      ? { fillColor: '#E2DFD7', fillOpacity: 0.5, color: '#C9C5BB', weight: 0.6, dashArray: null }
+      : { fillColor: '#1a1a24', fillOpacity: 0.15, color: '#3a3a4a', weight: 0.6, dashArray: null };
   }
   const winnerParty = d.winner_party;
   const winnerAlliance = d.winner_alliance || 'OTHERS';
@@ -939,7 +1019,7 @@ function styleFor(d) {
   return {
     fillColor: color,
     fillOpacity: filterMatch ? 0.86 : 0.10,
-    color: filterMatch ? '#fff' : '#2a2a3a',
+    color: filterMatch ? '#fff' : (light ? '#D6D2C8' : '#2a2a3a'),
     weight: filterMatch ? 1.0 : 0.4,
     dashArray: null,
   };
@@ -1027,6 +1107,26 @@ document.querySelectorAll('.map-controls .ctl[data-filter]').forEach(b => {
   });
 });
 
+// ─── THEME TOGGLE (syncs with the blog via localStorage "pref-theme") ───
+function updateToggleIcon() {
+  const b = document.getElementById('theme-toggle');
+  if (b) b.textContent = isLightTheme() ? '☾' : '☀';  // icon shows the theme you'd switch to
+}
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const next = isLightTheme() ? 'dark' : 'light';
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem('pref-theme', next);
+  // CSS variables update instantly; the map needs explicit help.
+  if (map && tileBase) {
+    const [baseUrl, labelsUrl] = tileUrls();
+    tileBase.setUrl(baseUrl);
+    tileLabels.setUrl(labelsUrl);
+  }
+  restyle();
+  updateToggleIcon();
+});
+updateToggleIcon();
+
 function updateLegend() {
   const legend = document.getElementById('legend');
   if (currentView === 'alliance') {
@@ -1069,7 +1169,7 @@ async function loadEfficiency() {
       const t = Math.min(1, Math.abs(ratio - 1) / (maxRatio - 1));
       const fillW = (t * 45).toFixed(1);
       const fillLeft = ratio >= 1 ? '50%' : (50 - parseFloat(fillW)) + '%';
-      const fillColor = ratio >= 1 ? 'var(--accent)' : '#FCA5A5';
+      const fillColor = ratio >= 1 ? 'var(--accent)' : 'var(--neg)';
       return `<tr>
         <td><span class="party-chip ${pcClass(p.party)}">${esc(p.party)}</span></td>
         <td class="right num">${p.votes.toLocaleString('en-IN')}</td>
@@ -1087,7 +1187,7 @@ async function loadEfficiency() {
     }).join('');
   } catch (e) {
     document.getElementById('eff-body').innerHTML =
-      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load party_efficiency_2026.json: ${esc(e.message)}</td></tr>`;
+      `<tr><td colspan="6" style="text-align:center;padding:32px;color:var(--neg);">Could not load party_efficiency_2026.json: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1120,7 +1220,7 @@ async function loadRegional() {
     renderRegional();
   } catch (e) {
     document.getElementById('reg-body').innerHTML =
-      `<tr><td colspan="10" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load regional sidecar: ${esc(e.message)}</td></tr>`;
+      `<tr><td colspan="10" style="text-align:center;padding:32px;color:var(--neg);">Could not load regional sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1209,7 +1309,7 @@ async function loadSwing() {
     renderSwing();
   } catch (e) {
     document.getElementById('swing-body').innerHTML =
-      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load swing sidecar: ${esc(e.message)}</td></tr>`;
+      `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--neg);">Could not load swing sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1266,7 +1366,7 @@ function renderSwing() {
       `${mar.margin.toLocaleString('en-IN')} <span style="color:var(--text-2);font-size:.78rem;">(${mar.margin_pct.toFixed(2)}%)</span>` : '—';
     const flipBadge = r.flipped
       ? `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:800;background:rgba(245,158,11,.18);color:var(--accent);letter-spacing:.04em;">FLIPPED</span>`
-      : `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:700;background:rgba(255,255,255,.05);color:var(--text-3);letter-spacing:.04em;">HELD</span>`;
+      : `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:700;background:var(--badge-muted-bg);color:var(--text-3);letter-spacing:.04em;">HELD</span>`;
     return `<tr>
       <td class="num">${r.ac_no}</td>
       <td>${esc(r.ac_name)}<br><span style="font-size:.72rem;color:var(--text-3)">${esc(r.district)}</span></td>
@@ -1351,18 +1451,19 @@ async function loadDemographics() {
     document.getElementById('dm-young-body').innerHTML = young.map(y => {
       const partyCode = y.party === 'AIADMK' ? 'ADMK' : y.party;
       const gender = y.gender === 'F' ? '♀' : (y.gender === 'M' ? '♂' : y.gender || '?');
+      const genderLabel = y.gender === 'F' ? 'Female' : (y.gender === 'M' ? 'Male' : 'Not recorded');
       return `<tr>
         <td><strong>${esc(y.name)}</strong></td>
         <td class="right num"><span style="font-size:1.05rem;font-weight:700;color:var(--accent)">${y.age}</span></td>
         <td>${esc(y.ac)}</td>
         <td><span class="party-chip ${pcClass(partyCode)}">${esc(y.party)}</span></td>
-        <td style="text-align:center;font-size:1.0rem;">${esc(gender)}</td>
+        <td style="text-align:center;font-size:1.0rem;"><span role="img" aria-label="${genderLabel}" title="${genderLabel}">${esc(gender)}</span></td>
         <td style="font-size:.82rem;color:var(--text-2);">${y.education ? esc(y.education) : '—'}</td>
       </tr>`;
     }).join('');
   } catch (e) {
     document.getElementById('dm-party-body').innerHTML =
-      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load demographics sidecar: ${esc(e.message)}</td></tr>`;
+      `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--neg);">Could not load demographics sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1381,7 +1482,7 @@ async function loadIncumbents() {
     renderIncumbents();
   } catch (e) {
     document.getElementById('inc-body').innerHTML =
-      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load incumbents sidecar: ${esc(e.message)}</td></tr>`;
+      `<tr><td colspan="6" style="text-align:center;padding:32px;color:var(--neg);">Could not load incumbents sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1392,9 +1493,9 @@ const SITUATION_LABEL = {
   shifted_and_won: 'Shifted seat & won',
 };
 const SITUATION_COLOR = {
-  contested_and_lost: '#FCA5A5',
+  contested_and_lost: 'var(--neg)',
   truly_out_of_contest: 'var(--text-3)',
-  shifted_and_lost: '#FCD34D',
+  shifted_and_lost: 'var(--warn)',
   shifted_and_won: 'var(--accent)',
 };
 
@@ -1426,7 +1527,7 @@ function renderIncumbents() {
       : '—';
     const sit = SITUATION_LABEL[r.situation] || r.situation;
     const sitColor = SITUATION_COLOR[r.situation] || 'var(--text-2)';
-    const stalinTag = is_stalin ? ' <span style="font-size:.62rem;font-weight:800;letter-spacing:.06em;color:#FCD34D;background:rgba(252,211,77,.16);padding:2px 7px;border-radius:99px;margin-left:6px;">CHIEF MINISTER</span>' : '';
+    const stalinTag = is_stalin ? ' <span style="font-size:.62rem;font-weight:800;letter-spacing:.06em;color:var(--warn);background:rgba(252,211,77,.16);padding:2px 7px;border-radius:99px;margin-left:6px;">CHIEF MINISTER</span>' : '';
     const rowStyle = is_stalin ? 'background:rgba(252,211,77,0.04);' : '';
     return `<tr style="${rowStyle}">
       <td class="num">${r.ac_no}</td>
@@ -1480,14 +1581,14 @@ async function loadDummies() {
       const won = String(r.major_won).toLowerCase() === 'true';
       const status = won
         ? `<span style="color:var(--accent);font-weight:700;">WON</span>`
-        : `<span style="color:#FCA5A5;font-weight:700;">LOST</span>`;
+        : `<span style="color:var(--neg);font-weight:700;">LOST</span>`;
       // Flag tier: prefer exact > near > word
       let tier = 'WORD';
       let tierColor = 'var(--text-3)';
-      if (parseInt(r.exact_count) > 0) { tier = 'EXACT'; tierColor = '#FCA5A5'; }
-      else if (parseInt(r.near_count) > 0) { tier = 'NEAR'; tierColor = '#FCD34D'; }
+      if (parseInt(r.exact_count) > 0) { tier = 'EXACT'; tierColor = 'var(--neg)'; }
+      else if (parseInt(r.near_count) > 0) { tier = 'NEAR'; tierColor = 'var(--warn)'; }
       const ratio = r.dummy_to_margin_ratio;
-      const ratioColor = ratio >= 1.5 ? '#FCA5A5' : ratio >= 1.0 ? 'var(--accent)' : 'var(--text-2)';
+      const ratioColor = ratio >= 1.5 ? 'var(--neg)' : ratio >= 1.0 ? 'var(--accent)' : 'var(--text-2)';
       return `<tr>
         <td class="num"><strong>${i + 1}</strong></td>
         <td><strong>${esc(r.constituency)}</strong><br><span style="font-size:.72rem;color:var(--text-3)">AC ${r.ac_no}</span></td>
@@ -1496,12 +1597,12 @@ async function loadDummies() {
         <td class="right num">${(r.margin_pct).toFixed(2)}%</td>
         <td class="right num">${parseInt(r.combined_dummy_votes).toLocaleString('en-IN')}</td>
         <td class="right num" style="color:${ratioColor};font-weight:800;">${ratio.toFixed(2)}×</td>
-        <td><span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.66rem;font-weight:800;letter-spacing:.04em;background:rgba(255,255,255,.05);color:${tierColor};border:1px solid ${tierColor === 'var(--text-3)' ? 'var(--border)' : tierColor};">${tier}</span></td>
+        <td><span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.66rem;font-weight:800;letter-spacing:.04em;background:var(--badge-muted-bg);color:${tierColor};border:1px solid ${tierColor === 'var(--text-3)' ? 'var(--border)' : tierColor};">${tier}</span></td>
       </tr>`;
     }).join('');
   } catch (e) {
     document.getElementById('dum-body').innerHTML =
-      `<tr><td colspan="8" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load dummies sidecar: ${esc(e.message)}</td></tr>`;
+      `<tr><td colspan="8" style="text-align:center;padding:32px;color:var(--neg);">Could not load dummies sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1594,7 +1695,7 @@ async function cxLoadAll() {
     cxRender();
   } catch (e) {
     document.getElementById('cx-body').innerHTML =
-      `<tr><td colspan="9" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load: ${esc(e.message)}</td></tr>`;
+      `<tr><td colspan="9" style="text-align:center;padding:32px;color:var(--neg);">Could not load: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1700,7 +1801,7 @@ function cxFormatCell(col, v, row) {
   if (col.type === 'flip') {
     return v
       ? `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:800;letter-spacing:.04em;background:rgba(245,158,11,.18);color:var(--accent);">FLIPPED</span>`
-      : `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,.05);color:var(--text-3);">HELD</span>`;
+      : `<span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.62rem;font-weight:700;letter-spacing:.04em;background:var(--badge-muted-bg);color:var(--text-3);">HELD</span>`;
   }
   if (col.type === 'bool') {
     return v
