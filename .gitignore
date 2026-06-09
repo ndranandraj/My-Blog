@@ -35,6 +35,8 @@ architecture.jsx
 docs/web-filter-categorization.md
 docs/MIGRATE-TO-HUGO-MODULES.md
 docs/EXECUTION_PLAN.md
+docs/security-headers.md
+docs/medium-republish-checklist.md
 
 # Locally kept full-resolution image originals (pre-compression).
 # Never commit or publish.

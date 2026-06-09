@@ -14,8 +14,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
 <style>
 :root {
@@ -888,6 +888,14 @@ function pcClass(p) {
   };
   return map[p] || 'pc-other';
 }
+// Escape data-driven strings before interpolating into innerHTML templates.
+// All sidecar JSON is first-party, but candidate/constituency names come from
+// raw ECI CSV; this guards against stray markup characters in future refreshes.
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => (
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+  ));
+}
 
 // ─── MAP setup (defensive: only run if Leaflet loaded) ───
 let map = null;
@@ -950,8 +958,8 @@ function tooltipHTML(d, props) {
   const name = (d && d.ac_name) || props.AC_NAME || 'Unknown';
   const dist = (d && d.district) || props.DISTRICT || '';
   if (!d || !d.winner_party) {
-    return `<span class="tip-name">${name}</span>
-            <span class="tip-district">${dist}</span>
+    return `<span class="tip-name">${esc(name)}</span>
+            <span class="tip-district">${esc(dist)}</span>
             <div class="tip-row" style="font-style:italic;color:var(--text-3)">No 2026 result loaded</div>`;
   }
   const wp = d.winner_party;
@@ -963,13 +971,13 @@ function tooltipHTML(d, props) {
   const scand = d.second_candidate || '?';
   const svotes = (d.second_votes != null ? d.second_votes.toLocaleString('en-IN') : '—');
   return `
-    <span class="tip-name">${name} · AC ${props.AC_NO}</span>
-    <span class="tip-district">${dist}${d.region ? ' · ' + d.region : ''}</span>
-    <div class="tip-row"><span>Winner</span><strong>${wcand}</strong></div>
-    <div class="tip-row"><span>Party</span><span class="party-chip ${pcClass(wp)}">${wp}</span></div>
+    <span class="tip-name">${esc(name)} · AC ${props.AC_NO}</span>
+    <span class="tip-district">${esc(dist)}${d.region ? ' · ' + esc(d.region) : ''}</span>
+    <div class="tip-row"><span>Winner</span><strong>${esc(wcand)}</strong></div>
+    <div class="tip-row"><span>Party</span><span class="party-chip ${pcClass(wp)}">${esc(wp)}</span></div>
     <div class="tip-row"><span>Winner votes</span><strong>${wvotes}</strong></div>
     <div class="tip-row"><span>Margin</span><strong>${margin != null && margin > 0 ? margin.toLocaleString('en-IN') : '—'} (${marginPct})</strong></div>
-    <div class="tip-row"><span>Runner-up</span><strong>${scand} <span style="opacity:.6">(${sp})</span></strong></div>
+    <div class="tip-row"><span>Runner-up</span><strong>${esc(scand)} <span style="opacity:.6">(${esc(sp)})</span></strong></div>
     <div class="tip-row"><span>Runner-up votes</span><strong>${svotes}</strong></div>`;
 }
 
@@ -1063,7 +1071,7 @@ async function loadEfficiency() {
       const fillLeft = ratio >= 1 ? '50%' : (50 - parseFloat(fillW)) + '%';
       const fillColor = ratio >= 1 ? 'var(--accent)' : '#FCA5A5';
       return `<tr>
-        <td><span class="party-chip ${pcClass(p.party)}">${p.party}</span></td>
+        <td><span class="party-chip ${pcClass(p.party)}">${esc(p.party)}</span></td>
         <td class="right num">${p.votes.toLocaleString('en-IN')}</td>
         <td class="right num">${p.vote_pct.toFixed(2)}%</td>
         <td class="right num">${p.seats}</td>
@@ -1079,7 +1087,7 @@ async function loadEfficiency() {
     }).join('');
   } catch (e) {
     document.getElementById('eff-body').innerHTML =
-      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load party_efficiency_2026.json: ${e.message}</td></tr>`;
+      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load party_efficiency_2026.json: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1112,7 +1120,7 @@ async function loadRegional() {
     renderRegional();
   } catch (e) {
     document.getElementById('reg-body').innerHTML =
-      `<tr><td colspan="10" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load regional sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="10" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load regional sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1137,7 +1145,7 @@ function renderRegional() {
       return `<td class="right num">${inner}</td>`;
     }).join('');
     return `<tr>
-      <td><strong>${reg.region}</strong></td>
+      <td><strong>${esc(reg.region)}</strong></td>
       <td class="right num">${reg.acs}</td>
       ${cells}
     </tr>`;
@@ -1201,7 +1209,7 @@ async function loadSwing() {
     renderSwing();
   } catch (e) {
     document.getElementById('swing-body').innerHTML =
-      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load swing sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load swing sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1261,10 +1269,10 @@ function renderSwing() {
       : `<span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.66rem;font-weight:700;background:rgba(255,255,255,.05);color:var(--text-3);letter-spacing:.04em;">HELD</span>`;
     return `<tr>
       <td class="num">${r.ac_no}</td>
-      <td>${r.ac_name}<br><span style="font-size:.72rem;color:var(--text-3)">${r.district}</span></td>
-      <td style="font-size:.82rem;color:var(--text-2)">${r.region}</td>
-      <td><span class="party-chip ${pcClass(wp21)}">${wp21}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2021.share.toFixed(1)}%</span></td>
-      <td><span class="party-chip ${pcClass(wp26)}">${wp26}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2026.share.toFixed(1)}%</span></td>
+      <td>${esc(r.ac_name)}<br><span style="font-size:.72rem;color:var(--text-3)">${esc(r.district)}</span></td>
+      <td style="font-size:.82rem;color:var(--text-2)">${esc(r.region)}</td>
+      <td><span class="party-chip ${pcClass(wp21)}">${esc(wp21)}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2021.share.toFixed(1)}%</span></td>
+      <td><span class="party-chip ${pcClass(wp26)}">${esc(wp26)}</span> <span style="font-size:.74rem;color:var(--text-3);margin-left:4px;">${r.winner_2026.share.toFixed(1)}%</span></td>
       <td class="right num">${marStr}</td>
       <td>${flipBadge}</td>
     </tr>`;
@@ -1328,7 +1336,7 @@ async function loadDemographics() {
       const womenStr = p.women > 0 ? `${p.women} <span style="color:var(--text-3);font-size:.76rem;">(${p.women_pct.toFixed(1)}%)</span>` : '<span style="color:var(--text-3)">0</span>';
       const assets = p.median_assets_lakh != null ? `₹${p.median_assets_lakh.toFixed(0)}L` : '—';
       return `<tr>
-        <td><span class="party-chip ${pcClass(partyCode)}">${p.party}</span></td>
+        <td><span class="party-chip ${pcClass(partyCode)}">${esc(p.party)}</span></td>
         <td class="right num">${p.seats}</td>
         <td class="right num">${p.median_age}y</td>
         <td class="right num">${p.under_40}</td>
@@ -1344,17 +1352,17 @@ async function loadDemographics() {
       const partyCode = y.party === 'AIADMK' ? 'ADMK' : y.party;
       const gender = y.gender === 'F' ? '♀' : (y.gender === 'M' ? '♂' : y.gender || '?');
       return `<tr>
-        <td><strong>${y.name}</strong></td>
+        <td><strong>${esc(y.name)}</strong></td>
         <td class="right num"><span style="font-size:1.05rem;font-weight:700;color:var(--accent)">${y.age}</span></td>
-        <td>${y.ac}</td>
-        <td><span class="party-chip ${pcClass(partyCode)}">${y.party}</span></td>
-        <td style="text-align:center;font-size:1.0rem;">${gender}</td>
-        <td style="font-size:.82rem;color:var(--text-2);">${y.education || '—'}</td>
+        <td>${esc(y.ac)}</td>
+        <td><span class="party-chip ${pcClass(partyCode)}">${esc(y.party)}</span></td>
+        <td style="text-align:center;font-size:1.0rem;">${esc(gender)}</td>
+        <td style="font-size:.82rem;color:var(--text-2);">${y.education ? esc(y.education) : '—'}</td>
       </tr>`;
     }).join('');
   } catch (e) {
     document.getElementById('dm-party-body').innerHTML =
-      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load demographics sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="7" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load demographics sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1373,7 +1381,7 @@ async function loadIncumbents() {
     renderIncumbents();
   } catch (e) {
     document.getElementById('inc-body').innerHTML =
-      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load incumbents sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="6" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load incumbents sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1422,13 +1430,13 @@ function renderIncumbents() {
     const rowStyle = is_stalin ? 'background:rgba(252,211,77,0.04);' : '';
     return `<tr style="${rowStyle}">
       <td class="num">${r.ac_no}</td>
-      <td><strong>${r.incumbent_name}</strong>${stalinTag}<br>
-          <span style="font-size:.72rem;color:var(--text-3)">${r.ac_name} · ${r.district}</span><br>
-          <span class="party-chip ${pcClass(wp21)}" style="margin-top:4px;">${r.incumbent_party_2021}</span></td>
+      <td><strong>${esc(r.incumbent_name)}</strong>${stalinTag}<br>
+          <span style="font-size:.72rem;color:var(--text-3)">${esc(r.ac_name)} · ${esc(r.district)}</span><br>
+          <span class="party-chip ${pcClass(wp21)}" style="margin-top:4px;">${esc(r.incumbent_party_2021)}</span></td>
       <td class="right num">+${mar21}</td>
-      <td>${r.winner_2026 || '—'}<br><span class="party-chip ${pcClass(wp26)}" style="margin-top:3px;">${r.winner_party_2026 || '?'}</span></td>
+      <td>${r.winner_2026 ? esc(r.winner_2026) : '—'}<br><span class="party-chip ${pcClass(wp26)}" style="margin-top:3px;">${r.winner_party_2026 ? esc(r.winner_party_2026) : '?'}</span></td>
       <td class="right num">${mar26}</td>
-      <td style="color:${sitColor};font-weight:600;font-size:.82rem;">${sit}</td>
+      <td style="color:${sitColor};font-weight:600;font-size:.82rem;">${esc(sit)}</td>
     </tr>`;
   }).join('');
 }
@@ -1482,8 +1490,8 @@ async function loadDummies() {
       const ratioColor = ratio >= 1.5 ? '#FCA5A5' : ratio >= 1.0 ? 'var(--accent)' : 'var(--text-2)';
       return `<tr>
         <td class="num"><strong>${i + 1}</strong></td>
-        <td><strong>${r.constituency}</strong><br><span style="font-size:.72rem;color:var(--text-3)">AC ${r.ac_no}</span></td>
-        <td>${r.major_candidate}<br><span class="party-chip ${pcClass(partyCode)}" style="margin-top:3px;">${r.major_party}</span> · ${status}</td>
+        <td><strong>${esc(r.constituency)}</strong><br><span style="font-size:.72rem;color:var(--text-3)">AC ${r.ac_no}</span></td>
+        <td>${esc(r.major_candidate)}<br><span class="party-chip ${pcClass(partyCode)}" style="margin-top:3px;">${esc(r.major_party)}</span> · ${status}</td>
         <td class="right num">${parseInt(r.margin_of_loss).toLocaleString('en-IN')}</td>
         <td class="right num">${(r.margin_pct).toFixed(2)}%</td>
         <td class="right num">${parseInt(r.combined_dummy_votes).toLocaleString('en-IN')}</td>
@@ -1493,7 +1501,7 @@ async function loadDummies() {
     }).join('');
   } catch (e) {
     document.getElementById('dum-body').innerHTML =
-      `<tr><td colspan="8" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load dummies sidecar: ${e.message}</td></tr>`;
+      `<tr><td colspan="8" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load dummies sidecar: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1586,7 +1594,7 @@ async function cxLoadAll() {
     cxRender();
   } catch (e) {
     document.getElementById('cx-body').innerHTML =
-      `<tr><td colspan="9" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load: ${e.message}</td></tr>`;
+      `<tr><td colspan="9" style="text-align:center;padding:32px;color:#FCA5A5;">Could not load: ${esc(e.message)}</td></tr>`;
   }
 }
 
@@ -1671,7 +1679,7 @@ function cxRender() {
 function cxFormatCell(col, v, row) {
   if (col.type === 'num') {
     if (v == null) return '<span style="color:var(--text-3)">—</span>';
-    return `<span class="num">${typeof v === 'number' ? v.toLocaleString('en-IN') : v}</span>`;
+    return `<span class="num">${typeof v === 'number' ? v.toLocaleString('en-IN') : esc(v)}</span>`;
   }
   if (col.type === 'pct') {
     if (v == null || isNaN(v)) return '<span style="color:var(--text-3)">—</span>';
@@ -1680,14 +1688,14 @@ function cxFormatCell(col, v, row) {
   if (col.type === 'party') {
     if (!v) return '<span style="color:var(--text-3)">—</span>';
     const partyCode = v === 'AIADMK' ? 'ADMK' : v;
-    return `<span class="party-chip ${pcClass(partyCode)}">${v}</span>`;
+    return `<span class="party-chip ${pcClass(partyCode)}">${esc(v)}</span>`;
   }
   if (col.type === 'const') {
-    const dist = row.district ? `<span class="dist">${row.district}</span>` : '';
-    return `<span class="const-cell">${v || '—'}${dist}</span>`;
+    const dist = row.district ? `<span class="dist">${esc(row.district)}</span>` : '';
+    return `<span class="const-cell">${v ? esc(v) : '—'}${dist}</span>`;
   }
   if (col.type === 'cand') {
-    return `<span class="cand-cell">${v || '—'}</span>`;
+    return `<span class="cand-cell">${v ? esc(v) : '—'}</span>`;
   }
   if (col.type === 'flip') {
     return v
@@ -1699,7 +1707,7 @@ function cxFormatCell(col, v, row) {
       ? `<span style="color:var(--accent);font-weight:800;">✓</span>`
       : `<span style="color:var(--text-3);">—</span>`;
   }
-  return v != null ? String(v) : '<span style="color:var(--text-3)">—</span>';
+  return v != null ? esc(v) : '<span style="color:var(--text-3)">—</span>';
 }
 
 function cxRenderPager(total, totalPages) {
