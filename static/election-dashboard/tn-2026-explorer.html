@@ -123,7 +123,12 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   position: sticky; top: 0; z-index: 200;
+  transition: transform .25s ease;
 }
+/* Mobile: top nav slides away on scroll-down to free reading space;
+   the jump-nav takes its sticky slot. Driven by body.navhide (JS). */
+body.navhide .top-nav { transform: translateY(-100%); }
+body.navhide .jumpnav { top: 0; }
 .nav-brand {
   font-size: 0.76rem; font-weight: 700; letter-spacing: 0.10em;
   text-transform: uppercase; color: var(--text-3);
@@ -184,6 +189,9 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   color: var(--text-2); max-width: 680px; margin: 0 auto;
 }
 .hero .subtitle strong { color: var(--text); font-weight: 600; }
+.hero .provenance { font-size: 0.72rem; color: var(--text-3); margin-top: 14px; }
+.hero .provenance a { color: var(--text-2); text-decoration: underline; text-underline-offset: 2px; }
+.hero .provenance a:hover { color: var(--accent); }
 
 /* ── KPI STRIP (alliance + party headline) ─────────────────── */
 .kpi-strip {
@@ -213,6 +221,7 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 /* ── JUMP NAV (sticky pill rail) ───────────────────────────── */
 .jumpnav {
   position: sticky; top: 56px; z-index: 100;
+  transition: top .25s ease;
   padding: 11px 0 13px;
   background: var(--nav-bg);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -298,7 +307,19 @@ code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 .legend .h { color: var(--text-3); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.10em; font-weight: 700; margin-right: 4px; }
 
 /* ── TABLES ────────────────────────────────────────────────── */
-.table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow-x: auto; }
+.table-wrap { border: 1px solid var(--border); border-radius: var(--radius); overflow-x: auto;
+  /* Scroll-shadow edge hints: gradients signal more columns offscreen.
+     The "local" cover layers slide with the content and hide the hints
+     when there is nothing more to scroll. */
+  background:
+    linear-gradient(90deg, var(--surface) 35%, rgba(0,0,0,0)) left / 56px 100%,
+    linear-gradient(270deg, var(--surface) 35%, rgba(0,0,0,0)) right / 56px 100%,
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.30), transparent) left / 16px 100%,
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.30), transparent) right / 16px 100%,
+    var(--surface);
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll, scroll;
+}
 table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
 th { text-align: left; padding: 12px 14px; background: var(--surface-2);
   color: var(--text-2); font-size: 0.70rem; text-transform: uppercase;
@@ -442,6 +463,7 @@ tr:hover td { background: rgba(245,158,11,0.04); }
     <p class="subtitle">
       Every seat, every party, every region. <strong>234 constituencies</strong>, <strong>4.93 crore votes polled</strong>, <strong>12 parties with seats</strong>. The interactive companion to the five-post series on TN 2026.
     </p>
+    <p class="provenance">Source: official ECI results, May 4 2026 · 4,023 candidates across 234 seats · <a href="/data/tn-2026-candidates/">open dataset (CC BY 4.0)</a> · <a href="https://github.com/ndranandraj/tn-2026-candidates-dataset">GitHub</a></p>
   </div>
 </section>
 
@@ -1127,6 +1149,19 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 });
 updateToggleIcon();
 
+// ─── Mobile: auto-hide top nav on scroll-down, reveal on scroll-up ───
+(function () {
+  const mq = window.matchMedia('(max-width: 720px)');
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (!mq.matches) { document.body.classList.remove('navhide'); lastY = window.scrollY; return; }
+    const y = window.scrollY;
+    if (y > lastY + 4 && y > 160) document.body.classList.add('navhide');
+    else if (y < lastY - 4) document.body.classList.remove('navhide');
+    lastY = y;
+  }, { passive: true });
+})();
+
 function updateLegend() {
   const legend = document.getElementById('legend');
   if (currentView === 'alliance') {
@@ -1677,11 +1712,12 @@ const CX = {
 
 async function cxLoadAll() {
   try {
-    const [w26, w21, sw, all] = await Promise.all([
+    // all_candidates_2026.json (672 KB) is deliberately NOT loaded here;
+    // cxEnsureAllCandidates() fetches it the first time the tab is opened.
+    const [w26, w21, sw] = await Promise.all([
       jget('data/explorer_ac_2026.json'),
       jget('data/winners_2021.json'),
       jget('data/swing_2021_to_2026.json'),
-      jget('data/all_candidates_2026.json'),
     ]);
     CX.data.winners_2026 = (w26 && w26.per_ac) ? w26.per_ac : [];
     CX.data.winners_2021 = (w21 && w21.rows) ? w21.rows : [];
@@ -1691,11 +1727,28 @@ async function cxLoadAll() {
       w26_name: r.winner_2026.candidate, w26_party: r.winner_2026.party,
       flipped: r.flipped,
     })) : [];
-    CX.data.all_2026 = (all && all.rows) ? all.rows.filter(r => r.party !== 'NOTA') : [];
     cxRender();
   } catch (e) {
     document.getElementById('cx-body').innerHTML =
       `<tr><td colspan="9" style="text-align:center;padding:32px;color:var(--neg);">Could not load: ${esc(e.message)}</td></tr>`;
+  }
+}
+
+let cxAllLoading = false;
+async function cxEnsureAllCandidates() {
+  if (CX.data.all_2026 || cxAllLoading) return;
+  cxAllLoading = true;
+  document.getElementById('cx-body').innerHTML =
+    `<tr><td colspan="9" style="text-align:center;padding:32px;color:var(--text-3);">Loading all candidate rows…</td></tr>`;
+  try {
+    const all = await jget('data/all_candidates_2026.json');
+    CX.data.all_2026 = (all && all.rows) ? all.rows.filter(r => r.party !== 'NOTA') : [];
+  } catch (e) {
+    CX.data.all_2026 = [];
+    console.error('All-candidates load failed:', e);
+  } finally {
+    cxAllLoading = false;
+    if (CX.tab === 'all_2026') cxRender();
   }
 }
 
@@ -1746,9 +1799,13 @@ function cxRender() {
     return sortDir * (ka - kb);
   });
 
-  // Paginate
+  // Paginate. "All" on the candidates tab is capped: rendering 4,000+ rows
+  // in one pass janks mobile browsers, so it pages in chunks of 500 instead.
+  const ALL_CAP = 500;
   const total = filtered.length;
-  const pageSize = CX.pageSize === 'all' ? total : CX.pageSize;
+  let pageSize = CX.pageSize === 'all' ? total : CX.pageSize;
+  let capped = false;
+  if (CX.pageSize === 'all' && total > ALL_CAP) { pageSize = ALL_CAP; capped = true; }
   const totalPages = pageSize ? Math.max(1, Math.ceil(total / pageSize)) : 1;
   if (CX.page > totalPages) CX.page = totalPages;
   const start = (CX.page - 1) * pageSize;
@@ -1757,7 +1814,8 @@ function cxRender() {
 
   // Counts
   document.getElementById('cx-count').textContent =
-    `Showing ${total ? start + 1 : 0} to ${end} of ${total.toLocaleString('en-IN')} entries`;
+    `Showing ${total ? start + 1 : 0} to ${end} of ${total.toLocaleString('en-IN')} entries` +
+    (capped ? ' · large lists page 500 at a time, use search to narrow' : '');
 
   // Body
   const tbody = document.getElementById('cx-body');
@@ -1814,7 +1872,7 @@ function cxFormatCell(col, v, row) {
 function cxRenderPager(total, totalPages) {
   const info = document.getElementById('cx-pager-info');
   const buttons = document.getElementById('cx-pager-buttons');
-  if (CX.pageSize === 'all' || totalPages <= 1) {
+  if (totalPages <= 1) {   // capped "all" lists still need the pager
     info.textContent = '';
     buttons.innerHTML = '';
     return;
@@ -1857,7 +1915,11 @@ document.querySelectorAll('.cx-tab').forEach(b => {
     CX.tab = b.dataset.tab;
     CX.page = 1;
     CX.sortKey = null;
-    cxRender();
+    if (CX.tab === 'all_2026' && !CX.data.all_2026) {
+      cxEnsureAllCandidates();   // shows its own loading row, renders when done
+    } else {
+      cxRender();
+    }
   });
 });
 
@@ -1880,8 +1942,24 @@ document.getElementById('cx-page-size').addEventListener('change', e => {
 });
 
 // ─── Boot (each section catches its own errors so one failure doesn't break the page) ───
-const mapOk = initMap();
-if (mapOk) loadMap().catch(e => console.error('Map load failed:', e));
+// Lazy map: the 888 KB GeoJSON and Leaflet setup wait until the map section
+// approaches the viewport, so first paint isn't blocked for readers who
+// stay in the Constituency Explorer at the top.
+let mapStarted = false;
+function startMap() {
+  if (mapStarted) return;
+  mapStarted = true;
+  const mapOk = initMap();
+  if (mapOk) loadMap().catch(e => console.error('Map load failed:', e));
+}
+if ('IntersectionObserver' in window) {
+  const mapObserver = new IntersectionObserver((entries, obs) => {
+    if (entries.some(en => en.isIntersecting)) { startMap(); obs.disconnect(); }
+  }, { rootMargin: '600px 0px' });
+  mapObserver.observe(document.getElementById('map-section'));
+} else {
+  startMap();
+}
 loadEfficiency().catch(e => console.error('Eff load failed:', e));
 loadRegional().catch(e => console.error('Regional load failed:', e));
 loadSwing().catch(e => console.error('Swing load failed:', e));
