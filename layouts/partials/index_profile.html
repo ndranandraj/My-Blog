@@ -138,7 +138,7 @@
     {{- $count := len (where site.RegularPages "Params.categories" "intersect" (slice .name)) -}}
     {{- if gt $count 0 }}
     <a class="home-topic-card" href="/categories/{{ .slug }}/">
-      <span class="home-topic-icon" aria-hidden="true">{{ .icon }}</span>
+      <span class="home-topic-icon home-topic-icon--{{ .slug }}" aria-hidden="true"></span>
       <span class="home-topic-name">{{ .name }}</span>
       <span class="home-topic-count">{{ $count }} post{{ if gt $count 1 }}s{{ end }}</span>
       <span class="home-topic-blurb">{{ .blurb }}</span>

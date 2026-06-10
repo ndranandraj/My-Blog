@@ -85,8 +85,8 @@ enableRobotsTXT = true
     subtitle = "Software engineer and data analyst by day. Photographer, football fan, and occasional builder of random things. I write about tech, travel, and everything in between."
     imageUrl = "/images/Anand_enhanced.jpg"
     imageTitle = "Anand"
-    imageWidth = 160
-    imageHeight = 160
+    imageWidth = 118
+    imageHeight = 118
     [[params.profileMode.buttons]]
       name = "TN 2026 Explorer"
       url = "/election-dashboard/tn-2026-explorer.html"

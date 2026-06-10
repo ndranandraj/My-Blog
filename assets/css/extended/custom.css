@@ -2849,3 +2849,143 @@ html { scroll-behavior: smooth; }
 /* Swing table is short — don't stretch it full width on desktop */
 .post-content table.cand-table.swing-table { max-width: 540px; }
 .post-content table.cand-table.swing-table td.yr { font-weight: 600; color: var(--secondary); }
+
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN PASS · June 9 2026
+   1. Brand accent (amber, matching the dashboards)
+   2. Serif display headings (Merriweather, matching section heads)
+   3. Compact homepage hero so Featured surfaces near the fold
+   4. SVG line icons on topic cards (replacing emojis)
+   5. Mid-width horizontal scroll for wide tables (Results page clipping)
+═══════════════════════════════════════════════════════════════ */
+
+/* 1 ── Accent tokens. Amber family, same hue the dashboards use.
+   Light mode gets the deep amber for contrast; dark mode the bright one. */
+:root {
+    --accent: #B45309;
+    --accent-soft: rgba(180, 83, 9, 0.10);
+}
+.dark,
+[data-theme="dark"] {
+    --accent: #F59E0B;
+    --accent-soft: rgba(245, 158, 11, 0.14);
+}
+
+/* Accent applications: content links, section ticks, eyebrows,
+   "view all" links, active menu item. */
+.post-content a {
+    color: var(--accent);
+}
+.home-latest-header h2::before,
+.home-topics-header h2::before {
+    background: var(--accent);
+}
+.home-latest-cat {
+    color: var(--accent) !important;
+}
+.home-latest-all,
+.home-topics-all {
+    color: var(--accent);
+}
+#menu .active {
+    color: var(--accent);
+}
+
+/* 2 ── Serif display headings. Section heads and card titles are already
+   Merriweather; this brings page/post H1s into the same voice. */
+.post-title,
+.profile_inner h1 {
+    font-family: "Merriweather", "Georgia", serif;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+}
+
+/* 3 ── Compact homepage hero. PaperMod centers the profile in most of the
+   viewport, pushing the Featured card below the fold. Tighten everything
+   so the strongest content peeks into the first screen. */
+.profile {
+    min-height: unset !important;
+    padding: 2.2rem 1rem 0.6rem;
+}
+.profile .profile_inner img {
+    width: 118px !important;
+    height: 118px !important;
+}
+.profile_inner h1 {
+    font-size: 1.9rem;
+    margin: 0.7rem 0 0.35rem;
+}
+.profile_inner > span {
+    font-size: 0.95rem;
+    max-width: 560px;
+    display: inline-block;
+}
+.profile .buttons {
+    margin-top: 1.1rem !important;
+    flex-direction: row !important;
+}
+.profile .buttons .button {
+    padding: 0.65rem 1.2rem !important;
+    min-width: 170px !important;
+}
+
+/* 4 ── Topic card icons: line-art SVG masks in the accent color,
+   matching the homepage button icon set. Emojis removed from the
+   template; each card carries home-topic-icon--<slug>. */
+.home-topic-icon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-color: var(--accent);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    font-size: 0;             /* hide any stray text content */
+}
+.home-topic-icon--data {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='20' x2='12' y2='10'/><line x1='18' y1='20' x2='18' y2='4'/><line x1='6' y1='20' x2='6' y2='16'/></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='20' x2='12' y2='10'/><line x1='18' y1='20' x2='18' y2='4'/><line x1='6' y1='20' x2='6' y2='16'/></svg>");
+}
+.home-topic-icon--tech {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg>");
+}
+.home-topic-icon--travel {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z'/></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z'/></svg>");
+}
+.home-topic-icon--photography {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z'/><circle cx='12' cy='13' r='3'/></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z'/><circle cx='12' cy='13' r='3'/></svg>");
+}
+
+/* 5 ── Mid-width wide-table fix. Between the mobile breakpoint (760px)
+   and full desktop (1450px), the +120px bleed can clip at the viewport
+   edge with no scroll affordance (visible on /tn-2026-results/). Flip
+   wide tables into horizontal scroll containers with the same edge-hint
+   treatment used on TOC posts and mobile. */
+@media (min-width: 761px) and (max-width: 1449px) {
+    .post-content table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        background-image:
+            linear-gradient(to right, var(--theme), var(--theme)),
+            linear-gradient(to right, var(--theme), var(--theme)),
+            linear-gradient(to right,
+                color-mix(in srgb, var(--content) 14%, transparent),
+                transparent),
+            linear-gradient(to left,
+                color-mix(in srgb, var(--content) 14%, transparent),
+                transparent);
+        background-position: left center, right center, left center, right center;
+        background-repeat: no-repeat;
+        background-size: 28px 100%, 28px 100%, 20px 100%, 20px 100%;
+        background-attachment: local, local, scroll, scroll;
+    }
+}
