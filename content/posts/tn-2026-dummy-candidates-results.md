@@ -1,6 +1,8 @@
 ---
 title: "How many of the 329 dummies actually mattered"
 date: 2026-05-04
+series: "TN 2026 Election Series"
+series_part: 5
 lastmod: 2026-05-04
 description: "Three weeks ago I flagged 329 suspected dummy candidates in TN 2026. The results are in. In the cleanest test, zero seats flipped. In the noisiest test, two. Here is the full accounting."
 summary: "329 suspect pairs flagged before polling. 263 actually contested. 152 targeted majors lost. Consequential seats: 0 by the strict test, 2 by the inclusive test. And why that small number is itself the finding."

@@ -1,0 +1,20 @@
+{{- /*
+  District cross-links for per-seat result pages (tn-2026-results section).
+  Lists every other constituency in the same district, ordered by AC number,
+  with the winning party as a small tag. Keeps readers (and crawlers) moving
+  sideways through the 234-page set.
+*/ -}}
+{{- $district := .Params.district }}
+{{- if $district }}
+{{- $siblings := where (where .CurrentSection.RegularPages "Params.district" $district) "Permalink" "ne" .Permalink }}
+{{- if gt (len $siblings) 0 }}
+<nav class="seat-related" aria-label="Other constituencies in {{ $district }} district">
+  <h2 class="seat-related-title">More {{ $district }} district results</h2>
+  <ul class="seat-related-list">
+    {{- range sort $siblings "Params.ac_no" }}
+    <li><a href="{{ .Permalink }}">{{ .Params.constituency }}<span class="seat-related-party">{{ .Params.winner_party }}</span></a></li>
+    {{- end }}
+  </ul>
+</nav>
+{{- end }}
+{{- end }}

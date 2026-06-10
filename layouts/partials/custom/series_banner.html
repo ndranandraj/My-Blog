@@ -1,0 +1,26 @@
+{{- /*
+  Series banner. Renders above the post title when front matter carries:
+    series: "TN 2026 Election Series"
+    series_part: 3
+  Total is computed from all posts sharing the same series value, and
+  prev/next links are derived from series_part ordering. Posts without
+  `series` render nothing.
+*/ -}}
+{{- with .Params.series }}
+{{- $series := . }}
+{{- $part := $.Params.series_part | default 0 }}
+{{- $members := where site.RegularPages "Params.series" $series }}
+{{- $total := len $members }}
+{{- $prev := "" }}{{- $next := "" }}
+{{- range $members }}
+  {{- if eq (.Params.series_part | default 0) (sub $part 1) }}{{ $prev = . }}{{ end }}
+  {{- if eq (.Params.series_part | default 0) (add $part 1) }}{{ $next = . }}{{ end }}
+{{- end }}
+<nav class="series-banner" aria-label="{{ $series }}">
+  <span class="series-banner-label">{{ $series }}{{ if $part }} · Part {{ $part }} of {{ $total }}{{ end }}</span>
+  <span class="series-banner-links">
+    {{- with $prev }}<a href="{{ .Permalink }}" title="{{ .Title }}">&larr; Previous</a>{{ end }}
+    {{- with $next }}<a href="{{ .Permalink }}" title="{{ .Title }}">Next &rarr;</a>{{ end }}
+  </span>
+</nav>
+{{- end }}

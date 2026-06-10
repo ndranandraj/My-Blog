@@ -1,0 +1,37 @@
+{{- /*
+  Rich site footer. PaperMod's slim default footer is hidden via CSS
+  (.footer { display: none }) and this block, injected at the end of
+  <body> by PaperMod's extend_footer hook, takes its place. Copyright
+  and theme attribution live in the bottom row.
+*/ -}}
+<style>.footer { display: none; }</style>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-col site-footer-about">
+      <h3>Anand's Blog</h3>
+      <p>Software engineer and data analyst. Essays on data investigations, tech, travel, photography, and the occasional hummingbird.</p>
+    </div>
+    <div class="site-footer-col">
+      <h3>Featured work</h3>
+      <ul>
+        <li><a href="/election-dashboard/tn-2026-explorer.html">TN 2026 Explorer</a></li>
+        <li><a href="/tn-2026-results/">All 234 seat results</a></li>
+        <li><a href="/posts/tvk-debut-2026/">TVK 233: A Debut, Mapped</a></li>
+        <li><a href="/data/tn-2026-candidates/">Open dataset (CC BY 4.0)</a></li>
+      </ul>
+    </div>
+    <div class="site-footer-col">
+      <h3>Stay connected</h3>
+      <ul>
+        <li><a href="https://buttondown.com/ndranandraj" rel="noopener">Newsletter</a></li>
+        <li><a href="/index.xml">RSS feed</a></li>
+        <li><a href="/page/about/">About me</a></li>
+        <li><a href="/archives/">Archive</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer-bottom">
+    <span>&copy; {{ now.Year }} <a href="/">Anand's Blog</a></span>
+    <span class="site-footer-attrib">Built with <a href="https://gohugo.io/" rel="noopener">Hugo</a> &amp; <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener">PaperMod</a></span>
+  </div>
+</footer>

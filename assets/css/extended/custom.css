@@ -2877,8 +2877,9 @@ html { scroll-behavior: smooth; }
     color: var(--accent);
 }
 .home-latest-header h2::before,
-.home-topics-header h2::before {
-    background: var(--accent);
+.home-topics-header h2::before,
+.related-posts__title::before {
+    background: var(--accent) !important;
 }
 .home-latest-cat {
     color: var(--accent) !important;
@@ -2988,4 +2989,157 @@ html { scroll-behavior: smooth; }
         background-size: 28px 100%, 28px 100%, 20px 100%, 20px 100%;
         background-attachment: local, local, scroll, scroll;
     }
+}
+
+/* ── Series banner (above post title on series posts) ── */
+.series-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 4px 0 14px;
+    padding: 8px 14px;
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    background: var(--accent-soft);
+    border-radius: 10px;
+    font-size: 0.74rem;
+}
+.series-banner-label {
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.series-banner-links {
+    display: flex;
+    gap: 14px;
+}
+.series-banner-links a {
+    font-weight: 600;
+    color: var(--secondary);
+}
+.series-banner-links a:hover {
+    color: var(--accent);
+}
+
+/* ── District cross-links on per-seat result pages ── */
+.seat-related {
+    margin: 28px 0 8px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--primary) 3%, var(--theme));
+}
+.seat-related-title {
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+.seat-related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.seat-related-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    background: var(--theme);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    transition: border-color .15s ease, background .15s ease;
+}
+.seat-related-list a:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+.seat-related-party {
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--secondary);
+}
+
+/* ── Rich site footer (extend_footer.html). PaperMod's slim default
+   footer is hidden by an inline style INSIDE extend_footer.html, so the
+   hide only applies when the rich footer actually renders. ── */
+.site-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--border);
+    background: color-mix(in srgb, var(--primary) 3%, var(--theme));
+    font-size: 0.86rem;
+}
+.site-footer-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 36px 24px 28px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 32px;
+}
+.site-footer-col h3 {
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--primary);
+}
+.site-footer-about p {
+    margin: 0;
+    color: var(--secondary);
+    line-height: 1.6;
+    max-width: 320px;
+}
+.site-footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.site-footer-col li {
+    margin: 0 0 7px;
+}
+.site-footer-col a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+.site-footer-col a:hover {
+    color: var(--accent);
+}
+.site-footer-bottom {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 14px 24px 22px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: var(--secondary);
+    font-size: 0.78rem;
+}
+.site-footer-bottom a {
+    color: var(--secondary);
+}
+.site-footer-bottom a:hover {
+    color: var(--accent);
+}
+@media (max-width: 700px) {
+    .site-footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px 20px 20px;
+    }
+}
+@media print {
+    .site-footer, .series-banner, .seat-related { display: none !important; }
 }

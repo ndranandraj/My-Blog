@@ -9,6 +9,7 @@
 <article class="post-single{{ if .Params.pillar }} post-single--pillar{{ end }}{{ if (.Param "ShowToc") }} post-single--with-toc{{ end }}">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
+    {{- partial "custom/series_banner.html" . }}
     <h1 class="post-title entry-hint-parent">
       {{ .Title }}
       {{- if .Draft }}
@@ -58,6 +59,10 @@
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
   </div>
+  {{- end }}
+
+  {{- if eq .Section "tn-2026-results" }}
+  {{- partial "custom/seat_related.html" . }}
   {{- end }}
 
   <footer class="post-footer">

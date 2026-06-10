@@ -1,6 +1,8 @@
 ---
 title: "How DMK lost Tamil Nadu, region by region"
 date: 2026-05-16
+series: "TN 2026 Election Series"
+series_part: 2
 lastmod: 2026-05-16
 description: "DMK went from 133 seats to 59 in one cycle. The collapse was not uniform. Their strongest regions in 2021 fell the hardest. Chennai dropped from 31 wins to 2."
 summary: "DMK won 133 of 234 Assembly seats in 2021 and 59 in 2026. They lost 93 of their 2021 seats outright. 65 of those went directly to TVK. The fall was sharpest in the regions where they had been strongest: Chennai, Central, and the North. Three regions held the line."
