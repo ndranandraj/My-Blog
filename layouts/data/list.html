@@ -1,0 +1,85 @@
+{{- define "main" -}}
+{{- partial "custom/wash.html" . -}}
+<span class="page-wide" hidden></span>
+
+<div class="page-shell">
+  <header class="list-head">
+    <div class="home-sec-num">Open data &amp; tools</div>
+    <h1 class="list-title">Data &amp; <span class="hero-name">dashboards</span></h1>
+    {{- with .Description }}<p class="list-lead">{{ . }}</p>
+    {{- else }}<p class="list-lead">Interactive tools and clean, openly-licensed datasets built from public records, most of it from the Tamil Nadu 2026 election.</p>{{ end }}
+  </header>
+
+  {{- /* Featured: Explorer (dark gradient card, full width) */ -}}
+  <a class="dash-card dash-card--feature data-feature" href="/election-dashboard/tn-2026-explorer.html">
+    <div class="dash-card-top">
+      <div>
+        <span class="dash-eyebrow">LIVE · INTERACTIVE</span>
+        <h2>TN 2026 Explorer</h2>
+        <p>All 234 constituencies, winner, party, vote share and margin, searchable and grouped by region.</p>
+      </div>
+      <span class="dash-arrow" aria-hidden="true">&#8599;</span>
+    </div>
+    <div class="dash-bars" aria-hidden="true">
+      <span style="height:54%; background:var(--accent);"></span>
+      <span style="height:82%; background:#ff8fcf;"></span>
+      <span style="height:38%; background:#5fd6c4;"></span>
+      <span style="height:96%; background:var(--accent);"></span>
+      <span style="height:62%; background:#7b8cff;"></span>
+      <span style="height:44%; background:#5fd6c4;"></span>
+      <span style="height:74%; background:#ff8fcf;"></span>
+      <span style="height:30%; background:var(--accent); opacity:.6;"></span>
+    </div>
+  </a>
+
+  {{- /* Tools grid (real Explorer sections + results hub) */ -}}
+  <div class="dash-grid data-tools">
+    <a class="dash-card" href="/tn-2026-results/">
+      <div>
+        <span class="dash-eyebrow">RESULTS</span>
+        <h3>All 234 seats</h3>
+        <p>Seat-by-seat record with a 2021 comparison.</p>
+      </div>
+      <div class="dash-dots" aria-hidden="true"></div>
+    </a>
+    <a class="dash-card" href="/election-dashboard/tn-2026-explorer.html#map">
+      <div>
+        <span class="dash-eyebrow">MAP</span>
+        <h3>Margin map</h3>
+        <p>Where it was a landslide and where it came down to a few thousand votes.</p>
+      </div>
+      <div class="dash-dots" aria-hidden="true"></div>
+    </a>
+    <a class="dash-card" href="/election-dashboard/tn-2026-explorer.html#swing">
+      <div>
+        <span class="dash-eyebrow">SWING</span>
+        <h3>2021 &rarr; 2026</h3>
+        <p>Every constituency's shift since the last assembly election.</p>
+      </div>
+      <svg class="dash-spark" viewBox="0 0 120 36" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,28 20,22 40,25 60,14 80,18 100,8 120,12" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>
+    </a>
+  </div>
+
+  {{- /* Open datasets (real data-section pages) */ -}}
+  {{- with .Pages }}
+  <div class="dataset-block">
+    <div class="home-sec-head">
+      <div>
+        <span class="home-sec-num">Open datasets</span>
+        <h2>Download &amp; reuse</h2>
+      </div>
+      <span class="dataset-licence">CC BY 4.0</span>
+    </div>
+    <div class="dataset-list">
+      {{- range . }}
+      <a class="dataset-row" href="{{ .Permalink }}">
+        <span class="dataset-name">{{ .Title }}</span>
+        <span class="dataset-meta">{{ .Date.Format "2006" }}</span>
+        <span class="dataset-go">View &rarr;</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+</div>
+{{- end -}}

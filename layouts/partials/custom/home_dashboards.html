@@ -1,0 +1,63 @@
+{{- /*
+  Homepage "Dashboards & tools" bento (REBRAND June 2026).
+  Three glass cards: featured Explorer (bar-chart motif), the results hub
+  (dot-grid motif), and the open dataset (CSV-preview motif). Links point at
+  the live site features. Edit the URLs/copy here; styling is in custom.css
+  under "HOMEPAGE REBRAND". Toggle the whole section with params.showDashboards.
+*/ -}}
+{{- if ne site.Params.showDashboards false }}
+<section class="home-dashboards">
+  <div class="home-sec-head">
+    <div>
+      <span class="home-sec-num">01 &mdash; Dashboards</span>
+      <h2>Dashboards &amp; tools</h2>
+      <p>Interactive things I've built from public data.</p>
+    </div>
+    <a class="home-sec-all" href="/election-dashboard/">View all &rarr;</a>
+  </div>
+
+  <div class="dash-grid">
+    {{- /* Featured: Explorer */ -}}
+    <a class="dash-card dash-card--feature" href="/election-dashboard/tn-2026-explorer.html">
+      <div class="dash-card-top">
+        <div>
+          <span class="dash-eyebrow">LIVE · INTERACTIVE</span>
+          <h3>TN 2026 Explorer</h3>
+          <p>All 234 constituencies, winner, party, vote share and margin, searchable and grouped by region.</p>
+        </div>
+        <span class="dash-arrow" aria-hidden="true">&#8599;</span>
+      </div>
+      <div class="dash-bars" aria-hidden="true">
+        <span style="height:54%; background:var(--accent);"></span>
+        <span style="height:82%; background:#ff8fcf;"></span>
+        <span style="height:38%; background:#5fd6c4;"></span>
+        <span style="height:96%; background:var(--accent);"></span>
+        <span style="height:62%; background:#7b8cff;"></span>
+        <span style="height:44%; background:#5fd6c4;"></span>
+        <span style="height:74%; background:#ff8fcf;"></span>
+        <span style="height:30%; background:var(--accent); opacity:.6;"></span>
+      </div>
+    </a>
+
+    {{- /* Results hub */ -}}
+    <a class="dash-card" href="/tn-2026-results/">
+      <div>
+        <span class="dash-eyebrow">RESULTS</span>
+        <h3>All 234 seats</h3>
+        <p>Seat-by-seat record with a 2021 comparison.</p>
+      </div>
+      <div class="dash-dots" aria-hidden="true"></div>
+    </a>
+
+    {{- /* Dataset */ -}}
+    <a class="dash-card" href="/data/tn-2026-candidates/">
+      <div>
+        <span class="dash-eyebrow">OPEN DATA</span>
+        <h3>The dataset</h3>
+        <p>Every candidate, CC&nbsp;BY&nbsp;4.0.</p>
+      </div>
+      <div class="dash-csv" aria-hidden="true">seat,winner,party<br>1,&hellip;,DMK<br>2,&hellip;,AIADMK<br>&darr; download csv</div>
+    </a>
+  </div>
+</section>
+{{- end }}

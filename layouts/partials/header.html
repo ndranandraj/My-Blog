@@ -1,0 +1,47 @@
+{{- /*
+  Custom glass pill nav (REBRAND June 2026), overriding PaperMod's header.
+  Floating sticky translucent pill: brand "Anand.", menu pills, theme toggle,
+  Subscribe button. The theme-toggle button keeps id="theme-toggle" so
+  PaperMod's end-of-body toggle script (which flips html[data-theme] +
+  localStorage 'pref-theme') still wires it. The small inline script only
+  syncs the visible "Light/Dark" label with the current theme.
+*/ -}}
+<header class="header glass-header">
+  <nav class="glass-nav">
+    <a class="glass-brand" href="{{ "" | absLangURL }}" title="{{ site.Title }}">Anand<span class="brand-dot">.</span></a>
+
+    <ul class="glass-menu">
+      {{- range site.Menus.main }}
+      <li>
+        <a href="{{ .URL | absLangURL }}"{{ if $.IsMenuCurrent "main" . }} class="is-active" aria-current="page"{{ end }} title="{{ .Name }}">{{ .Name }}</a>
+      </li>
+      {{- end }}
+    </ul>
+
+    <div class="glass-actions">
+      <button id="theme-toggle" class="glass-toggle" accesskey="t" title="Toggle theme (Alt + T)" aria-label="Toggle theme">
+        <span class="glass-toggle-dot" aria-hidden="true"></span>
+        <span class="theme-label">Theme</span>
+      </button>
+      {{- with site.Params.buttondown.username }}
+      <a class="glass-subscribe" href="https://buttondown.com/{{ . }}" rel="noopener" target="_blank">Subscribe</a>
+      {{- else }}
+      <a class="glass-subscribe" href="#newsletter">Subscribe</a>
+      {{- end }}
+    </div>
+  </nav>
+</header>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    var label = btn.querySelector('.theme-label');
+    function sync() {
+      if (!label) return;
+      var t = document.documentElement.dataset.theme === 'dark' ? 'Dark' : 'Light';
+      label.textContent = t;
+    }
+    sync();
+    btn.addEventListener('click', function () { setTimeout(sync, 0); });
+  })();
+</script>

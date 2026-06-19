@@ -1,20 +1,28 @@
 ---
 title: "About"
+layout: "about"
 ---
 
 <div class="about-hero">
-  <div class="about-hero-inner">
-    <img src="Anand_enhanced.jpg" alt="Anand" class="about-avatar" />
-    <div class="about-intro">
-      <span class="about-eyebrow">Hi, I'm</span>
-      <h1 class="about-name">Anandraj</h1>
-      <p class="about-role">Software engineer &amp; data analyst based in Orange County, California.</p>
-      <div class="about-chips">
-        <span class="about-chip">💻 Builds things</span>
-        <span class="about-chip">📷 Wildlife photographer</span>
-        <span class="about-chip">⚽ Man United (yes, still)</span>
-        <span class="about-chip">📖 Reader</span>
-      </div>
+  <div class="about-hero-text">
+    <span class="about-eyebrow">About</span>
+    <h1 class="about-name">Hi, I'm <span class="hero-name">Anandraj.</span></h1>
+    <p class="about-role">Software engineer and data analyst based in Orange County, California. By day I build data pipelines and internal tools; the rest of the time I'm turning public records into things people can actually explore.</p>
+    <p class="about-role about-role--sub">Off the keyboard you'll find me behind a long lens looking for birds, arguing about Manchester United, or driving somewhere dark enough to see the Milky Way.</p>
+    <div class="about-chips">
+      <a class="about-chip" href="https://www.linkedin.com/in/anandraj-r-78b86198" rel="noopener">LinkedIn</a>
+      <a class="about-chip" href="https://www.instagram.com/ndranandraj" rel="noopener">Instagram</a>
+      <a class="about-chip" href="https://www.goodreads.com/user/show/16492967-anandraj-r" rel="noopener">Goodreads</a>
+    </div>
+  </div>
+  <div class="about-hero-portrait">
+    <span class="hero-portrait-glow" aria-hidden="true"></span>
+    <div class="hero-portrait-frame">
+      <div class="hero-portrait-card"><img src="Anand_enhanced.jpg" alt="Anandraj" /></div>
+    </div>
+    <div class="hero-badge about-loc">
+      <span class="hero-now-label">BASED IN</span>
+      <span class="hero-now-text">Orange County, CA</span>
     </div>
   </div>
 </div>

@@ -56,3 +56,4 @@ drafts/
 # Internal Claude session files (workflow notes, not for the public repo)
 CLAUDE.md
 NOTES.md
+.redesign-backup/

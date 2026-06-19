@@ -1,6 +1,8 @@
 {{- define "main" -}}
+{{- partial "custom/wash.html" (dict "subtle" true) }}
 
-<header class="page-header">
+<header class="page-header results-header">
+  <span class="home-sec-num">TN 2026 · Results</span>
   <h1>{{ .Title }}</h1>
 </header>
 
@@ -66,46 +68,57 @@
 
 <style>
   html { scroll-behavior: smooth; }
+  .results-header .home-sec-num { display: block; }
+  .page-header h1 {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2.2rem, 4.5vw, 3rem); letter-spacing: -0.02em; line-height: 1.06;
+  }
   .results-controls { margin: 1.75rem 0 0.75rem; }
 
   .region-nav {
     position: sticky; top: 0; z-index: 20;
     display: flex; flex-wrap: wrap; gap: 6px;
     padding: 10px 0; margin: 0 0 1.25rem;
-    background: var(--theme);
-    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--theme) 82%, transparent);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-line);
   }
   .region-nav a {
     display: inline-flex; align-items: center; gap: 5px;
-    padding: 4px 11px; border-radius: 999px;
+    padding: 5px 12px; border-radius: 999px;
     font-size: 0.8rem; font-weight: 600; text-decoration: none;
-    color: var(--secondary); background: var(--entry);
-    border: 1px solid var(--border); transition: color .12s, border-color .12s;
+    color: var(--secondary); background: var(--glass);
+    border: 1px solid var(--glass-line); transition: color .15s, border-color .15s;
   }
-  .region-nav a:hover { color: var(--primary); border-color: var(--secondary); }
-  .region-nav .rn-count { font-size: 0.85em; font-weight: 500; opacity: 0.7; }
+  .region-nav a:hover { color: var(--primary); border-color: var(--accent); }
+  .region-nav .rn-count { font-family: var(--font-mono); font-size: 0.78em; font-weight: 500; color: var(--accent); }
 
-  .region-foot { padding: 0.5rem 1rem; border-top: 1px solid var(--border); text-align: right; }
-  .region-foot a { font-size: 0.78rem; font-weight: 600; color: var(--secondary); text-decoration: none; }
-  .region-foot a:hover { color: var(--primary); }
+  .region-foot { padding: 0.5rem 1rem; border-top: 1px solid var(--glass-line); text-align: right; }
+  .region-foot a { font-size: 0.78rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+  .region-foot a:hover { text-decoration: underline; }
   #results-search {
-    width: 100%; padding: 0.7rem 1rem; font-size: 1rem; box-sizing: border-box;
-    border: 1px solid var(--border); border-radius: 8px;
-    background: var(--entry); color: var(--primary);
+    width: 100%; padding: 0.85rem 1.1rem; font-size: 1rem; box-sizing: border-box;
+    border: 1px solid var(--glass-line); border-radius: 12px;
+    background: var(--glass-strong); color: var(--primary);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    font-family: var(--font-body);
   }
-  #results-search:focus { outline: 2px solid var(--secondary); outline-offset: 1px; }
-  .results-count { color: var(--secondary); font-size: 0.85rem; margin: 0.5rem 2px 0; }
+  #results-search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .results-count { font-family: var(--font-mono); color: var(--secondary); font-size: 0.78rem; margin: 0.5rem 2px 0; }
 
   #results-wrap .region-group {
     margin: 1.5rem 0;
-    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
-    box-shadow: 0 12px 28px -24px rgba(0,0,0,0.22);
+    border: 1px solid var(--glass-line); border-radius: 16px; overflow: hidden;
+    background: var(--glass-strong);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--glass-shadow);
     scroll-margin-top: 96px;
   }
   #results-wrap .region-group h2 {
-    margin: 0; padding: 0.7rem 1rem; font-size: 1.05rem;
-    background: color-mix(in srgb, var(--primary) 6%, var(--theme));
-    border-bottom: 1px solid var(--border);
+    margin: 0; padding: 0.8rem 1.1rem; font-size: 1.2rem;
+    font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em;
+    background: var(--glass-soft);
+    border-bottom: 1px solid var(--glass-line);
   }
   #results-wrap .region-count {
     font-size: 0.72em; color: var(--secondary); font-weight: 500;

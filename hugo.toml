@@ -36,6 +36,11 @@ enableRobotsTXT = true
   defaultTheme = "auto"
   mainSections = ["posts", "data"]
 
+  # Homepage hero "NOW" badge (the small card on the portrait). Edit freely;
+  # leave empty to hide the badge. Eyebrow above the headline is `heroEyebrow`.
+  now = "Mapping TN 2026"
+  heroEyebrow = "Writing · Data · Photography"
+
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -167,13 +172,17 @@ enableRobotsTXT = true
     url = "/data/"
     weight = 5
   [[menu.main]]
+    name = "Photography"
+    url = "/categories/photography/"
+    weight = 6
+  [[menu.main]]
     name = "Archive"
     url = "/archives/"
-    weight = 6
+    weight = 7
   [[menu.main]]
     name = "Search"
     url = "/search/"
-    weight = 7
+    weight = 8
 
 [pagination]
   pagerSize = 10

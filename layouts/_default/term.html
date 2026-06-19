@@ -1,0 +1,46 @@
+{{- define "main" -}}
+{{- partial "custom/wash.html" . -}}
+<span class="page-wide" hidden></span>
+
+{{- $isPhoto := eq (lower .Title) "photography" -}}
+{{- $posts := .Pages -}}
+{{- $count := len $posts -}}
+
+<div class="page-shell">
+  <header class="list-head">
+    {{- if $isPhoto }}
+    <div class="home-sec-num">Through the lens</div>
+    <h1 class="list-title">Photo<span class="hero-name">graphy</span></h1>
+    <p class="list-lead">Wildlife and birds mostly, the occasional 2am Milky Way, and whatever catches the light on a slow morning.</p>
+    {{- else }}
+    <div class="home-sec-num">{{ .Data.Singular | default "Topic" | humanize | title }}</div>
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{- with .Description }}<p class="list-lead">{{ . }}</p>{{ end }}
+    {{- end }}
+    <p class="filter-count" style="margin-top:0.8rem;">{{ $count }} post{{ if ne $count 1 }}s{{ end }}</p>
+  </header>
+
+  {{- if $posts }}
+  <div class="blog-grid{{ if $isPhoto }} photo-grid{{ end }}">
+    {{- range $posts }}
+    <a class="blog-card" href="{{ .Permalink }}">
+      {{- $cover := .Params.cover.image | default .Params.image -}}
+      {{- if $cover }}
+      <div class="blog-card-cover" style="background-image:url('{{ $cover | absURL }}');"></div>
+      {{- else }}
+      <div class="blog-card-cover blog-card-cover--empty"><span>COVER</span></div>
+      {{- end }}
+      <div class="blog-card-body">
+        {{- with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ end }}
+        <h3>{{ .Title }}</h3>
+        <p>{{ (.Description | default .Summary) | plainify | truncate 110 }}</p>
+        <span class="latest-meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .ReadingTime }} &middot; {{ .ReadingTime }} min{{ end }}</span>
+      </div>
+    </a>
+    {{- end }}
+  </div>
+  {{- else }}
+  <p class="list-lead">Nothing here yet.</p>
+  {{- end }}
+</div>
+{{- end -}}

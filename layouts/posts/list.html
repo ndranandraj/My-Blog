@@ -1,0 +1,101 @@
+{{- define "main" -}}
+{{- partial "custom/wash.html" . -}}
+<span class="page-wide" hidden></span>
+
+{{- $posts := .Pages -}}
+{{- $count := len $posts -}}
+
+<div class="page-shell">
+
+  <header class="list-head">
+    <div class="home-sec-num">The journal</div>
+    <h1 class="list-title">Writing &amp; <span class="hero-name">field&nbsp;notes</span></h1>
+    {{- with .Description }}<p class="list-lead">{{ . }}</p>
+    {{- else }}<p class="list-lead">Essays on data investigations, tech and the questions it raises, plus slower notes on football, travel, and the things I point a camera at.</p>{{ end }}
+  </header>
+
+  {{- /* Category filter bar (client-side) */ -}}
+  {{- $cats := slice -}}
+  {{- range $name, $t := site.Taxonomies.categories -}}{{- $cats = $cats | append $name -}}{{- end -}}
+  <div class="filter-bar">
+    <div class="filter-chips">
+      <button class="filter-chip is-active" data-filter="all">All</button>
+      {{- range $cats }}
+      <button class="filter-chip" data-filter="{{ . | urlize }}">{{ . | humanize | title }}</button>
+      {{- end }}
+    </div>
+    <span class="filter-count">{{ $count }} essay{{ if ne $count 1 }}s{{ end }}</span>
+  </div>
+
+  {{- if $posts }}
+  {{- $featured := index $posts 0 }}
+  {{- with $featured }}
+  <a class="latest-lead blog-featured" href="{{ .Permalink }}">
+    {{- $cover := .Params.cover.image | default .Params.image -}}
+    {{- if $cover }}
+    <div class="latest-lead-cover" style="background-image:url('{{ $cover | absURL }}');"><span class="latest-feat">&#9733; Featured</span></div>
+    {{- else }}
+    <div class="latest-lead-cover latest-lead-cover--empty"><span class="latest-feat">&#9733; Featured</span><span class="latest-lead-ph">COVER IMAGE</span></div>
+    {{- end }}
+    <div class="latest-lead-body">
+      {{- with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ end }}
+      <h2>{{ .Title }}</h2>
+      <p>{{ (.Description | default .Summary) | plainify | truncate 170 }}</p>
+      <div class="latest-lead-foot">
+        <span class="latest-meta">{{ .Date.Format (site.Params.DateFormat | default "Jan 2, 2006") }}{{ if .ReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}</span>
+        <span class="latest-read">Read article &rarr;</span>
+      </div>
+    </div>
+  </a>
+  {{- end }}
+
+  <div class="blog-grid">
+    {{- range after 1 $posts }}
+    {{- $pc := slice }}{{ range .Params.categories }}{{ $pc = $pc | append (. | urlize) }}{{ end }}
+    <a class="blog-card" href="{{ .Permalink }}" data-cats="{{ delimit $pc " " }}">
+      {{- $cover := .Params.cover.image | default .Params.image -}}
+      {{- if $cover }}
+      <div class="blog-card-cover" style="background-image:url('{{ $cover | absURL }}');"></div>
+      {{- else }}
+      <div class="blog-card-cover blog-card-cover--empty"><span>COVER</span></div>
+      {{- end }}
+      <div class="blog-card-body">
+        {{- with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ end }}
+        <h3>{{ .Title }}</h3>
+        <p>{{ (.Description | default .Summary) | plainify | truncate 110 }}</p>
+        <span class="latest-meta">{{ .Date.Format "Jan 2" }}{{ if .ReadingTime }} &middot; {{ .ReadingTime }} min{{ end }}</span>
+      </div>
+    </a>
+    {{- end }}
+  </div>
+  <p class="blog-empty" hidden>No posts in this topic yet.</p>
+  {{- else }}
+  <p class="list-lead">No posts yet.</p>
+  {{- end }}
+
+</div>
+
+<script>
+  (function () {
+    var chips = document.querySelectorAll('.filter-chip');
+    var cards = document.querySelectorAll('.blog-card');
+    var empty = document.querySelector('.blog-empty');
+    if (!chips.length) return;
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var f = chip.dataset.filter;
+        chips.forEach(function (c) { c.classList.remove('is-active'); });
+        chip.classList.add('is-active');
+        var shown = 0;
+        cards.forEach(function (card) {
+          var cats = (card.dataset.cats || '').split(' ');
+          var show = f === 'all' || cats.indexOf(f) !== -1;
+          card.style.display = show ? '' : 'none';
+          if (show) shown++;
+        });
+        if (empty) empty.hidden = shown !== 0;
+      });
+    });
+  })();
+</script>
+{{- end -}}

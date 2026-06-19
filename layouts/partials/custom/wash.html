@@ -1,0 +1,12 @@
+{{- /* Colour field: drifting gradient blobs + ring highlight + grain.
+       Shared by the homepage and the designed list/about pages (REBRAND 2026).
+       Fixed, behind content, pointer-events none. */ -}}
+{{- $subtle := false -}}
+{{- if reflect.IsMap . }}{{ $subtle = .subtle }}{{ end -}}
+<div class="home-wash{{ if $subtle }} home-wash--subtle{{ end }}" aria-hidden="true">
+  <span class="home-blob home-blob--1"></span>
+  <span class="home-blob home-blob--2"></span>
+  <span class="home-blob home-blob--3"></span>
+  <span class="home-wash-ring"></span>
+  <span class="home-wash-grain"></span>
+</div>

@@ -5,116 +5,124 @@
     - Append a "Latest posts" strip below it to give landing visitors
       something to click without an extra navigation step.
 */ -}}
-<div class="profile">
-    {{- with site.Params.profileMode }}
-    <div class="profile_inner">
-        {{- if .imageUrl -}}
-        {{- $img := "" }}
-        {{- if not (urls.Parse .imageUrl).IsAbs }}
-            {{- $img = resources.Get .imageUrl }}
-        {{- end }}
-        {{- if $img }}
-            {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
-            {{- if hugo.IsExtended -}}
-                {{- $processableFormats = $processableFormats | append "webp" -}}
-            {{- end -}}
-            {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
-            {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
-                {{- if (not (and (not .imageHeight) (not .imageWidth))) }}
-                    {{- $img = $img.Resize (printf "%dx%d" .imageWidth .imageHeight) }}
-                {{- else if .imageHeight }}
-                    {{- $img = $img.Resize (printf "x%d" .imageHeight) }}
-                {{ else if .imageWidth }}
-                    {{- $img = $img.Resize (printf "%dx" .imageWidth) }}
-                {{ else }}
-                    {{- $img = $img.Resize "150x150" }}
-                {{- end }}
-            {{- end }}
-            <img draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
-                height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
-        {{- else }}
-        <img draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
-            height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
-        {{- end }}
-        {{- end }}
-        <h1>{{ .title | default site.Title | markdownify }}</h1>
-        <span>{{ .subtitle | markdownify }}</span>
-        {{- partial "social_icons.html" -}}
+{{- partial "custom/wash.html" . -}}
+<span class="page-wide" hidden></span>
 
-        {{- with .buttons }}
-        <div class="buttons">
-            {{- range . }}
-            <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
-                <span class="button-inner">
-                    {{ .name }}
-                    {{- if (findRE "://" .url) }}&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="14" width="14">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                    {{- end }}
-                </span>
-            </a>
-            {{- end }}
-        </div>
-        {{- end }}
-    </div>
-    {{- end}}
-</div>
-
-{{- /* --- Featured Block: TN Elections Dashboard --- */ -}}
-{{- with site.Params.featured }}
-<section class="home-featured">
-  <a class="home-featured-card" href="{{ .url }}">
-    <div class="home-featured-visual">
-      {{- if .image }}
-      <img src="{{ .image | absURL }}" alt="{{ .imageAlt | default .title }}" loading="eager" decoding="async">
+{{- $postCount := len (where site.RegularPages "Section" "posts") -}}
+{{- /* --- Two-column hero --- */ -}}
+{{- with site.Params.profileMode }}
+<section class="hero">
+  <div class="hero-text">
+    {{- with site.Params.heroEyebrow }}
+    <p class="hero-eyebrow"><span class="hero-spark">&#10022;</span>{{ . }}</p>
+    {{- end }}
+    <h1 class="hero-title">Hi, I&rsquo;m <span class="hero-name">Anand.</span></h1>
+    <p class="hero-sub">{{ .subtitle | markdownify }}</p>
+    {{- with .buttons }}
+    <div class="hero-actions">
+      {{- range $i, $b := . }}
+      <a class="hero-btn {{ if eq $i 0 }}hero-btn--primary{{ else }}hero-btn--ghost{{ end }}" href="{{ trim $b.url " " }}" rel="noopener">{{ $b.name }}</a>
       {{- end }}
     </div>
-    <div class="home-featured-body">
-      <span class="home-featured-kicker">{{ .kicker | default "FEATURED" }}</span>
-      <h2>{{ .title }}</h2>
-      <p>{{ .description }}</p>
-      <span class="home-featured-cta">{{ .cta | default "Explore →" }}</span>
+    {{- end }}
+    {{- with site.Params.socialIcons }}
+    <div class="hero-social">
+      {{- range . }}
+      <a href="{{ trim .url " " }}" rel="noopener" target="_blank">{{ if eq .name "rss" }}RSS{{ else }}{{ title .name }}{{ end }}</a>
+      {{- end }}
     </div>
-  </a>
-</section>
-{{- end }}
+    {{- end }}
+  </div>
 
-{{- /* --- Latest Posts Strip --- */ -}}
+  <div class="hero-portrait">
+    <span class="hero-portrait-glow" aria-hidden="true"></span>
+    <div class="hero-portrait-frame">
+      {{- if .imageUrl -}}
+      {{- $img := "" }}
+      {{- if not (urls.Parse .imageUrl).IsAbs }}{{- $img = resources.Get .imageUrl }}{{- end }}
+      {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+      {{- if and $img $prod (in (slice "jpg" "jpeg" "png" "webp" "tif" "bmp" "gif") $img.MediaType.SubType) }}
+        {{- $img = $img.Resize "720x q85" }}
+        <div class="hero-portrait-card"><img src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "Anand" }}" width="720" loading="eager" decoding="async"></div>
+      {{- else if $img }}
+        <div class="hero-portrait-card"><img src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "Anand" }}" loading="eager" decoding="async"></div>
+      {{- else }}
+        <div class="hero-portrait-card"><img src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "Anand" }}" loading="eager" decoding="async"></div>
+      {{- end }}
+      {{- end }}
+    </div>
+    {{- with site.Params.now }}
+    <div class="hero-now hero-badge">
+      <span class="hero-now-label">NOW</span>
+      <span class="hero-now-text">{{ . }}</span>
+    </div>
+    {{- end }}
+    {{- if gt $postCount 0 }}
+    <div class="hero-essays hero-badge">
+      <span class="hero-essays-num">{{ $postCount }}</span>
+      <span class="hero-essays-label">essays</span>
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{- end}}
+
+{{- /* --- Dashboards & tools bento (replaces the old single featured card) --- */ -}}
+{{- partial "custom/home_dashboards.html" . -}}
+
+{{- /* --- Latest writing: one lead card + compact list rows --- */ -}}
 {{- $mainSections := site.Params.mainSections | default (slice "posts") -}}
 {{- $latest := first 4 (where site.RegularPages "Type" "in" $mainSections) -}}
 {{- if $latest }}
 <section class="home-latest">
-  <div class="home-latest-header">
-    <h2>Latest writing</h2>
-    <a class="home-latest-all" href="/posts/">View all &rarr;</a>
+  <div class="home-sec-head home-sec-head--rule">
+    <div>
+      <span class="home-sec-num">02 &mdash; Writing</span>
+      <h2>Latest writing</h2>
+    </div>
+    <a class="home-sec-all" href="/posts/">View all &rarr;</a>
   </div>
-  <div class="home-latest-grid">
-    {{- range $latest }}
-    <a class="home-latest-card" href="{{ .Permalink }}">
-      {{- $cover := .Params.cover.image | default .Params.image -}}
-      {{- if $cover }}
-      <div class="home-latest-cover" style="background-image:url('{{ $cover | absURL }}');"></div>
-      {{- else }}
-      <div class="home-latest-cover home-latest-cover--empty"></div>
-      {{- end }}
-      <div class="home-latest-body">
-        {{- with .Params.categories }}
-        <span class="home-latest-cat">{{ index . 0 }}</span>
-        {{- end }}
-        <h3>{{ .Title }}</h3>
-        <p>{{ (.Description | default .Summary) | plainify | truncate 120 }}</p>
-        <span class="home-latest-meta">
+
+  {{- $lead := index $latest 0 }}
+  {{- with $lead }}
+  <a class="latest-lead" href="{{ .Permalink }}">
+    {{- $cover := .Params.cover.image | default .Params.image -}}
+    {{- if $cover }}
+    <div class="latest-lead-cover" style="background-image:url('{{ $cover | absURL }}');"><span class="latest-feat">&#9733; Featured</span></div>
+    {{- else }}
+    <div class="latest-lead-cover latest-lead-cover--empty"><span class="latest-feat">&#9733; Featured</span><span class="latest-lead-ph">COVER IMAGE</span></div>
+    {{- end }}
+    <div class="latest-lead-body">
+      {{- with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ end }}
+      <h3>{{ .Title }}</h3>
+      <p>{{ (.Description | default .Summary) | plainify | truncate 160 }}</p>
+      <div class="latest-lead-foot">
+        <span class="latest-meta">
           {{ .Date.Format (site.Params.DateFormat | default "Jan 2, 2006") }}
           {{- if .ReadingTime }} &middot; {{ .ReadingTime }} min read{{ end -}}
         </span>
+        <span class="latest-read">Read article &rarr;</span>
       </div>
+    </div>
+  </a>
+  {{- end }}
+
+  {{- if gt (len $latest) 1 }}
+  <div class="latest-rows">
+    {{- range after 1 $latest }}
+    <a class="latest-row" href="{{ .Permalink }}">
+      {{- with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ else }}<span class="latest-cat">&nbsp;</span>{{ end }}
+      <div class="latest-row-body">
+        <h4>{{ .Title }}</h4>
+        <p>{{ (.Description | default .Summary) | plainify | truncate 120 }}</p>
+      </div>
+      <span class="latest-meta latest-meta--row">
+        {{ .Date.Format "Jan 2" }}{{ if .ReadingTime }} &middot; {{ .ReadingTime }} min{{ end }}
+      </span>
     </a>
     {{- end }}
   </div>
+  {{- end }}
 </section>
 {{- end }}
 
@@ -129,22 +137,45 @@
 {{- range $topics }}{{- if gt (len (where site.RegularPages "Params.categories" "intersect" (slice .name))) 0 }}{{- $anyTopic = true }}{{- end }}{{- end }}
 {{- if $anyTopic }}
 <section class="home-topics">
-  <div class="home-topics-header">
-    <h2>Browse by topic</h2>
-    <a class="home-topics-all" href="/tags/">All tags &rarr;</a>
+  <div class="home-sec-head">
+    <div>
+      <span class="home-sec-num">03 &mdash; Topics</span>
+      <h2>Browse by topic</h2>
+    </div>
+    <a class="home-sec-all" href="/tags/">All tags &rarr;</a>
   </div>
-  <div class="home-topics-grid">
+  <div class="topics-grid">
     {{- range $topics }}
     {{- $count := len (where site.RegularPages "Params.categories" "intersect" (slice .name)) -}}
     {{- if gt $count 0 }}
-    <a class="home-topic-card" href="/categories/{{ .slug }}/">
-      <span class="home-topic-icon home-topic-icon--{{ .slug }}" aria-hidden="true"></span>
-      <span class="home-topic-name">{{ .name }}</span>
-      <span class="home-topic-count">{{ $count }} post{{ if gt $count 1 }}s{{ end }}</span>
-      <span class="home-topic-blurb">{{ .blurb }}</span>
+    <a class="topic-card" href="/categories/{{ .slug }}/">
+      <span class="topic-name">{{ .name }} <span class="topic-count">{{ $count }}</span></span>
+      <span class="topic-blurb">{{ .blurb }}</span>
     </a>
     {{- end }}
     {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- /* --- Newsletter panel --- */ -}}
+{{- with site.Params.buttondown.username }}
+<section class="home-newsletter">
+  <div class="newsletter-panel">
+    <div class="newsletter-panel-glow" aria-hidden="true"></div>
+    <div class="newsletter-panel-inner">
+      <h3>Come for the data, stay for the hummingbirds</h3>
+      <p>New essays and data investigations in your inbox. No spam, ever.</p>
+      <form class="newsletter-panel-form"
+            action="https://buttondown.com/api/emails/embed-subscribe/{{ . }}"
+            method="post"
+            target="popupwindow"
+            onsubmit="if(typeof gtag==='function'){gtag('event','newsletter_submit',{location:'home_panel',page_path:window.location.pathname});}window.open('https://buttondown.com/{{ . }}','popupwindow');">
+        <label for="home-newsletter-email" class="sr-only">Email address</label>
+        <input id="home-newsletter-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
   </div>
 </section>
 {{- end }}

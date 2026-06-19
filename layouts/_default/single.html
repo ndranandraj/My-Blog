@@ -5,6 +5,7 @@
   To change or remove the CTA, edit partials/custom/post_cta.html.
 */ -}}
 {{- define "main" }}
+{{- partial "custom/wash.html" (dict "subtle" true) }}
 
 <article class="post-single{{ if .Params.pillar }} post-single--pillar{{ end }}{{ if (.Param "ShowToc") }} post-single--with-toc{{ end }}">
   <header class="post-header">
