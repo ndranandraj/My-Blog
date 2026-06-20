@@ -1,0 +1,20 @@
+{{- /*
+  Category filter pills that link to real taxonomy pages (BUILD-PLAN Phase 2).
+  "All" -> /posts/, each category -> /categories/<slug>/. The active pill is
+  marked with the accent style. Works without JS and is SEO-friendly.
+  Usage: {{ partial "custom/category_pills.html" (dict "active" "all") }}
+         {{ partial "custom/category_pills.html" (dict "active" .Title) }}
+  `active` is "all" on the blog index, or the category name on a term page.
+*/ -}}
+{{- $active := .active | default "all" -}}
+{{- $cats := slice -}}
+{{- range $name, $t := site.Taxonomies.categories -}}{{- $cats = $cats | append $name -}}{{- end -}}
+{{- if $cats }}
+<div class="filter-chips" role="navigation" aria-label="Filter posts by topic">
+  <a class="filter-chip{{ if eq (lower $active) "all" }} is-active{{ end }}" href="{{ "posts/" | relLangURL }}"{{ if eq (lower $active) "all" }} aria-current="page"{{ end }}>All</a>
+  {{- range $cats }}
+  {{- $label := . | humanize | title }}
+  <a class="filter-chip{{ if eq (lower $active) (lower $label) }} is-active{{ end }}" href="{{ (printf "/categories/%s/" (. | urlize)) | relLangURL }}"{{ if eq (lower $active) (lower $label) }} aria-current="page"{{ end }}>{{ $label }}</a>
+  {{- end }}
+</div>
+{{- end }}

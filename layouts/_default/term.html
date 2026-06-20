@@ -20,6 +20,13 @@
     <p class="filter-count" style="margin-top:0.8rem;">{{ $count }} post{{ if ne $count 1 }}s{{ end }}</p>
   </header>
 
+  {{- /* On category pages, show the same topic pills with this one active. */ -}}
+  {{- if eq .Data.Singular "category" }}
+  <div class="filter-bar">
+    {{- partial "custom/category_pills.html" (dict "active" .Title) }}
+  </div>
+  {{- end }}
+
   {{- if $posts }}
   <div class="blog-grid{{ if $isPhoto }} photo-grid{{ end }}">
     {{- range $posts }}

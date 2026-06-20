@@ -150,42 +150,64 @@ enableRobotsTXT = true
 [params.indexNow]
   key = "9c9bdc14f5d62a6f18f1c69a5ff43a6a"
 
+# Grouped nav (REBRAND June 2026): Blog · TN 2026 ▾ · Photography · Data · About.
+# TN 2026 is a dropdown parent (identifier "tn2026") with four children.
+# Search is rendered as an icon button and Archive lives in the footer, so
+# neither is a menu.main entry. The custom header partial (layouts/partials/
+# header.html) renders .Children as a dropdown / inline mobile group.
 [menu]
   [[menu.main]]
     name = "Blog"
     url = "/posts/"
-    weight = 1
+    weight = 10
   [[menu.main]]
-    name = "TN 2026 Analysis"
+    identifier = "tn2026"
+    name = "TN 2026"
     url = "/tamil-nadu-elections-2026/"
-    weight = 2
+    weight = 20
   [[menu.main]]
-    name = "TN 2026 Results"
+    name = "Analysis"
+    parent = "tn2026"
+    url = "/tamil-nadu-elections-2026/"
+    weight = 21
+    [menu.main.params]
+      desc = "Seat-by-seat breakdowns & trends"
+  [[menu.main]]
+    name = "Results"
+    parent = "tn2026"
     url = "/tn-2026-results/"
-    weight = 3
+    weight = 22
+    [menu.main.params]
+      desc = "All 234 seats, 2021 comparison"
   [[menu.main]]
-    name = "About"
-    url = "/page/about/"
-    weight = 4
+    name = "Explorer ↗"
+    parent = "tn2026"
+    url = "/election-dashboard/tn-2026-explorer.html"
+    weight = 23
+    [menu.main.params]
+      desc = "Live interactive dashboard"
   [[menu.main]]
-    name = "Data"
-    url = "/data/"
-    weight = 5
+    name = "Dataset"
+    parent = "tn2026"
+    url = "/data/tn-2026-candidates/"
+    weight = 24
+    [menu.main.params]
+      desc = "Every candidate · CC BY 4.0"
   [[menu.main]]
     name = "Photography"
     url = "/categories/photography/"
-    weight = 6
+    weight = 30
   [[menu.main]]
-    name = "Archive"
-    url = "/archives/"
-    weight = 7
+    name = "Data"
+    url = "/data/"
+    weight = 40
   [[menu.main]]
-    name = "Search"
-    url = "/search/"
-    weight = 8
+    name = "About"
+    url = "/page/about/"
+    weight = 50
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 9
 
 [markup]
   [markup.goldmark]

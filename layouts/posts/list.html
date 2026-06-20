@@ -14,20 +14,16 @@
     {{- else }}<p class="list-lead">Essays on data investigations, tech and the questions it raises, plus slower notes on football, travel, and the things I point a camera at.</p>{{ end }}
   </header>
 
-  {{- /* Category filter bar (client-side) */ -}}
-  {{- $cats := slice -}}
-  {{- range $name, $t := site.Taxonomies.categories -}}{{- $cats = $cats | append $name -}}{{- end -}}
+  {{- /* Category pills link to real taxonomy pages (BUILD-PLAN Phase 2). */ -}}
   <div class="filter-bar">
-    <div class="filter-chips">
-      <button class="filter-chip is-active" data-filter="all">All</button>
-      {{- range $cats }}
-      <button class="filter-chip" data-filter="{{ . | urlize }}">{{ . | humanize | title }}</button>
-      {{- end }}
-    </div>
+    {{- partial "custom/category_pills.html" (dict "active" "all") }}
     <span class="filter-count">{{ $count }} essay{{ if ne $count 1 }}s{{ end }}</span>
   </div>
 
   {{- if $posts }}
+  {{- /* Featured lead = newest post, page 1 only. Grid = the rest, paginated. */ -}}
+  {{- $paginator := .Paginate (after 1 $posts) }}
+  {{- if eq $paginator.PageNumber 1 }}
   {{- $featured := index $posts 0 }}
   {{- with $featured }}
   <a class="latest-lead blog-featured" href="{{ .Permalink }}">
@@ -48,11 +44,11 @@
     </div>
   </a>
   {{- end }}
+  {{- end }}
 
   <div class="blog-grid">
-    {{- range after 1 $posts }}
-    {{- $pc := slice }}{{ range .Params.categories }}{{ $pc = $pc | append (. | urlize) }}{{ end }}
-    <a class="blog-card" href="{{ .Permalink }}" data-cats="{{ delimit $pc " " }}">
+    {{- range $paginator.Pages }}
+    <a class="blog-card" href="{{ .Permalink }}">
       {{- $cover := .Params.cover.image | default .Params.image -}}
       {{- if $cover }}
       <div class="blog-card-cover" style="background-image:url('{{ $cover | absURL }}');"></div>
@@ -68,34 +64,17 @@
     </a>
     {{- end }}
   </div>
-  <p class="blog-empty" hidden>No posts in this topic yet.</p>
+
+  {{- if gt $paginator.TotalPages 1 }}
+  <nav class="pager" aria-label="Blog pagination">
+    {{- if $paginator.HasPrev }}<a class="pager-btn" href="{{ $paginator.Prev.URL }}">&larr; Newer</a>{{ else }}<span class="pager-btn is-disabled">&larr; Newer</span>{{ end }}
+    <span class="pager-status">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }} &middot; {{ $count }} essays</span>
+    {{- if $paginator.HasNext }}<a class="pager-btn" href="{{ $paginator.Next.URL }}">Older posts &rarr;</a>{{ else }}<span class="pager-btn is-disabled">Older posts &rarr;</span>{{ end }}
+  </nav>
+  {{- end }}
   {{- else }}
   <p class="list-lead">No posts yet.</p>
   {{- end }}
 
 </div>
-
-<script>
-  (function () {
-    var chips = document.querySelectorAll('.filter-chip');
-    var cards = document.querySelectorAll('.blog-card');
-    var empty = document.querySelector('.blog-empty');
-    if (!chips.length) return;
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        var f = chip.dataset.filter;
-        chips.forEach(function (c) { c.classList.remove('is-active'); });
-        chip.classList.add('is-active');
-        var shown = 0;
-        cards.forEach(function (card) {
-          var cats = (card.dataset.cats || '').split(' ');
-          var show = f === 'all' || cats.indexOf(f) !== -1;
-          card.style.display = show ? '' : 'none';
-          if (show) shown++;
-        });
-        if (empty) empty.hidden = shown !== 0;
-      });
-    });
-  })();
-</script>
 {{- end -}}

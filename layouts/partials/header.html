@@ -1,47 +1,148 @@
 {{- /*
-  Custom glass pill nav (REBRAND June 2026), overriding PaperMod's header.
-  Floating sticky translucent pill: brand "Anand.", menu pills, theme toggle,
-  Subscribe button. The theme-toggle button keeps id="theme-toggle" so
-  PaperMod's end-of-body toggle script (which flips html[data-theme] +
-  localStorage 'pref-theme') still wires it. The small inline script only
-  syncs the visible "Light/Dark" label with the current theme.
+  Glass pill nav (REBRAND June 2026), overriding PaperMod's header.
+  Grouped nav: Blog · TN 2026 ▾ · Photography · Data · About + Search + Subscribe.
+  - TN 2026 is a dropdown (menu.main parent "tn2026" with .Children).
+  - Mobile (<880px): desktop nav/actions hide, a hamburger toggles a slide-down
+    panel with the TN 2026 children expanded inline.
+  - Theme toggle keeps id="theme-toggle" so PaperMod's end-of-body script flips
+    html[data-theme]; a second mobile toggle is wired by the inline script here.
+  Menu config: hugo.toml [menu.main]. Styling: .glass-* in custom.css.
 */ -}}
+{{- $page := . -}}
 <header class="header glass-header">
-  <nav class="glass-nav">
+  <nav class="glass-nav" aria-label="Primary">
     <a class="glass-brand" href="{{ "" | absLangURL }}" title="{{ site.Title }}">Anand<span class="brand-dot">.</span></a>
 
-    <ul class="glass-menu">
+    <ul class="glass-menu nav-desktop">
       {{- range site.Menus.main }}
-      <li>
-        <a href="{{ .URL | absLangURL }}"{{ if $.IsMenuCurrent "main" . }} class="is-active" aria-current="page"{{ end }} title="{{ .Name }}">{{ .Name }}</a>
-      </li>
+        {{- if .Children }}
+        <li class="has-submenu">
+          <button type="button" class="glass-menu-btn{{ if $page.HasMenuCurrent "main" . }} is-active{{ end }}" aria-expanded="false" aria-haspopup="true" aria-controls="submenu-{{ .Identifier }}">
+            {{ .Name }} <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="submenu" id="submenu-{{ .Identifier }}">
+            {{- range .Children }}
+            <li>
+              <a href="{{ .URL | relLangURL }}">
+                <span class="submenu-name">{{ .Name }}</span>
+                {{- with .Params.desc }}<span class="submenu-desc">{{ . }}</span>{{ end }}
+              </a>
+            </li>
+            {{- end }}
+          </ul>
+        </li>
+        {{- else }}
+        <li><a href="{{ .URL | relLangURL }}"{{ if $page.IsMenuCurrent "main" . }} class="is-active" aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
       {{- end }}
     </ul>
 
     <div class="glass-actions">
-      <button id="theme-toggle" class="glass-toggle" accesskey="t" title="Toggle theme (Alt + T)" aria-label="Toggle theme">
+      <a class="glass-icon nav-desktop" href="{{ "search/" | relLangURL }}" aria-label="Search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+      </a>
+      <button id="theme-toggle" class="glass-toggle nav-desktop" accesskey="t" title="Toggle theme (Alt + T)" aria-label="Toggle theme">
+        <span class="glass-toggle-dot" aria-hidden="true"></span>
+        <span class="theme-label">Theme</span>
+      </button>
+      {{- with site.Params.buttondown.username }}
+      <a class="glass-subscribe nav-desktop" href="https://buttondown.com/{{ . }}" rel="noopener" target="_blank">Subscribe</a>
+      {{- else }}
+      <a class="glass-subscribe nav-desktop" href="#newsletter">Subscribe</a>
+      {{- end }}
+      <button class="glass-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="glass-mobile">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+      </button>
+    </div>
+  </nav>
+
+  {{- /* Mobile slide-down panel */ -}}
+  <div class="glass-mobile" id="glass-mobile" hidden>
+    {{- range site.Menus.main }}
+      {{- if .Children }}
+      <div class="glass-mobile-group">{{ .Name }}</div>
+      {{- range .Children }}
+      <a class="glass-mobile-sub" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+      {{- end }}
+      {{- else }}
+      <a class="glass-mobile-link" href="{{ .URL | relLangURL }}"{{ if $page.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- end }}
+    {{- end }}
+    <a class="glass-mobile-link" href="{{ "search/" | relLangURL }}">Search</a>
+    <div class="glass-mobile-actions">
+      <button class="glass-toggle theme-toggle-m" aria-label="Toggle theme">
         <span class="glass-toggle-dot" aria-hidden="true"></span>
         <span class="theme-label">Theme</span>
       </button>
       {{- with site.Params.buttondown.username }}
       <a class="glass-subscribe" href="https://buttondown.com/{{ . }}" rel="noopener" target="_blank">Subscribe</a>
-      {{- else }}
-      <a class="glass-subscribe" href="#newsletter">Subscribe</a>
       {{- end }}
     </div>
-  </nav>
+  </div>
 </header>
+
 <script>
-  (function () {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    var label = btn.querySelector('.theme-label');
-    function sync() {
-      if (!label) return;
-      var t = document.documentElement.dataset.theme === 'dark' ? 'Dark' : 'Light';
-      label.textContent = t;
+(function () {
+  var html = document.documentElement;
+
+  // Sync any "Light/Dark" label to the current theme.
+  function syncLabels() {
+    var t = html.dataset.theme === 'dark' ? 'Dark' : 'Light';
+    document.querySelectorAll('.theme-label').forEach(function (el) { el.textContent = t; });
+  }
+  syncLabels();
+
+  // Desktop toggle: PaperMod's end-of-body script flips the theme; we just relabel.
+  var deskToggle = document.getElementById('theme-toggle');
+  if (deskToggle) deskToggle.addEventListener('click', function () { setTimeout(syncLabels, 0); });
+
+  // Mobile toggle: PaperMod doesn't bind it, so do the full flip here.
+  var mToggle = document.querySelector('.theme-toggle-m');
+  if (mToggle) mToggle.addEventListener('click', function () {
+    var dark = html.dataset.theme === 'dark';
+    html.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('pref-theme', dark ? 'light' : 'dark'); } catch (e) {}
+    syncLabels();
+  });
+
+  // TN 2026 dropdown: click/Enter toggles; hover is handled in CSS.
+  var subBtns = document.querySelectorAll('.glass-menu-btn');
+  subBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      subBtns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+  });
+  // Close dropdowns on outside-click and Esc.
+  document.addEventListener('click', function () {
+    subBtns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      subBtns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+      closeMobile();
     }
-    sync();
-    btn.addEventListener('click', function () { setTimeout(sync, 0); });
-  })();
+  });
+
+  // Mobile hamburger.
+  var burger = document.querySelector('.glass-hamburger');
+  var panel = document.getElementById('glass-mobile');
+  function closeMobile() {
+    if (!burger || !panel) return;
+    burger.setAttribute('aria-expanded', 'false');
+    panel.hidden = true;
+    document.body.classList.remove('menu-open');
+  }
+  if (burger && panel) {
+    burger.addEventListener('click', function () {
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', open ? 'false' : 'true');
+      panel.hidden = open;
+      document.body.classList.toggle('menu-open', !open);
+    });
+    panel.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMobile); });
+  }
+})();
 </script>
