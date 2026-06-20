@@ -2906,9 +2906,9 @@ html { scroll-behavior: smooth; }
     --accent-soft: rgba(154, 139, 255, 0.16);
 
     /* Text contrast (REBRAND, dark): brighter muted + body for legibility. */
-    --primary: #f5f3ff;
-    --secondary: #ddd9f3;
-    --content: #f0eefa;
+    --primary: #fbfaff;
+    --secondary: #ebe8f7;
+    --content: #f6f4fd;
 
     /* Glass surfaces + colour wash (dark) */
     --glass: rgba(255, 255, 255, 0.06);
