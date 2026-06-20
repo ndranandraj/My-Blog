@@ -2900,15 +2900,19 @@ html { scroll-behavior: smooth; }
     --blob-op: 0.42;
     --on-accent: #ffffff;
 }
-.dark,
-[data-theme="dark"] {
+/* NOTE: PaperMod sets its dark vars on `:root[data-theme=dark]` (specificity
+   0,1,1). This block MUST match that specificity (or higher) or the text-colour
+   overrides below get ignored. `:root[data-theme="dark"]` does it; `.dark` is a
+   harmless fallback. Do not weaken this back to a bare `[data-theme="dark"]`. */
+:root[data-theme="dark"],
+.dark {
     --accent: #9a8bff;
     --accent-soft: rgba(154, 139, 255, 0.16);
 
     /* Text contrast (REBRAND, dark): brighter muted + body for legibility. */
-    --primary: #fbfaff;
-    --secondary: #ebe8f7;
-    --content: #f6f4fd;
+    --primary: #f6f4ff;
+    --secondary: #d6d2ef;
+    --content: #ecebf8;
 
     /* Glass surfaces + colour wash (dark) */
     --glass: rgba(255, 255, 255, 0.06);
