@@ -6,6 +6,7 @@
 */ -}}
 {{- define "main" }}
 {{- partial "custom/wash.html" (dict "subtle" true) }}
+<span class="page-wide" hidden></span>
 
 <article class="post-single{{ if .Params.pillar }} post-single--pillar{{ end }}{{ if (.Param "ShowToc") }} post-single--with-toc{{ end }}">
   <header class="post-header">

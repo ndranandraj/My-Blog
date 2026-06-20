@@ -890,9 +890,10 @@ body {
 
 .post-meta {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     letter-spacing: 0.02em;
-    opacity: 0.7;
+    color: var(--secondary);
+    opacity: 1;
 }
 
 /* ── Category & Tag Pills ── */
@@ -2877,15 +2878,21 @@ html { scroll-behavior: smooth; }
     --accent: #5b5bd6;
     --accent-soft: rgba(91, 91, 214, 0.10);
 
+    /* Text contrast (REBRAND): darker muted + body text than PaperMod's
+       defaults so copy stays legible over the colour wash. */
+    --primary: #1a1824;
+    --secondary: #4c4a5e;
+    --content: #262433;
+
     /* Type system */
     --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
     --font-body: "Hanken Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
     /* Glass surfaces + colour wash (light) */
-    --glass: rgba(255, 255, 255, 0.55);
-    --glass-strong: rgba(255, 255, 255, 0.78);
-    --glass-soft: rgba(255, 255, 255, 0.42);
+    --glass: rgba(255, 255, 255, 0.6);
+    --glass-strong: rgba(255, 255, 255, 0.86);
+    --glass-soft: rgba(255, 255, 255, 0.46);
     --glass-line: rgba(20, 19, 28, 0.10);
     --glass-shadow: 0 12px 36px rgba(20, 19, 28, 0.08);
     --glass-shadow-hover: 0 2px 4px rgba(20,19,28,.05), 0 28px 54px rgba(20,19,28,.14);
@@ -2897,6 +2904,11 @@ html { scroll-behavior: smooth; }
 [data-theme="dark"] {
     --accent: #9a8bff;
     --accent-soft: rgba(154, 139, 255, 0.16);
+
+    /* Text contrast (REBRAND, dark): brighter muted + body for legibility. */
+    --primary: #f5f3ff;
+    --secondary: #cac5e6;
+    --content: #ecebf8;
 
     /* Glass surfaces + colour wash (dark) */
     --glass: rgba(255, 255, 255, 0.06);
@@ -2915,6 +2927,12 @@ html { scroll-behavior: smooth; }
 body {
     font-family: var(--font-body);
 }
+
+/* Global type scale-up (REBRAND): lift the root ~6% so every rem-based size
+   grows proportionally, and make the body copy rem-relative (was a fixed 18px)
+   so reading text scales with it too. */
+html { font-size: 106.25%; }       /* 16px -> 17px */
+body { font-size: 1.12rem; }       /* ~19px body copy, up from 18px */
 
 /* Accent applications: content links, section ticks, eyebrows,
    "view all" links, active menu item. */
@@ -3155,7 +3173,7 @@ body {
 }
 .site-footer-about p {
     margin: 0;
-    color: var(--secondary);
+    color: var(--content);
     line-height: 1.6;
     max-width: 320px;
 }
@@ -3168,8 +3186,9 @@ body {
     margin: 0 0 7px;
 }
 .site-footer-col a {
-    color: var(--secondary);
+    color: var(--content);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 .site-footer-col a:hover {
     color: var(--accent);
@@ -3183,11 +3202,11 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px;
-    color: var(--secondary);
-    font-size: 0.78rem;
+    color: var(--content);
+    font-size: 0.8rem;
 }
 .site-footer-bottom a {
-    color: var(--secondary);
+    color: var(--content);
 }
 .site-footer-bottom a:hover {
     color: var(--accent);
@@ -3287,14 +3306,16 @@ body {
     display: inline-block;
     padding: 6px 12px;
     border-radius: 999px;
-    color: var(--secondary);
+    color: color-mix(in srgb, var(--primary) 78%, transparent);
     text-decoration: none;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.2s ease, background 0.2s ease;
 }
 .glass-menu a:hover { color: var(--primary); background: var(--glass-soft); }
 .glass-menu a.is-active { color: var(--accent); }
+/* Brighter nav links in dark mode so they stay legible on the dark glass. */
+[data-theme="dark"] .glass-menu a { color: #d7d3ee; }
 .glass-actions {
     display: flex;
     gap: 10px;
@@ -3750,7 +3771,7 @@ body {
     box-shadow: 0 8px 18px -6px var(--accent);
 }
 .dash-card p {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     line-height: 1.5;
     color: var(--secondary);
     margin: 0;
@@ -3943,7 +3964,7 @@ body {
     letter-spacing: -0.005em;
 }
 .latest-row-body p {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     line-height: 1.5;
     color: var(--secondary);
     margin: 0;
@@ -4019,7 +4040,7 @@ body {
 }
 .topic-blurb {
     display: block;
-    font-size: 0.84rem;
+    font-size: 0.9rem;
     line-height: 1.45;
     color: var(--secondary);
     margin-top: 0.5rem;
@@ -4258,7 +4279,7 @@ body {
     letter-spacing: -0.005em;
 }
 .blog-card-body p {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     line-height: 1.5;
     color: var(--secondary);
     margin: 0 0 0.8rem;
@@ -4278,6 +4299,26 @@ body {
 
 /* Keep legacy section margins consistent with the new 1080px column. */
 .home-latest, .home-topics { margin-top: 0; margin-bottom: 0; }
+
+/* Top breathing room below the sticky glass nav, matching the homepage hero,
+   so article and inner pages don't sit tight against the nav. */
+.post-single {
+    padding-top: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+/* TOC posts keep the 768px column the sticky right-rail TOC is positioned
+   against (see the 50vw + 408px math below), so the TOC never overflows. */
+.post-single--with-toc { max-width: 768px; }
+.page-header { padding-top: 2.5rem; }
+
+/* Belt-and-suspenders: keep the article column centred even if .main is ever
+   widened. Single-post pages stay a balanced, symmetric reading column. */
+.main:not(:has(.page-wide)) { margin-left: auto; margin-right: auto; }
 
 /* Subtle wash for article reading pages: fainter, static, no grain, so the
    colour shows in the margins without fighting long-form text. */
@@ -4317,9 +4358,11 @@ body {
     margin: 0 0 1.1rem;
 }
 .about-page .about-role {
-    font-size: 1.08rem;
-    line-height: 1.62;
-    color: var(--secondary);
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 1.12rem;
+    line-height: 1.65;
+    color: var(--content);
     margin: 0 0 1rem;
     max-width: 34em;
 }
