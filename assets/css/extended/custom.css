@@ -2910,9 +2910,9 @@ html { scroll-behavior: smooth; }
     --accent-soft: rgba(154, 139, 255, 0.16);
 
     /* Text contrast (REBRAND, dark): brighter muted + body for legibility. */
-    --primary: #f6f4ff;
-    --secondary: #d6d2ef;
-    --content: #ecebf8;
+    --primary: #f8f6ff;
+    --secondary: #e4e1f5;
+    --content: #f1effb;
 
     /* Glass surfaces + colour wash (dark) */
     --glass: rgba(255, 255, 255, 0.06);
@@ -3319,7 +3319,7 @@ body { font-size: 1.12rem; }       /* ~19px body copy, up from 18px */
 .glass-menu a:hover { color: var(--primary); background: var(--glass-soft); }
 .glass-menu a.is-active { color: var(--accent); }
 /* Brighter nav links in dark mode so they stay legible on the dark glass. */
-[data-theme="dark"] .glass-menu a { color: #d7d3ee; }
+[data-theme="dark"] .glass-menu a { color: #ece9f8; }
 .glass-actions {
     display: flex;
     gap: 10px;
@@ -3385,7 +3385,7 @@ body { font-size: 1.12rem; }       /* ~19px body copy, up from 18px */
 }
 .glass-menu-btn:hover { color: var(--primary); background: var(--glass-soft); }
 .glass-menu-btn.is-active { color: var(--accent); }
-[data-theme="dark"] .glass-menu-btn { color: #d7d3ee; }
+[data-theme="dark"] .glass-menu-btn { color: #ece9f8; }
 .glass-menu-btn .caret { font-size: 0.7em; transition: transform 0.2s ease; }
 .has-submenu:hover .caret,
 .glass-menu-btn[aria-expanded="true"] .caret { transform: rotate(180deg); }
