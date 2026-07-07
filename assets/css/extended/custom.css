@@ -4724,3 +4724,29 @@ body { font-size: 1.12rem; }       /* ~19px body copy, up from 18px */
     .dataset-row { grid-template-columns: 1fr auto; }
     .dataset-meta { display: none; }
 }
+
+/* ── giscus comments (July 2026). Match the related-posts section voice.
+   The widget itself lives in an iframe; only the wrapper is ours. */
+.post-comments {
+    margin-top: 2.4rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--border);
+}
+.post-comments__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.1rem;
+    color: var(--content);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+.post-comments__title::before {
+    content: "";
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent);
+}

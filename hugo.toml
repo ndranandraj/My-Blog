@@ -41,6 +41,10 @@ enableRobotsTXT = true
   now = "Mapping TN 2026"
   heroEyebrow = "Writing · Data · Photography"
 
+  # giscus comments render on posts when [params.giscus] below is filled in.
+  # Set `comments: false` in a post's front matter to hide them on that post.
+  comments = true
+
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -64,16 +68,9 @@ enableRobotsTXT = true
   # under "Common tasks") or hand-edit the PNG.
   images = ["/images/og-default.png"]
 
-  # Featured hero shown on the homepage above the latest-posts strip.
-  # Remove or change to promote a different post/project.
-  [params.featured]
-    kicker = "RESULTS · ALL 234 SEATS"
-    title = "Tamil Nadu 2026 Election Results: All 234 Constituencies"
-    description = "The complete seat-by-seat record of Tamil Nadu's 2026 Assembly election. Winner, party, vote share, margin and the full candidate list for every constituency, searchable and grouped by region, with a 2021 comparison for each seat."
-    url = "/tn-2026-results/"
-    image = "/images/tn-2026-explorer-cover.png"
-    imageAlt = "Tamil Nadu 2026 election results for all 234 constituencies, searchable and grouped by region."
-    cta = "Browse all 234 seats →"
+  # NOTE (July 2026): the old [params.featured] homepage-hero block was removed.
+  # No layout reads it anymore; the homepage features come from the dashboards
+  # partial and per-post `featured: true` front matter.
 
   [params.assets]
     favicon = "/favicon.ico"
@@ -127,6 +124,20 @@ enableRobotsTXT = true
 # Analytics & Logs → Web Analytics → Add a site (manual).
 [params.cloudflareWebAnalytics]
   token = "c945c24d7e5b49188ebd981ed6746ec0"
+
+# giscus comments (GitHub Discussions). Setup, one time:
+#   1. Make sure the blog repo (or a dedicated public repo) has Discussions
+#      enabled: GitHub repo → Settings → Features → Discussions.
+#   2. Install the giscus app on that repo: https://github.com/apps/giscus
+#   3. Visit https://giscus.app, enter the repo, pick the "Announcements"-type
+#      category you want (create one named "Comments"), and copy the repoId
+#      and categoryId values it generates into the fields below.
+# Comments stay hidden until repoId and categoryId are filled in.
+[params.giscus]
+  repo = ""        # e.g. "ndranandraj/anand-blog"
+  repoId = ""
+  category = "Comments"
+  categoryId = ""
 
 # Buttondown newsletter embed. Leave `username` empty to hide the subscribe
 # form entirely; fill it in after creating the free account at

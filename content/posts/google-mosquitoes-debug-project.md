@@ -5,8 +5,8 @@ lastmod: 2026-05-31
 description: "Alphabet's Verily wants to release up to 32 million lab-bred mosquitoes across Florida and California. A simple, honest look at what the project is, what it does, and whether you should worry."
 summary: "A plain-English explainer on Google's mosquito project: how it works, why it cut wild populations by 95 percent, the real concerns, and what the scary headlines get wrong."
 keywords: ["Google mosquitoes", "Verily Debug Project", "Wolbachia mosquitoes", "Aedes aegypti control", "sterile insect technique", "mosquito release California Florida"]
-tags: ["science", "technology", "public health", "biotech", "google", "mosquitoes"]
-categories: ["Science", "Technology"]
+tags: ["science", "tech", "public health", "biotech", "google", "mosquitoes"]
+categories: ["Science", "Tech"]
 readingTime: true
 showToc: false
 image: "/images/google-mosquitoes-cover.jpg"

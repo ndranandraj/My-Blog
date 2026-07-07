@@ -1,0 +1,56 @@
+{{- /*
+  giscus comments (GitHub Discussions).
+  Renders only when [params.giscus] in hugo.toml has repo, repoId and
+  categoryId filled in (grab them from https://giscus.app after enabling
+  Discussions on the repo and installing the giscus GitHub App).
+
+  Enabled site-wide via `comments = true` in [params]; disable on a single
+  post with `comments: false` in front matter.
+
+  Theme sync: giscus starts in the theme matching the visitor's current
+  choice (PaperMod stores it in localStorage "pref-theme") and follows the
+  header toggle via postMessage afterwards.
+*/ -}}
+{{- $g := site.Params.giscus }}
+{{- if and $g $g.repo $g.repoId $g.categoryId }}
+<section class="post-comments" id="comments" aria-label="Comments">
+  <h2 class="post-comments__title">Comments</h2>
+  <div class="giscus"></div>
+</section>
+<script>
+  (function () {
+    var stored = localStorage.getItem("pref-theme");
+    var dark = stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.async = true;
+    s.crossOrigin = "anonymous";
+    s.setAttribute("data-repo", {{ $g.repo | jsonify }});
+    s.setAttribute("data-repo-id", {{ $g.repoId | jsonify }});
+    s.setAttribute("data-category", {{ $g.category | default "Comments" | jsonify }});
+    s.setAttribute("data-category-id", {{ $g.categoryId | jsonify }});
+    s.setAttribute("data-mapping", "pathname");
+    s.setAttribute("data-strict", "1");
+    s.setAttribute("data-reactions-enabled", "1");
+    s.setAttribute("data-emit-metadata", "0");
+    s.setAttribute("data-input-position", "top");
+    s.setAttribute("data-theme", dark ? "transparent_dark" : "light");
+    s.setAttribute("data-lang", "en");
+    s.setAttribute("data-loading", "lazy");
+    document.querySelector(".giscus").parentNode.appendChild(s);
+
+    // Follow the site's theme toggle after load.
+    var toggle = document.getElementById("theme-toggle");
+    if (toggle) toggle.addEventListener("click", function () {
+      setTimeout(function () {
+        var nowDark = document.body.classList.contains("dark");
+        var frame = document.querySelector("iframe.giscus-frame");
+        if (frame) frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: nowDark ? "transparent_dark" : "light" } } },
+          "https://giscus.app"
+        );
+      }, 60);
+    });
+  })();
+</script>
+{{- end }}
