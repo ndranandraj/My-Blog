@@ -770,7 +770,7 @@ body {
 .post-content h2 {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 1.85rem;
+    font-size: 2.15rem;
     letter-spacing: -0.01em;
     margin-top: 3rem;
     margin-bottom: 1rem;
@@ -779,14 +779,18 @@ body {
     text-align: left;
 }
 
+/* Subsections use the bold sans, not the serif, so they read as a clearly
+   different tier from the h2 section headers (the serif is single-weight and
+   can't differentiate levels by weight on its own). */
 .post-content h3 {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.5rem;
-    letter-spacing: -0.005em;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
     margin-top: 2.2rem;
     margin-bottom: 0.8rem;
     text-align: left;
+    color: var(--primary);
 }
 
 .post-content a {
@@ -844,11 +848,11 @@ body {
     font-size: 0.9em;
 }
 
-/* Bold stays bold — NOT brand-colored.
-   Keep emphasis visually distinct from links. */
+/* Bold gets a subtle lift via the brightest text tone, staying weight 700.
+   NOT brand-colored, so emphasis stays visually distinct from links. */
 .post-content strong {
     font-weight: 700;
-    color: inherit;
+    color: var(--primary);
 }
 
 /* Horizontal rules as section dividers */
@@ -2892,6 +2896,10 @@ html { scroll-behavior: smooth; }
     /* Glass surfaces + colour wash (light) */
     --glass: rgba(255, 255, 255, 0.6);
     --glass-strong: rgba(255, 255, 255, 0.86);
+    /* Opaque surface for nav flyouts (dropdown + mobile menu). These sit inside
+       .glass-nav, whose backdrop-filter defeats a nested blur, so the panel must
+       be self-opaque or page content bleeds through. */
+    --menu-surface: rgba(255, 255, 255, 0.97);
     --glass-soft: rgba(255, 255, 255, 0.46);
     --glass-line: rgba(20, 19, 28, 0.10);
     --glass-shadow: 0 12px 36px rgba(20, 19, 28, 0.08);
@@ -2917,6 +2925,8 @@ html { scroll-behavior: smooth; }
     /* Glass surfaces + colour wash (dark) */
     --glass: rgba(255, 255, 255, 0.06);
     --glass-strong: rgba(255, 255, 255, 0.09);
+    /* Opaque surface for nav flyouts (see light-theme note above). */
+    --menu-surface: rgba(23, 22, 33, 0.98);
     --glass-soft: rgba(255, 255, 255, 0.045);
     --glass-line: rgba(255, 255, 255, 0.12);
     --glass-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
@@ -3398,7 +3408,7 @@ body { font-size: 1.12rem; }       /* ~19px body copy, up from 18px */
     list-style: none;
     margin: 0;
     padding: 8px;
-    background: var(--glass-strong);
+    background: var(--menu-surface);
     border: 1px solid var(--glass-line);
     border-radius: 16px;
     box-shadow: var(--glass-shadow);
@@ -3465,7 +3475,7 @@ body { font-size: 1.12rem; }       /* ~19px body copy, up from 18px */
     flex-direction: column;
     gap: 2px;
     border-radius: 18px;
-    background: var(--glass-strong);
+    background: var(--menu-surface);
     border: 1px solid var(--glass-line);
     box-shadow: var(--glass-shadow);
     backdrop-filter: blur(20px) saturate(1.4);
