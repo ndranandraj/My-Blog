@@ -3,7 +3,7 @@ title: "The darkness-per-hour map: ranking SoCal's dark skies by drive time from
 date: 2026-07-25
 lastmod: 2026-07-25
 draft: false
-description: "From my Bortle 8 backyard, a data-driven ranking of Southern California's dark-sky sites by the one number that actually matters for a family with a telescope: how much darkness you get per hour of driving."
+description: "Southern California's best dark-sky sites for stargazing, ranked by drive time from Orange County: Anza-Borrego, Joshua Tree, Mount Pinos, and Death Valley."
 summary: "I live under a Bortle 8 sky, where the Milky Way is invisible from my street. So here is a guide for amateur astronomers and photographers: every dark-sky site I can reach from Orange County, ranked by darkness-per-hour of driving, from the local compromises up to a phenomenal Death Valley."
 keywords: ["dark sky sites Southern California", "stargazing near Orange County", "Bortle scale California", "Anza-Borrego dark sky", "Mount Pinos stargazing", "Joshua Tree Bortle", "Borrego Springs Milky Way", "best stargazing drive from Orange County", "light pollution Southern California", "dark sky map California"]
 tags: ["travel", "california", "astronomy", "data"]
@@ -99,6 +99,24 @@ The site is only half of it. The other half is timing, and no amount of driving 
 - **Have a cloud Plan B.** I've driven three hours out to a dark-sky night and watched a cloud deck swallow the whole thing. It happens. A warm car and low expectations are part of the kit.
 
 Next new moon, I'll probably still point the car at Joshua Tree out of habit. But this table is a quiet argument that I should be splitting more of those nights between Borrego and Mount Pinos. Two years in, I'm still learning my own backyard, which in Southern California happens to be about 150 miles wide.
+
+## Quick answers
+
+### Where can I see the Milky Way near Orange County?
+
+The nearest truly dark sky is Anza-Borrego Desert State Park, about two and a half hours out and a Bortle 2. Joshua Tree's Pinto Basin and Mount Pinos are similar drives and nearly as dark. Anything closer than roughly two hours still carries too much city glow to show the galactic core.
+
+### What is the closest dark-sky spot to Orange County?
+
+Caspers Wilderness Park, about 45 minutes away in the Santa Ana foothills. It is only a Bortle 5 to 6, so it works for the Moon, planets, and bright clusters, but not the Milky Way. For real darkness you need to drive about two and a half hours.
+
+### What Bortle rating do you need to see the Milky Way?
+
+Bortle 4 is the rough cutoff for spotting the core overhead, and Bortle 3 or darker is where it really shows structure. From a Bortle 8 city sky, which covers most of Orange County, the Milky Way is invisible.
+
+### When is Milky Way season in Southern California?
+
+Roughly February through October, when the bright galactic core sits above the horizon. It rides highest in the pre-dawn hours of summer.
 
 ---
 
