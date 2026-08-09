@@ -1,0 +1,36 @@
+{{- /*
+  Theme-aware figure for generated charts.
+
+  The Delimitation project emits every chart twice, light and dark, with
+  transparent backgrounds. This swaps them on the same contract the rest of the
+  site uses: html[data-theme], set by PaperMod's toggle.
+
+  Only the light image carries alt text; the dark one is aria-hidden, so a screen
+  reader does not announce the figure twice.
+
+  Usage:
+    {{< chart src="05-house-sweep" alt="..." caption="..." >}}
+
+  Expects /images/charts/<src>-light.svg and -dark.svg to exist.
+  Optional: ext="png" if a raster is needed, wide="true" to bleed past the column.
+*/ -}}
+
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" -}}
+{{- $ext := .Get "ext" | default "svg" -}}
+{{- $wide := .Get "wide" -}}
+
+{{- if not $src -}}
+  {{- errorf "chart shortcode: missing src (in %s)" .Page.File.Path -}}
+{{- end -}}
+
+<figure class="chart-figure{{ if $wide }} chart-figure--wide{{ end }}">
+  <img class="chart-img chart-img--light"
+       src="/images/charts/{{ $src }}-light.{{ $ext }}"
+       alt="{{ $alt }}" loading="lazy" decoding="async">
+  <img class="chart-img chart-img--dark"
+       src="/images/charts/{{ $src }}-dark.{{ $ext }}"
+       alt="" aria-hidden="true" loading="lazy" decoding="async">
+  {{- with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end -}}
+</figure>

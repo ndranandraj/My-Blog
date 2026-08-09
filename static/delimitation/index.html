@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How India divides Lok Sabha seats: an apportionment calculator</title>
+<meta name="description" content="Change the census, the House size, the rounding method and the carve-out, and watch India's Lok Sabha seat allocation move. Built on the rule the Delimitation Commission wrote down in 1963.">
+<script>
+/* Pre-paint theme bootstrap. Same contract as the blog: localStorage["pref-theme"]
+   plus html[data-theme]. Runs before first paint so there is no wrong-theme flash. */
+(function () {
+  try {
+    var p = localStorage.getItem("pref-theme");
+    if (p === "dark" || p === "light") { document.documentElement.dataset.theme = p; }
+    else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.dataset.theme = "dark";
+    }
+  } catch (e) { /* private mode, fall through to light */ }
+})();
+</script>
+<style>
+:root{
+  --accent:#5b5bd6; --accent-soft:rgba(91,91,214,.12);
+  --warn:#c2410c; --warn-soft:rgba(194,65,12,.12);
+  --good:#0f9d8f;
+  --primary:#1a1824; --secondary:#4c4a5e; --content:#262433;
+  --bg:#faf9fd; --card:#ffffff; --line:#e6e4f0; --line-2:#f0eef7;
+  --shadow:0 1px 2px rgba(26,24,36,.05),0 8px 24px rgba(26,24,36,.06);
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --body:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+html[data-theme="dark"]{
+  --accent:#9a8bff; --accent-soft:rgba(154,139,255,.15);
+  --warn:#fb923c; --warn-soft:rgba(251,146,60,.14);
+  --good:#4ecdc4;
+  --primary:#f5f3ff; --secondary:#ddd9f3; --content:#f0eefa;
+  --bg:#141221; --card:#1c1930; --line:#332f45; --line-2:#282442;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--content);font-family:var(--body);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.18;color:var(--primary);
+  margin:.2em 0 .3em;font-weight:600;letter-spacing:-.015em}
+h2{font-size:1.15rem;color:var(--primary);margin:0 0 .35em;font-weight:600}
+p.lede{color:var(--secondary);max-width:66ch;margin:0 0 1.6em}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 .4em}
+a{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px;box-shadow:var(--shadow);margin-bottom:20px}
+.controls{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.ctrl label{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--secondary);margin-bottom:7px}
+select,input[type=number]{width:100%;padding:9px 11px;border:1px solid var(--line);
+  border-radius:9px;background:var(--bg);color:var(--content);font:inherit;font-size:.95rem}
+input[type=range]{width:100%;accent-color:var(--accent);margin:6px 0 0}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{flex:1 1 auto;padding:8px 10px;border:1px solid var(--line);border-radius:9px;
+  background:var(--bg);color:var(--secondary);font:inherit;font-size:.85rem;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+html[data-theme=dark] .seg button[aria-pressed=true]{color:#151221}
+.seg button:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.house-val{font-family:var(--mono);font-size:1.5rem;color:var(--primary);font-weight:600}
+.house-sub{font-size:.8rem;color:var(--secondary)}
+.kpis{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:0 0 20px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi .v{font-family:var(--mono);font-size:1.45rem;color:var(--primary);font-weight:600;line-height:1.1}
+.kpi .l{font-size:.74rem;color:var(--secondary);margin-top:5px;line-height:1.35}
+.tablewrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{padding:9px 13px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--card)}
+thead th{background:var(--line-2);color:var(--secondary);font-family:var(--mono);
+  font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+  position:sticky;top:0;z-index:2;cursor:pointer;user-select:none}
+thead th:first-child{z-index:3}
+tbody tr{border-top:1px solid var(--line-2)}
+tbody tr:hover td{background:var(--accent-soft)}
+tbody td{font-variant-numeric:tabular-nums}
+.up{color:var(--accent);font-weight:600}
+.down{color:var(--warn);font-weight:600}
+.muted{color:var(--secondary)}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:.7rem;
+  font-family:var(--mono);background:var(--line-2);color:var(--secondary)}
+.note{font-size:.85rem;color:var(--secondary);margin:12px 0 0;max-width:78ch}
+.warnbox{border-left:3px solid var(--warn);background:var(--warn-soft);padding:11px 14px;
+  border-radius:0 9px 9px 0;font-size:.87rem;margin:14px 0 0}
+.err{border-left:3px solid var(--warn);background:var(--warn-soft);padding:11px 14px;
+  border-radius:0 9px 9px 0;font-size:.87rem}
+#sweep{width:100%;height:300px;display:block}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--secondary);margin-top:10px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);
+  font-size:.84rem;color:var(--secondary)}
+#theme-toggle{position:fixed;top:14px;right:14px;z-index:20;border:1px solid var(--line);
+  background:var(--card);color:var(--secondary);border-radius:99px;padding:7px 14px;
+  font:inherit;font-size:.8rem;cursor:pointer;box-shadow:var(--shadow)}
+@media (max-width:620px){
+  body{font-size:16px} .wrap{padding:20px 14px 60px}
+  th,td{padding:8px 10px;font-size:.86rem}
+}
+</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark">Theme</button>
+
+<div class="wrap">
+  <p class="eyebrow">Interactive</p>
+  <h1>How India divides Lok Sabha seats</h1>
+  <p class="lede">
+    India's seat allocation comes from a rule the Delimitation Commission wrote down in
+    1963: divide by the average, round to the nearest whole number, and if the total
+    falls short, give the spare seat to the largest fraction below one half. Change the
+    inputs below and watch what it does. Every figure is computed in your browser from
+    published census counts.
+  </p>
+
+  <section class="card" aria-labelledby="controls-h">
+    <h2 id="controls-h">Set the inputs</h2>
+    <div class="controls">
+      <div class="ctrl">
+        <label for="census">Census</label>
+        <select id="census"></select>
+      </div>
+      <div class="ctrl">
+        <label for="method">Rounding method</label>
+        <select id="method">
+          <option value="india-1963" selected>India's 1963 rule (Vinton)</option>
+          <option value="hamilton">Hamilton / largest remainder</option>
+          <option value="webster">Webster (major fractions)</option>
+          <option value="huntington-hill">Huntington-Hill (US, since 1941)</option>
+          <option value="dean">Dean (harmonic mean)</option>
+          <option value="adams">Adams (round everything up)</option>
+          <option value="jefferson">Jefferson / D'Hondt (round down)</option>
+        </select>
+      </div>
+      <div class="ctrl">
+        <label for="floor">Six-million floor</label>
+        <div class="seg" id="floor" role="group" aria-label="Six-million floor">
+          <button type="button" data-v="on" aria-pressed="true">Applied</button>
+          <button type="button" data-v="off" aria-pressed="false">Ignored</button>
+        </div>
+      </div>
+      <div class="ctrl">
+        <label for="carve">Small units and UTs</label>
+        <div class="seg" id="carve" role="group" aria-label="Carve-out model">
+          <button type="button" data-v="hold" aria-pressed="true">Held at current seats</button>
+          <button type="button" data-v="pool" aria-pressed="false">Thrown into the pool</button>
+        </div>
+      </div>
+      <div class="ctrl" style="grid-column:1/-1">
+        <label for="house">Size of the Lok Sabha</label>
+        <div><span class="house-val" id="house-val">543</span>
+          <span class="house-sub" id="house-sub"></span></div>
+        <input type="range" id="house" min="100" max="1100" step="1" value="543">
+      </div>
+    </div>
+    <div id="model-note" class="note"></div>
+  </section>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section class="card" aria-labelledby="table-h">
+    <h2 id="table-h">Seats, state by state</h2>
+    <p class="note" style="margin-top:0" id="table-sub"></p>
+    <div class="tablewrap"><table id="tbl">
+      <thead><tr>
+        <th data-k="unit">Unit</th>
+        <th data-k="pop">Population</th>
+        <th data-k="quota">Exact share</th>
+        <th data-k="seats">Seats</th>
+        <th data-k="actual">Actual</th>
+        <th data-k="delta">Change</th>
+        <th data-k="perseat">People per MP</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table></div>
+    <div id="table-err"></div>
+  </section>
+
+  <section class="card" aria-labelledby="sweep-h">
+    <h2 id="sweep-h">Grow the House and watch for drops</h2>
+    <p class="note" style="margin-top:0">
+      Each line is one unit. Under a largest-remainder rule such as India's, a line can
+      go <em>down</em> as the House grows. That is the Alabama paradox, and it is why the
+      United States abandoned this method in 1900. Divisor methods never do it.
+    </p>
+    <canvas id="sweep" role="img" aria-label="Seats against House size for each unit"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--accent)"></i>a unit that loses a seat somewhere in this range</span>
+      <span><i style="background:var(--warn)"></i>the moment a seat is lost</span>
+      <span><i style="background:var(--line)"></i>everything else</span>
+    </div>
+    <div id="sweep-err"></div>
+  </section>
+
+  <footer>
+    <p><strong>What this is.</strong> A calculator, not a prediction. India has not moved
+    seats between states since 1976, so every figure other than the "Actual" column is a
+    counterfactual: what the chosen rule produces on the chosen census at the chosen
+    House size.</p>
+    <p><strong>Units.</strong> Each census uses the units of its own time. The 2011 map
+    has undivided Andhra Pradesh and pre-2019 Jammu &amp; Kashmir, so it is not today's
+    map. The 1976 Order's own total is 542, not 543; the extra seat is Goa, which became
+    a separate state and union territory in 1987.</p>
+    <p><strong>The six-million floor</strong> is the proviso to article 81(2), inserted in
+    1973 and tied by article 81(3) to the <em>1971</em> census. Applying it to any other
+    census is a modelling choice, and this tool flags it when you do.</p>
+    <p id="fingerprint" class="muted"></p>
+  </footer>
+</div>
+
+<script>
+"use strict";
+
+/* ==========================================================================
+   Apportionment core.
+
+   Ported from src/apportionment.py. The port is not trusted on sight: the node
+   test at tests/test_tool_js.js pulls this exact script block out of this file
+   and checks it against fixtures generated by the Python, on every real
+   exercise and on randomised cases. If the two disagree the test fails.
+   ========================================================================== */
+
+var DIVISORS = {
+  "adams":            function (n) { return n === 0 ? 1e-9 : n; },
+  "dean":             function (n) { return n === 0 ? 1e-9 : (2 * n * (n + 1)) / (2 * n + 1); },
+  "huntington-hill":  function (n) { return n === 0 ? 1e-9 : Math.sqrt(n * (n + 1)); },
+  "webster":          function (n) { return n + 0.5; },
+  "jefferson":        function (n) { return n + 1; }
+};
+
+function totalOf(pops) {
+  var t = 0; for (var k in pops) { t += pops[k]; } return t;
+}
+
+function exactQuotas(pops, house) {
+  var t = totalOf(pops), q = {};
+  for (var k in pops) { q[k] = t === 0 ? 0 : (pops[k] * house) / t; }
+  return q;
+}
+
+/* Divisor methods, by priority queue. Give the next seat to whoever has the
+   highest pop / d(seats already held). */
+function divisorMethod(pops, house, method) {
+  var d = DIVISORS[method], seats = {}, keys = Object.keys(pops), i;
+  for (i = 0; i < keys.length; i++) { seats[keys[i]] = 0; }
+  for (var s = 0; s < house; s++) {
+    var best = null, bestVal = -Infinity;
+    for (i = 0; i < keys.length; i++) {
+      var k = keys[i], v = pops[k] / d(seats[k]);
+      /* Deterministic tie-break: larger population, then name. Matches Python. */
+      if (v > bestVal || (v === bestVal && best !== null &&
+          (pops[k] > pops[best] || (pops[k] === pops[best] && k < best)))) {
+        bestVal = v; best = k;
+      }
+    }
+    if (best === null) { break; }
+    seats[best] += 1;
+  }
+  return seats;
+}
+
+function hamilton(pops, house) {
+  var q = exactQuotas(pops, house), seats = {}, rem = [], k;
+  var used = 0;
+  for (k in q) { seats[k] = Math.floor(q[k]); used += seats[k]; rem.push(k); }
+  rem.sort(function (a, b) {
+    var fa = q[a] - Math.floor(q[a]), fb = q[b] - Math.floor(q[b]);
+    if (fb !== fa) { return fb - fa; }
+    if (pops[b] !== pops[a]) { return pops[b] - pops[a]; }
+    return a < b ? -1 : 1;
+  });
+  for (var i = 0; i < house - used; i++) { seats[rem[i % rem.length]] += 1; }
+  return seats;
+}
+
+/* India's 1963 rule. Round to nearest; if short, the largest fraction below one
+   half gets the spare. The Order is SILENT on the overshoot case; the symmetric
+   step here is this project's completion of the rule, not the rule. */
+function india1963(pops, house) {
+  var q = exactQuotas(pops, house), seats = {}, frac = {}, k, total = 0;
+  for (k in q) {
+    var n = Math.floor(q[k]);
+    frac[k] = q[k] - n;
+    seats[k] = frac[k] >= 0.5 ? n + 1 : n;
+    total += seats[k];
+  }
+  var gap = house - total, pool, i;
+  if (gap > 0) {
+    pool = Object.keys(pops).filter(function (s) { return frac[s] < 0.5; });
+    pool.sort(function (a, b) {
+      if (frac[b] !== frac[a]) { return frac[b] - frac[a]; }
+      return pops[b] - pops[a] || (a < b ? -1 : 1);
+    });
+    for (i = 0; i < gap && i < pool.length; i++) { seats[pool[i]] += 1; }
+  } else if (gap < 0) {
+    pool = Object.keys(pops).filter(function (s) { return frac[s] >= 0.5; });
+    pool.sort(function (a, b) {
+      if (frac[a] !== frac[b]) { return frac[a] - frac[b]; }
+      return pops[a] - pops[b] || (a < b ? -1 : 1);
+    });
+    for (i = 0; i < -gap && i < pool.length; i++) { seats[pool[i]] -= 1; }
+  }
+  return seats;
+}
+
+function apportion(pops, house, method) {
+  if (method === "hamilton") { return hamilton(pops, house); }
+  if (method === "india-1963") { return india1963(pops, house); }
+  return divisorMethod(pops, house, method);
+}
+
+/* Which branch of India's rule a case falls into. "overshoot" means the 1963
+   Order does not cover it and the answer depends on this project's completion. */
+function roundingBranch(pops, house) {
+  var q = exactQuotas(pops, house), floors = 0, up = 0, k;
+  for (k in q) {
+    floors += Math.floor(q[k]);
+    if (q[k] - Math.floor(q[k]) >= 0.5) { up += 1; }
+  }
+  var remaining = house - floors;
+  if (remaining > up) { return "short"; }
+  if (remaining === up) { return "exact"; }
+  return "overshoot";
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { apportion: apportion, exactQuotas: exactQuotas,
+                     roundingBranch: roundingBranch };
+}
+</script>
+
+<script>
+"use strict";
+/* ==========================================================================
+   UI. Every section catches its own errors so one failure cannot blank the page.
+   Every interpolated string goes through esc().
+   ========================================================================== */
+(function () {
+
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+function fmt(n) { return Number(n).toLocaleString("en-IN"); }
+function fail(id, what, e) {
+  var el = document.getElementById(id);
+  if (el) {
+    el.innerHTML = '<div class="err"><strong>' + esc(what) +
+      ' could not be drawn.</strong> ' + esc(e && e.message ? e.message : e) + '</div>';
+  }
+  if (window.console) { console.error(what, e); }
+}
+
+var DATA = null;
+var state = { census: "2011", house: 543, method: "india-1963",
+              floor: "on", carve: "hold" };
+
+/* ---- model ------------------------------------------------------------- */
+
+function census() { return DATA.censuses[state.census]; }
+
+/* Split the units into the proportional pool and the units held at fixed seats.
+ *
+ * Two things put a unit outside the pool, and they are different things:
+ *
+ *   1. It is a UNION TERRITORY. The proviso to article 81(2) speaks of States, so
+ *      a union territory is outside the proportional arithmetic however large it
+ *      is. Delhi is the case that matters: 16.8 million people in 2011, well over
+ *      the six-million line, and still not a state.
+ *   2. It is a STATE at or below six millions, and the floor is applied.
+ *
+ * "Thrown into the pool" removes both exemptions. It is a stress test: it lets
+ * small units fall to zero seats, which no version of the Constitution permits.
+ */
+function split() {
+  var c = census(), pops = c.pop, actual = c.actual, six = DATA.meta.six_millions;
+  var uts = {}, pool = {}, held = {}, i, k;
+  for (i = 0; i < (c.uts || []).length; i++) { uts[c.uts[i]] = true; }
+
+  for (k in pops) {
+    var exempt = state.carve === "hold" &&
+                 (uts[k] === true || (state.floor === "on" && pops[k] <= six));
+    if (exempt && actual[k] !== undefined) { held[k] = actual[k]; }
+    else { pool[k] = pops[k]; }
+  }
+  return { pool: pool, held: held, uts: uts };
+}
+
+function compute() {
+  var c = census(), s = split();
+  var heldTotal = 0, k;
+  for (k in s.held) { heldTotal += s.held[k]; }
+  var poolSeats = state.house - heldTotal;
+  if (poolSeats < Object.keys(s.pool).length) { poolSeats = Object.keys(s.pool).length; }
+
+  var seats = apportion(s.pool, poolSeats, state.method);
+  for (k in s.held) { seats[k] = s.held[k]; }
+
+  var q = exactQuotas(s.pool, poolSeats);
+  return { seats: seats, quotas: q, pool: s.pool, held: s.held,
+           poolSeats: poolSeats, heldTotal: heldTotal,
+           branch: roundingBranch(s.pool, poolSeats), actual: c.actual };
+}
+
+/* ---- render ------------------------------------------------------------ */
+
+function renderKPIs(r) {
+  try {
+    var c = census(), gain = 0, loss = 0, k, moved = 0;
+    for (k in r.seats) {
+      var a = r.actual[k];
+      if (a === undefined) { continue; }
+      var d = r.seats[k] - a;
+      if (d > 0) { gain += d; } else if (d < 0) { loss -= d; }
+      moved += Math.abs(d);
+    }
+    var per = [], tot = 0, n = 0;
+    for (k in r.seats) {
+      if (r.seats[k] > 0 && c.pop[k]) { per.push(c.pop[k] / r.seats[k]); }
+    }
+    per.sort(function (a, b) { return a - b; });
+    var ratio = per.length ? per[per.length - 1] / per[0] : 0;
+
+    var items = [
+      ["" + r.poolSeats, "seats apportioned proportionally, out of " + esc(state.house)],
+      ["" + Object.keys(r.held).length, "units held at their current seats"],
+      ["" + Math.round(moved / 2), "seats that change hands"],
+      [ratio ? ratio.toFixed(1) + "×" : "n/a", "largest to smallest people per MP"]
+    ];
+    document.getElementById("kpis").innerHTML = items.map(function (it) {
+      return '<div class="kpi"><div class="v">' + esc(it[0]) +
+             '</div><div class="l">' + esc(it[1]) + '</div></div>';
+    }).join("");
+  } catch (e) { fail("kpis", "Summary", e); }
+}
+
+var sortKey = "seats", sortDir = -1;
+
+function renderTable(r) {
+  try {
+    var c = census(), rows = [], k;
+    for (k in r.seats) {
+      var a = r.actual[k];
+      rows.push({
+        unit: k, pop: c.pop[k] || 0,
+        quota: r.quotas[k] === undefined ? null : r.quotas[k],
+        seats: r.seats[k], actual: a === undefined ? null : a,
+        delta: a === undefined ? null : r.seats[k] - a,
+        perseat: r.seats[k] > 0 ? (c.pop[k] || 0) / r.seats[k] : null,
+        heldFixed: r.held[k] !== undefined
+      });
+    }
+    rows.sort(function (x, y) {
+      var a = x[sortKey], b = y[sortKey];
+      if (a === null) { return 1; } if (b === null) { return -1; }
+      if (typeof a === "string") { return sortDir * (a < b ? -1 : a > b ? 1 : 0); }
+      return sortDir * (a - b);
+    });
+
+    document.querySelector("#tbl tbody").innerHTML = rows.map(function (d) {
+      var cls = d.delta > 0 ? "up" : d.delta < 0 ? "down" : "muted";
+      var dtxt = d.delta === null ? "—" : (d.delta > 0 ? "+" : "") + d.delta;
+      return "<tr><td>" + esc(d.unit) +
+        (d.heldFixed ? ' <span class="pill">held</span>' : "") + "</td>" +
+        "<td>" + esc(fmt(d.pop)) + "</td>" +
+        "<td>" + (d.quota === null ? '<span class="muted">held</span>' : esc(d.quota.toFixed(2))) + "</td>" +
+        "<td><strong>" + esc(d.seats) + "</strong></td>" +
+        "<td>" + (d.actual === null ? "—" : esc(d.actual)) + "</td>" +
+        '<td class="' + cls + '">' + esc(dtxt) + "</td>" +
+        "<td>" + (d.perseat === null ? "—" : esc(fmt(Math.round(d.perseat)))) + "</td></tr>";
+    }).join("");
+
+    document.getElementById("table-sub").innerHTML =
+      esc(census().label) + " census, " + esc(Object.keys(r.pool).length) +
+      " units in the proportional pool sharing " + esc(r.poolSeats) +
+      " seats. “Actual” is " + esc(census().actual_label) + ": " +
+      esc(census().actual_note);
+    document.getElementById("table-err").innerHTML = "";
+  } catch (e) { fail("table-err", "The table", e); }
+}
+
+function renderNote(r) {
+  try {
+    var bits = [];
+    if (r.branch === "overshoot" && state.method === "india-1963") {
+      bits.push('<div class="warnbox"><strong>This House size is not covered by the ' +
+        '1963 Order.</strong> Rounding to nearest overshoots here, and the Order only ' +
+        'says what to do when it falls short. The seats below use a symmetric step ' +
+        'that this project supplies. Treat them as a completion of the rule, not the ' +
+        'rule.</div>');
+    }
+    if (state.floor === "on" && state.census !== "1971") {
+      bits.push('<div class="warnbox">The six-million floor is tied by article 81(3) ' +
+        'to the <strong>1971</strong> census. Applying it to the ' +
+        esc(census().label) + ' census is a modelling choice, not what the ' +
+        'Constitution provides for.</div>');
+    }
+    if (state.carve === "pool") {
+      bits.push('<div class="warnbox"><strong>Stress test, not a proposal.</strong> ' +
+        'With every unit in the pool, the smallest units can fall to zero seats, ' +
+        'which no version of the Constitution permits. It is here to show which ' +
+        'findings survive the model and which do not.</div>');
+    }
+    document.getElementById("model-note").innerHTML = bits.join("");
+  } catch (e) { fail("model-note", "Model notes", e); }
+}
+
+/* ---- the sweep chart, vanilla canvas ----------------------------------- */
+
+function renderSweep() {
+  try {
+    var cv = document.getElementById("sweep");
+    var dpr = window.devicePixelRatio || 1;
+    var W = cv.clientWidth, H = 300;
+    cv.width = W * dpr; cv.height = H * dpr;
+    var g = cv.getContext("2d");
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, W, H);
+
+    var css = getComputedStyle(document.documentElement);
+    var cAcc = css.getPropertyValue("--accent").trim();
+    var cWarn = css.getPropertyValue("--warn").trim();
+    var cLine = css.getPropertyValue("--line").trim();
+    var cSec = css.getPropertyValue("--secondary").trim();
+
+    var lo = Math.max(100, state.house - 60), hi = state.house + 60;
+    var c = census(), six = DATA.meta.six_millions, saved = state.house;
+    var series = {}, houses = [], h, k;
+    for (h = lo; h <= hi; h++) {
+      state.house = h;
+      var r = compute();
+      houses.push(h);
+      for (k in r.seats) { (series[k] = series[k] || []).push(r.seats[k]); }
+    }
+    state.house = saved;
+
+    var drops = {}, maxSeat = 1;
+    for (k in series) {
+      for (var i = 1; i < series[k].length; i++) {
+        if (series[k][i] < series[k][i - 1]) {
+          (drops[k] = drops[k] || []).push(i);
+        }
+      }
+      for (i = 0; i < series[k].length; i++) {
+        if (series[k][i] > maxSeat && series[k][i] <= 40) { maxSeat = series[k][i]; }
+      }
+    }
+    maxSeat = Math.max(6, Math.min(maxSeat + 2, 42));
+
+    var padL = 42, padR = 14, padT = 12, padB = 30;
+    var X = function (hh) { return padL + (hh - lo) / (hi - lo) * (W - padL - padR); };
+    var Y = function (s) { return H - padB - (s / maxSeat) * (H - padT - padB); };
+
+    g.strokeStyle = cLine; g.lineWidth = 1; g.font = "11px system-ui";
+    g.fillStyle = cSec;
+    for (var s = 0; s <= maxSeat; s += Math.ceil(maxSeat / 5)) {
+      g.beginPath(); g.moveTo(padL, Y(s)); g.lineTo(W - padR, Y(s)); g.stroke();
+      g.fillText(String(s), 8, Y(s) + 4);
+    }
+    [lo, state.house, hi].forEach(function (hh) {
+      g.fillText(String(hh), X(hh) - 12, H - 10);
+    });
+    g.strokeStyle = cSec; g.setLineDash([4, 3]);
+    g.beginPath(); g.moveTo(X(state.house), padT); g.lineTo(X(state.house), H - padB); g.stroke();
+    g.setLineDash([]);
+
+    var order = Object.keys(series).sort(function (a, b) {
+      return (drops[a] ? 1 : 0) - (drops[b] ? 1 : 0);
+    });
+    order.forEach(function (kk) {
+      var vals = series[kk];
+      if (Math.max.apply(null, vals) > maxSeat) { return; }
+      g.beginPath();
+      g.strokeStyle = drops[kk] ? cAcc : cLine;
+      g.lineWidth = drops[kk] ? 1.8 : 0.9;
+      for (var i = 0; i < vals.length; i++) {
+        var x = X(houses[i]), y = Y(vals[i]);
+        if (i === 0) { g.moveTo(x, y); } else { g.lineTo(x, y); }
+      }
+      g.stroke();
+      if (drops[kk]) {
+        g.fillStyle = cWarn;
+        drops[kk].forEach(function (i) {
+          g.beginPath(); g.arc(X(houses[i]), Y(vals[i]), 3.6, 0, 6.284); g.fill();
+        });
+      }
+    });
+
+    var n = Object.keys(drops).length;
+    g.fillStyle = cSec; g.font = "12px system-ui";
+    g.fillText(n ? n + (n === 1 ? " unit loses" : " units lose") +
+               " a seat somewhere in this range" : "No unit loses a seat in this range",
+               padL + 4, padT + 12);
+    document.getElementById("sweep-err").innerHTML = "";
+  } catch (e) { fail("sweep-err", "The chart", e); }
+}
+
+/* ---- wiring ------------------------------------------------------------ */
+
+function refresh() {
+  var r;
+  try { r = compute(); }
+  catch (e) { fail("table-err", "The calculation", e); return; }
+  renderNote(r); renderKPIs(r); renderTable(r); renderSweep();
+}
+
+function seg(id, key) {
+  var box = document.getElementById(id);
+  box.addEventListener("click", function (ev) {
+    var b = ev.target.closest("button"); if (!b) { return; }
+    state[key] = b.dataset.v;
+    Array.prototype.forEach.call(box.querySelectorAll("button"), function (x) {
+      x.setAttribute("aria-pressed", String(x === b));
+    });
+    refresh();
+  });
+}
+
+function boot(data) {
+  DATA = data;
+  var sel = document.getElementById("census");
+  sel.innerHTML = Object.keys(DATA.censuses).map(function (y) {
+    return '<option value="' + esc(y) + '"' + (y === state.census ? " selected" : "") +
+           ">" + esc(DATA.censuses[y].label) + " census</option>";
+  }).join("");
+
+  sel.addEventListener("change", function () {
+    state.census = sel.value;
+    var h = DATA.censuses[state.census].actual_house;
+    state.house = h;
+    document.getElementById("house").value = h;
+    document.getElementById("house-val").textContent = h;
+    refresh();
+  });
+  document.getElementById("method").addEventListener("change", function (e) {
+    state.method = e.target.value; refresh();
+  });
+  var hr = document.getElementById("house");
+  hr.addEventListener("input", function () {
+    state.house = parseInt(hr.value, 10);
+    document.getElementById("house-val").textContent = state.house;
+    var a = census().actual_house;
+    document.getElementById("house-sub").textContent =
+      state.house === a ? " · the House as it is" : "";
+    refresh();
+  });
+  seg("floor", "floor"); seg("carve", "carve");
+
+  document.querySelectorAll("#tbl thead th").forEach(function (th) {
+    th.addEventListener("click", function () {
+      var k = th.dataset.k;
+      if (k === sortKey) { sortDir = -sortDir; } else { sortKey = k; sortDir = -1; }
+      refresh();
+    });
+  });
+
+  document.getElementById("house-sub").textContent = " · the House as it is";
+  document.getElementById("fingerprint").textContent =
+    "Data fingerprint " + DATA.meta.fingerprint +
+    ". Populations from the Census of India; seat tables from the Delimitation Orders.";
+  refresh();
+}
+
+document.getElementById("theme-toggle").addEventListener("click", function () {
+  var d = document.documentElement;
+  var next = d.dataset.theme === "dark" ? "light" : "dark";
+  d.dataset.theme = next;
+  try { localStorage.setItem("pref-theme", next); } catch (e) {}
+  refresh();
+});
+window.addEventListener("resize", function () { renderSweep(); });
+
+fetch("delimitation-data.json")
+  .then(function (r) {
+    if (!r.ok) { throw new Error("HTTP " + r.status); }
+    return r.json();
+  })
+  .then(boot)
+  .catch(function (e) {
+    fail("table-err", "The data", e);
+    fail("kpis", "Summary", e);
+  });
+
+})();
+</script>
+</body>
+</html>
