@@ -5,6 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How India divides Lok Sabha seats: an apportionment calculator</title>
 <meta name="description" content="Change the census, the House size, the rounding method and the carve-out, and watch India's Lok Sabha seat allocation move. Built on the rule the Delimitation Commission wrote down in 1963.">
+<link rel="canonical" href="https://ndranandraj.com/delimitation/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Anand Raj">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anand's Blog">
+<meta property="og:url" content="https://ndranandraj.com/delimitation/">
+<meta property="og:title" content="How India divides Lok Sabha seats: an apportionment calculator">
+<meta property="og:description" content="Pick a census, a House size and a rounding rule. Switch the six-million floor and the carve-out on and off. Watch every state's seats move, computed in your browser from published census counts.">
+<meta property="og:image" content="https://ndranandraj.com/images/delimitation-tool-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Seats against House size for every state, with the moments a state loses a seat marked.">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How India divides Lok Sabha seats: an apportionment calculator">
+<meta name="twitter:description" content="Pick a census, a House size and a rounding rule, and watch every state's seats move. Built on the rule the Delimitation Commission wrote down in 1963.">
+<meta name="twitter:image" content="https://ndranandraj.com/images/delimitation-tool-cover.png">
+
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://ndranandraj.com/delimitation/#app",
+      "name": "India Lok Sabha seat apportionment calculator",
+      "url": "https://ndranandraj.com/delimitation/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any browser",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+      "description": "Recomputes the allocation of Lok Sabha seats among Indian states for the 1961, 1971 and 2011 censuses, at any House size, under seven apportionment methods, with the six-million floor and the union-territory carve-out switchable.",
+      "featureList": [
+        "1961, 1971 and 2011 census populations",
+        "House sizes from 100 to 1100",
+        "India's documented 1963 rule plus six classical methods",
+        "Six-million floor and carve-out toggles",
+        "Alabama paradox detection across House sizes"
+      ],
+      "author": { "@type": "Person", "name": "Anand Raj", "url": "https://ndranandraj.com/page/about/" },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isBasedOn": "https://ndranandraj.com/posts/how-india-seat-rule-method-note/"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://ndranandraj.com/delimitation/#data",
+      "name": "Indian census populations and Lok Sabha seat allocations, 1961 to 2011",
+      "description": "State and union territory populations from the 1961, 1971 and 2011 censuses, with the seat allocations made by the 1963, 1976 and 2008 Delimitation Orders.",
+      "url": "https://ndranandraj.com/delimitation/",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": { "@type": "Person", "name": "Anand Raj" },
+      "temporalCoverage": "1961/2011",
+      "spatialCoverage": { "@type": "Place", "name": "India" },
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://ndranandraj.com/delimitation/delimitation-data.json"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ndranandraj.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Delimitation calculator", "item": "https://ndranandraj.com/delimitation/" }
+      ]
+    }
+  ]
+}
+</script>
 <script>
 /* Pre-paint theme bootstrap. Same contract as the blog: localStorage["pref-theme"]
    plus html[data-theme]. Runs before first paint so there is no wrong-theme flash. */
@@ -45,6 +120,10 @@ h1{font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.18;color:var(--primary);
   margin:.2em 0 .3em;font-weight:600;letter-spacing:-.015em}
 h2{font-size:1.15rem;color:var(--primary);margin:0 0 .35em;font-weight:600}
 p.lede{color:var(--secondary);max-width:66ch;margin:0 0 1.6em}
+.crumbs{font-size:.82rem;color:var(--secondary);margin:0 0 18px}
+.crumbs a{color:var(--secondary);text-decoration:none}
+.crumbs a:hover{color:var(--accent);text-decoration:underline}
+.crumbs span{opacity:.6;margin:0 2px}
 .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--accent);margin:0 0 .4em}
 a{color:var(--accent)}
@@ -107,6 +186,11 @@ footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);
 <button id="theme-toggle" type="button" aria-label="Toggle light and dark">Theme</button>
 
 <div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Anand's Blog</a> <span aria-hidden="true">&rsaquo;</span>
+    <a href="/posts/the-rule-india-wrote-down-in-1963/">The rule India wrote down in 1963</a>
+    <span aria-hidden="true">&rsaquo;</span> <span>Calculator</span>
+  </nav>
   <p class="eyebrow">Interactive</p>
   <h1>How India divides Lok Sabha seats</h1>
   <p class="lede">
@@ -209,7 +293,14 @@ footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);
     <p><strong>The six-million floor</strong> is the proviso to article 81(2), inserted in
     1973 and tied by article 81(3) to the <em>1971</em> census. Applying it to any other
     census is a modelling choice, and this tool flags it when you do.</p>
-    <p id="fingerprint" class="muted"></p>
+    <p><strong>Where this comes from.</strong>
+    <a href="/posts/the-rule-india-wrote-down-in-1963/">The rule India wrote down in 1963</a>
+    explains the method and what it costs.
+    <a href="/posts/how-india-seat-rule-method-note/">The method note</a> has every
+    source, the three carve-out models, and a log of the claims withdrawn along the
+    way. Released under
+    <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  <p id="fingerprint" class="muted"></p>
   </footer>
 </div>
 

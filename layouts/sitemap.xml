@@ -52,4 +52,17 @@
     <xhtml:link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />{{ end }}
   </url>
   {{ end }}
+
+  {{/* Static single-page apps live in static/ and are invisible to Hugo, so they
+       never reach .Data.Pages and never reach the sitemap. Declare them in
+       hugo.toml under [[params.staticApps]] and they are listed here. Each entry
+       takes url, priority, changefreq and an optional lastmod (YYYY-MM-DD). */}}
+  {{- range site.Params.staticApps }}
+  <url>
+    <loc>{{ .url | absURL }}</loc>{{ with .lastmod }}
+    <lastmod>{{ . }}</lastmod>{{ end }}
+    <changefreq>{{ .changefreq | default "monthly" }}</changefreq>
+    <priority>{{ .priority | default 0.7 }}</priority>
+  </url>
+  {{- end }}
 </urlset>

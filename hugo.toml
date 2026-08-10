@@ -36,6 +36,26 @@ enableRobotsTXT = true
   defaultTheme = "auto"
   mainSections = ["posts", "data"]
 
+  # Static single-page apps. These live in static/ so Hugo never sees them as
+  # pages, which means they are absent from .Data.Pages and were therefore absent
+  # from the sitemap. layouts/sitemap.xml appends whatever is listed here.
+  # Add an entry whenever a new tool ships into static/.
+  [[params.staticApps]]
+    url = "/delimitation/"
+    priority = 0.9
+    changefreq = "monthly"
+    lastmod = "2026-08-09"
+  [[params.staticApps]]
+    url = "/election-dashboard/tn-2026-explorer.html"
+    priority = 0.8
+    changefreq = "monthly"
+    lastmod = "2026-06-09"
+  [[params.staticApps]]
+    url = "/election-dashboard/"
+    priority = 0.7
+    changefreq = "monthly"
+    lastmod = "2026-06-09"
+
   # Homepage hero "NOW" badge (the small card on the portrait). Edit freely;
   # leave empty to hide the badge. Eyebrow above the headline is `heroEyebrow`.
   now = "Mapping TN 2026"
