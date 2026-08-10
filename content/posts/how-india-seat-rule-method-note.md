@@ -95,6 +95,8 @@ The proviso to article 81(2) says that proportionality does not apply to states 
 | **One-seat floor** | All 35 units in the pool, with a guaranteed minimum of one seat each | Reported alongside |
 | **No carve-out** | All 35 units apportioned together, no floor | **A stress test, not a proposal.** It gives seven units zero seats |
 
+You can switch between all three in the [seat calculator](/delimitation/) and watch which findings hold.
+
 **What survives all three: the losses.** Tamil Nadu falls to 32 and Kerala to 15 in every model. **What does not survive: the gains.** Uttar Pradesh ranges from +5 to +10 depending on the model. So a loss can be stated as a finding; a gain must always carry its model.
 
 **And a note on the fairness metrics, because the first draft of the main piece got this wrong.** The freeze is eight to twelve times worse than a recomputed allocation on the **distributional** measures (**Loosemore**-Hanby 10.1x, root-mean-square deviation from quota 12.0x, **Gini** of representation 8.3x). It is much closer on the extremal ones: max-to-min ratio 1.36x, maximum people per seat 1.09x, and minimum people per seat 0.80x, meaning the least-represented state is slightly better off under the freeze. "Worse on every measure" is false and was published in a draft before being caught.

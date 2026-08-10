@@ -33,7 +33,7 @@ It also has one consequence I have not found anyone looking for in Indian number
 <a class="tool-cta" href="/delimitation/">
   <span class="tool-cta__eyebrow">Interactive</span>
   <span class="tool-cta__title">Run the arithmetic yourself</span>
-  <span class="tool-cta__body">Pick a census, a House size and a rounding method, switch the six-million floor and the carve-out on and off, and watch the seats move. Everything below is computed in your browser from published census counts.</span>
+  <span class="tool-cta__body">Pick a census, a House size and a rounding method, switch the six-million floor and the carve-out on and off, and watch every state's seats move. Computed in your browser from published census counts.</span>
 </a>
 
 ## Whole seats, fractional people
@@ -60,7 +60,7 @@ All three sound like minimum requirements. Hold on to that thought.
 
 Take the 1971 exercise, which produced the seat allocation still in force today.
 
-Fifteen states were in the proportional pool. Their combined population was 529,042,059 and they were allotted 507 seats between them, which is **1,043,475.46 people per seat**. Divide each state by that number, round each result to the nearest whole number, and add them up.
+Fifteen states were in the proportional pool. Their combined population was 529,042,059 and they were allotted 507 seats between them, which is **1,043,475.46 people per seat**. Divide each state by that number, round each result to the nearest whole number, and add them up. Every figure in this section is reproducible in the [seat calculator](/delimitation/), which runs the same arithmetic in your browser.
 
 You get exactly 507. No adjustment needed. And the fifteen numbers match the Delimitation Commission's published table, state for state.
 
@@ -284,8 +284,8 @@ And the comparison I most want you to make. Carnegie's 2019 paper computes the s
 
 <a class="tool-cta" href="/delimitation/">
   <span class="tool-cta__eyebrow">Interactive</span>
-  <span class="tool-cta__title">Run the arithmetic yourself</span>
-  <span class="tool-cta__body">Pick a census, a House size and a rounding method, switch the six-million floor and the carve-out on and off, and watch the seats move. Everything below is computed in your browser from published census counts.</span>
+  <span class="tool-cta__title">Check the 709 yourself</span>
+  <span class="tool-cta__body">The calculator does every model in this piece. Switch the method to Webster, move Delhi in or out of the pool, and watch the no-state-loses figure slide between the numbers Carnegie and I arrived at.</span>
 </a>
 
 ## What the Commission actually chose
