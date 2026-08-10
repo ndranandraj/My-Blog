@@ -181,15 +181,21 @@ This is not a curiosity about a method India might adopt. It is a property of th
 
 Now the one most people expect to find.
 
-Run 1971 against 2011 on comparable territory, at every House size from 15 to 1100, under the rule as **documented**, and the population paradox **does not** appear. Not once. Not at any House size. And not at today's **543** under any reading of the data.
+Run 1971 against 2011 on comparable territory, at every House size from 15 to 1100, under the rule as **documented**, and the population paradox **does not** appear. Not at any House size in that range, and not at today's **543** under either reading of the data.
+
+**That result belongs to the carve-out as much as to the rule, and the distinction matters.** The states being apportioned are all large, and none of them ever sits near a rounding boundary in a way that flips. Widen the pool to all twenty-one states of the 1971 map with no six-million floor, and documented cases do appear, every one of them turning on a unit holding one seat or none. So the supported claim is the narrow one: **with the carve-out holding the small units out of the pool, no case appears.** Not that the rule cannot produce one.
 
 That deserves a blunt statement, because it is the misreading this entire subject invites:
 
 {{< callout title="The thing to get right" type="insight" >}}
-The southern states lose seats in every projection you have seen. **That is not a paradox and it is not the rounding rule.** They lose seats because they grew more slowly than the northern states, which is proportional representation working exactly as designed. Calling it a paradox would be both wrong and, given the subject, the kind of wrong that gets quoted.
+The southern states lose share in every projection that shares seats out by population. **That is not a paradox and it is not the rounding rule.** They lose seats because they grew more slowly than the northern states, which is proportional representation working exactly as designed. Calling it a paradox would be both wrong and, given the subject, the kind of wrong that gets quoted.
 {{< /callout >}}
 
-I should be honest about the strength of that finding, because it is the weakest evidence in this piece. It is a negative result produced by a search I wrote myself, and a bug in such a search returns "not found", which is the answer being published. The failure would be invisible and self-confirming. I built a positive control that fires on a constructed case where the paradox is known to be present, ran both readings of an ambiguous territorial boundary and required them to agree, and published the full sweep. It still wants independent reproduction, and until it gets some, read it as "not found in this model" rather than "does not occur".
+I should be honest about the strength of that finding, because it was the weakest evidence in this piece. It is a negative result produced by a search I wrote myself, and a bug in such a search returns "not found", which is the answer being published. The failure would be invisible and self-confirming. I built a positive control that fires on a constructed case where the paradox is known to be present, ran both readings of an ambiguous territorial boundary and required them to agree, and published the full sweep.
+
+**It has now been reproduced independently.** A second implementation was written from the 1963 Order and the raw census files alone, with no sight of my code, with its own positive control. It agrees: nothing on the documented branch over the apportioned states, nothing at 543 under any model or either reading, and it rediscovered the single undocumented-branch instance at the same pool size with the same pair of states. It also reproduced the 1976 allocation 15 out of 15 and the whole Phase 4 table, which is the check that matters most, since a reimplementation that agreed on the negative result while disagreeing on the positive ones would be worthless.
+
+What it changed is the framing rather than the number: the pool dependence stated above, and one wording trap. The paradox is a faster-growing state losing a seat **to a slower-growing one**. Drop those last four words and the same sweep appears to show 142 cases, all of them artefacts of the looser sentence. Even so, read the result as "not found in this model" rather than "does not occur".
 
 {{< newsletter title="Want the next data deep-dive in your inbox?"
                body="Long-form data work like this one, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}

@@ -39,11 +39,13 @@ So the question is live, and each option on the table has a clear answer. This p
 {{< kpi value="58 or 48" label="under a '50% increase'" tone="accent" sub="depending on which version you mean" >}}
 {{< /kpi-row >}}
 
-**Tamil Nadu only loses seats if the House stays the same size.** Every proposal that enlarges Parliament gives Tamil Nadu more seats than it has now.
+**Tamil Nadu only loses seats if the House stays the same size.** Every enlargement now on the table gives it more seats than it has today.
+
+That is a fact about those proposals rather than about enlargement itself. If seats are shared out by population, Tamil Nadu does not get back to its present **39** until the House reaches **656**, so a smaller enlargement would still leave it short.
 
 Whether any of them protects Tamil Nadu's **share** of Parliament is a separate question, and it has a different answer depending on which proposal you mean. That distinction is the whole argument, and the phrase doing the most damage to it is "a 50 percent increase", which is currently being used for two incompatible things.
 
-## Every option, side by side
+## The options on the table, side by side
 
 These use the 2011 census, which is the one the Bill names, on the **2011** territorial **map**, under the carve-out **model** explained in the [method note](/posts/how-india-seat-rule-method-note/). They are **hypothetical**: India has not moved seats between states since 1976.
 
@@ -79,12 +81,13 @@ This is the version being described in public. NCP (SP) MP Supriya Sule offered 
 
 ### Which one would the law produce?
 
-Version two, on the drafts as they stand. The Wire's reading is that the uniform version is [a statutory ghost](https://thewire.in/government/explained-why-the-promised-50-increase-in-lok-sabha-is-mathematical-impossibility-under-the-delimitation-bill), absent from the bills and inconsistent with them, and the constitutional text supports that reading:
+Version two. The Wire called the uniform version [a statutory ghost](https://thewire.in/government/explained-why-the-promised-50-increase-in-lok-sabha-is-mathematical-impossibility-under-the-delimitation-bill), absent from the bills and inconsistent with them. I went and read the Bill, and the text bears that out:
 
 - **Article 81(2)(a)** requires that seats be allotted so the ratio between a state's seats and its population is "so far as practicable, the same for all States".
-- **Section 8 of the Delimitation Bill, 2026** directs the Commission to allocate "on the basis of the latest census figures".
+- **Section 8 of the [Delimitation Bill, 2026](https://prsindia.org/files/bills_acts/bills_parliament/2026/Delimitation_Bill,_2026.pdf)** binds the Commission to determine each state's seats "on the basis of the latest census figures and having regard to the provisions of articles 81, 82".
+- The Bill never names a census. **Section 2(e)** defines the latest census figures as those "published as on the date of the constitution of the Commission", which on any near-term timetable means 2011.
 
-You cannot hold that ratio equal across states and also hand every state the same percentage rise, because state populations have not grown at the same rate since 1971. A uniform increase is not a way of implementing the Bill. It is a different policy, and putting it into law would mean amending article 81(2) itself, not merely lifting the freeze that sits in article 82. That is a larger constitutional change than the one that was voted down in April, and nobody has yet published a draft of it.
+You cannot hold that ratio equal across states and also hand every state the same percentage rise, because state populations have not grown at the same rate since 1971. A uniform increase is not a way of implementing the Bill. It is a different policy, and putting it into law would mean amending article 81(2) itself, not merely lifting the freeze that sits in article 82. That is a larger constitutional change than the one that was voted down in April, and I have not found a published draft of it.
 
 ### What version one actually buys, and what it costs
 
@@ -151,7 +154,9 @@ Between **1971** and 2011, with the newer states **folded** back into their pare
 
 Tamil Nadu grew **75%**. India grew **121%**. Kerala grew **57%**, the slowest of the large states. Rajasthan grew **166%**, Bihar **143%**, Uttar Pradesh **138%**.
 
-A state that grows at roughly half the national rate ends up with roughly a smaller share of a population-based House. There is no trick in it and no method that avoids it, which is the subject of [the longer piece](/posts/the-rule-india-wrote-down-in-1963/) this one comes from.
+A state that grows at roughly half the national rate ends up with a smaller share of a population-based House. There is no trick in it, and no way of dividing seats by population avoids it, which is the subject of [the longer piece](/posts/the-rule-india-wrote-down-in-1963/) this one comes from.
+
+The uniform increase escapes it only by refusing the premise: it does not divide seats by population at all.
 
 {{< callout title="The thing most often got wrong" type="insight" >}}
 Tamil Nadu is not losing share because of the way seats are rounded, and not because of any mathematical paradox. It is losing share because it grew more slowly than the rest of India. That is proportional representation working exactly as intended. Whether it is *fair* is a real argument. Whether it is a *malfunction* is not: it isn't one.
