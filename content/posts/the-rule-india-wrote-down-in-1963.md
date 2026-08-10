@@ -1,12 +1,13 @@
 ---
 title: "The rule India wrote down in 1963"
-date: 2026-08-07
-lastmod: 2026-08-07
+date: 2026-08-09T10:30:00
+lastmod: 2026-08-09T10:30:00
 description: "India divides Lok Sabha seats among its states using a method a Commission wrote down in 1963. It has a name, a 175-year history, and known flaws. I have not found an account of the debate that names it."
 summary: "The Delimitation Commission stated its arithmetic in plain words in 1963. That rule is the Vinton method, which the United States used from 1850 to 1900 and abandoned after the Alabama paradox. It reproduces India's real allocations exactly. And it turns out to matter far less than the fifty-year-old census it is applied to."
 keywords: ["delimitation India", "Lok Sabha seat allocation", "apportionment method India", "1963 Delimitation Commission", "Alabama paradox India", "Balinski Young apportionment", "Lok Sabha seats 2026", "Tamil Nadu Lok Sabha seats delimitation", "India census freeze seats", "largest remainder method India"]
 tags: ["delimitation", "india", "data", "mathematics", "elections", "lok-sabha", "apportionment"]
 categories: ["Data"]
+featured: true
 pillar: true
 readingTime: true
 showToc: true
@@ -27,7 +28,7 @@ That is the whole rule. Divide, round to the nearest whole number, and if the to
 
 It reads like clerical housekeeping. It is not. That sentence takes a side in a mathematical argument that was already fifty years old when it was written, and the Commission gives no sign of knowing the argument existed. The rule it chose has a name, a documented history of going wrong, and a theorem attached to it explaining exactly what India gave up by choosing it.
 
-It also has a consequence nobody appears to have looked for in Indian numbers, and another that everybody expects and which is not there. Both are further down.
+It also has one consequence I have not found anyone looking for in Indian numbers, and another that is widely assumed to be there and is not. Both are further down.
 
 <a class="tool-cta" href="/delimitation/">
   <span class="tool-cta__eyebrow">Interactive</span>
@@ -148,7 +149,7 @@ Theorems say what is possible. They do not say what happens on real numbers. So 
 
 ### The Alabama paradox: yes
 
-The Alabama paradox is named for the 1880 US census, when Alabama was found to hold 8 seats in a House of 299 and 7 seats in a House of 300. The [US Census Bureau's own history](https://www.census.gov/topics/public-sector/congressional-apportionment/about/historical-perspective.html) identifies Hamilton, or Vinton, as the method in use from 1850 to 1900 and names this as its weakness. Adding a seat to the House took one away from Alabama. It is what killed Vinton in the United States, and Representative Littlefield of Maine put the general feeling well in 1901, after watching his state's delegation move six times as the House grew from 383 to 400:
+The Alabama paradox is named for the 1880 US census, when Alabama was found to hold 8 seats in a House of 299 and 7 seats in a House of 300. Adding a seat to the House took one away from Alabama. It is what ended Vinton's run in the United States, which the [US Census Bureau's own history](https://www.census.gov/topics/public-sector/congressional-apportionment/about/historical-perspective.html) records as lasting from 1850 to 1900. Representative Littlefield of Maine put the general feeling well in 1901, after watching his state's delegation move six times as the House grew from 383 to 400:
 
 > "God help the State of Maine when mathematics reach for her..."
 

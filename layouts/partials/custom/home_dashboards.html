@@ -58,6 +58,37 @@
       </div>
       <div class="dash-csv" aria-hidden="true">seat,winner,party<br>1,&hellip;,DMK<br>2,&hellip;,AIADMK<br>&darr; download csv</div>
     </a>
+
+    {{- /* Delimitation calculator */ -}}
+    <a class="dash-card" href="/delimitation/">
+      <div>
+        <span class="dash-eyebrow">LIVE &middot; INTERACTIVE</span>
+        <h3>Seat calculator</h3>
+        <p>Change the census, House size and rounding rule, and watch the Lok Sabha move.</p>
+      </div>
+      <div class="dash-steps" aria-hidden="true">
+        <span style="height:26%"></span><span style="height:38%"></span>
+        <span style="height:38%"></span><span style="height:52%"></span>
+        <span style="height:44%" class="dash-steps--drop"></span>
+        <span style="height:66%"></span><span style="height:78%"></span>
+        <span style="height:78%"></span><span style="height:92%"></span>
+      </div>
+    </a>
+
+    {{- /* Method note */ -}}
+    <a class="dash-card" href="/posts/how-india-seat-rule-method-note/">
+      <div>
+        <span class="dash-eyebrow">METHOD</span>
+        <h3>How it is made</h3>
+        <p>Sources, models, what each test proves, and every claim withdrawn along the way.</p>
+      </div>
+      <div class="dash-csv dash-method" aria-hidden="true">
+        &check; US 1940 reproduced<br>
+        &check; exact rational arithmetic<br>
+        &check; 2,163 seat tables checked<br>
+        &darr; code &amp; data, CC BY 4.0
+      </div>
+    </a>
   </div>
 </section>
 {{- end }}

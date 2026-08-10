@@ -146,8 +146,8 @@ footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);
       <div class="ctrl">
         <label for="carve">Small units and UTs</label>
         <div class="seg" id="carve" role="group" aria-label="Carve-out model">
-          <button type="button" data-v="hold" aria-pressed="true">Held at current seats</button>
-          <button type="button" data-v="pool" aria-pressed="false">Thrown into the pool</button>
+          <button type="button" data-v="hold" aria-pressed="true">Held</button>
+          <button type="button" data-v="pool" aria-pressed="false">In the pool</button>
         </div>
       </div>
       <div class="ctrl" style="grid-column:1/-1">
@@ -189,8 +189,9 @@ footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);
     </p>
     <canvas id="sweep" role="img" aria-label="Seats against House size for each unit"></canvas>
     <div class="legend">
-      <span><i style="background:var(--accent)"></i>a unit that loses a seat somewhere in this range</span>
-      <span><i style="background:var(--warn)"></i>the moment a seat is lost</span>
+      <span><i style="background:var(--accent)"></i>a unit that loses a seat in this range</span>
+      <span><i style="background:var(--warn)"></i>a loss the 1963 Order works through</span>
+      <span><i style="border:1.5px solid var(--warn);background:transparent"></i>a loss needing its principle extended</span>
       <span><i style="background:var(--line)"></i>everything else</span>
     </div>
     <div id="sweep-err"></div>
@@ -315,6 +316,25 @@ function apportion(pops, house, method) {
 
 /* Which branch of India's rule a case falls into. "overshoot" means the 1963
    Order does not cover it and the answer depends on this project's completion. */
+/* How far a case is from what the 1963 Order actually demonstrates. Mirrors
+   apportionment.evidence_tier(). The Order works one example and places exactly
+   ONE spare seat, so 0 or 1 is "demonstrated"; 2 or more extends its stated
+   principle by rank; overshooting is not covered by it at all. */
+function spareSeats(pops, house) {
+  var q = exactQuotas(pops, house), floors = 0, up = 0, k;
+  for (k in q) {
+    floors += Math.floor(q[k]);
+    if (q[k] - Math.floor(q[k]) >= 0.5) { up += 1; }
+  }
+  return (house - floors) - up;
+}
+
+function evidenceTier(pops, house) {
+  var gap = spareSeats(pops, house);
+  if (gap < 0) { return "undocumented"; }
+  return gap <= 1 ? "demonstrated" : "principle-extended";
+}
+
 function roundingBranch(pops, house) {
   var q = exactQuotas(pops, house), floors = 0, up = 0, k;
   for (k in q) {
@@ -329,7 +349,8 @@ function roundingBranch(pops, house) {
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { apportion: apportion, exactQuotas: exactQuotas,
-                     roundingBranch: roundingBranch };
+                     roundingBranch: roundingBranch, spareSeats: spareSeats,
+                     evidenceTier: evidenceTier };
 }
 </script>
 
@@ -430,7 +451,8 @@ function renderKPIs(r) {
       ["" + r.poolSeats, "seats apportioned proportionally, out of " + esc(state.house)],
       ["" + Object.keys(r.held).length, "units held at their current seats"],
       ["" + Math.round(moved / 2), "seats that change hands"],
-      [ratio ? ratio.toFixed(1) + "×" : "n/a", "largest to smallest people per MP"]
+      [ratio ? ratio.toFixed(1) + "×" : "n/a",
+       "largest to smallest people per MP, in the allocation computed above"]
     ];
     document.getElementById("kpis").innerHTML = items.map(function (it) {
       return '<div class="kpi"><div class="v">' + esc(it[0]) +
@@ -530,20 +552,29 @@ function renderSweep() {
 
     var lo = Math.max(100, state.house - 60), hi = state.house + 60;
     var c = census(), six = DATA.meta.six_millions, saved = state.house;
-    var series = {}, houses = [], h, k;
+    var series = {}, houses = [], tiers = [], h, k;
     for (h = lo; h <= hi; h++) {
       state.house = h;
       var r = compute();
       houses.push(h);
+      tiers.push(evidenceTier(r.pool, r.poolSeats));
       for (k in r.seats) { (series[k] = series[k] || []).push(r.seats[k]); }
     }
     state.house = saved;
 
-    var drops = {}, maxSeat = 1;
+    /* Gate the drops the same way the article does. The 1963 Order works ONE
+       example and places exactly ONE spare seat, so a drop only counts as
+       demonstrated when both ends of the step need no spare or one. Anything
+       else extends the Order's principle, or is not covered by it at all. */
+    var drops = {}, wider = {}, maxSeat = 1;
     for (k in series) {
       for (var i = 1; i < series[k].length; i++) {
         if (series[k][i] < series[k][i - 1]) {
-          (drops[k] = drops[k] || []).push(i);
+          if (tiers[i] === "demonstrated" && tiers[i - 1] === "demonstrated") {
+            (drops[k] = drops[k] || []).push(i);
+          } else if (tiers[i] !== "undocumented" && tiers[i - 1] !== "undocumented") {
+            (wider[k] = wider[k] || []).push(i);
+          }
         }
       }
       for (i = 0; i < series[k].length; i++) {
@@ -570,19 +601,25 @@ function renderSweep() {
     g.setLineDash([]);
 
     var order = Object.keys(series).sort(function (a, b) {
-      return (drops[a] ? 1 : 0) - (drops[b] ? 1 : 0);
+      return ((drops[a] || wider[a]) ? 1 : 0) - ((drops[b] || wider[b]) ? 1 : 0);
     });
     order.forEach(function (kk) {
       var vals = series[kk];
       if (Math.max.apply(null, vals) > maxSeat) { return; }
       g.beginPath();
-      g.strokeStyle = drops[kk] ? cAcc : cLine;
-      g.lineWidth = drops[kk] ? 1.8 : 0.9;
+      g.strokeStyle = (drops[kk] || wider[kk]) ? cAcc : cLine;
+      g.lineWidth = (drops[kk] || wider[kk]) ? 1.8 : 0.9;
       for (var i = 0; i < vals.length; i++) {
         var x = X(houses[i]), y = Y(vals[i]);
         if (i === 0) { g.moveTo(x, y); } else { g.lineTo(x, y); }
       }
       g.stroke();
+      if (wider[kk]) {
+        g.strokeStyle = cWarn; g.lineWidth = 1.5;
+        wider[kk].forEach(function (i) {
+          g.beginPath(); g.arc(X(houses[i]), Y(vals[i]), 3.4, 0, 6.284); g.stroke();
+        });
+      }
       if (drops[kk]) {
         g.fillStyle = cWarn;
         drops[kk].forEach(function (i) {
@@ -591,11 +628,15 @@ function renderSweep() {
       }
     });
 
-    var n = Object.keys(drops).length;
+    var nStrict = 0, nWider = 0;
+    for (k in drops) { nStrict += drops[k].length; }
+    for (k in wider) { nWider += wider[k].length; }
     g.fillStyle = cSec; g.font = "12px system-ui";
-    g.fillText(n ? n + (n === 1 ? " unit loses" : " units lose") +
-               " a seat somewhere in this range" : "No unit loses a seat in this range",
-               padL + 4, padT + 12);
+    g.fillText(
+      nStrict + (nStrict === 1 ? " loss" : " losses") +
+      " at House sizes the 1963 Order works through" +
+      (nWider ? ", " + nWider + " more where its principle has to be extended" : ""),
+      padL + 4, padT + 12);
     document.getElementById("sweep-err").innerHTML = "";
   } catch (e) { fail("sweep-err", "The chart", e); }
 }

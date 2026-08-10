@@ -1,7 +1,7 @@
 ---
 title: "How I worked out India's seat rule: sources, code and corrections"
-date: 2026-08-07
-lastmod: 2026-08-07
+date: 2026-08-09T09:00:00
+lastmod: 2026-08-09T09:00:00
 description: "The method note behind the delimitation piece. Every source with a full citation, every model choice, what each test does and does not establish, and a log of the claims that were retracted along the way."
 summary: "Companion to the main piece. Formal citations for every document, the three carve-out models and how much they matter, what the code proves and what it only suggests, and an honest list of the numbers this project got wrong before it got them right."
 keywords: ["delimitation methodology", "apportionment method India sources", "1963 Delimitation Commission Order", "Lok Sabha seat calculation method", "reproducible data journalism"]
