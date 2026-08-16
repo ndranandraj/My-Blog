@@ -1,7 +1,7 @@
 ---
 title: "How many Lok Sabha seats will Tamil Nadu get?"
 date: 2026-08-09T14:00:00
-lastmod: 2026-08-09T14:00:00
+lastmod: 2026-08-14T09:00:00
 description: "Tamil Nadu has 39 seats. Under the options now being discussed it ends up with anywhere between 32 and 64. The phrase '50 percent increase' alone means two different things, and they are ten seats apart."
 summary: "If the House stays at 543, Tamil Nadu falls to 32 seats. If it grows to 850, Tamil Nadu rises to 51. The promised '50% increase' means 58 seats under one reading and 48 under another, and only one of them protects Tamil Nadu's share. Every scenario, with the arguments on each side."
 keywords: ["Tamil Nadu Lok Sabha seats", "how many seats will Tamil Nadu lose", "delimitation Tamil Nadu 2026", "50 percent increase Lok Sabha seats", "uniform 50% increase delimitation", "Tamil Nadu delimitation seats 850", "Lok Sabha seats after delimitation", "delimitation 2026 south India", "Tamil Nadu 39 seats delimitation", "Lok Sabha 850 seats Tamil Nadu"]
@@ -20,9 +20,13 @@ cover:
 
 Tamil Nadu sends 39 members to the Lok Sabha. That number was fixed in 1976 and has not moved since, because Parliament froze seat allocation on the 1971 census and then extended the freeze twice.
 
-The freeze runs out after 2026. A Constitution Amendment Bill to replace it was voted down in April, and the government is [reported to be preparing a second attempt](https://www.businesstoday.in/india/story/special-parliament-session-likely-from-aug-17-for-delimitation-womens-quota-bills-sources-547354-2026-08-05) at a special session this month, this time with an assurance attached: that every state's seats would rise by 50 percent.
+The freeze runs out after 2026. A Constitution Amendment Bill to replace it was voted down in April, and a second attempt has been expected since, this time with an assurance attached: that every state's seats would rise by 50 percent.
 
-So the question is live, and each option on the table has a clear answer. This piece works through them, and it spends most of its time on that 50 percent, because the phrase is being used for two different proposals that are ten seats apart for Tamil Nadu.
+When that attempt comes is not settled. On 5 August it was [reported](https://www.businesstoday.in/india/story/special-parliament-session-likely-from-aug-17-for-delimitation-womens-quota-bills-sources-547354-2026-08-05) that a special session would be called from 17 August. The same day, Parliamentary Affairs Minister Kiren Rijiju [told ANI](https://www.republicworld.com/india/govt-likely-to-call-3-day-special-parliament-session-from-aug-17-for-delimitation-women-s-quota-bills-2026-08-05-134066) there was "no proposal to extend any dates of Parliament Session, no Special Session from August 16 to 18". The monsoon session ended on 13 August without the bills being taken up.
+
+**So treat any specific date you read as unconfirmed.** What is not in doubt is that the freeze expires, the arithmetic below does not depend on the timetable, and the numbers are what any future attempt will be argued over.
+
+This piece works through each option on the table. It spends most of its time on that 50 percent, because the phrase is being used for two different proposals that are ten seats apart for Tamil Nadu.
 
 <a class="tool-cta" href="/delimitation/">
   <span class="tool-cta__eyebrow">Interactive</span>

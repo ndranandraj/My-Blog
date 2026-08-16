@@ -57,3 +57,29 @@ drafts/
 CLAUDE.md
 NOTES.md
 .redesign-backup/
+
+# ---------------------------------------------------------------------------
+# Second privacy audit, 2026-08-10. These were TRACKED and should not have been.
+# Adding them here does not untrack them: run the `git rm --cached` commands in
+# docs/outreach/gitignore-remediation.md once, then commit.
+# ---------------------------------------------------------------------------
+
+# Another project's internal working material. The MoSPI benchmark is unpublished
+# research into a government portal, with issues filed and emails already sent to
+# a ministry. Its run sheet and results template must not sit in a public repo.
+docs/projects/
+
+# Internal planning documents. Same class as the ones caught in the May 2026 audit.
+docs/homepage-redesign-plan.md
+docs/homepage-redesign-execution-plan.md
+docs/image-optimization.md
+
+# Binary blobs that were never meant to be versioned.
+*.zip
+Website blog design improvement.zip
+
+# Retired site sections kept locally for reference.
+archive/
+
+# Hugo build lock
+.hugo_build.lock
