@@ -3797,12 +3797,16 @@ body { font-size: 1.12rem; }       /* ~19px body copy, up from 18px */
 }
 
 @media (max-width: 860px) {
+    /* Stacked hero: the portrait sits below the text and is decorative here,
+       so it is the main thing standing between a phone visitor and the first
+       headline. Trimmed so the lead story lands inside the first scroll. */
     .hero {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
-        padding-top: 2.5rem;
+        gap: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2.25rem;
     }
-    .hero-portrait { max-width: 360px; }
+    .hero-portrait { max-width: 280px; }
 }
 
 /* ── Shared section header (dashboards / latest / topics) ── */

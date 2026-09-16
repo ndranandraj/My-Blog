@@ -67,9 +67,6 @@
 </section>
 {{- end}}
 
-{{- /* --- Dashboards & tools bento (replaces the old single featured card) --- */ -}}
-{{- partial "custom/home_dashboards.html" . -}}
-
 {{- /* --- Latest writing: one lead card + compact list rows --- */ -}}
 {{- $mainSections := site.Params.mainSections | default (slice "posts") -}}
 {{- $all := where site.RegularPages "Type" "in" $mainSections -}}
@@ -87,7 +84,7 @@
 <section class="home-latest">
   <div class="home-sec-head home-sec-head--rule">
     <div>
-      <span class="home-sec-num">02 &mdash; Writing</span>
+      <span class="home-sec-num">01 &mdash; Writing</span>
       <h2>Latest writing</h2>
     </div>
     <a class="home-sec-all" href="/posts/">View all &rarr;</a>
@@ -135,6 +132,10 @@
   {{- end }}
 </section>
 {{- end }}
+
+{{- /* --- Dashboards & tools bento (replaces the old single featured card) --- */ -}}
+{{- partial "custom/home_dashboards.html" . -}}
+
 
 {{- /* --- Browse by Topic --- */ -}}
 {{- $topics := slice
