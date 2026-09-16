@@ -1,0 +1,173 @@
+{{- define "main" }}
+
+{{- /*
+  PROJECT OVERRIDE of PaperMod's layouts/_default/search.html.
+
+  Why this exists: PaperMod's bundled fastsearch only ever searches on `keyup`
+  in the input. That means a query arriving in the URL (the /404.html form
+  submits to /search/?q=...) filled nothing and returned nothing, and a query
+  with no matches silently emptied the list with no explanation.
+
+  The markup below is PaperMod's, unchanged, so the bundled script still binds
+  to #searchInput / #searchResults exactly as before. Everything added here is
+  additive: a status line, an empty state, and the small script at the bottom
+  that drives the input from the URL and reports what happened.
+*/ -}}
+
+<header class="page-header">
+    <h1>{{- (printf "%s&nbsp;" .Title ) | htmlUnescape -}}
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+        {{- partial "translation_list.html" . -}}
+    </div>
+    {{- end }}
+</header>
+
+<div id="searchbox" class="searchbox">
+    <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
+        aria-label="search" type="search" autocomplete="off" maxlength="64">
+    <ul id="searchResults" class="searchResults" aria-label="search results"></ul>
+</div>
+
+<p id="searchStatus" class="search-status" role="status" aria-live="polite"></p>
+
+<div id="searchEmpty" class="search-empty" hidden>
+    <p class="search-empty__lede">Nothing matched that. A few places worth trying:</p>
+    <ul class="search-empty__links">
+        <li><a href="/posts/">All writing</a></li>
+        <li><a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026</a></li>
+        <li><a href="/data/">Projects &amp; data</a></li>
+        <li><a href="/categories/photography/">Photography</a></li>
+    </ul>
+</div>
+
+<style>
+  .search-status {
+    margin: .85rem 0 0;
+    font-size: .9rem;
+    color: var(--secondary);
+    min-height: 1.35em;
+  }
+  .search-status:empty { min-height: 0; }
+  .search-empty {
+    margin: 1rem 0 0;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .search-empty__lede {
+    margin: 0 0 .6rem;
+    font-size: .95rem;
+    color: var(--secondary);
+  }
+  .search-empty__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .85rem;
+  }
+  .search-empty__links a {
+    font-size: .95rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>
+
+<script>
+  /* Runs during parse, so it is installed before the deferred PaperMod search
+     bundle in <head> executes. That ordering is what lets us observe the index
+     request rather than guess when the Fuse index became ready. */
+  (function () {
+    var input = document.getElementById("searchInput");
+    var results = document.getElementById("searchResults");
+    var status = document.getElementById("searchStatus");
+    var empty = document.getElementById("searchEmpty");
+    if (!input || !results || !status || !empty) return;
+
+    /* Resolves true when the search index loaded, false when it failed, and
+       null if nobody ever requested it (PaperMod changed, script blocked). */
+    var indexReady = new Promise(function (resolve) {
+      var open = XMLHttpRequest.prototype.open;
+      XMLHttpRequest.prototype.open = function (method, url) {
+        if (typeof url === "string" && url.indexOf("index.json") !== -1) {
+          XMLHttpRequest.prototype.open = open;
+          this.addEventListener("loadend", function () {
+            resolve(this.status === 200);
+          });
+        }
+        return open.apply(this, arguments);
+      };
+      setTimeout(function () { resolve(null); }, 10000);
+    });
+
+    function query() { return input.value.trim(); }
+
+    /* Ask PaperMod's handler to search. It assigns input.onkeyup itself, so we
+       look it up at call time rather than capturing it. */
+    function runSearch() {
+      if (typeof input.onkeyup === "function") input.onkeyup.call(input);
+    }
+
+    function report() {
+      var q = query();
+      if (!q) {
+        status.textContent = "";
+        empty.hidden = true;
+        return;
+      }
+      var n = results.children.length;
+      if (n) {
+        status.textContent = n + (n === 1 ? " result" : " results") + " for “" + q + "”.";
+        empty.hidden = true;
+      } else {
+        status.textContent = "No results for “" + q + "”.";
+        empty.hidden = false;
+      }
+    }
+
+    /* PaperMod only listens for keyup. `input` also covers paste, autofill,
+       clearing via the native search cross, IME, and speech input. */
+    input.addEventListener("input", function () {
+      runSearch();
+      report();
+    });
+
+    var q = new URLSearchParams(window.location.search).get("q");
+    q = q ? q.trim().slice(0, 64) : "";
+
+    if (q) {
+      input.value = q;
+      status.textContent = "Searching…";
+    }
+
+    indexReady.then(function (ok) {
+      if (ok === false) {
+        status.textContent = "Search could not load. You can still browse the archive.";
+        empty.hidden = false;
+        return;
+      }
+      if (q) {
+        runSearch();
+        report();
+        /* Move the caret to the end so the field is ready to edit, and keep
+           focus where autofocus already put it. */
+        try { input.setSelectionRange(q.length, q.length); } catch (e) {}
+      }
+    });
+  })();
+</script>
+
+{{- end }}{{/* end main */}}

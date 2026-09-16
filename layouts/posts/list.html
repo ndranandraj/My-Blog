@@ -21,17 +21,24 @@
   </div>
 
   {{- if $posts }}
-  {{- /* Featured lead = newest post, page 1 only. Grid = the rest, paginated. */ -}}
-  {{- $paginator := .Paginate (after 1 $posts) }}
+  {{- /* Lead = the newest post marked `featured: true` in front matter, else
+         the newest post. Page 1 only; the grid is everything else, paginated.
+         Keep this selection in sync with layouts/partials/index_profile.html so
+         the homepage and the archive lead with the same piece. */ -}}
+  {{- $picked := where $posts "Params.featured" true -}}
+  {{- $featured := index $posts 0 -}}
+  {{- $isPicked := false -}}
+  {{- with $picked }}{{ $featured = index . 0 }}{{ $isPicked = true }}{{ end -}}
+  {{- $leadLabel := cond $isPicked "&#9733; Featured" "&#9733; Latest" -}}
+  {{- $paginator := .Paginate (complement (slice $featured) $posts) }}
   {{- if eq $paginator.PageNumber 1 }}
-  {{- $featured := index $posts 0 }}
   {{- with $featured }}
   <a class="latest-lead blog-featured" href="{{ .Permalink }}">
     {{- $cover := .Params.cover.image | default .Params.image -}}
     {{- if $cover }}
-    <div class="latest-lead-cover" style="background-image:url('{{ $cover | absURL }}');"><span class="latest-feat">&#9733; Featured</span></div>
+    <div class="latest-lead-cover" style="background-image:url('{{ $cover | absURL }}');"><span class="latest-feat">{{ $leadLabel | safeHTML }}</span></div>
     {{- else }}
-    <div class="latest-lead-cover latest-lead-cover--empty"><span class="latest-feat">&#9733; Featured</span><span class="latest-lead-ph">COVER IMAGE</span></div>
+    <div class="latest-lead-cover latest-lead-cover--empty"><span class="latest-feat">{{ $leadLabel | safeHTML }}</span><span class="latest-lead-ph">COVER IMAGE</span></div>
     {{- end }}
     <div class="latest-lead-body">
       {{- with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ end }}

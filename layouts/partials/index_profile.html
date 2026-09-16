@@ -72,8 +72,18 @@
 
 {{- /* --- Latest writing: one lead card + compact list rows --- */ -}}
 {{- $mainSections := site.Params.mainSections | default (slice "posts") -}}
-{{- $latest := first 4 (where site.RegularPages "Type" "in" $mainSections) -}}
-{{- if $latest }}
+{{- $all := where site.RegularPages "Type" "in" $mainSections -}}
+{{- /* The lead card is an editorial choice: the newest post marked
+       `featured: true` in front matter. Only when nothing is marked does it
+       fall back to the newest post, and then it is labelled "Latest" rather
+       than claiming an editorial pick that nobody made. */ -}}
+{{- $picked := where $all "Params.featured" true -}}
+{{- $lead := "" -}}
+{{- $isPicked := false -}}
+{{- if $picked }}{{ $lead = index $picked 0 }}{{ $isPicked = true }}
+{{- else if $all }}{{ $lead = index $all 0 }}{{ end -}}
+{{- $rest := first 3 (complement (slice $lead) $all) -}}
+{{- if $all }}
 <section class="home-latest">
   <div class="home-sec-head home-sec-head--rule">
     <div>
@@ -83,14 +93,14 @@
     <a class="home-sec-all" href="/posts/">View all &rarr;</a>
   </div>
 
-  {{- $lead := index $latest 0 }}
+  {{- $leadLabel := cond $isPicked "&#9733; Featured" "&#9733; Latest" -}}
   {{- with $lead }}
   <a class="latest-lead" href="{{ .Permalink }}">
     {{- $cover := .Params.cover.image | default .Params.image -}}
     {{- if $cover }}
-    <div class="latest-lead-cover" style="background-image:url('{{ $cover | absURL }}');"><span class="latest-feat">&#9733; Featured</span></div>
+    <div class="latest-lead-cover" style="background-image:url('{{ $cover | absURL }}');"><span class="latest-feat">{{ $leadLabel | safeHTML }}</span></div>
     {{- else }}
-    <div class="latest-lead-cover latest-lead-cover--empty"><span class="latest-feat">&#9733; Featured</span><span class="latest-lead-ph">COVER IMAGE</span></div>
+    <div class="latest-lead-cover latest-lead-cover--empty"><span class="latest-feat">{{ $leadLabel | safeHTML }}</span><span class="latest-lead-ph">COVER IMAGE</span></div>
     {{- end }}
     <div class="latest-lead-body">
       {{- with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ end }}
@@ -107,9 +117,9 @@
   </a>
   {{- end }}
 
-  {{- if gt (len $latest) 1 }}
+  {{- if $rest }}
   <div class="latest-rows">
-    {{- range after 1 $latest }}
+    {{- range $rest }}
     <a class="latest-row" href="{{ .Permalink }}">
       {{- with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ else }}<span class="latest-cat">&nbsp;</span>{{ end }}
       <div class="latest-row-body">

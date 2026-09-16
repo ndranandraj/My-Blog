@@ -36,26 +36,6 @@ enableRobotsTXT = true
   defaultTheme = "auto"
   mainSections = ["posts", "data"]
 
-  # Static single-page apps. These live in static/ so Hugo never sees them as
-  # pages, which means they are absent from .Data.Pages and were therefore absent
-  # from the sitemap. layouts/sitemap.xml appends whatever is listed here.
-  # Add an entry whenever a new tool ships into static/.
-  [[params.staticApps]]
-    url = "/delimitation/"
-    priority = 0.9
-    changefreq = "monthly"
-    lastmod = "2026-08-09"
-  [[params.staticApps]]
-    url = "/election-dashboard/tn-2026-explorer.html"
-    priority = 0.8
-    changefreq = "monthly"
-    lastmod = "2026-06-09"
-  [[params.staticApps]]
-    url = "/election-dashboard/"
-    priority = 0.7
-    changefreq = "monthly"
-    lastmod = "2026-06-09"
-
   # Homepage hero "NOW" badge (the small card on the portrait). Edit freely;
   # leave empty to hide the badge. Eyebrow above the headline is `heroEyebrow`.
   now = "Mapping TN 2026"
@@ -91,6 +71,32 @@ enableRobotsTXT = true
   # NOTE (July 2026): the old [params.featured] homepage-hero block was removed.
   # No layout reads it anymore; the homepage features come from the dashboards
   # partial and per-post `featured: true` front matter.
+
+  # KEEP THIS BLOCK LAST inside [params]. TOML has no indentation scoping: any
+  # bare key written *after* an [[array.of.tables]] header belongs to that last
+  # table entry, not to [params]. Adding a global param below this block will
+  # silently disable it (this is exactly how ShowReadingTime, ShowShareButtons,
+  # comments and `images` were lost until Sept 2026). New globals go above.
+  #
+  # Static single-page apps. These live in static/ so Hugo never sees them as
+  # pages, which means they are absent from .Data.Pages and were therefore absent
+  # from the sitemap. layouts/sitemap.xml appends whatever is listed here.
+  # Add an entry whenever a new tool ships into static/.
+  [[params.staticApps]]
+    url = "/delimitation/"
+    priority = 0.9
+    changefreq = "monthly"
+    lastmod = "2026-08-09"
+  [[params.staticApps]]
+    url = "/election-dashboard/tn-2026-explorer.html"
+    priority = 0.8
+    changefreq = "monthly"
+    lastmod = "2026-06-09"
+  [[params.staticApps]]
+    url = "/election-dashboard/"
+    priority = 0.7
+    changefreq = "monthly"
+    lastmod = "2026-06-09"
 
   [params.assets]
     favicon = "/favicon.ico"

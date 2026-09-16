@@ -199,6 +199,14 @@
     .post-cta-card { padding: 1.25rem 1.25rem; }
     .post-cta-h { font-size: 1.2rem; }
     .post-cta-form { flex-direction: column; }
-    .post-cta-btn { width: 100%; }
+    /* The form switches to a column here, so flex-basis now runs down the
+       page. Without this reset the 240px basis above becomes a 240px-tall
+       input that reads as a message box. Keep the field one line high. */
+    .post-cta-input {
+      flex: 0 0 auto;
+      width: 100%;
+      min-height: 48px;
+    }
+    .post-cta-btn { width: 100%; min-height: 48px; }
   }
 </style>
