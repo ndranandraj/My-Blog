@@ -38,7 +38,7 @@ enableRobotsTXT = true
 
   # Homepage hero "NOW" badge (the small card on the portrait). Edit freely;
   # leave empty to hide the badge. Eyebrow above the headline is `heroEyebrow`.
-  now = "Mapping TN 2026"
+  now = "Birds, stars and algorithms"
   heroEyebrow = "Writing · Data · Photography"
 
   # giscus comments render on posts when [params.giscus] below is filled in.
