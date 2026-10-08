@@ -376,7 +376,7 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
 </a>
 <a href="/posts/tn-2026-incumbents-defeated/">
   <strong>The Chief Minister lost his seat</strong>
-  <span>The deep-dive on the 56 sitting MLAs who lost. M.K. Stalin, PTR, Anbil Mahesh, Geetha Jeevan. Marquee table of every defeat.</span>
+  <span>The deep-dive on the 93 sitting MLAs who lost. M.K. Stalin, PTR, Anbil Mahesh, Geetha Jeevan. Marquee table of every defeat.</span>
 </a>
 <a href="/posts/tn-2026-new-assembly-profile/">
   <strong>Youngest, most-educated assembly TN has elected</strong>

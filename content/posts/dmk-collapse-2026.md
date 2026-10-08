@@ -110,7 +110,7 @@ DMK is now the second-largest party in the Tamil Nadu Assembly. They will lead t
 </a>
 <a href="/posts/tn-2026-incumbents-defeated/">
   <strong>The Chief Minister lost his seat</strong>
-  <span>56 sitting MLAs were defeated. 64 lost directly to TVK. M.K. Stalin was one of them.</span>
+  <span>93 sitting MLAs defended their seat and lost. 64 lost directly to TVK. M.K. Stalin was one of them.</span>
 </a>
 <a href="/posts/tn-2026-new-assembly-profile/">
   <strong>The youngest assembly TN has elected</strong>

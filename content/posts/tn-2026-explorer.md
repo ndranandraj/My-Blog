@@ -64,7 +64,7 @@ The dashboard is the data spine. The narrative analyses live in the five posts o
 </a>
 <a href="/posts/tn-2026-incumbents-defeated/">
   <strong>The Chief Minister lost his seat</strong>
-  <span>M.K. Stalin defeated in Kolathur by 8,795 votes. 56 sitting MLAs defeated.</span>
+  <span>M.K. Stalin defeated in Kolathur by 8,795 votes. 93 sitting MLAs defended their seat and lost.</span>
 </a>
 <a href="/posts/tn-2026-new-assembly-profile/">
   <strong>The youngest assembly TN has elected</strong>

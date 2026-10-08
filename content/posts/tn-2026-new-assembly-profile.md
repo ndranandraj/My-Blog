@@ -130,7 +130,7 @@ That has implications for 2031 that are worth thinking about now. If TVK's young
 
 **Isn't**: a claim about *governance quality*. Younger MLAs, more women MLAs, and more graduate-degree-holding MLAs are not, by themselves, predictors of better legislation. The composition of the 14th Assembly is the visible part of TVK's coalition-building strategy and the simultaneous incumbency-collapse of the old majors. Whether it produces different-looking governance is a question that gets answered over the five years of this Assembly's term, not on the day the count finished.
 
-The companion post on [the 56 sitting MLAs who were defeated](/posts/tn-2026-incumbents-defeated/) maps the *flow* (who left). This post maps the *stock* (who is now there). Read together they describe the generational reset.
+The companion post on [the 93 sitting MLAs who were defeated](/posts/tn-2026-incumbents-defeated/) maps the *flow* (who left). This post maps the *stock* (who is now there). Read together they describe the generational reset.
 
 ---
 
