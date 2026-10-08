@@ -168,6 +168,10 @@ A second post on the **demographic profile of the 234 winners** ([read it here](
   <strong>TVK 233: A Debut, Mapped</strong>
   <span>The companion analysis. 108 seats, 1.32 efficiency, regional anatomy, and the stronghold-flip asymmetry.</span>
 </a>
+<a href="/posts/dmk-collapse-2026/">
+  <strong>How DMK lost Tamil Nadu, region by region</strong>
+  <span>133 seats to 59. Chennai went from 31 of 37 wins to 2. The regions DMK held most strongly fell hardest.</span>
+</a>
 <a href="/posts/tn-2026-new-assembly-profile/">
   <strong>TN elected 41 MLAs under 40, the most in 20 years</strong>
   <span>35 of them TVK. Median MLA age 52. 22 women. The demographic side of the same wave.</span>

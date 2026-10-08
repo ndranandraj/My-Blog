@@ -99,6 +99,15 @@ DMK is now the second-largest party in the Tamil Nadu Assembly. They will lead t
 
 ## Explore the data
 
+{{< dashboard-cta
+    url="/election-dashboard/tn-2026-explorer.html#regional"
+    eyebrow="Interactive · 9 regions"
+    title="See the regional anatomy in the Explorer"
+    body="Seats and vote share for every major party across all nine regions, plus the seat-by-seat 2021 to 2026 swing. Toggle between seats, share, or both."
+    cta="Open the regional view"
+    accent="primary"
+>}}
+
 <div class="explore-grid">
 <a href="/tn-2026-results/">
   <strong>Every seat's result, in full</strong>

@@ -39,7 +39,7 @@ TVK's median MLA is 44. DMK's is 59. AIADMK's is 57. Vijay's party has put a gen
 {{< /kpi-row >}}
 
 {{< dashboard-cta
-    url="/election-dashboard/tn-2026-explorer.html"
+    url="/election-dashboard/tn-2026-explorer.html#demographics"
     eyebrow="Interactive · 234 winners"
     title="Open the new-assembly profile dashboard"
     body="Filter the 234 winners by age, education, party, gender, and assets. Sortable, with the youngest five MLAs surfaced as a featured row. Built from the canonical 4,023-candidate dataset."
@@ -158,6 +158,10 @@ The companion post on [the 93 sitting MLAs who were defeated](/posts/tn-2026-inc
 <a href="/posts/tvk-debut-2026/">
   <strong>TVK 233: A Debut, Mapped</strong>
   <span>The headline analysis. 108 seats, 34.92% vote share, 1.32 seat efficiency, regional spine, and the position anatomy.</span>
+</a>
+<a href="/posts/dmk-collapse-2026/">
+  <strong>How DMK lost Tamil Nadu, region by region</strong>
+  <span>133 seats to 59. Chennai went from 31 of 37 wins to 2. The regions DMK held most strongly fell hardest.</span>
 </a>
 <a href="/posts/tn-2026-dummy-candidates-results/">
   <strong>How many of the 329 dummies actually mattered</strong>

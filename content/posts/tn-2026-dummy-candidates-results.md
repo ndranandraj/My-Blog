@@ -177,9 +177,17 @@ The mechanism is waiting for a year where margins are narrow. 2026 was not it.
   <strong>Companion post: TVK 2026 debut, mapped</strong>
   <span>The other half of the May 4 story. 108 seats, 1.32 efficiency, regional anatomy, and the 1st / 2nd / 3rd drill-downs.</span>
 </a>
-<a href="/election-dashboard/tn-2026-explorer.html">
-  <strong>TN 2026 Explorer dashboard</strong>
-  <span>Constituency map, regional strike rate, party seat-vs-vote efficiency, and the position-anatomy interactive tables.</span>
+<a href="/posts/dmk-collapse-2026/">
+  <strong>How DMK lost Tamil Nadu, region by region</strong>
+  <span>133 seats to 59. Chennai went from 31 of 37 wins to 2. The regions DMK held most strongly fell hardest.</span>
+</a>
+<a href="/posts/tn-2026-incumbents-defeated/">
+  <strong>The Chief Minister lost his seat</strong>
+  <span>93 sitting MLAs defended their seat and lost, 64 of them to TVK. M.K. Stalin was one of them.</span>
+</a>
+<a href="/posts/tn-2026-new-assembly-profile/">
+  <strong>TN elected 41 MLAs under 40, the most in 20 years</strong>
+  <span>35 of them TVK. Median MLA age 52. 22 women. The demographic anatomy of the new Assembly.</span>
 </a>
 <a href="/data/tn-2026-candidates/">
   <strong>2026 candidates dataset</strong>

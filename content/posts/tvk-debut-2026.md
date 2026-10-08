@@ -45,7 +45,7 @@ A tsunami in Chennai, a ripple in the Cauvery delta. The gap between those two f
 {{< /pullquote >}}
 
 {{< dashboard-cta
-    url="/election-dashboard/tn-2026-explorer.html"
+    url="/election-dashboard/tn-2026-explorer.html#map-section"
     eyebrow="Interactive · 234 constituencies"
     title="Explore the live TN 2026 dashboard"
     body="Constituency map shaded by TVK's finish position, regional strike-rate breakdown, party seat-vs-vote efficiency table, the 1st / 2nd / 3rd anatomy with closest-and-biggest tables, and the full 'consequential races' near-miss list. Hover any seat for candidate, vote count, and margin percent."
@@ -377,6 +377,10 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
 <a href="/posts/tn-2026-incumbents-defeated/">
   <strong>The Chief Minister lost his seat</strong>
   <span>The deep-dive on the 93 sitting MLAs who lost. M.K. Stalin, PTR, Anbil Mahesh, Geetha Jeevan. Marquee table of every defeat.</span>
+</a>
+<a href="/posts/dmk-collapse-2026/">
+  <strong>How DMK lost Tamil Nadu, region by region</strong>
+  <span>133 seats to 59. Chennai went from 31 of 37 wins to 2. The regions DMK held most strongly fell hardest.</span>
 </a>
 <a href="/posts/tn-2026-new-assembly-profile/">
   <strong>TN elected 41 MLAs under 40, the most in 20 years</strong>
