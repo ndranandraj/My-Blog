@@ -113,8 +113,8 @@ DMK is now the second-largest party in the Tamil Nadu Assembly. They will lead t
   <span>93 sitting MLAs defended their seat and lost. 64 lost directly to TVK. M.K. Stalin was one of them.</span>
 </a>
 <a href="/posts/tn-2026-new-assembly-profile/">
-  <strong>The youngest assembly TN has elected</strong>
-  <span>Median MLA age fell 12 years. 41 MLAs are under 40. The generational reset.</span>
+  <strong>TN elected 41 MLAs under 40, the most in 20 years</strong>
+  <span>35 of them TVK. DMK has two. Median MLA age 52, four years younger than 2021.</span>
 </a>
 <a href="/posts/tn-2026-dummy-candidates-results/">
   <strong>Did the 329 dummies matter?</strong>

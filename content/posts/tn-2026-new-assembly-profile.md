@@ -1,12 +1,12 @@
 ---
-title: "Tamil Nadu just elected its youngest, most-educated assembly ever"
+title: "Tamil Nadu just elected 41 MLAs under 40, the most in 20 years"
 date: 2026-05-07
 series: "TN 2026 Election Series"
 series_part: 4
-lastmod: 2026-05-07
-description: "The new Tamil Nadu Assembly's median MLA age is 52, twelve years younger than the cohort it replaced. 41 MLAs are under 40. 22 are women. TVK's 108 MLAs alone median 44 years old, with 13 women and a third of the bench under 40. The demographic anatomy of a generational reset."
-summary: "The 14th Tamil Nadu Assembly's median MLA is 52 years old, holds at least a Bachelor's degree, and declared roughly ₹1.5 crore in assets. TVK's median MLA is 44, against DMK's 59 and AIADMK's 57. A 13-year compression in one cycle. Here's what the new bench actually looks like."
-keywords: ["Tamil Nadu youngest assembly", "TN 2026 youngest MLAs", "youngest TVK MLAs Kamali Sabari Iyngaran", "Tamil Nadu women MLAs 2026", "TN assembly demographic profile", "TVK candidates age", "TN MLAs education levels", "Tamil Nadu 2026 women representation", "youngest MLA Tamil Nadu", "Tamil Nadu 14th assembly", "DMK AIADMK TVK age comparison"]
+lastmod: 2026-10-08
+description: "41 of Tamil Nadu's 234 new MLAs are under 40, the most in the 20 years of age records, and 35 of them are TVK's. TVK's median MLA is 44, against DMK's 59 and AIADMK's 57. 22 women were elected, 13 of them TVK. The demographic anatomy of the 2026 Assembly."
+summary: "The 17th Tamil Nadu Assembly has 41 MLAs under 40, more than any Assembly since at least 2006, and TVK supplies 35 of them. TVK's median MLA is 44; DMK's is 59, AIADMK's 57. Here's what the new bench actually looks like."
+keywords: ["Tamil Nadu MLAs under 40", "TN 2026 youngest MLAs", "youngest TVK MLAs Kamali Sabari Iyngaran", "Tamil Nadu women MLAs 2026", "TN assembly demographic profile", "TVK candidates age", "TN MLAs education levels", "Tamil Nadu 2026 women representation", "youngest MLA Tamil Nadu", "Tamil Nadu 17th assembly", "DMK AIADMK TVK age comparison"]
 tags: ["elections", "tamil-nadu", "data", "politics", "tvk", "2026", "results"]
 categories: ["Data"]
 pillar: true
@@ -16,23 +16,23 @@ TocOpen: false
 image: "/images/new-assembly-profile-cover.png"
 cover:
   image: "/images/new-assembly-profile-cover.png"
-  alt: "Tamil Nadu's 14th Assembly: median MLA age 52, down 12 years. TVK's 108 MLAs median 44 with 32% under 40."
-  caption: "Tamil Nadu's 14th Assembly is 12 years younger than its predecessor. The shift is concentrated in TVK's 108 MLAs."
+  alt: "Tamil Nadu's 17th Assembly: 41 MLAs under 40, 35 of them TVK. TVK's 108 MLAs have a median age of 44."
+  caption: "41 of the 234 new MLAs are under 40, the most in two decades. 35 of them are TVK's."
   relative: false
 ---
 
 <div class="series-hat">Part of the <a href="/tamil-nadu-elections-2026/">Tamil Nadu 2026 series →</a></div>
 
-The 234 people who walked into the Tamil Nadu Legislative Assembly after May 4 are, taken together, **the youngest cohort the state has elected in living electoral memory.** Median age: 52. The cohort they replaced (the 16th Assembly elected in 2021) had a median age of around 64 by the time it dissolved.
+**41 of the 234 people** who walked into the Tamil Nadu Legislative Assembly after May 4 are under 40. That is the most in the 20 years for which candidate ages are on record, ahead of 38 in 2006, and more than three times the 12 elected in 2021.
 
-That is a **12-year compression** of the legislature's median age, in one election cycle. Almost all of it is concentrated in TVK's 108 new MLAs.
+**35 of the 41 are TVK's.** The median MLA in the new Assembly is 52, four years younger than the 2021 intake was on the day it was elected (56). Almost all of that shift is TVK's 108 new MLAs.
 
 {{< pullquote >}}
 TVK's median MLA is 44. DMK's is 59. AIADMK's is 57. Vijay's party has put a generation of younger Tamils into the Assembly in numbers no other party has matched in 30 years.
 {{< /pullquote >}}
 
 {{< kpi-row >}}
-{{< kpi value="52" label="median age, new assembly" sub="down from 64 in the outgoing 16th Assembly" >}}
+{{< kpi value="52" label="median age, new assembly" sub="the 2021 intake was 56 at election" >}}
 {{< kpi value="44" label="median TVK MLA age" tone="accent" sub="13 to 15 years younger than DMK & AIADMK" >}}
 {{< kpi value="41" label="MLAs under age 40" tone="good" sub="35 of them from TVK alone" >}}
 {{< kpi value="22" label="women MLAs" sub="13 from TVK, 5 AIADMK, 0 DMK" >}}
@@ -54,9 +54,9 @@ TVK's median MLA is 44. DMK's is 59. AIADMK's is 57. Vijay's party has put a gen
 | Metric | TVK (108) | DMK (59) | AIADMK (47) | New assembly (234) |
 | :--- | ---: | ---: | ---: | ---: |
 | Median age | **44** | 59 | 57 | **52** |
-| Youngest winner | **28** | 35 | 29 | **28** |
+| Youngest winner | **28** | 32 | 29 | **28** |
 | MLAs under 40 | **35** (32%) | 2 (3%) | 3 (6%) | **41** (18%) |
-| MLAs under 45 | **52** (48%) | 5 (8%) | 6 (13%) | **68** (29%) |
+| MLAs under 45 | **57** (53%) | 4 (7%) | 5 (11%) | **68** (29%) |
 | Women MLAs | **13** (12%) | 0 (0%) | 5 (11%) | **22** (9.4%) |
 | Postgraduate or doctorate | 18 (17%) | 13 (22%) | 3 (6%) | 35 (15%) |
 | Graduate or higher | **58** (54%) | 38 (64%) | 18 (38%) | **123** (53%) |
@@ -64,11 +64,11 @@ TVK's median MLA is 44. DMK's is 59. AIADMK's is 57. Vijay's party has put a gen
 
 Three numbers stand out.
 
-**TVK's 35 under-40 MLAs are seven times what DMK and AIADMK have combined (5).** A third of TVK's bench has not yet hit 40. Across the rest of the assembly, that share is barely above 5%. The Tamil Nadu Legislative Assembly has skewed older for the entire 2010s and 2020s; this is the first cycle since the early DMK-MGR-Karunanidhi era where a single party has put in this many young voices.
+**TVK's 35 under-40 MLAs are seven times what DMK and AIADMK have combined (5).** A third of TVK's bench has not yet hit 40. Across the rest of the Assembly, that share is under 5%. The Assembly had been getting steadily older: the median MLA was 48 at the 2006 election, 51 in 2011, 54 in 2016 and 56 in 2021. No single party in those four Assemblies elected more than 16 MLAs under 40 (the DMK, in 2006). TVK elected 35.
 
 **TVK has 13 women MLAs. DMK has zero.** The women-representation picture in the new assembly is, frankly, embarrassing for the older Dravidian majors. Of the 22 women elected, 13 are TVK, 5 are AIADMK, and the remaining 4 are spread across INC, PMK, CPI(M), and DMDK (one each). DMK, the ruling party of the outgoing assembly, returns zero women MLAs in 2026. Tamil Nadu's overall representation rises modestly to 9.4%, almost entirely on TVK's roster.
 
-**TVK MLAs are roughly half as wealthy as the major-party MLAs they replaced.** Median declared assets: ₹1.09 crore for TVK, ₹1.91 crore for DMK, ₹2.15 crore for AIADMK. These are official self-declarations from the nomination affidavits, with all the usual caveats about how MLAs declare assets. But the directional gap is real and large. It is the first cycle in two decades where the dominant party in the Assembly is also the least wealthy of the three majors.
+**TVK MLAs are roughly half as wealthy as the major-party MLAs they replaced.** Median declared assets: ₹1.09 crore for TVK, ₹1.91 crore for DMK, ₹2.15 crore for AIADMK. These are official self-declarations from the nomination affidavits, with all the usual caveats about how MLAs declare assets. But the directional gap is real and large.
 
 ---
 
@@ -77,7 +77,7 @@ Three numbers stand out.
 
 ## The five youngest MLAs in the new assembly
 
-The youngest five winners are all under 30. Four of the five are TVK candidates. Two are women.
+The youngest five winners are all 30 or younger. Four of the five are TVK candidates. One is a woman.
 
 | Age | Name | Constituency | Party | Education |
 | ---: | :--- | :--- | :--- | :--- |
@@ -87,17 +87,17 @@ The youngest five winners are all under 30. Four of the five are TVK candidates.
 | 30 | Rhevanth Charan | Maduravoyal | TVK | Not declared |
 | 30 | Sabarinathan R | Virugampakkam | TVK | Bachelor's Degree |
 
-**Kamali S is the youngest woman to enter the Tamil Nadu Legislative Assembly in 25 years.** She unseated AIADMK's incumbent in Avanashi (a Kongu-belt seat AIADMK had won in 2011, 2016, and 2021) on her first electoral attempt at the age of 28, with a Master's degree, and by a margin of 15,373 votes.
+**Kamali S, 28, ties the youngest woman elected to the Assembly in the 20 years of age records** (a 28-year-old DMK candidate also won in 2006). She took Avanashi, a Kongu-belt seat the AIADMK had won in 2011, 2016 and 2021, on her first electoral attempt, with a Master's degree. Her margin over the NDA candidate, Dr. L. Murugan of the BJP, was 15,373 votes (6.64%).
 
-For comparison, the youngest DMK MLA in the new assembly is 35 (Udhayanidhi Stalin, the only DMK winner under 40). The youngest AIADMK MLA is 29 (Dr. Dhilipan Jaishankar). Every other AIADMK winner is in their 40s, 50s, or older.
+For comparison, the youngest DMK MLA in the new Assembly is 32 (D. Gowtham, Vanur), one of only two DMK winners under 40. The youngest AIADMK MLA is 29 (Dr. Dhilipan Jaishankar, Sankarankovil), and two other AIADMK winners are under 40.
 
 ---
 
 ## The education shift
 
-The 14th Assembly is also, by a clear margin, the most-educated Assembly Tamil Nadu has elected.
+123 of the 234 new MLAs (53%) hold at least a Bachelor's degree, and **35 hold postgraduate or doctorate-level qualifications**, including TVK's 18 PG-or-higher MLAs and DMK's 13.
 
-123 of the 234 new MLAs (53%) hold at least a Bachelor's degree, the highest share in TN's history. **35 hold postgraduate or doctorate-level qualifications**, including TVK's 18 PG-or-higher MLAs and DMK's 13.
+That is not a record. By MyNeta's coding of the same kind of affidavits, 141 of the 2021 intake (60%) were graduates or above, and 53 had postgraduate degrees or doctorates. The two years are coded by different sources, so the exact gap is uncertain, but the new Assembly is not more educated than the one it replaced.
 
 TVK's roster is interesting on this dimension specifically. The party's median MLA holds a Bachelor's degree, but the spread is wider than DMK's or AIADMK's: 17% with postgraduate qualifications (DMK 22%, AIADMK 6%), 54% graduate-or-higher (DMK 64%, AIADMK 38%), and the remaining 46% with a mix of higher-secondary, secondary, and vocational training. That is more like the population education pyramid than DMK's relatively top-loaded distribution.
 
@@ -105,30 +105,31 @@ Worth noting, with appropriate caveats: education declarations on Indian nominat
 
 ---
 
-## What changed: a 12-year compression in one cycle
+## What changed: four years younger, and far more MLAs under 40
 
-Tamil Nadu Assembly median MLA age over the last four cycles:
+Median MLA age at election, for every Assembly with age records:
 
-| Assembly | Year elected | Median MLA age (at election) |
-| :--- | ---: | ---: |
-| 14th (current) | 2026 | **52** |
-| 13th | 2021 | ~58 |
-| 12th | 2016 | ~58 |
-| 11th | 2011 | ~57 |
+| Election | Assembly | Median MLA age | MLAs under 40 |
+| ---: | :--- | ---: | ---: |
+| 2026 | 17th (current) | **52** | **41** |
+| 2021 | 16th | 56 | 12 |
+| 2016 | 15th | 54 | 20 |
+| 2011 | 14th | 51 | 21 |
+| 2006 | 13th | 48 | 38 |
 
-The 5-6 year drop in median age between 2021 and 2026 is the largest single-cycle compression in modern TN Assembly history. The previous four cycles had hovered in the 56-58 range.
+The median had risen at every election since 2006, from 48 to 56. In 2026 it fell four years in one cycle. This is not the youngest Assembly on record: the 2006 and 2011 intakes were younger at the median. What is new is the number of MLAs under 40, and how many of them come from one party.
 
-Almost all of the drop is TVK. If you remove TVK's 108 MLAs from the calculation, the remaining 126 MLAs have a median age of around 58, in line with historical baselines. Add TVK back in and the median collapses to 52. The "youngest assembly ever" framing is, mathematically, almost identical to "the assembly with TVK in it."
+Almost all of the change is TVK. Remove TVK's 108 MLAs and the remaining 126 have a median age of 58, older than the 2021 intake. Add TVK back in and the median falls to 52. The younger Assembly is, in effect, the TVK bench.
 
-That has implications for 2031 that are worth thinking about now. If TVK's young roster turns into a bench of long-tenure MLAs, the 14th Assembly's age compression will hold and likely deepen as natural demographic replacement compounds. If the wave compresses and the older Dravidian majors recover seats, the 14th becomes a one-off and the median snaps back. Both are plausible. The question is whether anti-incumbency in the *new* incumbents in 2031 is the same magnitude as the anti-incumbency we just witnessed.
+That has implications for 2031 that are worth thinking about now. If TVK's young roster turns into a bench of long-tenure MLAs, the 17th Assembly's age shift will hold and likely deepen as natural demographic replacement compounds. If the wave compresses and the older Dravidian majors recover seats, the 17th becomes a one-off and the median snaps back. Both are plausible. The question is whether anti-incumbency in the *new* incumbents in 2031 is the same magnitude as the anti-incumbency we just witnessed.
 
 ---
 
 ## What this is, and isn't
 
-**Is**: a demographic accounting of the 234 MLAs in the 14th Tamil Nadu Assembly, derived from candidate-level age, education, gender, and asset declarations in the [open 2026 candidates dataset](/data/tn-2026-candidates/). Every number traces back to ECI nomination affidavits.
+**Is**: a demographic accounting of the 234 MLAs in the 17th Tamil Nadu Assembly, derived from candidate-level age, education, gender, and asset declarations in the [open 2026 candidates dataset](/data/tn-2026-candidates/). Every number traces back to ECI nomination affidavits.
 
-**Isn't**: a claim about *governance quality*. Younger MLAs, more women MLAs, and more graduate-degree-holding MLAs are not, by themselves, predictors of better legislation. The composition of the 14th Assembly is the visible part of TVK's coalition-building strategy and the simultaneous incumbency-collapse of the old majors. Whether it produces different-looking governance is a question that gets answered over the five years of this Assembly's term, not on the day the count finished.
+**Isn't**: a claim about *governance quality*. Younger MLAs and more women MLAs are not, by themselves, predictors of better legislation. The composition of the 17th Assembly is the visible part of TVK's coalition-building strategy and the simultaneous incumbency-collapse of the old majors. Whether it produces different-looking governance is a question that gets answered over the five years of this Assembly's term, not on the day the count finished.
 
 The companion post on [the 93 sitting MLAs who were defeated](/posts/tn-2026-incumbents-defeated/) maps the *flow* (who left). This post maps the *stock* (who is now there). Read together they describe the generational reset.
 
@@ -152,7 +153,7 @@ The companion post on [the 93 sitting MLAs who were defeated](/posts/tn-2026-inc
 </a>
 <a href="/posts/tn-2026-incumbents-defeated/">
   <strong>The Chief Minister lost his seat</strong>
-  <span>The flow side of the same story. M.K. Stalin and 55 other sitting MLAs lost in 2026. 37 to TVK directly.</span>
+  <span>The flow side of the same story. M.K. Stalin was one of 93 sitting MLAs who defended their seat and lost, 64 of them to TVK.</span>
 </a>
 <a href="/posts/tvk-debut-2026/">
   <strong>TVK 233: A Debut, Mapped</strong>
@@ -169,9 +170,11 @@ The companion post on [the 93 sitting MLAs who were defeated](/posts/tn-2026-inc
 </div>
 
 {{< callout title="Methodology" type="method" >}}
-Source: `processed/candidates_2026_export.csv`, the canonical 4,023-row roster joined to the 234 declared winners from `raw/free_sources/tn_2026_results.csv`. Age, gender, education, and asset declarations come from candidate nomination affidavits (ECI Form 26). Education is normalized into seven buckets (Doctorate, Postgraduate, Graduate, Higher Secondary, Secondary, Primary, Other / Not declared) before aggregation. Asset values are in lakh; "Not declared" rows are excluded from medians. Code: [`pipelines/28_assembly_profile.py`](https://github.com/ndranandraj/tn-2026-candidates-dataset). Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Source: `processed/candidates_2026_export.csv`, the canonical 4,023-row roster joined to the 234 declared winners from `raw/free_sources/tn_2026_results.csv`. Age, gender, education, and asset declarations come from candidate nomination affidavits (ECI Form 26). Education is normalized into seven buckets (Doctorate, Postgraduate, Graduate, Higher Secondary, Secondary, Primary, Other / Not declared) before aggregation. Asset values are in lakh; "Not declared" rows are excluded from medians. Historical ages and the 2006 to 2021 comparisons come from the ECI results as compiled by DataMeet (2006, 2011) and TCPD/OpenCity (2016, 2021); those files carry no ages before 2006. The 2021 education figures use MyNeta's coding in the TCPD file. The calculation is a one-off script over the [public dataset](https://github.com/ndranandraj/tn-2026-candidates-dataset). Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 {{< /callout >}}
 
 ---
 
-*Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Suggested citation: Anand Raj, "Tamil Nadu Just Elected Its Youngest, Most-Educated Assembly Ever." ndranandraj.com, May 2026.*
+*Correction, October 8, 2026: this post originally ran under the headline "Tamil Nadu just elected its youngest, most-educated assembly ever". Neither claim holds. The 2006 and 2011 Assemblies were younger at the median (48 and 51 against 52), and by MyNeta's coding the 2021 Assembly had a higher share of graduates (60% against 53%). The post also described a "12-year compression", which compared the 2021 MLAs' ages at dissolution with the new MLAs' ages at election; measured the same way, the drop is four years (56 to 52). The history table's figures and Assembly numbers were wrong and have been replaced with figures computed from the ECI data. Also corrected: the youngest DMK MLA is 32 (D. Gowtham), not 35 (Udhayanidhi Stalin); two other AIADMK MLAs are under 40; the under-45 counts; only one of the five youngest MLAs is a woman, not two; Kamali S ties, rather than beats, the youngest woman elected since 2006, and her runner-up was the BJP's Dr. L. Murugan, not an AIADMK incumbent. The 2026 figures themselves (median 52, TVK 44, 41 under 40, 22 women) were right and are unchanged.*
+
+*Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Suggested citation: Anand Raj, "Tamil Nadu Just Elected 41 MLAs Under 40, the Most in 20 Years." ndranandraj.com, May 2026.*

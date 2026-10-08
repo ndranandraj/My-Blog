@@ -39,8 +39,8 @@ Seven sections in one page. An **interactive map** of every constituency, colore
 
 - **TVK polled 34.9% of the vote and won 46.2% of the seats.** Efficiency ratio 1.32, the highest of any major party. AIADMK's 21.2% delivered 47 seats (0.95). BJP's 2.97% delivered just one (0.14). NTK's 4.0% delivered zero.
 - **DMK collapsed from 133 seats to 59.** The fall was not uniform. Chennai &amp; Suburbs alone dropped from 31 of 37 wins in 2021 to 2 of 37. Their three strongest 2021 regions (Chennai, Central, North) each lost 17 to 19 percentage points of vote share.
-- **Only 38 incumbents held their seat. 56 defended and lost.** 37 of those defeats came directly at TVK's hands. M.K. Stalin lost Kolathur to a 75-year-old debutant.
-- **The new assembly is 12 years younger than the outgoing one.** Median MLA age fell from 64 to 52. 41 MLAs are under 40, 35 of those from TVK. 22 women elected, 13 from TVK alone, zero from DMK.
+- **56 incumbents held their seat. 93 defended and lost.** 64 of those defeats came directly at TVK's hands. M.K. Stalin lost Kolathur to a 75-year-old debutant.
+- **41 MLAs are under 40, the most in 20 years of records.** 35 of those are TVK's. Median MLA age is 52, four years younger than the 2021 intake at election. 22 women elected, 13 from TVK alone, zero from DMK.
 
 {{< newsletter title="Want the next data deep-dive in your inbox?"
                body="The full TN 2026 series, the methodology pieces behind it, and the occasional travel essay. One email per post, no spam." >}}
@@ -67,8 +67,8 @@ The dashboard is the data spine. The narrative analyses live in the five posts o
   <span>M.K. Stalin defeated in Kolathur by 8,795 votes. 93 sitting MLAs defended their seat and lost.</span>
 </a>
 <a href="/posts/tn-2026-new-assembly-profile/">
-  <strong>The youngest assembly TN has elected</strong>
-  <span>Median MLA age fell 12 years. 41 under 40. 22 women. The generational reset.</span>
+  <strong>TN elected 41 MLAs under 40, the most in 20 years</strong>
+  <span>35 of them TVK. Median MLA age 52. 22 women. The demographic anatomy of the new Assembly.</span>
 </a>
 <a href="/posts/tn-2026-dummy-candidates-results/">
   <strong>Did the 329 dummies matter?</strong>

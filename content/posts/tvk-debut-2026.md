@@ -120,7 +120,7 @@ M.K. Stalin lost Kolathur to V.S. Babu of TVK, his own former associate, by 8,79
 **[Read the full incumbents-defeated post →](/posts/tn-2026-incumbents-defeated/)**
 {{< /callout >}}
 
-{{< callout title="The youngest, most-educated assembly TN has elected" type="insight" >}}
+{{< callout title="41 MLAs under 40, the most in 20 years" type="insight" >}}
 Median MLA age in the new Assembly is **52**. TVK's median MLA is **44** (13 to 15 years younger than DMK and AIADMK). **41 MLAs are under 40, 35 of them from TVK.** **22 women** were elected statewide, 13 of them from TVK (DMK has zero).
 
 **[Read the full new-assembly-profile post →](/posts/tn-2026-new-assembly-profile/)**
@@ -379,8 +379,8 @@ AIADMK held Edappadi comfortably. The decision did not change a result. But it i
   <span>The deep-dive on the 93 sitting MLAs who lost. M.K. Stalin, PTR, Anbil Mahesh, Geetha Jeevan. Marquee table of every defeat.</span>
 </a>
 <a href="/posts/tn-2026-new-assembly-profile/">
-  <strong>Youngest, most-educated assembly TN has elected</strong>
-  <span>Median age dropped 12 years. 41 MLAs under 40. 22 women. Demographic anatomy of the generational reset.</span>
+  <strong>TN elected 41 MLAs under 40, the most in 20 years</strong>
+  <span>35 of the 41 are TVK. Median MLA age 52, four years younger than 2021. 22 women. The demographic anatomy of the new Assembly.</span>
 </a>
 <a href="/posts/tn-2026-dummy-candidates-results/">
   <strong>How many of the 329 dummies actually mattered</strong>

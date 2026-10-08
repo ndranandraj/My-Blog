@@ -4,7 +4,7 @@ date: 2026-05-18
 lastmod: 2026-05-18
 description: "The complete data analysis of Tamil Nadu's 2026 Assembly Election. TVK won 108 of 234 seats with 34.9% of the vote. DMK collapsed from 133 to 59. M.K. Stalin lost Kolathur. The interactive dashboard, the five-post series, the dataset, and the methodology, all in one place."
 summary: "Five investigations, one interactive dashboard, and the open dataset behind them. Everything published on this site about Tamil Nadu's 2026 Assembly Election, organised."
-keywords: ["Tamil Nadu 2026 election analysis", "TN 2026 results", "TVK 108 seats", "DMK collapse 2026", "MK Stalin Kolathur defeat", "Tamil Nadu Assembly election data", "TN 2026 interactive dashboard", "Vijay TVK debut", "Tamil Nadu election dataset", "TN 2026 incumbents defeated", "Tamil Nadu youngest assembly", "TN 2026 dummy candidates"]
+keywords: ["Tamil Nadu 2026 election analysis", "TN 2026 results", "TVK 108 seats", "DMK collapse 2026", "MK Stalin Kolathur defeat", "Tamil Nadu Assembly election data", "TN 2026 interactive dashboard", "Vijay TVK debut", "Tamil Nadu election dataset", "TN 2026 incumbents defeated", "Tamil Nadu MLAs under 40", "TN 2026 dummy candidates"]
 tags: ["elections", "tamil-nadu", "data", "politics", "tvk", "dmk", "2026", "results", "pillar"]
 categories: ["Data"]
 pillar: true
@@ -73,9 +73,9 @@ Each card targets a distinct angle of the same election: its headline number and
 <a class="hub-card" href="/posts/tn-2026-new-assembly-profile/">
 <span class="hub-card-cover" style="background-image:url('/images/new-assembly-profile-cover.png');"></span>
 <span class="hub-card-body">
-<span class="hub-card-stat"><b>52</b><i>median MLA age, down 12 years</i></span>
-<span class="hub-card-title">The Youngest, Most-Educated Assembly TN Has Elected</span>
-<span class="hub-card-take">41 MLAs under 40 and 22 women elected. A generational reset in a single election.</span>
+<span class="hub-card-stat"><b>41</b><i>MLAs under 40, the most in 20 years</i></span>
+<span class="hub-card-title">41 MLAs Under 40, 35 of Them TVK</span>
+<span class="hub-card-take">Median MLA age 52, four years younger than 2021. 22 women elected, 13 of them TVK.</span>
 <span class="hub-card-cta">Read the analysis →</span>
 </span>
 </a>

@@ -142,9 +142,9 @@ The point worth making: when **178 of 234 sitting members do not survive their s
 
 **Is**: a clean accounting of seat-level incumbent results from the official ECI tally. Every name, every margin, every margin percent traces back to `raw/free_sources/tn_2026_results.csv` and the cross-year `winner_history` from the project dataset.
 
-**Isn't**: a causal claim about why each individual lost. Stalin lost his seat. So did 55 other people. The reasons in each case are layered (anti-incumbency, candidate quality, alliance arithmetic, regional swing, the personal-vote collapse the 12-point compression in DMK's median age suggests). The ranked tables here surface what happened, not why.
+**Isn't**: a causal claim about why each individual lost. Stalin lost his seat. So did 92 other sitting MLAs who defended theirs. The reasons in each case are layered (anti-incumbency, candidate quality, alliance arithmetic, regional swing, the personal-vote collapse the 12-point compression in DMK's median age suggests). The ranked tables here surface what happened, not why.
 
-A second post on the **demographic profile of the 234 winners** ([read it here](/posts/tn-2026-new-assembly-profile/)) puts the 13-year compression in MLA median age and the wealth picture into the same frame. Together they sketch the generational replacement that one column of seat-flips is the surface effect of.
+A second post on the **demographic profile of the 234 winners** ([read it here](/posts/tn-2026-new-assembly-profile/)) puts the age shift (41 MLAs under 40, 35 of them TVK) and the wealth picture into the same frame. Together they sketch the generational replacement that one column of seat-flips is the surface effect of.
 
 ---
 
@@ -169,8 +169,8 @@ A second post on the **demographic profile of the 234 winners** ([read it here](
   <span>The companion analysis. 108 seats, 1.32 efficiency, regional anatomy, and the stronghold-flip asymmetry.</span>
 </a>
 <a href="/posts/tn-2026-new-assembly-profile/">
-  <strong>The youngest, most educated assembly TN has elected</strong>
-  <span>Median MLA age dropped 12 years. 41 MLAs are under 40. 22 women. The demographic side of the same wave.</span>
+  <strong>TN elected 41 MLAs under 40, the most in 20 years</strong>
+  <span>35 of them TVK. Median MLA age 52. 22 women. The demographic side of the same wave.</span>
 </a>
 <a href="/posts/tn-2026-dummy-candidates-results/">
   <strong>How many of the 329 dummies actually mattered</strong>
