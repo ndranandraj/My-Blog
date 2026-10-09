@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T20:49:39+05:30",
+  "generated_at": "2026-10-09T21:10:17+05:30",
   "source": "https://results.eci.gov.in/ResultAcByeOct2026/",
   "baseline_sources": [
     "raw/free_sources/tn_2026_results.csv",
@@ -15,6 +15,9 @@
       "region": "Chennai & Suburbs",
       "reserved": "SC",
       "defector": "K. Maragatham Kumaravel",
+      "vacated_on": "2026-05-25",
+      "poll_date": "2026-10-06",
+      "count_date": "2026-10-09",
       "status": {
         "rounds_done": 27,
         "rounds_total": 27,
@@ -974,6 +977,9 @@
       "region": "Kongu (West)",
       "reserved": "SC",
       "defector": "P. Sathyabama",
+      "vacated_on": "2026-05-25",
+      "poll_date": "2026-10-06",
+      "count_date": "2026-10-09",
       "status": {
         "rounds_done": 23,
         "rounds_total": 23,

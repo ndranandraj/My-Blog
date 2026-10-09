@@ -74,7 +74,10 @@
        `featured: true` in front matter. Only when nothing is marked does it
        fall back to the newest post, and then it is labelled "Latest" rather
        than claiming an editorial pick that nobody made. */ -}}
-{{- $picked := where $all "Params.featured" true -}}
+{{- /* Any page can be featured on the homepage (e.g. the /tn-2026-bypolls/ hub),
+       not only posts. Newest first. The posts archive (layouts/posts/list.html)
+       still leads with a featured post. */ -}}
+{{- $picked := (where site.RegularPages "Params.featured" true).ByDate.Reverse -}}
 {{- $lead := "" -}}
 {{- $isPicked := false -}}
 {{- if $picked }}{{ $lead = index $picked 0 }}{{ $isPicked = true }}

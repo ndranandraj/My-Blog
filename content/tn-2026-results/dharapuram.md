@@ -17,7 +17,15 @@ flipped: true
 keywords: ["Dharapuram election result 2026", "Dharapuram 2026 winner", "Tamil Nadu 2026 Tiruppur"]
 ShowReadingTime: false
 ShowToc: false
+lastmod: 2026-10-09
+bypoll_winner_party: "TVK"
 ---
+
+{{< callout title="Update: Dharapuram by-election, 9 October 2026" type="insight" >}}
+This page records the May 2026 general election. The seat fell vacant on 25 May 2026, when the MLA resigned and joined TVK, and went to a by-election on 6 October 2026. **P. Sathyabama (TVK) won by 9,471 votes (5.25%)** over S. Suganya (DMK).
+
+[Full Dharapuram by-election result →](/tn-bypoll-results/dharapuram-by-election-2026/)
+{{< /callout >}}
 
 Sathyabama.P of ADMK won the Dharapuram Assembly constituency (Tiruppur district, Kongu (West)) in the Tamil Nadu 2026 election, taking 40.56% of 199,944 votes cast. The winning margin over Indirani.T (DMK) was 16,727 votes, or 8.37 percentage points. The seat **flipped from DMK to ADMK** since 2021.
 

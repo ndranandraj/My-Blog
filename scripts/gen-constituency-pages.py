@@ -35,6 +35,44 @@ def party_cell(p):
     return f'<span class="pname">{p}</span>'
 
 
+def load_bypolls():
+    """Declared bypoll seats by ac_no, from bypoll_*.json (pipeline 29)."""
+    out = {}
+    for f in sorted(DATA.glob("bypoll_*.json")):
+        d = json.load(open(f))
+        if d.get("all_declared"):
+            for s in d["seats"]:
+                out[s["ac_no"]] = s
+    return out
+
+
+BYPOLL_LABEL = {"TVK": "TVK", "ADMK": "AIADMK", "DMK": "DMK", "BJP": "BJP", "NTK": "NTK"}
+
+
+def _gb():
+    """Helpers shared with gen-bypoll-pages.py (name formatting, dates, digits)."""
+    from importlib import util as u
+    spec = u.spec_from_file_location("gb", pathlib.Path(__file__).with_name("gen-bypoll-pages.py"))
+    m = u.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+def bypoll_callout(name, b):
+    """Note at the top of a May 2026 seat page whose seat has since gone to a bypoll."""
+    gb = _gb()
+    w, r = b["winner"], b["runner_up"]
+    slug = f"{slugify(name)}-by-election-{b['count_date'][:4]}"
+    return (f'{{{{< callout title="Update: {name} by-election, {gb.long_date(b["count_date"])}" type="insight" >}}}}\n'
+            f'This page records the May 2026 general election. The seat fell vacant on {gb.long_date(b["vacated_on"])}, '
+            f'when the MLA resigned and joined TVK, and went to a by-election on {gb.long_date(b["poll_date"])}. '
+            f'**{gb.nice_name(w["name"])} ({BYPOLL_LABEL.get(w["party_code"], w["party_code"])}) won by '
+            f'{gb.fmt_in(b["margin"])} votes ({b["margin_pct"]:.2f}%)** over '
+            f'{gb.nice_name(r["name"])} ({BYPOLL_LABEL.get(r["party_code"], r["party_code"])}).\n\n'
+            f'[Full {name} by-election result →](/tn-bypoll-results/{slug}/)\n'
+            f'{{{{< /callout >}}}}\n\n')
+
+
 def load():
     per = json.load(open(DATA / "explorer_ac_2026.json"))["per_ac"]
     cand = json.load(open(DATA / "all_candidates_2026.json"))["rows"]
@@ -50,7 +88,7 @@ def yaml_escape(s):
     return s.replace('"', "'")
 
 
-def build_page(ac, cands, sw):
+def build_page(ac, cands, sw, bypoll=None):
     name = ac["ac_name"]
     winner, wparty = ac["winner_candidate"], ac["winner_party"]
     second, sparty = ac["second_candidate"], ac["second_party"]
@@ -130,6 +168,8 @@ def build_page(ac, cands, sw):
              '<th class="num">Votes</th><th class="num">Vote&nbsp;%</th></tr></thead>\n'
              '<tbody>\n' + "\n".join(trs) + '\n</tbody>\n</table>\n</div>')
 
+    bypoll_fm = (f'lastmod: {bypoll["count_date"]}\nbypoll_winner_party: "{BYPOLL_LABEL.get(bypoll["winner"]["party_code"], bypoll["winner"]["party_code"])}"\n'
+                 if bypoll else "")
     fm = f"""---
 title: "{yaml_escape(title)}"
 date: {PUBLISH_DATE}
@@ -149,11 +189,12 @@ flipped: {str(bool(sw.get('flipped'))).lower() if sw else 'false'}
 keywords: ["{yaml_escape(name)} election result 2026", "{yaml_escape(name)} 2026 winner", "Tamil Nadu 2026 {yaml_escape(district)}"]
 ShowReadingTime: false
 ShowToc: false
----
+{bypoll_fm}---
 """
 
+    note = bypoll_callout(name, bypoll) if bypoll else ""
     body = f"""
-{winner} of {wparty} won the {name} Assembly constituency ({district} district, {region}) in the Tamil Nadu 2026 election, taking {share}% of {total:,} votes cast. The winning margin over {second} ({sparty}) was {margin:,} votes, or {mpct} percentage points. {swing_line}
+{note}{winner} of {wparty} won the {name} Assembly constituency ({district} district, {region}) in the Tamil Nadu 2026 election, taking {share}% of {total:,} votes cast. The winning margin over {second} ({sparty}) was {margin:,} votes, or {mpct} percentage points. {swing_line}
 
 {{{{< kpi-row >}}}}
 {{{{< kpi value="{wparty}" label="Winning party" tone="primary" >}}}}
@@ -178,13 +219,14 @@ This page is part of the full [Tamil Nadu 2026 election results]({{{{< ref "/tn-
 def main():
     only = set(int(x) for x in sys.argv[1:]) if len(sys.argv) > 1 else None
     per, cand_by_ac, swing_by_ac = load()
+    bypolls = load_bypolls()
     OUT.mkdir(parents=True, exist_ok=True)
     n = 0
     for ac in per:
         if only and ac["ac_no"] not in only:
             continue
         slug, page = build_page(ac, cand_by_ac.get(ac["ac_no"], []),
-                                swing_by_ac.get(ac["ac_no"]))
+                                swing_by_ac.get(ac["ac_no"]), bypolls.get(ac["ac_no"]))
         (OUT / f"{slug}.md").write_text(page, encoding="utf-8")
         n += 1
     print(f"Wrote {n} constituency pages to {OUT}")

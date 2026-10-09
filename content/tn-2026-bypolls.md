@@ -7,6 +7,7 @@ summary: "Every Tamil Nadu Assembly by-election since the May 2026 general elect
 keywords: ["Tamil Nadu by-election 2026", "TN bypoll results 2026", "Madurantakam bypoll result", "Dharapuram bypoll result", "Tamil Nadu bypolls October 2026", "TN Assembly vacant seats 2026", "TVK bypoll", "AIADMK defectors bypoll"]
 tags: ["elections", "tamil-nadu", "data", "politics", "tvk", "2026", "bypolls"]
 categories: ["Data"]
+featured: true
 readingTime: true
 showToc: true
 TocOpen: false
@@ -20,7 +21,7 @@ sitemap:
   changefreq: weekly
 ---
 
-Tamil Nadu has held **2 Assembly by-elections** since the May 2026 general election, both on October 6. TVK won both. Five more seats are vacant, with no dates announced. This page keeps every bypoll result in one place, next to the same seat's result in May 2026 and in 2021.
+Tamil Nadu has held **2 Assembly by-elections** since the May 2026 general election, both on October 6. TVK won both. Five more seats are vacant, with no dates announced. This page keeps every bypoll result in one place, next to the same seat's result in May 2026 and in 2021. Each seat also has its own full results page: [Madurantakam](/tn-bypoll-results/madurantakam-by-election-2026/) and [Dharapuram](/tn-bypoll-results/dharapuram-by-election-2026/), listed with every future bypoll under [by-election results](/tn-bypoll-results/).
 
 {{< kpi-row >}}
 {{< kpi value="TVK" label="Madurantakam" sub="K. Maragatham Kumaravel by 20,040 (10.82%)" tone="accent" >}}
@@ -127,6 +128,10 @@ Bypoll results are from the ECI results portal, saved through counting day. May 
 <a href="/posts/tn-bypolls-2026-madurantakam-dharapuram/">
   <strong>Two AIADMK defectors won their seats back on TVK's ticket</strong>
   <span>The analysis: did the vote follow the MLA, the count, and what the result does and does not show.</span>
+</a>
+<a href="/tn-bypoll-results/">
+  <strong>By-election results, seat by seat</strong>
+  <span>A full results page for every bypoll: all candidates, EVM and postal votes, the round-by-round count.</span>
 </a>
 <a href="/election-dashboard/bypolls-2026.html">
   <strong>Bypoll dashboard</strong>

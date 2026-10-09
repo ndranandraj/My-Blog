@@ -17,7 +17,15 @@ flipped: false
 keywords: ["Madurantakam election result 2026", "Madurantakam 2026 winner", "Tamil Nadu 2026 Kancheepuram"]
 ShowReadingTime: false
 ShowToc: false
+lastmod: 2026-10-09
+bypoll_winner_party: "TVK"
 ---
+
+{{< callout title="Update: Madurantakam by-election, 9 October 2026" type="insight" >}}
+This page records the May 2026 general election. The seat fell vacant on 25 May 2026, when the MLA resigned and joined TVK, and went to a by-election on 6 October 2026. **K. Maragatham Kumaravel (TVK) won by 20,040 votes (10.82%)** over I. Paranthamen (DMK).
+
+[Full Madurantakam by-election result →](/tn-bypoll-results/madurantakam-by-election-2026/)
+{{< /callout >}}
 
 Maragatham Kumaravel.K of ADMK won the Madurantakam Assembly constituency (Kancheepuram district, Chennai & Suburbs) in the Tamil Nadu 2026 election, taking 34.95% of 198,251 votes cast. The winning margin over Ezhil Katharine Ezhilmalai (TVK) was 7,194 votes, or 3.63 percentage points. ADMK held the seat it won here in 2021.
 

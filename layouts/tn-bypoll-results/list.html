@@ -1,0 +1,15 @@
+{{- define "main" -}}
+{{- /* By-election results index (content/tn-bypoll-results/_index.md, written by
+       scripts/gen-bypoll-pages.py). Same header as the May results index; the
+       seat table is part of the generated content, so no page cards below. */ -}}
+{{- partial "custom/wash.html" (dict "subtle" true) }}
+
+<header class="page-header results-header">
+  <span class="home-sec-num">TN 2026 · By-elections</span>
+  <h1>{{ .Title }}</h1>
+</header>
+
+<div class="post-content tn-results-intro">
+  {{ .Content }}
+</div>
+{{- end }}
