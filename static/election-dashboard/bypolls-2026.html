@@ -443,7 +443,7 @@ tr:hover td { background: rgba(154,139,255,0.04); }
 }
 
 /* ── Bypoll dashboard additions ───────────────────────────── */
-.seat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.seat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
 .seat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 20px 22px; border-top: 4px solid var(--c-tvk); }
 .seat-card .seat-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); }
@@ -468,7 +468,7 @@ tr:hover td { background: rgba(154,139,255,0.04); }
 .chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
 .chart-card h4 { font-size: 0.95rem; font-weight: 800; margin-bottom: 2px; }
 .chart-card .note { font-size: 0.76rem; color: var(--text-3); margin-bottom: 10px; }
-.chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
+.chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; }
 .chart-card svg { width: 100%; height: auto; display: block; overflow: visible; }
 .chart-card svg text { font-family: 'Hanken Grotesk', system-ui, sans-serif; fill: var(--text-2); }
 .chart-card svg .lbl { font-size: 11px; font-weight: 600; fill: var(--text); }
@@ -721,28 +721,41 @@ function renderSeats() {
 }
 
 // ── Three-election comparison ──
+// One group per party; each year is its own labelled bar (no opacity coding).
+// A party with no candidate that year shows "did not stand", not a 0% bar.
 let cmpMode = 'share';
+// Chart-only colours where the Explorer palette puts several parties in reds.
+const CHART_COLOR = { NTK: '#B45309', LEFT: '#BE185D', OTHERS: '#64748B', BJP: '#EA580C' };
+const chartColor = p => CHART_COLOR[p] || partyColor(p);
 function renderCompare() {
-  const years = [['y2021', '2021', 0.30], ['may', 'May 2026', 0.60], ['oct', 'Oct 2026', 1]];
+  const years = [['y2021', '2021'], ['may', 'May 2026'], ['oct', 'Oct 2026']];
   document.getElementById('cmp-charts').innerHTML = DATA.seats.map(s => {
     const vals = years.map(([key]) => cmpMode === 'share' ? seatShares(s, key) : seatVotes(s, key));
     const parties = PARTIES.filter(p => vals.some(v => (v[p] || 0) > 0));
     const max = Math.max(...parties.flatMap(p => vals.map(v => v[p] || 0)));
-    const W = chartW(), rowH = 54, top = 6, left = 64, barW = W - left - 70, bh = 13;
-    const H = top + parties.length * rowH;
-    let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(s.ac_name)}: ${cmpMode === 'share' ? 'vote share' : 'votes'} by party, 2021, May 2026 and October 2026">`;
+    const W = chartW(), yrW = 62, valW = 92, barX = yrW, barW = W - yrW - valW, bh = 14, gap = 4, headH = 20, groupGap = 14;
+    const groupH = headH + years.length * (bh + gap) + groupGap;
+    const H = parties.length * groupH;
+    let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(s.ac_name)}: ${cmpMode === 'share' ? 'vote share' : 'votes'} by party in 2021, May 2026 and October 2026">`;
     parties.forEach((p, i) => {
-      const y0 = top + i * rowH;
-      svg += `<text class="lbl" x="${left - 8}" y="${y0 + 24}" text-anchor="end">${esc(LABEL[p])}</text>`;
-      years.forEach(([key, lab, op], j) => {
-        const v = vals[j][p] || 0, wpx = max ? Math.max(v / max * barW, v ? 1.5 : 0) : 0, yy = y0 + j * (bh + 3);
-        svg += `<rect x="${left}" y="${yy}" width="${wpx.toFixed(1)}" height="${bh}" rx="3" fill="${partyColor(p)}" fill-opacity="${op}"><title>${esc(LABEL[p])}, ${lab}: ${cmpMode === 'share' ? P2(v) : IN(v)}</title></rect>`;
-        svg += `<text class="val" x="${(left + wpx + 5).toFixed(1)}" y="${yy + 10}">${cmpMode === 'share' ? v.toFixed(1) + '%' : IN(v)}</text>`;
+      const y0 = i * groupH;
+      svg += `<text class="lbl" x="0" y="${y0 + 13}" style="fill:${chartColor(p)};font-size:12px;font-weight:800">${esc(LABEL[p])}</text>`;
+      years.forEach(([key, lab], j) => {
+        const v = vals[j][p] || 0, yy = y0 + headH + j * (bh + gap);
+        const isLatest = j === years.length - 1;
+        svg += `<text class="val" x="${yrW - 8}" y="${yy + 11}" text-anchor="end" style="${isLatest ? 'font-weight:700;fill:var(--text)' : ''}">${lab}</text>`;
+        if (!v) {
+          svg += `<text class="val" x="${barX}" y="${yy + 11}" style="font-style:italic;fill:var(--text-3)">did not stand</text>`;
+          return;
+        }
+        const wpx = Math.max(v / max * barW, 2);
+        svg += `<rect x="${barX}" y="${yy}" width="${wpx.toFixed(1)}" height="${bh}" rx="3" fill="${chartColor(p)}" fill-opacity="${isLatest ? 1 : 0.45}"><title>${esc(LABEL[p])}, ${lab}: ${cmpMode === 'share' ? P2(v) : IN(v)}</title></rect>`;
+        svg += `<text class="val" x="${(barX + wpx + 6).toFixed(1)}" y="${yy + 11}" style="${isLatest ? 'font-weight:700;fill:var(--text)' : ''}">${cmpMode === 'share' ? v.toFixed(1) + '%' : IN(v)}</text>`;
       });
     });
     svg += '</svg>';
-    return `<div class="chart-card"><h4>${esc(s.ac_name)}</h4><div class="note">Each party: 2021 (faint), May 2026 (mid), October 2026 (solid)</div>${svg}
-      <div class="key"><span><i style="background:var(--text-3);opacity:.3"></i>2021</span><span><i style="background:var(--text-3);opacity:.6"></i>May 2026</span><span><i style="background:var(--text-3)"></i>Oct 2026</span></div></div>`;
+    const note = s.ac_no === 101 ? ' In 2021 the AIADMK left this seat to the BJP.' : '';
+    return `<div class="chart-card"><h4>${esc(s.ac_name)}</h4><div class="note">${cmpMode === 'share' ? 'Share of all votes polled' : 'Votes'} by party; the October bypoll is the solid bar.${note}</div>${svg}</div>`;
   }).join('');
 
   document.getElementById('cmp-tables').innerHTML = DATA.seats.map(s => {

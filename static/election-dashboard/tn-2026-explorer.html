@@ -474,8 +474,8 @@ tr:hover td { background: rgba(154,139,255,0.04); }
   <div class="kpi"><div class="num tvk">108</div><div class="label">TVK</div><div class="sub">46.2% seat share · 34.9% vote share</div></div>
   <div class="kpi"><div class="num dmk">59</div><div class="label">DMK</div><div class="sub">25.2% seat share · 24.2% vote share</div></div>
   <div class="kpi"><div class="num admk">47</div><div class="label">AIADMK</div><div class="sub">20.1% seat share · 21.2% vote share</div></div>
-  <div class="kpi"><div class="num india">70</div><div class="label">INDIA bloc</div><div class="sub">DMK + INC + VCK + CPI(M) + CPI + IUML</div></div>
-  <div class="kpi"><div class="num nda">53</div><div class="label">NDA bloc</div><div class="sub">AIADMK + BJP + PMK + DMDK</div></div>
+  <div class="kpi"><div class="num india">73</div><div class="label">INDIA bloc</div><div class="sub">DMK + INC + VCK + CPI(M) + CPI + IUML + DMDK</div></div>
+  <div class="kpi"><div class="num nda">53</div><div class="label">NDA bloc</div><div class="sub">AIADMK + BJP + PMK + AMMK</div></div>
   <div class="kpi"><div class="num accent">234</div><div class="label">Constituencies</div><div class="sub">4.93 crore votes polled</div></div>
 </div>
 
@@ -1176,9 +1176,8 @@ function updateLegend() {
     legend.innerHTML = `
       <span class="h">Alliance</span>
       <span class="item"><span class="sw" style="background:var(--c-tvk)"></span>TVK · 108</span>
-      <span class="item"><span class="sw" style="background:var(--c-india)"></span>INDIA bloc · 70</span>
-      <span class="item"><span class="sw" style="background:var(--c-nda)"></span>NDA bloc · 53</span>
-      <span class="item"><span class="sw" style="background:var(--c-other)"></span>Others · 3</span>`;
+      <span class="item"><span class="sw" style="background:var(--c-india)"></span>INDIA bloc · 73</span>
+      <span class="item"><span class="sw" style="background:var(--c-nda)"></span>NDA bloc · 53</span>`;
   } else {
     legend.innerHTML = `
       <span class="h">Winner</span>
