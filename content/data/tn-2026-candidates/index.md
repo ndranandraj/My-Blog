@@ -124,7 +124,7 @@ Constituency names use the ECI's canonical uppercase form. Some sources spell th
 
 ## Release notes
 
-**v1.2, 9 October 2026: alliance labels corrected.** DMDK candidates (10) were labelled `NDA`; the DMDK contested 2026 in the DMK-led alliance, so they are now `INDIA`. AMMK candidates (11) were labelled `OTHERS`; the AMMK rejoined the NDA in January 2026, so they are now `NDA`. AIADMK (172) and CPI(M) (5) rows had a blank alliance and are now `NDA` and `INDIA`. Each bloc now has exactly 234 candidates, one per seat. In the match-pairs file, the 5 pairs targeting DMDK candidates moved from `NDA` to `INDIA`. No other column changed. Full details are in the repository's data README.
+**v1.2, 9 October 2026: alliance labels corrected.** DMDK candidates (10) were labelled `NDA`; the DMDK contested 2026 in the DMK-led alliance, so they are now `INDIA`. AMMK candidates (11) were labelled `OTHERS`; the AMMK rejoined the NDA in January 2026, so they are now `NDA`. AIADMK (172) and CPI(M) (5) rows had a blank alliance and are now `NDA` and `INDIA`. Each bloc now has exactly 234 candidates, one per seat. Every candidate outside the four blocs (`INDIA`, `NDA`, `TVK`, `NTK`) is now `NONE`; previously these were a mix of `NONE`, `OTHERS` and blank. In the match-pairs file, the 5 pairs targeting DMDK candidates moved from `NDA` to `INDIA`. No other column changed. Full details are in the repository's data README.
 
 ## Contributing
 
