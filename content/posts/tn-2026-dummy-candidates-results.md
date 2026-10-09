@@ -3,7 +3,7 @@ title: "How many of the 329 dummies actually mattered"
 date: 2026-05-04
 series: "TN 2026 Election Series"
 series_part: 5
-lastmod: 2026-05-04
+lastmod: 2026-10-09
 description: "Three weeks ago I flagged 329 suspected dummy candidates in TN 2026. The results are in. In the cleanest test, zero seats flipped. In the noisiest test, two. Here is the full accounting."
 summary: "329 suspect pairs flagged before polling. 263 actually contested. 152 targeted majors lost. Consequential seats: 0 by the strict test, 2 by the inclusive test. And why that small number is itself the finding."
 keywords: ["dummy candidates Tamil Nadu results", "TN 2026 election dummy candidates follow-up", "dummy candidate impact analysis", "namesake candidates TN 2026 results", "TIRUKKOYILUR election margin", "PALANI election 2026 margin", "Tamil Nadu election spoilers", "EVM voter confusion Tamil Nadu"]
@@ -114,8 +114,8 @@ EXACT-tier dummies (identical name after normalising prefixes and initials) are 
 
 | Alliance | Targeted majors | Of whom lost | Strict-consequential | Total dummy votes against |
 | :--- | ---: | ---: | ---: | ---: |
-| INDIA (DMK-led) | 68 | 46 | 0 | 28,516 |
-| NDA (AIADMK-led) | 66 | 48 | 0 | 25,702 |
+| INDIA (DMK-led) | 71 | 48 | 0 | 31,354 |
+| NDA (AIADMK-led) | 63 | 46 | 0 | 22,864 |
 | TVK | 61 | 32 | 0 (2 inclusive) | 19,383 |
 | NTK | 26 | 26 | 0 | 6,222 |
 
@@ -208,6 +208,8 @@ The mechanism is waiting for a year where margins are narrow. 2026 was not it.
 </div>
 
 ---
+
+*Correction, October 9, 2026: the alliance table originally counted the DMDK under the NDA. The DMDK contested 2026 in the DMK-led alliance, so its three targeted candidates (Tiruttani, Salem West, Vriddhachalam) move to the INDIA row: 71 targeted and 31,354 dummy votes for INDIA (was 68 and 28,516), 63 and 22,864 for the NDA (was 66 and 25,702). The totals, the strict-test result and the conclusions are unchanged.*
 
 {{< callout title="Methodology" type="method" >}}
 Numbers computed by [`pipelines/21_dummy_impact_analysis.py`](https://github.com/ndranandraj/tn-2026-candidates-dataset). All vote counts use the Indian comma format (last 3 digits, then groups of 2). Margin percent is `(margin / total_votes_polled_in_AC) × 100`. The strict test counts only EXACT and NEAR_FULL name matches; the inclusive test adds WORD_MATCH (one shared name fragment). Released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

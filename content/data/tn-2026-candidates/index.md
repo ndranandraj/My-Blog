@@ -1,7 +1,7 @@
 ---
 title: "Dataset: Tamil Nadu 2026 Candidates + Dummy Match Pairs"
 date: 2026-04-23
-lastmod: 2026-04-23
+lastmod: 2026-10-09
 description: "Open dataset of all ~4,000 candidates contesting the Tamil Nadu 2026 Assembly Election, plus the 329 name-similarity match pairs across 144 constituencies used in the 'Same Name, Different Initial' investigation. Released under CC-BY-4.0."
 summary: "~4,000 candidates across 234 constituencies, scraped from the ECI Affidavit Portal. 329 name-match pairs flagged across 144 constituencies. Free to download, cite, and remix."
 keywords: ["Tamil Nadu 2026 candidates dataset", "dummy candidates CSV", "ECI affidavit portal data", "TN assembly election dataset", "namesake candidates data", "India election open data", "Tamil Nadu election 2026 candidates list"]
@@ -28,7 +28,7 @@ cover:
 
 **Cite as:**
 
-> Anandraj, R. (2026). *Tamil Nadu 2026 Candidates and Dummy Match Pairs Dataset* (v1.1) [Data set]. https://github.com/ndranandraj/tn-2026-candidates-dataset
+> Anandraj, R. (2026). *Tamil Nadu 2026 Candidates and Dummy Match Pairs Dataset* (v1.2) [Data set]. https://github.com/ndranandraj/tn-2026-candidates-dataset
 
 ---
 
@@ -55,7 +55,7 @@ A quick preview of the 329-pair file to save you a download if you just want to 
 | `constituency` | `ALANDUR` | Assembly constituency, uppercase. |
 | `major_candidate` | `S.Saravanan` | The candidate from a major party. |
 | `major_party` | `ADMK` | Party abbreviation. |
-| `major_alliance` | `NDA` | Alliance the party belongs to (`NDA`, `INDIA`, `TVK`, or `OTHER`). |
+| `major_alliance` | `NDA` | Alliance the party belongs to (`NDA`, `INDIA`, `TVK`, or `NTK`). |
 | `suspect_candidate` | `A.Saravanan` | The namesake opponent. |
 | `suspect_party` | `IND` | Almost always `IND` (Independent). |
 | `similarity` | `1.0` | 0–1 similarity score after name normalisation. |
@@ -121,6 +121,10 @@ The snapshot is from April 17, 2026. Withdrawals and disqualifications after tha
 Constituency names use the ECI's canonical uppercase form. Some sources spell them differently (Tuticorin vs. Thoothukudi, for example). Join carefully.
 
 ---
+
+## Release notes
+
+**v1.2, 9 October 2026: alliance labels corrected.** DMDK candidates (10) were labelled `NDA`; the DMDK contested 2026 in the DMK-led alliance, so they are now `INDIA`. AMMK candidates (11) were labelled `OTHERS`; the AMMK rejoined the NDA in January 2026, so they are now `NDA`. AIADMK (172) and CPI(M) (5) rows had a blank alliance and are now `NDA` and `INDIA`. Each bloc now has exactly 234 candidates, one per seat. In the match-pairs file, the 5 pairs targeting DMDK candidates moved from `NDA` to `INDIA`. No other column changed. Full details are in the repository's data README.
 
 ## Contributing
 
