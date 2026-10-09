@@ -280,6 +280,8 @@ body.navhide .jumpnav { top: 0; }
 .map-controls .ctl.party-active { color: #fff; }
 .map-controls .divider { width: 1px; height: 22px; background: var(--border); margin: 0 6px; }
 #map { width: 100%; height: 640px; border-radius: 10px; background: var(--map-bg); }
+/* Keep Leaflet's panes and controls (z-index up to 1000) under the sticky nav bars. */
+#map { isolation: isolate; z-index: 0; position: relative; }
 
 /* ── Tooltip ─────────────────────────────────────────────── */
 .leaflet-tooltip.exp-tip {
@@ -881,6 +883,11 @@ tr:hover td { background: rgba(154,139,255,0.04); }
       <p>Each post anchors on a different reading of the same 234 results. Start anywhere; they cross-link tightly.</p>
     </div>
     <div class="explore">
+      <a href="bypolls-2026.html">
+        <span class="ex-tag">After May · Bypolls</span>
+        <strong>TVK won both October bypolls</strong>
+        <span>Madurantakam and Dharapuram, the two seats AIADMK defectors vacated, compared with May 2026 and 2021. Dashboard and vacant-seat tracker.</span>
+      </a>
       <a href="/posts/tvk-debut-2026/">
         <span class="ex-tag">The winner</span>
         <strong>TVK 233: A Debut, Mapped</strong>
@@ -986,20 +993,11 @@ function esc(s) {
 let map = null;
 let perAc = {};          // ac_no -> map_data row
 let geoLayer = null;
-let tileBase = null;
-let tileLabels = null;
 let currentView = 'winner';   // 'winner' | 'alliance'
 let currentFilter = 'all';    // 'all' | party code | alliance code
 
 function isLightTheme() {
   return document.documentElement.dataset.theme === 'light';
-}
-function tileUrls() {
-  return isLightTheme()
-    ? ['https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
-       'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png']
-    : ['https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
-       'https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png'];
 }
 
 function initMap() {
@@ -1008,18 +1006,32 @@ function initMap() {
       '<div style="padding:40px;text-align:center;color:var(--text-2);">Leaflet failed to load. Please refresh, or check your network connection.</div>';
     return false;
   }
+  // No basemap tiles: the 234 constituency polygons cover the whole state,
+  // and CARTO's free basemaps started requiring an API key in 2026. The
+  // container's --map-bg colour is the sea and the background.
   map = L.map('map', {
     zoomControl: true, attributionControl: false, preferCanvas: true,
+    zoomSnap: 0.25, minZoom: 5, maxZoom: 12,
   }).setView([10.85, 78.6], 7);
-
-  const [baseUrl, labelsUrl] = tileUrls();
-  tileBase = L.tileLayer(baseUrl, {
-    maxZoom: 12, minZoom: 6, attribution: '&copy; OpenStreetMap, &copy; CARTO',
-  }).addTo(map);
-  tileLabels = L.tileLayer(labelsUrl, {
-    maxZoom: 12, minZoom: 6,
-  }).addTo(map);
+  map.on('movestart zoomstart', () => { if (!mapFitting) mapUserMoved = true; });
+  // Re-fit when the container changes size (window resize, sidebar, late
+  // layout), unless the reader has already panned or zoomed.
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(() => {
+      map.invalidateSize({ animate: false });
+      if (!mapUserMoved) fitMap();
+    }).observe(document.getElementById('map'));
+  }
   return true;
+}
+
+let mapFitting = false;
+let mapUserMoved = false;
+function fitMap() {
+  if (!map || !geoLayer) return;
+  mapFitting = true;
+  map.fitBounds(geoLayer.getBounds(), { padding: [16, 16], animate: false });
+  mapFitting = false;
 }
 
 function styleFor(d) {
@@ -1102,7 +1114,8 @@ async function loadMap() {
       });
     },
   }).addTo(map);
-  map.fitBounds(geoLayer.getBounds(), { padding: [20, 20] });
+  map.invalidateSize({ animate: false });
+  fitMap();
 }
 
 function restyle() {
@@ -1138,12 +1151,7 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
   const next = isLightTheme() ? 'dark' : 'light';
   document.documentElement.dataset.theme = next;
   localStorage.setItem('pref-theme', next);
-  // CSS variables update instantly; the map needs explicit help.
-  if (map && tileBase) {
-    const [baseUrl, labelsUrl] = tileUrls();
-    tileBase.setUrl(baseUrl);
-    tileLabels.setUrl(labelsUrl);
-  }
+  // CSS variables update instantly; the polygons need a restyle.
   restyle();
   updateToggleIcon();
 });
@@ -1960,13 +1968,29 @@ if ('IntersectionObserver' in window) {
 } else {
   startMap();
 }
-loadEfficiency().catch(e => console.error('Eff load failed:', e));
-loadRegional().catch(e => console.error('Regional load failed:', e));
-loadSwing().catch(e => console.error('Swing load failed:', e));
-loadDemographics().catch(e => console.error('Demographics load failed:', e));
-loadIncumbents().catch(e => console.error('Incumbents load failed:', e));
-loadDummies().catch(e => console.error('Dummies load failed:', e));
-cxLoadAll().catch(e => console.error('Constituency Explorer load failed:', e));
+// Deep links (#regional, #demographics, ...) from the posts: the sections
+// above the target render after load and push it down, so the browser's own
+// jump lands in the wrong place or not at all. Re-scroll once everything has
+// rendered, unless the reader has already started scrolling.
+const bootLoads = [
+  loadEfficiency().catch(e => console.error('Eff load failed:', e)),
+  loadRegional().catch(e => console.error('Regional load failed:', e)),
+  loadSwing().catch(e => console.error('Swing load failed:', e)),
+  loadDemographics().catch(e => console.error('Demographics load failed:', e)),
+  loadIncumbents().catch(e => console.error('Incumbents load failed:', e)),
+  loadDummies().catch(e => console.error('Dummies load failed:', e)),
+  cxLoadAll().catch(e => console.error('Constituency Explorer load failed:', e)),
+];
+(function honourHash() {
+  const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (!target) return;
+  let userScrolled = false;
+  const mark = () => { userScrolled = true; };
+  ['wheel', 'touchmove', 'keydown'].forEach(ev => window.addEventListener(ev, mark, { once: true, passive: true }));
+  const go = () => { if (!userScrolled) target.scrollIntoView({ behavior: 'instant', block: 'start' }); };
+  go();
+  Promise.allSettled(bootLoads).then(() => setTimeout(go, 0));
+})();
 </script>
 
 </body>

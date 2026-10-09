@@ -477,6 +477,7 @@ table.dataTable tbody tr:hover { background: var(--c-row-hover) !important; }
 ═══════════════════════════════════════════ */
 #tnMap {
   height: 540px; border-radius: var(--radius);
+  background: var(--c-border-2);
   border: 1px solid var(--c-border);
   box-shadow: var(--shadow-sm);
 }
@@ -1830,12 +1831,8 @@ function filterWatch(p, btn) {
 // ─── Map ──────────────────────────────────────
 function loadMap() {
   MAP = L.map('tnMap', {zoomControl:true}).setView([10.8,78.5], 6);
-  /* Warm-tinted basemap — no labels (we overlay constituency GeoJSON) */
-  L.tileLayer(document.documentElement.dataset.theme === 'dark'
-      ? 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
-      : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',{
-    attribution:'©OpenStreetMap ©CARTO', maxZoom:19
-  }).addTo(MAP);
+  /* No basemap tiles: the constituency polygons cover the state, and CARTO's
+     free basemaps now require an API key. #tnMap's background shows through. */
 
   const geoPaths = [
     'tn_constituencies.geojson',

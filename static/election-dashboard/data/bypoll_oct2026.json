@@ -1,0 +1,1898 @@
+{
+  "generated_at": "2026-10-09T20:49:39+05:30",
+  "source": "https://results.eci.gov.in/ResultAcByeOct2026/",
+  "baseline_sources": [
+    "raw/free_sources/tn_2026_results.csv",
+    "raw/free_sources/opencity_tn_2021.csv"
+  ],
+  "all_declared": true,
+  "all_complete": true,
+  "seats": [
+    {
+      "ac_no": 35,
+      "ac_name": "Madurantakam",
+      "district": "Chengalpattu",
+      "region": "Chennai & Suburbs",
+      "reserved": "SC",
+      "defector": "K. Maragatham Kumaravel",
+      "status": {
+        "rounds_done": 27,
+        "rounds_total": 27,
+        "declared": true,
+        "complete": true,
+        "label": "Result declared",
+        "declared_winner": "K.MARAGATHAM KUMARAVEL",
+        "eci_last_updated": "08:27 pm 09/10/2026 IST"
+      },
+      "snapshot": "20261009T202801_AC35.htm",
+      "candidates_count": 27,
+      "total_votes": 185292,
+      "postal_votes": 864,
+      "turnout": {
+        "bypoll_pct": 86.26,
+        "april_pct": 93.22,
+        "drop_pp": 6.96,
+        "source": "ECI website figures as reported by DT Next / The News Minute; April figures as quoted by Free Press Journal / The News Minute"
+      },
+      "candidates": [
+        {
+          "name": "K.MARAGATHAM KUMARAVEL",
+          "party": "Tamilaga Vettri Kazhagam",
+          "party_code": "TVK",
+          "evm": 73911,
+          "postal": 137,
+          "total": 74048,
+          "position": 1,
+          "pct": 39.96,
+          "alliance": "SSJVA"
+        },
+        {
+          "name": "I.PARANTHAMEN",
+          "party": "Dravida Munnetra Kazhagam",
+          "party_code": "DMK",
+          "evm": 53650,
+          "postal": 358,
+          "total": 54008,
+          "position": 2,
+          "pct": 29.15,
+          "alliance": "DMK+"
+        },
+        {
+          "name": "S.KANITHASAMPATH",
+          "party": "All India Anna Dravida Munnetra Kazhagam",
+          "party_code": "ADMK",
+          "evm": 47128,
+          "postal": 322,
+          "total": 47450,
+          "position": 3,
+          "pct": 25.61,
+          "alliance": "AIADMK+"
+        },
+        {
+          "name": "G.JANAKIRAMAN",
+          "party": "Naam Tamilar Katchi",
+          "party_code": "NTK",
+          "evm": 2709,
+          "postal": 0,
+          "total": 2709,
+          "position": 4,
+          "pct": 1.46,
+          "alliance": "NTK"
+        },
+        {
+          "name": "SUGANTHI.P",
+          "party": "Communist Party of India (Marxist)",
+          "party_code": "CPM",
+          "evm": 1977,
+          "postal": 9,
+          "total": 1986,
+          "position": 5,
+          "pct": 1.07,
+          "alliance": "Left"
+        },
+        {
+          "name": "KRISHNAKANTH.E",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 990,
+          "postal": 14,
+          "total": 1004,
+          "position": 6,
+          "pct": 0.54,
+          "alliance": ""
+        },
+        {
+          "name": "P.N.R.BASKARAN",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 497,
+          "postal": 0,
+          "total": 497,
+          "position": 7,
+          "pct": 0.27,
+          "alliance": ""
+        },
+        {
+          "name": "NAVINDAR.V",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 410,
+          "postal": 0,
+          "total": 410,
+          "position": 8,
+          "pct": 0.22,
+          "alliance": ""
+        },
+        {
+          "name": "RAJAMANI",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 350,
+          "postal": 3,
+          "total": 353,
+          "position": 9,
+          "pct": 0.19,
+          "alliance": ""
+        },
+        {
+          "name": "KAYALVIZHI",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 348,
+          "postal": 1,
+          "total": 349,
+          "position": 10,
+          "pct": 0.19,
+          "alliance": ""
+        },
+        {
+          "name": "EZHIL.E",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 265,
+          "postal": 2,
+          "total": 267,
+          "position": 11,
+          "pct": 0.14,
+          "alliance": ""
+        },
+        {
+          "name": "M.MANOKAR",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 236,
+          "postal": 2,
+          "total": 238,
+          "position": 12,
+          "pct": 0.13,
+          "alliance": ""
+        },
+        {
+          "name": "K.ELAIYARASU",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 216,
+          "postal": 0,
+          "total": 216,
+          "position": 13,
+          "pct": 0.12,
+          "alliance": ""
+        },
+        {
+          "name": "RANJITHAM.M",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 154,
+          "postal": 0,
+          "total": 154,
+          "position": 14,
+          "pct": 0.08,
+          "alliance": ""
+        },
+        {
+          "name": "N.SATHIS KUMAR",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 137,
+          "postal": 6,
+          "total": 143,
+          "position": 15,
+          "pct": 0.08,
+          "alliance": ""
+        },
+        {
+          "name": "K.BHUVANESWARI",
+          "party": "Anaithinthiya Anna Dravida Makkal Seyal katchi",
+          "party_code": "ANAITHINTHIYA ANNA DRAVIDA MAKKAL SEYAL KATCHI",
+          "evm": 111,
+          "postal": 1,
+          "total": 112,
+          "position": 16,
+          "pct": 0.06,
+          "alliance": ""
+        },
+        {
+          "name": "DR.G.MOORTHY",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 112,
+          "postal": 0,
+          "total": 112,
+          "position": 17,
+          "pct": 0.06,
+          "alliance": ""
+        },
+        {
+          "name": "LOGESH.K",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 91,
+          "postal": 0,
+          "total": 91,
+          "position": 18,
+          "pct": 0.05,
+          "alliance": ""
+        },
+        {
+          "name": "S.MURUGAN",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 86,
+          "postal": 0,
+          "total": 86,
+          "position": 19,
+          "pct": 0.05,
+          "alliance": ""
+        },
+        {
+          "name": "M.KADIRVEL",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 78,
+          "postal": 5,
+          "total": 83,
+          "position": 20,
+          "pct": 0.04,
+          "alliance": ""
+        },
+        {
+          "name": "S.ARUMUGAM",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 70,
+          "postal": 0,
+          "total": 70,
+          "position": 21,
+          "pct": 0.04,
+          "alliance": ""
+        },
+        {
+          "name": "M.JEGAN",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 66,
+          "postal": 1,
+          "total": 67,
+          "position": 22,
+          "pct": 0.04,
+          "alliance": ""
+        },
+        {
+          "name": "G.RAJASEKAR",
+          "party": "Desiya Makkal Sakthi Katchi",
+          "party_code": "DESIYA MAKKAL SAKTHI KATCHI",
+          "evm": 52,
+          "postal": 0,
+          "total": 52,
+          "position": 23,
+          "pct": 0.03,
+          "alliance": ""
+        },
+        {
+          "name": "J.RAVIKUMAR",
+          "party": "Republican Party of India (Sivaraj)",
+          "party_code": "REPUBLICAN PARTY OF INDIA (SIVARAJ)",
+          "evm": 40,
+          "postal": 2,
+          "total": 42,
+          "position": 24,
+          "pct": 0.02,
+          "alliance": ""
+        },
+        {
+          "name": "V.MUTHUSELVAM",
+          "party": "Anti Corruption Dynamic Party",
+          "party_code": "ANTI CORRUPTION DYNAMIC PARTY",
+          "evm": 39,
+          "postal": 0,
+          "total": 39,
+          "position": 25,
+          "pct": 0.02,
+          "alliance": ""
+        },
+        {
+          "name": "M.G.RAMU",
+          "party": "Jebamani Janata",
+          "party_code": "JEBAMANI JANATA",
+          "evm": 28,
+          "postal": 0,
+          "total": 28,
+          "position": 26,
+          "pct": 0.02,
+          "alliance": ""
+        },
+        {
+          "name": "K.ARUMUGAM",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 25,
+          "postal": 1,
+          "total": 26,
+          "position": 27,
+          "pct": 0.01,
+          "alliance": ""
+        },
+        {
+          "name": "NOTA",
+          "party": "None of the Above",
+          "party_code": "NOTA",
+          "evm": 652,
+          "postal": 0,
+          "total": 652,
+          "position": null,
+          "pct": 0.35,
+          "alliance": ""
+        }
+      ],
+      "april2026": {
+        "total_votes": 198251,
+        "postal_votes": 1962,
+        "candidates": [
+          {
+            "name": "MARAGATHAM KUMARAVEL.K",
+            "party_code": "ADMK",
+            "votes": 69284,
+            "pct": 34.95
+          },
+          {
+            "name": "EZHIL KATHARINE EZHILMALAI",
+            "party_code": "TVK",
+            "votes": 62090,
+            "pct": 31.32
+          },
+          {
+            "name": "S.AMULU PONMALAR",
+            "party_code": "DMK",
+            "votes": 59838,
+            "pct": 30.18
+          },
+          {
+            "name": "G.JANAKIRAMAN",
+            "party_code": "NTK",
+            "votes": 4950,
+            "pct": 2.5
+          },
+          {
+            "name": "NOTA",
+            "party_code": "NOTA",
+            "votes": 797,
+            "pct": 0.4
+          },
+          {
+            "name": "NEELAM E.RAMKUMAR",
+            "party_code": "BSP",
+            "votes": 374,
+            "pct": 0.19
+          },
+          {
+            "name": "RANJITHAM.M",
+            "party_code": "IND",
+            "votes": 357,
+            "pct": 0.18
+          },
+          {
+            "name": "R.SUGAN",
+            "party_code": "ALL INDIA PURATCHI THALAIVAR MAKKAL MUNNETTRA KAZHAGAM",
+            "votes": 237,
+            "pct": 0.12
+          },
+          {
+            "name": "S.PUNNIYAKOTTI",
+            "party_code": "TAMIZHAGA VAAZHVURIMAI KATCHI",
+            "votes": 206,
+            "pct": 0.1
+          },
+          {
+            "name": "M.KADIRVEL",
+            "party_code": "IND",
+            "votes": 118,
+            "pct": 0.06
+          }
+        ],
+        "winner": {
+          "name": "MARAGATHAM KUMARAVEL.K",
+          "party_code": "ADMK",
+          "votes": 69284,
+          "pct": 34.95
+        },
+        "runner_up": {
+          "name": "EZHIL KATHARINE EZHILMALAI",
+          "party_code": "TVK",
+          "votes": 62090,
+          "pct": 31.32
+        },
+        "margin": 7194,
+        "margin_pct": 3.63
+      },
+      "y2021": {
+        "total_votes": 185842,
+        "turnout_pct": 80.65,
+        "electors": 230430,
+        "votes_by_party": {
+          "TVK": 0,
+          "ADMK": 86646,
+          "DMK": 83076,
+          "BJP": 0,
+          "NTK": 9293,
+          "LEFT": 0,
+          "OTHERS": 5456,
+          "NOTA": 1371
+        },
+        "shares": {
+          "TVK": 0.0,
+          "ADMK": 46.62,
+          "DMK": 44.7,
+          "BJP": 0.0,
+          "NTK": 5.0,
+          "LEFT": 0.0,
+          "OTHERS": 2.94,
+          "NOTA": 0.74
+        },
+        "winner": {
+          "name": "Maragatham. K",
+          "party_code": "ADMK",
+          "votes": 86646,
+          "pct": 46.62
+        },
+        "runner_up": {
+          "name": "Sathya. C.E",
+          "party_code": "DMK",
+          "votes": 83076,
+          "pct": 44.7
+        },
+        "margin": 3570,
+        "margin_pct": 1.92,
+        "top3": [
+          {
+            "name": "Maragatham. K",
+            "party_code": "ADMK",
+            "votes": 86646,
+            "pct": 46.62
+          },
+          {
+            "name": "Sathya. C.E",
+            "party_code": "DMK",
+            "votes": 83076,
+            "pct": 44.7
+          },
+          {
+            "name": "Sumitha. P",
+            "party_code": "NTK",
+            "votes": 9293,
+            "pct": 5.0
+          }
+        ]
+      },
+      "eci_total_row": 185292,
+      "expected_votes_from_turnout": 183449,
+      "votes_vs_expected_pct": 1.0,
+      "votes_change": -12959,
+      "votes_change_pct": -6.54,
+      "swing": {
+        "TVK": {
+          "april_pct": 31.32,
+          "bypoll_pct": 39.96,
+          "delta_pp": 8.64
+        },
+        "ADMK": {
+          "april_pct": 34.95,
+          "bypoll_pct": 25.61,
+          "delta_pp": -9.34
+        },
+        "DMK": {
+          "april_pct": 30.18,
+          "bypoll_pct": 29.15,
+          "delta_pp": -1.03
+        },
+        "BJP": {
+          "april_pct": 0.0,
+          "bypoll_pct": 0.0,
+          "delta_pp": 0.0
+        },
+        "NTK": {
+          "april_pct": 2.5,
+          "bypoll_pct": 1.46,
+          "delta_pp": -1.04
+        },
+        "LEFT": {
+          "april_pct": 0.0,
+          "bypoll_pct": 1.07,
+          "delta_pp": 1.07
+        },
+        "OTHERS": {
+          "april_pct": 0.65,
+          "bypoll_pct": 2.4,
+          "delta_pp": 1.75
+        },
+        "NOTA": {
+          "april_pct": 0.4,
+          "bypoll_pct": 0.35,
+          "delta_pp": -0.05
+        }
+      },
+      "tvk_plus_admk_april_pct": 66.27,
+      "winner": {
+        "name": "K.MARAGATHAM KUMARAVEL",
+        "party": "Tamilaga Vettri Kazhagam",
+        "party_code": "TVK",
+        "evm": 73911,
+        "postal": 137,
+        "total": 74048,
+        "position": 1,
+        "pct": 39.96
+      },
+      "runner_up": {
+        "name": "I.PARANTHAMEN",
+        "party": "Dravida Munnetra Kazhagam",
+        "party_code": "DMK",
+        "evm": 53650,
+        "postal": 358,
+        "total": 54008,
+        "position": 2,
+        "pct": 29.15
+      },
+      "third": {
+        "name": "S.KANITHASAMPATH",
+        "party": "All India Anna Dravida Munnetra Kazhagam",
+        "party_code": "ADMK",
+        "evm": 47128,
+        "postal": 322,
+        "total": 47450,
+        "position": 3,
+        "pct": 25.61
+      },
+      "margin": 20040,
+      "margin_pct": 10.82,
+      "defector_won": true,
+      "seat_changed_hands": true,
+      "winner_change": "ADMK to TVK",
+      "margin_vs_april": 12846,
+      "votes_by_party": {
+        "TVK": {
+          "april": 62090,
+          "bypoll": 74048,
+          "change": 11958
+        },
+        "ADMK": {
+          "april": 69284,
+          "bypoll": 47450,
+          "change": -21834
+        },
+        "DMK": {
+          "april": 59838,
+          "bypoll": 54008,
+          "change": -5830
+        },
+        "BJP": {
+          "april": 0,
+          "bypoll": 0,
+          "change": 0
+        },
+        "NTK": {
+          "april": 4950,
+          "bypoll": 2709,
+          "change": -2241
+        },
+        "LEFT": {
+          "april": 0,
+          "bypoll": 1986,
+          "change": 1986
+        },
+        "OTHERS": {
+          "april": 1292,
+          "bypoll": 4439,
+          "change": 3147
+        },
+        "NOTA": {
+          "april": 797,
+          "bypoll": 652,
+          "change": -145
+        }
+      },
+      "timeline": [
+        {
+          "round": 1,
+          "rounds_total": 21,
+          "fetched_ist": "09:55",
+          "leader": "TVK",
+          "lead": 960,
+          "votes": {
+            "TVK": 3571,
+            "ADMK": 2078,
+            "DMK": 2611
+          },
+          "total": 8664
+        },
+        {
+          "round": 2,
+          "rounds_total": 21,
+          "fetched_ist": "10:13",
+          "leader": "TVK",
+          "lead": 1607,
+          "votes": {
+            "TVK": 7615,
+            "ADMK": 4301,
+            "DMK": 6008
+          },
+          "total": 18774
+        },
+        {
+          "round": 3,
+          "rounds_total": 21,
+          "fetched_ist": "10:40",
+          "leader": "TVK",
+          "lead": 3161,
+          "votes": {
+            "TVK": 12075,
+            "ADMK": 6759,
+            "DMK": 8914
+          },
+          "total": 29238
+        },
+        {
+          "round": 4,
+          "rounds_total": 21,
+          "fetched_ist": "11:10",
+          "leader": "TVK",
+          "lead": 4484,
+          "votes": {
+            "TVK": 15725,
+            "ADMK": 9691,
+            "DMK": 11241
+          },
+          "total": 38716
+        },
+        {
+          "round": 5,
+          "rounds_total": 21,
+          "fetched_ist": "11:34",
+          "leader": "TVK",
+          "lead": 6238,
+          "votes": {
+            "TVK": 20067,
+            "ADMK": 11442,
+            "DMK": 13829
+          },
+          "total": 47941
+        },
+        {
+          "round": 6,
+          "rounds_total": 21,
+          "fetched_ist": "11:50",
+          "leader": "TVK",
+          "lead": 8160,
+          "votes": {
+            "TVK": 23884,
+            "ADMK": 14065,
+            "DMK": 15724
+          },
+          "total": 56759
+        },
+        {
+          "round": 7,
+          "rounds_total": 21,
+          "fetched_ist": "12:11",
+          "leader": "TVK",
+          "lead": 8792,
+          "votes": {
+            "TVK": 27460,
+            "ADMK": 16201,
+            "DMK": 18668
+          },
+          "total": 65939
+        },
+        {
+          "round": 8,
+          "rounds_total": 21,
+          "fetched_ist": "13:35",
+          "leader": "TVK",
+          "lead": 10243,
+          "votes": {
+            "TVK": 31061,
+            "ADMK": 17851,
+            "DMK": 20818
+          },
+          "total": 73700
+        },
+        {
+          "round": 9,
+          "rounds_total": 21,
+          "fetched_ist": "13:54",
+          "leader": "TVK",
+          "lead": 11691,
+          "votes": {
+            "TVK": 34894,
+            "ADMK": 19554,
+            "DMK": 23203
+          },
+          "total": 82102
+        },
+        {
+          "round": 10,
+          "rounds_total": 21,
+          "fetched_ist": "14:12",
+          "leader": "TVK",
+          "lead": 12818,
+          "votes": {
+            "TVK": 38200,
+            "ADMK": 21505,
+            "DMK": 25382
+          },
+          "total": 90160
+        },
+        {
+          "round": 11,
+          "rounds_total": 21,
+          "fetched_ist": "14:36",
+          "leader": "TVK",
+          "lead": 13541,
+          "votes": {
+            "TVK": 41304,
+            "ADMK": 23697,
+            "DMK": 27763
+          },
+          "total": 98228
+        },
+        {
+          "round": 12,
+          "rounds_total": 21,
+          "fetched_ist": "14:51",
+          "leader": "TVK",
+          "lead": 14312,
+          "votes": {
+            "TVK": 44402,
+            "ADMK": 26566,
+            "DMK": 30090
+          },
+          "total": 106942
+        },
+        {
+          "round": 13,
+          "rounds_total": 21,
+          "fetched_ist": "15:09",
+          "leader": "TVK",
+          "lead": 14109,
+          "votes": {
+            "TVK": 46895,
+            "ADMK": 28664,
+            "DMK": 32786
+          },
+          "total": 114585
+        },
+        {
+          "round": 14,
+          "rounds_total": 21,
+          "fetched_ist": "15:34",
+          "leader": "TVK",
+          "lead": 14283,
+          "votes": {
+            "TVK": 50206,
+            "ADMK": 31175,
+            "DMK": 35923
+          },
+          "total": 123925
+        },
+        {
+          "round": 15,
+          "rounds_total": 21,
+          "fetched_ist": "15:55",
+          "leader": "TVK",
+          "lead": 15549,
+          "votes": {
+            "TVK": 53979,
+            "ADMK": 33712,
+            "DMK": 38430
+          },
+          "total": 133246
+        },
+        {
+          "round": 16,
+          "rounds_total": 21,
+          "fetched_ist": "16:19",
+          "leader": "TVK",
+          "lead": 16735,
+          "votes": {
+            "TVK": 57994,
+            "ADMK": 35614,
+            "DMK": 41259
+          },
+          "total": 142382
+        },
+        {
+          "round": 17,
+          "rounds_total": 21,
+          "fetched_ist": "16:46",
+          "leader": "TVK",
+          "lead": 17693,
+          "votes": {
+            "TVK": 61337,
+            "ADMK": 38433,
+            "DMK": 43644
+          },
+          "total": 151405
+        },
+        {
+          "round": 18,
+          "rounds_total": 21,
+          "fetched_ist": "17:04",
+          "leader": "TVK",
+          "lead": 18427,
+          "votes": {
+            "TVK": 64578,
+            "ADMK": 40731,
+            "DMK": 46151
+          },
+          "total": 159873
+        },
+        {
+          "round": 19,
+          "rounds_total": 27,
+          "fetched_ist": "17:29",
+          "leader": "TVK",
+          "lead": 18897,
+          "votes": {
+            "TVK": 68072,
+            "ADMK": 42941,
+            "DMK": 49175
+          },
+          "total": 169143
+        },
+        {
+          "round": 20,
+          "rounds_total": 27,
+          "fetched_ist": "17:50",
+          "leader": "TVK",
+          "lead": 19616,
+          "votes": {
+            "TVK": 71001,
+            "ADMK": 45047,
+            "DMK": 51385
+          },
+          "total": 176750
+        },
+        {
+          "round": 21,
+          "rounds_total": 27,
+          "fetched_ist": "17:59",
+          "leader": "TVK",
+          "lead": 20008,
+          "votes": {
+            "TVK": 72354,
+            "ADMK": 45743,
+            "DMK": 52346
+          },
+          "total": 179987
+        },
+        {
+          "round": 22,
+          "rounds_total": 27,
+          "fetched_ist": "18:02",
+          "leader": "TVK",
+          "lead": 20042,
+          "votes": {
+            "TVK": 72622,
+            "ADMK": 46094,
+            "DMK": 52580
+          },
+          "total": 180866
+        },
+        {
+          "round": 23,
+          "rounds_total": 27,
+          "fetched_ist": "18:05",
+          "leader": "TVK",
+          "lead": 20049,
+          "votes": {
+            "TVK": 72847,
+            "ADMK": 46215,
+            "DMK": 52798
+          },
+          "total": 181465
+        },
+        {
+          "round": 24,
+          "rounds_total": 27,
+          "fetched_ist": "18:14",
+          "leader": "TVK",
+          "lead": 20222,
+          "votes": {
+            "TVK": 73152,
+            "ADMK": 46353,
+            "DMK": 52930
+          },
+          "total": 182083
+        },
+        {
+          "round": 25,
+          "rounds_total": 27,
+          "fetched_ist": "18:26",
+          "leader": "TVK",
+          "lead": 20131,
+          "votes": {
+            "TVK": 73594,
+            "ADMK": 46981,
+            "DMK": 53463
+          },
+          "total": 183782
+        },
+        {
+          "round": 26,
+          "rounds_total": 27,
+          "fetched_ist": "18:32",
+          "leader": "TVK",
+          "lead": 20061,
+          "votes": {
+            "TVK": 73801,
+            "ADMK": 47216,
+            "DMK": 53740
+          },
+          "total": 184521
+        },
+        {
+          "round": 27,
+          "rounds_total": 27,
+          "fetched_ist": "18:38",
+          "leader": "TVK",
+          "lead": 20040,
+          "votes": {
+            "TVK": 74048,
+            "ADMK": 47450,
+            "DMK": 54008
+          },
+          "total": 185292
+        }
+      ],
+      "namesakes": [],
+      "namesake_votes": 0,
+      "namesakes_of_runner_up_votes": 0,
+      "namesakes_exceed_margin": false
+    },
+    {
+      "ac_no": 101,
+      "ac_name": "Dharapuram",
+      "district": "Tiruppur",
+      "region": "Kongu (West)",
+      "reserved": "SC",
+      "defector": "P. Sathyabama",
+      "status": {
+        "rounds_done": 23,
+        "rounds_total": 23,
+        "declared": true,
+        "complete": true,
+        "label": "Result declared",
+        "declared_winner": "SATHYABAMA.P",
+        "eci_last_updated": "08:27 pm 09/10/2026 IST"
+      },
+      "snapshot": "20261009T202801_AC101.htm",
+      "candidates_count": 22,
+      "total_votes": 180532,
+      "postal_votes": 1316,
+      "turnout": {
+        "bypoll_pct": 80.3,
+        "april_pct": 89.89,
+        "drop_pp": 9.59,
+        "source": "ECI website figures as reported by DT Next / The News Minute; April figures as quoted by Free Press Journal / The News Minute"
+      },
+      "candidates": [
+        {
+          "name": "SATHYABAMA.P",
+          "party": "Tamilaga Vettri Kazhagam",
+          "party_code": "TVK",
+          "evm": 66586,
+          "postal": 255,
+          "total": 66841,
+          "position": 1,
+          "pct": 37.02,
+          "alliance": "SSJVA"
+        },
+        {
+          "name": "SUGANYA.S",
+          "party": "Dravida Munnetra Kazhagam",
+          "party_code": "DMK",
+          "evm": 56757,
+          "postal": 613,
+          "total": 57370,
+          "position": 2,
+          "pct": 31.78,
+          "alliance": "DMK+"
+        },
+        {
+          "name": "BANUMATHI.K",
+          "party": "All India Anna Dravida Munnetra Kazhagam",
+          "party_code": "ADMK",
+          "evm": 44874,
+          "postal": 406,
+          "total": 45280,
+          "position": 3,
+          "pct": 25.08,
+          "alliance": "AIADMK+"
+        },
+        {
+          "name": "KARTHIKA.M",
+          "party": "Naam Tamilar Katchi",
+          "party_code": "NTK",
+          "evm": 5249,
+          "postal": 19,
+          "total": 5268,
+          "position": 4,
+          "pct": 2.92,
+          "alliance": "NTK"
+        },
+        {
+          "name": "LAKSHMANAN.P",
+          "party": "Communist Party of India",
+          "party_code": "CPI",
+          "evm": 1150,
+          "postal": 7,
+          "total": 1157,
+          "position": 5,
+          "pct": 0.64,
+          "alliance": "Left"
+        },
+        {
+          "name": "RAJARATHINAM.S",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 654,
+          "postal": 1,
+          "total": 655,
+          "position": 6,
+          "pct": 0.36,
+          "alliance": ""
+        },
+        {
+          "name": "MARIMUTHU.N",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 473,
+          "postal": 0,
+          "total": 473,
+          "position": 7,
+          "pct": 0.26,
+          "alliance": ""
+        },
+        {
+          "name": "MUTHUSAMY.P",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 436,
+          "postal": 1,
+          "total": 437,
+          "position": 8,
+          "pct": 0.24,
+          "alliance": ""
+        },
+        {
+          "name": "BANUPRIYA.S",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 325,
+          "postal": 0,
+          "total": 325,
+          "position": 9,
+          "pct": 0.18,
+          "alliance": ""
+        },
+        {
+          "name": "SATHISHKUMAR.M",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 269,
+          "postal": 4,
+          "total": 273,
+          "position": 10,
+          "pct": 0.15,
+          "alliance": ""
+        },
+        {
+          "name": "PERUMAL.R",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 253,
+          "postal": 0,
+          "total": 253,
+          "position": 11,
+          "pct": 0.14,
+          "alliance": ""
+        },
+        {
+          "name": "BANUMATHI.C",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 250,
+          "postal": 0,
+          "total": 250,
+          "position": 12,
+          "pct": 0.14,
+          "alliance": ""
+        },
+        {
+          "name": "MAHENDRAN.S",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 224,
+          "postal": 0,
+          "total": 224,
+          "position": 13,
+          "pct": 0.12,
+          "alliance": ""
+        },
+        {
+          "name": "NALLASAMY.P",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 195,
+          "postal": 0,
+          "total": 195,
+          "position": 14,
+          "pct": 0.11,
+          "alliance": ""
+        },
+        {
+          "name": "ARULRAJU.G",
+          "party": "Anaithinthiya Anna Dravida Makkal Seyal katchi",
+          "party_code": "ANAITHINTHIYA ANNA DRAVIDA MAKKAL SEYAL KATCHI",
+          "evm": 152,
+          "postal": 2,
+          "total": 154,
+          "position": 15,
+          "pct": 0.09,
+          "alliance": ""
+        },
+        {
+          "name": "DHANALAKSHMI.S",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 130,
+          "postal": 3,
+          "total": 133,
+          "position": 16,
+          "pct": 0.07,
+          "alliance": ""
+        },
+        {
+          "name": "JOTHEESHWARI.D",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 124,
+          "postal": 0,
+          "total": 124,
+          "position": 17,
+          "pct": 0.07,
+          "alliance": ""
+        },
+        {
+          "name": "RAJESHWARI.V",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 117,
+          "postal": 0,
+          "total": 117,
+          "position": 18,
+          "pct": 0.06,
+          "alliance": ""
+        },
+        {
+          "name": "SATHYABAMA.M",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 100,
+          "postal": 2,
+          "total": 102,
+          "position": 19,
+          "pct": 0.06,
+          "alliance": ""
+        },
+        {
+          "name": "ARUMUGAM.R",
+          "party": "Ganasangam Party of India",
+          "party_code": "GANASANGAM PARTY OF INDIA",
+          "evm": 91,
+          "postal": 0,
+          "total": 91,
+          "position": 20,
+          "pct": 0.05,
+          "alliance": ""
+        },
+        {
+          "name": "SASIPRIYA.S",
+          "party": "Independent",
+          "party_code": "IND",
+          "evm": 77,
+          "postal": 0,
+          "total": 77,
+          "position": 21,
+          "pct": 0.04,
+          "alliance": ""
+        },
+        {
+          "name": "MAHESHWARAN.S",
+          "party": "Anti Corruption Dynamic Party",
+          "party_code": "ANTI CORRUPTION DYNAMIC PARTY",
+          "evm": 56,
+          "postal": 0,
+          "total": 56,
+          "position": 22,
+          "pct": 0.03,
+          "alliance": ""
+        },
+        {
+          "name": "NOTA",
+          "party": "None of the Above",
+          "party_code": "NOTA",
+          "evm": 674,
+          "postal": 3,
+          "total": 677,
+          "position": null,
+          "pct": 0.38,
+          "alliance": ""
+        }
+      ],
+      "april2026": {
+        "total_votes": 199944,
+        "postal_votes": 2351,
+        "candidates": [
+          {
+            "name": "SATHYABAMA.P",
+            "party_code": "ADMK",
+            "votes": 81100,
+            "pct": 40.56
+          },
+          {
+            "name": "INDIRANI.T",
+            "party_code": "DMK",
+            "votes": 64373,
+            "pct": 32.2
+          },
+          {
+            "name": "GOWRI CHITRA",
+            "party_code": "TVK",
+            "votes": 46438,
+            "pct": 23.23
+          },
+          {
+            "name": "DHIVYA",
+            "party_code": "NTK",
+            "votes": 6026,
+            "pct": 3.01
+          },
+          {
+            "name": "NOTA",
+            "party_code": "NOTA",
+            "votes": 1058,
+            "pct": 0.53
+          },
+          {
+            "name": "ROHINI.S",
+            "party_code": "IND",
+            "votes": 357,
+            "pct": 0.18
+          },
+          {
+            "name": "MOHANRAJ.M",
+            "party_code": "IND",
+            "votes": 174,
+            "pct": 0.09
+          },
+          {
+            "name": "ANANTHI.S",
+            "party_code": "IND",
+            "votes": 151,
+            "pct": 0.08
+          },
+          {
+            "name": "INDHIRANI.C",
+            "party_code": "IND",
+            "votes": 142,
+            "pct": 0.07
+          },
+          {
+            "name": "GOWRI.P",
+            "party_code": "IND",
+            "votes": 125,
+            "pct": 0.06
+          }
+        ],
+        "winner": {
+          "name": "SATHYABAMA.P",
+          "party_code": "ADMK",
+          "votes": 81100,
+          "pct": 40.56
+        },
+        "runner_up": {
+          "name": "INDIRANI.T",
+          "party_code": "DMK",
+          "votes": 64373,
+          "pct": 32.2
+        },
+        "margin": 16727,
+        "margin_pct": 8.37
+      },
+      "y2021": {
+        "total_votes": 193991,
+        "turnout_pct": 74.15,
+        "electors": 261619,
+        "votes_by_party": {
+          "TVK": 0,
+          "ADMK": 0,
+          "DMK": 89986,
+          "BJP": 88593,
+          "NTK": 6753,
+          "LEFT": 0,
+          "OTHERS": 6756,
+          "NOTA": 1903
+        },
+        "shares": {
+          "TVK": 0.0,
+          "ADMK": 0.0,
+          "DMK": 46.39,
+          "BJP": 45.67,
+          "NTK": 3.48,
+          "LEFT": 0.0,
+          "OTHERS": 3.48,
+          "NOTA": 0.98
+        },
+        "winner": {
+          "name": "KAYALVIZHI N",
+          "party_code": "DMK",
+          "votes": 89986,
+          "pct": 46.39
+        },
+        "runner_up": {
+          "name": "MURUGAN L",
+          "party_code": "BJP",
+          "votes": 88593,
+          "pct": 45.67
+        },
+        "margin": 1393,
+        "margin_pct": 0.72,
+        "top3": [
+          {
+            "name": "KAYALVIZHI N",
+            "party_code": "DMK",
+            "votes": 89986,
+            "pct": 46.39
+          },
+          {
+            "name": "MURUGAN L",
+            "party_code": "BJP",
+            "votes": 88593,
+            "pct": 45.67
+          },
+          {
+            "name": "RANJITHA K",
+            "party_code": "NTK",
+            "votes": 6753,
+            "pct": 3.48
+          }
+        ]
+      },
+      "eci_total_row": 180532,
+      "expected_votes_from_turnout": 178613,
+      "votes_vs_expected_pct": 1.07,
+      "votes_change": -19412,
+      "votes_change_pct": -9.71,
+      "swing": {
+        "TVK": {
+          "april_pct": 23.23,
+          "bypoll_pct": 37.02,
+          "delta_pp": 13.79
+        },
+        "ADMK": {
+          "april_pct": 40.56,
+          "bypoll_pct": 25.08,
+          "delta_pp": -15.48
+        },
+        "DMK": {
+          "april_pct": 32.2,
+          "bypoll_pct": 31.78,
+          "delta_pp": -0.42
+        },
+        "BJP": {
+          "april_pct": 0.0,
+          "bypoll_pct": 0.0,
+          "delta_pp": 0.0
+        },
+        "NTK": {
+          "april_pct": 3.01,
+          "bypoll_pct": 2.92,
+          "delta_pp": -0.09
+        },
+        "LEFT": {
+          "april_pct": 0.0,
+          "bypoll_pct": 0.64,
+          "delta_pp": 0.64
+        },
+        "OTHERS": {
+          "april_pct": 0.47,
+          "bypoll_pct": 2.18,
+          "delta_pp": 1.71
+        },
+        "NOTA": {
+          "april_pct": 0.53,
+          "bypoll_pct": 0.38,
+          "delta_pp": -0.15
+        }
+      },
+      "tvk_plus_admk_april_pct": 63.79,
+      "winner": {
+        "name": "SATHYABAMA.P",
+        "party": "Tamilaga Vettri Kazhagam",
+        "party_code": "TVK",
+        "evm": 66586,
+        "postal": 255,
+        "total": 66841,
+        "position": 1,
+        "pct": 37.02
+      },
+      "runner_up": {
+        "name": "SUGANYA.S",
+        "party": "Dravida Munnetra Kazhagam",
+        "party_code": "DMK",
+        "evm": 56757,
+        "postal": 613,
+        "total": 57370,
+        "position": 2,
+        "pct": 31.78
+      },
+      "third": {
+        "name": "BANUMATHI.K",
+        "party": "All India Anna Dravida Munnetra Kazhagam",
+        "party_code": "ADMK",
+        "evm": 44874,
+        "postal": 406,
+        "total": 45280,
+        "position": 3,
+        "pct": 25.08
+      },
+      "margin": 9471,
+      "margin_pct": 5.25,
+      "defector_won": true,
+      "seat_changed_hands": true,
+      "winner_change": "ADMK to TVK",
+      "margin_vs_april": -7256,
+      "votes_by_party": {
+        "TVK": {
+          "april": 46438,
+          "bypoll": 66841,
+          "change": 20403
+        },
+        "ADMK": {
+          "april": 81100,
+          "bypoll": 45280,
+          "change": -35820
+        },
+        "DMK": {
+          "april": 64373,
+          "bypoll": 57370,
+          "change": -7003
+        },
+        "BJP": {
+          "april": 0,
+          "bypoll": 0,
+          "change": 0
+        },
+        "NTK": {
+          "april": 6026,
+          "bypoll": 5268,
+          "change": -758
+        },
+        "LEFT": {
+          "april": 0,
+          "bypoll": 1157,
+          "change": 1157
+        },
+        "OTHERS": {
+          "april": 949,
+          "bypoll": 3939,
+          "change": 2990
+        },
+        "NOTA": {
+          "april": 1058,
+          "bypoll": 677,
+          "change": -381
+        }
+      },
+      "timeline": [
+        {
+          "round": 1,
+          "rounds_total": 23,
+          "fetched_ist": "09:33",
+          "leader": "ADMK",
+          "lead": 5,
+          "votes": {
+            "TVK": 2634,
+            "ADMK": 2639,
+            "DMK": 2019
+          },
+          "total": 7726
+        },
+        {
+          "round": 2,
+          "rounds_total": 23,
+          "fetched_ist": "09:55",
+          "leader": "ADMK",
+          "lead": 592,
+          "votes": {
+            "TVK": 4981,
+            "ADMK": 5573,
+            "DMK": 4016
+          },
+          "total": 15442
+        },
+        {
+          "round": 3,
+          "rounds_total": 23,
+          "fetched_ist": "10:10",
+          "leader": "ADMK",
+          "lead": 810,
+          "votes": {
+            "TVK": 7434,
+            "ADMK": 8244,
+            "DMK": 6158
+          },
+          "total": 23110
+        },
+        {
+          "round": 4,
+          "rounds_total": 23,
+          "fetched_ist": "10:25",
+          "leader": "ADMK",
+          "lead": 958,
+          "votes": {
+            "TVK": 9815,
+            "ADMK": 10773,
+            "DMK": 8906
+          },
+          "total": 31228
+        },
+        {
+          "round": 5,
+          "rounds_total": 23,
+          "fetched_ist": "10:40",
+          "leader": "TVK",
+          "lead": 724,
+          "votes": {
+            "TVK": 13213,
+            "ADMK": 12489,
+            "DMK": 11554
+          },
+          "total": 39558
+        },
+        {
+          "round": 6,
+          "rounds_total": 23,
+          "fetched_ist": "10:52",
+          "leader": "TVK",
+          "lead": 1394,
+          "votes": {
+            "TVK": 16201,
+            "ADMK": 14807,
+            "DMK": 13797
+          },
+          "total": 47643
+        },
+        {
+          "round": 7,
+          "rounds_total": 23,
+          "fetched_ist": "11:13",
+          "leader": "TVK",
+          "lead": 917,
+          "votes": {
+            "TVK": 18690,
+            "ADMK": 17773,
+            "DMK": 15988
+          },
+          "total": 55767
+        },
+        {
+          "round": 8,
+          "rounds_total": 23,
+          "fetched_ist": "11:22",
+          "leader": "TVK",
+          "lead": 1304,
+          "votes": {
+            "TVK": 21034,
+            "ADMK": 19730,
+            "DMK": 17898
+          },
+          "total": 62492
+        },
+        {
+          "round": 9,
+          "rounds_total": 23,
+          "fetched_ist": "11:31",
+          "leader": "TVK",
+          "lead": 2112,
+          "votes": {
+            "TVK": 24047,
+            "ADMK": 21935,
+            "DMK": 19972
+          },
+          "total": 70277
+        },
+        {
+          "round": 10,
+          "rounds_total": 23,
+          "fetched_ist": "11:44",
+          "leader": "TVK",
+          "lead": 4128,
+          "votes": {
+            "TVK": 27649,
+            "ADMK": 23521,
+            "DMK": 22503
+          },
+          "total": 78500
+        },
+        {
+          "round": 11,
+          "rounds_total": 23,
+          "fetched_ist": "12:08",
+          "leader": "TVK",
+          "lead": 5486,
+          "votes": {
+            "TVK": 31327,
+            "ADMK": 24363,
+            "DMK": 25841
+          },
+          "total": 86944
+        },
+        {
+          "round": 12,
+          "rounds_total": 23,
+          "fetched_ist": "12:26",
+          "leader": "TVK",
+          "lead": 6420,
+          "votes": {
+            "TVK": 34987,
+            "ADMK": 25307,
+            "DMK": 28567
+          },
+          "total": 94875
+        },
+        {
+          "round": 13,
+          "rounds_total": 23,
+          "fetched_ist": "12:44",
+          "leader": "TVK",
+          "lead": 6901,
+          "votes": {
+            "TVK": 37944,
+            "ADMK": 26266,
+            "DMK": 31043
+          },
+          "total": 101647
+        },
+        {
+          "round": 14,
+          "rounds_total": 23,
+          "fetched_ist": "12:53",
+          "leader": "TVK",
+          "lead": 8064,
+          "votes": {
+            "TVK": 41327,
+            "ADMK": 27561,
+            "DMK": 33263
+          },
+          "total": 108986
+        },
+        {
+          "round": 15,
+          "rounds_total": 23,
+          "fetched_ist": "13:11",
+          "leader": "TVK",
+          "lead": 9226,
+          "votes": {
+            "TVK": 45336,
+            "ADMK": 29348,
+            "DMK": 36110
+          },
+          "total": 118247
+        },
+        {
+          "round": 16,
+          "rounds_total": 23,
+          "fetched_ist": "13:23",
+          "leader": "TVK",
+          "lead": 9636,
+          "votes": {
+            "TVK": 48675,
+            "ADMK": 31067,
+            "DMK": 39039
+          },
+          "total": 126780
+        },
+        {
+          "round": 17,
+          "rounds_total": 23,
+          "fetched_ist": "13:45",
+          "leader": "TVK",
+          "lead": 8863,
+          "votes": {
+            "TVK": 51253,
+            "ADMK": 32892,
+            "DMK": 42390
+          },
+          "total": 135121
+        },
+        {
+          "round": 18,
+          "rounds_total": 23,
+          "fetched_ist": "14:39",
+          "leader": "TVK",
+          "lead": 9011,
+          "votes": {
+            "TVK": 54099,
+            "ADMK": 35005,
+            "DMK": 45088
+          },
+          "total": 143356
+        },
+        {
+          "round": 19,
+          "rounds_total": 23,
+          "fetched_ist": "14:51",
+          "leader": "TVK",
+          "lead": 9350,
+          "votes": {
+            "TVK": 56903,
+            "ADMK": 37040,
+            "DMK": 47553
+          },
+          "total": 151053
+        },
+        {
+          "round": 20,
+          "rounds_total": 23,
+          "fetched_ist": "15:03",
+          "leader": "TVK",
+          "lead": 10003,
+          "votes": {
+            "TVK": 60078,
+            "ADMK": 38760,
+            "DMK": 50075
+          },
+          "total": 158834
+        },
+        {
+          "round": 21,
+          "rounds_total": 23,
+          "fetched_ist": "15:34",
+          "leader": "TVK",
+          "lead": 9838,
+          "votes": {
+            "TVK": 62851,
+            "ADMK": 41484,
+            "DMK": 53013
+          },
+          "total": 167673
+        },
+        {
+          "round": 22,
+          "rounds_total": 23,
+          "fetched_ist": "15:43",
+          "leader": "TVK",
+          "lead": 10228,
+          "votes": {
+            "TVK": 65341,
+            "ADMK": 43594,
+            "DMK": 55113
+          },
+          "total": 174831
+        },
+        {
+          "round": 23,
+          "rounds_total": 23,
+          "fetched_ist": "16:01",
+          "leader": "TVK",
+          "lead": 9471,
+          "votes": {
+            "TVK": 66841,
+            "ADMK": 45280,
+            "DMK": 57370
+          },
+          "total": 180532
+        }
+      ],
+      "namesakes": [
+        {
+          "name": "BANUMATHI.C",
+          "votes": 250,
+          "pct": 0.14,
+          "of": "BANUMATHI.K",
+          "of_party": "ADMK",
+          "match": "exact"
+        },
+        {
+          "name": "SATHYABAMA.M",
+          "votes": 102,
+          "pct": 0.06,
+          "of": "SATHYABAMA.P",
+          "of_party": "TVK",
+          "match": "exact"
+        }
+      ],
+      "namesake_votes": 352,
+      "namesakes_of_runner_up_votes": 0,
+      "namesakes_exceed_margin": false
+    }
+  ],
+  "vacancies": [
+    {
+      "ac_no": 103,
+      "status": "Election petition pending",
+      "vacated": null,
+      "ac_name": "Perundurai",
+      "april_winner": "JAYAKUMAR. S",
+      "april_party": "ADMK",
+      "april_runner_up_party": "DMK",
+      "april_margin": 9693,
+      "april_margin_pct": 4.83
+    },
+    {
+      "ac_no": 135,
+      "status": "Vacant, no poll date",
+      "vacated": "2026-06-29",
+      "ac_name": "Karur",
+      "april_winner": "M.R. VIJAYABHASKAR",
+      "april_party": "ADMK",
+      "april_runner_up_party": "TVK",
+      "april_margin": 1821,
+      "april_margin_pct": 0.84
+    },
+    {
+      "ac_no": 141,
+      "status": "Vacant, no poll date (C. Joseph Vijay kept Perambur)",
+      "vacated": "2026-05-10",
+      "ac_name": "Tiruchirappalli (East)",
+      "april_winner": "C. JOSEPH VIJAY",
+      "april_party": "TVK",
+      "april_runner_up_party": "DMK",
+      "april_margin": 27416,
+      "april_margin_pct": 15.02
+    },
+    {
+      "ac_no": 179,
+      "status": "Vacant, no poll date",
+      "vacated": "2026-06-16",
+      "ac_name": "Viralimalai",
+      "april_winner": "VIJAYABASKAR. C",
+      "april_party": "ADMK",
+      "april_runner_up_party": "TVK",
+      "april_margin": 62073,
+      "april_margin_pct": 30.44
+    },
+    {
+      "ac_no": 225,
+      "status": "Vacant, no poll date",
+      "vacated": "2026-05-26",
+      "ac_name": "Ambasamudram",
+      "april_winner": "DR.ESAKKI SUBAYA",
+      "april_party": "ADMK",
+      "april_runner_up_party": "INC",
+      "april_margin": 10245,
+      "april_margin_pct": 5.36
+    }
+  ],
+  "vacancies_source": "Wikipedia, 2026-2031 Tamil Nadu Legislative Assembly By-Polls (read 8 Oct 2026); April results from the ECI tally"
+}

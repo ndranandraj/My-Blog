@@ -93,6 +93,11 @@ enableRobotsTXT = true
     changefreq = "monthly"
     lastmod = "2026-06-09"
   [[params.staticApps]]
+    url = "/election-dashboard/bypolls-2026.html"
+    priority = 0.7
+    changefreq = "weekly"
+    lastmod = "2026-10-09"
+  [[params.staticApps]]
     url = "/election-dashboard/"
     priority = 0.7
     changefreq = "monthly"
@@ -223,6 +228,13 @@ enableRobotsTXT = true
     weight = 23
     [menu.main.params]
       desc = "Live interactive dashboard"
+  [[menu.main]]
+    name = "Bypolls"
+    parent = "tn2026"
+    url = "/tn-2026-bypolls/"
+    weight = 25
+    [menu.main.params]
+      desc = "By-elections since May, tracked"
   [[menu.main]]
     name = "Dataset"
     parent = "tn2026"

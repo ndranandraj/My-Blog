@@ -1,7 +1,7 @@
 ---
 title: "Tamil Nadu 2026 Assembly Election: The Complete Analysis"
 date: 2026-05-18
-lastmod: 2026-05-18
+lastmod: 2026-10-09
 description: "The complete data analysis of Tamil Nadu's 2026 Assembly Election. TVK won 108 of 234 seats with 34.9% of the vote. DMK collapsed from 133 to 59. M.K. Stalin lost Kolathur. The interactive dashboard, the five-post series, the dataset, and the methodology, all in one place."
 summary: "Five investigations, one interactive dashboard, and the open dataset behind them. Everything published on this site about Tamil Nadu's 2026 Assembly Election, organised."
 keywords: ["Tamil Nadu 2026 election analysis", "TN 2026 results", "TVK 108 seats", "DMK collapse 2026", "MK Stalin Kolathur defeat", "Tamil Nadu Assembly election data", "TN 2026 interactive dashboard", "Vijay TVK debut", "Tamil Nadu election dataset", "TN 2026 incumbents defeated", "Tamil Nadu MLAs under 40", "TN 2026 dummy candidates"]
@@ -86,6 +86,29 @@ Each card targets a distinct angle of the same election: its headline number and
 <span class="hub-card-title">How Many of the 329 Dummies Actually Mattered</span>
 <span class="hub-card-take">The mechanism stayed intact, the wave drowned it. Zero consequential seats by the strict test, two by the loose one.</span>
 <span class="hub-card-cta">Read the analysis →</span>
+</span>
+</a>
+</div>
+
+## After May: the by-elections
+
+<div class="hub-grid">
+<a class="hub-card" href="/posts/tn-bypolls-2026-madurantakam-dharapuram/">
+<span class="hub-card-cover" style="background-image:url('/images/tn-bypolls-oct2026-cover.png');"></span>
+<span class="hub-card-body">
+<span class="hub-card-stat"><b>2 / 2</b><i>bypoll seats won by TVK</i></span>
+<span class="hub-card-title">Two AIADMK Defectors Won Their Seats Back for TVK</span>
+<span class="hub-card-take">Madurantakam by 20,040, Dharapuram by 9,471. The AIADMK came third in both. Did the vote follow the MLA?</span>
+<span class="hub-card-cta">Read the analysis →</span>
+</span>
+</a>
+<a class="hub-card" href="/tn-2026-bypolls/">
+<span class="hub-card-cover" style="background-image:url('/images/tn-bypolls-oct2026-cover.png');"></span>
+<span class="hub-card-body">
+<span class="hub-card-stat"><b>5</b><i>seats still vacant</i></span>
+<span class="hub-card-title">TN 2026 By-elections: Results and Tracker</span>
+<span class="hub-card-take">Every bypoll since May, compared with May 2026 and 2021, plus the dashboard and the vacant-seat list.</span>
+<span class="hub-card-cta">Open the tracker →</span>
 </span>
 </a>
 </div>
