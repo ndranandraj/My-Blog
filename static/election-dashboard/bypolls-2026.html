@@ -498,6 +498,12 @@ td.delta-neg { color: var(--neg); font-weight: 700; }
 .round-summary { font-size: 0.9rem; color: var(--text-2); margin-bottom: 10px; }
 .round-summary b { color: var(--text); }
 tr.sel td { background: var(--accent-soft) !important; }
+.gain-win { display: inline-block; padding: 0 6px; border-radius: 6px; font-weight: 800; color: var(--c);
+  background: color-mix(in srgb, var(--c) 16%, transparent); }
+.sm-muted { font-size: 0.74rem; color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.round-card.round-won { border-color: var(--c); box-shadow: 0 0 0 1px var(--c) inset; }
+.won-badge { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 99px; font-size: 0.6rem;
+  letter-spacing: 0.04em; color: #fff; background: var(--c); vertical-align: 1px; }
 #bymap { width: 100%; height: 520px; border-radius: 10px; background: var(--map-bg); isolation: isolate; z-index: 0; position: relative; }
 .callout-note { border-left: 3px solid var(--accent); padding: 10px 14px; background: var(--accent-soft); border-radius: 8px;
   color: var(--text-2); font-size: 0.86rem; margin-top: 12px; }
@@ -849,7 +855,10 @@ function roundRows(s) {
     const prev = i ? T[i - 1] : null;
     const others = t.total - RPARTIES.reduce((a, p) => a + t.votes[p], 0);
     const gain = {}; RPARTIES.forEach(p => { gain[p] = t.votes[p] - (prev ? prev.votes[p] : 0); });
-    return { ...t, others, gain, roundTotal: t.total - (prev ? prev.total : 0),
+    // Round winner: the party that added the most votes in this round (not the running leader).
+    const byGain = RPARTIES.slice().sort((a, b) => gain[b] - gain[a]);
+    const roundWinner = byGain[0], roundMargin = gain[byGain[0]] - gain[byGain[1]];
+    return { ...t, others, gain, roundWinner, roundMargin, roundTotal: t.total - (prev ? prev.total : 0),
              leadChange: prev ? (t.leader === prev.leader ? t.lead - prev.lead : null) : null, prevLeader: prev ? prev.leader : null };
   });
 }
@@ -867,17 +876,23 @@ function renderRounds() {
   note.textContent = 'Running totals after each EVM round, postal ballots included as counted, from the ECI pages saved during the count. Where ECI revised a round, the last reading is shown.';
   if (ROUND.round === 'all') {
     const tr = rows.map(r => `<tr data-r="${r.round}"><td class="right num">${r.round}</td>` +
-      RPARTIES.map(p => `<td class="right num">${IN(r.votes[p])} <span style="color:var(--text-3)">+${IN(r.gain[p])}</span></td>`).join('') +
+      RPARTIES.map(p => `<td class="right num">${IN(r.votes[p])} ${p === r.roundWinner
+          ? `<span class="gain-win" style="--c:${partyColor(p)}">+${IN(r.gain[p])}</span>`
+          : `<span style="color:var(--text-3)">+${IN(r.gain[p])}</span>`}</td>`).join('') +
+      `<td>${chip(r.roundWinner)} <span class="sm-muted">by ${IN(r.roundMargin)}</span></td>` +
       `<td class="right num">${IN(r.total)}</td><td>${chip(r.leader)}</td><td class="right num"><b>${IN(r.lead)}</b></td></tr>`).join('');
+    const won = {}; rows.forEach(r => { won[r.roundWinner] = (won[r.roundWinner] || 0) + 1; });
+    const tally = RPARTIES.filter(p => won[p]).map(p => `${LABEL[p]} ${won[p]}`).join(', ');
     body.innerHTML = `<div class="table-wrap"><table><thead><tr><th class="right">Round</th>` +
       RPARTIES.map(p => `<th class="right">${LABEL[p]} <span style="font-weight:600;text-transform:none;letter-spacing:0">(this round)</span></th>`).join('') +
-      `<th class="right">Counted</th><th>Leader</th><th class="right">Lead</th></tr></thead><tbody>${tr}</tbody></table></div>`;
+      `<th>Round won by</th><th class="right">Counted</th><th>Overall leader</th><th class="right">Lead</th></tr></thead><tbody>${tr}</tbody></table></div>` +
+      `<p class="note" style="margin-top:8px">Rounds won (most votes added in the round): ${tally}. The highlighted figure in each row is that round's winning gain.</p>`;
     body.querySelectorAll('tr[data-r]').forEach(tr => tr.addEventListener('click', () => selectRound(tr.dataset.r)));
     return;
   }
   const r = rows.find(x => String(x.round) === String(ROUND.round)); if (!r) return;
   const last = rows[rows.length - 1];
-  const cards = RPARTIES.map(p => `<div class="round-card" style="--c:${partyColor(p)}"><div class="pty">${LABEL[p]}</div>
+  const cards = RPARTIES.map(p => `<div class="round-card${p === r.roundWinner ? ' round-won' : ''}" style="--c:${partyColor(p)}"><div class="pty">${LABEL[p]}${p === r.roundWinner ? ' <span class="won-badge">Won this round</span>' : ''}</div>
       <div class="big">${IN(r.votes[p])}</div>
       <div class="sm">${(100 * r.votes[p] / r.total).toFixed(2)}% of votes counted</div>
       <div class="sm">+${IN(r.gain[p])} this round</div></div>`).join('');
@@ -885,7 +900,8 @@ function renderRounds() {
   if (r.round === 1) leadTxt = `${LABEL[r.leader]} opened with a lead of <b>${IN(r.lead)}</b>.`;
   else if (r.prevLeader !== r.leader) leadTxt = `<b>${LABEL[r.leader]} took the lead</b> from ${LABEL[r.prevLeader]} in this round, by <b>${IN(r.lead)}</b>.`;
   else leadTxt = `${LABEL[r.leader]} led by <b>${IN(r.lead)}</b>, ${r.leadChange >= 0 ? 'up' : 'down'} <b>${IN(Math.abs(r.leadChange))}</b> on the previous round.`;
-  body.innerHTML = `<p class="round-summary">After round <b>${r.round} of ${last.round}</b>: ${IN(r.total)} votes counted (${(100 * r.total / last.total).toFixed(1)}% of the final count), ${IN(r.roundTotal)} of them in this round. ${leadTxt}</p>
+  const roundTxt = `<b>${LABEL[r.roundWinner]} won the round</b>, adding ${IN(r.gain[r.roundWinner])} votes, ${IN(r.roundMargin)} more than any other party.`;
+  body.innerHTML = `<p class="round-summary">After round <b>${r.round} of ${last.round}</b>: ${IN(r.total)} votes counted (${(100 * r.total / last.total).toFixed(1)}% of the final count), ${IN(r.roundTotal)} of them in this round. ${roundTxt} ${leadTxt}</p>
     <div class="round-cards">${cards}</div>
     <p class="note">Others and NOTA so far: ${IN(r.others)}. Final result: ${LABEL[s.winner.party_code]} by ${IN(s.margin)}.</p>`;
 }
